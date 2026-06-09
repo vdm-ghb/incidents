@@ -67,10 +67,10 @@
 
   function createMarker(incident) {
     var sevClass=severityClass(incident), letter=EVENT_TYPE_LETTERS[incident.weather_event_type]||'?';
-    var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+sevClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[12,-10] });
+    var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+sevClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[18,0] });
     var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true});
     var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+sevClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'');
-    marker.bindTooltip(ttHTML,{permanent:false,direction:'top',opacity:1});
+    marker.bindTooltip(ttHTML,{permanent:false,direction:'right',opacity:1});
     marker.on('click',function(){ openModal(incident); });
     return marker;
   }
