@@ -32,8 +32,8 @@
     return 'Near-miss / 0 fatalities';
   }
 
-  var EVENT_TYPE_LABELS = { hurricane:'Hurricane / Typhoon', storm:'Severe Storm', internal_wave:'Internal Wave / Soliton', helicopter:'Helicopter', maintenance:'Maintenance / Equipment' };
-  var EVENT_TYPE_LETTERS = { hurricane:'H', storm:'S', internal_wave:'W', helicopter:'🚁', maintenance:'M' };
+  var EVENT_TYPE_LABELS = { hurricane:'Hurricane / Typhoon', storm:'Severe Storm', internal_wave:'Internal Wave / Soliton', helicopter:'Helicopter', maintenance:'Maintenance / Equipment', tsunami:'Tsunami / Meteo-tsunami' };
+  var EVENT_TYPE_LETTERS = { hurricane:'H', storm:'S', internal_wave:'W', helicopter:'🚁', maintenance:'M', tsunami:'T' };
 
   /* Region bounding boxes [SW, NE] */
   var REGION_BOUNDS = {
@@ -47,7 +47,8 @@
     'Middle East':           [[ 19.0,  50.0],[ 30.0,  62.0]],
     'Arctic / North Pacific':[[ 46.0, 135.0],[ 63.0,-145.0]],
     'Australia / NW Shelf':  [[-34.0, 108.0],[-14.0, 130.0]],
-    'West Africa':           [[  0.0,   1.0],[ 10.0,  12.0]]
+    'West Africa':           [[  0.0,   1.0],[ 10.0,  12.0]],
+    'South America':         [[-38.0, -85.0],[ 12.0, -32.0]]
   };
 
   var map = L.map('map', { center:[25,10], zoom:2, minZoom:2, maxZoom:14, zoomControl:true, preferCanvas:true });

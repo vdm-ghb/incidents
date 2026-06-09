@@ -2151,5 +2151,106 @@ window.INCIDENTS_DATA = {
       ]
     }
 
+    /* ──────────────────────────────────────────────────
+       41. La Pampilla Oil Spill — 2022
+    ─────────────────────────────────────────────────── */
+    ,{
+      id: 'la-pampilla-2022',
+      name: 'La Pampilla Refinery Oil Spill',
+      year: 2022,
+      date: '15 January 2022',
+      location: 'Ventanilla, Callao, Peru — La Pampilla Terminal No. 2',
+      lat: -11.87,
+      lng: -77.19,
+      region: 'South America',
+      platform_type: 'Multi-buoy offshore transfer terminal / crude tanker Mare Doricum',
+      operator: 'Repsol (terminal); Mare Doricum (Italian-flagged tanker)',
+      weather_event_type: 'tsunami',
+      weather_event: 'Meteo-tsunami from Hunga Tonga volcanic eruption — anomalous long-period waves reached Peru >10,000 km from source',
+      fatalities: 0,
+      persons_on_board: null,
+      survivors: null,
+      severity_override: 'major',
+      infrastructure_impact: '~11,900 barrels crude oil spilled; 700 ha contaminated; 24 beaches affected — largest oil spill in Peru\'s history',
+      summary: 'On 15 January 2022, the Italian tanker Mare Doricum was offloading crude oil at the Multi-buoy Terminal No. 2 of Repsol\'s La Pampilla refinery near Callao, Peru, when anomalous long-period waves from the Hunga Tonga volcanic eruption — over 10,000 km away — disrupted the mooring. The moorings failed during active transfer, releasing ~11,900 barrels into the Pacific. The spill contaminated 700 hectares and 24 beaches, killing hundreds of marine birds and mammals — the largest oil spill in Peru\'s history. No fatalities occurred.',
+      executive_summary: 'On 15 January 2022, tsunami waves from the Hunga Tonga–Hunga Ha\'apai volcanic eruption reached Peru\'s coast while the tanker Mare Doricum was offloading crude at Repsol\'s La Pampilla multi-buoy terminal near Callao. The anomalous long-period waves — generated over 10,000 km away — parted the mooring and ruptured the transfer hose, releasing approximately 11,900 barrels of crude oil. The spill contaminated 700 hectares, 24 beaches, and two protected areas, becoming the largest oil spill in Peru\'s history. No fatalities occurred; Repsol paid over US$37 million in fines.',
+      what_happened: 'On 15 January 2022, the Italian-flagged crude tanker Mare Doricum was offloading its cargo at Multi-buoy Terminal No. 2 of Repsol\'s La Pampilla refinery at Ventanilla, Callao, Peru. That morning, the submarine volcano Hunga Tonga–Hunga Ha\'apai in the South Pacific — over 10,000 km away — erupted in one of the most powerful volcanic explosions recorded in the 21st century, generating a meteo-tsunami that propagated across the Pacific Ocean.\n\nAt La Pampilla the tsunami arrived as anomalous long-period waves. The Callao tide gauge recorded approximately 0.68 m, but the offshore multi-buoy terminal experienced higher local forcing from the long-wave energy. The unusual swell destabilised the Mare Doricum\'s mooring during active hose transfer. The moorings parted and the transfer hose failed, releasing crude oil directly into Callao Bay.\n\nApproximately 11,900 barrels of crude oil spilled, forming a slick that spread across 700 hectares of coastal water and washed onto 24 beaches and two protected natural areas. Hundreds of seabirds and marine mammals were killed. Peruvian authorities declared an ecological disaster — the largest oil spill in the country\'s history. Repsol initially attributed the event to the "abnormal waves" but faced regulatory and legal criticism for not having suspended operations on receipt of NOAA Pacific tsunami advisories. The company ultimately paid over US$37 million in administrative and judicial fines.',
+      what_went_wrong: [
+        'Transfer operations continued despite an active NOAA Pacific tsunami advisory following the Tonga eruption — no procedure existed to suspend offshore loading on receipt of a far-field tsunami warning.',
+        'Long-period tsunami waves are not captured in standard metocean operational envelopes for mooring and transfer — the terminal\'s mooring design criteria addressed wind-sea and swell but not resonant long-wave forcing.',
+        'Natech risk (natural hazard triggering a technological accident) was not identified or mitigated for this facility — hazardous-fluid transfer at a Pacific-coast terminal in a seismically active zone requires explicit tsunami response protocols.',
+        'Regulatory and operational frameworks for offshore terminals in tsunami-exposed regions lacked specific guidance on operational suspension thresholds for distant-source wave events.'
+      ],
+      lessons_learned: [
+        'Far-field tsunami advisories (PTWC / NOAA) must be integrated into operational decision-making at offshore and coastal terminals — a defined protocol for suspending hazardous-material transfer on advisory receipt is essential in Pacific basin operations.',
+        'Metocean design criteria and operational envelopes must explicitly address long-period wave energy from distant volcanic or seismic sources, particularly for facilities on Pacific or Indian Ocean coasts.',
+        'Natech risk must be formally identified in safety cases for offshore terminals in seismically and volcanically active regions — the combination of normal operations and an external natural trigger can produce catastrophic consequences.',
+        'Regulatory oversight of real-time hazard monitoring and operational response at major offshore terminals needs strengthening in tsunami-hazard zones.'
+      ],
+      actions: [
+        'Peruvian environmental regulator (OEFA) imposed administrative fines totalling ~64.8 million soles (~US$17.9M); additional judicial fines of ~69.6 million soles (~US$19.2M) were issued — all paid by Repsol.',
+        'Repsol established a Social Action Plan for affected coastal fishing communities and funded a multi-year environmental remediation programme.',
+        'NOAA and academic researchers (Natural Hazards and Earth System Sciences, 2024) published case studies on volcano-tsunami effects on moored vessels, providing recommendations for improved operational protocols at Pacific-coast offshore terminals.',
+        'The incident prompted wider industry review of Natech risk management frameworks for offshore and coastal hydrocarbon facilities in tsunami-prone regions.'
+      ],
+      metocean: {
+        wave_height_hs: '~0.68 m at Callao tide gauge; long-period tsunami waves at offshore terminal likely higher',
+        notes: 'The hazard was not conventional wind-generated swell. Long-period (wave periods >10 min) tsunami waves from the Hunga Tonga eruption propagated >10,000 km across the Pacific. The local sea state appeared calm to observers while anomalous wave energy imposed large mooring forces. Standard metocean criteria do not capture far-field volcanic tsunami forcing.'
+      },
+      references: [
+        { title: 'Volcanos, Tsunami, La Pampilla Refinery & the Tanker Mare Doricum — Peru 2022', url: 'https://spillcontrol.org/2023/07/24/volcanos-tsunami-la-pampilla-refinery-the-tanker-mare-doricum-peru-2022/', type: 'Technical analysis', publisher: 'SpillControl', year: 2023 },
+        { title: 'Oil Spill near Lima, Peru — NOAA Significant Incidents', url: 'https://response.restoration.noaa.gov/oil-and-chemical-spills/significant-incidents/oil-spill-near-lima-peru', type: 'Official incident record', publisher: 'NOAA Office of Response and Restoration', year: 2022 },
+        { title: 'Volcano tsunamis and their effects on moored vessel safety: the 2022 Tonga event', url: 'https://nhess.copernicus.org/articles/24/3095/2024/', type: 'Peer-reviewed paper', publisher: 'Natural Hazards and Earth System Sciences (Copernicus / EGU)', year: 2024 }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       42. FPSO P-70 Mooring Breakaway — 2020
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'fpso-p70-2020',
+      name: 'FPSO P-70 Mooring Breakaway',
+      year: 2020,
+      date: '30 January 2020',
+      location: 'Guanabara Bay, Rio de Janeiro, Brazil',
+      lat: -22.85,
+      lng: -43.10,
+      region: 'South America',
+      platform_type: 'FPSO (P-70, commissioning phase)',
+      operator: 'Petrobras',
+      weather_event_type: 'storm',
+      weather_event: 'Unexpected strong winds — Guanabara Bay squall during incomplete mooring installation',
+      fatalities: 0,
+      persons_on_board: null,
+      survivors: null,
+      severity_override: 'notable',
+      infrastructure_impact: 'Two mooring lines parted; FPSO drifted ~100 m toward Niterói shoreline before tugs recovered control — no damage',
+      summary: 'On 30 January 2020, FPSO P-70 was undergoing final commissioning in Guanabara Bay, Rio de Janeiro, freshly delivered from a Chinese shipyard, when unexpected strong winds struck while only three of four mooring lines had been connected. Two lines parted and the vessel drifted approximately 100 metres toward the Niterói shoreline before port tugs recovered control. No casualties or environmental damage occurred. The incident illustrates the heightened vulnerability of floating units during phased mooring installation.',
+      executive_summary: 'On 30 January 2020, FPSO P-70 — fresh from delivery in Guanabara Bay ahead of its Atapu pre-salt deployment — had only three of four mooring lines connected when unexpected strong winds struck. Two lines parted and the vessel drifted ~100 m toward the Niterói shoreline before tugs regained control. No casualties or damage occurred, but the event highlighted that a partially-moored FPSO in a confined bay with no propulsion is highly vulnerable to conditions well within a normal weather envelope.',
+      what_happened: 'Petrobras FPSO P-70 was delivered to Brazil from a Chinese shipyard and arrived at Guanabara Bay, Rio de Janeiro, in late January 2020 for final commissioning before proceeding to the Atapu pre-salt field in the Santos Basin. On the morning of 30 January 2020, the vessel was successfully offloaded from the semi-submersible heavy-lift vessel Boka Vanguard. Mooring operations then commenced in the sheltered but confined waters of the bay.\n\nDuring the afternoon, with only three of the four planned mooring lines connected, unexpected strong winds struck Guanabara Bay. Under the asymmetric wind loading, two of the three connected mooring lines parted. Without adequate mooring restraint and with no operational propulsion during the commissioning phase, the vessel drifted approximately 100 metres toward the Niterói shoreline. Port tugs engaged and brought the vessel under control before it could contact the shore.\n\nPetrobras reported no casualties and no damage to the vessel or environment. The P-70 was re-moored in the bay, completed commissioning, received the necessary regulatory authorisations, and proceeded to the Atapu field where it entered production later in 2020.',
+      what_went_wrong: [
+        'Mooring operations were progressed with an incomplete system — only 3 of 4 mooring lines were connected when weather conditions deteriorated.',
+        'No defined operational weather limit was in place for the partially-moored state — the vessel was managed against the final fully-moored design envelope, which does not apply to an incomplete installation.',
+        'Guanabara Bay is a semi-enclosed body of water where localised wind events can develop rapidly and are not reliably captured by regional forecasts; the mooring campaign did not account for this local meteorological characteristic.'
+      ],
+      lessons_learned: [
+        'Phased mooring installation is a high-risk lifecycle state — operational weather limits must be specifically defined for the partially-moored condition, not just for the final design mooring.',
+        'Semi-enclosed or confined water bodies can experience rapid, localised wind intensification not captured by regional or offshore forecasts — operations in such environments require dedicated local monitoring.',
+        'Tug contingency must be pre-positioned before mooring operations begin; reactive deployment after a line failure in deteriorating conditions is less effective than proactive standby assignment.'
+      ],
+      actions: [
+        'P-70 was successfully re-moored in Guanabara Bay and completed commissioning without further incident; the vessel began production at the Atapu field in 2020.',
+        'No formal public investigation report was published for this event; internal Petrobras operational review assumed.'
+      ],
+      metocean: {
+        wind_speed: 'Unexpected strong winds — specific speed not publicly reported',
+        notes: 'Guanabara Bay is a semi-enclosed bay on the Atlantic coast of Rio de Janeiro state. Localised squall activity can produce rapid wind acceleration. No official metocean data published for this event.'
+      },
+      references: [
+        { title: 'Petrobras P-70 floater breaks moorings in Brazil storm', url: 'https://www.upstreamonline.com/field-development/petrobras-p-70-floater-breaks-moorings-in-brazil-storm/2-1-748085', type: 'News report', publisher: 'Upstream Online', year: 2020 },
+        { title: 'FPSO P-70 Stable After Storm Pushes it Near Coast', url: 'https://www.oedigital.com/news/475240-fpso-p-70-stable-after-storm-pushes-it-near-coast', type: 'News report', publisher: 'OE Digital', year: 2020 }
+      ]
+    }
+
   ] /* end incidents array */
 }; /* end INCIDENTS_DATA */
