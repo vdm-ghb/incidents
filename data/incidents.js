@@ -2252,5 +2252,68 @@ window.INCIDENTS_DATA = {
       ]
     }
 
+    /* ──────────────────────────────────────────────────
+       43. Caspian Sea Level Decline — 2006 to present
+    ─────────────────────────────────────────────────── */
+    ,{
+      id: 'caspian-sea-level-decline',
+      name: 'Caspian Sea Level Decline',
+      year: 2006,
+      date: 'Ongoing — 2006 to present',
+      location: 'Caspian Sea — Kazakhstan, Azerbaijan, Russia, Turkmenistan, Iran sectors',
+      lat: 41.5,
+      lng: 51.5,
+      region: 'Caspian Sea',
+      platform_type: 'Multiple — fixed platforms, SPM terminals, subsea pipelines, port facilities',
+      operator: 'KazMunayGas, LUKOIL, bp (ACG), TotalEnergies, Eni, Shell (Kashagan)',
+      weather_event_type: 'climate',
+      weather_event: 'Accelerating sea-level decline driven by increased evaporation and reduced river inflow under climate warming — 20–30 cm/year since 2020',
+      fatalities: 0,
+      persons_on_board: null,
+      survivors: null,
+      severity_override: 'major',
+      infrastructure_impact: '$6.4 bn emergency dredging programme (LUKOIL/KazMunayGas, 2025); port capacity reduced; subsea pipelines exposed; vessel access to northern shelf critically impaired',
+      summary: 'The Caspian Sea has fallen more than 2 metres since 2006 and is declining at 20–30 cm/year — the fastest documented climate-driven sea-level change affecting active offshore oil and gas production. Fixed platforms, subsea pipelines, mooring systems, and port facilities across five countries were designed for environmental conditions that no longer exist. A $6.4 billion dredging project announced in 2025 to maintain vessel access to northern shelf wells is the clearest measure of the cost of designing offshore structures without accounting for long-term climate variability.',
+      executive_summary: 'The Caspian Sea has fallen more than 2 metres since 2006 at a rate of 20–30 cm/year — an order of magnitude faster than global mean sea-level rise. Fixed platforms, subsea pipelines, mooring terminals, and port facilities across five national sectors were designed for water depths that no longer exist. In July 2025, LUKOIL and KazMunayGas announced a $6.4 billion dredging programme to keep vessel channels open to operating wells — the cost of not having built climate variability into structural design. Projections indicate a further 5–10 m decline by 2100 under moderate warming.',
+      what_happened: 'The Caspian Sea — the world\'s largest landlocked water body — reached a modern high of approximately –26.5 m (Baltic Datum) around 1995. A sustained and accelerating decline began around 2005–2006, driven primarily by increased evaporation under rising temperatures and reduced freshwater inflow from the Volga and other rivers. The decline is not cyclical; it is a climate-forced trend.\n\nBy 2025 the sea stood at –29.23 m — the lowest level in the full instrumental measurement record — having fallen more than 2 metres in under 20 years. The current rate of decline is 20–30 cm/year, roughly 20 times the global mean rate of sea-level rise. Kazakhstan\'s government projects the level to reach –32.4 m by 2050. Peer-reviewed CMIP6 modelling (Nature Communications Earth & Environment, 2023 and 2025) projects a further 5–10 m fall by 2100 under moderate warming scenarios (<2°C) and up to 21 m under high-emissions pathways — an area larger than Iceland exposed as dry seabed.\n\nThe northern Caspian — the shallowest sector, where depths over much of the shelf are already only 3–5 m — is the zone of most acute operational impact. LUKOIL\'s Vladimir Filanovsky field and KazMunayGas\'s northern shelf assets, designed and installed in the 1990s and 2000s for conditions that assumed a broadly stable water level, now face vessel access depths at or below the operating draft of standard supply vessels. Azerbaijan\'s Dubendi oil terminal required more than 250,000 m³ of emergency dredging in 2024 to maintain tanker access. Aktau port (Kazakhstan) has seen loading capacity for tankers reduced by approximately 10%. Iran\'s Anzali port is now stranded more than 1 km from the current shoreline.\n\nIn July 2025, LUKOIL and KazMunayGas jointly announced a $6.4 billion dredging programme — the largest single infrastructure response to the problem to date — to maintain navigable channels to offshore wells. Without it, operators stated, production from existing fields would be interrupted and new development plans halted. In April 2026, Azerbaijan and Kazakhstan formalised a joint dredging venture, commissioning a dedicated vessel capable of working to 18 m depth in anticipation of conditions worsening further.',
+      what_went_wrong: [
+        'Offshore structures across the Caspian were designed using static water-depth assumptions derived from historical records. No sensitivity analysis was conducted on the effect of long-term sea-level change on structural loading, splash-zone position, pipeline burial, or mooring geometry over the asset\'s design life.',
+        'Design codes (ISO 19902, API RP 2A, DNV standards) do not require designers to assess sea-level change — rise or fall — as an environmental input. Water depth is treated as a fixed design parameter, not a variable with a climate-driven trend.',
+        'Metocean studies used to establish design criteria are hindcast-based and backward-looking. In a basin where the physical environment is trending strongly in one direction, a hindcast-only basis defines conditions for a sea level that will not exist through much of the asset\'s operating life.',
+        'The design life of offshore structures (25–30 years) and the horizon of credible climate projections are the same timescale. They were not addressed together at the design stage for any known Caspian project.',
+        'No major operator with Caspian exposure (bp, Shell, TotalEnergies, Eni, KazMunayGas) has published explicit sea-level decline risk disclosures in TCFD-aligned climate reporting, suggesting the risk remains insufficiently integrated into corporate risk management as well as project design.'
+      ],
+      lessons_learned: [
+        'Climate sensitivity analysis should be a standard design deliverable for any offshore structure: water depth (or flood level at coastal facilities) must be assessed across a range of climate scenarios spanning the full design life, not held constant at the historical mean.',
+        'Splash-zone position, cathodic protection placement, coating specification, and inspection intervals are all functions of mean water level. Where sea-level change is a credible hazard — in either direction — integrity management programmes must incorporate periodic reassessment against updated projections rather than fixing these parameters at the as-built condition.',
+        'Pipeline burial depth, mooring catenary geometry, riser touch-down points, and foundation scour protection are all sensitive to water depth. A structured sensitivity analysis across a ±2–5 m water-depth range should be part of the design basis for long-life assets in climate-sensitive basins.',
+        'The operational impact arrives before sea level reaches a design limit. Vessel access, supply chain logistics, and port throughput degrade progressively as depth decreases — well before any structural threshold is breached. Operational continuity planning must account for this intermediate regime.',
+        'The Caspian is an extreme case but not a unique principle. Arctic basins face changing ice-loading and extended open-water wave exposure; low-lying coastal terminals face rising storm-surge baselines; tropical offshore regions may face intensifying cyclone design criteria. In each case, the climate projection horizon and the asset design life are the same timescale and must be addressed together.',
+        'The Aral Sea — now almost entirely desiccated — demonstrates the endpoint of the same process. The Caspian is not tracking toward that outcome on a geological timescale; it is tracking toward it on an engineering timescale.'
+      ],
+      actions: [
+        'LUKOIL and KazMunayGas announced a $6.4 billion joint dredging programme in July 2025 to maintain vessel access channels to northern Caspian offshore wells — the most direct industry response to date.',
+        'Azerbaijan and Kazakhstan formalised a joint dredging venture in April 2026 and commissioned the vessel Engineer Soltan Kazimov (capable of dredging to 18 m depth) at Baku Shipyard.',
+        'Azerbaijan\'s Dubendi oil terminal completed over 250,000 m³ of emergency dredging in 2024; Baku port commenced additional dredging to accommodate vessels with drafts above 4 m.',
+        'Kazakhstan\'s government published formal 2050 sea-level projection scenarios (March 2026) — the first official acknowledgment that adaptation is a national infrastructure planning requirement, not a future consideration.',
+        'The UNEP Tehran Convention Protocol on Environmental Impact Assessment (entered into force November 2025) now requires transboundary EIA for major new oil and gas infrastructure in the Caspian, creating a regulatory framework that should incorporate sea-level decline projections.',
+        'No major international operator has yet updated structural design standards or TCFD climate-risk disclosures to explicitly account for Caspian sea-level decline, representing a gap in both engineering practice and corporate risk governance.'
+      ],
+      metocean: {
+        wave_height_hs: 'Not the primary hazard — wave climate unchanged in deeper southern sectors; northern shelf wave exposure changes as fetch geometry alters with retreating shoreline',
+        notes: 'The primary physical driver is thermodynamic: increased evaporation (surface temperature rise) combined with reduced Volga discharge. Current rate of decline: 20–30 cm/year. Level in 2025: –29.23 m (Baltic Datum). Projected level 2050: –32.4 m (Kazakhstan government scenario). Projected level 2100: –31.5 to –47.5 m (CMIP6, <2°C to SSP5-8.5). The northern shelf (<5 m current depth) is at acute near-term risk of becoming inaccessible to supply vessels.'
+      },
+      references: [
+        { title: 'Rapid decline of Caspian Sea level threatens ecosystem integrity, biodiversity protection, and human infrastructure', url: 'https://www.nature.com/articles/s43247-025-02212-5', type: 'Peer-reviewed paper', publisher: 'Communications Earth & Environment (Nature)', year: 2025 },
+        { title: 'Climate-driven 21st century Caspian Sea level decline estimated from CMIP6 projections', url: 'https://www.nature.com/articles/s43247-023-01017-8', type: 'Peer-reviewed paper', publisher: 'Communications Earth & Environment (Nature)', year: 2023 },
+        { title: 'Russia and Kazakhstan Launch $6.4 Billion Dredging Project to Save Northern Caspian Offshore Oil Industry', url: 'https://en.seanews.ir/2025/07/28/russia-and-kazakhstan-launch-6-4-billion-dredging-project-to-save-northern-caspian-offshore-oil-industry/', type: 'News report', publisher: 'Seanews', year: 2025 },
+        { title: 'Kazakhstan Reports Caspian Sea Level Decline, Outlines 2050 Scenarios', url: 'https://astanatimes.com/2026/03/kazakhstan-reports-caspian-sea-level-decline-outlines-2050-scenarios/', type: 'Government / news', publisher: 'The Astana Times', year: 2026 },
+        { title: 'Azerbaijan Sounds Alarm Over Shallowing of Caspian Sea', url: 'https://www.insurancejournal.com/news/international/2025/08/26/836954.htm', type: 'News report', publisher: 'Insurance Journal', year: 2025 },
+        { title: 'Caspian Sea Decline Harms Iran and Raises Regional Tensions', url: 'https://www.stimson.org/2025/caspian-sea-decline-harms-iran-and-raises-regional-tensions/', type: 'Policy analysis', publisher: 'Stimson Center', year: 2025 },
+        { title: 'EIA Caspian Sea Regional Analysis Brief', url: 'https://www.eia.gov/international/content/analysis/regions_of_interest/Caspian_Sea/pdf/Caspian%20Sea%20Regional%20Analysis%20Brief%202025.pdf', type: 'Official report', publisher: 'U.S. Energy Information Administration', year: 2025 },
+        { title: 'Climate Change Impacts on Coastal and Offshore Petroleum Infrastructure and the Associated Oil Spill Risk', url: 'https://www.mdpi.com/2077-1312/10/7/849', type: 'Peer-reviewed paper', publisher: 'MDPI Journal of Marine Science and Engineering', year: 2022 }
+      ]
+    }
+
   ] /* end incidents array */
 }; /* end INCIDENTS_DATA */

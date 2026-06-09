@@ -32,8 +32,8 @@
     return 'Near-miss / 0 fatalities';
   }
 
-  var EVENT_TYPE_LABELS = { hurricane:'Hurricane / Typhoon', storm:'Severe Storm', internal_wave:'Internal Wave / Soliton', helicopter:'Helicopter', maintenance:'Maintenance / Equipment', tsunami:'Tsunami / Meteo-tsunami' };
-  var EVENT_TYPE_LETTERS = { hurricane:'H', storm:'S', internal_wave:'W', helicopter:'🚁', maintenance:'M', tsunami:'T' };
+  var EVENT_TYPE_LABELS = { hurricane:'Hurricane / Typhoon', storm:'Severe Storm', internal_wave:'Internal Wave / Soliton', helicopter:'Helicopter', maintenance:'Maintenance / Equipment', tsunami:'Tsunami / Meteo-tsunami', climate:'Climate Change / Long-term Variability' };
+  var EVENT_TYPE_LETTERS = { hurricane:'H', storm:'S', internal_wave:'W', helicopter:'🚁', maintenance:'M', tsunami:'T', climate:'C' };
 
   /* Region bounding boxes [SW, NE] */
   var REGION_BOUNDS = {
