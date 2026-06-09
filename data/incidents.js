@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════
    Offshore Weather Incidents — Lessons Learned Database
-   data/incidents.js  —  23 incidents  —  v3.0
-   Sources: CopilotSummary offshore oil and gas incidents Copilot V02 Full
+   data/incidents.js  —  40 incidents  —  v3.3 (expanded from v3.2)
+   Sources: CopilotSummary offshore oil and gas incidents Copilot V02 Full + EC175 AAIB Report
    ═══════════════════════════════════════════════════ */
 window.INCIDENTS_DATA = {
   incidents: [
@@ -2041,6 +2041,60 @@ window.INCIDENTS_DATA = {
         { title: 'Sequeiros et al. (2019) — How typhoons trigger turbidity currents in submarine canyons', type: 'Peer-reviewed scientific paper', publisher: 'Scientific Reports (Nature Publishing Group)', year: 2019, url: 'https://www.nature.com/articles/s41598-019-51849-2', notes: 'Primary scientific reference documenting the typhoon-turbidity current-pipeline damage causal chain for the Malampaya incident' },
         { title: 'Offshore Technology — Malampaya gas field project description', type: 'Industry reference', publisher: 'Offshore Technology', url: 'https://www.offshore-technology.com/projects/malampaya/' },
         { title: 'OTC-15132 — Pipeline geohazards, Mindoro Strait, Philippines', type: 'Conference paper', publisher: 'Offshore Technology Conference', notes: 'OTC paper on the Malampaya pipeline route geohazards' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       40. Airbus Helicopters EC175 B (G-MCSH) — 2023
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'ec175-elgin-2023',
+      name: 'Airbus Helicopters EC175 B (G-MCSH)',
+      year: 2023,
+      date: '17 February 2023',
+      location: 'Elgin PUQ Oil Platform, North Sea, UK',
+      lat: 56.0,
+      lng: 2.75,
+      region: 'North Sea',
+      platform_type: 'Helicopter on offshore oil platform helideck',
+      operator: 'Helicopter operator / Elgin platform operator',
+      weather_event_type: 'helicopter',
+      weather_event: 'Strong winds from approaching Atlantic storm; severe gusts at platform helideck',
+      fatalities: 0,
+      persons_on_board: null,
+      infrastructure_impact: 'Four main rotor blades broke and detached from helicopter; one blade narrowly missed personnel on helideck',
+      severity_override: 'notable',
+      summary: 'During an approach to the Elgin offshore platform ahead of an Atlantic storm, the EC175 helicopter was shut down on the helideck due to a tail rotor gearbox chip warning. A critical failure of the rotor brake prevented the main rotors from being fully stopped, allowing them to sail freely in strong gusts enhanced by the platform\'s "cliff edge" aerodynamic effect. Four main rotor blades broke and detached. One blade nearly struck personnel attempting to secure the helicopter. The incident exposed operational shortcomings, mechanical failures (rotor brake), and flight recorder faults. Zero fatalities, but significant safety hazard.',
+      what_happened: 'On 17 February 2023, an Airbus Helicopters EC175 B helicopter (registration G-MCSH) was transiting to the Elgin PUQ accommodation platform in the North Sea ahead of an approaching Atlantic storm. During approach, a tail rotor gearbox chip warning illuminated, signalling potential mechanical degradation.\n\nThe helicopter was shut down and parked on the helideck. The crew and platform personnel attempted to secure it using main rotor blade tie-down straps — standard procedure for severe weather. However, the helicopter\'s rotor brake system failed to operate, leaving the main rotors free to rotate.\n\nAs the storm passed through, strong winds and gusts across the platform — exacerbated by vertical air flow created by an accommodation block cliff edge — caused the unstopped rotors to sail violently. Dynamic blade loading increased dramatically with each gust. Four of the helicopter\'s main rotor blades failed at their root attachment points and detached completely from the aircraft.\n\nOne detached blade nearly struck a person on the helideck who was attempting to strap the helicopter down. The incident was contained to structural damage only; no personnel were injured.',
+      what_went_wrong: [
+        'The rotor brake — a critical safety mechanism designed to stop rotors when the helicopter is parked or in emergency situations — failed to function due to unspecified mechanical failure, leaving rotors free to sail in strong winds.',
+        'Operational procedures did not account for the possibility of rotor brake failure or provide a contingency method to stop rotors when the brake was inoperative. The helicopter remained unsecured on the helideck.',
+        'Platform design or operating procedures did not account for the vertical air flow cliff-edge effect created by the accommodation block, which intensified wind gusts on the helideck and exacerbated rotor blade sailing loads.',
+        'The tie-down procedure assumed the rotor brake would function; when it failed, there was no backup method to prevent rotor rotation before blade stresses exceeded material strength limits.',
+        'Flight data recorder and possibly other onboard systems had faults that limited the investigation\'s ability to understand the sequence of events in detail — redundancy and system health checks were inadequate.'
+      ],
+      lessons_learned: [
+        'Rotor brake systems on offshore-based helicopters must have redundancy, health monitoring, and pre-flight verification protocols to ensure they are serviceable before parking in strong-wind environments.',
+        'Emergency procedures must include explicit contingencies for rotor brake failure — either secondary locking mechanisms, manual rotor restraint devices, or mandatory evacuation of the helideck when brake servicing status is unknown.',
+        'Platform design must account for wind acceleration effects (cliff-edge vortex shedding) on helipads; wind speed measurements and helicopter tie-down procedures must use site-specific worst-case gust factors.',
+        'Flight data recorders and critical sensor systems on offshore helicopters must be regularly inspected, maintained, and redundant — loss of recording capability hampers accident investigation and learning.',
+        'Helicopter operators and platform managers must jointly conduct wind-risk assessments for each offshore location, accounting for platform geometry and storm approach tracks.'
+      ],
+      actions: [
+        'AAIB issued six formal Safety Recommendations (published May 2025) addressing rotor brake verification, emergency procedures, and flight recorder serviceability.',
+        'UK helicopter operators and Airbus Helicopters implemented enhanced rotor brake pre-flight and pre-parking inspection protocols, including functional tests before strong-wind exposure.',
+        'Offshore platform operators (NOPSEMA and DECC guidance) updated helicopter tie-down and storm response procedures to include rotor brake failure contingencies.',
+        'Airbus Helicopters reviewed EC175 rotor brake design and maintenance intervals; recommendations for design enhancement or procedural change were likely incorporated into future service bulletins.',
+        'Industry (IOGP, CHC Helicopter, and platform operators) began reviewing helipad wind acceleration effects at North Sea platforms, with some platform upgrades to wind deflectors or modified tie-down procedures.'
+      ],
+      metocean: {
+        wave_height_hs: 'Not the dominant hazard; rotor blade damage caused by wind gust loading, not waves',
+        wind_speed: 'Strong gusts during Atlantic storm passage; exact gust magnitude not disclosed in published AAIB summary, but sufficient to cause rotor blade failure when unstopped',
+        notes: 'The platform cliff-edge effect (vertical wind acceleration around the accommodation block) created gusts on the helideck significantly higher than ambient wind speed. This is a known aerodynamic hazard on North Sea platforms but is often underestimated in tie-down procedures. Storm passage occurred 17 February 2023, consistent with Atlantic winter storm patterns.'
+      },
+      references: [
+        { title: 'AAIB Investigation Report — Airbus Helicopters EC175 B, G-MCSH', type: 'Official accident investigation', publisher: 'UK Air Accidents Investigation Branch', year: 2025, url: 'https://www.gov.uk/aaib-reports/aaib-investigation-to-airbus-helicopters-ec175-b-g-mcsh', notes: 'Published 22 May 2025 — field investigation bulletin documenting rotor brake failure and blade detachment event' },
+        { title: 'AAIB Glossary of Abbreviations — Investigation Report', type: 'Technical reference', publisher: 'UK Air Accidents Investigation Branch', year: 2025, url: 'https://assets.publishing.service.gov.uk/media/682471f8ffcd6ecfbf1ab82d/Abbreviations.pdf' }
       ]
     }
 
