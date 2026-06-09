@@ -3,8 +3,8 @@
    Main stylesheet v3.2 — screen + print
    ═══════════════════════════════════════════════════ */
 :root {
-  --bg:#0d1117; --surface:#161b22; --surface2:#21262d; --border:#30363d;
-  --text:#e6edf3; --text-muted:#8b949e; --accent:#58a6ff;
+  --bg:#111827; --surface:#1a2438; --surface2:#223050; --border:#324868;
+  --text:#dce8f5; --text-muted:#7a9ab8; --accent:#60aeff;
   --critical:#da3633; --major:#f0883e; --notable:#d29922; --info:#3fb950;
   --header-h:62px;
 }
@@ -73,7 +73,7 @@ a{color:var(--accent);}
 .tooltip-summary{font-size:11.5px;line-height:1.6;color:var(--text);margin-top:8px;padding:7px 10px;background:rgba(255,255,255,.05);border-radius:6px;white-space:normal;word-wrap:break-word;}
 
 /* Modal */
-#modal-overlay{position:fixed;inset:0;background:rgba(13,17,23,.45);backdrop-filter:blur(3px);z-index:1000;display:flex;align-items:flex-start;justify-content:flex-end;padding:12px;}
+#modal-overlay{position:fixed;inset:0;background:rgba(17,24,39,.4);backdrop-filter:blur(3px);z-index:1000;display:flex;align-items:flex-start;justify-content:flex-end;padding:12px;}
 #modal-overlay.hidden{display:none;}
 #modal-container{width:570px;max-width:100%;height:calc(100vh - 24px);background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.65);}
 #modal-toolbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);flex-shrink:0;}
@@ -127,7 +127,7 @@ a{color:var(--accent);}
 #modal-content::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
 
 /* Table overlay */
-#table-overlay{position:fixed;inset:0;background:rgba(1,4,9,.82);backdrop-filter:blur(4px);z-index:1100;display:flex;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;}
+#table-overlay{position:fixed;inset:0;background:rgba(17,24,39,.55);backdrop-filter:blur(4px);z-index:1100;display:flex;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;}
 #table-overlay.hidden{display:none;}
 #table-container{width:100%;max-width:1200px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.7);}
 #table-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface2);flex-shrink:0;}
