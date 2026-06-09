@@ -3,8 +3,8 @@
    Main stylesheet v3.2 — screen + print
    ═══════════════════════════════════════════════════ */
 :root {
-  --bg:#111827; --surface:#1a2438; --surface2:#223050; --border:#324868;
-  --text:#dce8f5; --text-muted:#7a9ab8; --accent:#60aeff;
+  --bg:#1a2540; --surface:#22304e; --surface2:#2a3c62; --border:#3d5680;
+  --text:#dceaf8; --text-muted:#90b0cc; --accent:#60aeff;
   --critical:#da3633; --major:#f0883e; --notable:#d29922; --info:#3fb950;
   --header-h:62px;
 }
