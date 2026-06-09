@@ -73,7 +73,7 @@ a{color:var(--accent);}
 .tooltip-summary{font-size:11.5px;line-height:1.6;color:var(--text);margin-top:8px;padding:7px 10px;background:rgba(255,255,255,.05);border-radius:6px;white-space:normal;word-wrap:break-word;}
 
 /* Modal */
-#modal-overlay{position:fixed;inset:0;background:rgba(1,4,9,.75);backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:flex-start;justify-content:flex-end;padding:12px;}
+#modal-overlay{position:fixed;inset:0;background:rgba(13,17,23,.45);backdrop-filter:blur(3px);z-index:1000;display:flex;align-items:flex-start;justify-content:flex-end;padding:12px;}
 #modal-overlay.hidden{display:none;}
 #modal-container{width:570px;max-width:100%;height:calc(100vh - 24px);background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.65);}
 #modal-toolbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);flex-shrink:0;}
