@@ -80,7 +80,6 @@
     activeMarkers={};
     var filtered=allIncidents.filter(function(inc){
       if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
-      if (activeFilters.region!=='all' && inc.region!==activeFilters.region) return false;
       if (activeFilters.severity!=='all' && severityKey(inc)!==activeFilters.severity) return false;
       return true;
     });
