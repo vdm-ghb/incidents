@@ -69,7 +69,8 @@
     var sevClass=severityClass(incident), letter=EVENT_TYPE_LETTERS[incident.weather_event_type]||'?';
     var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+sevClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[12,-10] });
     var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true});
-    marker.bindTooltip('<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(incident.location)+'</div><span class="tooltip-fatal '+sevClass+'">'+esc(fatalityText(incident))+'</span>',{permanent:false,direction:'top',opacity:1});
+    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(incident.location)+'</div><span class="tooltip-fatal '+sevClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'');
+    marker.bindTooltip(ttHTML,{permanent:false,direction:'top',opacity:1});
     marker.on('click',function(){ openModal(incident); });
     return marker;
   }
@@ -162,7 +163,7 @@
       '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',inc.location)+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(survivorsStr?metaItem('Casualties',survivorsStr):'')+
       '</div></div>'+metoceanHTML+infraHTML+
       '<div class="inc-body">'+
-      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.summary)+'</p></div>'+
+      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.executive_summary||inc.summary)+'</p></div>'+
       '<div class="inc-section"><div class="inc-section-title">What Happened</div>'+whatHappenedParas+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">What Went Wrong</div>'+numberedList(inc.what_went_wrong)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">Lessons Learned</div>'+numberedList(inc.lessons_learned)+'</div>'+
