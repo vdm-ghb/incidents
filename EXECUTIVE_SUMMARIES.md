@@ -88,8 +88,8 @@
 
 ---
 
-## 13. AMBER II / SEA WORKER (1978)
-**Current:** In December 1978, the standby support vessel SEA WORKER capsized and sank in a severe North Sea winter storm while maintaining station near the jack-up rig AMBER II approximately 130 km off northeast England. Large breaking waves overcame the small vessel's stability; 5 crew members perished. The jack-up rig, elevated above the wave action, survived the storm undamaged.
+## 13. AMBER II / SEA WORKER (2016)
+**Current:** On 27 January 2016, the towing pennant between AHTS AMBER II and the unmotored jack-up platform SEA WORKER parted in gale conditions (Hs 3.5 m, winds 16 m/s SW) 6 nm off the west Jutland coast, Denmark, while the towage was making for shelter at Horns Rev. SEA WORKER drifted ashore, anchors and emergency towing gear failed to hold, and all 15 crew were evacuated by rescue boat before the platform grounded near Nymindegab and was declared a total loss. No fatalities occurred.
 
 **Your version:**
 

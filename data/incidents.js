@@ -662,53 +662,66 @@ window.INCIDENTS_DATA = {
     },
 
     /* ──────────────────────────────────────────────────
-       13. AMBER II / SEA WORKER — 1978
+       13. AMBER II / SEA WORKER — 2016
     ─────────────────────────────────────────────────── */
     {
-      id: 'amber-sea-worker-1978',
+      id: 'amber-sea-worker-2016',
       name: 'AMBER II / SEA WORKER',
-      year: 1978,
-      date: 'December 1978',
-      location: 'North Sea, UK sector, ~130 km off northeast England',
-      lat: 54.80,
-      lng: 2.20,
+      year: 2016,
+      date: '27 January 2016',
+      location: 'West Jutland coast, Denmark — 6 nm off Nymindegab',
+      lat: 55.85,
+      lng: 7.95,
       region: 'North Sea',
-      platform_type: 'Standby support vessel (SEA WORKER) attending jack-up drilling rig (AMBER II)',
-      operator: 'Undisclosed UK operator',
+      platform_type: 'Self-elevating installation platform (SEA WORKER) under tow by AHTS AMBER II',
+      operator: 'A2SEA (SEA WORKER); Polskie Ratownictwo (AMBER II)',
       weather_event_type: 'storm',
-      weather_event: 'Severe North Sea winter storm — gale-force winds, heavy breaking seas',
-      fatalities: 5,
-      persons_on_board: null,
-      summary: 'During a severe winter storm in December 1978, the standby support vessel SEA WORKER capsized and sank while maintaining station near the jack-up rig AMBER II in the North Sea. Five crew were killed. The jack-up rig itself survived the storm undamaged. The event highlighted the vulnerability of small standby vessels required to remain near offshore installations in extreme weather.',
-      executive_summary: 'In December 1978, the standby support vessel SEA WORKER capsized and sank in a severe North Sea winter storm while maintaining station near the jack-up rig AMBER II approximately 130 km off northeast England. Large breaking waves overcame the small vessel\'s stability; 5 crew members perished. The jack-up rig, elevated above the wave action, survived the storm undamaged.',
-      what_happened: 'In December 1978, a severe North Sea winter storm struck the vicinity of jack-up rig AMBER II, approximately 130 km off northeast England. The standby support vessel SEA WORKER was fulfilling its duty station near the rig — remaining in the area to provide emergency response should a rig evacuation be required.\n\nThe storm\'s wave action overwhelmed the relatively small SEA WORKER. Large waves and dynamic seas caused progressive flooding and stability loss; the vessel capsized in the frigid North Sea. Five crew members perished from drowning or exposure in the cold water. The AMBER II jack-up, being in the elevated position, remained on location safely.\n\nThe contrast between the rig surviving unharmed while its rescue vessel sank underscored a paradox: the safety vessel itself became the victim of the conditions it was stationed to guard against.',
+      weather_event: 'North Sea winter gale — SW winds 16 m/s, Hs 3.5 m, max waves 5–6 m',
+      fatalities: 0,
+      persons_on_board: 15,
+      survivors: 15,
+      severity_override: 'notable',
+      infrastructure_impact: 'SEA WORKER grounded and declared a total loss',
+      summary: 'On 27 January 2016 the towing pennant between AHTS AMBER II and the unmotored jack-up installation platform SEA WORKER parted in North Sea gale conditions 6 nm off the west coast of Jutland, Denmark. SEA WORKER drifted and grounded near Nymindegab; all 15 crew were evacuated safely by rescue boat. The platform was declared a total loss. The DMAIB investigation found the accident resulted from organisational factors: an out-of-project operation with undersized towing gear, no external warranty surveyor, a failed port-of-refuge plan, and emergency towing gear that could not be reconnected.',
+      executive_summary: 'On 27 January 2016, the towing pennant between AHTS AMBER II and the unmotored jack-up platform SEA WORKER parted in gale conditions (Hs 3.5 m, winds 16 m/s SW) 6 nm off the west Jutland coast while the towage was making for shelter at Horns Rev. SEA WORKER drifted ashore, anchors and emergency towing gear failed to hold, and all 15 crew were evacuated by rescue boat before the platform grounded near Nymindegab and was declared a total loss. No fatalities occurred.',
+      what_happened: 'AHTS AMBER II (Maltese flag, 65 t bollard pull, operated by Polskie Ratownictwo) departed Frederikshavn on 24 January 2016 with the unmotored jack-up platform SEA WORKER (A2SEA, Denmark) under tow, bound for Esbjerg — a routine coastal repositioning move planned at 48 hours\' notice as an "out of project" operation, without a charterer or independent warranty surveyor. The towing arrangement lacked a shock-absorbing stretcher and the tug carried no tension meter; the towing pennant had a safe working load of 25 t, though crew believed the bridle limit was 50 t.\n\nAfter rounding the Skaw on the afternoon of 24 January the towage entered open North Sea conditions and immediately lost speed, achieving only 2.5–3.5 knots against head winds and current. By 25 January it was clear the weather window would close before Esbjerg could be reached. The barge master diverted toward Hvide Sande as a port of refuge; a tug was verbally confirmed to assist entry but the agreement was never formalised. When the towage arrived on 26 January the tug had been reassigned, and both pilots consulted independently refused to lead the towage into the port under forecast conditions of 22 m/s winds and 3 m waves. The towage aborted the approach and turned south for Horns Rev, leaving the platform only 6 nm from the shoreline.\n\nDuring the evening of 26 January weather continued to worsen. Waves broke over the bow, tearing life-saving equipment from the deck. At 0030 on 27 January the towing pennant parted due to overload — tug and platform were being pulled in opposite directions across steep near-shore waves, tightening the wire beyond its breaking point at the aluminium clamp. The emergency towing buoy fouled alongside SEA WORKER and could not be recovered by AMBER II. The stern anchor slowed but could not stop the 3-knot drift toward shore. All 15 crew donned immersion suits and were evacuated by the rescue boat EMILIE ROBIN before SEA WORKER grounded near Nymindegab. The platform was subsequently declared a total loss.',
       what_went_wrong: [
-        'The SEA WORKER was required to remain within close proximity of the rig in weather conditions that exceeded its seakeeping limits — a policy that prioritised rescue readiness over the rescue vessel\'s own safety.',
-        'Operational limits for standby vessel positioning in severe weather were inadequate or not enforced — no defined sea-state at which the vessel should seek shelter.',
-        'Small, non-specialised vessels were used as standby ships in the early North Sea — they lacked the stability and seakeeping for prolonged station-keeping in winter conditions.',
-        'Emergency planning had not adequately considered the scenario of the standby vessel itself being incapacitated in the conditions it was posted to cover.'
+        'Towing arrangement undersized for the route — the 65 t bollard pull tug with a pennant SWL of 25 t was insufficient to maintain speed against head winds and current; the pennant fractured at its weakest point (aluminium clamp) from overload.',
+        'No shock-absorbing stretcher was fitted — not procured due to time pressure; its absence increased dynamic shock loads on the wire in short-period near-shore waves.',
+        'No tension meter on AMBER II — wire load was estimated by limiting engine power to 75%, with no direct measurement as conditions worsened.',
+        'Operational weather limit for SEA WORKER (2.0 m Hs per trading permit) was not known to the crew — the permit was filed as certification documentation and never consulted during voyage planning.',
+        '"Out of project" operation bypassed normal safeguards — no charterer set operational criteria, no independent warranty surveyor, and the barge master inspected the tug himself.',
+        'Port of refuge plan collapsed — the oral agreement for tug assistance at Hvide Sande was never confirmed in writing; the tug was reassigned, and both pilots declined to take the towage in under forecast conditions.',
+        'Emergency towing gear was stowed rather than streamed at departure — when needed, the buoy fouled alongside the platform and AMBER II could not reconnect.',
+        'Organisational fragmentation: knowledge of operational limits and authority over key decisions was dispersed between the barge master, assistant project manager, and COO, delaying recognition of the emergency.'
       ],
       lessons_learned: [
-        'Standby/emergency response vessels must have defined maximum sea-state operational limits — above which they must seek a safe distance or shelter rather than maintain close station.',
-        'Emergency response vessels for offshore platforms must be adequately designed for the worst expected metocean conditions at the specific location.',
-        'Alternative rescue provisions must exist when weather prevents standby vessels from maintaining close station.',
-        'The paradox of rescue assets themselves becoming casualties must be explicitly addressed in offshore safety cases.'
+        'Bollard pull and towing arrangements must be calculated for the actual route and seasonal weather, not minimum criteria — North Sea winter coastal tows can demand far more than "short coastal tow" design assumptions.',
+        'A shock-absorbing element (stretcher or spring buoy) is essential in the towing arrangement — dynamic overload in wave-induced tug/barge relative motion regularly exceeds static bollard pull.',
+        'Tension meters on the tug are essential for dynamic towing — engine power limits do not accurately reflect wire loads in variable weather.',
+        'Operational weather criteria must appear in on-board documentation in a form the crew can use during voyage planning, not only in administrative permits or design annexes.',
+        '"Out of project" and "in project" operations carry identical risks and must be held to the same standard — routine repositioning moves of non-propelled platforms require external warranty surveyor oversight.',
+        'Port-of-refuge contingency plans must be fully confirmed — including tug availability, pilotage, and draught constraints — before the towage passes its point of no return.',
+        'Emergency towing gear must be streamed (deployed astern) at departure, not stowed — under adverse weather it cannot reliably be deployed after the tow parts.',
+        'Immersion suit design must allow deck work in extreme conditions; lifeboat and life-raft release handles must be colour-coded and distinguishable in darkness.'
       ],
       actions: [
-        'UK offshore safety reviews of the late 1970s and 1980s recommended formal weather-operability envelopes for all standby craft.',
-        'North Sea standby vessel standards upgraded — vessel size, stability, and seakeeping requirements formalised.',
-        'Emergency response plans required to address scenarios where standby vessels are unavailable due to extreme weather — including provisions for secondary rescue means.',
-        'UK Dept of Energy (forerunner to HSE Offshore Division) issued guidance on weather limits for standby vessel operations.'
+        'A2SEA removed the in-project / out-of-project distinction — all marine operations are planned and monitored to the same standard (DMAIB preventive measure #1).',
+        'All weather-restricted operations are now assessed by an external Marine Warranty Surveyor or in-house Marine Superintendent before departure.',
+        'Tug assessment and contracting procedures updated — the master no longer inspects potential tugs; an independent assessor is used.',
+        'Emergency towing arrangements on all vessels re-assessed for adequate size and ease of deployment; emergency towing drills every three months.',
+        'Non-propelled barges towed outside port now require a second safety tug with minimum 75% of the lead tug\'s bollard pull.',
+        'Passage planning updated to require documented weather restrictions and contingency plans, reviewed jointly by Marine Superintendent and Master.',
+        'All vessels fitted with immersion suits with removable mittens; lifeboat and life-raft release wires fitted with launch handles identifiable in darkness.',
+        'DMAIB recommended clearer national regulatory guidance on authority and responsibility between tug masters and barge masters in manned towing operations.'
       ],
       metocean: {
-        wave_height_hs: 'Estimated 5–8 m (severe North Sea winter storm)',
-        wind_speed: 'Gale to storm force (40–55 knots)',
-        sea_temp: '~6–8 °C',
-        notes: 'December North Sea conditions in the central-southern North Sea can include the most severe wave environments in European waters. Short-crested breaking wave conditions in shallow-intermediate water depths are particularly dangerous for small vessels.'
+        wave_height_hs: '3.5 m (max waves 5–6 m)',
+        wind_speed: '16 m/s (~31 knots) from SW',
+        notes: 'SEA WORKER\'s trading permit limited manned tow to Hs ≤ 2.0 m; crew had independently adopted 2.5 m as their operational limit. Near-shore steep short-period waves imposed higher dynamic loads on the towing pennant than open-sea conditions at the same Hs.'
       },
       references: [
-        { title: 'Marine casualty review — AMBER II / SEA WORKER (limited public record)', type: 'Marine casualty report', publisher: 'UK Dept of Energy / Marine survey' },
-        { title: 'Final Report — AMBER II and SEA WORKER (internal reference)', type: 'Internal reference document', publisher: 'Shell / industry' }
+        { title: 'Marine Accident Report: AMBER II and SEA WORKER — Loss of Tow on 27 January 2016', url: 'https://dmaib.com/media/8572/amber-ii-and-sea-worker-loss-of-tow-on-27-january-2016.pdf', type: 'Official accident report', publisher: 'Danish Maritime Accident Investigation Board (DMAIB)', year: 2016 }
       ]
     },
 
