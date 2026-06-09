@@ -77,8 +77,8 @@ a{color:var(--accent);}
 #modal-overlay.hidden{display:none;}
 #modal-container{width:570px;max-width:100%;height:calc(100vh - 24px);background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.65);}
 #modal-toolbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);flex-shrink:0;}
-#modal-print,#modal-close{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;transition:border-color .15s,color .15s;}
-#modal-print:hover{border-color:var(--accent);color:var(--accent);}
+#modal-print,#modal-share,#modal-close{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;transition:border-color .15s,color .15s;}
+#modal-print:hover,#modal-share:hover{border-color:var(--accent);color:var(--accent);}
 #modal-close{width:30px;height:30px;padding:0;display:flex;align-items:center;justify-content:center;font-size:16px;}
 #modal-close:hover{border-color:var(--critical);color:var(--critical);}
 #modal-content{overflow-y:auto;flex:1;}

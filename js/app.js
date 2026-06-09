@@ -124,8 +124,13 @@
     modalOverlay.classList.remove('hidden');
     document.body.style.overflow='hidden';
     map.panTo([incident.lat,incident.lng],{animate:true,duration:0.4});
+    history.replaceState(null,'','#'+incident.id);
   }
-  function closeModal() { modalOverlay.classList.add('hidden'); document.body.style.overflow=''; }
+  function closeModal() {
+    modalOverlay.classList.add('hidden');
+    document.body.style.overflow='';
+    history.replaceState(null,'',window.location.pathname+window.location.search);
+  }
   function closeTableOverlay() { tableOverlay.classList.add('hidden'); document.body.style.overflow=''; }
 
   modalClose.addEventListener('click',closeModal);
@@ -139,6 +144,13 @@
   document.getElementById('modal-print').addEventListener('click',function(){
     document.getElementById('print-report').innerHTML='<div class="print-header">Offshore Weather Incidents — Lessons Learned Database</div>'+document.getElementById('modal-content').innerHTML;
     window.print();
+  });
+  document.getElementById('modal-share').addEventListener('click',function(){
+    var btn=this;
+    navigator.clipboard.writeText(window.location.href).then(function(){
+      btn.textContent='✓ Copied!';
+      setTimeout(function(){ btn.innerHTML='&#128279; Share'; },2000);
+    });
   });
 
   function buildIncidentHTML(inc) {
@@ -255,4 +267,9 @@
   }
 
   loadData();
+  if (window.location.hash) {
+    var hashId=window.location.hash.slice(1);
+    var linked=allIncidents.find(function(i){ return i.id===hashId; });
+    if (linked) openModal(linked);
+  }
 })();
