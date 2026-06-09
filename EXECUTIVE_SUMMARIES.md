@@ -187,7 +187,7 @@
 ---
 
 ## 27. Hurricane Ivan — GoM / Taylor Energy MC20 (2004)
-**Current:** Hurricane Ivan crossed the Gulf of Mexico in September 2004 generating the largest waves ever recorded in the Gulf — a significant wave height of 27.7 m. Seven platforms were destroyed and 24 more damaged; all personnel had been evacuated. Ivan's wave loading triggered a submarine landslide that destroyed the Taylor Energy MC20 platform, creating an oil seep that persisted for over 15 years.
+**Current:** Hurricane Ivan crossed the Gulf of Mexico in September 2004 generating the largest waves ever recorded in the Gulf — an individual maximum wave height of 27.7 m. Seven platforms were destroyed and 24 more damaged; all personnel had been evacuated. Ivan's wave loading triggered a submarine landslide that destroyed the Taylor Energy MC20 platform, creating an oil seep that persisted for over 15 years.
 
 **Your version:**
 
