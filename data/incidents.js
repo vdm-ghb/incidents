@@ -1701,66 +1701,6 @@ window.INCIDENTS_DATA = {
     },
 
     /* ──────────────────────────────────────────────────
-       33. Super Puma G-REDL — 2009
-    ─────────────────────────────────────────────────── */
-    {
-      id: 'super_puma_g_redl_2009',
-      name: 'Super Puma AS332 L2 (G-REDL)',
-      year: 2009,
-      date: '1 April 2009',
-      location: 'North Sea, ~11 km south of Miller platform, UK sector',
-      lat: 56.767,
-      lng: 1.433,
-      region: 'North Sea',
-      platform_type: 'Helicopter — Eurocopter AS332 L2 Super Puma (personnel transport)',
-      operator: 'Bond Offshore Helicopters / BP (platform operator)',
-      weather_event_type: 'helicopter',
-      weather_event: 'Sea state ~3–4 m; conditions not severe — accident caused by fatigue fracture of main gearbox support structure',
-      fatalities: 16,
-      persons_on_board: 16,
-      survivors: 0,
-      summary: 'On 1 April 2009, Super Puma helicopter G-REDL suffered catastrophic failure of its main gearbox support structure 11 km from the Miller platform. A pre-existing fatigue crack — undetectable by existing maintenance procedures — caused the structure to fracture, severing main rotor drive. All 16 persons on board perished. The subsequent investigation revealed the crack vulnerability was fleet-wide, triggering the largest offshore helicopter fleet grounding in history and forcing fundamental reforms to helicopter design certification, maintenance, and regulation.',
-      executive_summary: 'On 1 April 2009, Super Puma helicopter G-REDL suffered catastrophic failure of its main gearbox support structure 11 km from the Miller platform in the North Sea. A pre-existing fatigue crack — undetectable by existing maintenance procedures — caused the structure to fracture suddenly during routine cruise flight (sea state 3–4 m, winds ~20–25 knots), severing the main rotor drive. The helicopter ditched; all 16 persons on board perished.',
-      what_happened: 'Helicopter G-REDL was on a routine personnel transport flight from the Miller platform to Aberdeen Airport with 14 oil and gas workers and 2 crew. Surface conditions were typical — sea state 3–4 m, ~20–25 knot winds — not severe by North Sea standards. At approximately 17:50, while in cruise over the sea, the main gearbox support structure fractured suddenly. A pre-existing fatigue crack had propagated during the helicopter\'s service life to critical length. The fracture severed the connection between the main rotor gearbox and the airframe, causing immediate loss of main rotor drive and directional control.\n\nThe crew declared a Mayday and ditched. All 16 persons were lost. The wreckage was recovered by offshore support vessels. Sea temperature was approximately 9 °C — survival time without immersion suits was very limited.\n\nThe post-accident investigation revealed the fatigue crack had initiated at a stress concentration in the gearbox support structure and had been growing undetected over thousands of flight hours. The flaw was internal and not accessible for visual inspection; no NDT method was required by the existing maintenance programme. Critically, the vulnerability was present across multiple variants of the AS332 (L1, L2) — a fleet-wide exposure affecting hundreds of aircraft worldwide.',
-      what_went_wrong: [
-        'The main gearbox support structure design contained a stress concentration that initiated fatigue cracks; formal fatigue analysis of this critical area was not performed during the original aircraft design and certification.',
-        'The pre-existing fatigue crack grew undetected through normal service — routine maintenance inspections (100 and 400 flight-hour intervals) did not include procedures to detect subsurface fatigue cracks at this location.',
-        'No non-destructive testing (NDT) method was mandated for the gearbox support structure — the area was inaccessible for visual inspection and no alternative was required.',
-        'The type certificate and maintenance manual did not specify an inspection or replacement interval for the gearbox support structure derived from fatigue analysis.',
-        'The gearbox support structure design was shared across multiple Super Puma variants (AS332 L1, L2 and later models) — the fatigue vulnerability was fleet-wide, affecting hundreds of aircraft.',
-        'Regulatory oversight of helicopter structural integrity and maintenance did not mandate fatigue monitoring equivalent to requirements for fixed-wing aircraft in critical load-bearing structures.'
-      ],
-      lessons_learned: [
-        'Helicopter design and certification must include explicit fatigue analysis of all load-bearing structures, identifying critical areas susceptible to crack initiation. Design improvements or enhanced inspection requirements must be mandated before airworthiness approval.',
-        'Maintenance programmes must include NDT methods (eddy current, ultrasonic, thermography) for structural areas where fatigue crack initiation is credible. Inspection intervals must be based on crack propagation rates and critical crack sizes — not arbitrary administrative schedules.',
-        'When a fatigue crack vulnerability is discovered fleet-wide, immediate action is required: aircraft must be grounded until inspection or modification is completed — no exceptions, no commercial deferrals.',
-        'Design stress concentrations that initiate fatigue cracks must be identified and eliminated during the design phase across all variants sharing the same structure — not addressed reactively after failures.',
-        'Regulatory oversight of helicopter structural integrity must be as stringent as — or more stringent than — fixed-wing aircraft for all critical load-bearing structures.',
-        'Cold North Sea water temperature (~9 °C) means helicopter ditching survival prospects are extremely limited without immediate rescue; search and rescue assets must be pre-positioned accordingly.'
-      ],
-      actions: [
-        'UK Civil Aviation Authority (CAA) issued an Airworthiness Directive grounding all AS332 L1 and L2 helicopters pending inspection — the largest offshore helicopter fleet grounding in history.',
-        'Airbus Helicopters developed a mandatory inspection protocol requiring disassembly of the gearbox support structure and detailed NDT examination across the entire fleet before return to service.',
-        'A design modification was developed and implemented fleet-wide — the gearbox support structure was redesigned to eliminate the fatigue initiation site, or replaced with a reinforced version.',
-        'EASA revoked the type certificate for the AS332 L1 for North Sea operations and imposed additional certification requirements for later variants.',
-        'UK CAA and HSE conducted a major regulatory review of helicopter certification, maintenance, and oversight — the "Super Puma Review" — leading to major changes in UK offshore helicopter safety regulations.',
-        'Joint Helicopter Safety Team (JHST) established to coordinate international helicopter safety oversight and fleet-wide issue sharing.',
-        'Offshore helicopter industry implemented enhanced pilot and crew resource management training and compulsory underwater escape training for all passengers and crew.'
-      ],
-      metocean: {
-        wave_height_hs: '~3–4 m (not the primary factor)',
-        wind_speed: '~20–25 knots',
-        sea_temp: '~9 °C',
-        notes: 'Conditions were not severe by North Sea standards. The accident was caused by a structural fatigue failure, not weather. However, the cold sea temperature (~9 °C) meant survival time in the water without an immersion suit was under 10 minutes — SAR response speed is critical in North Sea helicopter ditching scenarios regardless of weather.'
-      },
-      references: [
-        { title: 'AAIB Report on the Accident to Eurocopter AS332 L2 G-REDL (November 2010)', type: 'Aircraft accident investigation report', publisher: 'Air Accidents Investigation Branch (AAIB), UK', year: 2010, url: 'https://www.gov.uk/aaib-reports' },
-        { title: 'Super Puma Review — Helicopter Safety in UK Offshore Operations', type: 'Regulatory review', publisher: 'UK HSE / CAA Joint Review', year: 2010 },
-        { title: 'EASA and CAA Airworthiness Directives — AS332 L1/L2 Gearbox Support Structure', type: 'Airworthiness directive', publisher: 'EASA / UK CAA', year: 2009 }
-      ]
-    },
-
-    /* ──────────────────────────────────────────────────
        34. COSL Innovator Rogue Wave — 2015
     ─────────────────────────────────────────────────── */
     {
