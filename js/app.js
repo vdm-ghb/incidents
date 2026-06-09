@@ -69,7 +69,7 @@
     var sevClass=severityClass(incident), letter=EVENT_TYPE_LETTERS[incident.weather_event_type]||'?';
     var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+sevClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[12,-10] });
     var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true});
-    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(incident.location)+'</div><span class="tooltip-fatal '+sevClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'');
+    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+sevClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'');
     marker.bindTooltip(ttHTML,{permanent:false,direction:'top',opacity:1});
     marker.on('click',function(){ openModal(incident); });
     return marker;
@@ -160,7 +160,7 @@
     return '<div class="inc-hero">'+
       '<div class="inc-hero-badges"><span class="badge badge-fatal '+sevClass+'">'+esc(impactBadge)+'</span><span class="badge badge-type">'+esc(eventLabel)+'</span><span class="badge badge-year">'+inc.year+'</span></div>'+
       '<h2 class="inc-name" id="modal-incident-name">'+esc(inc.name)+'</h2>'+
-      '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',inc.location)+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(survivorsStr?metaItem('Casualties',survivorsStr):'')+
+      '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',shortLoc(inc.location,60))+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(survivorsStr?metaItem('Casualties',survivorsStr):'')+
       '</div></div>'+metoceanHTML+infraHTML+
       '<div class="inc-body">'+
       '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.executive_summary||inc.summary)+'</p></div>'+
@@ -195,6 +195,12 @@
   function esc(str) {
     if (!str) return '';
     return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function shortLoc(loc, max) {
+    if (!loc || loc.length <= max) return loc;
+    var s = loc.substring(0, max);
+    var i = s.lastIndexOf(',');
+    return (i > max * 0.5 ? s.substring(0, i) : s) + '…';
   }
 
   /* ── Table overlay ── */
