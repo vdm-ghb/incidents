@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
    Offshore Incidents — Lessons Learned Database
-   v3.2 — 39 incidents, collapsible legend, region zoom,
+   v3.3 — 40 incidents, collapsible legend, region zoom,
            table region filter, animated incidents button
    ═══════════════════════════════════════════════════ */
 (function () {
