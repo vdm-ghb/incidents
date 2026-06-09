@@ -249,6 +249,7 @@
     }
     var titleCount=document.getElementById('table-title-count');
     if (titleCount) titleCount.textContent=visible.length;
+    document.getElementById('stat-incidents').textContent=visible.length;
   }
 
   loadData();
