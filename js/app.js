@@ -216,9 +216,11 @@
   function filterTableRows() {
     var tbody=document.getElementById('incidents-tbody');
     if (!tbody) return;
-    var region=activeFilters.region;
     var visible=allIncidents.filter(function(inc){
-      return region==='all' || inc.region===region;
+      if (activeFilters.region!=='all' && inc.region!==activeFilters.region) return false;
+      if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
+      if (activeFilters.severity!=='all' && severityKey(inc)!==activeFilters.severity) return false;
+      return true;
     }).sort(function(a,b){
       var fa=a.fatalities||0, fb=b.fatalities||0;
       return fb!==fa ? fb-fa : (a.year||0)-(b.year||0);
