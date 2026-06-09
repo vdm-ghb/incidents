@@ -203,10 +203,8 @@
   }
 
   /* ── Table overlay ── */
-  var tableBuilt=false;
+  var tableHandlerAttached=false;
   function openTableOverlay() {
-    if (!tableBuilt) { buildIncidentTable(); tableBuilt=true; }
-    document.getElementById('table-title-count').textContent=allIncidents.length;
     filterTableRows();
     tableOverlay.classList.remove('hidden');
     document.body.style.overflow='hidden';
@@ -219,20 +217,14 @@
     var tbody=document.getElementById('incidents-tbody');
     if (!tbody) return;
     var region=activeFilters.region;
-    tbody.querySelectorAll('tr[data-id]').forEach(function(row){
-      row.classList.toggle('row-hidden', region!=='all' && row.getAttribute('data-region')!==region);
-    });
-    var titleCount=document.getElementById('table-title-count');
-    if (titleCount) titleCount.textContent=(region==='all'?allIncidents.length:allIncidents.filter(function(i){ return i.region===region; }).length);
-  }
-
-  function buildIncidentTable() {
-    var sorted=allIncidents.slice().sort(function(a,b){
+    var visible=allIncidents.filter(function(inc){
+      return region==='all' || inc.region===region;
+    }).sort(function(a,b){
       var fa=a.fatalities||0, fb=b.fatalities||0;
       return fb!==fa ? fb-fa : (a.year||0)-(b.year||0);
     });
     var sevLabels={critical:'Critical',major:'Major',notable:'Notable',informational:'Near-miss'};
-    var rows=sorted.map(function(inc,idx){
+    tbody.innerHTML=visible.map(function(inc,idx){
       var sevKey=severityKey(inc), sevClass=severityClass(inc), sevText=sevLabels[sevKey]||sevKey;
       var fatalCell;
       if (inc.fatalities>0) { fatalCell='<span class="fatal-count">'+inc.fatalities+'</span>'+(inc.fatalities===1?' fatality':' fatalities'); }
@@ -246,13 +238,17 @@
         '<td class="col-fatal">'+fatalCell+'</td><td class="col-weather">'+esc(inc.weather_event||'')+'</td>'+
         '<td class="col-sev"><span class="sev-pill '+sevClass+'">'+sevText+'</span></td></tr>';
     }).join('');
-    document.getElementById('incidents-tbody').innerHTML=rows;
-    document.getElementById('incidents-tbody').addEventListener('click',function(e){
-      var row=e.target.closest('tr[data-id]');
-      if (!row) return;
-      var inc=allIncidents.find(function(i){ return i.id===row.getAttribute('data-id'); });
-      if (inc) { closeTableOverlay(); openModal(inc); }
-    });
+    if (!tableHandlerAttached) {
+      tbody.addEventListener('click',function(e){
+        var row=e.target.closest('tr[data-id]');
+        if (!row) return;
+        var inc=allIncidents.find(function(i){ return i.id===row.getAttribute('data-id'); });
+        if (inc) { closeTableOverlay(); openModal(inc); }
+      });
+      tableHandlerAttached=true;
+    }
+    var titleCount=document.getElementById('table-title-count');
+    if (titleCount) titleCount.textContent=visible.length;
   }
 
   loadData();
