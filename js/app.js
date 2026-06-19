@@ -37,18 +37,13 @@
 
   /* Region bounding boxes [SW, NE] */
   var REGION_BOUNDS = {
-    'North Sea':             [[ 51.0,  -5.0],[ 62.5,  12.0]],
-    'North Atlantic':        [[ 40.0, -60.0],[ 66.0,   5.0]],
-    'Gulf of Mexico':        [[ 22.0, -99.0],[ 31.5, -82.0]],
-    'Southeast Asia':        [[ -6.0,  95.0],[ 22.0, 125.0]],
-    'East Asia':             [[ 35.0, 115.0],[ 46.0, 132.0]],
-    'Arabian Sea':           [[  8.0,  50.0],[ 28.0,  78.0]],
-    'Caspian Sea':           [[ 36.0,  48.5],[ 43.5,  54.5]],
-    'Middle East':           [[ 19.0,  50.0],[ 30.0,  62.0]],
-    'Arctic / North Pacific':[[ 46.0, 135.0],[ 63.0,-145.0]],
-    'Australia / NW Shelf':  [[-34.0, 108.0],[-14.0, 130.0]],
-    'West Africa':           [[  0.0,   1.0],[ 10.0,  12.0]],
-    'South America':         [[-38.0, -85.0],[ 12.0, -32.0]]
+    'Africa':                [[  -5.0, -20.0],[ 25.0,  50.0]],
+    'Asia/Australasia':      [[-42.0,   60.0],[ 50.0, 155.0]],
+    'Europe':                [[ 48.0,  -15.0],[ 66.0,  15.0]],
+    'Middle East':           [[ 15.0,   45.0],[ 35.0,  65.0]],
+    'North America':         [[ 18.0, -175.0],[ 70.0, -45.0]],
+    'Russia and Central Asia':[[ 35.0,  45.0],[ 72.0, 175.0]],
+    'South America':         [[-42.0,  -82.0],[ 12.0, -30.0]]
   };
 
   var map = L.map('map', { center:[25,10], zoom:2, minZoom:2, maxZoom:14, zoomControl:true, preferCanvas:true });
