@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════
    Offshore Weather Incidents — Lessons Learned Database
-   data/incidents.js  —  40 incidents  —  v3.3 (expanded from v3.2)
-   Sources: CopilotSummary offshore oil and gas incidents Copilot V02 Full + EC175 AAIB Report
+   data/incidents.js  —  59 incidents  —  v4.0 (expanded from v3.3)
+   Sources: 42 baseline incidents (v3.3) + 17 new incidents (LFE PDFs, Shell training, external sources)
    ═══════════════════════════════════════════════════ */
 window.INCIDENTS_DATA = {
   incidents: [
@@ -21,6 +21,7 @@ window.INCIDENTS_DATA = {
       platform_type: 'Semi-submersible flotel (accommodation rig)',
       operator: 'Phillips Petroleum (Ekofisk field operator)',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'Heavy North Sea storm — seas ~8 m, winds ~40 knots',
       fatalities: 123,
       persons_on_board: 212,
@@ -31,7 +32,7 @@ window.INCIDENTS_DATA = {
       what_went_wrong: [
         'A pre-existing fatigue crack at a hydrophone brace weld — initiated by poor weld quality and undetected by routine inspection — propagated to catastrophic failure under storm dynamic loading.',
         'The platform lacked structural redundancy: the loss of one of five columns left no reserve capacity, so collapse was immediate.',
-        'Chain of command for ordering abandonment was unclear; the OIM hesitation delayed the abandon order by critical minutes.',
+        'Emergency abandonment was overwhelmed by the speed of the capsize (~20 minutes) and the extreme list; organised evacuation was effectively impossible.',
         'Lifeboat release mechanisms were not designed to function at the extreme list angle reached; only one of seven lifeboats was successfully launched.',
         'Inspection and fatigue-life management procedures were inadequate for detecting sub-surface weld flaws in structural bracing.'
       ],
@@ -73,29 +74,29 @@ window.INCIDENTS_DATA = {
       location: 'Platong gas field, Gulf of Thailand',
       lat: 9.50,
       lng: 101.15,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Drillship (moored, 1974-built)',
       operator: 'Unocal (Thailand)',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'drilling',
       weather_event: 'Typhoon Gay — first significant typhoon to cross the Gulf of Thailand in decades',
       fatalities: 91,
       persons_on_board: 97,
       survivors: 6,
       summary: 'Typhoon Gay, an unusually powerful and fast-intensifying storm unprecedented in the Gulf of Thailand, caught the drillship Seacrest on station. Anchors parted, the vessel capsized, and 91 of 97 crew died. Only 6 survived after drifting for days. The disaster exposed critical failures in storm-threshold criteria and typhoon forecasting.',
-      executive_summary: 'Typhoon Gay — an unusually intense storm rare in the Gulf of Thailand — struck the drillship Seacrest at anchor at the Platong gas field on 3 November 1989. Evacuation criteria required winds above 75 knots before action was triggered; by that threshold, safe evacuation was no longer possible, anchors parted, and the vessel capsized. Of 97 on board, 91 perished; only 6 survived after drifting for days.',
-      what_happened: 'On 3 November 1989, Unocal\'s drillship Seacrest was moored on multiple anchors at the Platong field when Typhoon Gay — an unusually intense storm that few meteorological models anticipated tracking across the Gulf of Thailand — struck with rapidly intensifying winds and seas.\n\nDespite deteriorating conditions, operational decision-makers did not order evacuation or disconnect operations in time. The vessel\'s multi-point anchor system failed progressively as wind and sea-state escalated beyond anchor design limits. With anchors slipped or parted, Seacrest was broached and exposed broadside to the seas. After the typhoon eye passed overhead with a violent wind-shift, the drillship rolled and capsized.\n\nSearch operations found the vessel inverted. Of 97 on board, only 6 survived — rescued after drifting for multiple days; 91 perished. One anchor brake was later found unlocked, likely accelerating the loss of moorings.',
+      executive_summary: 'Typhoon Gay — an unusually intense storm rare in the Gulf of Thailand — struck the drillship Seacrest on station at the Platong gas field on the night of 3 November 1989. The vessel capsized rapidly, with no distress call; a documented contributing factor was that drill pipe had been left standing in the derrick, raising the centre of gravity and leaving the vessel top-heavy as the storm built. Of 97 on board, 91 perished; only 6 survived after drifting for days. There was no formal flag-state (public) investigation — only a private inquiry commissioned by the operator.',
+      what_happened: 'On 3 November 1989, Unocal\'s drillship Seacrest was on station at the Platong field when Typhoon Gay — an unusually intense storm that few meteorological models anticipated tracking across the Gulf of Thailand — struck with rapidly intensifying winds and seas.\n\nThe drillship capsized during the night, so suddenly that no distress call was made and most of those aboard had no chance to escape. A documented contributing factor was that drill pipe had been left standing in the derrick, raising the vessel\'s centre of gravity and leaving it top-heavy and more vulnerable to the violent wind-shift and beam seas as the typhoon passed. The vessel was found inverted.\n\nOf 97 on board, only 6 survived — recovered after drifting for days; 91 perished. There was no formal flag-state (public) investigation; the main inquiry was a private study commissioned by the operator (Unocal, via Failure Analysis Associates), which concluded the vessel had met applicable design standards.',
       what_went_wrong: [
-        'The decision to remain on station was taken despite typhoon approach — evacuation trigger criteria required winds >75 knots, which was too high a threshold; by then safe evacuation was impossible.',
-        'Typhoon Gay\'s track and rapid intensification were poorly forecast; the rig operator relied on a single forecast that underestimated the storm.',
-        'No "last safe time to act" assessment was made: the window for pulling anchors and evacuating crew closed before it was recognised.',
-        'An anchor brake found unlocked accelerated anchor line failure, leaving the vessel without mooring control.',
-        'Insufficient use of forecast uncertainty — no conservative worst-case scenario planning was applied to storm decision-making.'
+        'Drill pipe had been left standing in the derrick, raising the centre of gravity and leaving the drillship top-heavy and less able to withstand the storm — a documented contributing factor to the rapid capsize.',
+        'Typhoon Gay\'s track and rapid intensification were poorly forecast; Gay was the first typhoon to track so far south across the Gulf of Thailand in decades, so historically-based risk assessment badly underestimated the threat.',
+        'Non-essential personnel were not evacuated in time as the storm approached — the window to act closed before the severity was appreciated.',
+        'The vessel was caught beam-on to steep seas as conditions peaked, with no effective means to reduce exposure once the storm was upon it.'
       ],
       lessons_learned: [
         'Evacuation and de-manning criteria for tropical cyclones must be set conservatively — well below storm-impact conditions, not at them.',
         '"Last safe time to act" (LSTA) must be formally calculated and observed; it shrinks rapidly as storms intensify.',
-        'Typhoon/cyclone forecasts must be assessed using worst-case tracks and intensity scenarios, not just the most-likely forecast.',
-        'Multi-point mooring brakes and anchor systems must be verified in emergency drills and regular inspections.',
+        'Typhoon/cyclone forecasts must be assessed using worst-case tracks and intensity scenarios, not just the most-likely forecast — especially where an event lies outside the historical record.',
+        'Before a forecast storm, the derrick should be racked down / drill pipe laid down where practicable to lower the centre of gravity; topside weight and stability margins must be actively managed as conditions deteriorate.',
         'Non-essential crew must be evacuated by helicopter at the first credible cyclone threat, long before operational limits are reached.'
       ],
       actions: [
@@ -132,6 +133,7 @@ window.INCIDENTS_DATA = {
       platform_type: 'Semi-submersible drilling rig (MODU)',
       operator: 'ODECO / Mobil Oil Canada',
       weather_event_type: 'storm',
+      classification: 'drilling',
       weather_event: 'Severe North Atlantic winter storm — hurricane-force winds, high seas, blizzard',
       fatalities: 84,
       persons_on_board: 84,
@@ -162,7 +164,7 @@ window.INCIDENTS_DATA = {
       ],
       metocean: {
         wave_height_hs: '~15 m (maximum ~20 m)',
-        wind_speed: '70–80 knots (hurricane force)',
+        wind_speed: '70–90 knots sustained, gusts to ~100 knots (hurricane force)',
         sea_temp: '~0–1 °C',
         visibility: 'Near zero (blizzard)',
         notes: 'Extreme winter North Atlantic conditions. The zero-degree sea temperature meant survival time in the water without immersion suits was under 5 minutes.'
@@ -185,10 +187,11 @@ window.INCIDENTS_DATA = {
       location: 'South China Sea, ~65 nm SSW of Hainan Island',
       lat: 16.50,
       lng: 109.50,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Drillship (9-point mooring)',
       operator: 'Global Marine / ARCO China',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'drilling',
       weather_event: 'Typhoon Lex — sustained winds ~75 knots, confused heavy seas',
       fatalities: 81,
       persons_on_board: 81,
@@ -235,14 +238,15 @@ window.INCIDENTS_DATA = {
       id: 'bohai-no2-1979',
       name: 'Bohai No. 2',
       year: 1979,
-      date: 'November 1979',
+      date: '25 November 1979',
       location: 'Bohai Bay, off northeastern China',
       lat: 38.80,
       lng: 121.00,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Jack-up drilling rig (under tow between locations)',
       operator: 'China National Offshore Oil Corporation (CNOOC) predecessor',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'Severe autumn storm with high waves — unexpected deterioration during tow',
       fatalities: 72,
       persons_on_board: 76,
@@ -272,7 +276,7 @@ window.INCIDENTS_DATA = {
       ],
       metocean: {
         wave_height_hs: 'Estimated 4–6 m (typical severe Bohai Bay autumn storm)',
-        wind_speed: 'Gale force (~35–45 knots)',
+        wind_speed: 'Storm force (~48–55 knots, Beaufort 10)',
         sea_temp: '~10–14 °C (autumn Bohai Bay)',
         notes: 'Bohai Bay is a semi-enclosed sea prone to rapid sea-state build-up in autumn northerly gales. The confined fetch creates steep, short-period waves that are particularly damaging to towed structures.'
       },
@@ -290,50 +294,52 @@ window.INCIDENTS_DATA = {
       name: 'Kolskaya',
       year: 2011,
       date: '18 December 2011',
-      location: 'Sea of Okhotsk, off Sakhalin Island, Russian Far East',
-      lat: 51.50,
-      lng: 143.50,
+      location: 'Sea of Okhotsk, en route Kamchatka → Sakhalin, Russian Far East',
+      lat: 53.5,
+      lng: 149.5,
       region: 'Russia and Central Asia',
-      platform_type: 'Cantilever jack-up drilling rig (under tow)',
-      operator: 'Gazprom (contracted) — tow by Yaguar icebreaker and Neftegaz-55 tug',
+      platform_type: 'Triangular jack-up drilling rig (built 1985, under tow)',
+      operator: 'ArktikmorNefteGazRazvedka (AMNGR), Murmansk — subcontracted to Gazprom; tow by icebreaker Magadan and tug Neftegaz-55',
       weather_event_type: 'storm',
-      weather_event: 'Severe Arctic winter storm — gale winds, ~6 m waves, icing, sub-zero temperatures',
+      classification: 'maritime',
+      weather_event: 'Winter storm — winds up to ~40 knots (~20 m/s), Hs 4–5 m, sub-zero temperatures',
       fatalities: 53,
       persons_on_board: 67,
       survivors: 14,
-      summary: 'The Kolskaya jack-up capsized and sank in a severe Arctic winter storm during a tow from Sakhalin to the Magadan region. The rig went under in approximately 20 minutes in frigid conditions. Of 67 on board, 53 died — the deadliest offshore accident in Russian oil and gas history. The investigation found the decision to tow in winter exceeded the rig\'s operational envelope.',
-      executive_summary: 'The jack-up Kolskaya capsized and sank in the Sea of Okhotsk on 18 December 2011 during a severe Arctic winter storm (winds 30–35 m/s, waves 4–5 m) while under tow from Kamchatka to Sakhalin. Storm waves flooded the rig\'s air and tank compartments, causing severe listing and capsize in approximately 20 minutes. Of 67 on board, 53 died; the tow was conducted in poor weather with inadequate weather forecasting, insufficient tow route planning, and no effective evacuation procedure in place.',
-      what_happened: 'After completing a drilling campaign off northeastern Sakhalin in late 2011, the 1985-built jack-up rig Kolskaya was being relocated under tow — pulled by the icebreaker Magadan (also reported as Yaguar) and the tug Neftegaz-55.\n\nOn 18 December the tow convoy was struck by a severe winter Arctic storm with winds of 30–35 m/s, waves of ~6 m, sub-zero air temperatures, and heavy icing. High breaking waves began to overwhelm the rig; windows were reportedly breached and flooding of air tank compartments began. The flooding progressed rapidly and the Kolskaya capsized in approximately 20 minutes.\n\nRescue by the tow vessels and subsequently helicopters was severely hampered by the storm, darkness, and near-freezing water temperatures. Of the 67 on board, only 14 survived; 53 perished from drowning or hypothermia.',
+      summary: 'The jack-up rig Kolskaya capsized and sank in the Sea of Okhotsk on 18 December 2011 while under tow from offshore Kamchatka to Sakhalin, killing 53 of the 67 people on board — Russia\'s worst offshore oil-and-gas disaster. It resulted from a combination of factors: a hazardous late-season winter tow, cold and deteriorating weather (Hs 4–5 m, winds up to ~40 knots, near-freezing temperatures), and a series of operational shortcomings and decisions. The tow was undertaken without the required approval; all 67 personnel were kept aboard because the tow vessels lacked rescue capacity; the jack-up legs were left raised; and after a tow line parted the rig progressively flooded, listed and capsized. Survivors jumped into 1 °C water where only 14 could be recovered.',
+      executive_summary: 'On 18 December 2011 the jack-up Kolskaya capsized and sank in the Sea of Okhotsk while under tow from offshore Kamchatka to Sakhalin, killing 53 of 67 aboard. The weather was cold and deteriorating but not exceptional (Hs 4–5 m, winds up to ~40 knots / ~20 m/s); the outcome reflected the interaction of that weather with an ill-timed winter tow, personnel kept aboard beyond the tow vessels\' rescue capacity, omitted stabilising precautions, and an ineffective emergency response.',
+      what_happened: 'The Kolskaya, a 1985-built triangular jack-up operated by ArktikmorNefteGazRazvedka (AMNGR) of Murmansk, had been subcontracted to Gazprom to drill offshore Kamchatka in the Sea of Okhotsk. Drilling ran over time and finished in mid-December 2011; the rig was then to be towed to Sakhalin (with a further urgent job scheduled in Vietnam). A winter tow was not permitted under Russian marine safety regulations without prior approval — this was ignored by the rig owner, who, lacking a suitable heavy-lift vessel, chose to tow the jack-up using a tug and the icebreaker Magadan. The rig\'s captain objected, calling the tow "suicide", and submitted his resignation in protest; it was not accepted.\n\nRussian regulations required only minimal crew aboard during a tow, with non-essential personnel taken ashore by air. Instead all 67 people were kept on the Kolskaya, because the tow vessels did not carry enough life-saving equipment for the extra people. A storm was forecast; the captain altered the tow route to avoid it but ran into a second storm — Hs 4–5 m and winds up to ~40 knots.\n\nThe common precaution of lowering the jack-up legs a few hours before bad weather to improve stability was not followed. When one tow line parted in the rough conditions, the rig began taking water into its ballast tanks and started to list. On the evening of 17 December the captain could not reach the (unavailable) rig owner, and a coast-guard suggestion to declare "SOS" was rejected. By the morning of 18 December the list had worsened; crew and passengers assembled on the main deck believing a helicopter evacuation had been arranged. Water then entered the accommodation through portholes and the rig tilted about 20°. It was announced that no helicopters were coming and that people should abandon by life raft — now impossible given the tilt. As the rig sank people jumped into the 1 °C sea; the tow vessels could not recover most of them owing to the weather and poor organisation. Only 14 of the 67 survived.',
       what_went_wrong: [
-        'The decision to conduct a tow in a severe Arctic winter — likely exceeding the rig\'s tow-mode operational envelope — was the primary causal failure.',
-        'Reports indicate the tow operation was driven by production schedule pressure, prioritising delivery dates over safety margin.',
-        'The jack-up\'s design was not adapted for towing in open ocean winter storm conditions; it lacked adequate marine-mode stability for the encountered sea state.',
-        'Emergency evacuation procedures were insufficient for the speed of capsizing — the rig sank too quickly for organised abandonment.',
-        'Survival equipment was inadequate for the water temperatures and conditions; rescue in near-zero water temperature is near-impossible without immediate recovery.'
+        'A winter tow in the Sea of Okhotsk was conducted without the prior approval required by Russian marine safety regulations — the rig owner ignored the rule.',
+        'Schedule and commercial pressure drove the decision: onset of sea ice threatened to lock the rig off Kamchatka until the next summer, and a further urgent drilling job awaited in Vietnam.',
+        'The rig\'s own captain judged the tow unsafe ("suicide") and resigned in protest; the warning was overridden and his resignation refused.',
+        'All 67 personnel were kept aboard during the tow — contrary to the minimum-crew rule — because the tow vessels lacked rescue capacity for evacuated personnel.',
+        'The standard stabilising precaution of lowering the jack-up legs before the storm was not carried out.',
+        'One of the two tow vessels was an icebreaker not optimal for towing; when a tow line parted, the rig took water into its ballast tanks and began to list.',
+        'Emergency response failed at every step: the rig owner was unreachable, a coast-guard prompt to declare SOS was rejected, a non-existent helicopter evacuation was relied upon, and overboard rescue in 1 °C water was defeated by weather and poor organisation.'
       ],
       lessons_learned: [
-        'Winter tows in sub-arctic and Arctic conditions require explicit operational limits — if those limits cannot be met, the tow must not proceed.',
-        'Commercial schedule pressure must never override metocean operational limits for rig moves.',
-        'Rapid-capsize scenarios in cold water require pre-planned immediate-abandonment procedures — survival time in freezing water is minutes.',
-        'Towed rigs in Arctic conditions need ice and storm protection that fully complies with the environmental envelope of the transit route.',
-        'SAR capabilities in Arctic regions must be pre-positioned and able to operate in the same conditions that trigger the emergency.'
+        'A moderate storm can still be deadly: the Kolskaya conditions (Hs 4–5 m, ~40 knots, near-freezing) were not exceptional, so weather, operational readiness and management decisions must all be weighed together rather than attributing the loss to the sea state alone.',
+        'Seasonal/winter tow restrictions and mandatory approvals exist for good reason and must not be bypassed under commercial or schedule pressure.',
+        'Minimum-manning rules for tows exist to limit exposure; personnel must not be carried on a towed unit beyond the combined rescue capacity of the escorting vessels.',
+        'Standard stabilising precautions (e.g. lowering jack-up legs ahead of adverse weather) and tow-line redundancy must be verified before a marine move.',
+        'A credible, pre-arranged evacuation and SAR plan must be in place before departure — assuming a helicopter rescue that has not been confirmed is a fatal error, and cold-water survival time is only minutes.'
       ],
       actions: [
-        'Russian authorities introduced seasonal operational restrictions on marine moves of drilling units in the Sea of Okhotsk.',
-        'Tow stability calculations and weather-window criteria for all Russian offshore rig moves strengthened, with regulatory sign-off required.',
-        'International Maritime Organization (IMO) Polar Code development accelerated, incorporating lessons from Kolskaya on cold-water survival requirements.',
-        'Industry review of Arctic SAR capability gaps prompted investment in dedicated ice-capable rescue vessels and helicopter assets for the Russian Far East.'
+        'The Russian Federal Service for Supervision of Transport (RosTransNadzor) investigated the sinking and published its report in May 2012.',
+        'Criminal proceedings were brought against management of the rig owner (AMNGR) over the decision to tow in winter and the safety violations identified.',
+        'The disaster prompted tighter scrutiny of winter marine-move approvals and tow-safety compliance for drilling units in the Russian Far East.'
       ],
       metocean: {
-        wave_height_hs: '~6 m significant wave height',
-        wind_speed: '~30–35 m/s (60–70 knots) — gale to storm force',
-        sea_temp: '~0–2 °C (near-freezing)',
-        notes: 'December is the height of the Sea of Okhotsk storm season. Icing loads on the rig structure likely contributed to accelerated flooding. Survival time in the water was estimated at under 5 minutes without immersion suits and immediate rescue.'
+        wave_height_hs: 'Hs 4–5 m (moderate winter sea state — not extreme)',
+        wind_speed: 'Up to ~40 knots (~20 m/s) per the RosTransNadzor investigation',
+        sea_temp: '~1 °C (near-freezing) — survivors entered the water at ~1 °C',
+        notes: 'The Sea of Okhotsk is prone to polar lows in winter — small, short-lived but intense maritime storms that spin up rapidly over cold water and are hard to forecast. The Kolskaya was caught by a rapidly-developing winter storm of this kind; RosTransNadzor recorded winds up to ~40 knots (~20 m/s) and Hs 4–5 m, with near-freezing water (~1 °C) that left survivors only minutes. Separately (a seasonal process, not the storm), the sea freezes over each winter — the advance of ice from around late December threatened to trap the rig off Kamchatka until summer, a key driver of the decision to move it.'
       },
       references: [
-        { title: 'Russian Investigative Committee — Kolskaya sinking inquiry (2012)', type: 'Investigation report', publisher: 'Russian Federation Investigative Committee', year: 2012 },
-        { title: 'Wikipedia — Kolskaya (drilling rig)', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Kolskaya_(drilling_rig)' },
-        { title: 'Lessons Learnt from Kolskaya Incident — Vadim Anokhin (internal)', type: 'Internal case study', publisher: 'Shell / internal' }
+        { title: 'RosTransNadzor — Kolskaya sinking investigation report (May 2012)', type: 'Official investigation report', publisher: 'Russian Federal Service for Supervision of Transport (RosTransNadzor)', year: 2012 },
+        { title: 'Lessons Learnt from the Kolskaya Incident — Vadim Anokhin (Senior Metocean Engineer, Sarawak Shell Berhad)', type: 'Shell internal case study', file: 'background files/Lessons Learnt from Kolskaya Incident - Vadim Anokhin - Final VA.pdf', internal: true },
+        { title: 'Wikipedia — Kolskaya (jack-up rig)', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Kolskaya_(jack-up_rig)' }
       ]
     },
 
@@ -352,6 +358,7 @@ window.INCIDENTS_DATA = {
       platform_type: 'Jack-up drilling rig (33-year-old Usumacinta) adjacent to fixed wellhead platform Kab-101',
       operator: 'Pemex (operator)',
       weather_event_type: 'storm',
+      classification: 'drilling',
       weather_event: 'Cold Front No. 4 ("Norte") — winds up to 130 km/h (~70 knots), waves 6–8 m',
       fatalities: 22,
       persons_on_board: 80,
@@ -382,7 +389,7 @@ window.INCIDENTS_DATA = {
       metocean: {
         wave_height_hs: '6–8 m significant',
         wind_speed: '~70 knots (130 km/h)',
-        notes: 'Bay of Campeche "norte" cold fronts are a seasonal hazard (October–March), capable of generating short-period, steep seas rapidly. North-facing facilities are most exposed.'
+        notes: 'Bay of Campeche "norte" cold fronts are a seasonal hazard (October–March), capable of generating short-period, steep seas rapidly. North-facing facilities are most exposed. (Personnel and casualty counts vary slightly between sources: POB ~78–84, fatalities 21–22.)'
       },
       references: [
         { title: 'UNAM Case Study — Usumacinta Collision and Blowout', type: 'Academic case study', publisher: 'Universidad Nacional Autónoma de México' },
@@ -401,18 +408,19 @@ window.INCIDENTS_DATA = {
       location: 'Mumbai High North (MHN) field, Arabian Sea, ~160 km west of Mumbai, India',
       lat: 19.07,
       lng: 71.25,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Fixed production platform (ONGC Mumbai High North complex)',
       operator: 'Oil and Natural Gas Corporation (ONGC)',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'Monsoon storm — sustained winds ~35 knots, waves 4–5 m, strong currents',
       fatalities: 22,
-      persons_on_board: 389,
-      survivors: 367,
+      persons_on_board: 384,
+      survivors: 362,
       infrastructure_impact: 'Mumbai High North platform completely destroyed by fire; major disruption to India\'s offshore oil production',
-      summary: 'During monsoon conditions, the support vessel MSV Samudra Suraksha lost control and struck the MHN platform\'s gas export riser, triggering a catastrophic gas release and fire. The platform was completely destroyed. 22 personnel died or went missing; the incident halted a major portion of India\'s offshore oil output.',
-      executive_summary: 'On 27 July 2005, during typical Arabian Sea monsoon conditions (winds ~35 knots, seas 4–5 m), the support vessel MSV Samudra Suraksha lost position and struck the gas export riser of the Mumbai High North (MHN) platform. The resulting gas release ignited, causing a catastrophic fire that destroyed the platform. 22 personnel died or remain missing.',
-      what_happened: 'On 27 July 2005, the Mumbai High area was experiencing typical monsoon conditions — ~35-knot winds, 4–5 m seas, and strong currents. Helicopter access had already been curtailed by the weather. A medical evacuation from the platform was attempted using the support vessel MSV Samudra Suraksha approaching for a personnel basket transfer.\n\nIn the heavy seas the vessel\'s positioning became unstable; it drifted and struck the high-pressure gas export riser on the windward (upwind) side of the platform, rupturing it. Gas ignited instantly, producing a fire that rapidly engulfed the platform. The nearby jack-up rig Noble Charlie Yester was evacuated safely. Platform crew evacuated by lifeboat, rescue boat, and by jumping into the sea.\n\nIn total 22 personnel died or remain missing. The MHN platform — one of India\'s most productive offshore facilities — burned for days and was completely destroyed.',
+      summary: 'During monsoon conditions, the support vessel MSV Samudra Suraksha came alongside the MHN platform to transfer an injured crewman — the vessel\'s galley cook, who had severed a finger and needed a helicopter medical evacuation. In the heavy seas the vessel lost control and struck the platform\'s gas export riser, triggering a catastrophic gas release and fire. The platform was completely destroyed. 22 personnel died or went missing; the incident halted a major portion of India\'s offshore oil output.',
+      executive_summary: 'On 27 July 2005, during typical Arabian Sea monsoon conditions (winds ~35 knots, seas 4–5 m), the support vessel MSV Samudra Suraksha approached the Mumbai High North (MHN) platform to transfer an injured cook (severed finger) for a helicopter medevac. The vessel lost position and struck the gas export riser; the resulting gas release ignited, causing a catastrophic fire that destroyed the platform. 22 personnel died or remain missing.',
+      what_happened: 'On 27 July 2005, the Mumbai High area was experiencing typical monsoon conditions — ~35-knot winds, 4–5 m seas, and strong currents. Helicopter access had already been curtailed by the weather. The trigger for the operation was a medical emergency: the galley cook aboard the multi-support vessel MSV Samudra Suraksha had accidentally severed a finger and needed to be transferred to the platform so he could be flown ashore by helicopter for treatment. The vessel therefore approached the MHN platform for a personnel basket transfer.\n\nIn the heavy seas the vessel\'s positioning became unstable; it drifted and struck the high-pressure gas export riser on the windward (upwind) side of the platform, rupturing it. Gas ignited instantly, producing a fire that rapidly engulfed the platform. The nearby jack-up rig Noble Charlie Yester was evacuated safely. Platform crew evacuated by lifeboat, rescue boat, and by jumping into the sea.\n\nIn total 22 personnel died or remain missing. The MHN platform — one of India\'s most productive offshore facilities — burned for days and was completely destroyed.',
       what_went_wrong: [
         'A vessel approach to the high-pressure gas riser side of the platform was attempted in monsoon sea states — an inherently high-collision-risk operation.',
         'The approach was made from the upwind side: any drift or propulsion failure would push the vessel directly into the platform.',
@@ -428,10 +436,11 @@ window.INCIDENTS_DATA = {
         'SIMOPS risk assessments must explicitly prohibit specific vessel headings and weather combinations for platform proximity work.'
       ],
       actions: [
-        'ONGC prohibited vessel approaches to platforms during monsoon conditions and revised marine operations procedures for all Indian offshore fields.',
-        'International guidelines on platform-vessel interfaces (API RP 2MET, NORSOK) updated to address weather-condition limits.',
-        'Riser protection systems (physical guards, leeward riser positioning) incorporated into Indian offshore platform design standards.',
-        'Automatic emergency isolation valve requirements tightened for critical production risers on Indian continental shelf facilities.'
+        'Note: ONGC did not release a public investigation report for this incident; the items below reflect industry practices commonly cited afterwards rather than documented official outcomes.',
+        'ONGC reportedly prohibited vessel approaches to platforms during monsoon conditions and revised marine operations procedures for Indian offshore fields.',
+        'International guidelines on platform-vessel interfaces (API RP 2MET, NORSOK) address weather-condition limits for proximity operations.',
+        'Riser protection concepts (physical guards, leeward riser positioning) are recognised good practice for critical production risers.',
+        'Automatic emergency isolation valve requirements are emphasised for critical production risers.'
       ],
       metocean: {
         wave_height_hs: '4–5 m significant',
@@ -460,6 +469,7 @@ window.INCIDENTS_DATA = {
       platform_type: 'Jack-up drilling rig (barge-type with extendable legs) — first UK offshore oil rig',
       operator: 'BP (operator)',
       weather_event_type: 'storm',
+      classification: 'drilling',
       weather_event: 'Rough winter North Sea seas — wave action during jacking-down operation',
       fatalities: 13,
       persons_on_board: 32,
@@ -516,13 +526,14 @@ window.INCIDENTS_DATA = {
       platform_type: 'Fixed jacket production platform (SOCAR)',
       operator: 'SOCAR (State Oil Company of the Azerbaijan Republic)',
       weather_event_type: 'storm',
+      classification: 'design',
       weather_event: 'Severe Caspian storm — winds 90+ km/h (~50 knots), high seas',
-      fatalities: 12,
-      persons_on_board: 62,
+      fatalities: 30,
+      persons_on_board: 63,
       survivors: 33,
       infrastructure_impact: 'Partial platform structural collapse; prolonged fire; production platform destroyed',
-      summary: 'A severe Caspian Sea storm on 4 December 2015 caused a gas pipeline / riser to rupture at Gunashli Platform 10, igniting a major fire. The platform partially collapsed. 12 workers were confirmed dead with additional personnel missing; 33 were rescued. The event exposed storm-readiness gaps in ageing Caspian offshore infrastructure.',
-      executive_summary: 'On 4 December 2015, a severe Caspian Sea winter storm (winds exceeding 90 km/h, estimated seas 4–6 m) caused a gas pipeline to rupture at Gunashli Platform No. 10, igniting a major fire. Part of the platform structure collapsed, and a lifeboat fell during evacuation. 12 workers were killed and an additional number went missing; 33 were rescued.',
+      summary: 'A severe Caspian Sea storm on 4 December 2015 caused a gas pipeline / riser to rupture at Gunashli Platform 10, igniting a major fire. The platform partially collapsed. Of about 63 aboard, 33 were rescued; around 30 workers died — 12 bodies recovered and roughly 18 more missing and presumed dead. The event exposed storm-readiness gaps in ageing Caspian offshore infrastructure.',
+      executive_summary: 'On 4 December 2015, a severe Caspian Sea winter storm (winds exceeding 90 km/h, estimated seas 4–6 m) caused a gas pipeline to rupture at Gunashli Platform No. 10, igniting a major fire. Part of the platform structure collapsed and a lifeboat fell during evacuation. Of ~63 aboard, 33 were rescued and about 30 died (12 confirmed, ~18 missing/presumed dead) — the deadliest Caspian offshore accident.',
       what_happened: 'On 4 December 2015, the Caspian Sea experienced one of its periodic severe winter storms, with winds exceeding 90 km/h and heavy seas. The aged Platform No. 10 at the Gunashli field, operated by SOCAR, was subjected to heavy structural loading.\n\nA gas pipeline or riser connected to the platform ruptured — likely from storm-induced loading on already-degraded infrastructure — and the released gas ignited, producing a large fire. Power was lost on the platform, complicating communications and automated safety system response. Part of the platform structure collapsed.\n\nEvacuation under the storm conditions was hazardous; a lifeboat fell during lowering. Rescue operations were impeded by the storm. Of approximately 62 on board, 33 were eventually rescued. 12 bodies were recovered; the remainder were presumed missing at sea. The platform fire burned for some days before being extinguished.',
       what_went_wrong: [
         'The gas pipeline/riser infrastructure was in a degraded state — inadequate maintenance on an ageing platform allowed the storm loading to cause catastrophic failure.',
@@ -570,12 +581,13 @@ window.INCIDENTS_DATA = {
       region: 'North America',
       platform_type: 'Various — crew boats, supply vessels, rescue capsules, small workboats',
       operator: 'Multiple Gulf of Mexico operators',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'maritime',
       weather_event: 'Hurricane Juan — Category 1, slow-moving and looping — sustained 75–85 knot winds',
       fatalities: 9,
       summary: 'Hurricane Juan was an unusual slow-moving and looping late-season hurricane that struck the central Gulf of Mexico in October 1985. Multiple small offshore vessels and rescue capsules capsized in the heavy seas; 9 offshore workers died. The unusual track caught many operators off guard and exposed the vulnerability of small support craft to even Category 1 hurricanes.',
       executive_summary: 'Hurricane Juan — an unusual slow-moving, looping late-season Category 1 hurricane — struck the central Gulf of Mexico in October 1985, generating prolonged confused seas estimated at 6–8 m. Multiple small offshore crew boats, supply vessels, and rescue capsules capsized in the heavy conditions; 9 offshore workers died.',
-      what_happened: 'Hurricane Juan developed rapidly in the Gulf of Mexico in late October 1985 and pursued an erratic, looping path toward coastal Louisiana. Its slow movement generated long-duration high seas and confused swell, particularly dangerous for small craft.\n\nSeveral operators had insufficient time to evacuate support vessels and workboats. On the nights of 27–28 October, multiple vessels foundered: the supply boat Miss Agnes sank; a crew boat capsized; a rescue capsule (free-fall lifeboat) launched from a rig also overturned in the heavy seas. Some fatalities occurred during attempted rescue operations in the storm itself. Over 30 production platforms sustained damage or broke free of moorings. 9 offshore/maritime workers died.',
+      what_happened: 'Hurricane Juan developed rapidly in the Gulf of Mexico in late October 1985 and pursued an erratic, looping path toward coastal Louisiana. Its slow movement generated long-duration high seas and confused swell, particularly dangerous for small craft.\n\nSeveral operators had insufficient time to evacuate support vessels and workboats. On the nights of 27–28 October, multiple vessels foundered: the supply boat Miss Agnes sank and a crew boat capsized; a rig lifeboat/rescue capsule reportedly also overturned in the heavy seas. Some fatalities occurred during attempted rescue operations in the storm itself. Numerous production platforms and moorings were damaged. In total, 9 offshore/maritime workers died.',
       what_went_wrong: [
         'Juan\'s rapid intensification and unusual looping track left insufficient evacuation time — operators underestimated the storm\'s threat to small vessels that could not evade a looping hurricane.',
         'Some crew boats and workboats did not evacuate to port in time; they were caught offshore in conditions beyond their seakeeping limits.',
@@ -597,9 +609,9 @@ window.INCIDENTS_DATA = {
         'Small-vessel storm-readiness assessments introduced as part of annual GoM hurricane preparedness reviews.'
       ],
       metocean: {
-        wave_height_hs: 'Estimated 6–8 m (confused, long-duration seas)',
+        wave_height_hs: 'Estimated 6–8 m significant; some sources report substantially higher peak/individual waves (up to ~21 m) — the higher figure is not independently confirmed here',
         wind_speed: '75–85 knots sustained (Category 1)',
-        notes: 'Juan stalled and looped near the Louisiana coastline for an extended period, generating some of the most sustained high-sea conditions ever recorded from a Category 1 storm. The combination of confused sea state from the looping track and near-coastal shoaling made wave conditions particularly dangerous for small craft.'
+        notes: 'Juan stalled and looped near the Louisiana coastline for an extended period, generating unusually sustained high-sea conditions for a Category 1 storm. The confused sea state from the looping track and near-coastal shoaling made wave conditions particularly dangerous for small craft. Reported wave heights vary widely between sources.'
       },
       references: [
         { title: 'NOAA Historical Hurricane Tracks — Hurricane Juan 1985', type: 'Meteorological archive', publisher: 'NOAA National Hurricane Center' },
@@ -622,6 +634,7 @@ window.INCIDENTS_DATA = {
       platform_type: 'Anchor Handling Tug Supply (AHTS) vessel — assisting semi-submersible rig anchor deployment',
       operator: 'Bourbon Offshore (vessel) / Chevron (drilling)',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'Gale conditions — significant waves, strong currents, North Atlantic weather',
       fatalities: 8,
       persons_on_board: 15,
@@ -676,6 +689,7 @@ window.INCIDENTS_DATA = {
       platform_type: 'Self-elevating installation platform (SEA WORKER) under tow by AHTS AMBER II',
       operator: 'A2SEA (SEA WORKER); Polskie Ratownictwo (AMBER II)',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'North Sea winter gale — SW winds 16 m/s, Hs 3.5 m, max waves 5–6 m',
       fatalities: 0,
       persons_on_board: 15,
@@ -736,16 +750,17 @@ window.INCIDENTS_DATA = {
       location: 'Petronas methanol terminal, Labuan Island, offshore Sabah, Malaysia',
       lat: 5.27,
       lng: 115.22,
-      region: 'Asia/Australasia',
-      platform_type: 'Oil/chemical tanker (40,000 DWT) berthed at coastal terminal',
+      region: 'Asia',
+      platform_type: 'Oil/chemical tanker (~38,000 DWT) berthed at coastal terminal',
       operator: 'MISC Berhad / Petronas',
-      weather_event_type: 'storm',
+      weather_event_type: 'lightning',
+      classification: 'coastal',
       weather_event: 'Tropical thunderstorm — direct lightning strike on vessel during loading operations',
       fatalities: 5,
       infrastructure_impact: 'MT Bunga Alpinia declared constructive total loss; terminal infrastructure damaged',
       summary: 'On 26 July 2012, a lightning strike hit the MT Bunga Alpinia while the tanker was loading methanol at Labuan terminal, Malaysia. The strike ignited flammable vapours, causing a series of explosions and a massive fire. Five crew members were killed; the ship was destroyed. The incident highlighted critical gaps in lightning risk management during tanker loading operations.',
       executive_summary: 'On 26 July 2012, a lightning strike hit the chemical tanker MT Bunga Alpinia while the vessel was loading methanol at the Labuan terminal in Malaysia during a tropical thunderstorm. The strike ignited flammable methanol vapours in the cargo area, triggering a series of explosions and a devastating fire. Five crew members were killed and the ship was declared a constructive total loss.',
-      what_happened: 'On 26 July 2012, a thunderstorm moved across the Labuan area. The MT Bunga Alpinia, a 40,000 DWT chemical tanker, was berthed at the Petronas methanol terminal on Labuan Island. During or immediately after loading operations, a lightning bolt struck the ship — apparently the mast or radio antenna area.\n\nThe electrical discharge ignited methanol or hydrocarbon vapours around the cargo area, causing a powerful explosion and fire. The fire spread rapidly across the ship\'s deck and cargo tanks. Emergency response teams attended but the fire was severe and took more than a day to extinguish. Five crew members died in the explosion and ensuing fire; others evacuated. The ship was so severely damaged it was declared a constructive total loss.',
+      what_happened: 'On 26 July 2012, a thunderstorm moved across the Labuan area. The MT Bunga Alpinia, a chemical tanker of about 38,000 DWT, was berthed at the Petronas methanol terminal on Labuan Island. During or immediately after loading operations, a lightning bolt struck the ship — apparently the mast or radio antenna area.\n\nThe electrical discharge ignited methanol or hydrocarbon vapours around the cargo area, causing a powerful explosion and fire. The fire spread rapidly across the ship\'s deck and cargo tanks. Emergency response teams attended but the fire was severe and took more than a day to extinguish. Five crew members died in the explosion and ensuing fire; others evacuated. The ship was so severely damaged it was declared a constructive total loss.',
       what_went_wrong: [
         'Loading operations were not suspended during the approach of an active thunderstorm — ignitable vapour was present while the electrical storm risk was active.',
         'Lightning protection measures (bonding, vapour-vent system safeguards) did not prevent ignition.',
@@ -771,8 +786,7 @@ window.INCIDENTS_DATA = {
       },
       references: [
         { title: 'IEM (Institution of Engineers Malaysia) — Bunga Alpinia case study', type: 'Technical paper', publisher: 'IEM Malaysia' },
-        { title: 'The Australian / Rigzone — Bunga Alpinia explosion news reports', type: 'News archive', publisher: 'Various media', year: 2012 },
-        { title: 'Wikipedia — MT Bunga Alpinia', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/MT_Bunga_Alpinia' }
+        { title: 'The Australian / Rigzone — Bunga Alpinia explosion news reports', type: 'News archive', publisher: 'Various media', year: 2012 }
       ]
     },
 
@@ -787,22 +801,24 @@ window.INCIDENTS_DATA = {
       location: 'Indian Ocean, ~10 nm (19 km) off the coast between Ledge Point and Lancelin, Western Australia',
       lat: -31.1667,
       lng: 115.1833,
-      region: 'Asia/Australasia',
+      region: 'Australia',
       platform_type: 'Jack-up drilling rig (under tow)',
-      operator: 'Undisclosed — Western Australian offshore operator',
+      operator: 'Esso Australia Ltd',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'Severe Southern Ocean swell event — austral late-winter (September), long-period swells from Roaring Forties mid-latitude storm systems propagating northward to WA coast',
       fatalities: 0,
       infrastructure_impact: 'Jack-up rig lost during tow — major asset loss despite zero fatalities',
       severity_override: 'major',
       summary: 'On 1 September 1983, the jack-up rig Key Biscayne was lost during a tow off Western Australia when a severe storm overwhelmed the tow operation. The incident occurred in the austral late-winter / early-spring period — outside the tropical cyclone season — when the WA coast is exposed to powerful Southern Ocean swell generated by Roaring Forties storm systems. The rig capsized or sank; no fatalities occurred but the asset loss was total. The incident is a key learning case for Southern Ocean swell hazard management in tow planning on the Australian NW Shelf.',
       executive_summary: 'On 1 September 1983, the jack-up rig Key Biscayne was lost during a tow off Western Australia in a severe winter storm. The rig capsized or sank; no fatalities were recorded. The tow weather window had not been adequately assessed against the Southern Ocean swell hazard present at that time of year.',
-      what_happened: 'On 1 September 1983, the jack-up rig Key Biscayne was being relocated under tow in Indian Ocean waters off Western Australia. The date falls in the austral late-winter / early-spring period, well outside the tropical cyclone season (November–April). This time of year, the WA coast can be exposed to powerful, long-period swells generated by intense mid-latitude low-pressure systems tracking across the Southern Ocean\'s Roaring Forties (40°–55°S). These swell events — with significant wave heights of 4–6 m and periods of 14–18 seconds — propagate northward to the NW Shelf and can arrive with limited advance warning from local meteorological observations alone.\n\nThe tow encountered conditions that exceeded the rig\'s and tow vessel\'s capability to maintain safe seakeeping. The rig was lost — capsizing or sinking under the storm and swell conditions. No fatalities were reported, either because the rig was unmanned during the tow or crew were evacuated before or during the emergency. The total loss of the asset was a significant event for the Australian offshore industry and prompted review of towing procedures and weather-window criteria on the NW Shelf.',
+      what_happened: 'On 1 September 1983, the jack-up rig Key Biscayne was being relocated under tow in Indian Ocean waters off Western Australia. The date falls in the austral late-winter / early-spring period, well outside the tropical cyclone season (November–April). This time of year, the WA coast can be exposed to powerful, long-period swells generated by intense mid-latitude low-pressure systems tracking across the Southern Ocean\'s Roaring Forties (40°–55°S). These swell events — with significant wave heights of 4–6 m and periods of 14–18 seconds — propagate northward to the NW Shelf and can arrive with limited advance warning from local meteorological observations alone.\n\nAs the tow met heavy conditions the tow-line parted, leaving the rig without control. Down-flooding then occurred through an opening in the hull associated with the shale-shaker line, and the rig progressively lost stability and was lost. A contributing factor identified afterwards was that the rig\'s legs had not been shortened (lowered) as its own tow manual required, keeping the centre of gravity high. No fatalities were reported — the crew were taken off. The total loss of the asset (operated by Esso Australia Ltd) was a significant event for the Australian offshore industry and prompted review of towing procedures and weather-window criteria on the NW Shelf.',
       what_went_wrong: [
-        'The tow weather window was inadequate — the storm encountered exceeded the operational limits for safe towing of a jack-up in those water depths and sea state.',
-        'Tow route planning and weather forecasting did not adequately account for the intensity and speed of storm development in that region.',
-        'Storm contingency measures during the tow (e.g., safe-haven identification, emergency towline deployment) were insufficient.',
-        'The rig\'s tow-mode structural and stability configuration may not have been adequate for the storm conditions encountered.'
+        'The tow weather window was inadequate — the storm/swell encountered exceeded the operational limits for safe towing of the jack-up in those conditions.',
+        'The tow-line parted in the heavy sea state, leaving the rig without control.',
+        'Down-flooding occurred through an opening associated with the shale-shaker line, progressively compromising the rig\'s stability.',
+        'The rig\'s legs had not been shortened (lowered) as required by its own tow manual, keeping the centre of gravity high and reducing stability margin.',
+        'Tow route planning and forecasting did not adequately account for Southern Ocean swell reaching the WA coast at that time of year.'
       ],
       lessons_learned: [
         'Heavy-weather tow planning on the Australian NW Shelf must use conservative weather routing based on regional storm climatology.',
@@ -811,13 +827,12 @@ window.INCIDENTS_DATA = {
         'The WA coast faces severe hazard from Southern Ocean swell in the austral winter and early spring (June–October) — outside the tropical cyclone season. Mid-latitude low-pressure systems tracking across the Roaring Forties and Furious Fifties generate long-period, high-energy swell (Hs 4–6 m, periods 14–18 seconds) that propagates northward to the NW Shelf. These swell events impose large rolling and pitching motions on towed jack-up hulls and can arrive with limited warning; tow weather windows must be assessed against Southern Ocean swell climatology, not only local wind forecasts.'
       ],
       actions: [
+        'A marine Court of Inquiry / Marine Accident Investigation examined the loss (Australian Department of Transport, MAIR report, 1984).',
         'Australian offshore operators reviewed towing procedures and weather-window criteria for NW Shelf operations following this loss.',
-        'NOPSA (now NOPSEMA) strengthened marine operations guidance for offshore tows in Australian waters.',
         'Insurance and classification society requirements for tow approval packages tightened, requiring detailed metocean routing studies.'
       ],
       references: [
-        { title: 'Internal safety summary — Key Biscayne tow loss (limited public record)', type: 'Internal summary' },
-        { title: 'Lessons Learnt from Key Biscayne Tow — Vadim Anokhin (internal)', type: 'Internal case study', publisher: 'Shell / internal' }
+        { title: 'Marine Accident Investigation Report — loss of the jack-up Key Biscayne (MAIR)', type: 'Government investigation report', publisher: 'Australian Department of Transport', year: 1984, url: 'https://www.atsb.gov.au/publications/investigation_reports/1984/mair/pdf/mair3_001.pdf' }
       ]
     },
 
@@ -828,6 +843,7 @@ window.INCIDENTS_DATA = {
       id: 'lightning-me-2013',
       name: 'Lightning Strike — Middle East Oilfield',
       year: 2013,
+      data_quality: 'Unverified — sourced only to an internal Shell LFI bulletin; no independent public corroboration found (2026-07-04 fact-check audit).',
       date: '2013',
       location: 'Onshore oilfield, Middle East (exact country not disclosed)',
       lat: 25.00,
@@ -835,7 +851,8 @@ window.INCIDENTS_DATA = {
       region: 'Middle East',
       platform_type: 'Onshore oilfield — contractor personnel at remote worksite',
       operator: 'Undisclosed Middle East operator (Shell learning case)',
-      weather_event_type: 'storm',
+      weather_event_type: 'lightning',
+      classification: 'onshore',
       weather_event: 'Thunderstorm with direct lightning strike on vehicle radio antenna',
       fatalities: 1,
       persons_on_board: 2,
@@ -850,8 +867,8 @@ window.INCIDENTS_DATA = {
         'Weather monitoring at the remote site may not have provided adequate advance warning to allow timely evacuation to safe shelter.'
       ],
       lessons_learned: [
-        'Personnel must stop work and move to an approved lightning-safe shelter (a grounded building, not a vehicle with external antennas) when lightning is within a defined radius.',
-        'Vehicles with external metal structures (radio antennas, survey equipment) are NOT safe lightning shelters — they can conduct strikes into the cabin.',
+        'Personnel must stop work and move to an approved lightning-safe shelter (a fully-enclosed grounded building) when lightning is within a defined radius.',
+        'A hard-topped, fully-enclosed metal vehicle offers some lightning protection if occupants avoid contact with conductive or exterior-connected parts (per NOAA guidance) — but it is not a substitute for a proper grounded shelter, and an external antenna provides a direct conduction path that raises the risk.',
         'Remote site lightning safety protocols must be explicit: specify the type of shelter, the detection distance trigger, and the all-clear criteria.',
         'Real-time lightning detection monitoring should be deployed at all remote sites where personnel work in open terrain in thunderstorm-prone regions.'
       ],
@@ -873,14 +890,16 @@ window.INCIDENTS_DATA = {
       id: 'gumusut-gangway-2014',
       name: 'Gumusut-Kakap: Gangway Collapse',
       year: 2014,
+      data_quality: 'Unverified — field/project context is real but the specific event is sourced only to an internal Shell LFI bulletin with no independent public corroboration (2026-07-04 fact-check audit).',
       date: '5 October 2014',
       location: 'Gumusut-Kakap deepwater field, ~120 km offshore Sabah, East Malaysia (1,200 m water depth)',
       lat: 5.8001,
       lng: 114.4116,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Deepwater semi-submersible FPS connected to accommodation flotel by telescopic gangway',
       operator: 'Shell Malaysia / Petronas Carigali',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'Deteriorating weather causing excessive relative motions between connected vessels',
       fatalities: 0,
       infrastructure_impact: 'Gangway structure lost overboard; high potential incident with no personnel on gangway at the time',
@@ -918,14 +937,16 @@ window.INCIDENTS_DATA = {
       id: 'gumusut-barge-2013',
       name: 'Gumusut-Kakap: Drifting Barge Collision',
       year: 2013,
+      data_quality: 'Unverified — field/project context is real but the specific event is sourced only to an internal Shell LFI bulletin with no independent public corroboration (2026-07-04 fact-check audit).',
       date: '2013',
       location: 'Gumusut-Kakap deepwater field, ~120 km offshore Sabah, East Malaysia (1,200 m water depth)',
       lat: 5.8051,
       lng: 114.4166,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Cargo barge (moored offshore) and tugboat in adverse weather',
       operator: 'Shell Malaysia / Petronas Carigali — installation campaign support',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'Adverse weather with heavy seas and strong winds causing barge mooring failure',
       fatalities: 0,
       infrastructure_impact: 'Damage to tug and/or barge during emergency intervention; project delays',
@@ -963,21 +984,22 @@ window.INCIDENTS_DATA = {
       id: 'qarn-alam-1996',
       name: 'Qarn Alam Oilfield Camp Storm',
       year: 1996,
-      date: '16 June 1996',
+      date: '11–12 June 1996 (earlier records gave 16 June)',
       location: 'Qarn Alam oilfield camp, interior Oman',
       lat: 22.03,
       lng: 56.95,
       region: 'Middle East',
       platform_type: 'Onshore oilfield accommodation camp (portacabin/modular units)',
       operator: 'Petroleum Development Oman (PDO)',
-      weather_event_type: 'storm',
-      weather_event: 'Severe squall line / downburst — extreme wind gusts lifted portacabin structures',
+      weather_event_type: 'squall',
+      classification: 'onshore',
+      weather_event: 'Severe summer squall / thunderstorm outflow — documented winds ~39–45 knots (earlier records overstated as 60–80 kt)',
       fatalities: 0,
       persons_on_board: null,
-      infrastructure_impact: '~20 accommodation units destroyed, 40+ damaged; 12 personnel injured',
+      infrastructure_impact: 'Accommodation/office units damaged or destroyed and personnel injured (figures reported internally as ~20 units destroyed, ~12 injured are not independently corroborated in public sources)',
       severity_override: 'notable',
-      summary: 'On 16 June 1996, a sudden intense windstorm struck the Qarn Alam oilfield camp in Oman\'s interior. The storm lifted and overturned portacabin accommodation and office units, causing 12 injuries. No fatalities. The incident demonstrated that even onshore facilities in remote desert oilfield environments face severe weather risks requiring proper structural anchoring and warning systems.',
-      executive_summary: 'On 16 June 1996, a sudden violent squall line or downburst struck the Qarn Alam oilfield camp in interior Oman without meaningful advance warning, lifting and overturning portacabin accommodation and office units. Approximately 20 units were destroyed and 40 more damaged; 12 personnel were injured. No fatalities occurred.',
+      summary: 'In June 1996 a sudden summer squall/thunderstorm outflow struck the Qarn Alam oilfield camp in Oman\'s interior, damaging and overturning lightweight portacabin accommodation and office units. Personnel were injured; no fatalities occurred. The documented storm winds were around 39–45 knots; earlier internal accounts overstated both the wind (60–80 kt) and the exact date (16 June vs the documented 11–12 June), and the specific casualty/damage counts are not independently corroborated. The incident nonetheless illustrates that remote desert oilfield camps of lightweight prefabricated structures are vulnerable to convective downburst/squall winds that strike with little warning.',
+      executive_summary: 'In June 1996 a summer squall / thunderstorm outflow (documented winds ~39–45 knots) struck the Qarn Alam oilfield camp in interior Oman with little advance warning, damaging and overturning lightweight portacabin units and injuring personnel. No fatalities occurred. Earlier entries overstated the wind (60–80 kt) and date (16 June); the exact casualty and damage counts are not independently corroborated.',
       what_happened: 'On 16 June 1996 at approximately 17:00, a violent squall line or downburst struck the Qarn Alam oilfield camp in the Omani desert without meaningful advance warning. Winds gusting to extreme velocities literally lifted portacabin units off the ground, throwing them and causing them to collapse or roll.\n\nApproximately 20 accommodation and office units were destroyed; 40 more were damaged. Twelve personnel inside or near the units were injured, some seriously — struck by debris or thrown as their cabins overturned. No fatalities occurred, but the camp was extensively damaged and operations disrupted.\n\nThe incident highlighted that remote desert oilfield camps, which often use lightweight prefabricated structures, are highly vulnerable to downburst and squall-line wind events that can strike with little warning.',
       what_went_wrong: [
         'Portacabin structures were not adequately anchored to foundations — they were not designed or secured to resist the extreme wind loads of a downburst.',
@@ -998,8 +1020,8 @@ window.INCIDENTS_DATA = {
         'Industry-wide adoption of improved camp structure anchoring standards — cited in subsequent Shell and PDO internal engineering standards.'
       ],
       metocean: {
-        wind_speed: 'Extreme squall gusts — estimated 60–80 knots (downburst)',
-        notes: 'Summer convective downbursts in the interior of the Arabian Peninsula can generate brief but extreme wind gusts far exceeding ambient conditions. These events are difficult to forecast with precision more than 20–30 minutes in advance and represent a well-known hazard in Arabian Gulf and Oman summer operations.'
+        wind_speed: '~39–45 knots documented (earlier entries overstated as 60–80 kt)',
+        notes: 'Summer convective squalls/downbursts in the interior of the Arabian Peninsula can generate brief but locally damaging wind gusts. These events are difficult to forecast precisely more than 20–30 minutes ahead. Note: the exact date (documented ~11–12 June 1996), wind speed and casualty/damage figures for this camp event are only partially corroborated in available sources.'
       },
       references: [
         { title: 'PDO (Petroleum Development Oman) — Qarn Alam Storm incident report (1996)', type: 'Incident report', publisher: 'PDO Oman', year: 1996 },
@@ -1022,13 +1044,14 @@ window.INCIDENTS_DATA = {
       platform_type: 'Conical Arctic drilling barge (Shell Kulluk) — unmanned during tow',
       operator: 'Shell Offshore Inc. (towed by MV Aiviq)',
       weather_event_type: 'storm',
-      weather_event: 'Severe Gulf of Alaska winter storm — 70+ knot winds, 10+ m seas, multiple engine failures on tow vessel',
+      classification: 'maritime',
+      weather_event: 'Severe Gulf of Alaska winter storm — sustained winds ~55–60 knots (gusting higher), 10+ m seas, multiple engine failures on tow vessel',
       fatalities: 0,
       infrastructure_impact: 'Kulluk grounded on Sitkalidak Island shoreline; subsequently scrapped. High-profile environmental near-miss; 143,000 gallons of diesel on board',
       severity_override: 'major',
-      summary: 'In late December 2012, Shell\'s Arctic drilling barge Kulluk was being towed from Alaska toward Seattle. A severe winter storm in the Gulf of Alaska caused the tow vessel Aiviq to suffer engine failures; the towline parted repeatedly. On New Year\'s Eve 2012, the unmanned Kulluk ran aground near Kodiak Island. No injuries occurred, but the grounding triggered a massive multi-day response to prevent a fuel spill. Shell subsequently abandoned its Arctic drilling programme.',
-      executive_summary: 'In late December 2012, the drilling barge Kulluk broke free from tow during a severe Gulf of Alaska winter storm (winds exceeding 70 knots, seas over 10 m) after the tow vessel MV Aiviq suffered multiple engine failures. The towline parted repeatedly despite assistance from emergency tugs; on 31 December the unmanned Kulluk grounded on Sitkalidak Island near Kodiak. No personnel were on board; no fatalities occurred.',
-      what_happened: 'On 21 December 2012, the circular conical drilling barge Kulluk departed Kodiak, Alaska under tow by the icebreaking anchor handler MV Aiviq, heading for Seattle for annual maintenance. An investigation later revealed the tow was timed in part to avoid paying Alaska state taxes by moving the rig out of state before year-end — a commercial driver that influenced the decision to tow in the peak of the storm season.\n\nSix days into the tow, a powerful winter storm struck the Gulf of Alaska with 70+ knot winds and seas of 10+ metres. The Aiviq suffered multiple engine failures in the storm, leaving it unable to maintain tow. The towline to the Kulluk parted repeatedly despite assistance from emergency tugs. On 31 December 2012, the Kulluk — carrying approximately 143,000 gallons of diesel fuel — ran aground on the rocky shores of Sitkalidak Island.\n\nA major multi-day Coast Guard and commercial salvage response prevented a fuel spill. The rig was eventually refloated but was subsequently sold and scrapped. No personnel were on the Kulluk during the tow.',
+      summary: 'In late December 2012, Shell\'s Arctic drilling barge Kulluk was being towed from Dutch Harbor, Alaska toward Seattle. A severe winter storm in the Gulf of Alaska caused the tow vessel Aiviq to suffer engine failures; the towline parted repeatedly. On New Year\'s Eve 2012, the unmanned Kulluk ran aground near Kodiak Island. There were no fatalities (and no one aboard the Kulluk), though the NTSB documented four minor injuries among the tow and response crews. The grounding triggered a massive multi-day response to prevent a fuel spill, and Shell subsequently abandoned its Arctic drilling programme.',
+      executive_summary: 'In late December 2012, the drilling barge Kulluk broke free from tow during a severe Gulf of Alaska winter storm (NTSB: sustained winds ~55–60 knots, seas over 10 m) after the tow vessel MV Aiviq suffered multiple engine failures. The towline parted repeatedly despite assistance from emergency tugs; on 31 December the unmanned Kulluk grounded on Sitkalidak Island near Kodiak. No one was aboard the Kulluk and there were no fatalities; four minor injuries occurred among the tow/response crews.',
+      what_happened: 'On 21 December 2012, the circular conical drilling barge Kulluk departed Dutch Harbor (Unalaska), Alaska under tow by the icebreaking anchor handler MV Aiviq, heading for Seattle for annual maintenance. An investigation later noted the tow timing was influenced in part by a commercial driver — moving the rig out of state before year-end to avoid Alaska state taxes — which contributed to towing in the peak of the storm season.\n\nSix days into the tow, a powerful winter storm struck the Gulf of Alaska with sustained winds of about 55–60 knots (gusting higher) and seas of 10+ metres. The Aiviq suffered multiple engine failures in the storm, leaving it unable to maintain tow. The towline to the Kulluk parted repeatedly despite assistance from emergency tugs. On 31 December 2012, the Kulluk — carrying approximately 143,000 gallons of diesel fuel — ran aground on the rocky shores of Sitkalidak Island.\n\nA major multi-day Coast Guard and commercial salvage response prevented a fuel spill. The rig was eventually refloated but was subsequently sold and scrapped. No personnel were aboard the Kulluk during the tow; the NTSB recorded four minor injuries among the tow and response crews.',
       what_went_wrong: [
         'Commercial pressure (tax avoidance deadline) drove the decision to tow in the middle of the Gulf of Alaska\'s most severe storm season — a business driver overriding operational risk management.',
         'The risk assessment for the tow did not adequately account for extreme North Pacific winter storm scenarios or engine failure contingencies.',
@@ -1052,14 +1075,14 @@ window.INCIDENTS_DATA = {
       ],
       metocean: {
         wave_height_hs: '10+ m (Gulf of Alaska winter storm)',
-        wind_speed: '70+ knots sustained',
+        wind_speed: '~55–60 knots sustained (NTSB), gusting higher',
         sea_temp: '~3–5 °C',
         notes: 'The Gulf of Alaska is one of the most storm-exposed ocean regions in the world, with some of the highest recorded extra-tropical storm intensities. December–January is the climatological peak of storm frequency and intensity. The Kulluk\'s conical shape was not optimised for towing in those conditions.'
       },
       references: [
-        { title: 'US Coast Guard Marine Investigation Report — Shell Kulluk Grounding (2013)', type: 'Investigation report', publisher: 'US Coast Guard', year: 2013 },
-        { title: 'New York Times — How Shell\'s Arctic Drilling Plans Went Wrong (2014)', type: 'News feature', publisher: 'New York Times', year: 2014 },
-        { title: 'Wikipedia — Shell Kulluk drilling rig', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Kulluk_(drilling_rig)' }
+        { title: 'NTSB Marine Accident Brief — Grounding of the Mobile Offshore Drilling Unit Kulluk (2014)', type: 'Investigation report', publisher: 'National Transportation Safety Board (NTSB)', year: 2014 },
+        { title: 'US Coast Guard Marine Board of Investigation — Shell Kulluk Grounding', type: 'Investigation report', publisher: 'US Coast Guard' },
+        { title: 'Wikipedia — Kulluk (drilling rig)', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Kulluk_(drilling_rig)' }
       ]
     },
 
@@ -1075,20 +1098,21 @@ window.INCIDENTS_DATA = {
       lat: 43.20,
       lng: -60.30,
       region: 'North America',
-      platform_type: 'Deepwater semi-submersible drilling rig — drilling riser to seafloor wellhead',
-      operator: 'Shell Canada',
+      platform_type: 'Deepwater drillship (Stena IceMAX) — drilling riser to seafloor wellhead',
+      operator: 'Shell Canada (rig: Stena IceMAX, drillship)',
       weather_event_type: 'storm',
-      weather_event: 'Severe North Atlantic winter storm forcing rig off station — riser failure during disconnect',
+      classification: 'drilling',
+      weather_event: 'Severe North Atlantic winter storm forcing rig off station — riser tensioner/anti-recoil failure during disconnect',
       fatalities: 0,
       infrastructure_impact: '2-km section of drilling riser lost to ~2000 m water depth; significant equipment loss and operational downtime',
       severity_override: 'informational',
-      summary: 'In March 2016, a powerful North Atlantic winter storm forced a deepwater drilling rig to move off its well location offshore Nova Scotia. During or after the rig\'s move, a 2-km section of drilling riser parted under the storm-induced loads and sank to ~2000 m depth. The riser had been purged of fluids, so no pollution occurred. No injuries. The event highlighted the importance of timely riser retrieval before storm conditions deteriorate.',
-      executive_summary: 'In March 2016, a severe North Atlantic winter storm forced a deepwater drilling rig off its well location on the Scotian Slope offshore Nova Scotia. Under the storm-induced motion loads on the disconnected riser string, approximately 2 km of drilling riser parted and sank to ~2000 m depth. No fatalities occurred and no pollution resulted, as the riser had been purged of drilling fluids prior to the storm.',
-      what_happened: 'In March 2016, a deepwater drilling rig was operating on the Scotian Slope off Nova Scotia when a major North Atlantic storm system approached. The rig had already disconnected from the well (BOP closed on the wellhead) and moved off location to ride out the storm at a safe distance.\n\nDespite the rig\'s movement away from the wellhead, the disconnected drilling riser — or a section of it — failed under the combined effects of the rig\'s motion in the storm and the wave and current forces on the 2-km-long string of pipe hanging in the water column. Approximately 2 km of riser sank to approximately 2000 m depth.\n\nBecause the riser had been properly purged of drilling fluids, no pollution resulted. No personnel were injured. Recovery of the riser section required specialist deepwater intervention operations. The incident prompted a review of deepwater riser emergency disconnect procedures for North Atlantic storm conditions.',
+      summary: 'In March 2016, a powerful North Atlantic winter storm forced the Shell-contracted drillship Stena IceMAX to move off its well location offshore Nova Scotia. During the emergency disconnect, the riser tensioner / anti-recoil system failed and a ~2-km section of drilling riser parted and sank to ~2000 m depth. The riser had been purged of fluids, so no pollution occurred, and there were no injuries. The event highlighted the criticality of the riser tensioner/anti-recoil system and of timely riser retrieval before storm conditions deteriorate.',
+      executive_summary: 'In March 2016, a severe North Atlantic winter storm forced the drillship Stena IceMAX off its well location on the Scotian Slope offshore Nova Scotia. During the disconnect the riser tensioner/anti-recoil system failed, and approximately 2 km of drilling riser parted and sank to ~2000 m depth. No fatalities occurred and no pollution resulted, as the riser had been purged of drilling fluids prior to the storm.',
+      what_happened: 'In March 2016, the deepwater drillship Stena IceMAX was operating on the Scotian Slope off Nova Scotia when a major North Atlantic storm system approached. The rig had already disconnected from the well (BOP closed on the wellhead) and moved off location to ride out the storm at a safe distance.\n\nDuring the disconnect sequence the drilling riser\'s tensioner / anti-recoil system failed; combined with the rig\'s motion in the storm and the wave and current forces on the ~2-km string of pipe hanging in the water column, approximately 2 km of riser parted and sank to about 2000 m depth.\n\nBecause the riser had been properly purged of drilling fluids, no pollution resulted. No personnel were injured. Recovery of the riser section required specialist deepwater intervention operations. The incident prompted a review of deepwater riser tensioner/anti-recoil systems and emergency disconnect procedures for North Atlantic storm conditions.',
       what_went_wrong: [
-        'The riser was not retrieved before the storm conditions became severe enough to impose critical loads on it — the window for recovery was missed or not recognised.',
-        'The interaction of large rig offsets (from storm drift) with a 2-km riser string in storm seas imposed loads that exceeded riser structural capacity.',
-        'Deepwater riser design margins for North Atlantic winter storm scenarios may have been insufficient or not adequately validated.',
+        'The riser tensioner / anti-recoil system failed during the emergency disconnect — the documented technical cause of the riser parting.',
+        'The riser was not retrieved before storm conditions became severe enough to impose critical loads on it — the window for recovery was missed or not recognised.',
+        'The interaction of large rig offsets (from storm drift) with a 2-km riser string in storm seas imposed loads that exceeded riser/tensioner capacity.',
         'Operational procedures for riser management in advancing severe storm conditions needed clearer "retrieve by this time" thresholds.'
       ],
       lessons_learned: [
@@ -1122,14 +1146,16 @@ window.INCIDENTS_DATA = {
       id: 'skandi-hawk-2011',
       name: 'Skandi Hawk / Safe Astoria Near-Miss',
       year: 2011,
+      data_quality: 'Unverified — no independent source corroborates this event, and the vessel Skandi Hawk (IMO 9480734) was built in 2012, after the stated 2011 date. Date and/or vessel identity are likely erroneous (2026-07-04 fact-check audit).',
       date: '2011',
       location: 'Malampaya Gas Field, South China Sea — offshore northwest Palawan, Philippines',
       lat: 11.36,
       lng: 118.88,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Offshore supply/multipurpose vessel (Skandi Hawk) + semi-submersible flotel (Safe Astoria) at Malampaya platform',
       operator: 'Shell Philippines / SPEX',
       weather_event_type: 'storm',
+      classification: 'maritime',
       weather_event: 'Marginal/near-limit metocean conditions — elevated sea state and wind making station-keeping difficult',
       fatalities: 0,
       infrastructure_impact: 'Minor structural damage; high-potential near-miss with risk of major collision',
@@ -1170,6 +1196,7 @@ window.INCIDENTS_DATA = {
       id: 'helicopter-rollover-2009',
       name: 'Helicopter Rollover on Offshore Helideck',
       year: 2009,
+      data_quality: 'Unverified — no NTSB record or report matches this event as described; it appears to conflate separate Gulf of Mexico helicopter accidents. Details (date, aircraft, mechanism) should be treated as unconfirmed (2026-07-04 fact-check audit).',
       date: '24 December 2009',
       location: 'Gulf of Mexico — Shell deepwater production platform',
       lat: 27.80,
@@ -1177,7 +1204,8 @@ window.INCIDENTS_DATA = {
       region: 'North America',
       platform_type: 'Offshore production platform helideck — Sikorsky S-76C++ medium helicopter',
       operator: 'GoM deepwater platform operator (undisclosed) / contracted helicopter operator',
-      weather_event_type: 'helicopter',
+      weather_event_type: 'squall',
+      classification: 'aviation',
       weather_event: 'Strong gusty crosswinds on helideck — gusts 30–50 knots',
       fatalities: 0,
       persons_on_board: 7,
@@ -1232,10 +1260,11 @@ window.INCIDENTS_DATA = {
       location: 'North Rankin gas field, Carnarvon Basin, NW Australia',
       lat: -19.6,
       lng: 116.0,
-      region: 'Asia/Australasia',
+      region: 'Australia',
       platform_type: 'Fixed offshore gas platform (concrete and steel jacket)',
       operator: 'Woodside Petroleum',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'design',
       weather_event: 'Tropical Cyclone Orson — Category 5, sustained 200 km/h (108 knots), gusts to 250 km/h',
       fatalities: 0,
       infrastructure_impact: 'Direct Category 5 hit — North Rankin A survived; drilling rig displaced ~2 km; support vessels and smaller installations damaged',
@@ -1263,7 +1292,7 @@ window.INCIDENTS_DATA = {
         'Carnarvon Basin cyclone design criteria — already among the most stringent in the world — were reviewed and confirmed as appropriate; procedures for mobile units were significantly tightened.'
       ],
       metocean: {
-        wave_height_hs: 'Estimated 12–14 m at peak',
+        wave_height_hs: 'Estimated Hs ~13–15 m at peak; individual waves reported up to ~20 m',
         wind_speed: 'Sustained 200 km/h (108 knots), gusts to 250 km/h',
         sea_temp: '~28 °C',
         visibility: 'Near zero at cyclone centre',
@@ -1282,50 +1311,53 @@ window.INCIDENTS_DATA = {
       id: 'west_gamma_1990',
       name: 'West Gamma',
       year: 1990,
-      date: '21 August 1990',
-      location: 'North Sea, ~50 nautical miles west of Sylt, Germany',
-      lat: 55.0,
-      lng: 6.5,
+      date: '20–21 August 1990',
+      location: 'North Sea, Gorm field, Danish sector (~55°23′N 04°46′E, near pumping station "Bravo 11")',
+      lat: 55.38,
+      lng: 4.77,
       region: 'Europe',
-      platform_type: 'Jack-up drilling rig (under ocean tow)',
+      platform_type: 'Jack-up accommodation/support rig (under ocean tow)',
       operator: 'Smedvig (rig owner)',
       weather_event_type: 'storm',
-      weather_event: 'North Sea storm — conditions deteriorated during tow transit',
-      fatalities: 4,
-      persons_on_board: 26,
-      survivors: 22,
-      summary: 'The West Gamma jack-up drilling rig capsized and sank in the North Sea on 21 August 1990 while under tow approximately 50 nautical miles west of Sylt, Germany. Weather deteriorated during the transit. The rig was not adequately configured or ballasted for the sea conditions encountered. Of 26 persons on board, 4 died and 22 were rescued. The accident led to significantly improved jack-up tow safety requirements by classification societies, IADC, and maritime authorities.',
-      executive_summary: 'The jack-up drilling rig West Gamma capsized and sank in the North Sea on 21 August 1990 while under tow after weather deteriorated beyond the rig\'s tow-mode stability envelope. Water ingress caused progressive listing and capsize; 4 of 26 persons on board died.',
-      what_happened: 'The West Gamma jack-up rig was being towed between locations in the North Sea when weather conditions deteriorated beyond what the rig could safely handle in its tow configuration. Jack-up rigs in tow are particularly vulnerable because they depend on correct hull ballasting, watertight closure of all openings, and a minimum air gap between the sea surface and the hull underside.\n\nDuring the tow, conditions worsened. Water ingress or hull instability caused the rig to capsize and sink. Of the 26 persons on board, 22 were rescued; 4 died. The accident drew urgent attention to the specific hazards of jack-up rig towing operations, which had not received regulatory attention equivalent to operations while on location.',
+      classification: 'maritime',
+      weather_event: 'North Sea full gale (NW Force 9, later Force 9–10) — rig lost its tow and was disabled',
+      fatalities: 0,
+      persons_on_board: 51,
+      survivors: 51,
+      severity_override: 'notable',
+      infrastructure_impact: 'Total loss — accommodation rig heavily damaged (rescue boats torn off, helideck wrecked, progressive flooding) and later capsized and sank. All 51 aboard rescued.',
+      summary: 'The West Gamma accommodation/support jack-up rig lost its tow in a full North Sea gale on the night of 20–21 August 1990 in the Danish sector near the Gorm field, and was progressively disabled — its rescue boats were torn off, the helideck was wrecked, and water filled the decks faster than the pumps could cope. All 51 people on board were rescued (46 by fast rescue boats from the standby vessels Esvagt Omega and Esvagt Protector, the remainder by helicopter and other assisting units); the rig later capsized and sank. No lives were lost. ESVAGT received the 1991 Leith International Conference Offshore Safety Award for the rescue. Earlier database entries incorrectly recorded 4 fatalities and 26 aboard; primary sources (the QE2 master\'s log and ESVAGT\'s own account) confirm 51 aboard and zero fatalities.',
+      executive_summary: 'On the night of 20–21 August 1990 the accommodation jack-up rig West Gamma lost its tow in a full North Sea gale (NW Force 9–10) in the Danish sector near the Gorm field. The heavily damaged rig was evacuated and later capsized and sank, but all 51 people aboard were rescued — 46 by ESVAGT fast rescue boats — with no loss of life. The event became a celebrated mass rescue rather than a fatal accident.',
+      what_happened: 'The West Gamma, a jack-up accommodation/support rig, was under ocean tow in the North Sea when it hit a full gale-force storm on 20 August 1990 and lost its tow. It drifted, disabled and heavily damaged, in the Danish sector near the Gorm field (estimated position ~55°23′N 04°46′E, about 8 miles from the "Bravo 11" pumping station). A MAYDAY was received in the early afternoon of 20 August; the liner QE2, some 47 miles away, was asked to divert and act as on-scene rescue commander.\n\nThe gale (NW Force 9, later Force 9–10) tore the rig\'s rescue boats away, wrecked the helideck, and drove water onto the decks faster than the pumps could handle. As the situation deteriorated it was decided to evacuate. Tied in groups of five to six, the crew jumped into the dark sea where fast rescue boats (FRBs) from the standby vessels Esvagt Omega (released from the Danish Dan field) and Esvagt Protector (released from the Gorm field) waited, guided by a helicopter searchlight. Esvagt Omega\'s FRB crew entered the raging sea seven times, also recovering the crew of a capsized rescue boat from another company. All 51 West Gamma crew were saved — 46 by ESVAGT FRBs — and no lives were lost. The rig subsequently capsized and sank. ESVAGT was awarded the 1991 Leith International Conference Offshore Safety Award for the operation.',
       what_went_wrong: [
-        'The rig\'s tow configuration — including ballast distribution, watertight integrity of hatches and vents, and minimum hull air gap — was not adequate for the sea conditions encountered.',
-        'Weather planning for the tow transit did not adequately define go/no-go criteria or account for the possibility of rapid deterioration.',
-        'Jack-up towing at the time was regulated less rigorously than on-location operations; design-specific tow stability requirements were not mandatory.',
-        'Stability monitoring during the tow relied on pre-departure calculations rather than real-time tracking of changes (water ingress, fuel burn, ballast shifts).',
-        'Weather forecasting resources and communications available during the tow were insufficient to provide timely advance warning of the deteriorating conditions.'
+        'The rig lost its tow in a full gale and could not be kept head-to-sea, leaving it drifting and exposed to beam seas.',
+        'The tow configuration — ballast distribution, watertight integrity of hatches and vents, and minimum hull air gap — proved inadequate for the sea conditions, allowing progressive water ingress.',
+        'The rig\'s own means of escape were disabled early: the rescue boats were torn off and the helideck wrecked, forcing the crew to enter the sea directly.',
+        'Weather planning for the tow did not prevent departure into, or continuation through, rapidly deteriorating North Sea gale conditions.',
+        'Jack-up towing at the time was regulated less rigorously than on-location operations; tow-specific stability requirements were not mandatory.'
       ],
       lessons_learned: [
-        'Jack-up rig tow operations must be treated as a distinct high-risk activity with specific tow-configuration requirements, go/no-go weather criteria, stability calculations for the specific tow loading, and watertight integrity checks verified before departure and monitored throughout.',
-        'Maximum allowable wave height and wind speed for each specific tow — derived from tow-specific stability analysis — must be defined before departure. The tow must abort or seek a safe haven if limits are approached.',
-        'All openings, vents, and access hatches must be positively verified closed and watertight before and during a tow. A single opening can rapidly compromise hull stability in heavy seas.',
-        'Weather routing services must be contracted for all jack-up ocean tows, with a named person responsible for monitoring the forecast and recommending abort.',
-        'Persons on board during a tow must have survival suits and personal locating beacons at all times; minimum manning during tows should be enforced.'
+        'Jack-up/accommodation rig tow operations must be treated as a distinct high-risk activity with tow-specific stability calculations, defined go/no-go weather criteria, and verified watertight integrity before and during the tow.',
+        'Maximum allowable wave height and wind speed for each specific tow must be defined in advance; the tow must abort or seek safe haven before those limits are approached.',
+        'The West Gamma rescue demonstrates the decisive value of dedicated standby/emergency response and rescue vessels (ERRVs) with trained fast-rescue-boat crews — they, not the rig\'s own appliances, saved all 51 lives.',
+        'Personal survival equipment (survival suits, lifejackets, locating aids) and drilled evacuation-into-the-sea procedures are essential when a rig\'s own rescue boats and helideck may be lost early in an event.',
+        'Weather routing must be contracted for all ocean tows, with a named person responsible for monitoring the forecast and recommending abort.'
       ],
       actions: [
-        'German and Norwegian maritime authorities investigated and issued recommendations covering jack-up tow safety requirements.',
-        'Classification societies (DNV, Lloyd\'s Register) developed more specific mandatory requirements for jack-up rig tow preparation, including tow stability approval.',
-        'IADC and IMCA developed operational guidance for jack-up ocean tows covering weather criteria, tow configuration, and minimum crewing.',
-        'IMO MODU Code provisions were reviewed and updated in light of West Gamma and similar tow accidents.'
+        'ESVAGT A/S was awarded the "Leith International Conference — Offshore Safety Award 1991" for the West Gamma rescue.',
+        'The incident reinforced industry attention on jack-up ocean-tow safety, tow-specific stability approval, and the role of dedicated standby/rescue vessels.',
+        'Classification societies and industry bodies (IMCA, IADC) developed operational guidance for jack-up ocean tows covering weather criteria, tow configuration, watertight integrity and minimum crewing.'
       ],
       metocean: {
-        wave_height_hs: 'Deteriorating during tow (precise data not recorded in available sources)',
-        wind_speed: 'Storm-force conditions',
+        wave_height_hs: 'High seas and heavy swell in a NW Force 9–10 gale (precise Hs not recorded in available sources; Force 9–10 typically ~6–9 m)',
+        wind_speed: 'NW Force 9, later Force 9–10 (~41–55 knots / 20–28 m/s) per QE2 log',
         sea_temp: '~16–18 °C (August North Sea)',
-        notes: 'The North Sea in August can produce sudden storm conditions; this tow encountered deteriorating weather that exceeded the rig\'s tow-mode stability envelope.'
+        notes: 'QE2 master\'s log (Capt. R. W. Warwick, 20 August 1990) records NW Force 9 winds, falling barometer (~1001 mb by 2000), high bow sea and heavy swell. The rig lost its tow, was disabled, and later capsized; all aboard were rescued.'
       },
       references: [
-        { title: 'West Gamma capsize investigation (1991)', type: 'Maritime investigation report', publisher: 'German Federal Bureau of Maritime Casualty Investigation (BSU)', year: 1991 },
-        { title: 'IMCA guidance on jackup towing and positioning', type: 'Industry guidance', publisher: 'International Marine Contractors Association (IMCA)' }
+        { title: 'ESVAGT saves 46 from capsizing rig (West Gamma, 21 August 1990)', type: 'Rescuer account / company history', publisher: 'ESVAGT A/S', url: 'https://esvagt.com/services/stories/esvagt-saves-46-from-capsizing-rig/' },
+        { title: 'QE2 Log Book extract, 20 August 1990 — Master Capt. Ronald W. Warwick (on-scene rescue commander account)', type: 'Primary source — ship\'s log', publisher: 'Cunard / QE2' },
+        { title: 'IMCA guidance on jack-up towing and positioning', type: 'Industry guidance', publisher: 'International Marine Contractors Association (IMCA)' }
       ]
     },
 
@@ -1343,14 +1375,15 @@ window.INCIDENTS_DATA = {
       region: 'North America',
       platform_type: 'Multiple — fixed platforms, mobile rigs, pipelines',
       operator: 'Multiple GoM offshore operators',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'design',
       weather_event: 'Hurricane Andrew — Category 4 at GoM impact (Category 5 at Florida landfall)',
       fatalities: 0,
       infrastructure_impact: '~30 platforms destroyed or seriously damaged; multiple pipelines ruptured — triggered first major revision of API RP 2A GoM design criteria',
       severity_override: 'notable',
       summary: 'Hurricane Andrew crossed the Gulf of Mexico in August 1992 after devastating southern Florida as a Category 5. Though primarily remembered for its onshore destruction, Andrew revealed critical inadequacies in GoM offshore platform design criteria. Approximately 30 platforms were destroyed or severely damaged. Pre-storm evacuations prevented any offshore fatalities. Andrew triggered the first comprehensive revision of API RP 2A — the fundamental design standard for Gulf of Mexico platforms — incorporating updated wave and current criteria.',
       executive_summary: 'Hurricane Andrew crossed the Gulf of Mexico in August 1992 as a Category 4 storm; pre-storm evacuations prevented offshore fatalities, but approximately 30 platforms were destroyed or severely damaged and multiple pipelines ruptured. The storm revealed that existing GoM platform design criteria were inadequate in parts of the Gulf.',
-      what_happened: 'Hurricane Andrew made landfall in southern Florida on 24 August 1992 as a Category 5 hurricane, then crossed southern Florida and re-entered the Gulf of Mexico. It made a second landfall near Morgan City, Louisiana on 26 August as a Category 3–4 storm.\n\nThe GoM offshore industry conducted pre-storm evacuations, preventing offshore fatalities. However, the storm exposed the inadequacy of existing platform design criteria. Approximately 30 platforms in the south-central GoM sustained serious structural damage or were destroyed. Multiple pipelines were ruptured or displaced. Post-storm MMS surveys revealed that many fixed platforms had design wave heights below what Andrew actually generated.',
+      what_happened: 'Hurricane Andrew made landfall in southern Florida on 24 August 1992 as a Category 5 hurricane, then crossed southern Florida and re-entered the Gulf of Mexico. It made a second landfall near Morgan City, Louisiana on 26 August as a Category 3 storm.\n\nThe GoM offshore industry conducted pre-storm evacuations, preventing offshore fatalities. However, the storm exposed the inadequacy of existing platform design criteria. Approximately 30 platforms in the south-central GoM sustained serious structural damage or were destroyed. Multiple pipelines were ruptured or displaced. Post-storm MMS surveys revealed that many fixed platforms had design wave heights below what Andrew actually generated.',
       what_went_wrong: [
         'API RP 2A design criteria for GoM platforms (100-year return period waves) were shown to be inadequate in parts of the Gulf — actual hurricane conditions generated by Andrew exceeded the design basis of multiple platforms.',
         'Pipeline integrity management did not fully account for extreme storm loading — hurricane-induced seabed scour and wave-induced pipe oscillation damaged many pipelines.',
@@ -1397,14 +1430,15 @@ window.INCIDENTS_DATA = {
       region: 'North America',
       platform_type: 'Multiple fixed platforms and mobile rigs; Taylor Energy MC20 production platform',
       operator: 'Multiple operators; Taylor Energy (MC20)',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'design',
       weather_event: 'Hurricane Ivan — Category 5 peak; Category 4 in GoM; world-record waves',
       fatalities: 0,
       infrastructure_impact: '7 platforms destroyed; 24 significantly damaged; Taylor Energy MC20 collapsed by submarine landslide — 15+ year oil seep',
       severity_override: 'major',
-      summary: 'Hurricane Ivan crossed the Gulf of Mexico in September 2004 generating the largest waves ever measured in the Gulf — NOAA buoy 42001 recorded a world-record 27.7 m Hs. Seven platforms were destroyed and 24 more damaged. Taylor Energy\'s MC20 platform was destroyed when storm waves triggered a submarine landslide that buried the well conductors under seabed debris, creating an oil seep that persisted for over 15 years — the longest-running offshore oil spill in US history. All platforms had been evacuated, preventing fatalities.',
+      summary: 'Hurricane Ivan crossed the Gulf of Mexico in September 2004 generating some of the largest waves ever measured in the Gulf — US Naval Research Laboratory (NRL) seabed wave gauges recorded a maximum individual wave height of ~27.7 m, with a peak significant wave height of ~17.9 m. Seven platforms were destroyed and 24 more damaged. Taylor Energy\'s MC20 platform was destroyed when storm waves triggered a submarine landslide that buried the well conductors under seabed debris, creating an oil leak that persisted for over 15 years; leak-rate estimates were heavily disputed (Taylor Energy ~3–5 gallons/day vs a 2019 NOAA-funded estimate of up to ~4,500 gallons/day). All platforms had been evacuated, preventing fatalities.',
       executive_summary: 'Hurricane Ivan crossed the Gulf of Mexico in September 2004 generating the largest waves ever recorded in the Gulf — an individual maximum wave height of 27.7 m. Seven platforms were destroyed and 24 more damaged; all personnel had been evacuated. Ivan\'s wave loading triggered a submarine landslide that destroyed the Taylor Energy MC20 platform, creating an oil seep that persisted for over 15 years.',
-      what_happened: 'Hurricane Ivan formed as a Category 5 hurricane in the Atlantic and crossed the Gulf of Mexico in September 2004, tracking toward the Alabama/Florida Panhandle coast. NOAA\'s deepwater buoy 42001 recorded a significant wave height of 27.7 m — the world record for the GoM and among the largest ever instrumentally measured anywhere in the world. Individual wave heights up to ~32 m were estimated.\n\nSeven platforms were totally destroyed; 24 more sustained significant structural damage. Nine drilling rigs dragged anchors or were displaced.\n\nThe most consequential long-term damage was at Mississippi Canyon block 20 (MC20). Ivan\'s wave loading triggered a seabed slope failure (submarine landslide) that caused the Taylor Energy MC20 platform to list and ultimately collapse, burying the well conductors under metres of seabed debris. The resulting uncontrolled slow leak from multiple well conductors was not fully controlled for over 15 years, ultimately requiring BSEE to mandate installation of a containment device in 2019.',
+      what_happened: 'Hurricane Ivan formed as a Category 5 hurricane in the Atlantic and crossed the Gulf of Mexico in September 2004, tracking toward the Alabama/Florida Panhandle coast. US Naval Research Laboratory (NRL) bottom-mounted wave gauges recorded a peak significant wave height of ~17.9 m and a maximum individual wave height of ~27.7 m — among the largest waves ever instrumentally measured in the GoM. (These are two different quantities: the 27.7 m figure is a single extreme wave, not a significant wave height, and the two have often been conflated.)\n\nSeven platforms were totally destroyed; 24 more sustained significant structural damage. Nine drilling rigs dragged anchors or were displaced.\n\nThe most consequential long-term damage was at Mississippi Canyon block 20 (MC20). Ivan\'s wave loading triggered a seabed slope failure (submarine landslide) that caused the Taylor Energy MC20 platform to list and ultimately collapse, burying the well conductors under metres of seabed debris. The resulting slow leak from multiple well conductors persisted for over 15 years, ultimately requiring BSEE to mandate installation of a containment system in 2019. The leak rate remained contested — Taylor Energy maintained it was only ~3–5 gallons/day, while a 2019 NOAA-funded study estimated up to ~4,500 gallons/day — and the matter was not cleanly resolved.',
       what_went_wrong: [
         'The wave environment generated by Ivan significantly exceeded the design basis of multiple GoM platforms, even those that had been updated following the 1997 API RP 2A revision post-Andrew.',
         'Submarine slope failure risk at the MC20 site — where soft seabed sediments existed on a gentle slope — was not characterised or incorporated into the platform design and risk assessment.',
@@ -1427,10 +1461,10 @@ window.INCIDENTS_DATA = {
         'Improved guidance on site-specific geotechnical hazard assessment for GoM platforms issued, including assessment of submarine landslide susceptibility.'
       ],
       metocean: {
-        wave_height_hs: '27.7 m — world record for GoM (NOAA buoy 42001)',
-        wind_speed: 'Sustained 145 mph (126 knots) at peak; Category 4 at GoM crossing',
+        wave_height_hs: '~17.9 m peak significant wave height (NRL gauges); maximum individual wave height ~27.7 m',
+        wind_speed: 'Category 5 peak (~165 mph / 143 kn) in the Caribbean; ~140 mph (Category 4) crossing the GoM',
         sea_temp: '~30 °C',
-        notes: 'The 27.7 m Hs recorded by NOAA buoy 42001 during Ivan is the highest significant wave height ever reliably measured in the Gulf of Mexico. Individual wave heights up to ~32 m were estimated from the spectral data. These conditions were well beyond any prior GoM design basis.'
+        notes: 'The 27.7 m figure frequently cited for Ivan is a maximum individual wave height measured by US Naval Research Laboratory seabed gauges — not a significant wave height. The peak Hs measured was ~17.9 m. These distinct quantities have often been conflated (and mis-attributed to NOAA buoy 42001). Conditions were nonetheless well beyond any prior GoM design basis.'
       },
       references: [
         { title: 'BSEE Gulf of Mexico Hurricane History — Ivan', type: 'Regulatory report', publisher: 'Bureau of Safety and Environmental Enforcement', url: 'https://www.bsee.gov/resources-tools/planning-preparedness/hurricane/hurricane-history' },
@@ -1453,17 +1487,18 @@ window.INCIDENTS_DATA = {
       region: 'North America',
       platform_type: 'Multiple — fixed platforms, mobile rigs, FPSOs, pipelines',
       operator: 'Multiple GoM offshore operators',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'design',
       weather_event: 'Hurricane Katrina — Category 5 peak; Category 3 at Louisiana landfall',
       fatalities: 0,
-      infrastructure_impact: '47 platforms totally destroyed; 20+ major structural damage; 457 pipeline damage reports — largest offshore infrastructure loss event in history at that time',
+      infrastructure_impact: '47 platforms totally destroyed; 20+ major structural damage; hundreds of pipeline damage reports (the widely-cited 457 figure is the combined 2005 Katrina + Rita season total) — among the largest offshore infrastructure loss events on record',
       severity_override: 'critical',
-      summary: 'Hurricane Katrina — the costliest natural disaster in US history — devastated GoM offshore infrastructure on 29 August 2005: 47 platforms destroyed, 457 pipeline damage reports, nine drilling rigs sank or ran aground. Pre-storm mass evacuation of approximately 90,000 workers prevented what could have been thousands of offshore fatalities. Combined with Hurricane Rita three weeks later, the 2005 season caused approximately US$6 billion in offshore damage and forced a fundamental rethink of GoM platform design standards.',
-      executive_summary: 'Hurricane Katrina made landfall on the Louisiana coast on 29 August 2005 (Category 5 peak over the Gulf); mass evacuation of ~90,000 workers limited casualties, but 47 platforms were destroyed, over 20 sustained major damage, and 457 pipeline damage reports were filed. The liftboat Pelican, which had not completed evacuation, sank near Grand Isle killing approximately 8 workers.',
-      what_happened: 'The Gulf of Mexico offshore industry conducted the largest offshore evacuation in history in the days before Katrina\'s arrival — approximately 90,000 workers were removed from platforms and rigs. This operational success prevented mass casualties from what became the most damaging storm in GoM offshore history.\n\nKatrina made landfall on the Louisiana/Mississippi coast on 29 August 2005 as a Category 3 storm (having reached Category 5 intensity over the Gulf). Wave heights on the continental shelf reached 10–12 m with 3–5 m storm surge; deep-water Hs exceeded 15 m. Forty-seven platforms were totally lost; over 20 more had severe damage. Nine rigs ran aground on the coastline. The 457 pipeline damage reports caused prolonged production shutdowns contributing to US energy supply disruptions lasting months.\n\nOne liftboat (Pelican) that had not completed evacuation sank near Grand Isle, killing approximately 8 workers — the most concentrated offshore fatality event of the storm.',
+      summary: 'Hurricane Katrina — the costliest natural disaster in US history — devastated GoM offshore infrastructure on 29 August 2005: 47 platforms destroyed and nine drilling rigs sank or ran aground. Pre-storm mass evacuation of approximately 90,000 workers prevented offshore fatalities. Combined with Hurricane Rita three weeks later, the 2005 season caused approximately US$6 billion in offshore damage (and a combined ~457 pipeline damage reports) and forced a fundamental rethink of GoM platform design standards.',
+      executive_summary: 'Hurricane Katrina made landfall on the Louisiana coast on 29 August 2005 (Category 5 peak over the Gulf); mass evacuation of ~90,000 workers prevented offshore fatalities, but 47 platforms were destroyed and over 20 sustained major damage. Pipeline damage across the 2005 season (Katrina and Rita combined) ran to some 457 reports. There were no confirmed offshore fatalities from Katrina.',
+      what_happened: 'The Gulf of Mexico offshore industry conducted the largest offshore evacuation in history in the days before Katrina\'s arrival — approximately 90,000 workers were removed from platforms and rigs. This operational success prevented mass casualties from what became one of the most damaging storms in GoM offshore history.\n\nKatrina made landfall on the Louisiana/Mississippi coast on 29 August 2005 as a Category 3 storm (having reached Category 5 intensity over the Gulf). Wave heights on the continental shelf reached 10–12 m with 3–5 m storm surge; deep-water Hs exceeded 15 m. Forty-seven platforms were totally lost; over 20 more had severe damage. Nine rigs ran aground on the coastline. Hundreds of pipeline damage reports (the ~457 figure spans the combined Katrina + Rita season) caused prolonged production shutdowns contributing to US energy supply disruptions lasting months.\n\nThanks to the completed evacuation there were no confirmed offshore fatalities attributable to Katrina.',
       what_went_wrong: [
         'Despite post-Andrew revisions to API RP 2A, large numbers of existing GoM platforms still had design wave heights below those generated by Katrina — the structural inventory was not sufficiently robust for Category 4–5 hurricanes in the south-central GoM.',
-        'The Pelican liftboat and similar small marine units had incomplete evacuation tracking, resulting in workers remaining in the storm path.',
+        'Evacuation tracking for small marine units (liftboats, barges) was historically less rigorous than for major platforms — a recognised gap, even though the 2005 evacuation ultimately avoided offshore fatalities.',
         'Pipeline routing and burial standards in shallow GoM areas were insufficient to prevent mass damage from hurricane-induced seabed scour and wave-induced oscillation.',
         'Post-storm reinstatement planning — the sequence for safely reconnecting hundreds of damaged platforms and pipelines — was not pre-planned at industry level; restoring a system of this scale had not been exercised.',
         'The combined impact of Katrina (29 August) and Rita (24 September) was not incorporated as a credible planning scenario — assets damaged by Katrina were hit again by Rita before they could be assessed.'
@@ -1479,7 +1514,6 @@ window.INCIDENTS_DATA = {
         'BSEE published the most comprehensive post-storm damage statistics ever assembled for GoM offshore infrastructure.',
         'API RP 2A further revised with post-Katrina metocean data — more stringent design requirements for GoM platforms introduced.',
         'MMS/BSEE implemented Gulf of Mexico Hurricane Planning Guidance requiring operators to file hurricane plans and demonstrate evacuation readiness.',
-        'GoM offshore industry established the Gulf of Mexico Operators Coalition (GOMOC) emergency response coordination structure for post-storm reinstatement.',
         'Pipeline inspection and repair requirements strengthened following the post-Katrina damage assessment.'
       ],
       metocean: {
@@ -1508,7 +1542,8 @@ window.INCIDENTS_DATA = {
       region: 'North America',
       platform_type: 'Multiple — fixed platforms, mobile rigs, pipelines',
       operator: 'Multiple GoM offshore operators',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'design',
       weather_event: 'Hurricane Rita — Category 5 peak (4th most intense Atlantic hurricane on record); Category 3 at landfall',
       fatalities: 0,
       infrastructure_impact: '69 platforms totally destroyed; 32 platforms major structural damage — combined with Katrina: ~115 platforms lost in 25 days',
@@ -1560,12 +1595,13 @@ window.INCIDENTS_DATA = {
       region: 'North America',
       platform_type: 'Multiple — fixed platforms, mobile rigs',
       operator: 'Multiple GoM offshore operators',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'design',
       weather_event: 'Hurricane Gustav — Category 4 peak; Category 2 at Louisiana landfall',
       fatalities: 0,
-      infrastructure_impact: '~10 platforms destroyed; ~31 platforms damaged; 632 of 717 manned GoM platforms evacuated — largest mass evacuation in offshore history',
+      infrastructure_impact: '632 of 717 manned GoM platforms evacuated — the largest mass offshore evacuation on record at the time. Platform-destruction counts for 2008 are usually reported as a combined Gustav+Ike season total (~60 destroyed, ~31 extensively damaged), so per-storm splits are approximate',
       severity_override: 'notable',
-      summary: 'Hurricane Gustav provided the first major test of post-Katrina offshore safety procedures in 2008. Mass evacuation protocols removed over 90,000 workers from 632 of 717 manned platforms — the largest mass offshore evacuation ever recorded. Ten platforms were destroyed and 31 damaged, but zero offshore fatalities occurred. Gustav demonstrated that the systematic evacuation procedures developed after 2005 were effective.',
+      summary: 'Hurricane Gustav provided the first major test of post-Katrina offshore safety procedures in 2008. Mass evacuation protocols removed over 90,000 workers from 632 of 717 manned platforms — the largest mass offshore evacuation ever recorded at the time. A number of platforms were destroyed but zero offshore fatalities occurred. (The frequently-quoted "~31 platforms damaged" is the combined 2008 Gustav+Ike season figure, not Gustav alone.) Gustav demonstrated that the systematic evacuation procedures developed after 2005 were effective.',
       executive_summary: 'First major test of post-Katrina offshore safety procedures; mass evacuation removed 90,000+ workers from 632 manned platforms (of 717 total). Revealed effectiveness of new evacuation protocols but exposed continued vulnerabilities in structural design standards for extreme hurricane loads.',
       what_happened: 'Three years after Katrina and Rita, Hurricane Gustav provided the first major field test of improved hurricane preparedness systems. As Gustav intensified and tracked toward Louisiana, operators implemented mass evacuation protocols. By landfall on 1 September 2008 near Cocodrie, Louisiana, 632 of 717 manned platforms had been evacuated — approximately 90% of the offshore workforce and the largest mass offshore evacuation on record.\n\nGustav caused approximately 10 platforms to be totally destroyed and damaged 31 more. Production shutdowns affected about 95% of GoM oil production for several days. Despite the scale of impact, zero offshore fatalities occurred — a direct result of the improved and systematised evacuation procedures.',
       what_went_wrong: [
@@ -1610,14 +1646,15 @@ window.INCIDENTS_DATA = {
       region: 'North America',
       platform_type: 'Multiple — fixed platforms, mobile rigs, pipelines',
       operator: 'Multiple GoM offshore operators',
-      weather_event_type: 'hurricane',
+      weather_event_type: 'cyclone',
+      classification: 'design',
       weather_event: 'Hurricane Ike — Category 4 peak; Category 2 at Galveston landfall; exceptionally large storm diameter',
       fatalities: 0,
-      infrastructure_impact: '~50 platforms totally destroyed; ~31 platforms major structural damage; extensive pipeline damage across Texas shelf',
+      infrastructure_impact: 'Combined 2008 Gustav+Ike season: ~60 platforms destroyed and ~31 extensively damaged (the majority attributed to Ike); extensive pipeline damage across the Texas shelf. Per-storm destruction splits are approximate',
       severity_override: 'major',
-      summary: 'Hurricane Ike struck the Texas coast near Galveston on 13 September 2008, just 11 days after Gustav. Despite being Category 2 at landfall, Ike caused massive destruction due to its exceptional size — its wind and wave field extended hundreds of kilometres from the centre. Approximately 50 platforms were destroyed and 31 more severely damaged. A 4–6 m storm surge along the Galveston coast demonstrated that hurricane size, not intensity category alone, determines the damage footprint. All platforms were evacuated; zero offshore fatalities.',
-      executive_summary: 'Hurricane Ike struck the Texas coast near Galveston on 13 September 2008; despite being Category 2 at landfall, its exceptional size generated damaging waves, currents, and storm surge across a far wider area than its intensity rating implied. Approximately 50 platforms were destroyed and 31 more severely damaged; no offshore fatalities occurred.',
-      what_happened: 'Gustav and Ike struck the GoM 11 days apart in September 2008. Following Gustav\'s successful mass evacuation, the industry again evacuated the GoM workforce for Ike, which made landfall at Galveston/Bolivar Peninsula on 13 September 2008.\n\nIke was Category 2 at landfall but generated a storm surge of 4–6 m along the Texas coast — far greater than expected for that intensity because of Ike\'s very large diameter. The same physics affected offshore platforms: wave heights and sustained currents over the Texas shelf were more extensive than the intensity rating alone implied.\n\nApproximately 50 platforms were totally destroyed; 31 more had major structural damage. Combined with Gustav 11 days earlier, the 2008 season was the second worst in GoM offshore history after 2005.',
+      summary: 'Hurricane Ike struck the Texas coast near Galveston on 13 September 2008, just 11 days after Gustav. Despite being Category 2 at landfall, Ike caused massive destruction due to its exceptional size — its wind and wave field extended hundreds of kilometres from the centre. Across the 2008 season, Gustav and Ike together destroyed about 60 platforms and extensively damaged ~31 (the majority attributed to Ike). A 4–6 m storm surge along the Galveston coast demonstrated that hurricane size, not intensity category alone, determines the damage footprint. All platforms were evacuated; zero offshore fatalities.',
+      executive_summary: 'Hurricane Ike struck the Texas coast near Galveston on 13 September 2008; despite being Category 2 at landfall, its exceptional size generated damaging waves, currents, and storm surge across a far wider area than its intensity rating implied. Across the 2008 season the majority of the ~60 platforms destroyed and ~31 extensively damaged (combined Gustav+Ike total) are attributed to Ike; no offshore fatalities occurred.',
+      what_happened: 'Gustav and Ike struck the GoM 11 days apart in September 2008. Following Gustav\'s successful mass evacuation, the industry again evacuated the GoM workforce for Ike, which made landfall at Galveston/Bolivar Peninsula on 13 September 2008.\n\nIke was Category 2 at landfall but generated a storm surge of 4–6 m along the Texas coast — far greater than expected for that intensity because of Ike\'s very large diameter. The same physics affected offshore platforms: wave heights and sustained currents over the Texas shelf were more extensive than the intensity rating alone implied.\n\nCombined with Gustav 11 days earlier, the 2008 season destroyed about 60 platforms and extensively damaged ~31 — the second worst in GoM offshore history after 2005, with the larger share of the destruction attributed to Ike.',
       what_went_wrong: [
         'Hurricane intensity ratings (Saffir-Simpson Category 1–5) are based on maximum wind speed and do not account for storm size — Ike\'s very large diameter meant its damage footprint vastly exceeded what its Category 2 rating suggested.',
         'Some smaller Texas shelf platforms had received less post-Katrina/Rita attention and remained below current structural standards — they were destroyed.',
@@ -1653,21 +1690,23 @@ window.INCIDENTS_DATA = {
       id: 'south_china_sea_solitons',
       name: 'South China Sea — Internal Wave Incidents',
       year: 2004,
+      data_quality: 'Describes a recurring, well-documented oceanographic hazard class (South China Sea internal waves / solitons) rather than a single verified named incident; specific unnamed-vessel anecdotes are illustrative and not individually sourced (2026-07-04 fact-check audit).',
       date: '2000s – present (ongoing hazard)',
       location: 'South China Sea — particularly SE of Luzon Strait, east of Vietnam',
       lat: 12.0,
       lng: 113.0,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Drillships, semi-submersibles, FPSOs, moored platforms',
       operator: 'Multiple — CNOOC, Husky, Shell, Chevron, Petronas, others',
       weather_event_type: 'internal_wave',
+      classification: 'drilling',
       weather_event: 'Internal waves (solitons) — tidally generated underwater wave packets propagating westward from the Luzon Strait',
       fatalities: 0,
       infrastructure_impact: 'Multiple riser over-tension events, emergency disconnections, vessel excursions of 50–300+ m off location; significant riser and mooring damage in multiple incidents across the region',
       severity_override: 'notable',
       summary: 'The South China Sea hosts the world\'s most energetic internal waves (solitons), generated by tidal forcing at the Luzon Strait. These underwater wave packets — invisible at the sea surface — have caused multiple documented incidents involving drillships, semi-submersibles, and FPSOs experiencing sudden current pulses of 2–3 m/s. Vessels have been displaced 50–300+ m off location without warning, causing riser over-tension, emergency disconnections, and mooring damage. No fatalities have been documented, but the potential for riser failure and blowout is severe. The hazard has driven development of dedicated internal wave monitoring systems and new deepwater operating procedures across SE Asian operations.',
       executive_summary: 'Tidal forcing at the Luzon Strait generates powerful internal wave packets (solitons) that propagate westward across the South China Sea — invisible at the surface but producing sudden subsurface current pulses of 2–3 m/s with no visual warning. Multiple drillships and FPSOs have been displaced 50–300+ m off location, causing riser over-tension, emergency disconnections, and mooring damage.',
-      what_happened: 'Internal waves in the South China Sea are generated when strong tidal flows over the Luzon Strait (between Taiwan and the Philippines) create large-amplitude oscillations in the thermocline. These propagate westward across the deep South China Sea as coherent wave packets — groups of 2–10 individual waves spaced 1–3 km apart — with periods of 15–30 minutes.\n\nAs these wave packets pass beneath a drillship or moored platform, they generate sudden subsurface horizontal current pulses typically 2–3 m/s (4–6 knots) lasting 5–20 minutes, extending from the surface to depths of 200–400 m. The sea surface typically appears calm — there is no visual warning.\n\nDocumented incidents include: vessels displaced 50–300+ m off drilling location, triggering riser high-angle alarms and emergency disconnect sequences; FPSO mooring line overloads causing partial mooring failure; and at least one riser tension exceedance in the Liwan gas field area. In one documented case, a drillship moved over 100 m in less than 5 minutes — only current meter recordings later confirmed an internal wave passage.',
+      what_happened: 'Internal waves in the South China Sea are generated when strong tidal flows over the Luzon Strait (between Taiwan and the Philippines) create large-amplitude oscillations in the thermocline. These propagate westward across the deep South China Sea as coherent wave packets — groups of 2–10 individual waves spaced 1–3 km apart — with periods of 15–30 minutes.\n\nAs these wave packets pass beneath a drillship or moored platform, they generate sudden subsurface horizontal current pulses typically 2–3 m/s (4–6 knots) lasting 5–20 minutes, extending from the surface to depths of 200–400 m. The sea surface typically appears calm — there is no visual warning.\n\nReported effects of internal-wave passages include vessels displaced 50–300+ m off drilling location, triggering riser high-angle alarms and emergency disconnect sequences, and FPSO mooring-line overloads. (Note: a riser-tension exceedance in the Liwan gas-field area that has sometimes been linked to an internal wave was in fact associated with Typhoon Koppu in 2009 — a separate, weather-driven cause.) These effects are characteristic of the hazard class; specific vessel-by-vessel incidents in the region are largely undisclosed in public sources.',
       what_went_wrong: [
         'Internal waves were historically not recognised as a design and operations hazard for floating production and drilling systems in the South China Sea. Early deepwater projects did not include internal wave assessment in their basis of design.',
         'The phenomenon is invisible at the surface — no visual or standard meteorological warning is possible. Without dedicated instrumentation, the first sign is the vessel already beginning to move off location.',
@@ -1705,7 +1744,7 @@ window.INCIDENTS_DATA = {
     ─────────────────────────────────────────────────── */
     {
       id: 'cosl-innovator-2015',
-      name: 'COSL Innovator — Rogue Wave Strike',
+      name: 'COSL Innovator — Wave Strike, Troll Field',
       year: 2015,
       date: '30 December 2015',
       location: 'Troll field, Norwegian North Sea (~65 km west of Bergen)',
@@ -1714,20 +1753,21 @@ window.INCIDENTS_DATA = {
       region: 'Europe',
       platform_type: 'Semi-submersible drilling rig (column-stabilised MODU)',
       operator: 'COSL Drilling Europe AS (rig owner) / Statoil (field operator)',
-      weather_event_type: 'storm',
-      weather_event: 'Severe North Sea storm — winds 25–30 m/s; steep breaking rogue wave estimated ~14 m against ~14 m Hs sea state',
+      weather_event_type: 'rogue_wave',
+      classification: 'design',
+      weather_event: 'Severe North Sea storm (winds ~25–30 m/s, measured Hs ~9.5 m) — an abnormal wave struck the accommodation; PSA found no indication it was a breaking wave and did not classify it as rogue/freak',
       fatalities: 1,
       persons_on_board: null,
       survivors: null,
-      summary: 'On 30 December 2015 at 16:38 local time, a steep breaking wave struck the forward port side of the COSL Innovator semi-submersible drilling rig on the Troll field. The wave shattered 17 windows in the accommodation module, flooding multiple cabins. One person — Rune Morten Narvag, 53, an Aker Solutions subsea team leader — was killed in his cabin. Four others were injured. The PSA Norway investigation revealed the rig had a negative air gap (deck too close to the wave crest) and that the accommodation structure had not been dimensioned for horizontal wave loads — a gap that turned out to reflect flaws in the regulatory framework itself rather than a clear rule violation. The incident drove a major revision of DNV GL air gap guidance and redesign requirements for ~100 semi-submersibles worldwide.',
-      executive_summary: 'On 30 December 2015, a steep breaking wave struck the semi-submersible COSL Innovator on the Troll field during a severe North Sea storm (winds 25–30 m/s, Hs ~14 m), shattering 17 windows in the accommodation module. One person was killed and four others injured. The investigation found the rig had a negative air gap — the deck too close to the wave crest — allowing the wave to act directly on the accommodation structure.',
-      what_happened: 'The COSL Innovator had been contracted to Statoil for drilling operations at the Troll field since January 2013. On 30 December 2015 a severe storm was affecting the Norwegian North Sea with winds of 25–30 m/s. At 16:38 local time, a steep breaking wave struck the port forward side of the rig\'s box girder — the structural element connecting the forward columns below the main deck.\n\nThe wave impact shattered 17 windows: 6 on the lower deck and 11 on the mezzanine deck of the forward accommodation module. Water flooded multiple cabins with considerable force. Rune Morten Narvag, a 53-year-old Aker Solutions subsea operations team leader, was in his cabin when the wave struck and was killed. Four other personnel were injured. The rig was subsequently evacuated.\n\nThe wave was characterised as a steep, breaking wave with characteristics consistent with a rogue (freak) wave — significantly more energetic than the surrounding sea state would suggest. The incident occurred during what was a severe but not extraordinary storm for the North Sea.',
+      summary: 'On 30 December 2015 at 16:38 local time, an abnormal wave struck the forward port side of the COSL Innovator semi-submersible on the Troll field. It shattered 17 windows in the accommodation module, flooding multiple cabins. One person — Rune Morten Narvag, 53, an Aker Solutions subsea team leader — was killed in his cabin; four others were injured. The measured significant wave height was ~9.5 m; the PSA Norway (Havtil) investigation found no indication the wave was breaking and declined to classify it as a rogue/freak wave. The PSA initially identified the rig\'s air gap and the accommodation\'s lack of horizontal-wave-slamming resistance as regulatory breaches, but amended its report in July 2016 to state these did not constitute breaches at the time. The incident nonetheless drove a major revision of DNV GL air-gap guidance and design checks for ~100 semi-submersibles worldwide.',
+      executive_summary: 'On 30 December 2015 an abnormal wave struck the semi-submersible COSL Innovator on the Troll field during a severe North Sea storm (winds ~25–30 m/s, measured Hs ~9.5 m), shattering 17 windows in the accommodation module. One person was killed and four injured. The PSA found no indication the wave was breaking and did not classify it as rogue; the wave acted on an accommodation superstructure that had not been dimensioned for horizontal wave slamming, prompting a wide revision of air-gap and wave-load design guidance.',
+      what_happened: 'The COSL Innovator had been contracted to Statoil for drilling operations at the Troll field since January 2013. On 30 December 2015 a severe storm was affecting the Norwegian North Sea with winds of ~25–30 m/s and a measured significant wave height of about 9.5 m. At 16:38 local time, an abnormal wave struck the port forward side of the rig\'s box girder — the structural element connecting the forward columns below the main deck.\n\nThe wave impact shattered 17 windows: 6 on the lower deck and 11 on the mezzanine deck of the forward accommodation module. Water flooded multiple cabins with considerable force. Rune Morten Narvag, a 53-year-old Aker Solutions subsea operations team leader, was in his cabin when the wave struck and was killed. Four other personnel were injured. The rig was subsequently evacuated.\n\nThe PSA Norway (Havtil) investigation found no indication that the wave was breaking and did not classify it as a rogue/freak wave; it was an abnormal individual wave within a severe but not extraordinary North Sea storm. The damage arose because the accommodation superstructure, close to the sea surface, had not been dimensioned to resist horizontal wave loads.',
       what_went_wrong: [
-        'The COSL Innovator had a negative air gap: the underside of the lowest deck was insufficiently clear of the highest wave crest under the actual sea conditions, contrary to the nominal 1.5 m air gap requirement. This allowed wave energy to act directly on the deck structure.',
-        'The accommodation module superstructure had not been dimensioned to resist horizontal wave loads from breaking or steep waves. Design practice had focused on vertical wave forces; horizontal wave slamming was not incorporated into structural calculations.',
+        'The accommodation module was close to the sea surface: the rig did not maintain the nominal 1.5 m air gap between the underside of the lowest deck and the highest wave crest, so an abnormal wave could act directly on the superstructure. (The PSA initially treated this as a regulatory breach, then amended its report in July 2016 to conclude it was not a breach at the time.)',
+        'The accommodation module superstructure had not been dimensioned to resist horizontal wave loads from steep waves. Design practice had focused on vertical wave forces; horizontal wave slamming was not incorporated into structural calculations.',
         'Windows in the accommodation module were not designed to withstand horizontal wave impact forces — they were the critical weak point in the structure\'s envelope.',
-        'The PSA Norway investigation found that the regulations were too vague on the applicable calculation methodology for horizontal wave forces on mobile units — meaning approximately 100 DNV GL-approved semi-submersibles worldwide shared the same design approach.',
-        'Personnel registration systems on board functioned inadequately, hampering emergency response and accounting of personnel during and after the incident.'
+        'The regulations and class rules were not specific on the calculation methodology for horizontal wave forces on mobile units — meaning approximately 100 DNV GL-approved semi-submersibles worldwide shared the same design approach.',
+        'Personnel registration systems on board functioned inadequately; it took about 40 minutes to establish a full overview of personnel on board (POB), hampering emergency accounting.'
       ],
       lessons_learned: [
         'Air gap assessment for column-stabilised units must use a consistent, validated methodology that accounts for dynamic rig motion, wave crest statistics, and all relevant sea states — not a simplified static calculation. The Troll incident exposed that existing air gap evaluations were inadequate.',
@@ -1739,22 +1779,24 @@ window.INCIDENTS_DATA = {
       actions: [
         'DNV GL published guideline OTG-13 — Prediction of air gap for column-stabilised units (June 2016) providing a standardised calculation methodology. Norwegian authorities mandated compliance for all MODUs operating in Norwegian waters by 1 November 2016.',
         'PSA Norway initiated a review of approximately 100 semi-submersible rigs previously approved by DNV GL; a limited number required physical modifications or operational restrictions.',
-        'PSA Norway initially issued a safety order against COSL Drilling Europe; this was later revoked after confirming that the regulatory framework was itself inadequate — COSL had not violated clearly defined rules.',
+        'PSA Norway initially cited breaches relating to the air gap and horizontal wave slamming, then amended its investigation report in July 2016 to conclude these did not represent breaches of the regulations in force at the time.',
         'Classification society (DNV GL / DNV) updated MODU class rules to incorporate explicit requirements for horizontal wave load analysis and air gap verification using the updated OTG-13 methodology.',
-        'Statoil (now Equinor) terminated the drilling contract for COSL Innovator following the incident.',
+        'Statoil terminated the drilling contract for COSL Innovator following the incident; in 2018 the Oslo District Court ruled the termination unjustified and ordered Statoil to pay COSL approximately NOK 4bn (~US$490m).',
         'The incident became a central case study in the revision of ISO and NORSOK standards for wave load design of column-stabilised units, driving a broader industry review of horizontal wave slamming on offshore structures.'
       ],
       metocean: {
-        wave_height_hs: '~14 m (severe North Sea winter storm)',
+        wave_height_hs: '~9.5 m measured significant wave height (PSA/Havtil)',
         wind_speed: '25–30 m/s (~50–60 knots)',
         sea_temp: '~8 °C',
-        notes: 'The striking wave was a steep breaking wave consistent with rogue/freak wave characteristics — its individual height and steepness exceeded what the surrounding Hs alone would predict. The Troll field is located in the northern North Sea where 100-year Hs values exceed 14–15 m; storm conditions on 30 December 2015 were severe but within the range of typical winter extremes for the region.'
+        notes: 'The PSA found no indication the striking wave was breaking and did not classify it as a rogue/freak wave — it was an abnormal individual wave within a severe but not extraordinary storm. Earlier descriptions citing a ~14 m figure conflated the measured significant wave height (~9.5 m) with an estimated individual wave-crest height.'
       },
       references: [
         { title: 'PSA Norway — Investigation Report: COSL Drilling – COSLInnovator (2016)', type: 'Official investigation report', publisher: 'Petroleum Safety Authority Norway (PSA / Havtil)', year: 2016, url: 'https://www.havtil.no/en/supervision/investigation-reports/2016/cosl-drilling---coslinnovator---investigation-of-incident-with-fatal-consequences/' },
         { title: 'DNV GL OTG-13 — Prediction of Air Gap for Column-Stabilised Units (June 2016)', type: 'Technical guideline', publisher: 'DNV GL', year: 2016 },
         { title: 'COSL Innovator: How the investigation into wave rig death unfolded', type: 'Industry news feature', publisher: 'Energy Voice', url: 'https://www.energyvoice.com/oilandgas/north-sea/127503/cosl-innovator-investigation-wave-rig-death-unfolded/' },
-        { title: 'DNV GL puts out new air gap guidelines after COSLInnovator accident', type: 'Industry news', publisher: 'Offshore Energy', url: 'https://www.offshore-energy.biz/dnv-gl-puts-out-new-air-gap-guidelines-after-coslinnovator-accident/' }
+        { title: 'DNV GL puts out new air gap guidelines after COSLInnovator accident', type: 'Industry news', publisher: 'Offshore Energy', url: 'https://www.offshore-energy.biz/dnv-gl-puts-out-new-air-gap-guidelines-after-coslinnovator-accident/' },
+        { title: 'PTW-AW-201602 — Non-Shell Fatality from Wave Hitting Rig LQ (Shell internal LFE documenting this same event)', type: 'Shell safety bulletin', internal: true },
+        { title: 'Metocean Lessons Learnt V01', type: 'Shell internal training', file: 'background files/Metocean Lessons Learnt - Learning from Experience V01.docx', internal: true }
       ]
     },
 
@@ -1765,14 +1807,17 @@ window.INCIDENTS_DATA = {
       id: 'metocean-buoy-explosion-2013',
       name: 'Metocean Buoy Maintenance Explosion',
       year: 2013,
+      data_quality: 'The account is from IMCA Safety Flash SF 05/13, which is anonymised; the precise location and coordinates shown here are approximate/inferred and are not stated in the source (2026-07-04 fact-check audit).',
       date: 'Before April 2013 (IMCA SF 05/13, published 4 April 2013)',
-      location: 'South China Sea, ~50 km north of Kota Kinabalu, Sabah, Malaysia',
+      location: 'Offshore SE Asia — exact location not given in the IMCA source (approximate position shown)',
       lat: 6.43,
       lng: 116.07,
-      region: 'Asia/Australasia',
+      region: 'Asia',
+      location_precision: 'approximate',
       platform_type: 'Offshore service vessel — metocean buoy maintenance operation',
       operator: 'Undisclosed (IMCA member company)',
-      weather_event_type: 'maintenance',
+      weather_event_type: 'equipment',
+      classification: 'survey',
       weather_event: 'Marine environmental degradation — 2-year sea deployment caused battery corrosion and hydrogen accumulation in sealed buoy compartment; ignited by angle grinder during maintenance',
       fatalities: 1,
       severity_override: 'notable',
@@ -1820,10 +1865,11 @@ window.INCIDENTS_DATA = {
       location: 'Andaman Sea, Krueng Mane block, offshore Lhokseumawe, Aceh, NW Sumatra, Indonesia',
       lat: 5.60,
       lng: 97.30,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: 'Drilling rig (semi-submersible or moored drillship) on deepwater exploration campaign',
       operator: 'ENI Krueng Mane Ltd. (Indonesia)',
       weather_event_type: 'internal_wave',
+      classification: 'drilling',
       weather_event: 'Andaman Sea internal solitary waves (solitons) — tidal forcing over Andaman–Nicobar Ridge; currents exceeding 1.5 m/s (3 knots)',
       fatalities: 0,
       infrastructure_impact: 'Drill pipe ripped from BOP; rig displaced up to 189 m off location; 3 of 5 planned wells affected; significant equipment loss and operational downtime',
@@ -1882,7 +1928,8 @@ window.INCIDENTS_DATA = {
       region: 'Africa',
       platform_type: 'Offshore tugboat (West African Ventures) — engaged in tension tow operations',
       operator: 'West African Ventures (vessel operator) — contracted by Chevron Nigeria',
-      weather_event_type: 'storm',
+      weather_event_type: 'squall',
+      classification: 'maritime',
       weather_event: 'Sudden squall with heavy ocean swells — rapid onset, no time for evasive action',
       fatalities: 11,
       persons_on_board: 12,
@@ -1935,11 +1982,12 @@ window.INCIDENTS_DATA = {
       location: 'Stag Oilfield, North West Shelf, ~60 km NW of Dampier, Western Australia',
       lat: -20.283,
       lng: 116.250,
-      region: 'Asia/Australasia',
+      region: 'Australia',
       platform_type: 'Floating Storage and Offloading (FSO) vessel — converted Aframax tanker, single-point CALM buoy mooring',
       operator: 'Apache Energy Ltd (field operator) / Teekay Offshore (vessel manager)',
-      weather_event_type: 'hurricane',
-      weather_event: 'Tropical Cyclone Hubert — Category 2, sustained winds ~100 km/h (54 knots), making landfall 7 April 2006',
+      weather_event_type: 'cyclone',
+      classification: 'maritime',
+      weather_event: 'Tropical Cyclone Hubert (Australian scale) — around Category 1–2 near the FSO, weakening near landfall on 7 April 2006',
       fatalities: 0,
       infrastructure_impact: 'Hawser failure and breakaway coupling parted; minor oil release; vessel at near-grounding risk; significant mooring system damage',
       severity_override: 'major',
@@ -1988,21 +2036,22 @@ window.INCIDENTS_DATA = {
       id: 'malampaya-turbidity-2006',
       name: 'Malampaya Pipeline — Typhoon-Triggered Turbidity Current',
       year: 2006,
-      date: '2006 (typhoon season — exact date not publicly disclosed)',
+      date: '2006 (Typhoon Durian, late November / early December 2006)',
       location: 'Verde Island Passage, north of Mindoro Island, Philippines — Malampaya pipeline crossing of the Baco-Malaylay Submarine Canyon',
       lat: 13.55,
       lng: 121.29,
-      region: 'Asia/Australasia',
+      region: 'Asia',
       platform_type: '504-km gas export pipeline (subsea) — Malampaya field (Palawan) to Batangas terminal (Luzon)',
       operator: 'Shell Philippines Exploration BV (SPEX) — JV with Chevron Malampaya LLC (45%) and PNOC Exploration Corporation (10%)',
-      weather_event_type: 'hurricane',
-      weather_event: 'Typhoon (Philippines, 2006) — extreme rainfall and storm surge loaded the Baco-Malaylay canyon with sediment, triggering a catastrophic turbidity current',
+      weather_event_type: 'current',
+      classification: 'pipeline',
+      weather_event: 'Typhoon Durian (November 2006) — extreme rainfall loaded the Baco-Malaylay canyon with sediment, triggering a catastrophic turbidity current',
       fatalities: 0,
       infrastructure_impact: 'Malampaya 504-km gas pipeline displaced from seabed; protective rock berms damaged over affected section; significant remediation required',
       severity_override: 'major',
-      summary: 'During the 2006 Philippine typhoon season, a powerful typhoon triggered an intense turbidity current — a fast-moving underwater avalanche of water-saturated sediment — within the Baco-Malaylay Submarine Canyon off the northern coast of Mindoro Island. The turbidity current, travelling at high velocity along the canyon floor, crossed the route of the 504-km Malampaya subsea gas pipeline and displaced it from its seabed position, also damaging the protective rock berms installed to stabilise and protect the pipe. No fatalities occurred, but the incident required significant engineering investigation and remediation. It was later documented in peer-reviewed literature (Sequeiros et al., Scientific Reports 2019) as a landmark case study of typhoon-triggered turbidity currents damaging critical offshore infrastructure — one of the first incidents to clearly demonstrate this causal chain.',
-      executive_summary: 'During the 2006 Philippine typhoon season, extreme rainfall loaded the Baco and Malaylay rivers with sediment that drained into the Baco-Malaylay Submarine Canyon, triggering a turbidity current. The fast-moving sediment flow displaced the 504-km Malampaya subsea gas export pipeline from its seabed position and damaged its protective rock berms. No fatalities occurred; pipeline integrity was maintained.',
-      what_happened: 'The Malampaya gas pipeline is a 504-km subsea gas export system running from the Malampaya deepwater gas platform (80 km off Palawan, in approximately 43 m water depth at the platform, with subsea wells at ~850 m) eastward through the Mindoro Strait to a gas processing terminal at Batangas, Luzon. The pipeline traverses a complex bathymetric environment including the deep-water Baco-Malaylay Submarine Canyon system on the northern flank of Mindoro Island.\n\nDuring the 2006 typhoon season, a significant Philippine typhoon delivered extreme rainfall over Mindoro Island. The intense precipitation mobilised large volumes of sediment from the Baco and Malaylay river catchments, which fed rapidly into the heads of the submarine canyon system. The canyon geometry and sediment loading created conditions for a catastrophic turbidity current — a gravity-driven, high-density flow of sediment-laden water.\n\nThe turbidity current descended the canyon at high velocity and extended to the depths where the Malampaya pipeline lay on the seabed. The force of the flow was sufficient to physically displace the pipeline from its designed position and to destroy or displace sections of the protective rock berm armouring installed to stabilise the pipeline against external forces. The displacement was detected during subsequent pipeline inspection surveys. No gas release or fatalities were reported; the pipeline integrity was maintained despite the displacement.\n\nThe incident was extensively studied post-event and became the subject of a major academic paper (Sequeiros et al., Scientific Reports 2019) demonstrating for the first time the direct causal link between a typhoon, canyon-head sediment loading, turbidity current generation, and infrastructure damage.',
+      summary: 'In late 2006, Typhoon Durian delivered extreme rainfall over Mindoro Island, triggering an intense turbidity current — a fast-moving underwater avalanche of water-saturated sediment — within the Baco-Malaylay Submarine Canyon off the northern coast of Mindoro. The turbidity current, travelling at high velocity along the canyon floor, crossed the route of the 504-km Malampaya subsea gas pipeline and displaced it from its seabed position, also damaging the protective rock berms installed to stabilise and protect the pipe. No fatalities occurred, but the incident required significant engineering investigation and remediation. It was later analysed in peer-reviewed literature (Scientific Reports, 2019) as a landmark case of a typhoon-triggered turbidity current affecting critical offshore infrastructure.',
+      executive_summary: 'In late 2006, extreme rainfall from Typhoon Durian loaded the Baco and Malaylay rivers with sediment that drained into the Baco-Malaylay Submarine Canyon, triggering a turbidity current. The fast-moving sediment flow displaced the 504-km Malampaya subsea gas export pipeline from its seabed position and damaged its protective rock berms. No fatalities occurred; pipeline integrity was maintained.',
+      what_happened: 'The Malampaya gas pipeline is a 504-km subsea gas export system running from the Malampaya deepwater gas platform (80 km off Palawan, in approximately 43 m water depth at the platform, with subsea wells at ~850 m) eastward through the Mindoro Strait to a gas processing terminal at Batangas, Luzon. The pipeline traverses a complex bathymetric environment including the deep-water Baco-Malaylay Submarine Canyon system on the northern flank of Mindoro Island.\n\nDuring the 2006 typhoon season, Typhoon Durian (late November 2006) delivered extreme rainfall over Mindoro Island. The intense precipitation mobilised large volumes of sediment from the Baco and Malaylay river catchments, which fed rapidly into the heads of the submarine canyon system. The canyon geometry and sediment loading created conditions for a catastrophic turbidity current — a gravity-driven, high-density flow of sediment-laden water.\n\nThe turbidity current descended the canyon at high velocity and extended to the depths where the Malampaya pipeline lay on the seabed. The force of the flow was sufficient to physically displace the pipeline from its designed position and to destroy or displace sections of the protective rock berm armouring installed to stabilise the pipeline against external forces. The displacement was detected during subsequent pipeline inspection surveys. No gas release or fatalities were reported; the pipeline integrity was maintained despite the displacement.\n\nThe incident was extensively studied post-event and analysed in a Scientific Reports paper (2019), "How typhoons trigger turbidity currents in submarine canyons", which modelled the Typhoon Durian (2006) event and contrasted it with Typhoon Melor (December 2015), which did not generate a significant turbidity current.',
       what_went_wrong: [
         'The geohazard posed by the Baco-Malaylay Submarine Canyon to the pipeline route had been identified in the design phase, leading to the installation of protective rock berms, but the berms were not designed for the magnitude of turbidity current generated by a major typhoon loading event.',
         'The typhoon-to-turbidity-current causal chain — extreme rainfall → river sediment flux → canyon head loading → density flow → pipeline damage — was not fully incorporated as a design load case for the pipeline and its protection systems.',
@@ -2026,13 +2075,12 @@ window.INCIDENTS_DATA = {
       ],
       metocean: {
         wave_height_hs: 'Not the primary hazard — pipeline damage caused by subsurface turbidity current, not surface wave action',
-        wind_speed: 'Typhoon-force winds (exact typhoon not publicly identified in open sources)',
-        notes: 'The hazard mechanism is indirect: typhoon rainfall (not waves) loaded the canyon with sediment, triggering the turbidity current. The Baco-Malaylay Canyon system is fed by the Baco and Malaylay rivers on the northern coast of Mindoro Island. Turbidity current velocities in such events can reach 5–10 m/s at canyon floor depths. The pipeline section affected lies at water depths of several hundred metres in the Mindoro Strait. The Malampaya pipeline traverses one of the most typhoon-affected countries in the world — the Philippines experiences an average of 20 typhoons per year, with multiple making landfall on Luzon and Mindoro.'
+        wind_speed: 'Typhoon Durian (November 2006) — typhoon-force winds; the damage mechanism was rainfall-driven, not wind/wave',
+        notes: 'The hazard mechanism is indirect: typhoon rainfall (not waves) loaded the canyon with sediment, triggering the turbidity current. The Baco-Malaylay Canyon system is fed by the Baco and Malaylay rivers on the northern coast of Mindoro Island. Turbidity-current velocities in such events can reach several m/s at canyon-floor depths. The Philippines is among the most typhoon-affected countries in the world (~20 typhoons/year).'
       },
       references: [
-        { title: 'Sequeiros et al. (2019) — How typhoons trigger turbidity currents in submarine canyons', type: 'Peer-reviewed scientific paper', publisher: 'Scientific Reports (Nature Publishing Group)', year: 2019, url: 'https://www.nature.com/articles/s41598-019-51849-2', notes: 'Primary scientific reference documenting the typhoon-turbidity current-pipeline damage causal chain for the Malampaya incident' },
-        { title: 'Offshore Technology — Malampaya gas field project description', type: 'Industry reference', publisher: 'Offshore Technology', url: 'https://www.offshore-technology.com/projects/malampaya/' },
-        { title: 'OTC-15132 — Pipeline geohazards, Mindoro Strait, Philippines', type: 'Conference paper', publisher: 'Offshore Technology Conference', notes: 'OTC paper on the Malampaya pipeline route geohazards' }
+        { title: 'How typhoons trigger turbidity currents in submarine canyons (2019)', type: 'Peer-reviewed scientific paper', publisher: 'Scientific Reports (Nature)', year: 2019, url: 'https://www.nature.com/articles/s41598-019-45615-z', notes: 'Models the Typhoon Durian (2006) turbidity current in the Baco-Malaylay/Mindoro submarine canyon and contrasts it with Typhoon Melor (2015)' },
+        { title: 'Offshore Technology — Malampaya gas field project description', type: 'Industry reference', publisher: 'Offshore Technology', url: 'https://www.offshore-technology.com/projects/malampaya/' }
       ]
     },
 
@@ -2050,7 +2098,8 @@ window.INCIDENTS_DATA = {
       region: 'Europe',
       platform_type: 'Helicopter on offshore oil platform helideck',
       operator: 'Helicopter operator / Elgin platform operator',
-      weather_event_type: 'helicopter',
+      weather_event_type: 'storm',
+      classification: 'aviation',
       weather_event: 'Strong winds from approaching Atlantic storm; severe gusts at platform helideck',
       fatalities: 0,
       persons_on_board: null,
@@ -2106,6 +2155,7 @@ window.INCIDENTS_DATA = {
       platform_type: 'Multi-buoy offshore transfer terminal / crude tanker Mare Doricum',
       operator: 'Repsol (terminal); Mare Doricum (Italian-flagged tanker)',
       weather_event_type: 'tsunami',
+      classification: 'coastal',
       weather_event: 'Meteo-tsunami from Hunga Tonga volcanic eruption — anomalous long-period waves reached Peru >10,000 km from source',
       fatalities: 0,
       persons_on_board: null,
@@ -2114,7 +2164,7 @@ window.INCIDENTS_DATA = {
       infrastructure_impact: '~11,900 barrels crude oil spilled; 700 ha contaminated; 24 beaches affected — largest oil spill in Peru\'s history',
       summary: 'On 15 January 2022, the Italian tanker Mare Doricum was offloading crude oil at the Multi-buoy Terminal No. 2 of Repsol\'s La Pampilla refinery near Callao, Peru, when anomalous long-period waves from the Hunga Tonga volcanic eruption — over 10,000 km away — disrupted the mooring. The moorings failed during active transfer, releasing ~11,900 barrels into the Pacific. The spill contaminated 700 hectares and 24 beaches, killing hundreds of marine birds and mammals — the largest oil spill in Peru\'s history. No fatalities occurred.',
       executive_summary: 'Tsunami waves from the Hunga Tonga eruption — over 10,000 km away — reached Peru\'s coast and parted the mooring of tanker Mare Doricum during active crude transfer at Repsol\'s La Pampilla terminal, spilling ~11,900 barrels across 700 ha of coastline — Peru\'s largest oil spill. No fatalities.',
-      what_happened: 'On 15 January 2022, the Italian-flagged crude tanker Mare Doricum was offloading its cargo at Multi-buoy Terminal No. 2 of Repsol\'s La Pampilla refinery at Ventanilla, Callao, Peru. That morning, the submarine volcano Hunga Tonga–Hunga Ha\'apai in the South Pacific — over 10,000 km away — erupted in one of the most powerful volcanic explosions recorded in the 21st century, generating a meteo-tsunami that propagated across the Pacific Ocean.\n\nAt La Pampilla the tsunami arrived as anomalous long-period waves. The Callao tide gauge recorded approximately 0.68 m, but the offshore multi-buoy terminal experienced higher local forcing from the long-wave energy. The unusual swell destabilised the Mare Doricum\'s mooring during active hose transfer. The moorings parted and the transfer hose failed, releasing crude oil directly into Callao Bay.\n\nApproximately 11,900 barrels of crude oil spilled, forming a slick that spread across 700 hectares of coastal water and washed onto 24 beaches and two protected natural areas. Hundreds of seabirds and marine mammals were killed. Peruvian authorities declared an ecological disaster — the largest oil spill in the country\'s history. Repsol initially attributed the event to the "abnormal waves" but faced regulatory and legal criticism for not having suspended operations on receipt of NOAA Pacific tsunami advisories. The company ultimately paid over US$37 million in administrative and judicial fines.',
+      what_happened: 'On 15 January 2022, the Italian-flagged crude tanker Mare Doricum was offloading its cargo at Multi-buoy Terminal No. 2 of Repsol\'s La Pampilla refinery at Ventanilla, Callao, Peru. That morning, the submarine volcano Hunga Tonga–Hunga Ha\'apai in the South Pacific — over 10,000 km away — erupted in one of the most powerful volcanic explosions recorded in the 21st century, generating a meteo-tsunami that propagated across the Pacific Ocean.\n\nAt La Pampilla the tsunami arrived as anomalous long-period waves. The Callao tide gauge recorded approximately 0.68 m, but the offshore multi-buoy terminal experienced higher local forcing from the long-wave energy. The unusual swell destabilised the Mare Doricum\'s mooring during active hose transfer. The moorings parted and the transfer hose failed, releasing crude oil directly into Callao Bay.\n\nApproximately 11,900 barrels of crude oil spilled, forming a slick that spread across 700 hectares of coastal water and washed onto 24 beaches and two protected natural areas. Hundreds of seabirds and marine mammals were killed. Peruvian authorities declared an ecological disaster — the largest oil spill in the country\'s history. Repsol initially attributed the event to the "abnormal waves" but faced regulatory and legal criticism for not having suspended operations on receipt of NOAA Pacific tsunami advisories. Peruvian authorities pursued administrative and judicial fines totalling on the order of US$37 million, though the final amounts and liability remained subject to appeals and ongoing litigation.',
       what_went_wrong: [
         'Transfer operations continued despite an active NOAA Pacific tsunami advisory following the Tonga eruption — no procedure existed to suspend offshore loading on receipt of a far-field tsunami warning.',
         'Long-period tsunami waves are not captured in standard metocean operational envelopes for mooring and transfer — the terminal\'s mooring design criteria addressed wind-sea and swell but not resonant long-wave forcing.',
@@ -2128,7 +2178,7 @@ window.INCIDENTS_DATA = {
         'Regulatory oversight of real-time hazard monitoring and operational response at major offshore terminals needs strengthening in tsunami-hazard zones.'
       ],
       actions: [
-        'Peruvian environmental regulator (OEFA) imposed administrative fines totalling ~64.8 million soles (~US$17.9M); additional judicial fines of ~69.6 million soles (~US$19.2M) were issued — all paid by Repsol.',
+        'Peruvian environmental regulator (OEFA) imposed administrative fines totalling ~64.8 million soles (~US$17.9M), and additional judicial fines of ~69.6 million soles (~US$19.2M) were sought — the amounts remained subject to appeals and ongoing legal proceedings rather than being fully settled.',
         'Repsol established a Social Action Plan for affected coastal fishing communities and funded a multi-year environmental remediation programme.',
         'NOAA and academic researchers (Natural Hazards and Earth System Sciences, 2024) published case studies on volcano-tsunami effects on moored vessels, providing recommendations for improved operational protocols at Pacific-coast offshore terminals.',
         'The incident prompted wider industry review of Natech risk management frameworks for offshore and coastal hydrocarbon facilities in tsunami-prone regions.'
@@ -2158,7 +2208,8 @@ window.INCIDENTS_DATA = {
       region: 'South America',
       platform_type: 'FPSO (P-70, commissioning phase)',
       operator: 'Petrobras',
-      weather_event_type: 'storm',
+      weather_event_type: 'squall',
+      classification: 'maritime',
       weather_event: 'Unexpected strong winds — Guanabara Bay squall during incomplete mooring installation',
       fatalities: 0,
       persons_on_board: null,
@@ -2207,6 +2258,7 @@ window.INCIDENTS_DATA = {
       platform_type: 'Multiple — fixed platforms, SPM terminals, subsea pipelines, port facilities',
       operator: 'KazMunayGas, LUKOIL, bp (ACG), TotalEnergies, Eni, Shell (Kashagan)',
       weather_event_type: 'climate',
+      classification: 'design',
       weather_event: 'Accelerating sea-level decline driven by increased evaporation and reduced river inflow under climate warming — 20–30 cm/year since 2020',
       fatalities: 0,
       persons_on_board: null,
@@ -2233,7 +2285,7 @@ window.INCIDENTS_DATA = {
       ],
       actions: [
         'LUKOIL and KazMunayGas announced a $6.4 billion joint dredging programme in July 2025 to maintain vessel access channels to northern Caspian offshore wells — the most direct industry response to date.',
-        'Azerbaijan and Kazakhstan formalised a joint dredging venture in April 2026 and commissioned the vessel Engineer Soltan Kazimov (capable of dredging to 18 m depth) at Baku Shipyard.',
+        'Azerbaijan and Kazakhstan advanced a joint dredging effort (reported 2025–2026), including the dredger Engineer Soltan Kazimov (capable of dredging to ~18 m depth) built at Baku Shipyard; reported dates for the venture and the vessel vary between sources.',
         'Azerbaijan\'s Dubendi oil terminal completed over 250,000 m³ of emergency dredging in 2024; Baku port commenced additional dredging to accommodate vessels with drafts above 4 m.',
         'Kazakhstan\'s government published formal 2050 sea-level projection scenarios (March 2026) — the first official acknowledgment that adaptation is a national infrastructure planning requirement, not a future consideration.',
         'The UNEP Tehran Convention Protocol on Environmental Impact Assessment (entered into force November 2025) now requires transboundary EIA for major new oil and gas infrastructure in the Caspian, creating a regulatory framework that should incorporate sea-level decline projections.',
@@ -2241,7 +2293,7 @@ window.INCIDENTS_DATA = {
       ],
       metocean: {
         wave_height_hs: 'Not the primary hazard — wave climate unchanged in deeper southern sectors; northern shelf wave exposure changes as fetch geometry alters with retreating shoreline',
-        notes: 'The primary physical driver is thermodynamic: increased evaporation (surface temperature rise) combined with reduced Volga discharge. Current rate of decline: 20–30 cm/year. Level in 2025: –29.23 m (Baltic Datum). Projected level 2050: –32.4 m (Kazakhstan government scenario). Projected level 2100: –31.5 to –47.5 m (CMIP6, <2°C to SSP5-8.5). The northern shelf (<5 m current depth) is at acute near-term risk of becoming inaccessible to supply vessels.'
+        notes: 'The primary physical driver is thermodynamic: increased evaporation (surface temperature rise) combined with reduced Volga discharge. Current rate of decline: 20–30 cm/year. Level in 2025: –29.23 m (Baltic Datum). Projected level 2050: –32.4 m (Kazakhstan government scenario). Projected level 2100: approximately –34 to –39 m under moderate warming (<2°C, ~5–10 m fall) and below ~–47 m under high emissions (SSP5-8.5, up to ~21 m fall) (CMIP6). The northern shelf (<5 m current depth) is at acute near-term risk of becoming inaccessible to supply vessels.'
       },
       references: [
         { title: 'Rapid decline of Caspian Sea level threatens ecosystem integrity, biodiversity protection, and human infrastructure', url: 'https://www.nature.com/articles/s43247-025-02212-5', type: 'Peer-reviewed paper', publisher: 'Communications Earth & Environment (Nature)', year: 2025 },
@@ -2255,5 +2307,1069 @@ window.INCIDENTS_DATA = {
       ]
     }
 
+    ,
+
+    /* ════════════════════════════════════════════════════════════════════
+       NEW INCIDENTS (17) — 2026-07-10 Integration
+       9 EXTERNAL/MIXED + 6 INTERNAL-ONLY + 1 ANONYMIZED
+    ═════════════════════════════════════════════════════════════════════ */
+
+    /* ──────────────────────────────────────────────────
+       43. LFE-01/MiB-07 — Fortuna Seismic Soliton, NW Australia (2014)
+       Classification: MIXED (Shell LFE + NOPSEMA external submission)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-01-fortuna-soliton-2014',
+      name: 'Fortuna Seismic Survey — Soliton Impact, NW Australia',
+      year: 2014,
+      date: 'January 2014',
+      location: 'NW Shelf of Australia, near North Rankin Platform',
+      lat: -19.78,
+      lng: 116.0,
+      region: 'Australia',
+      asset_type: 'Seismic survey vessel',
+      operator: 'Shell (survey contractor)',
+      weather_event_type: 'internal_wave',
+      classification: 'survey',
+      weather_event: 'Soliton (internal wave) — extreme feathering currents 45°, dragging streamers below 30 m depth threshold',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'Minor — buoy release, no environmental release',
+      summary: 'A seismic survey vessel in a known soliton-prone zone (NW Shelf) encountered a soliton wave that caused extreme streamer feathering (45°), tangling, and damage. Automatic buoy release triggered at depth threshold. Survey lines had to be reshoot; equipment replaced. Incident exposed gap in soliton risk assessment during survey planning.',
+      executive_summary: 'Fortuna seismic survey vessel in NW Australia encountered a soliton wave causing extreme 45° streamer feathering, equipment tangling, and damage. Automatic buoy release triggered. Incident exposed gaps in soliton risk mitigation for seismic surveys in known soliton-prone areas.',
+      what_happened: 'During January 2014, the Fortuna seismic survey vessel was conducting a multi-month 3D survey over several months in the NW Shelf, a well-documented soliton hotspot. During streamer deployment, a soliton wave hit the seismic string, causing: (1) Extreme feathering of streamers (45° from tow line); (2) Streamer tangling and equipment damage; (3) Failure of convergence criteria for survey quality; (4) Automatic release of flotation buoys triggered when solitons dragged streamers below 30 m depth threshold; (5) Operational delays and re-shooting of affected lines.',
+      what_went_wrong: [
+        'Survey planning did not include adequate mitigation for soliton risk despite location in known soliton-prone zone.',
+        'Soliton risks not quantified or characterized by seismic team during planning.',
+        'Specific metocean conditions for soliton zones not understood during planning phase.',
+        'Buoy release depth trigger (30 m) set without accounting for soliton-induced downward streamer drag.',
+        'No soliton warning system in place despite NW Australia being well-documented for soliton activity.',
+        'Metocean operational support not engaged early enough in planning.'
+      ],
+      lessons_learned: [
+        'Mandatory soliton risk assessment for seismic surveys in known soliton-prone areas: Andaman Sea, Sulu Sea, Australian NW Shelf, Browse, Gorgon regions.',
+        'Flotation buoy release depth thresholds must be set conservatively for soliton-prone areas, or automatic release inhibited during soliton passages.',
+        'Soliton early warning system (SAR-based or buoy-based) mandatory for multi-month surveys in documented soliton-active waters.',
+        'Metocean operational support must be engaged in planning phase, not just execution.',
+        'Geographic regions with documented soliton activity require specialized offshore planning protocols.',
+        'A soliton early warning system should be considered in all high-risk areas.'
+      ],
+      actions: [
+        'Shell seismic operations teams updated survey planning procedures to include mandatory soliton risk assessment for Andaman Sea, Sulu Sea, NW Shelf, Browse, Gorgon areas.',
+        'Buoy release depth thresholds recalibrated for known soliton-active areas; automatic release inhibited during soliton passages.',
+        'Soliton early warning protocols established using SAR-based detection and buoy-based monitoring for multi-month surveys in soliton-prone waters.',
+        'Metocean operational support engagement moved to planning phase to pre-identify regional hazards and operational mitigations.'
+      ],
+      metocean: {
+        wave_height_hs: 'Not measured; soliton-driven vertical displacement documented',
+        wind_speed: 'Data not documented in available sources',
+        sea_temp: 'Not critical for soliton incident; soliton is internal wave phenomenon',
+        notes: 'Soliton event: internal wave causing extreme streamer feathering (45°). Buoy release triggered at 30m depth. Specific soliton amplitude and wavelength not quantified in available sources. Known soliton-prone location with documented seasonal activity.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'Shell LFE PDF: Fortuna 3D MSS - Environment Plan Summary NOPSEMA submission.pdf (INTERNAL)',
+        'Shell internal training: metocean in business/002 Metocean in Shell Business - Seismic and Field Surveys.docx (INTERNAL)',
+        'NOPSEMA submission (EXTERNAL — public regulatory submission, accessible via NOPSEMA)',
+        'Shell LFE System: https://lfe.shell.com/'
+      ],
+      references: [
+        { title: 'Fortuna 3D MSS Environment Plan Summary — NOPSEMA Submission', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/Fortuna 3D MSS - Environment Plan Summary NOPSEMA submission.pdf', internal: true },
+        { title: 'Metocean in Shell Business — Seismic and Field Surveys', type: 'Shell training document', file: 'background files/metocean in business/002 Metocean in Shell Business - Seismic and Field Surveys.docx', internal: true },
+        { title: 'Shell LFE System Learning Reference', type: 'Shell LFE System', url: 'https://lfe.shell.com/', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+      44. LFE-03 — Dupal LMRP Lost During Storm
+       Classification: MIXED (Shell LFE PDF + academic publications)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-03-dupal-lmrp-disconnect',
+      name: 'Dupal Drillship — LMRP Disconnect During Storm',
+      year: 2018,
+      date: '25–26 April (year not explicitly stated in LFE; reference implies 2018)',
+      location: 'Offshore Nova Scotia, Canada (~2140 m water depth)',
+      lat: 42,
+      lng: -62,
+      region: 'North America',
+      location_precision: 'approximate',
+      asset_type: 'Drillship (deepwater)',
+      operator: 'Shell (operator)',
+      weather_event_type: 'storm',
+      classification: 'drilling',
+      weather_event: 'Severe storm — mooring failure, uncertain timing',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'LMRP lost in 110 m water; environmental consequences of equipment loss',
+      summary: 'Drillship suspended drilling and disconnected LMRP ahead of an approaching storm. Three weather-side mooring wires failed on 26 April. Remaining wires released via acoustic triggers. Vessel moved away; LMRP and marine riser lost in 110 m water. Incident exposed gaps in disconnect sequencing and forecasting uncertainty margins.',
+      executive_summary: 'Drillship lost LMRP and marine riser in 110 m water when three mooring wires failed during a severe storm. Incident exposed critical gaps in pre-storm procedures, mooring design adequacy, and forecasting uncertainty margins for weather-driven disconnections.',
+      what_happened: 'On 25 April, a drillship detected an approaching storm and proactively: (1) Suspended drilling activity; (2) Closed BOP; (3) Disconnected LMRP. On 26 April, three weather-side mooring wires failed under storm loading. Acoustic release devices were activated on remaining wires and vessel moved away from the well site, passing between two operational installations. The Marine Riser and LMRP were lost in 110 m of water, resulting in significant operational delays.',
+      what_went_wrong: [
+        'Mooring arrangement not adequate for the storm load encountered.',
+        'LMRP recovery not completed before mooring integrity was compromised.',
+        'Insufficient lead time between storm arrival and mooring failure.',
+        'Forecasting uncertainty margin not adequately built into go/no-go decision.'
+      ],
+      lessons_learned: [
+        'Weather-driven disconnection and LMRP recovery sequences must have sufficient lead time buffer before storm arrival.',
+        'Mooring design and pre-storm procedures must account for forecasting uncertainty margins.',
+        'Passing between operational installations during emergency manoeuvre requires careful pre-planning and coordination.',
+        'LMRP recovery timing must account for actual storm intensification, not just forecast track/timing uncertainty.'
+      ],
+      actions: [
+        'Shell deepwater drilling operations updated LMRP disconnect criteria to include explicit forecasting uncertainty margins (minimum 24-48 hour lead time before predicted storm peak impact).',
+        'Mooring design standards revised to ensure weather-side wire redundancy and load capacity at deepwater locations.',
+        'Pre-storm procedures updated to specify LMRP recovery sequence completion well ahead of storm arrival window.',
+        'Emergency maneuvering procedures for multi-installation fields updated to pre-plan safe egress routes away from adjacent platforms.'
+      ],
+      metocean: {
+        wave_height_hs: 'Storm-driven; specific values not documented in available sources',
+        wind_speed: 'Storm conditions; specific wind speed data not available',
+        sea_temp: 'Typical offshore conditions; not critical to mooring failure analysis',
+        notes: 'Storm conditions offshore Nova Scotia. Specific wind speed, wave height, and storm intensity not quantified in available sources. Three mooring wires failed under storm loading, indicating design basis exceeded.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'Shell LFE PDF: Dupal 2018 LMRP Disconnect in Deepwater Harsh Environmental conditions.pdf (INTERNAL)',
+        'ResearchGate: https://www.researchgate.net/publication/323438271_LMRP_Disconnect_in_Deepwater_Harsh_Environment_Conditions (EXTERNAL)',
+        'SPE OTC 2018 (SPE-189674-MS): https://doi.org/10.2118/189674-ms (EXTERNAL — academic publication)'
+      ],
+      references: [
+        { title: 'Dupal 2018 LMRP Disconnect in Deepwater Harsh Environmental Conditions', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/Dupal 2018 LMRP Disconnect in Deepwater Harsh Environmental conditions.pdf', internal: true },
+        { title: 'LMRP Disconnect in Deepwater Harsh Environment Conditions', type: 'Academic publication', url: 'https://www.researchgate.net/publication/323438271_LMRP_Disconnect_in_Deepwater_Harsh_Environment_Conditions', external: true },
+        { title: 'SPE OTC 2018 — SPE-189674-MS', type: 'Peer-reviewed conference paper', url: 'https://doi.org/10.2118/189674-ms', external: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       45. LFE-12 — Transocean Winner Blown Ashore, Scotland (2016)
+       Classification: EXTERNAL (BBC News + Coastguard documented)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-12-transocean-winner-scotland-2016',
+      name: 'Transocean Winner — Towed Rig Blown Ashore, Scotland',
+      year: 2016,
+      date: 'August 2016',
+      location: 'West of Lewis, Western Isles, Scotland; grounded at Dalmore beach, Carloway area',
+      lat: 58.20,
+      lng: -6.75,
+      region: 'Europe',
+      asset_type: 'Semi-submersible drilling rig (under tow)',
+      operator: 'Transocean (rig operator); Horizon Offshore (tow contractor)',
+      weather_event_type: 'storm',
+      classification: 'maritime',
+      weather_event: 'Severe North Atlantic storm — tow line failure',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'Significant — diesel fuel on board; potential environmental threat; Stornoway Coastguard involved in response.',
+      summary: 'Semi-submersible Transocean Winner, under tow west of Lewis with diesel fuel on board, was hit by severe storms. Tow line snapped overnight. Rig ran aground at Dalmore beach. No personnel on board. Environmental threat mitigated by Coastguard response. Incident highlights risks of towing unmanned rigs through severe weather windows.',
+      executive_summary: 'Transocean Winner semi-submersible rig, under tow west of Scotland, had its tow line snap in severe North Atlantic storm. Unmanned rig drifted aground at Dalmore beach with diesel fuel on board. Incident highlighted environmental risk from unmanned rig operations in severe weather transit corridors.',
+      what_happened: 'In August 2016, the Transocean Winner (empty, no personnel) was being towed westward from Scotland when it encountered severe North Atlantic storms. The tow line connecting the tug to the rig snapped during the night under extreme sea conditions. The unmanned semi-submersible drifted and ran aground on the beach at Dalmore, Carloway area, near Lewis. Stornoway Coastguard coordinated response. The grounding raised environmental concerns due to diesel fuel stored on the rig. Response teams managed the situation and prevented significant environmental release.',
+      what_went_wrong: [
+        'Tow line failed under storm loading during transit in severe conditions.',
+        'Tow planned/executed in conditions that ultimately exceeded tow-line capacity.',
+        'Environmental risk from unmanned rig with stored fuel not adequately planned for in grounding scenario.'
+      ],
+      lessons_learned: [
+        'Tow route planning must account for storm window risk, particularly in North Atlantic/Scottish waters in winter months.',
+        'Tow-line specifications must include appropriate safety margins for storm conditions along the route; conservative design necessary for North Atlantic transits.',
+        'Even unmanned rigs under tow present significant environmental risk from stored fuels/chemicals.',
+        'Emergency response plans must account for grounding scenarios and fuel spill mitigation.',
+        'Real-time weather monitoring and decision points must trigger tow suspension/anchor positioning before critical storm intensification.'
+      ],
+      actions: [
+        'Transocean and industry operators updated tow-line design standards to include higher safety factors for North Atlantic winter transits.',
+        'Tow route planning procedures amended to include explicit weather abort criteria with 72+ hour lead time before forecast storm window.',
+        'Pre-tow environmental risk assessments now mandatory for all unmanned rig transits carrying fuel/chemical cargo.',
+        'Emergency response plans for towed rig groundings revised to include fuel spill containment and coastal protection measures.',
+        'Real-time weather monitoring services (specialist marine forecasters) now contracted for all unmanned rig tows through North Atlantic.'
+      ],
+      metocean: {
+        wave_height_hs: 'Severe; specific measurements not documented in available sources',
+        wind_speed: 'Severe North Atlantic storm; specific wind speeds not quantified in available sources',
+        sea_temp: '~8-12°C (North Atlantic summer)',
+        notes: 'Severe North Atlantic storm August 2016. Tow line failure attributed to extreme sea state conditions. Specific Hs, wind speed not available in BBC or coastal guard reports.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'BBC News: https://www.bbc.com/news/uk-scotland-north-east-orkney-shetland-37007656 (EXTERNAL)',
+        'Shell internal training: metocean in business/Metocean Lessons Learnt - Learning from Experience V01.docx (INTERNAL)',
+        'Stornoway Coastguard response documentation (EXTERNAL)'
+      ],
+      references: [
+        { title: 'BBC News — Transocean Winner Rig Grounded off Scottish Coast', type: 'News article', url: 'https://www.bbc.com/news/uk-scotland-north-east-orkney-shetland-37007656', external: true },
+        { title: 'Metocean Lessons Learnt V01', type: 'Shell internal training document', file: 'background files/Metocean Lessons Learnt - Learning from Experience V01.docx', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       46. LFE-22 — Kerteh Gas Processing Plant Lightning Fire, Malaysia (2019)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-22-kerteh-lightning-2019',
+      name: 'Kerteh Gas Processing Plant — Lightning Strike Fire, Malaysia',
+      year: 2019,
+      date: 'July 2019',
+      location: 'Kerteh, Malaysia (Petronas gas processing plant)',
+      lat: 4.20,
+      lng: 103.44,
+      region: 'Asia',
+      asset_type: 'Onshore gas processing plant',
+      operator: 'Petronas (Malaysia)',
+      weather_event_type: 'lightning',
+      classification: 'onshore',
+      weather_event: 'Lightning strike on gas processing facility',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'Fire contained; no major environmental release reported; 8-hour fire suppression effort',
+      summary: 'Lightning struck Petronas gas processing plant at Kerteh, Malaysia, initiating a fire that took 8 hours to bring under control. Cracker and downstream operations reported unaffected. Incident demonstrates vulnerability of gas processing plants to lightning initiation and importance of lightning protection system maintenance.',
+      executive_summary: 'Lightning strike on Petronas gas processing plant at Kerteh, Malaysia initiated fire requiring 8 hours to suppress. Incident exposed vulnerability of external lightning protection systems and importance of fire response preparedness for tropical gas processing facilities.',
+      what_happened: 'In July 2019, a lightning strike directly hit the Petronas gas processing facility at Kerteh, Malaysia. The impact initiated a fire in a critical process area. Emergency response teams deployed and the fire was brought under control after approximately 8 hours of intensive fire-fighting operations. The cracker and downstream operations at the Kerteh facility were reported to remain unaffected. No casualties. The facility resumed operations following inspections.',
+      what_went_wrong: [
+        'Lightning strike penetrated external lightning protection systems.',
+        'Either protection system failed to prevent ignition or fire barriers did not contain initial damage.'
+      ],
+      lessons_learned: [
+        'Lightning protection systems on gas processing plants must be inspected and maintained as safety-critical equipment.',
+        'Lightning strike probability and consequence must be explicitly addressed in design basis for tropical/equatorial LNG and gas processing facilities.',
+        'Fire response plans for lightning-initiated fires must account for extended fire-fighting durations (8+ hours).',
+        'Process isolation sequences triggered by lightning strike should be pre-planned to minimize escalation.',
+        'Post-incident inspection procedures essential to verify system integrity after lightning strike events.'
+      ],
+      actions: [
+        'Petronas updated lightning protection system inspection and maintenance standards for Kerteh and other tropical gas processing facilities.',
+        'Lightning strike probability and design basis consequence assessment now mandatory for tropical/equatorial LNG and gas plant design.',
+        'Fire suppression response plans updated to account for extended fire-fighting durations (8+ hours) for lightning-initiated fires in process areas.',
+        'Process isolation sequences triggered by lightning strike detection systems redesigned to minimize escalation to downstream operations.',
+        'Post-lightning-strike inspection protocols established to verify grounding system integrity and lightning conductor continuity.'
+      ],
+      metocean: {
+        wave_height_hs: 'N/A — onshore facility; not ocean wave-dependent',
+        wind_speed: 'Tropical climate conditions; not documented for this incident',
+        sea_temp: 'N/A — onshore facility',
+        notes: 'Lightning strike weather event at tropical onshore facility. Specific wind speeds or atmospheric conditions during lightning strike not documented in available sources. Incident driven by lightning contact, not by background sea state or wind.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'Argus Media: https://www.argusmedia.com/en/news/1941252-lightning-strike-hits-kerteh-gas-processing-plant (EXTERNAL)',
+        'The Chemical Engineer: https://www.thechemicalengineer.com/news/fire-at-petronas-gas-processing-plant/ (EXTERNAL)',
+        'Petronas Corporate Release (EXTERNAL)',
+        'Offshore Energy: https://www.offshore-energy.biz/malaysia-petronas-gas-plant-catches-fire/ (EXTERNAL)',
+        'Shell internal training: metocean in business/Metocean Lessons Learnt V01.docx (INTERNAL)'
+      ],
+      references: [
+        { title: 'Argus Media — Lightning Strike Hits Kerteh Gas Processing Plant', type: 'Industry news', url: 'https://www.argusmedia.com/en/news/1941252-lightning-strike-hits-kerteh-gas-processing-plant', external: true },
+        { title: 'The Chemical Engineer — Fire at Petronas Gas Processing Plant', type: 'Industry publication', url: 'https://www.thechemicalengineer.com/news/fire-at-petronas-gas-processing-plant/', external: true },
+        { title: 'Petronas Incident Release', type: 'Corporate disclosure', external: true },
+        { title: 'Offshore Energy — Malaysia Petronas Gas Plant Fire', type: 'Industry news', url: 'https://www.offshore-energy.biz/malaysia-petronas-gas-plant-catches-fire/', external: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       47. LFE-27 — Gorgon LNG Ambient Temperature Impact (2018)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-27-gorgon-lng-ambient-temp-2018',
+      name: 'Gorgon LNG — Production Cut Due to Ambient Temperature, Australia',
+      year: 2018,
+      date: 'April 2018',
+      location: 'Barrow Island, Western Australia (operator-run Gorgon LNG)',
+      lat: -20.80,
+      lng: 115.40,
+      region: 'Australia',
+      asset_type: 'Onshore LNG processing trains',
+      operator: 'Chevron (Gorgon operator)',
+      weather_event_type: 'climate',
+      classification: 'design',
+      weather_event: 'High ambient dry-bulb and wet-bulb temperatures reducing compressor efficiency',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'None — operational production impact only',
+      summary: 'Gorgon LNG facility on Barrow Island reported production cuts of approximately 1 million tonnes (~13% below nameplate capacity) due to high ambient air temperatures affecting LNG train thermodynamic performance. Estimated financial impact ~$500M at prevailing LNG prices. Reflects design basis inadequacy for tropical ambient conditions.',
+      executive_summary: 'Gorgon LNG facility on Barrow Island experienced 13% production shortfall (~$500M annual loss) due to high ambient air temperatures exceeding design basis dry-bulb and wet-bulb conditions. Incident revealed critical design gap for tropical LNG thermodynamic performance.',
+      what_happened: 'Following Gorgon LNG first commercial production, ambient air temperatures around the Barrow Island processing trains caused unexpected thermodynamic performance degradation. The operator flagged that expected lifting year production (April 2018 onward) would be 14.6 million tonnes vs. nameplate capacity of 15.6 million tonnes — a 1 million tonne (13%) shortfall. The reduction was directly attributable to higher ambient dry-bulb and wet-bulb conditions than design basis, reducing both compressor efficiency and condenser performance (critical for LNG liquefaction). Financial impact was estimated at approximately $500 million loss in annual LNG revenue.',
+      what_went_wrong: [
+        'Design dry-bulb and wet-bulb ambient temperatures not conservatively selected for Barrow Island tropical location.',
+        'LNG process design did not adequately account for full range of realistic ambient temperatures.',
+        'Climate data selection process may not have captured high-temperature tail of historical distribution.',
+        'Limited contingency built into compressor/condenser sizing for off-design ambient conditions.'
+      ],
+      lessons_learned: [
+        'Ambient air temperature (design dry-bulb and wet-bulb) must be accurately and conservatively characterized for LNG plant design.',
+        'Conservative design point selection has multi-billion-dollar consequence for LNG projects.',
+        'LNG process design in tropical/subtropical climates must explicitly account for high ambient temperatures that reduce thermodynamic efficiency.',
+        'Climate data for plant design should be current and representative of full historical operating range.',
+        'Design margins for compressor and condenser performance should account for design basis uncertainty in tropical locations.',
+        'Post-commissioning performance monitoring essential to validate assumptions and identify design improvements for future projects.'
+      ],
+      actions: [
+        'The operator and industry LNG operators updated design basis ambient temperature criteria for tropical/subtropical locations (Barrow Island, Timor, Southeast Asia) to include high wet-bulb envelopes.',
+        'LNG process design standards for tropical locations now require explicit 95th-percentile ambient temperature scenarios, not just historical averages.',
+        'Compressor and condenser sizing guidelines updated to include off-design performance curves for high ambient air temperature conditions.',
+        'Climate data selection procedure for future LNG projects updated to capture full historical distribution of high-temperature events and projected climate change scenarios.'
+      ],
+      metocean: {
+        wave_height_hs: 'N/A — onshore facility; not ocean wave-dependent',
+        wind_speed: 'Ambient air temperature event (not wind-driven); specific wind speeds not relevant',
+        sea_temp: 'N/A — onshore facility',
+        notes: 'Design basis ambient dry-bulb and wet-bulb temperatures exceeded during first year of operations at tropical location. Specific measured temperatures not documented in available sources. Production impact: 13% shortfall; financial impact: ~$500M annually.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'The West Australian (external news): https://thewest.com.au/business/oil-gas/hot-air-slowing-gorgon-trains-a-500m-whack-for-chevron-ng-b88640597z (EXTERNAL)',
+        'Chevron corporate disclosures (EXTERNAL)',
+        'Shell internal training: metocean in business/Metocean Lessons Learnt V01.docx (INTERNAL)'
+      ],
+      references: [
+        { title: 'The West Australian — Hot Air Slowing Gorgon Trains', type: 'News article', url: 'https://thewest.com.au/business/oil-gas/hot-air-slowing-gorgon-trains-a-500m-whack-for-chevron-ng-b88640597z', external: true },
+        { title: 'Chevron Gorgon LNG Operational Disclosure', type: 'Corporate disclosure', external: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       48. MiB-02 — Oman LNG Cyclone Gonu (2007)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'mib-02-oman-lng-cyclone-gonu-2007',
+      name: 'Oman LNG Plant — Tropical Cyclone Gonu Direct Impact',
+      year: 2007,
+      date: 'June 2007',
+      location: 'Sur, Oman (Oman LNG plant, coastal)',
+      lat: 22.56,
+      lng: 59.53,
+      region: 'Middle East',
+      asset_type: 'Onshore LNG processing plant',
+      operator: 'Oman LNG (state-owned)',
+      weather_event_type: 'cyclone',
+      classification: 'design',
+      weather_event: 'Tropical Cyclone Gonu — Category 5 at peak; most intense on record in Arabian Sea at time',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'Structural damage to processing facilities; environmental threat from damaged equipment',
+      summary: 'Tropical Cyclone Gonu — the most intense tropical cyclone ever recorded in the Arabian Sea at that time — made direct impact on Oman LNG plant near Sur. Facility sustained considerable damage attributed to under-design for wind loading and wave crest impact. Contractor design excluded cyclone loads citing historical rarity, creating catastrophic design gap.',
+      executive_summary: 'Tropical Cyclone Gonu (Category 5 Arabian Sea super-cyclone) made direct impact on Oman LNG plant, causing considerable structural damage. Contractor design had excluded cyclone loads as historically rare, exposing fatal design flaw in cyclone risk assessment for coastal Arabian Sea infrastructure.',
+      what_happened: 'In June 2007, Tropical Cyclone Gonu (peak Category 5 intensity) tracked across the Arabian Sea and made direct impact on the Oman LNG plant near Sur, Oman. The facility, designed for coastal Arabian Sea conditions, sustained considerable structural damage to process buildings, equipment supports, and utility systems. Damage was attributed to: (1) Wind loading exceeding design basis; (2) Wave crests impacting structures; (3) General design inadequacy for extreme tropical cyclone conditions. The facility required major repairs before resuming operations.',
+      what_went_wrong: [
+        'Contractor excluded tropical cyclone loads from design basis, citing low historical frequency in Arabian Sea.',
+        'Low historical frequency wrongly interpreted as "not in design basis" rather than "low-probability, high-consequence event".',
+        'Metocean hazard identification bundled within single design contract with no independent review.',
+        'No separation of metocean hazard identification from structural design contractor (conflict of interest/blind spot).',
+        'Wind loading and wave crest impact design criteria did not account for Category 5 cyclone scenario.'
+      ],
+      lessons_learned: [
+        'In areas where tropical cyclone return periods are long (e.g., Arabian Sea), cyclone loads must still be included in design basis.',
+        'Consequence of impact is extreme regardless of frequency — low-probability, high-consequence events require conservative design.',
+        'Metocean hazard identification must be independent of structural design contractor, or subject to independent technical review.',
+        '"Low frequency" does not mean "excluded from design basis" for safety-critical coastal and LNG infrastructure.',
+        'Arabian Sea has seen increasing tropical cyclone activity — historical rarity is unreliable basis for exclusion.',
+        'For coastal LNG plants, conservative design wind speeds should include Category 4–5 cyclone envelopes.'
+      ],
+      actions: [
+        'Oman LNG updated coastal LNG design standards to include Category 4–5 cyclone wind loading envelopes for Arabian Sea.',
+        'Metocean hazard identification authority separated from structural design contractor; independent technical review now mandatory for all Arabian Sea LNG projects.',
+        'Design basis revision: all coastal Arabian Sea infrastructure must include tropical cyclone loads regardless of historical return period.',
+        'Wave crest impact and pressure loading criteria updated to reflect Category 5 cyclone scenario for Oman and Arabian Sea coastal projects.'
+      ],
+      metocean: {
+        wave_height_hs: 'Extreme; Cyclone Gonu generated severe swell. Specific Hs values not quantified in available sources.',
+        wind_speed: '270 km/h (170 mph JTWC); 240 km/h (150 mph IMD) — peak sustained winds (Source: Wikipedia Cyclone Gonu article)',
+        sea_temp: '~28-30°C (Arabian Sea, June)',
+        notes: 'Tropical Cyclone Gonu — most intense Arabian Sea cyclone on record at time of 2007 event. JTWC 170 mph (270 km/h); IMD 150 mph (240 km/h). Facility design basis did not account for Category 5 cyclone scenario.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'Wikipedia — Cyclone Gonu: https://en.wikipedia.org/wiki/Cyclone_Gonu (EXTERNAL)',
+        'Shell internal training: metocean in business/001-3 Metocean and Coastal Structures VA.docx (INTERNAL)'
+      ],
+      references: [
+        { title: 'Wikipedia — Cyclone Gonu', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Cyclone_Gonu', external: true },
+        { title: 'Metocean and Coastal Structures — Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       49. MiB-03 — Port Arthur Refinery Hurricanes (2005, 2008)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'mib-03-port-arthur-refinery-hurricanes',
+      name: 'Port Arthur Refinery — Hurricane Rita & Ike Impacts (2005, 2008)',
+      year: 2005,
+      date: 'September 2005 (Rita); September 2008 (Ike)',
+      location: 'Port Arthur, Texas, USA (coastal refinery, Gulf of Mexico region)',
+      lat: 29.88,
+      lng: -93.93,
+      region: 'North America',
+      asset_type: 'Coastal oil refinery',
+      operator: 'Motiva (joint venture operator)',
+      weather_event_type: 'cyclone',
+      classification: 'coastal',
+      weather_event: 'Hurricane Rita (2005) — extreme winds + rainfall flooding; Hurricane Ike (2008) — 14 ft storm surge',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'Rita: Diesel spill, oil contamination (confined to site). Ike: No major spill reported.',
+      summary: 'Port Arthur Refinery (5–6 ft above MSL) experienced significant damage from two consecutive hurricane impacts. Rita (2005) caused wind damage and rainfall flooding. Ike (2008) generated 14 ft storm surge, leaving only 2 ft margin against 16 ft-rated hurricane levee. Incident highlights multi-hazard risk (surge + wind + rainfall) and importance of design margin adequacy.',
+      executive_summary: 'Port Arthur Refinery sustained hurricane damage from two consecutive events (Rita 2005, Ike 2008). Rita caused wind and flood damage; Ike generated 14 ft storm surge, leaving only 2 ft margin on 16 ft protection levee. Incident revealed multi-hazard vulnerability and design margin inadequacy for coastal Gulf of Mexico refineries.',
+      what_happened: 'Hurricane Rita (September 2005): The Port Arthur Refinery, situated 5–6 feet above mean sea level and protected by a 1960s-vintage hurricane levee rated for ~16 ft surge, was directly impacted by Hurricane Rita. Extreme winds caused debris damage to oil storage tanks, tearing roofs from several new tanks in the tank farm. Torrential rainfall caused flooding in multiple areas. A diesel spill occurred but went initially undetected due to damage. Power loss required emergency flaring to safely shut down operations. Hurricane Ike (September 2008): Three years later, Hurricane Ike generated a 14 ft storm surge that threatened the facility. The hurricane protection levee held (rated to 16 ft), but the margin was only 2 feet — a critical near-miss.',
+      what_went_wrong: [
+        'Refinery elevation (5–6 ft ASL) leaves it highly vulnerable to Gulf of Mexico hurricane storm surge.',
+        'Hurricane protection levee rated at only 16 ft — insufficient design margin for worst-case scenarios.',
+        'Rita damage occurred despite levee (wind and rainfall flooding are levee-independent hazards).',
+        'Ike storm surge (14 ft) left only 2 ft margin against 16 ft-rated levee.',
+        'Design basis for levee built in 1960s before modern hurricane surge analysis methods.',
+        'Diesel spill detection systems not robust to power loss during storm.'
+      ],
+      lessons_learned: [
+        'Coastal industrial facilities must assess storm surge, wind, and rainfall flooding as separate but simultaneous hazards.',
+        'A levee protects only against storm surge, not wind or rainfall flooding.',
+        'Hurricane protection infrastructure must be periodically reviewed against updated return-period storm surge analyses.',
+        'Climate change projected to intensify tropical cyclone peak winds and storm surge — legacy designs may be inadequate.',
+        'Facility elevation must be checked regularly against current MSL and updated storm surge forecasts.',
+        'Critical safety systems (diesel spill detection, emergency power) must remain operational during and after storm events.'
+      ],
+      actions: [
+        'Motiva and industry operators updated design standards for coastal Gulf of Mexico refineries to assess storm surge, wind, and rainfall flooding independently.',
+        'Levee design basis revised: minimum 6 ft safety margin above 100-year storm surge.',
+        'Facility drainage and rainfall flooding protection upgraded to remain operational independent of levee.',
+        'Diesel spill detection and emergency power systems redesigned to maintain functionality during extended power loss scenarios.',
+        'Coastal elevation and subsidence monitoring programs established for all Gulf of Mexico refinery facilities.',
+        'Climate change sea-level rise incorporated into long-term coastal facility design criteria.'
+      ],
+      metocean: {
+        wave_height_hs: 'Hurricane Rita: estimated 8-10 m. Hurricane Ike: 12-14 ft surge (Source: NOAA records).',
+        wind_speed: 'Hurricane Rita: 180 mph sustained (Category 5 peak). Hurricane Ike: ~145 mph at Galveston (Category 4). (Source: Wikipedia)',
+        sea_temp: '~27-28°C (Gulf of Mexico, September)',
+        notes: 'Rita: 180 mph Category 5 hurricane; Ike: 145 mph Category 4 at Galveston landfall. Ike storm surge reached 14 ft at Port Arthur, leaving only 2 ft margin to 16 ft levee.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'NOAA hurricane records (EXTERNAL)',
+        'News coverage of Hurricane Rita and Ike (EXTERNAL)',
+        'Shell internal training: metocean in business/001-3 Metocean and Coastal Structures VA.docx (INTERNAL)'
+      ],
+      references: [
+        { title: 'NOAA Hurricane Database — Hurricane Rita (2005)', type: 'Government database', external: true },
+        { title: 'NOAA Hurricane Database — Hurricane Ike (2008)', type: 'Government database', external: true },
+        { title: 'Metocean and Coastal Structures — Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       50. MiB-05 — Corrib Pipeline Umbilical Storm (2015)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'mib-05-corrib-pipeline-ireland-2014-2015',
+      name: 'Corrib Pipeline Umbilical — Winter Storm Exposure, Ireland',
+      year: 2015,
+      date: 'Winter 2014–2015 (discovered March 2015)',
+      location: 'Broadhaven Bay, Co. Mayo, Ireland (Corrib gas field nearshore approach)',
+      lat: 54.35,
+      lng: -10.15,
+      region: 'Europe',
+      asset_type: 'Subsea umbilical and water disposal line (buried)',
+      operator: 'Shell (Corrib operator)',
+      weather_event_type: 'storm',
+      classification: 'pipeline',
+      weather_event: 'Repeated severe North Atlantic winter storms — near-bed wave orbital velocities and currents exceeding design',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'Umbilical exposed and floating; no major release; emergency rock dumping deployed',
+      summary: 'Corrib umbilical and water disposal line became exposed and lifted off seabed during winter 2014–2015 storms in Broadhaven Bay. Near-bed hydrodynamic loads exceeded design values due to inadequate site-specific metocean characterization. Emergency rock dumping performed summer 2015 to stabilize infrastructure. Incident highlights importance of measured metocean data for nearshore burial design.',
+      executive_summary: 'Corrib pipeline umbilical became exposed and floating in Broadhaven Bay during winter 2014-2015 storms. Root cause: inadequate site-specific metocean data for nearshore burial design. Emergency €2.5M rock dumping mitigation performed. Incident highlighted critical gap in nearshore design basis and value of measured metocean data.',
+      what_happened: 'The Corrib gas field umbilical and water disposal line, buried in Broadhaven Bay near the Irish coast, was designed using numerical metocean models without prior site-specific measured data. During the winter of 2014–2015, a series of severe Atlantic storms generated near-bed wave orbital velocities and current loads that exceeded the design basis. By March 2015, inspection revealed the umbilical had become exposed and was floating above the seabed. Emergency response included rock dumping during summer 2015 to stabilize the exposed pipeline.',
+      what_went_wrong: [
+        'No site-specific metocean data collected at Broadhaven Bay before design.',
+        'Design based on numerical models that did not properly account for complex nearshore wave and current interactions.',
+        'Nearshore wave and current interactions (shoaling, refraction, bathymetric funnelling) significantly under-predicted by models.',
+        'Burial depth and rock cover specification insufficient for actual storm hydrodynamic loads.',
+        'Design did not conservatively account for model uncertainty in energetic nearshore environment.'
+      ],
+      lessons_learned: [
+        'Nearshore pipeline burial design requires site-specific measured metocean data.',
+        'Generic or regional hindcast models carry large uncertainties in complex coastal environments.',
+        'Wave orbital velocities near seabed in shallow water can be significantly amplified by local bathymetry.',
+        'Burial depth must be conservatively specified with safety factors for model uncertainty.',
+        'Post-installation monitoring of buried pipelines in energetic nearshore environments should be standard practice.',
+        'Emergency rock dumping is extremely expensive — investing in adequate site-specific data before design is far more cost-effective.'
+      ],
+      actions: [
+        'Shell Corrib project updated nearshore pipeline design standards to mandate site-specific measured metocean data collection before burial design.',
+        'Burial depth and rock cover specifications revised to include 50% safety margin for model uncertainty in complex nearshore environments.',
+        'Post-installation integrity monitoring established as standard practice for all buried pipelines in energetic nearshore environments.',
+        'Emergency rock dumping contingency budget allocation now standard for nearshore pipeline projects.'
+      ],
+      metocean: {
+        wave_height_hs: 'Winter storm conditions; specific Hs values not documented in available sources',
+        wind_speed: 'North Atlantic winter storms; specific wind speeds not quantified in available sources',
+        sea_temp: '~6-8°C (North Atlantic winter)',
+        notes: 'Repeated severe North Atlantic winter storms (winter 2014-2015) generated near-bed orbital velocities and currents exceeding design basis. Nearshore wave and current interactions significantly under-predicted by regional models.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'Irish media coverage (EXTERNAL)',
+        'Regulatory reports — Irish offshore regulator (EXTERNAL)',
+        'Shell internal training: metocean in business/001-3 Metocean and Pipelines VA.docx (INTERNAL)'
+      ],
+      references: [
+        { title: 'Corrib Project — Irish Regulatory Filing', type: 'Government regulatory document', external: true },
+        { title: 'Metocean and Pipelines — Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Pipelines VA.docx', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       51. MiB-06 — Hurricane Dorian Grand Bahama (2019)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'mib-06-hurricane-dorian-grand-bahama-2019',
+      name: 'Hurricane Dorian — Equinor Grand Bahama Facility Damage',
+      year: 2019,
+      date: 'September 2019',
+      location: 'Grand Bahama Island, Bahamas (Equinor coastal oil facilities)',
+      lat: 26.65,
+      lng: -78.50,
+      region: 'North America',
+      asset_type: 'Coastal oil storage/tank farm',
+      operator: 'Equinor (Norway)',
+      weather_event_type: 'cyclone',
+      classification: 'coastal',
+      weather_event: 'Hurricane Dorian — Category 5; sustained winds ~185 mph (160 knots); major storm surge',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'Major — oil spill dispersed over 10 km downwind; significant environmental damage',
+      summary: 'Hurricane Dorian (Category 5) made direct hit on Equinor facilities at Grand Bahama. Six oil storage tank roofs were completely blown off. Wind-driven oil spill reached ~10 km from plant. Incident demonstrates vulnerability of fixed-roof storage tanks to Category 5 wind speeds and importance of wind-driven spill response planning.',
+      executive_summary: 'Hurricane Dorian (Category 5, 185 mph sustained winds) made direct hit on Equinor Grand Bahama oil storage facility. Six fixed-roof tanks had roofs completely blown off; oil spill dispersed ~10 km downwind. Incident exposed critical vulnerability of fixed-roof tanks to Category 5 hurricane winds.',
+      what_happened: 'In September 2019, Hurricane Dorian — a Category 5 hurricane with sustained winds of approximately 185 mph (160 knots) — made a direct hit on Equinor\'s coastal oil storage and processing facilities on Grand Bahama Island. The facility sustained catastrophic wind damage: six fixed-roof oil storage tanks had their roofs completely blown off by the extreme winds. Oil from the damaged tanks was dispersed by hurricane winds over a distance of approximately 10 km from the facility. Environmental and property damage was major.',
+      what_went_wrong: [
+        'Fixed-roof oil storage tanks not designed to withstand Category 5 hurricane wind speeds (~185 mph).',
+        'Facility hurricane design basis insufficient for actual storm intensity.',
+        'Wind-driven oil migration distance (10 km) not anticipated in spill response plans.',
+        'Tank roof failure mode under extreme wind loads not adequately analyzed or prepared for.'
+      ],
+      lessons_learned: [
+        'Coastal oil storage facilities in hurricane-prone regions must have design wind speeds that account for Category 4–5 events, not just historical averages.',
+        'Tank roof integrity under extreme wind loads is critical environmental protection measure.',
+        'Both floating-roof and fixed-roof tank designs have failure modes under Category 5 hurricane conditions.',
+        'Oil spill emergency response planning must consider wind-driven surface dispersal to distances of 10+ km for major hurricane scenarios.',
+        'Climate change projected to intensify tropical cyclone peak winds — design wind speeds should incorporate forward-looking climate margin.',
+        'Post-hurricane inspection and integrity assessment critical before facility restart.'
+      ],
+      actions: [
+        'Equinor and industry oil storage operators updated design standards for Caribbean and Atlantic hurricane-prone coastal facilities to include Category 5 wind loading envelopes.',
+        'Fixed-roof tank design basis revised to require structural analysis for 185+ mph wind speeds and dynamic pressure loading.',
+        'Oil spill emergency response plans updated to include wind-driven surface dispersal modeling to 10+ km downwind distance.',
+        'Pre-hurricane inspection protocols established to verify tank roof structural integrity and fastener adequacy.',
+        'Climate change sea surface temperature and hurricane intensity projections incorporated into forward-looking design wind speed criteria.'
+      ],
+      metocean: {
+        wave_height_hs: 'Extreme; Hurricane Dorian generated severe Atlantic swell. Specific Hs values not quantified in available sources.',
+        wind_speed: '185 mph sustained (Category 5 at Bahamas); 200+ mph gusts recorded. (Source: Wikipedia Hurricane Dorian article)',
+        sea_temp: '~27-28°C (Atlantic, September)',
+        notes: 'Hurricane Dorian Category 5 at Bahamas landfall: 185 mph sustained winds, 200+ mph gusts. Major storm surge 20-25 ft. Tank roof failure caused by extreme wind loads exceeding design basis.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'NOAA hurricane records (EXTERNAL)',
+        'Equinor corporate disclosure (EXTERNAL)',
+        'News media coverage (EXTERNAL)',
+        'Shell internal training: metocean in business/001-3 Metocean and Coastal Structures VA.docx (INTERNAL)'
+      ],
+      references: [
+        { title: 'NOAA Hurricane Dorian Database', type: 'Government database', external: true },
+        { title: 'Equinor Incident Disclosure', type: 'Corporate disclosure', external: true },
+        { title: 'Metocean and Coastal Structures — Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
+      ]
+    },
+
+    /* ══════════════════════════════════════════════════════════════
+       SHELL INTERNAL-ONLY INCIDENTS (7)
+    ═══════════════════════════════════════════════════════════════ */
+
+    /* ──────────────────────────────────────────────────
+       52. LFE-02 — Wave Rider Buoy Snag Pierce (2023)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-02-wave-rider-buoy-snag-2023',
+      name: 'Wave Rider Buoy Snagged by Survey Vessel — Pierce Asset, North Sea',
+      year: 2023,
+      date: '12 July 2023',
+      location: 'Pierce Asset, UK Central North Sea',
+      lat: 55.30,
+      lng: 2.45,
+      region: 'Europe',
+      asset_type: 'Hydrographic survey vessel; Wave Rider buoy',
+      operator: 'Shell (survey)',
+      weather_event_type: 'equipment',
+      classification: 'survey',
+      weather_event: 'Equipment interaction issue (not weather-driven)',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'None — no pipeline damage, buoy recovered',
+      summary: 'Survey vessel conducting anchoring condition surveys snagged its towed side-scan sonar (~210–220 m tow length) around the Pierce Wave Rider buoy. Buoy and rigging displaced ~2 km northward. Tow passed directly over buried production/control lines. All-stop called; equipment recovered. ROV survey confirmed no pipeline/umbilical damage.',
+      executive_summary: 'Wave Rider buoy at Pierce Asset displaced ~2 km when a survey vessel tow cable wrapped around it. Tow passed over buried lines; ROV confirmed no damage. Incident exposed gap in pre-survey verification of installed equipment positions against tow routes.',
+      what_happened: 'On 12 July 2023 at approximately 11:45 local time, a hydrographic survey vessel operating towed side-scan sonar equipment (tow length 210–220 m) at the Pierce Asset inadvertently wrapped its tow cable around the Wave Rider buoy permanently installed at the field. The collision displaced the buoy and its anchor weight ~2 km to the north. The tow track passed directly over buried production and control lines. An emergency all-stop was called; survey equipment and buoy tether were recovered. Subsequent ROV survey confirmed no damage to buried pipeline or umbilical systems.',
+      what_went_wrong: [
+        'Inadequate awareness of subsea infrastructure (buoy) position during survey planning.',
+        'No pre-survey verification comparing installed buoy locations against planned tow routes.',
+        'Buoy position coordinates not properly incorporated into survey line planning software/procedures.'
+      ],
+      lessons_learned: [
+        'Before conducting towed survey operations, verify all installed buoys and mooring positions against planned survey lines.',
+        'Survey planning must include cross-check of field layout data against equipment operations.',
+        'ROV integrity survey good practice when towed equipment has crossed over subsurface lines.',
+        'Wave Rider buoy data operationally important — contingency for temporary loss of real-time sea state data should be considered.'
+      ],
+      actions: [
+        'Survey planning procedures updated to require verification of all installed buoy and mooring positions against planned tow routes.',
+        'ROV integrity survey established as standard practice after any towed equipment crosses subsea lines.'
+      ],
+      metocean: {
+        wave_height_hs: 'N/A — operational incident, not weather-driven',
+        wind_speed: 'N/A',
+        sea_temp: 'N/A',
+        notes: 'Operational equipment-interaction incident, not driven by metocean conditions. Wave Rider buoy is metocean measurement equipment.'
+      },
+      source_classification: 'internal',
+      shell_internal_only: true,
+      sources: [
+        'Sphera Report #1279795 (INTERNAL)',
+        'Shell internal: Metocean Lessons Learnt - Learning from Experience V01.docx (INTERNAL)'
+      ],
+      references: [
+        { title: 'Sphera Report #1279795', type: 'Shell incident report', internal: true },
+        { title: 'Metocean Lessons Learnt V01', type: 'Shell internal training', file: 'background files/Metocean Lessons Learnt - Learning from Experience V01.docx', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       53. LFE-10 — Aircraft Turbulence Helideck (2016)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-10-aircraft-turbulence-helideck-2016',
+      name: 'Aircraft Turbulence During Helideck Landing — Tail-Rotor Authority Loss',
+      year: 2016,
+      date: 'December 2016',
+      location: 'Offshore Sabah, Malaysia — near Gumusut-Kakap field',
+      lat: 5.9,
+      lng: 114.9,
+      region: 'Asia',
+      location_precision: 'approximate',
+      asset_type: 'Helicopter (type not specified)',
+      operator: 'Unspecified',
+      weather_event_type: 'storm',
+      classification: 'aviation',
+      weather_event: 'Turbulence / local wind effects on final approach to helideck',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'None',
+      summary: 'Pilot experienced momentary loss of tail-rotor effectiveness during final approach to offshore helideck in December 2016. Pilot regained control and landed safely. Incident highlights recognized hazard of tail-rotor effectiveness loss in turbulent/gusty conditions near platforms.',
+      executive_summary: 'Helicopter experienced momentary tail-rotor effectiveness loss on final approach to an offshore helideck in turbulent conditions. Pilot recovered and landed safely. Highlights recognized hazard of platform-induced turbulence on helideck approaches.',
+      what_happened: 'During a routine crew change flight to an offshore helideck in December 2016, the pilot experienced a momentary loss of tail-rotor effectiveness (yaw control authority) on final approach to landing. The brief loss of control authority was attributed to turbulent or locally enhanced wind conditions in the approach corridor. The pilot successfully regained control through corrective action and completed the landing safely.',
+      what_went_wrong: [
+        'Turbulent or gusty wind conditions on approach caused localized aerodynamic disruption.',
+        'Approach path may have been through platform-induced wind disturbance zone.'
+      ],
+      lessons_learned: [
+        'Tail-rotor effectiveness loss on approach to offshore helidecks is a recognized hazard, particularly in turbulent or gusty conditions.',
+        'Pilots should be trained in recovery techniques and exercise conservative approach procedures in marginal weather.',
+        'Platform orientation relative to prevailing wind direction affects turbulence exposure on approach paths.',
+        'Platform wind anemometer data should be continuously monitored and communicated to pilots during approach.'
+      ],
+      actions: [
+        'Pilot training on tail-rotor effectiveness loss recovery reinforced.',
+        'Approach procedures reviewed for platforms with persistent wind disturbance zones.'
+      ],
+      metocean: {
+        wave_height_hs: 'Not relevant to aviation turbulence event',
+        wind_speed: 'Turbulent/gusty approach conditions; specific values not documented',
+        sea_temp: 'Not relevant',
+        notes: 'Platform-induced turbulence / local wind effects on helideck approach. Specific wind speed not documented in available sources.'
+      },
+      source_classification: 'internal',
+      shell_internal_only: true,
+      sources: [
+        'Shell LFE PDF: UP-AW-201733 Aircraft encountered turbulence during landing at offshore helideck.pdf (INTERNAL)',
+        'Shell LFE System: https://lfe.shell.com/#/ViewLearning/11932720043648 (INTERNAL)'
+      ],
+      references: [
+        { title: 'UP-AW-201733 — Aircraft Encountered Turbulence During Landing at Offshore Helideck', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/UP-AW-201733 Aircraft encountered turbulence during landing at offshore helideck.pdf', internal: true },
+        { title: 'Shell LFE System Reference', type: 'Shell LFE system', url: 'https://lfe.shell.com/#/ViewLearning/11932720043648', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       55. LFE-19 — Oloma Pipeline Repair 4 Fatalities (2016)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-19-oloma-pipeline-four-fatalities-2016',
+      name: 'Oloma Pipeline Repair — Four Fatalities From Tidal Water Ingress and Hydrocarbon Exposure',
+      year: 2016,
+      date: 'February 2016 (report reference GRP-AC-201603)',
+      location: 'Oloma, Nigeria (onshore/coastal pipeline)',
+      lat: 5.32,
+      lng: 6.47,
+      region: 'Africa',
+      location_precision: 'approximate',
+      asset_type: 'Onshore/coastal pipeline (cofferdam repair)',
+      operator: 'Shell Nigeria',
+      weather_event_type: 'current',
+      classification: 'pipeline',
+      weather_event: 'Tidal surge into cofferdam during pipeline repair — high tide forcing seawater inward',
+      fatalities: 4,
+      injuries: 1,
+      environmental_impact: 'Hydrocarbon release into cofferdam; controlled environmental impact',
+      summary: 'Four workers in a cofferdam died during pipeline repair when high tide forced seawater into the cofferdam through an inadequately isolated section. The resulting pressure surge ejected crude oil, condensate, and water mixture, exposing workers to hydrocarbon vapor and mist in confined space. Combined effects of reduced oxygen, hydrocarbon exposure, and physical trauma resulted in four fatalities. One worker attempting rescue suffered serious lung injury but survived.',
+      executive_summary: 'Four workers died during coastal pipeline repair when a rising tide forced seawater into a cofferdam, driving a surge of crude, condensate and water that caused hydrocarbon exposure and oxygen depletion in the confined space. Incident exposed failure to account for tidal metocean factors in isolation planning.',
+      what_happened: 'During pipeline repair operations in February 2016 at Oloma, Nigeria, workers were inside a cofferdam working on isolated pipeline sections. As the tide rose, seawater ingressed into a second cofferdam through points not previously recognized as part of the pressure boundary. As water level rose, hydrostatic pressure on the pipeline increased, eventually forcing a surge of crude oil, condensate, and seawater mixture toward the workers. The workers were exposed to physical trauma, reduced oxygen, and hydrocarbon vapor/mist. Four workers died. A fifth worker attempting rescue suffered severe lung injury but was recovered and treated.',
+      what_went_wrong: [
+        'Isolation points did not prevent tidal water ingress from a separate cofferdam within the same isolation boundary.',
+        'Risk of tidal ingress within the isolation zone was not identified or explicitly mitigated.',
+        'No monitoring of secondary cofferdam water level during active repair work.',
+        'Personnel worked inside confined cofferdam during rising tide conditions without positive confirmation of all ingress paths.',
+        'Atmospheric monitoring was not continuous (or data not acted upon) to detect oxygen depletion.'
+      ],
+      lessons_learned: [
+        'Pipeline repair isolation must account for all potential water ingress points — including tidal influence and inter-cofferdam connections.',
+        'Tidal cycle analysis mandatory: personnel should not be inside confined cofferdam during rising tide unless all ingress paths positively isolated and monitored.',
+        'Emergency escape routes from cofferdams must be assessed for tide-dependent scenarios and maintained clear.',
+        'Hydrocarbon mist and oxygen depletion are lethal hazards in confined spaces; continuous atmospheric monitoring and emergency ventilation essential.',
+        'Hot-work and isolation procedures must explicitly address tidal and metocean factors for coastal/intertidal pipeline work.',
+        'Rescue planning must account for ongoing hazards to prevent rescue workers becoming victims.'
+      ],
+      actions: [
+        'Isolation procedures for coastal/intertidal pipeline work updated to require tidal cycle analysis and positive isolation of all ingress paths.',
+        'Continuous atmospheric monitoring mandated for confined cofferdam work.',
+        'Rescue planning revised to account for ongoing atmospheric and pressure-surge hazards.'
+      ],
+      metocean: {
+        wave_height_hs: 'Tidal-driven, not wave-driven; specific values not applicable',
+        wind_speed: 'Not relevant to tidal ingress event',
+        sea_temp: 'Not documented',
+        notes: 'Tidal water ingress during rising tide forced hydrostatic pressure surge in cofferdam. Metocean factor: tidal cycle not accounted for in isolation planning.'
+      },
+      source_classification: 'internal',
+      shell_internal_only: true,
+      sources: [
+        'Shell LFE PDF (Action Alert): GRP-AC-201603 Oloma incident Action Alert.pdf (INTERNAL)',
+        'Shell LFE PDF (LFI Pack): GRP-AW-201605 Four fatalities during pipeline repair works - part 2.pdf (INTERNAL)',
+        'Shell LFE System: https://kh.shell.com/learnings/viewLearning/119631134019534 (INTERNAL)'
+      ],
+      references: [
+        { title: 'GRP-AC-201603 — Oloma Incident Action Alert', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/GRP-AC-201603 Oloma incident Action Alert.pdf', internal: true },
+        { title: 'GRP-AW-201605 — Four Fatalities During Pipeline Repair Works (Part 2)', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/GRP-AW-201605 Four fatalities during pipeline repair works - part 2.pdf', internal: true },
+        { title: 'Shell LFE System Reference', type: 'Shell LFE system', url: 'https://kh.shell.com/learnings/viewLearning/119631134019534', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       56. MiB-01 — Sakhalin Snow Accumulation Design (2000)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'mib-01-sakhalin-snow-accumulation-design',
+      name: 'Sakhalin Gas Processing Plant — Snow Accumulation Design Failure',
+      year: 2000,
+      date: 'First winter of operations (approximately early 2000s)',
+      location: 'Sakhalin, Russia (onshore intermediate gas plant)',
+      lat: 52.50,
+      lng: 141.50,
+      region: 'Russia and Central Asia',
+      asset_type: 'Onshore gas processing plant (intermediate gas plant)',
+      operator: 'Sakhalin Energy / Shell',
+      weather_event_type: 'climate',
+      classification: 'design',
+      weather_event: 'Extreme snow accumulation — 4 meters in first winter',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'None',
+      summary: 'Metocean design report for Sakhalin gas plant specified "light winter precipitation." First winter saw 4 meters of snow — an extreme underestimation. Plant team had to rapidly strengthen roofs to prevent structural collapse. Investigation revealed design criteria prepared by project engineer without metocean expert review or consultation with local knowledge.',
+      executive_summary: 'Sakhalin gas plant design criteria specified "light winter precipitation" but the first winter brought 4 metres of snow, forcing emergency roof reinforcement. Root cause: metocean criteria set by a project engineer without metocean-expert review or local knowledge.',
+      what_happened: 'During the first winter of operations at a gas processing plant on Sakhalin Island, Russia, the facility experienced 4 meters of snow accumulation — far in excess of the design basis that specified "light winter precipitation." The intermediate gas plant team had to undertake emergency structural reinforcement to prevent roof collapse. Investigation revealed that the Metocean Design Criteria had been prepared by a project engineer without involvement of qualified metocean engineers or consultation with local Sakhalin residents.',
+      what_went_wrong: [
+        'Metocean design criteria prepared by a project engineer, not a qualified metocean engineer.',
+        'No verification of criteria against local data or local expert knowledge.',
+        '"Light winter precipitation" designation grossly underestimated Sakhalin\'s known extreme snowfall.',
+        'No consultation with local operators or meteorological services familiar with Sakhalin climate.'
+      ],
+      lessons_learned: [
+        'Metocean design criteria must be prepared or reviewed by qualified metocean engineers, not project engineers alone.',
+        'For new areas or unfamiliar climates, consulting local operators and meteorological services is essential before finalizing design criteria.',
+        'Sakhalin is a well-known extreme snow environment — regional awareness should flag snow load as high-risk parameter.',
+        'Snow load is a structural safety-critical parameter and must be verified for worst-case, not just typical conditions.'
+      ],
+      actions: [
+        'Metocean design criteria review by qualified metocean engineers made mandatory.',
+        'Local operator and meteorological service consultation required for new/unfamiliar climate locations.'
+      ],
+      metocean: {
+        wave_height_hs: 'N/A — onshore facility',
+        wind_speed: 'Not the driving parameter for this incident',
+        sea_temp: 'N/A — onshore facility',
+        notes: 'Snow load: 4 metres accumulation vs. "light winter precipitation" design basis. Extreme underestimation of snow load parameter.'
+      },
+      source_classification: 'internal',
+      shell_internal_only: true,
+      sources: [
+        'Shell internal training: metocean in business/001-3 Metocean and Civil Engineering.docx (INTERNAL)'
+      ],
+      references: [
+        { title: 'Metocean and Civil Engineering — Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Civil Engineering.docx', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       57. MiB-04 — Baram Platform Collapse Malaysia (2005)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'mib-04-baram-platform-collapse-malaysia',
+      name: 'Baram 8 Platform Collapse — High River Discharge Currents, Malaysia',
+      year: 2005,
+      date: 'Collapse date unknown; platform recovered/decommissioned 2005',
+      location: 'South China Sea, ~8 nautical miles offshore from Tanjung Baram, Miri, Sarawak, Malaysia',
+      lat: 4.73,
+      lng: 114.00,
+      location_precision: 'approximate',
+      region: 'Asia',
+      asset_type: 'Fixed offshore jacket platform',
+      operator: 'Malaysian offshore operator (not Shell-operated)',
+      weather_event_type: 'current',
+      classification: 'design',
+      weather_event: 'Extreme current following heavy rainfall-driven river discharge; cyclone event',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'Platform collapse; limited environmental impact from collapse itself',
+      summary: 'Fixed jacket platform Baram 8 collapsed near Baram River delta entrance after cyclone event. Root cause was extreme current conditions — design basis assumed 0.6 m/s return-period current based on open-ocean data. Actual river discharge-driven currents at location were significantly higher. Investigation found no cause for collapse other than extreme environmental severity.',
+      executive_summary: 'Baram 8 fixed platform collapsed near a river delta after a cyclone event. Design basis current (0.6 m/s, open-ocean) grossly underestimated actual river-discharge-driven currents. No structural defect found — only extreme environmental severity.',
+      what_happened: 'The Baram 8 platform was a fixed offshore jacket structure located near the entrance of the Baram River in Sarawak, Malaysia. During or after a cyclone event, the platform experienced loading from extreme currents — likely a combination of cyclone-driven surge, heavy rainfall-induced river discharge surge, and tidal current amplification in shallow water. The platform failed structurally. During decommissioning in 2005, investigators could find no structural defect or other cause for collapse — the only explanation was the severity of the environmental conditions.',
+      what_went_wrong: [
+        'Design basis current estimate (0.6 m/s) based on open-ocean data; river discharge-driven currents not characterized.',
+        'Proximity to major river discharge point was not recognized as significant current hazard.',
+        'No site-specific current measurements conducted at platform location.',
+        'Design assumed relatively uniform open-ocean current regime; did not account for episodic river discharge surges.'
+      ],
+      lessons_learned: [
+        'Fixed platform current design criteria must be based on site-specific measurements — generic open-ocean values inappropriate for river delta locations.',
+        'River discharge-driven currents are highly episodic and can significantly exceed ambient tidal/oceanic currents.',
+        'Cyclone-induced rainfall in tropical areas generates extreme short-duration river discharge surges that compound other storm loads.',
+        'Near-river offshore locations require combined metocean/hydrological assessment.'
+      ],
+      actions: [
+        'Fixed platform current design criteria near river deltas now require site-specific measurements.',
+        'Combined metocean/hydrological assessment required for near-river offshore locations.'
+      ],
+      metocean: {
+        wave_height_hs: 'Not the primary driver; current-driven failure',
+        wind_speed: 'Cyclone event; specific values not documented',
+        sea_temp: 'Not documented',
+        notes: 'Design basis current 0.6 m/s (open-ocean) severely underestimated river-discharge-driven currents. Cyclone-driven rainfall caused extreme river surge.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'Shell internal training (case referenced as an industry example): metocean in business/001-3 Metocean and Fixed Offshore Structures GF and VA.docx',
+        'Shell internal training: metocean in business/0041 Metocean in Shell Business - PreDG3 - Fixed Offshore Structures.docx'
+      ],
+      references: [
+        { title: 'Metocean and Fixed Offshore Structures — Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Fixed Offshore Structures GF and VA.docx', internal: true },
+        { title: 'PreDG3 Fixed Offshore Structures — Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/0041 Metocean in Shell Business - PreDG3 - Fixed Offshore Structures.docx', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       58. LFE-14 — Anchor Handling Seaman Injury (ANONYMIZED) (2012)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'lfe-14-anchor-handling-seaman-injury-anonymous',
+      name: 'Campaign Barge Anchor Handling — Seaman Injury During Squall',
+      year: 2012,
+      date: '12 June 2012',
+      location: 'Offshore Brunei, Borneo (location approximate)',
+      lat: 5.3,
+      lng: 114.5,
+      region: 'Asia',
+      location_precision: 'approximate',
+      asset_type: 'Campaign barge + two anchor-handling tugs',
+      operator: 'Operator anonymized',
+      weather_event_type: 'squall',
+      classification: 'maritime',
+      weather_event: 'Sudden squall — wind 35–40 knots, swell 4–5 m',
+      fatalities: 0,
+      injuries: 1,
+      environmental_impact: 'None',
+      summary: 'Campaign barge with two anchor-handling tugs aborted anchor retrieval operations and moved away from platform due to impending squall. Trailing tug declared emergency (steering gear water ingress); lead tug also dropped anchor. During attempt to secure pennant buoy chain on deck, crew swept off feet by sea swells. Seaman trapped under 0.6-tonne buoy; required hospitalization. Incident exposes gap in weather abort criteria and deck securing procedures.',
+      executive_summary: 'During anchor-handling in a sudden squall (35–40 kn, 4–5 m swell), a seaman was swept off his feet and trapped under a 0.6-tonne pennant buoy, requiring hospitalization. Incident exposed inadequate weather abort criteria and deck-securing procedures for marine operations.',
+      what_happened: 'A campaign barge with two anchor-handling tugs was conducting anchor recovery. At approximately 08:20 local time, the Tow Master observed an impending squall and instructed all vessels to abort and move away. While towing out, the trailing tug experienced water ingress into its steering gear room and dropped anchor; the lead tug was also instructed to drop anchor (wind 35–40 knots, swell 4–5 m). During attempts to secure a pennant buoy chain on the lead tug\'s deck, crew were swept off their feet by sea swells. A seaman was trapped under the 0.6-tonne pennant buoy. Medevac was arranged; the seaman required hospitalization.',
+      what_went_wrong: [
+        'Operations continued too close to weather limits before the abort decision was made.',
+        'Pennant buoy lashing arrangements inadequate to prevent buoy becoming a hazard in rough seas.',
+        'Crew were on exposed deck in conditions that exceeded safe working limits.',
+        'No clear pre-defined weather go/no-go criteria with adequate safety margin.'
+      ],
+      lessons_learned: [
+        'Marine operations with anchor handling must have clear, pre-defined weather abort criteria with sufficient safety margin.',
+        'Deck equipment lashings must be reviewed for adequacy in storm conditions — not just transit weather.',
+        'Personnel should not be on exposed deck during conditions exceeding safe working limits.',
+        'Sudden squalls in tropical offshore locations escalate rapidly — forecasting uncertainty margin must be built into go/no-go criteria.'
+      ],
+      actions: [
+        'Weather go/no-go criteria for anchor-handling operations formalized with safety margins.',
+        'Deck equipment lashing arrangements reviewed for storm-condition adequacy.'
+      ],
+      metocean: {
+        wave_height_hs: '4–5 m swell',
+        wind_speed: '35–40 knots (sudden squall)',
+        sea_temp: 'Tropical; not documented',
+        notes: 'Sudden squall: wind 35–40 knots, swell 4–5 m. Rapid escalation typical of tropical offshore squalls.'
+      },
+      source_classification: 'internal',
+      shell_internal_only: true,
+      sources: [
+        'Shell LFE PDF (operator/incident code removed): Incident details from internal database (INTERNAL)',
+        'Shell LFE System reference (INTERNAL)'
+      ],
+      references: [
+        { title: 'Shell LFE — Anchor Handling Seaman Injury (anonymized)', type: 'Shell LFE PDF', internal: true }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       59. Big Foot TLP — Tendon Buoyancy Loss, Gulf of Mexico (2015)
+       Event: Ocean / Turbidity Current / Tidal (Loop Current) · Class: Basis of Design
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'bigfoot-tlp-tendon-2015',
+      name: 'Big Foot TLP — Tendon Buoyancy Loss During Installation, Gulf of Mexico',
+      year: 2015,
+      date: '29–31 May 2015',
+      location: 'Walker Ridge Block 29, deepwater US Gulf of Mexico (~225 miles S of New Orleans; ~1,580 m / 5,200 ft water depth)',
+      lat: 27.1,
+      lng: -90.4,
+      region: 'North America',
+      location_precision: 'approximate',
+      asset_type: 'Tension-leg platform (TLP) — pre-installed mooring tendons with temporary buoyancy modules',
+      operator: 'Chevron (operator 60%); Equinor/Statoil (27.5%), Marubeni (12.5%)',
+      weather_event_type: 'current',
+      classification: 'design',
+      weather_event: 'Gulf of Mexico Loop Current — persistent strong current forcing during a deepwater TLP tendon installation campaign',
+      fatalities: 0,
+      injuries: 0,
+      environmental_impact: 'No pollution; ~45,000 ft of tendon debris and temporary buoyancy modules fell to the seabed and were later recovered under a BSEE-supervised site-clearance programme.',
+      summary: 'During installation of the operator\'s Big Foot tension-leg platform in the deepwater Gulf of Mexico, nine of the sixteen pre-installed mooring tendons lost buoyancy over 29–31 May 2015 and sank to the seabed, along with the temporary buoyancy modules supporting them. The TLP hull was not yet connected and was undamaged; there were no injuries or pollution. The project — which had already struggled to find installation weather windows clear of the Gulf Loop Current — was suspended, the TLP towed back to sheltered waters, and first oil delayed roughly 2.5 years (from 2015 to November 2018). The operator did not publicly detail the failure mechanism; industry analysts linked it to the strong Loop Current, and the event is a landmark lesson in metocean design and installation-window criteria for deepwater moorings.',
+      executive_summary: 'Over 29–31 May 2015, nine of sixteen pre-installed mooring tendons for the operator\'s Big Foot TLP lost buoyancy and sank to the seabed in the deepwater Gulf of Mexico, together with their temporary buoyancy modules. The unconnected TLP was undamaged and no one was hurt, but the campaign — already hampered by the Gulf Loop Current — was suspended, the TLP returned to shore, and first oil slipped ~2.5 years to November 2018. The incident is a benchmark case in metocean/Loop-Current design basis and installation-window management for deepwater tension-leg moorings.',
+      what_happened: 'Big Foot is an operator-run tension-leg platform (TLP) in Walker Ridge Block 29, about 225 miles south of New Orleans in roughly 5,200 ft (1,580 m) of water — at the time believed to be the deepest TLP of its kind. A TLP is held down by 16 vertical steel tendons tensioned between the hull and seabed foundation piles. The tendons were pre-installed on the seabed and held up during installation by temporary buoyancy modules (air cans) while awaiting connection of the hull.\n\nThe operator had repeatedly struggled to find an installation window free of the Gulf of Mexico Loop Current — the clockwise flow of warm water that extends northward from the Caribbean toward the Gulf Stream — and its eddies. An attempt to install the TLP on 18 May 2015 could not even be started, and the hull was returned to a holding area. Then, between Friday 29 May and Sunday 31 May 2015, nine of the sixteen pre-installed tendons lost buoyancy and fell to the seabed; the temporary buoyancy modules supporting them also dropped. Recovery later found two damage patterns: six tendons collapsed into a "fallen position" (bottom connector still in its receptacle), while three were driven as much as ~80 ft into the foundation piles.\n\nThe TLP hull itself was not connected to any tendons or wells and was undamaged; there were no injuries and no pollution. Installation was suspended and the TLP towed back to sheltered waters. The operator ran a BSEE-supervised site-clearance campaign, recovering roughly 45,000 ft of tendon debris spread over ~1,300 ft using ROV mapping and a "severing" campaign; the foundation piles were found reusable. New tendons were fabricated, the TLP was successfully installed in spring 2018, and the field achieved first oil in November 2018 — about 2.5 years later than the original 2015 target.',
+      what_went_wrong: [
+        'The temporary tendon buoyancy modules (air cans) lost buoyancy, dropping nine of sixteen pre-installed tendons to the seabed. The operator did not publicly disclose the detailed failure mechanism.',
+        'The installation campaign was highly exposed to the Gulf of Mexico Loop Current and its eddies; suitable current-free windows were scarce, extending the period during which the pre-installed tendons and their buoyancy modules were exposed to current loading (industry analysts linked the strong Loop Current to the failure).',
+        'The design and metocean basis for the temporary-buoyancy / pre-installation phase did not provide sufficient margin against the sustained Loop-Current environment and the long waiting periods it imposed.',
+        'The installation sequence left tendons standing on temporary buoyancy for an extended time while awaiting a hull-installation weather/current window, increasing exposure to a low-probability but high-consequence failure.'
+      ],
+      lessons_learned: [
+        'Deepwater mooring/tendon installation design must treat the Gulf of Mexico Loop Current (and its shed eddies) as a primary metocean design driver, with realistic current profiles and duration statistics — not only wave and wind criteria.',
+        'Temporary installation states (tendons on buoyancy modules awaiting hull connection) are high-risk transient conditions and must be engineered, and time-limited, with the same rigour as the in-service condition.',
+        'Installation-window planning for Loop-Current-exposed sites needs robust real-time current monitoring/forecasting and pre-defined go/no-go and stand-down criteria, because suitable windows can be rare and short.',
+        'Contingency and preservation plans (safe-harbour tow-back, component recovery, re-fabrication) should be developed before installation, given the multi-year, multi-billion-dollar consequences of a mooring installation failure.',
+        'Site-clearance and debris-recovery planning (ROV mapping, severing, BSEE coordination) should be anticipated as part of deepwater installation risk management.'
+      ],
+      actions: [
+        'The operator suspended installation, towed the unconnected TLP back to sheltered waters, and ran a BSEE-supervised seabed site-clearance programme recovering ~45,000 ft of tendon debris; foundation piles were reused.',
+        'New tendons were fabricated and the TLP was successfully installed in spring 2018; Big Foot achieved first oil in November 2018 (~2.5-year delay from the 2015 target).',
+        'The incident was shared publicly by the project team at the 2019 Offshore Technology Conference (OTC) as a lessons-learned case on deepwater installation and Loop-Current management.',
+        'The event reinforced industry attention on metocean (Loop-Current) design basis, temporary-phase engineering, and installation-window criteria for deepwater tension-leg moorings.'
+      ],
+      metocean: {
+        wave_height_hs: 'Not the primary driver — a current-loading / installation-phase incident, not a storm',
+        wind_speed: 'Not the primary driver',
+        sea_temp: '~24–28 °C (warm Loop-Current water)',
+        notes: 'The Gulf of Mexico Loop Current is a clockwise flow of warm Caribbean water extending northward toward the Gulf Stream; its core and shed eddies can produce strong, persistent currents (commonly cited up to ~1.5–2 m/s / ~3–4 knots) at a wide range of depths, and are notoriously variable and hard to schedule around. The operator did not publicly confirm the failure mechanism; Raymond James analysts (2015) speculated the strong Loop Current was the likely cause of the tendon buoyancy loss. Note: a 2019 SPE/JPT retrospective dates the event to "29 May 2014", but contemporaneous June-2015 reporting (World Oil, Offshore) places it on 29–31 May 2015 — the date used here.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      sources: [
+        'JPT / SPE — "Lessons Learned From the Big Foot Mooring Incident" (2019) (EXTERNAL)',
+        'Offshore Magazine — "Big Foot tendon damage causes relocation to sheltered waters" (2015) (EXTERNAL)',
+        'World Oil — "Chevron to move Big Foot to sheltered waters after damage to installation tendons" (1 June 2015) (EXTERNAL)'
+      ],
+      references: [
+        { title: 'Lessons Learned From the Big Foot Mooring Incident', type: 'Industry technical feature', publisher: 'Journal of Petroleum Technology (SPE)', year: 2019, url: 'https://jpt.spe.org/lessons-learned-big-foot-mooring-incident' },
+        { title: 'Big Foot tendon damage causes relocation to sheltered waters', type: 'Industry news', publisher: 'Offshore Magazine', year: 2015, url: 'https://www.offshore-mag.com/deepwater/article/16766212/big-foot-tendon-damage-causes-relocation-to-sheltered-waters' },
+        { title: 'Chevron to move Big Foot to sheltered waters after damage to installation tendons', type: 'Industry news', publisher: 'World Oil', year: 2015, url: 'https://www.worldoil.com/news/2015/6/01/chevron-to-move-big-foot-to-sheltered-waters-after-damage-to-installation-tendons' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       60. GSP Saturn — 2014
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'gsp-saturn-2014',
+      name: 'GSP Saturn',
+      year: 2014,
+      date: '7–10 November 2014',
+      location: 'Pechora Sea, Arctic Russia; stranded at Cape Kanin Nos',
+      lat: 70.5,
+      lng: 37.0,
+      region: 'Russia and Central Asia',
+      location_precision: 'approximate',
+      platform_type: 'Sonat Orion-class jack-up drilling platform (4-legged, independent leg cantilever), built 1988; sold to Grup Servicii Petroliere 2005 (US$100M portfolio deal); refurbished 2009 (US$50M)',
+      operator: 'Grup Servicii Petroliere (GSP Drilling), Romania — chartered by Gazprom Neft; towed by AHTS Stril Challenger and AHTS Stril Commander',
+      weather_event_type: 'storm',
+      classification: 'maritime',
+      weather_event: 'Arctic storm — sustained winds 70–80 knots, gusting to 100+ knots; seas 8–12 m; near-freezing temperatures; severe icing conditions',
+      fatalities: 0,
+      persons_on_board: 70,
+      survivors: 70,
+      summary: 'While being towed from the Dolginskoye field to Murmansk in November 2014, the jack-up platform GSP Saturn encountered a severe Arctic storm with winds of 70–80 knots and seas of 8–12 m. The platform sustained damage (lifeboat destroyed, helicopter deck damaged) and was abandoned by its crew to escort vessels. All 70 personnel were evacuated safely. The platform was then jacked-down on the seabed at Cape Kanin Nos to await refloating. The successful evacuation was informed by lessons from the SPBU Kolskaya disaster (December 2011), in which a similar platform in comparable Arctic storm conditions resulted in 53 fatalities.',
+      executive_summary: 'During a severe Arctic storm on 7–10 November 2014, the jack-up platform GSP Saturn was towed from the Dolginskoye field in the Pechora Sea toward Murmansk when storm conditions (70–80 knots winds, 8–12 m seas, near-freezing temperatures) caused damage and forced immediate evacuation of all 70 crew members to escort vessels. The primary escape systems were compromised (lifeboat destroyed, helicopter deck damaged), yet 100% crew survival was achieved through precautionary evacuation protocols informed by the SPBU Kolskaya precedent (2011). The platform was subsequently jacked-down at Cape Kanin Nos. The incident validated Arctic offshore evacuation procedures and highlighted continuing vulnerability of jack-up platforms in Arctic marine transits.',
+      what_happened: 'The GSP Saturn, a Romanian-operated 4-legged jack-up drilling platform, had completed drilling operations at the Dolginskoye field in the Pechora Sea for Gazprom Neft. On 6 November 2014 at 08:00, the platform commenced tow operations to Murmansk, towed by twin AHTS tugs (Stril Challenger and Stril Commander) with escort support (standby tug Strilbord and rescue vessel Spasatel Karev).\n\nOn the evening of 7 November 2014 (~23:00), storm conditions intensified unexpectedly. Wind shifted to sustained 70–80 knots with gusts exceeding 100 knots; seas built rapidly to 8–12 m with 15+ m wave peaks; visibility dropped to near-zero in snow and spray. Air temperatures fell to −8 to −12 °C, creating severe icing conditions.\n\nUnder the extreme dynamic loading of the storm, heavy seas destroyed Lifeboat #1 (torn from davits and lost overboard). The helicopter landing deck was damaged and became unsafe for landing operations.\n\nWith the primary escape systems compromised (only one lifeboat remaining, insufficient for ~70 crew; helicopter operations no longer possible), the platform captain and master of the escort tug assessed the situation and made a critical decision: **immediate evacuation**. This decision was informed by knowledge of the SPBU Kolskaya disaster (December 2011), in which a jack-up rig in comparable Arctic storm conditions had capsized with loss of 53 of ~70 crew.\n\nFrom approximately 05:00–07:00 on 8 November, tender boats (small rescue craft launched from Spasatel Karev) ferried crew between the platform and escort vessels in waves of 8–10 personnel per crossing. Each tender crossing took 20–30 minutes in the high seas. **All 70 crew were successfully evacuated with no fatalities or serious injuries.** The platform was left unmanned.\n\nWith crew safely aboard escort vessels, tugs assessed tow-ability and shelter options. Due to excessive tow-wire tension and no forecast storm clearing, the decision was made to seek shelter at Kolguyev Island (shallow Pechora Sea bay, ~100 nm north of the storm impact location). The slow tow to Kolguyev (8 November, ~12:00–17:00) was hazardous but successful; the platform anchored in sheltered water.\n\nWhen weather did not clear and ice accumulation concerns grew (late November season), the platform was relocated to Cape Kanin Nos (southern entrance to Pechora Bay, water depth ~30–50 m). On 10 November, the platform was **jacked-down** (all four legs extended to the seabed, floats raised above water), converting it from a floating/towed configuration to a bottom-supported jack-up.\n\n**Final outcome:** The outcome of GSP Saturn (refloating date, arrival in Murmansk, repair status, return to operations) is not documented in available public sources. The platform remained stranded at Cape Kanin Nos, awaiting recovery in improved weather and sea-ice conditions.',
+      what_went_wrong: [
+        'Primary escape systems were destroyed or damaged during the initial storm surge: lifeboat #1 lost overboard, helicopter deck damaged and unsafe. Only one lifeboat remained for ~70 crew; only helicopter deck remains were unsafe. This forced reliance on tender boat evacuation under dangerous sea conditions.',
+        'The platform was transiting Arctic waters in early November, a high-risk period for Arctic storms; specific weather forecast accuracy vs. actual storm intensity/track development is undocumented, though the rapid intensification appears to have caught the operation.',
+        'Jack-up platform design specifications for the towed configuration (floating on floats with legs raised) provide limited seakeeping ability for high-sea-state conditions; the 8–12 m seas and 70–80 knot winds appear to have exceeded the platform\'s safe transit envelope.',
+        'Seasonal ice advance pressure in the Pechora Sea (specific 2014 freeze-up dates undocumented) may have influenced the decision to depart on 6 November rather than delay for improved weather, though this remains undocumented in available sources.'
+      ],
+      lessons_learned: [
+        'Conservative evacuation protocols save lives. GSP Saturn\'s immediate evacuation (within ~6 hours of damage assessment) contrasted sharply with SPBU Kolskaya\'s delayed response (2011), where the platform capsized while evacuation was still underway. Outcome: GSP Saturn 100% crew survival; Kolskaya 53 fatalities of ~70.',
+        'Loss of primary escape systems (lifeboat, helicopter) must trigger automatic immediate evacuation, not waiting for platform instability to develop. Backup evacuation methods (tender boats, immersion suits, life rafts) must be pre-positioned and trained.',
+        'Jack-up rigs should not be transited through Arctic waters during high-sea-state seasons (Nov 1 – Mar 31). Pre-position rigs to safe harbors by October 31. Arctic platform tows require 3+ dedicated tugs and Arctic-rated design (enclosed lifeboats, immersion suits, cold-water training).',
+        'Forecast-driven (not calendar-based) decision-making is essential for Arctic operations. Seasonal window constraints (ice advance) must not override weather-safety criteria; operational planning must allow rig evacuation well before ice advance.',
+        'Arctic offshore infrastructure (refuge harbors, supply depots, year-round SAR capability) must be pre-positioned to support stranded platforms in remote areas like Pechora Sea.'
+      ],
+      actions: [
+        'The successful crew evacuation was widely recognized within the Arctic offshore industry as a validation of Kolskaya post-incident safety protocols and conservative evacuation decision-making.',
+        'GSP Saturn incident did not trigger major regulatory changes (unlike Kolskaya 2011); instead, it reinforced existing Arctic safety protocols informed by Kolskaya.',
+        'The incident supported industry adoption of Polar Code requirements (effective 2017), including enhanced life-saving systems, crew training, and operational standards for Arctic vessels.'
+      ],
+      metocean: {
+        wave_height_hs: '8–12 m (significant wave height)',
+        wind_speed: '70–80 knots sustained, gusting to 100+ knots (equivalent to strong gale / hurricane-force conditions)',
+        sea_temp: '~2 °C',
+        air_temp: '−8 to −12 °C',
+        visibility: 'Near-zero in snow and spray',
+        notes: 'Arctic weather patterns in November are highly variable. Specific forecast vs. actual storm comparisons require access to Russian meteorological archives not available in public sources. Icing conditions (air temp −8 to −12 °C + sea spray) created rapid ice accumulation on decks and superstructure. The Pechora Sea is prone to polar lows — small, short-lived but intense maritime storms that develop rapidly and are difficult to forecast. Arctic seasonal ice advance (specific 2014 dates undocumented) creates operational pressure but must not override weather safety criteria.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'Moderate. Documented facts: dates (Nov 6–10, 2014), platform specs, crew count (70), evacuation success (0 fatalities), location (Pechora Sea, Cape Kanin Nos), damage (lifeboat destroyed, helicopter deck damaged). Undocumented/estimated: exact storm timing/intensity vs. forecast, refloating timeline and final outcome, Russian-language investigation reports. Metocean conditions (wind, sea state, temperature) are from vessel reports and regional estimates; specific incident-site measurements unavailable.',
+      sources: [
+        'Belkrov.by (Belarus maritime portal) — "Drilling platform GSP Saturn, having completed work for Gazprom Neft, got stranded in the Pechora Sea on the way home" (November 2014) (EXTERNAL)',
+        'Wikipedia — GSP Saturn (jack-up rig) (EXTERNAL)',
+        'SPBU Kolskaya incident database entry (comparative reference) (INTERNAL)'
+      ],
+      references: [
+        { title: 'GSP Saturn — Belkrov.by incident coverage (Буровая платформа GSP Saturn, выполнив работы для Газпром нефти, на пути домой застряла в Печорском море)', type: 'Maritime news portal', publisher: 'Belkrov.by', year: 2014, url: 'https://belkrov.by/articles/36623.html' },
+        { title: 'Wikipedia — GSP Saturn', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/GSP_Saturn' },
+        { title: 'SPBU Kolskaya Disaster (December 2011) — Comparative reference', type: 'Incident database', publisher: 'IOGP Metocean Incidents Database', internal: true },
+        { title: 'GSP Saturn Detailed Incident Report — Background documentation for training/reference', type: 'Internal case study file', file: 'background files/GSP_Saturn_2014_Detailed_Incident_Report.md', internal: true }
+      ]
+    }
+
   ] /* end incidents array */
 }; /* end INCIDENTS_DATA */
+
+

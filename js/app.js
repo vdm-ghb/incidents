@@ -1,44 +1,29 @@
 /* ═══════════════════════════════════════════════════
    Offshore Incidents — Lessons Learned Database
-   v3.3 — 40 incidents, collapsible legend, region zoom,
-           table region filter, animated incidents button
-   ═══════════════════════════════════════════════════ */
+   v4.0 — 58 incidents (51 external + 7 Shell internal),
+           three-way dataset toggle (Full / Shell / External)
+   ═════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  function severityClass(incident) {
-    if (incident.severity_override) return 'sev-' + incident.severity_override;
-    var f = incident.fatalities;
-    if (f >= 50) return 'sev-critical';
-    if (f >= 10) return 'sev-major';
-    if (f >= 1)  return 'sev-notable';
-    return 'sev-informational';
-  }
-  function severityKey(incident) {
-    if (incident.severity_override) return incident.severity_override;
-    var f = incident.fatalities;
-    if (f >= 50) return 'critical';
-    if (f >= 10) return 'major';
-    if (f >= 1)  return 'notable';
-    return 'informational';
-  }
-  function severityLabel(incident) {
-    var labels = { critical:'Critical', major:'Major', notable:'Notable', informational:'Near-miss' };
-    return labels[severityKey(incident)] || 'Unknown';
-  }
+  var CLASSIFICATION_LABELS = { drilling:'Drilling', maritime:'Maritime / Tow', aviation:'Aviation', onshore:'Onshore Operations', coastal:'Port / Coastal', design:'Basis of Design', pipeline:'Pipeline', survey:'Survey' };
+  function classKey(incident) { return incident.classification || 'other'; }
+  function classColor(incident) { return 'cls-' + classKey(incident); }
+  function classLabel(incident) { return CLASSIFICATION_LABELS[classKey(incident)] || classKey(incident); }
   function fatalityText(incident) {
     if (incident.fatalities > 0) return incident.fatalities + (incident.fatalities===1?' fatality':' fatalities');
     if (incident.infrastructure_impact) { var s=incident.infrastructure_impact; return s.length>60?s.substring(0,58)+'…':s; }
     return 'Near-miss / 0 fatalities';
   }
 
-  var EVENT_TYPE_LABELS = { hurricane:'Hurricane / Typhoon', storm:'Severe Storm', internal_wave:'Internal Wave / Soliton', helicopter:'Helicopter', maintenance:'Maintenance / Equipment', tsunami:'Tsunami / Meteo-tsunami', climate:'Climate Change / Long-term Variability' };
-  var EVENT_TYPE_LETTERS = { hurricane:'H', storm:'S', internal_wave:'W', helicopter:'🚁', maintenance:'M', tsunami:'T', climate:'C' };
+  var EVENT_TYPE_LABELS = { cyclone:'Cyclone / Hurricane / Typhoon', storm:'Severe (Extra-tropical) Storm', squall:'Squall / Thunderstorm', lightning:'Lightning', rogue_wave:'Extreme / Rogue Wave', internal_wave:'Internal Wave / Soliton', current:'Ocean / Turbidity Current / Tidal', tsunami:'Tsunami / Meteo-tsunami', climate:'Climate / Ambient Extremes', equipment:'Metocean Equipment' };
+  var EVENT_TYPE_LETTERS = { cyclone:'C', storm:'S', squall:'Q', lightning:'L', rogue_wave:'R', internal_wave:'I', current:'U', tsunami:'T', climate:'K', equipment:'E' };
 
   /* Region bounding boxes [SW, NE] */
   var REGION_BOUNDS = {
     'Africa':                [[  -5.0, -20.0],[ 25.0,  50.0]],
-    'Asia/Australasia':      [[-42.0,   60.0],[ 50.0, 155.0]],
+    'Asia':                  [[  -5.0,   60.0],[ 50.0, 145.0]],
+    'Australia':             [[-45.0,  110.0],[ -9.0, 155.0]],
     'Europe':                [[ 48.0,  -15.0],[ 66.0,  15.0]],
     'Middle East':           [[ 15.0,   45.0],[ 35.0,  65.0]],
     'North America':         [[ 18.0, -175.0],[ 70.0, -45.0]],
@@ -52,20 +37,50 @@
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}', {
     attribution:'', maxZoom:13, opacity:0.7 }).addTo(map);
 
-  var allIncidents=[], activeMarkers={}, activeFilters={type:'all',region:'all',severity:'all'};
+  var allIncidents=[], activeMarkers={}, activeFilters={type:'all',region:'all',classification:'all'};
+  /* Dataset view: 'full' | 'shell' | 'external' — starts on full */
+  var DATASET_VIEWS = ['full','shell','external'];
+  var DATASET_LABELS = { full:'Full Dataset', shell:'Shell Internal', external:'External Only' };
+  var datasetView = 'full';
 
   function loadData() {
     if (!window.INCIDENTS_DATA) { console.error('INCIDENTS_DATA not found'); return; }
     allIncidents = window.INCIDENTS_DATA.incidents;
+    updateDatasetButton();
     renderMarkers();
     updateStats();
   }
 
+  function isShellInternal(inc) {
+    return inc.shell_internal_only === true || inc.source_classification === 'internal';
+  }
+
+  function getIncidents(view) {
+    // 'full'     -> all incidents
+    // 'shell'    -> Shell internal-only incidents
+    // 'external' -> externally-sourced / public incidents (incl. unclassified baseline)
+    if (view === 'shell')    return allIncidents.filter(isShellInternal);
+    if (view === 'external') return allIncidents.filter(function(inc){ return !isShellInternal(inc); });
+    return allIncidents; // full
+  }
+
+  function updateDatasetButton() {
+    var btn = document.getElementById('dataset-toggle-btn');
+    if (!btn) return;
+    var count = getIncidents(datasetView).length;
+    btn.setAttribute('data-view', datasetView);
+    var valueEl = btn.querySelector('.stat-value');
+    var labelEl = btn.querySelector('.stat-label');
+    if (valueEl) valueEl.textContent = DATASET_LABELS[datasetView];
+    if (labelEl) labelEl.textContent = count + ' incidents';
+  }
+
   function createMarker(incident) {
-    var sevClass=severityClass(incident), letter=EVENT_TYPE_LETTERS[incident.weather_event_type]||'?';
-    var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+sevClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[18,0] });
+    if (!incident.lat || !incident.lng) return null; // Skip incidents with null coordinates
+    var clsClass=classColor(incident), letter=EVENT_TYPE_LETTERS[incident.weather_event_type]||'?';
+    var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+clsClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[18,0] });
     var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true});
-    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+sevClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'');
+    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+clsClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'');
     marker.bindTooltip(ttHTML,{permanent:false,direction:'right',opacity:1});
     marker.on('click',function(){ openModal(incident); });
     return marker;
@@ -74,12 +89,13 @@
   function renderMarkers() {
     Object.values(activeMarkers).forEach(function(m){ map.removeLayer(m); });
     activeMarkers={};
-    var filtered=allIncidents.filter(function(inc){
+    var displayIncidents = getIncidents(datasetView); // Apply dataset view first
+    var filtered=displayIncidents.filter(function(inc){
       if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
-      if (activeFilters.severity!=='all' && severityKey(inc)!==activeFilters.severity) return false;
+      if (activeFilters.classification!=='all' && classKey(inc)!==activeFilters.classification) return false;
       return true;
     });
-    filtered.forEach(function(inc){ var m=createMarker(inc); m.addTo(map); activeMarkers[inc.id]=m; });
+    filtered.forEach(function(inc){ var m=createMarker(inc); if(m) { m.addTo(map); activeMarkers[inc.id]=m; } });
     updateStats(filtered);
     filterTableRows();
   }
@@ -89,7 +105,7 @@
   }
 
   document.getElementById('filter-type').addEventListener('change',function(e){ activeFilters.type=e.target.value; renderMarkers(); });
-  document.getElementById('filter-severity').addEventListener('change',function(e){ activeFilters.severity=e.target.value; renderMarkers(); });
+  document.getElementById('filter-classification').addEventListener('change',function(e){ activeFilters.classification=e.target.value; renderMarkers(); });
   document.getElementById('filter-region').addEventListener('change',function(e){
     activeFilters.region=e.target.value;
     renderMarkers();
@@ -98,13 +114,24 @@
     } else { map.setView([25,10],2); }
   });
   document.getElementById('filter-reset').addEventListener('click',function(){
-    activeFilters={type:'all',region:'all',severity:'all'};
+    activeFilters={type:'all',region:'all',classification:'all'};
     document.getElementById('filter-type').value='all';
     document.getElementById('filter-region').value='all';
-    document.getElementById('filter-severity').value='all';
+    document.getElementById('filter-classification').value='all';
     renderMarkers();
     map.setView([25,10],2);
   });
+
+  /* ── Dataset toggle: cycles Full -> Shell -> External ── */
+  var datasetToggleBtn = document.getElementById('dataset-toggle-btn');
+  if (datasetToggleBtn) {
+    datasetToggleBtn.addEventListener('click', function() {
+      var idx = DATASET_VIEWS.indexOf(datasetView);
+      datasetView = DATASET_VIEWS[(idx + 1) % DATASET_VIEWS.length];
+      updateDatasetButton();
+      renderMarkers();
+    });
+  }
 
   /* ── Legend collapse ── */
   var legend=document.getElementById('legend');
@@ -150,9 +177,11 @@
   });
 
   function buildIncidentHTML(inc) {
-    var sevClass=severityClass(inc), sevLabel=severityLabel(inc), eventLabel=EVENT_TYPE_LABELS[inc.weather_event_type]||inc.weather_event_type;
-    var impactBadge=inc.fatalities>0?inc.fatalities+(inc.fatalities===1?' fatality':' fatalities'):(inc.infrastructure_impact?'Infrastructure — '+sevLabel:'Near-miss');
+    var clsClass=classColor(inc), clsLbl=classLabel(inc), eventLabel=EVENT_TYPE_LABELS[inc.weather_event_type]||inc.weather_event_type;
+    var impactBadge=inc.fatalities>0?inc.fatalities+(inc.fatalities===1?' fatality':' fatalities'):(inc.infrastructure_impact?'Infrastructure impact':'Near-miss');
     var survivorsStr=inc.persons_on_board?(( inc.survivors!==null?inc.survivors:0)+' of '+inc.persons_on_board+' survived'):'';
+    var nf=(typeof inc.fatalities==='number')?inc.fatalities:(parseInt(inc.fatalities,10)||0);
+    var casualtiesStr=survivorsStr?(nf+' ('+survivorsStr+')'):(nf>0?String(nf):'');
     var m=inc.metocean||{}, metoceanHTML='';
     if (m.wave_height_hs||m.wind_speed||m.visibility||m.sea_temp) {
       var items=[];
@@ -165,9 +194,9 @@
     var infraHTML=inc.infrastructure_impact?'<div class="infra-callout"><span class="infra-label">Infrastructure impact</span>'+esc(inc.infrastructure_impact)+'</div>':'';
     var whatHappenedParas=(inc.what_happened||'').split('\n\n').map(function(p){ return '<p class="inc-para">'+esc(p)+'</p>'; }).join('');
     return '<div class="inc-hero">'+
-      '<div class="inc-hero-badges"><span class="badge badge-fatal '+sevClass+'">'+esc(impactBadge)+'</span><span class="badge badge-type">'+esc(eventLabel)+'</span><span class="badge badge-year">'+inc.year+'</span></div>'+
+      '<div class="inc-hero-badges"><span class="badge badge-fatal '+clsClass+'">'+esc(impactBadge)+'</span><span class="badge badge-class">'+esc(clsLbl)+'</span><span class="badge badge-type">'+esc(eventLabel)+'</span><span class="badge badge-year">'+inc.year+'</span></div>'+
       '<h2 class="inc-name" id="modal-incident-name">'+esc(inc.name)+'</h2>'+
-      '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',shortLoc(inc.location,60))+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(survivorsStr?metaItem('Casualties',survivorsStr):'')+
+      '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',shortLoc(inc.location,60))+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(casualtiesStr?metaItem('Casualties',casualtiesStr):'')+
       '</div></div>'+metoceanHTML+infraHTML+
       '<div class="inc-body">'+
       '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.executive_summary||inc.summary)+'</p></div>'+
@@ -227,15 +256,14 @@
     var visible=allIncidents.filter(function(inc){
       if (activeFilters.region!=='all' && inc.region!==activeFilters.region) return false;
       if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
-      if (activeFilters.severity!=='all' && severityKey(inc)!==activeFilters.severity) return false;
+      if (activeFilters.classification!=='all' && classKey(inc)!==activeFilters.classification) return false;
       return true;
     }).sort(function(a,b){
       var fa=a.fatalities||0, fb=b.fatalities||0;
       return fb!==fa ? fb-fa : (a.year||0)-(b.year||0);
     });
-    var sevLabels={critical:'Critical',major:'Major',notable:'Notable',informational:'Near-miss'};
     tbody.innerHTML=visible.map(function(inc,idx){
-      var sevKey=severityKey(inc), sevClass=severityClass(inc), sevText=sevLabels[sevKey]||sevKey;
+      var clsText=classLabel(inc), clsClass=classColor(inc);
       var fatalCell;
       if (inc.fatalities>0) { fatalCell='<span class="fatal-count">'+inc.fatalities+'</span>'+(inc.fatalities===1?' fatality':' fatalities'); }
       else if (inc.infrastructure_impact) { var is=inc.infrastructure_impact; fatalCell='<span class="fatal-zero">0</span><div class="impact-text">'+esc(is.length>60?is.substring(0,58)+'…':is)+'</div>'; }
@@ -246,7 +274,7 @@
         '<td class="col-rank">'+(idx+1)+'</td><td class="col-name">'+esc(inc.name)+'</td><td class="col-year">'+inc.year+'</td>'+
         '<td class="col-location">'+esc(loc)+'</td><td class="col-asset">'+esc(asset)+'</td>'+
         '<td class="col-fatal">'+fatalCell+'</td><td class="col-weather">'+esc(inc.weather_event||'')+'</td>'+
-        '<td class="col-sev"><span class="sev-pill '+sevClass+'">'+sevText+'</span></td></tr>';
+        '<td class="col-sev"><span class="sev-pill '+clsClass+'">'+esc(clsText)+'</span></td></tr>';
     }).join('');
     if (!tableHandlerAttached) {
       tbody.addEventListener('click',function(e){

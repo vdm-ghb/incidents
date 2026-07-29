@@ -20,21 +20,25 @@
     </div>
 
     <div id="header-filters">
-      <select id="filter-type" class="filter-select" title="Filter by event type">
+      <select id="filter-type" class="filter-select" title="Filter by event type (metocean hazard)">
         <option value="all">All event types</option>
-        <option value="hurricane">Hurricane / Typhoon</option>
-        <option value="storm">Severe Storm / Wind</option>
+        <option value="cyclone">Cyclone / Hurricane / Typhoon</option>
+        <option value="storm">Severe (Extra-tropical) Storm</option>
+        <option value="squall">Squall / Thunderstorm</option>
+        <option value="lightning">Lightning</option>
+        <option value="rogue_wave">Extreme / Rogue Wave</option>
         <option value="internal_wave">Internal Wave / Soliton</option>
-        <option value="helicopter">Helicopter</option>
-        <option value="maintenance">Maintenance / Equipment</option>
+        <option value="current">Ocean / Turbidity Current / Tidal</option>
         <option value="tsunami">Tsunami / Meteo-tsunami</option>
-        <option value="climate">Climate Change / Long-term Variability</option>
+        <option value="climate">Climate / Ambient Extremes</option>
+        <option value="equipment">Metocean Equipment</option>
       </select>
 
       <select id="filter-region" class="filter-select" title="Filter by region">
         <option value="all">All regions</option>
         <option value="Africa">Africa</option>
-        <option value="Asia/Australasia">Asia / Australasia</option>
+        <option value="Asia">Asia</option>
+        <option value="Australia">Australia</option>
         <option value="Europe">Europe</option>
         <option value="Middle East">Middle East</option>
         <option value="North America">North America</option>
@@ -42,12 +46,16 @@
         <option value="South America">South America</option>
       </select>
 
-      <select id="filter-severity" class="filter-select" title="Filter by severity">
-        <option value="all">All severities</option>
-        <option value="critical">Critical — 50+ fatalities or major infrastructure</option>
-        <option value="major">Major — 10–49 fatalities or significant infrastructure</option>
-        <option value="notable">Notable — 1–9 fatalities or notable damage</option>
-        <option value="informational">Near-miss — 0 fatalities</option>
+      <select id="filter-classification" class="filter-select" title="Filter by classification (discipline)">
+        <option value="all">All classifications</option>
+        <option value="drilling">Drilling</option>
+        <option value="maritime">Maritime / Tow</option>
+        <option value="aviation">Aviation</option>
+        <option value="onshore">Onshore Operations</option>
+        <option value="coastal">Port / Coastal</option>
+        <option value="pipeline">Pipeline</option>
+        <option value="design">Basis of Design</option>
+        <option value="survey">Survey</option>
       </select>
 
       <button id="filter-reset" title="Clear all filters">Reset</button>
@@ -58,6 +66,11 @@
         <span class="stat-value" id="stat-incidents">–</span>
         <span class="stat-label">incidents</span>
         <span class="stat-arrow">▼</span>
+      </button>
+      <button id="dataset-toggle-btn" class="stat-block stat-btn" title="Click to cycle dataset view: Full → Shell Internal → External Only">
+        <span class="stat-value">Full Dataset</span>
+        <span class="stat-label">– incidents</span>
+        <span class="stat-arrow">↔</span>
       </button>
     </div>
   </header>
@@ -72,19 +85,26 @@
       <span id="legend-toggle-icon">▲</span>
     </div>
     <div id="legend-body">
-      <div class="legend-section-title">Severity</div>
-      <div class="legend-row"><span class="legend-dot sev-critical"></span><span>Critical — 50+ / major infra</span></div>
-      <div class="legend-row"><span class="legend-dot sev-major"></span><span>Major — 10–49 / significant infra</span></div>
-      <div class="legend-row"><span class="legend-dot sev-notable"></span><span>Notable — 1–9 / damage</span></div>
-      <div class="legend-row"><span class="legend-dot sev-informational"></span><span>Near-miss — 0 fatalities</span></div>
-      <div class="legend-section-title" style="margin-top:10px">Event type</div>
-      <div class="legend-row"><span class="legend-letter">H</span><span>Hurricane / Typhoon</span></div>
-      <div class="legend-row"><span class="legend-letter">S</span><span>Storm / Wind</span></div>
-      <div class="legend-row"><span class="legend-letter">W</span><span>Internal Wave / Soliton</span></div>
-      <div class="legend-row"><span class="legend-letter">🚁</span><span>Helicopter</span></div>
-      <div class="legend-row"><span class="legend-letter">M</span><span>Maintenance / Equipment</span></div>
+      <div class="legend-section-title">Classification (colour)</div>
+      <div class="legend-row"><span class="legend-dot cls-drilling"></span><span>Drilling</span></div>
+      <div class="legend-row"><span class="legend-dot cls-maritime"></span><span>Maritime / Tow</span></div>
+      <div class="legend-row"><span class="legend-dot cls-aviation"></span><span>Aviation</span></div>
+      <div class="legend-row"><span class="legend-dot cls-onshore"></span><span>Onshore Operations</span></div>
+      <div class="legend-row"><span class="legend-dot cls-coastal"></span><span>Port / Coastal</span></div>
+      <div class="legend-row"><span class="legend-dot cls-pipeline"></span><span>Pipeline</span></div>
+      <div class="legend-row"><span class="legend-dot cls-design"></span><span>Basis of Design</span></div>
+      <div class="legend-row"><span class="legend-dot cls-survey"></span><span>Survey</span></div>
+      <div class="legend-section-title" style="margin-top:10px">Event type (letter)</div>
+      <div class="legend-row"><span class="legend-letter">C</span><span>Cyclone / Hurricane / Typhoon</span></div>
+      <div class="legend-row"><span class="legend-letter">S</span><span>Severe (Extra-tropical) Storm</span></div>
+      <div class="legend-row"><span class="legend-letter">Q</span><span>Squall / Thunderstorm</span></div>
+      <div class="legend-row"><span class="legend-letter">L</span><span>Lightning</span></div>
+      <div class="legend-row"><span class="legend-letter">R</span><span>Extreme / Rogue Wave</span></div>
+      <div class="legend-row"><span class="legend-letter">I</span><span>Internal Wave / Soliton</span></div>
+      <div class="legend-row"><span class="legend-letter">U</span><span>Ocean / Turbidity Current / Tidal</span></div>
       <div class="legend-row"><span class="legend-letter">T</span><span>Tsunami / Meteo-tsunami</span></div>
-      <div class="legend-row"><span class="legend-letter">C</span><span>Climate Change / Variability</span></div>
+      <div class="legend-row"><span class="legend-letter">K</span><span>Climate / Ambient Extremes</span></div>
+      <div class="legend-row"><span class="legend-letter">E</span><span>Metocean Equipment</span></div>
     </div>
   </div>
 
@@ -121,7 +141,7 @@
               <th class="col-asset">Asset Type</th>
               <th class="col-fatal">Fatalities / Impact</th>
               <th class="col-weather">Primary Weather Factor</th>
-              <th class="col-sev">Severity</th>
+              <th class="col-sev">Classification</th>
             </tr>
           </thead>
           <tbody id="incidents-tbody"></tbody>

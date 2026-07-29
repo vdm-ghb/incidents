@@ -6,6 +6,10 @@ node_modules/
 
 # Internal reference material — not for version control
 background files/
+working documentation/
+scripts/
+NEW_INCIDENTS_DATABASE_ENTRIES.js
+CLAUDE.md
 
 # Playwright
 /playwright-report/
@@ -14,7 +18,7 @@ background files/
 /playwright/.cache/
 
 # Local Claude Code settings (machine-specific, not shared)
-.claude/settings.local.json
+.claude/
 
 # Browser save-as copy of shared artifact reports (not a source file)
 Metocean Incident Database — Fact-Check Audit.html
