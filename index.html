@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Offshore Weather Incidents — Lessons Learned Database</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=5">
+  <link rel="shortcut icon" href="favicon.svg?v=5">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -56,6 +58,7 @@
         <option value="pipeline">Pipeline</option>
         <option value="design">Basis of Design</option>
         <option value="survey">Survey</option>
+        <option value="decommissioning">Decommissioning</option>
       </select>
 
       <button id="filter-reset" title="Clear all filters">Reset</button>
@@ -94,6 +97,7 @@
       <div class="legend-row"><span class="legend-dot cls-pipeline"></span><span>Pipeline</span></div>
       <div class="legend-row"><span class="legend-dot cls-design"></span><span>Basis of Design</span></div>
       <div class="legend-row"><span class="legend-dot cls-survey"></span><span>Survey</span></div>
+      <div class="legend-row"><span class="legend-dot cls-decommissioning"></span><span>Decommissioning</span></div>
       <div class="legend-section-title" style="margin-top:10px">Event type (letter)</div>
       <div class="legend-row"><span class="legend-letter">C</span><span>Cyclone / Hurricane / Typhoon</span></div>
       <div class="legend-row"><span class="legend-letter">S</span><span>Severe (Extra-tropical) Storm</span></div>
@@ -117,6 +121,15 @@
         <button id="modal-close" title="Close (Escape)" aria-label="Close">&#215;</button>
       </div>
       <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- FULL-SIZE INCIDENT IMAGE -->
+  <div id="image-lightbox" class="hidden" role="dialog" aria-modal="true" aria-label="Full-size incident image">
+    <button id="image-lightbox-close" title="Close (Escape)" aria-label="Close full-size image">&#215;</button>
+    <div id="image-lightbox-stage">
+      <img id="image-lightbox-image" alt="">
+      <p id="image-lightbox-caption"></p>
     </div>
   </div>
 

@@ -4,6 +4,9 @@
 # Dependencies
 node_modules/
 
+# Python bytecode cache
+__pycache__/
+
 # Internal reference material — not for version control
 background files/
 working documentation/

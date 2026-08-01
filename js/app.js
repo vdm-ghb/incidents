@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var CLASSIFICATION_LABELS = { drilling:'Drilling', maritime:'Maritime / Tow', aviation:'Aviation', onshore:'Onshore Operations', coastal:'Port / Coastal', design:'Basis of Design', pipeline:'Pipeline', survey:'Survey' };
+  var CLASSIFICATION_LABELS = { drilling:'Drilling', maritime:'Maritime / Tow', aviation:'Aviation', onshore:'Onshore Operations', coastal:'Port / Coastal', design:'Basis of Design', pipeline:'Pipeline', survey:'Survey', decommissioning:'Decommissioning' };
   function classKey(incident) { return incident.classification || 'other'; }
   function classColor(incident) { return 'cls-' + classKey(incident); }
   function classLabel(incident) { return CLASSIFICATION_LABELS[classKey(incident)] || classKey(incident); }
@@ -31,13 +31,17 @@
     'South America':         [[-42.0,  -82.0],[ 12.0, -30.0]]
   };
 
-  var map = L.map('map', { center:[25,10], zoom:2, minZoom:2, maxZoom:14, zoomControl:true, preferCanvas:true });
+  var FALLBACK_MAP_VIEW = { center: [25,10], zoom: 1 };
+  var STARTUP_MAP_VIEW = { center: [27.277785806017697, 56.037581055189605], zoom: 3 };
+  var homeMapView = { center: STARTUP_MAP_VIEW.center.slice(), zoom: STARTUP_MAP_VIEW.zoom };
+
+  var map = L.map('map', { center:STARTUP_MAP_VIEW.center, zoom:STARTUP_MAP_VIEW.zoom, minZoom:1, maxZoom:14, zoomControl:true, preferCanvas:true, worldCopyJump:true });
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}', {
     attribution:'Tiles &copy; <a href="https://www.esri.com/">Esri</a>', maxZoom:13 }).addTo(map);
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}', {
     attribution:'', maxZoom:13, opacity:0.7 }).addTo(map);
 
-  var allIncidents=[], activeMarkers={}, activeFilters={type:'all',region:'all',classification:'all'};
+  var allIncidents=[], activeMarkers=[], activeFilters={type:'all',region:'all',classification:'all'};
   /* Dataset view: 'full' | 'shell' | 'external' — starts on full */
   var DATASET_VIEWS = ['full','shell','external'];
   var DATASET_LABELS = { full:'Full Dataset', shell:'Shell Internal', external:'External Only' };
@@ -46,9 +50,18 @@
   function loadData() {
     if (!window.INCIDENTS_DATA) { console.error('INCIDENTS_DATA not found'); return; }
     allIncidents = window.INCIDENTS_DATA.incidents;
+    homeMapView = getStartupMapView();
+    map.setView(homeMapView.center, homeMapView.zoom);
     updateDatasetButton();
     renderMarkers();
     updateStats();
+  }
+
+  function getStartupMapView() {
+    if (!Array.isArray(STARTUP_MAP_VIEW.center) || STARTUP_MAP_VIEW.center.length !== 2) {
+      return { center: FALLBACK_MAP_VIEW.center.slice(), zoom: FALLBACK_MAP_VIEW.zoom };
+    }
+    return { center: STARTUP_MAP_VIEW.center.slice(), zoom: STARTUP_MAP_VIEW.zoom };
   }
 
   function isShellInternal(inc) {
@@ -79,23 +92,41 @@
     if (!incident.lat || !incident.lng) return null; // Skip incidents with null coordinates
     var clsClass=classColor(incident), letter=EVENT_TYPE_LETTERS[incident.weather_event_type]||'?';
     var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+clsClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[18,0] });
-    var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true});
-    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+clsClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'');
+    var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true,title:incident.name,alt:incident.name});
+    var tooltipImage=incident.image&&incident.image.src?'<img class="tooltip-image" src="'+esc(incident.image.src)+'" alt="" loading="lazy">':'';
+    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+clsClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'')+tooltipImage;
     marker.bindTooltip(ttHTML,{permanent:false,direction:'right',opacity:1});
     marker.on('click',function(){ openModal(incident); });
     return marker;
   }
 
+  function createWrappedMarkers(incident) {
+    var marker = createMarker(incident);
+    if (!marker) return [];
+
+    var markers = [marker];
+    [-360, 360].forEach(function(offset) {
+      var wrapped = createMarker(Object.assign({}, incident, { lng: incident.lng + offset }));
+      if (wrapped) markers.push(wrapped);
+    });
+    return markers;
+  }
+
   function renderMarkers() {
-    Object.values(activeMarkers).forEach(function(m){ map.removeLayer(m); });
-    activeMarkers={};
+    activeMarkers.forEach(function(m){ map.removeLayer(m); });
+    activeMarkers=[];
     var displayIncidents = getIncidents(datasetView); // Apply dataset view first
     var filtered=displayIncidents.filter(function(inc){
       if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
       if (activeFilters.classification!=='all' && classKey(inc)!==activeFilters.classification) return false;
       return true;
     });
-    filtered.forEach(function(inc){ var m=createMarker(inc); if(m) { m.addTo(map); activeMarkers[inc.id]=m; } });
+    filtered.forEach(function(inc){
+      createWrappedMarkers(inc).forEach(function(marker) {
+        marker.addTo(map);
+        activeMarkers.push(marker);
+      });
+    });
     updateStats(filtered);
     filterTableRows();
   }
@@ -111,7 +142,7 @@
     renderMarkers();
     if (e.target.value!=='all' && REGION_BOUNDS[e.target.value]) {
       map.fitBounds(REGION_BOUNDS[e.target.value],{padding:[40,40],maxZoom:8});
-    } else { map.setView([25,10],2); }
+    } else { map.setView(homeMapView.center, homeMapView.zoom); }
   });
   document.getElementById('filter-reset').addEventListener('click',function(){
     activeFilters={type:'all',region:'all',classification:'all'};
@@ -119,7 +150,7 @@
     document.getElementById('filter-region').value='all';
     document.getElementById('filter-classification').value='all';
     renderMarkers();
-    map.setView([25,10],2);
+    map.setView(homeMapView.center, homeMapView.zoom);
   });
 
   /* ── Dataset toggle: cycles Full -> Shell -> External ── */
@@ -141,8 +172,11 @@
   /* ── Modal ── */
   var modalOverlay=document.getElementById('modal-overlay'), modalContent=document.getElementById('modal-content'), modalClose=document.getElementById('modal-close');
   var tableOverlay=document.getElementById('table-overlay');
+  var imageLightbox=document.getElementById('image-lightbox'), imageLightboxImage=document.getElementById('image-lightbox-image'), imageLightboxCaption=document.getElementById('image-lightbox-caption');
+  var activeIncidentImage=null;
 
   function openModal(incident) {
+    activeIncidentImage=incident.image||null;
     modalContent.innerHTML=buildIncidentHTML(incident);
     modalOverlay.classList.remove('hidden');
     document.body.style.overflow='hidden';
@@ -151,15 +185,33 @@
   }
   function closeModal() {
     modalOverlay.classList.add('hidden');
+    activeIncidentImage=null;
     document.body.style.overflow='';
     history.replaceState(null,'',window.location.pathname+window.location.search);
   }
   function closeTableOverlay() { tableOverlay.classList.add('hidden'); document.body.style.overflow=''; }
+  function openImageLightbox(image) {
+    if (!image||!image.src) return;
+    imageLightboxImage.src=image.src;
+    imageLightboxImage.alt=image.alt||image.caption||'';
+    imageLightboxCaption.textContent=[image.caption,image.credit].filter(Boolean).join(' — ');
+    imageLightbox.classList.remove('hidden');
+  }
+  function closeImageLightbox() {
+    imageLightbox.classList.add('hidden');
+    imageLightboxImage.removeAttribute('src');
+  }
 
   modalClose.addEventListener('click',closeModal);
   modalOverlay.addEventListener('click',function(e){ if(e.target===modalOverlay) closeModal(); });
+  modalContent.addEventListener('click',function(e){
+    if (e.target.closest('.incident-image-button')) openImageLightbox(activeIncidentImage);
+  });
+  document.getElementById('image-lightbox-close').addEventListener('click',closeImageLightbox);
+  imageLightbox.addEventListener('click',function(e){ if(e.target===imageLightbox) closeImageLightbox(); });
   document.addEventListener('keydown',function(e){
     if (e.key==='Escape') {
+      if (!imageLightbox.classList.contains('hidden')) { closeImageLightbox(); return; }
       if (!modalOverlay.classList.contains('hidden')) { closeModal(); return; }
       if (!tableOverlay.classList.contains('hidden')) { closeTableOverlay(); }
     }
@@ -183,6 +235,9 @@
     var nf=(typeof inc.fatalities==='number')?inc.fatalities:(parseInt(inc.fatalities,10)||0);
     var casualtiesStr=survivorsStr?(nf+' ('+survivorsStr+')'):(nf>0?String(nf):'');
     var m=inc.metocean||{}, metoceanHTML='';
+    var metoceanAlertHTML = m.alert
+      ? '<div class="metocean-alert"><span class="metocean-alert-title">Critical metocean factor</span><p class="metocean-alert-text">'+esc(m.alert)+'</p></div>'
+      : '';
     if (m.wave_height_hs||m.wind_speed||m.visibility||m.sea_temp) {
       var items=[];
       if (m.wave_height_hs) items.push(metoceanItem('Wave height (Hs)',m.wave_height_hs));
@@ -197,15 +252,21 @@
       '<div class="inc-hero-badges"><span class="badge badge-fatal '+clsClass+'">'+esc(impactBadge)+'</span><span class="badge badge-class">'+esc(clsLbl)+'</span><span class="badge badge-type">'+esc(eventLabel)+'</span><span class="badge badge-year">'+inc.year+'</span></div>'+
       '<h2 class="inc-name" id="modal-incident-name">'+esc(inc.name)+'</h2>'+
       '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',shortLoc(inc.location,60))+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(casualtiesStr?metaItem('Casualties',casualtiesStr):'')+
-      '</div></div>'+metoceanHTML+infraHTML+
+      '</div></div>'+metoceanAlertHTML+metoceanHTML+infraHTML+
       '<div class="inc-body">'+
-      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.executive_summary||inc.summary)+'</p></div>'+
+      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.executive_summary||inc.summary)+'</p>'+buildImageHTML(inc.image)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">What Happened</div>'+whatHappenedParas+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">What Went Wrong</div>'+numberedList(inc.what_went_wrong)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">Lessons Learned</div>'+numberedList(inc.lessons_learned)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">Actions and Changes</div>'+numberedList(inc.actions)+'</div>'+
       (inc.references&&inc.references.length?'<div class="inc-section"><div class="inc-section-title">References &amp; Sources</div>'+buildRefsHTML(inc.references)+'</div>':'')+
       '</div>';
+  }
+
+  function buildImageHTML(image) {
+    if (!image||!image.src) return '';
+    var credit=image.credit?'<span class="incident-image-credit">'+esc(image.credit)+'</span>':'';
+    return '<figure class="incident-image-figure"><button class="incident-image-button" type="button" aria-label="Open full-size incident image"><img class="incident-summary-image" src="'+esc(image.src)+'" alt="'+esc(image.alt||image.caption||'')+'" loading="lazy" decoding="async"></button><figcaption>'+esc(image.caption||'')+credit+'</figcaption></figure>';
   }
 
   function numberedList(items) {
@@ -253,7 +314,8 @@
   function filterTableRows() {
     var tbody=document.getElementById('incidents-tbody');
     if (!tbody) return;
-    var visible=allIncidents.filter(function(inc){
+    var datasetIncidents = getIncidents(datasetView);
+    var visible=datasetIncidents.filter(function(inc){
       if (activeFilters.region!=='all' && inc.region!==activeFilters.region) return false;
       if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
       if (activeFilters.classification!=='all' && classKey(inc)!==activeFilters.classification) return false;

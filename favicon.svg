@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Open curling wave with red warning dot">
+  <!-- Original open ribbon wave: tapered face, broad crest, inward curl -->
+  <path
+    d="M5 49 C 16 44, 24 35, 33 23 C 40 14, 49 10, 56 12 C 59 14, 60 18, 59 23 C 56 21, 52 21, 48 23 C 42 26, 40 33, 43 38 C 46 42, 52 44, 58 42 C 53 47, 46 47, 41 43 C 36 39, 35 34, 37 29 C 39 24, 44 19, 49 17 C 43 16, 38 19, 33 26 C 24 38, 15 46, 5 49 Z"
+    fill="#159fca"
+  />
+
+  <!-- Warning accent -->
+  <circle cx="53" cy="8" r="4" fill="#d7263d"/>
+</svg>

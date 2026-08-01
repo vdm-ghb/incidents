@@ -152,3 +152,40 @@ test('Escape key closes the modal', async ({ page }) => {
   await page.keyboard.press('Escape');
   await expect(page.locator('#modal-overlay')).toHaveClass(/hidden/);
 });
+
+test('Gunashli pilot image appears in the summary and opens full-size', async ({ page }) => {
+  await page.goto('/?pilot=image#gunashli-2015');
+
+  const figure = page.locator('.incident-image-figure');
+  await expect(figure).toBeVisible();
+  await expect(figure.locator('img')).toHaveAttribute('src', 'images/gunashli-2015-platform-azernews.jpg');
+  await expect(figure.locator('figcaption')).toContainText('Trend News Agency via AzerNews');
+
+  await figure.locator('button').click();
+  await expect(page.locator('#image-lightbox')).not.toHaveClass(/hidden/);
+  await expect(page.locator('#image-lightbox-image')).toHaveJSProperty('naturalWidth', 1200);
+  await expect(page.locator('#image-lightbox-image')).toHaveJSProperty('naturalHeight', 673);
+
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#image-lightbox')).toHaveClass(/hidden/);
+  await expect(page.locator('#modal-overlay')).not.toHaveClass(/hidden/);
+});
+
+test('Gunashli pilot image is included in the print report', async ({ page }) => {
+  await page.goto('/?pilot=image#gunashli-2015');
+  await page.evaluate(() => { window.print = () => {}; });
+  await page.click('#modal-print');
+
+  const printImage = page.locator('#print-report .incident-summary-image');
+  await expect(printImage).toHaveCount(1);
+  await expect(printImage).toHaveAttribute('src', 'images/gunashli-2015-platform-azernews.jpg');
+});
+
+test('Gunashli map tooltip shows the selected image below the blurb', async ({ page }) => {
+  const marker = page.locator('.leaflet-marker-icon[title="Gunashli Platform No. 10"]').first();
+  await marker.hover();
+
+  const tooltip = page.locator('.leaflet-tooltip');
+  await expect(tooltip.locator('.tooltip-summary')).toBeVisible();
+  await expect(tooltip.locator('.tooltip-image')).toHaveAttribute('src', 'images/gunashli-2015-platform-azernews.jpg');
+});
