@@ -8,7 +8,7 @@ Collects lessons-learned case studies — platform losses, tow failures, hurrica
 
 ## Status
 
-In progress. 61 incidents documented across a two-axis taxonomy (metocean **event type** + operational **classification**). A full fact-check remediation pass is complete (see `FACT_CHECK_AUDIT.md`); content is still being extended and refined. GSP Saturn (2014) added July 2026 as a precedent study for Arctic platform evacuation response.
+In progress. 63 incidents documented across a two-axis taxonomy (metocean **event type** + operational **classification**). A full fact-check remediation pass is complete (see `working documentation/FACT_CHECK_AUDIT.md`); content is still being extended and refined. Super Puma G-TIGH (1992) and Maersk Invincible LN-ONT (2020) added August 2026 as further helicopter loss-of-control precedent studies.
 
 ## Getting started
 
@@ -43,20 +43,19 @@ The incident-image rollout also has Python verification paths for environments w
 - Markers are coloured by classification and lettered by event type (see the on-map legend).
 - Hover over a marker for the incident blurb and, where selected, a scaled image thumbnail.
 - Click a marker for the full lessons-learned writeup. Selected images appear after the Summary text and open at their natural size when clicked.
-- See `PUBLISHING.md` for how to publish updates to GitHub Pages, and the field reference for adding new incidents.
+- See `working documentation/PUBLISHING.md` for how to publish updates to GitHub Pages, and the field reference for adding new incidents.
 
 ## Project structure
 
 - `index.html` — page shell and map/filter controls
 - `js/app.js` — map rendering, filtering, and UI logic (Leaflet)
 - `css/style.css` — styling
-- `data/incidents.js` — the incident dataset (source of truth; see `PUBLISHING.md` for the field schema)
+- `data/incidents.js` — the incident dataset (source of truth; see `working documentation/PUBLISHING.md` for the field schema)
 - `images/` — native-resolution incident images and technical diagrams, with selected assets displayed from each incident's `image` field
-- `tests/` — Playwright end-to-end tests against the static site
-- `background files/` — source material (reports, papers, internal presentations) used to research and write up incidents
-- `FACT_CHECK_AUDIT.md` — independent fact-check pass over every incident record, flagging discrepancies and unverifiable claims
-- `EXECUTIVE_SUMMARIES.md`, `INCIDENT_IMAGES.md` — supporting content notes
-- `inject_summaries.py` — helper script used when bulk-adding executive summaries to incident records
+- `tests/` — Playwright end-to-end tests (`index.spec.ts`) plus Python image-coverage/regression checks against the static site
+- `background files/` — source material (reports, papers, internal presentations) used to research and write up incidents (git-ignored)
+- `working documentation/` — fact-check audit, executive summaries, image provenance catalogue, and other internal working notes (git-ignored)
+- `scripts/` — helper scripts used for bulk data edits, PDF/DOCX extraction, and OCR (git-ignored)
 
 ## Tech stack
 
@@ -68,13 +67,19 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 - **Dataset toggle** (Full / Shell / External) is driven by `source_classification` and `shell_internal_only` fields on each record.
 - **Regions** are a `region` string per record, filtered in the UI and used for map zoom bounds (`REGION_BOUNDS` in `js/app.js`). Current regions: Africa, Asia, Australia, Europe, Middle East, North America, Russia and Central Asia, South America. (Australia was split out from the former "Asia / Australasia" — 5 NW-Shelf / WA incidents.)
 - **Neutral operator naming.** In incident body text, refer to the duty holder generically ("the operator", "the project team"); name a specific company only in the `operator` field and in source/reference citations. Applied to Big Foot and Gorgon; keep this convention for new entries.
-- **Fact-check remediation complete.** The 2026-07-04 audit (`FACT_CHECK_AUDIT.md`) flagged dead/fabricated reference URLs and ~15 records with incorrect details; all four tiers have since been remediated (casualty figures, locations, dates, and sources corrected or hedged; unverifiable claims flagged with `data_quality` notes).
-- **Incident numbering** in `data/incidents.js` comments has gaps (removed/merged records were never renumbered) — gaps are expected, not a data error. The comment header may cite a higher count than the actual array length; trust `INCIDENTS_DATA.incidents.length` (currently 61).
+- **Fact-check remediation complete.** The 2026-07-04 audit (`working documentation/FACT_CHECK_AUDIT.md`) flagged dead/fabricated reference URLs and ~15 records with incorrect details; all four tiers have since been remediated (casualty figures, locations, dates, and sources corrected or hedged; unverifiable claims flagged with `data_quality` notes).
+- **Incident numbering** in `data/incidents.js` comments has gaps (removed/merged records were never renumbered) — gaps are expected, not a data error. The comment header may cite a different count than the actual array length; trust `INCIDENTS_DATA.incidents.length` (currently 63).
 - **Verification workflow.** Changes to `data/incidents.js` are validated by reloading the page under Playwright and asserting on `window.INCIDENTS_DATA` (total count, no duplicate IDs, taxonomy fields, marker rendering) rather than eyeballing.
 - **Image provenance.** `working documentation/INCIDENT_IMAGES.md` is the source/credit/rights catalogue for local assets. Public availability is not treated as permission to reuse; internal LFE material remains restricted, and files are retained at native resolution without upscaling or recompression.
-- **One selected image per incident.** An optional singular `image` object on an incident (`src`, `alt`, `caption`, `credit`) drives the map-tooltip thumbnail, Summary figure, full-size lightbox and capped print figure from one source of truth. There are 42 selected incident images. Dupal has two catalogued local candidates but was explicitly left unselected. Copyrighted and restricted assets are clearly labelled as reference-only or permission-required.
+- **One selected image per incident.** An optional singular `image` object on an incident (`src`, `alt`, `caption`, `credit`) drives the map-tooltip thumbnail, Summary figure, full-size lightbox and capped print figure from one source of truth. There are 44 selected incident images (62 files in `images/` in total, including catalogue-only assets). Dupal has two catalogued local candidates but was explicitly left unselected. Copyrighted and restricted assets are clearly labelled as reference-only or permission-required.
 
 ### Session handoff (next steps)
+
+**Completed (August 2026):**
+- Merged a dumped update folder (`2026.06.03 IOGP Metocean Incidents Database/`) into the project via `rsync`, then deleted it as requested. The first `rsync` attempt targeted `./` while the source folder was still a subdirectory of the destination, so its own `--delete` phase partially destroyed the source mid-copy (self-referential path collision — the fix, learned last session but not applied this time, is to move the source folder outside the project tree first). Verified via diff that root's `index.html`, `css/style.css`, `js/app.js`, `favicon.svg`, `CLAUDE.md`, and `NEW_INCIDENTS_DATABASE_ENTRIES.js` already matched the incoming versions byte-for-byte before the error, and confirmed after the fact that `background files/`, `working documentation/`, `scripts/`, `tests/`, `images/`, and `data/incidents.js` all landed with full, validated content. Two files could not be recovered from the dump and were reconstructed instead: `README.md` (this section and the stats above were rewritten from the actual data/file diffs, not the original's session-handoff prose, which is lost) and `playwright.config.ts` (restored from a session-local backup of the pre-dump version — content is standard and unlikely to have changed).
+- Super Puma G-TIGH (14 March 1992) — AS332L ditching approximately 500m ENE of Cormorant A platform, East Shetland Basin, UK North Sea. Commander lost airspeed awareness in a gusting headwind during a night personnel shuttle; helicopter struck rough seas and inverted. 11 of 17 occupants died (drowning, some after hypothermia); 6 survived. Sourced from AAIB report 2/1993 (`background files/AAIB_2-1993_G-TIGH_Cormorant_A.pdf` + appendices). Two images added (AAIB Figure F3, an Air-History photograph).
+- Sikorsky S-92A LN-ONT (24 February 2020) — loss of control on night departure from Maersk Invincible jack-up, Valhall field, Norway. Heavy rain and darkness caused spatial disorientation before the aircraft reached its 50kt autopilot-mode threshold; pitched above 25°, descended to 175ft, recovered after ~40 seconds out of control. All 11 occupants uninjured. Sourced from the NSIA/operator investigation (`background files/2024-03 LN-ONT eng Helicopter Incident Maersk 2024.pdf`). One image added (report Figure 6).
+- Added `scripts/ocr_scanned_pdf.py` (OCR helper for scanned source PDFs) and expanded the Python test suite.
 
 **Completed (July–August 2026):**
 - AW139 helideck turbulence (December 2016) — record revised directly against internal Shell LFE UP-AW-201733. Removed the unsupported Gumusut-Kakap/Sabah attribution and generic gust explanation; added the report's GTG exhaust-plume mechanism, inaccurate platform wind data, unrepresentative sensor positioning, missing metocean involvement, explicit absence of numerical wind/sea-state/plume values, and all source recommendations. Corrected the record to internal-only and added a focused browser regression test. Its illustrative marker is positioned near, but slightly offset from, the mapped East Malaysian offshore cluster for presentation; this does not identify the incident facility.
@@ -102,4 +107,4 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 
 ## Last updated
 
-2026-08-01
+2026-08-04

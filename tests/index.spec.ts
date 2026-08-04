@@ -189,3 +189,38 @@ test('Gunashli map tooltip shows the selected image below the blurb', async ({ p
   await expect(tooltip.locator('.tooltip-summary')).toBeVisible();
   await expect(tooltip.locator('.tooltip-image')).toHaveAttribute('src', 'images/gunashli-2015-platform-azernews.jpg');
 });
+
+test('LN-ONT incident shows verified weather data and NSIA Figure 6', async ({ page }) => {
+  await page.goto('/#ln-ont-maersk-invincible-2020');
+
+  await expect(page.locator('#modal-incident-name')).toHaveText('Sikorsky S-92A LN-ONT Loss of Control');
+  await expect(page.locator('#modal-content')).toContainText('42 kt gusting 47 kt');
+  await expect(page.locator('#modal-content')).toContainText('5 m “Sea State”');
+
+  const figure = page.locator('.incident-image-figure');
+  const image = figure.locator('img');
+  await expect(image).toHaveAttribute('src', 'images/ln-ont-maersk-invincible-2020-figure-6.jpg');
+  await expect(image).toHaveJSProperty('naturalWidth', 994);
+  await expect(image).toHaveJSProperty('naturalHeight', 698);
+  await expect(figure.locator('figcaption')).toContainText('illustrated rig is not identical to Maersk Invincible');
+  await expect(figure.locator('figcaption')).toContainText('L3 Harris Technologies UK');
+});
+
+test('G-TIGH incident shows AAIB findings, references and aircraft photograph', async ({ page }) => {
+  await page.goto('/#g-tigh-cormorant-a-1992');
+
+  await expect(page.locator('#modal-incident-name')).toHaveText('Super Puma G-TIGH Water Impact near Cormorant A');
+  await expect(page.locator('#modal-content')).toContainText('11 fatalities');
+  await expect(page.locator('#modal-content')).toContainText('54–64 kt');
+  await expect(page.locator('#modal-content')).toContainText('Icing and aircraft malfunction were excluded');
+  await expect(page.locator('#modal-content')).toContainText('AAIB Aircraft Accident Report 2/93');
+
+  const figure = page.locator('.incident-image-figure');
+  const image = figure.locator('img');
+  await expect(image).toHaveAttribute('src', 'images/g-tigh-cormorant-a-1992-airhistory-lewis-grant.png');
+  await expect(image).toHaveJSProperty('naturalWidth', 1500);
+  await expect(image).toHaveJSProperty('naturalHeight', 1026);
+  await expect(figure.locator('figcaption')).toContainText('This is a generic aircraft photograph, not an image of the accident sequence.');
+  await expect(figure.locator('figcaption')).toContainText('Lewis Grant / AirHistory.net');
+  await expect(figure.locator('figcaption')).toContainText('permission required');
+});

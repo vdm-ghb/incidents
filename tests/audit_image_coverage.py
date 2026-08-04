@@ -50,7 +50,7 @@ def run_audit():
         f"images/{path.name}" for path in IMAGE_DIR.iterdir() if path.is_file()
     }
 
-    assert len(incident_ids) == 61, f"Expected 61 incidents, found {len(incident_ids)}"
+    assert len(incident_ids) == 63, f"Expected 63 incidents, found {len(incident_ids)}"
     assert len(dataset_ids) == len(incident_ids), "Duplicate incident IDs found"
     assert catalogue_files == local_files, (
         f"Catalogue-only paths: {sorted(catalogue_files - local_files)}; "

@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
    Offshore Weather Incidents — Lessons Learned Database
-  data/incidents.js  —  60 incidents  —  v4.0 (expanded from v3.3)
+  data/incidents.js  —  62 incidents  —  v4.0 (expanded from v3.3)
   Sources: 42 baseline incidents (v3.3) + 18 new incidents (LFE PDFs, Shell training, external sources)
    ═══════════════════════════════════════════════════ */
 window.INCIDENTS_DATA = {
@@ -3798,6 +3798,159 @@ window.INCIDENTS_DATA = {
         { title: 'WorkSafe WA / LGIRS — Significant Incident Summary No. 6: Offshore platform decommissioning near miss', type: 'Official regulator summary', publisher: 'WorkSafe WA / LGIRS', year: 2024, url: 'https://www.worksafe.wa.gov.au/publications/significant-incident-summary-no-6-offshore-platform-decommissioning-near-miss' },
         { title: 'WorkSafe WA / LGIRS — Significant Incident Summary No. 6 PDF', type: 'Official regulator PDF', publisher: 'WorkSafe WA / LGIRS', year: 2024, url: 'https://www.worksafe.wa.gov.au/system/files/migrated/sites/default/files/atoms/files/significant_incident_summary_no._6_-_offshore_platform_decommissioning_near_miss.pdf' },
         { title: 'WA Today — Santos’ swinging platform off WA coast had “high potential for multiple fatalities”', type: 'Media report', publisher: 'WA Today', year: 2021, url: 'https://www.watoday.com.au/national/western-australia/santos-swinging-platform-off-wa-coast-had-high-potential-for-multiple-fatalities-20211102-p595d2.html' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       63. Sikorsky S-92A LN-ONT — 2020
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'ln-ont-maersk-invincible-2020',
+      name: 'Sikorsky S-92A LN-ONT Loss of Control',
+      year: 2020,
+      date: '24 February 2020',
+      location: 'Maersk Invincible jack-up rig, Valhall field, North Sea, Norway — N 56°14.99′ E 003°20.93′',
+      lat: 56.2498,
+      lng: 3.3488,
+      region: 'Europe',
+      platform_type: 'Offshore jack-up rig helideck departure',
+      asset_type: 'Sikorsky S-92A helicopter (LN-ONT)',
+      operator: 'Bristow Norway AS (aircraft operator); Maersk Invincible offshore installation',
+      weather_event_type: 'storm',
+      classification: 'aviation',
+      weather_event: 'Darkness, heavy rain and mist, strong 33–42 kt winds gusting 47 kt, and no usable external horizon',
+      fatalities: 0,
+      persons_on_board: 11,
+      survivors: 11,
+      injuries: 0,
+      infrastructure_impact: 'No aircraft or installation damage; serious loss-of-control and near-sea-impact event',
+      severity_override: 'major',
+      image: {
+        src: 'images/ln-ont-maersk-invincible-2020-figure-6.jpg',
+        alt: 'NSIA investigation animation showing Sikorsky S-92A LN-ONT passing an illustrated offshore installation while flying backwards.',
+        caption: 'Investigation animation of LN-ONT passing the installation during rearward flight; the illustrated rig is not identical to Maersk Invincible.',
+        credit: 'L3 Harris Technologies UK / Norwegian Safety Investigation Authority. Permission required.'
+      },
+      summary: 'During a night departure from Maersk Invincible, heavy rain, darkness and the take-off direction left the two pilots without a usable external horizon or visual references. Both became spatially disoriented before the S-92A reached the 50 kt minimum speed for its principal autopilot modes. The helicopter pitched above 25°, accelerated backwards to 49 kt, descended to 175 ft above the sea and was out of control for about 40 seconds before the commander recovered. All 11 occupants were uninjured.',
+      executive_summary: 'During a night departure from Maersk Invincible in heavy rain and strong wind, both pilots became spatially disoriented with no visible horizon. The helicopter flew backwards at up to 49 kt and descended to 175 ft above the sea before control was recovered after about 40 seconds. All 11 occupants were uninjured.',
+      what_happened: 'LN-ONT departed Maersk Invincible for Stavanger with two pilots and nine passengers. The helideck reported wind at 42 kt gusting 47 kt, heavy rain, 7,000 m visibility and broken cloud at 900 ft; an earlier update had shown visibility falling to 3,500 m and overcast cloud at 600 ft. Ekofisk reported rain and mist and a 5 m sea state. Although classified as VMC, darkness and rain obscured the horizon and sea surface, while the illuminated installation was behind the helicopter.\n\nShortly after the take-off decision point, both pilots became spatially disoriented. The helicopter pitched above 25°, accelerated backwards at up to 49 kt over approximately 210 m and descended to 175 ft above the sea. The commander regained situational awareness after seeing the rig, took control and recovered after about 40 seconds. The flight continued safely to Stavanger without injury or damage.',
+      what_went_wrong: [
+        'Darkness, heavy rain, strong headwind and the departure direction removed useful external visual references. The NSIA considered that wind and rain may also have created an illusion of forward speed.',
+        'Both pilots became spatially disoriented. Control inputs were overcorrected, and communication and transfer of control did not work as expected under acute stress.',
+        'Control was lost before the helicopter reached the 50 kt minimum speed for its principal autopilot modes. There was also no standard deviation call for abnormal pitch attitude.',
+        'The pre-departure briefing did not ensure that Threat and Error Management explicitly addressed the demanding weather, black-hole departure and spatial-disorientation risk.'
+      ],
+      lessons_learned: [
+        'A regulatory VMC classification does not guarantee usable visual references offshore. Night, rain, cloud and departure geometry must be assessed together for the visual-to-instrument transition.',
+        'Pre-take-off Threat and Error Management should explicitly cover loss of horizon, precipitation and wind cues, automation limits and the recovery plan.',
+        'Crews need clear control-transfer triggers and standard calls for abnormal pitch during demanding departures.',
+        'Simulator training should reproduce spatial disorientation and upset recovery in realistic offshore darkness and rain; low-speed automation can provide an additional barrier.'
+      ],
+      actions: [
+        'Bristow Norway conducted an internal investigation and introduced an approved standard practice for use of the cyclic force-trim release button.',
+        'NSIA Safety Recommendation 2024/02T asked the Norwegian Civil Aviation Authority to follow up offshore operators’ TEM procedures, training and use in daily operations.',
+        'NSIA Safety Recommendation 2024/03T asked Bristow Norway to add Standard Deviation Calls for pitch variations beyond predefined limits.'
+      ],
+      metocean: {
+        wave_height_hs: '5 m “Sea State” reported in the 19:50Z Ekofisk METAR',
+        wind_speed: 'Helideck report: 42 kt gusting 47 kt from 120°; update: 33 kt from 118°; Ekofisk: 37–38 kt from 090–100°',
+        sea_temp: '8 °C',
+        air_temp: '3 °C',
+        visibility: 'Helideck 7,000 m, updated to 3,500 m; Ekofisk 5,000 m in rain and mist',
+        cloud: 'Helideck BKN 900 ft, updated to OVC 600 ft; Ekofisk SCT 700 ft / BKN 800–900 ft',
+        pressure: 'Helideck QNH 993 hPa, updated to 988 hPa; Ekofisk QNH 985–988 hPa',
+        notes: 'The NSIA classified the occurrence as VMC but described demanding weather with no usable external horizon or visual references. The report did not attribute the event to turbulence or wind exceeding an aircraft limit. Its environmental mechanism was degraded visual cueing: darkness, heavy rain and mist, cloud, strong headwind, the elevated deck and departure geometry obscured the horizon and sea-surface white caps; wind and rain may also have contributed to an illusion of forward speed.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High. The event sequence, coordinates, weather observations, flight-recorder values, findings and recommendations come from NSIA Aviation Report 2024/03 and its retained local PDF. The NSIA report is explicit that no technical fault contributed. “Storm” is the closest available database event type, but the report identifies no named storm and records the occurrence as VMC; the relevant metocean contribution was strong wind plus rain/mist and loss of visual cues at night.',
+      sources: [
+        'Norwegian Safety Investigation Authority Aviation Report 2024/03 (EXTERNAL; retained local copy)',
+        'Aerossurance incident review summarising NSIA Aviation Report 2024/03 (EXTERNAL)'
+      ],
+      references: [
+        { title: 'NSIA Aviation Report 2024/03 — Sikorsky S-92A LN-ONT near Maersk Invincible', type: 'Official safety investigation', publisher: 'Norwegian Safety Investigation Authority', year: 2024, url: 'https://www.nsia.no/Aviation/Published-reports/2024-03', file: 'background files/2024-03 LN-ONT eng Helicopter Incident Maersk 2024.pdf' },
+        { title: 'Night Offshore Take-Off Loss of Control Incident Norway', type: 'Industry safety review', publisher: 'Aerossurance', year: 2024, url: 'https://aerossurance.com/safety-management/night-offshore-take-off-loss-of-control-incident/' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       64. AS332L G-TIGH Cormorant A Water Impact — 1992
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'g-tigh-cormorant-a-1992',
+      name: 'Super Puma G-TIGH Water Impact near Cormorant A',
+      year: 1992,
+      date: '14 March 1992',
+      location: 'Approximately 500 m east-north-east of Cormorant A platform, East Shetland Basin, UK North Sea',
+      lat: 61.1033,
+      lng: 1.0733,
+      region: 'Europe',
+      platform_type: 'Fixed offshore production platform to accommodation-flotel personnel shuttle',
+      asset_type: 'Aerospatiale AS332L Super Puma helicopter (G-TIGH)',
+      operator: 'Bristow Helicopters Limited (aircraft operator); Shell UK Exploration and Production Limited charter',
+      weather_event_type: 'storm',
+      classification: 'aviation',
+      weather_event: 'Strong gusting northerly wind, snow showers, darkness, severe turbulence warning and very rough seas',
+      fatalities: 11,
+      persons_on_board: 17,
+      survivors: 6,
+      infrastructure_impact: 'Helicopter destroyed after uncontrolled collision with the sea, inversion and sinking in about 150 m of water',
+      image: {
+        src: 'images/g-tigh-cormorant-a-1992-airhistory-lewis-grant.png',
+        alt: 'Bristow Aerospatiale AS332L Super Puma G-TIGH in flight in red, white and blue livery.',
+        caption: 'Bristow AS332L Super Puma G-TIGH in flight. This is a generic aircraft photograph, not an image of the accident sequence. The photograph date and location are unconfirmed.',
+        credit: 'Photo © Lewis Grant / AirHistory.net. Copyrighted; permission required for external republication.'
+      },
+      summary: 'During a night personnel shuttle from Cormorant A to the nearby Safe Supporter flotel, AS332L Super Puma G-TIGH entered an immediate climbing turn away from a strong gusting headwind. The commander did not recognise the rapidly changing relationship between ground speed and airspeed; airspeed decayed to effectively zero and a descent developed. Maximum power did not prevent impact with very rough seas. The helicopter inverted and sank. Twelve of 17 occupants escaped, but only six were recovered alive; all 11 fatalities resulted from drowning, in some cases after hypothermia.',
+      executive_summary: 'G-TIGH struck the North Sea shortly after lifting from Cormorant A at night in severe weather. During a rushed downwind turn, airspeed decayed while visually perceived ground speed remained high. The aircraft descended into very rough seas, inverted and sank within one or two minutes. Six of 17 occupants survived. Strong gusting wind and degraded visual cues contributed directly to the accident sequence; extreme sea state severely constrained survival and rescue. Icing and aircraft malfunction were excluded.',
+      what_happened: 'Severe wind and sea conditions had forced the Safe Supporter accommodation flotel to stand off from Cormorant A, creating a requirement for helicopter personnel shuttles. At 19:48, G-TIGH lifted from the platform with two crew and 15 passengers for the 206 m transfer. The helicopter initially headed about 300°M, nearly into wind, then entered an immediate climbing right turn intended to avoid turbulence behind the platform and flotel and reposition for an into-wind approach.\n\nThe turn began before a stable height or speed had been established. As the helicopter turned away from the strong headwind, its ground speed remained visually prominent while its airspeed rapidly decayed. The commander reduced collective and raised the nose while searching for the flotel; the co-pilot was occupied by wind-degraded radio transmissions about flotel movement. Airspeed fell effectively to zero and descent developed from about 250 ft.\n\nThe commander demanded maximum power after the descent was recognised, but the helicopter struck a wave at approximately 25 ft/s around 19:50. AAIB modelling indicated that recovery should otherwise have been possible; down-draughts, incipient Vortex Ring state and wave crests may have prevented it. The helicopter rolled right, inverted, remained afloat for only one or two minutes and sank. This was an uncontrolled collision/crash into the sea, not a planned controlled ditching.',
+      what_went_wrong: [
+        'The handling pilot did not recognise the rapid divergence between ground speed and airspeed while turning downwind in significant wind; airspeed and then height were inadvertently allowed to decay.',
+        'The right turn was initiated before a stable acceleration phase, speed or height had been established, leaving little altitude or time for recovery.',
+        'Darkness and snow reduced visual cues. The commander concentrated on finding Safe Supporter while the co-pilot dealt with wind-garbled radio transmissions instead of maintaining an effective instrument cross-check.',
+        'Possible fatigue and frustration, a demanding changing programme and substantial administrative workload degraded normal two-crew safeguards.',
+        'The manually activated hull flotation system was not deployed because the unexpected impact left no practical time; the inverted helicopter consequently sank rapidly.',
+        'The survival system was fragmented: one liferaft deployed but was badly damaged and unstable, the second remained inaccessible, lifejackets could ride up, and spray hoods were difficult to deploy.'
+      ],
+      lessons_learned: [
+        'Offshore wind limits do not by themselves define acceptable total risk. Flight planning must consider visual cueing, downwind manoeuvres, turbulence, sea state and whether effective rescue remains feasible.',
+        'After an into-wind offshore take-off, establish a stable height and airspeed before turning; monitor airspeed rather than relying on visually perceived ground speed in strong wind.',
+        'Night and snow operations require explicit instrument monitoring and disciplined division of duties, particularly when the destination may leave the handling pilot’s field of view.',
+        'Weather-related go/no-go decisions should include post-impact survivability and SAR capability, not only whether aircraft and helideck operating limits are technically satisfied.',
+        'Emergency flotation should be capable of automatic as well as manual activation after an unexpected water impact.',
+        'Offshore escape, flotation, liferafts, lifejackets, survival suits and rescue arrangements must be designed and assessed as one integrated survival system.'
+      ],
+      actions: [
+        'AAIB issued 11 safety recommendations, 93-22 through 93-32, covering workload, vessel-motion reporting, height warning, human-error research, flotation, cabin-door jettison, SAR equipment and coordination, integrated survivability and weather effects on rescue.',
+        'The operator’s client introduced an adverse-weather policy linking management escalation to the viability of rescue in different wind and sea states.',
+        'The accident informed the UK CAA Review of Helicopter Offshore Safety and Survival, published as CAP 641 in 1995.'
+      ],
+      metocean: {
+        wind_speed: 'Met Office aftercast: 310°/35–40 kt at the surface, gusting 55–60 kt; 1953 special observation: 300°/54–64 kt',
+        wave_height_max: 'Up to 11 m wave heights used in AAIB analysis; not reported as significant wave height',
+        air_temp: '0 °C at 1953; dew point −3 °C; freezing level at the surface',
+        visibility: 'Around 10 km, rapidly falling to 300 m in snow showers; 4,000 m in moderate snow at 1953',
+        cloud: 'Broken cumulus base around 1,500 ft; occasional cumulonimbus base 550–800 ft; vertical visibility 1,200 ft at 1953',
+        pressure: 'QNH 989 hPa at 1953',
+        notes: 'AAIB found the severe weather and sea state remained within the helicopter’s permitted operating envelope, but strong gusting wind was integral to the downwind-turn airspeed loss. Darkness, snow and wind-degraded communications increased workload. Down-draughts and wave crests may have prevented recovery. Sea state was a major limiting factor in survivability and rescue. Recorded liquid-water content was very low; icing and salt accretion were excluded as contributors.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High. Identity, sequence, weather observations, flight-recorder data, casualties, findings and recommendations come from AAIB Aircraft Accident Report 2/93 and its appendices. Coordinates identify the Cormorant A platform reported by AAIB; the impact was about 500 m east-north-east. The common label “ditching” is retained only as a search term: AAIB describes an uncontrolled collision/crash into the sea. Wave heights up to 11 m are maxima used in analysis, not significant wave height. A secondary Aerossurance article incorrectly states 19 occupants; AAIB and ASN establish 17.',
+      sources: [
+        'UK AAIB Aircraft Accident Report 2/93 and appendices (EXTERNAL; retained local copies)',
+        'UK CAA CAP 641 Review of Helicopter Offshore Safety and Survival (EXTERNAL)',
+        'Aviation Safety Network record 17934 (EXTERNAL)',
+        'AirHistory.net photo 445595 of G-TIGH by Lewis Grant (EXTERNAL; permission required)',
+        'G-TIGH detailed background report in this repository (INTERNAL)'
+      ],
+      references: [
+        { title: 'AAIB Aircraft Accident Report 2/93 — AS332L Super Puma G-TIGH', type: 'Official accident investigation', publisher: 'UK Air Accidents Investigation Branch', year: 1993, url: 'https://www.gov.uk/aaib-reports/2-1993-as-332l-super-puma-g-tigh-14-march-1992', file: 'background files/2-1993_G-TIGH Super Puma Ditching Near Cormorant A platform, UK, March 14, 1992.pdf' },
+        { title: 'AAIB Report 2/93 Appendices — G-TIGH', type: 'Official investigation appendices', publisher: 'UK Air Accidents Investigation Branch', year: 1993, url: 'https://assets.publishing.service.gov.uk/media/5422f3f940f0b6134600050d/2-1993_G-TIGH_Append.pdf', file: 'background files/AAIB_2-1993_G-TIGH_Cormorant_A_Appendices.pdf' },
+        { title: 'AAIB Summary: AAR 2/1993 AS332L G-TIGH', type: 'Official report summary', publisher: 'UK Air Accidents Investigation Branch', year: 1993, url: 'https://www.gov.uk/aaib-reports/summary-aar-2-1993-as-332l-g-tigh-14-march-1992' },
+        { title: 'CAP 641 — Review of Helicopter Offshore Safety and Survival', type: 'Official safety review', publisher: 'UK Civil Aviation Authority', year: 1995, url: 'https://www.caa.co.uk/publication/download/12194' },
+        { title: 'Aviation Safety Network — AS332L G-TIGH accident record', type: 'Aviation accident database', publisher: 'Flight Safety Foundation / ASN', url: 'https://aviation-safety.net/wikibase/17934' }
       ]
     }
 
