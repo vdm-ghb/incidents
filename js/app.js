@@ -16,6 +16,39 @@
     return 'Near-miss / 0 fatalities';
   }
 
+  var CONSEQUENCE_RULES = {
+    schedule: /\b(delay|delays|delayed|downtime|shutdown|shut down|outage|schedule|reschedul|reinstatement|resume|resuming|out of service)\b/i,
+    financial: /\b(us\$|usd|\$\d|million|billion|financial|cost|costs|loss|losses|economic)\b/i,
+    asset_loss: /\b(capsize|capsized|sank|sunk|destroyed|destruction|total loss|constructive total loss|toppled|collapse|collapsed|grounded|grounding|drifted|lost\s+(its|the)\s+(mooring|anchor|tow)|lost\s+(lmrp|riser|vessel|rig|platform|derrick))\b/i,
+    infrastructure: /\b(damage|damaged|failure|failures|rupture|ruptured|collision|flooding|spill|fire|explosion|structural|mooring)\b/i
+  };
+
+  function incidentConsequenceTags(incident) {
+    if (incident._consequenceTags) return incident._consequenceTags;
+    if (Array.isArray(incident.consequence_tags) && incident.consequence_tags.length) {
+      incident._consequenceTags = incident.consequence_tags.slice();
+      return incident._consequenceTags;
+    }
+
+    var tags = [];
+    var text = [incident.summary, incident.executive_summary, incident.what_happened, incident.infrastructure_impact, incident.environmental_impact]
+      .filter(Boolean)
+      .join(' ');
+
+    var injuries = incident.injuries;
+    var hasSevereInjury = (typeof injuries === 'number' && injuries > 0) || (typeof injuries === 'string' && injuries.trim() && injuries.trim() !== '0');
+    if ((incident.fatalities || 0) > 0 || hasSevereInjury) tags.push('human_harm');
+
+    if (incident.infrastructure_impact || CONSEQUENCE_RULES.infrastructure.test(text)) tags.push('infrastructure');
+    if (incident.environmental_impact) tags.push('environment');
+    if (CONSEQUENCE_RULES.schedule.test(text)) tags.push('schedule');
+    if (CONSEQUENCE_RULES.financial.test(text)) tags.push('financial');
+    if (CONSEQUENCE_RULES.asset_loss.test(text)) tags.push('asset_loss');
+
+    incident._consequenceTags = tags;
+    return tags;
+  }
+
   var EVENT_TYPE_LABELS = { cyclone:'Cyclone / Hurricane / Typhoon', storm:'Severe (Extra-tropical) Storm', squall:'Squall / Thunderstorm', lightning:'Lightning', rogue_wave:'Extreme / Rogue Wave', internal_wave:'Internal Wave / Soliton', current:'Ocean / Turbidity Current / Tidal', tsunami:'Tsunami / Meteo-tsunami', climate:'Climate / Ambient Extremes', equipment:'Metocean Equipment' };
   var EVENT_TYPE_LETTERS = { cyclone:'C', storm:'S', squall:'Q', lightning:'L', rogue_wave:'R', internal_wave:'I', current:'U', tsunami:'T', climate:'K', equipment:'E' };
 
@@ -41,11 +74,227 @@
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}', {
     attribution:'', maxZoom:13, opacity:0.7 }).addTo(map);
 
-  var allIncidents=[], activeMarkers=[], activeFilters={type:'all',region:'all',classification:'all'};
+  var allIncidents=[], activeMarkers=[], activeFilters={type:'all',region:'all',classification:'all',consequence:'all'};
+  var stormTracksBySid = {};
+  var activeTrackLayer = null;
+  var activeTrackLabel = null;
+  var lockedTrackSid = null;
   /* Dataset view: 'full' | 'shell' | 'external' — starts on full */
   var DATASET_VIEWS = ['full','shell','external'];
   var DATASET_LABELS = { full:'Full Dataset', shell:'Shell Internal', external:'External Only' };
   var datasetView = 'full';
+
+  // Match Hurricane Tracker intensity color scheme from ShellDigitalWeather bundle.
+  var STORM_CAT_COLORS = {
+    '-5': '#888888', // Unknown
+    '-4': '#bdc3c7', // Post-tropical
+    '-3': '#95a5a6', // Misc disturbance
+    '-2': '#7fb3be', // Subtropical
+    '-1': '#3498db', // Tropical Depression
+    '0': '#f1c40f',  // Tropical Storm
+    '1': '#f39c12',  // Category 1
+    '2': '#e67e22',  // Category 2
+    '3': '#e74c3c',  // Category 3
+    '4': '#c0392b',  // Category 4
+    '5': '#8e44ad'   // Category 5
+  };
+
+  function normalizeLon(lon) {
+    if (lon > 180) return lon - 360;
+    if (lon < -180) return lon + 360;
+    return lon;
+  }
+
+  function clearActiveTrack() {
+    if (!activeTrackLayer) return;
+    map.removeLayer(activeTrackLayer);
+    activeTrackLayer = null;
+  }
+
+  function clearActiveTrackLabel() {
+    if (!activeTrackLabel) return;
+    map.removeLayer(activeTrackLabel);
+    activeTrackLabel = null;
+  }
+
+  function categoryFromWind(windKt) {
+    if (typeof windKt !== 'number' || isNaN(windKt)) return -5;
+    if (windKt < 34) return -1;
+    if (windKt <= 63) return 0;
+    if (windKt <= 82) return 1;
+    if (windKt <= 95) return 2;
+    if (windKt <= 112) return 3;
+    if (windKt <= 136) return 4;
+    return 5;
+  }
+
+  function categoryColor(category) {
+    var key = String(category);
+    return STORM_CAT_COLORS[key] || STORM_CAT_COLORS['-5'];
+  }
+
+  function closestTrackPoint(points, incident) {
+    if (!points || !points.length || !incident) return null;
+    var best = null;
+    var bestD = Infinity;
+    points.forEach(function(pt) {
+      var dLat = pt.lat - incident.lat;
+      var dLon = pt.lon - incident.lng;
+      var d = dLat * dLat + dLon * dLon;
+      if (d < bestD) {
+        bestD = d;
+        best = pt;
+      }
+    });
+    return best;
+  }
+
+  function drawTrackLabel(incident, trackData) {
+    clearActiveTrackLabel();
+    if (!incident || !trackData || !trackData.points || !trackData.points.length) return;
+    var label = incident.storm_name || incident.storm_label || '';
+    if (!label) return;
+    var nearest = closestTrackPoint(trackData.points, incident);
+    if (!nearest) return;
+
+    activeTrackLabel = L.marker([nearest.lat, nearest.lon], {
+      interactive: false,
+      keyboard: false,
+      icon: L.divIcon({
+        className: 'storm-track-label-wrap',
+        html: '<div style="transform:translate(-118%,-50%);background:rgba(13,20,33,0.88);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.02em;padding:3px 6px;border-radius:10px;border:1px solid rgba(255,255,255,0.28);white-space:nowrap;">'+esc(label)+'</div>',
+        iconSize: null
+      })
+    }).addTo(map);
+  }
+
+  function drawTrackBySid(sid, incident, isLocked) {
+    clearActiveTrack();
+    clearActiveTrackLabel();
+    var trackData = stormTracksBySid[sid];
+    if (!trackData || !trackData.points || trackData.points.length < 2) return false;
+
+    var group = L.layerGroup();
+    var points = trackData.points;
+    for (var i = 1; i < points.length; i++) {
+      var prev = points[i - 1];
+      var cur = points[i];
+      var segColor = categoryColor(cur.category);
+      L.polyline([[prev.lat, prev.lon], [cur.lat, cur.lon]], {
+        color: segColor,
+        weight: isLocked ? 4 : 3,
+        opacity: isLocked ? 0.95 : 0.8,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(group);
+    }
+
+    points.forEach(function(pt) {
+      var dotColor = categoryColor(pt.category);
+      var dot = L.circleMarker([pt.lat, pt.lon], {
+        radius: isLocked ? 4 : 3,
+        weight: 1,
+        color: '#ffffff',
+        fillColor: dotColor,
+        fillOpacity: isLocked ? 0.95 : 0.85,
+        opacity: 0.95
+      });
+      dot.bindTooltip((pt.time || 'Unknown time') + (typeof pt.wind_kt === 'number' ? (' | ' + Math.round(pt.wind_kt) + ' kt') : ''), {
+        direction: 'top',
+        opacity: 0.95,
+        sticky: true
+      });
+      dot.addTo(group);
+    });
+
+    activeTrackLayer = group.addTo(map);
+    if (activeTrackLayer && typeof activeTrackLayer.eachLayer === 'function') {
+      activeTrackLayer.eachLayer(function(layer) {
+        if (layer && typeof layer.bringToFront === 'function') layer.bringToFront();
+      });
+    }
+    drawTrackLabel(incident, trackData);
+    return true;
+  }
+
+  function restoreLockedTrack() {
+    if (lockedTrackSid) {
+      var lockedIncident = allIncidents.find(function(inc) { return inc.storm_sid === lockedTrackSid; }) || null;
+      drawTrackBySid(lockedTrackSid, lockedIncident, true);
+      return;
+    }
+    clearActiveTrack();
+    clearActiveTrackLabel();
+  }
+
+  function showIncidentTrack(incident, lockTrack) {
+    if (!incident || !incident.storm_sid) {
+      if (lockTrack) lockedTrackSid = null;
+      if (!lockedTrackSid) {
+        clearActiveTrack();
+        clearActiveTrackLabel();
+      }
+      return;
+    }
+    if (lockTrack) lockedTrackSid = incident.storm_sid;
+    if (!drawTrackBySid(incident.storm_sid, incident, !!lockTrack) && lockTrack) {
+      lockedTrackSid = null;
+      clearActiveTrack();
+      clearActiveTrackLabel();
+    }
+  }
+
+  function loadStormTracks() {
+    function ingestStormGeo(geo) {
+      if (!geo || !geo.features || !Array.isArray(geo.features)) return;
+      geo.features.forEach(function(feature) {
+        if (!feature || !feature.properties || !feature.geometry) return;
+        var sid = feature.properties.sid;
+        var coords = feature.geometry.coordinates;
+        if (!sid || !Array.isArray(coords) || !coords.length) return;
+        var points = [];
+        if (Array.isArray(feature.properties.track_points) && feature.properties.track_points.length) {
+          points = feature.properties.track_points.map(function(tp) {
+            var cat = (typeof tp.category === 'number') ? tp.category : categoryFromWind(tp.wind_kt);
+            return {
+              time: tp.time || '',
+              lat: tp.lat,
+              lon: normalizeLon(tp.lon),
+              wind_kt: tp.wind_kt,
+              category: cat
+            };
+          });
+        } else {
+          points = coords.map(function(pt) {
+            return { time: '', lat: pt[1], lon: normalizeLon(pt[0]), wind_kt: null, category: -5 };
+          });
+        }
+        stormTracksBySid[sid] = {
+          sid: sid,
+          points: points
+        };
+      });
+      // Keep locked track visible after reloads of the storm-track file.
+      if (lockedTrackSid) {
+        var lockedIncident = allIncidents.find(function(inc) { return inc.storm_sid === lockedTrackSid; }) || null;
+        drawTrackBySid(lockedTrackSid, lockedIncident, true);
+      }
+    }
+
+    if (window.STORM_TRACKS_DATA) {
+      ingestStormGeo(window.STORM_TRACKS_DATA);
+      return;
+    }
+
+    fetch('data/storm_tracks.geojson').then(function(res) {
+      if (!res.ok) throw new Error('Failed storm track fetch: ' + res.status);
+      return res.json();
+    }).then(function(geo) {
+      ingestStormGeo(geo);
+    }).catch(function(err) {
+      console.warn('Storm tracks were not loaded. Incident overlays disabled.', err);
+    });
+  }
 
   function loadData() {
     if (!window.INCIDENTS_DATA) { console.error('INCIDENTS_DATA not found'); return; }
@@ -94,8 +343,11 @@
     var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+clsClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[18,0] });
     var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true,title:incident.name,alt:incident.name});
     var tooltipImage=incident.image&&incident.image.src?'<img class="tooltip-image" src="'+esc(incident.image.src)+'" alt="" loading="lazy">':'';
-    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+clsClass+'">'+esc(fatalityText(incident))+'</span>'+(incident.executive_summary?'<div class="tooltip-summary">'+esc(incident.executive_summary)+'</div>':'')+tooltipImage;
+    var summaryText=incident.summary||incident.executive_summary||'';
+    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+clsClass+'">'+esc(fatalityText(incident))+'</span>'+(summaryText?'<div class="tooltip-summary">'+esc(summaryText)+'</div>':'')+tooltipImage;
     marker.bindTooltip(ttHTML,{permanent:false,direction:'right',opacity:1});
+    marker.on('mouseover',function(){ showIncidentTrack(incident, false); });
+    marker.on('mouseout',function(){ restoreLockedTrack(); });
     marker.on('click',function(){ openModal(incident); });
     return marker;
   }
@@ -119,6 +371,7 @@
     var filtered=displayIncidents.filter(function(inc){
       if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
       if (activeFilters.classification!=='all' && classKey(inc)!==activeFilters.classification) return false;
+      if (activeFilters.consequence!=='all' && incidentConsequenceTags(inc).indexOf(activeFilters.consequence)===-1) return false;
       return true;
     });
     filtered.forEach(function(inc){
@@ -137,6 +390,7 @@
 
   document.getElementById('filter-type').addEventListener('change',function(e){ activeFilters.type=e.target.value; renderMarkers(); });
   document.getElementById('filter-classification').addEventListener('change',function(e){ activeFilters.classification=e.target.value; renderMarkers(); });
+  document.getElementById('filter-consequence').addEventListener('change',function(e){ activeFilters.consequence=e.target.value; renderMarkers(); });
   document.getElementById('filter-region').addEventListener('change',function(e){
     activeFilters.region=e.target.value;
     renderMarkers();
@@ -145,10 +399,11 @@
     } else { map.setView(homeMapView.center, homeMapView.zoom); }
   });
   document.getElementById('filter-reset').addEventListener('click',function(){
-    activeFilters={type:'all',region:'all',classification:'all'};
+    activeFilters={type:'all',region:'all',classification:'all',consequence:'all'};
     document.getElementById('filter-type').value='all';
     document.getElementById('filter-region').value='all';
     document.getElementById('filter-classification').value='all';
+    document.getElementById('filter-consequence').value='all';
     renderMarkers();
     map.setView(homeMapView.center, homeMapView.zoom);
   });
@@ -176,6 +431,7 @@
   var activeIncidentImage=null;
 
   function openModal(incident) {
+    showIncidentTrack(incident, true);
     activeIncidentImage=incident.image||null;
     modalContent.innerHTML=buildIncidentHTML(incident);
     modalOverlay.classList.remove('hidden');
@@ -184,6 +440,9 @@
     history.replaceState(null,'','#'+incident.id);
   }
   function closeModal() {
+    lockedTrackSid = null;
+    clearActiveTrack();
+    clearActiveTrackLabel();
     modalOverlay.classList.add('hidden');
     activeIncidentImage=null;
     document.body.style.overflow='';
@@ -254,7 +513,7 @@
       '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',shortLoc(inc.location,60))+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(casualtiesStr?metaItem('Casualties',casualtiesStr):'')+
       '</div></div>'+metoceanAlertHTML+metoceanHTML+infraHTML+
       '<div class="inc-body">'+
-      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.executive_summary||inc.summary)+'</p>'+buildImageHTML(inc.image)+'</div>'+
+      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.summary||inc.executive_summary)+'</p>'+buildImageHTML(inc.image)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">What Happened</div>'+whatHappenedParas+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">What Went Wrong</div>'+numberedList(inc.what_went_wrong)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">Lessons Learned</div>'+numberedList(inc.lessons_learned)+'</div>'+
@@ -319,6 +578,7 @@
       if (activeFilters.region!=='all' && inc.region!==activeFilters.region) return false;
       if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
       if (activeFilters.classification!=='all' && classKey(inc)!==activeFilters.classification) return false;
+      if (activeFilters.consequence!=='all' && incidentConsequenceTags(inc).indexOf(activeFilters.consequence)===-1) return false;
       return true;
     }).sort(function(a,b){
       var fa=a.fatalities||0, fb=b.fatalities||0;
@@ -339,6 +599,18 @@
         '<td class="col-sev"><span class="sev-pill '+clsClass+'">'+esc(clsText)+'</span></td></tr>';
     }).join('');
     if (!tableHandlerAttached) {
+      tbody.addEventListener('mouseover',function(e){
+        var row=e.target.closest('tr[data-id]');
+        if (!row) return;
+        var inc=allIncidents.find(function(i){ return i.id===row.getAttribute('data-id'); });
+        if (inc) showIncidentTrack(inc, false);
+      });
+      tbody.addEventListener('mouseout',function(e){
+        var row=e.target.closest('tr[data-id]');
+        if (!row) return;
+        if (e.relatedTarget && row.contains(e.relatedTarget)) return;
+        restoreLockedTrack();
+      });
       tbody.addEventListener('click',function(e){
         var row=e.target.closest('tr[data-id]');
         if (!row) return;
@@ -352,6 +624,7 @@
     document.getElementById('stat-incidents').textContent=visible.length;
   }
 
+  loadStormTracks();
   loadData();
   if (window.location.hash) {
     var hashId=window.location.hash.slice(1);

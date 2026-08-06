@@ -14,6 +14,15 @@ scripts/
 NEW_INCIDENTS_DATABASE_ENTRIES.js
 CLAUDE.md
 
+# Raw IBTrACS source data (331MB+, exceeds GitHub's file-size limit) —
+# data/storm_tracks.js is the curated subset actually loaded by the site
+data/ibtracs/
+
+# Raw PDF-figure extraction dumps (intermediate artifacts, not the
+# selected/published images referenced from data/incidents.js)
+images/seacor_fig17_extract/
+images/skandi_figure12_extract/
+
 # Playwright
 /playwright-report/
 /test-results/

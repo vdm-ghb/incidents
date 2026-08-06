@@ -86,10 +86,10 @@ def verify_all_selected_images(page, base_url):
         })()"""
     )
     selected_images = dataset["selected"]
-    assert dataset["count"] == 61
-    assert dataset["uniqueIds"] == 61
-    assert len(selected_images) == 42
-    assert dataset["uniqueImagePaths"] == 42
+    assert dataset["count"] == 70
+    assert dataset["uniqueIds"] == 70
+    assert len(selected_images) == 50
+    assert dataset["uniqueImagePaths"] == 50
     assert all(selected["complete"] for selected in selected_images)
     assert dataset["eniImage"]["src"] == (
         "images/eni-aceh-soliton-slide-4-rig-impact-diagram.png"
@@ -179,7 +179,7 @@ def run_verification():
             desktop.on("pageerror", lambda error: desktop_errors.append(str(error)))
             desktop.goto(f"http://127.0.0.1:{port}/", wait_until="domcontentloaded")
             desktop.wait_for_function(
-                "document.querySelector('#stat-incidents').textContent.trim() === '61'"
+                "document.querySelector('#stat-incidents').textContent.trim() === '70'"
             )
 
             marker = desktop.locator(

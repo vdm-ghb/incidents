@@ -22,6 +22,18 @@
     </div>
 
     <div id="header-filters">
+      <select id="filter-region" class="filter-select" title="Filter by region">
+        <option value="all">All regions</option>
+        <option value="Africa">Africa</option>
+        <option value="Asia">Asia</option>
+        <option value="Australia">Australia</option>
+        <option value="Europe">Europe</option>
+        <option value="Middle East">Middle East</option>
+        <option value="North America">North America</option>
+        <option value="Russia and Central Asia">Russia and Central Asia</option>
+        <option value="South America">South America</option>
+      </select>
+
       <select id="filter-type" class="filter-select" title="Filter by event type (metocean hazard)">
         <option value="all">All event types</option>
         <option value="cyclone">Cyclone / Hurricane / Typhoon</option>
@@ -36,20 +48,8 @@
         <option value="equipment">Metocean Equipment</option>
       </select>
 
-      <select id="filter-region" class="filter-select" title="Filter by region">
-        <option value="all">All regions</option>
-        <option value="Africa">Africa</option>
-        <option value="Asia">Asia</option>
-        <option value="Australia">Australia</option>
-        <option value="Europe">Europe</option>
-        <option value="Middle East">Middle East</option>
-        <option value="North America">North America</option>
-        <option value="Russia and Central Asia">Russia and Central Asia</option>
-        <option value="South America">South America</option>
-      </select>
-
-      <select id="filter-classification" class="filter-select" title="Filter by classification (discipline)">
-        <option value="all">All classifications</option>
+      <select id="filter-classification" class="filter-select" title="Filter by operation type">
+        <option value="all">All operations</option>
         <option value="drilling">Drilling</option>
         <option value="maritime">Maritime / Tow</option>
         <option value="aviation">Aviation</option>
@@ -59,6 +59,16 @@
         <option value="design">Basis of Design</option>
         <option value="survey">Survey</option>
         <option value="decommissioning">Decommissioning</option>
+      </select>
+
+      <select id="filter-consequence" class="filter-select" title="Filter by consequence">
+        <option value="all">All consequences</option>
+        <option value="human_harm">Fatality / Severe Injury</option>
+        <option value="infrastructure">Infrastructure Impact</option>
+        <option value="schedule">Schedule Impact</option>
+        <option value="financial">Financial Impact</option>
+        <option value="environment">Environmental Damage</option>
+        <option value="asset_loss">Asset Loss</option>
       </select>
 
       <button id="filter-reset" title="Clear all filters">Reset</button>
@@ -88,7 +98,7 @@
       <span id="legend-toggle-icon">▲</span>
     </div>
     <div id="legend-body">
-      <div class="legend-section-title">Classification (colour)</div>
+      <div class="legend-section-title">Operations (colour)</div>
       <div class="legend-row"><span class="legend-dot cls-drilling"></span><span>Drilling</span></div>
       <div class="legend-row"><span class="legend-dot cls-maritime"></span><span>Maritime / Tow</span></div>
       <div class="legend-row"><span class="legend-dot cls-aviation"></span><span>Aviation</span></div>
@@ -154,7 +164,7 @@
               <th class="col-asset">Asset Type</th>
               <th class="col-fatal">Fatalities / Impact</th>
               <th class="col-weather">Primary Weather Factor</th>
-              <th class="col-sev">Classification</th>
+              <th class="col-sev">Operations</th>
             </tr>
           </thead>
           <tbody id="incidents-tbody"></tbody>
@@ -169,6 +179,7 @@
 
   <!-- DATA — loaded before Leaflet so it's available immediately -->
   <script src="data/incidents.js"></script>
+  <script src="data/storm_tracks.js"></script>
   <!-- Leaflet map library -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Main app -->
