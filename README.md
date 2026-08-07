@@ -123,3 +123,6 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 ## Last updated
 
 2026-08-06
+
+
+<!-- Pages rebuild nudge: 2026-08-07 -->
