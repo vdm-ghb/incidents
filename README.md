@@ -124,5 +124,6 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 
 2026-08-06
 
+ **Check**
 
 <!-- Pages rebuild nudge: 2026-08-07 -->
