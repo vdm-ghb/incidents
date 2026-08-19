@@ -8,7 +8,7 @@ Collects lessons-learned case studies — platform losses, tow failures, hurrica
 
 ## Status
 
-In progress. 70 incidents documented across a two-axis taxonomy (metocean **event type** + operational **classification**). A full fact-check remediation pass is complete (see `FACT_CHECK_AUDIT.md`); content is still being extended and refined.
+In progress. 73 incidents documented across a two-axis taxonomy (metocean **event type** + operational **classification**). A full fact-check remediation pass is complete (see `FACT_CHECK_AUDIT.md`); content is still being extended and refined.
 
 ## Getting started
 
@@ -31,7 +31,7 @@ npm run test:headed
 
 Node.js LTS is required. The Playwright configuration starts the local static server automatically for test runs.
 
-The incident-image rollout also has Python verification paths for environments without Node/npm (`audit_image_coverage.py` runs anywhere with Python 3; `verify_gunashli_image.py` and `verify_lfe_10_turbulence.py` currently hardcode `channel="msedge"` in their Playwright browser launch, so they only run as shipped on Windows with Edge installed):
+The incident-image rollout also has Python verification paths for environments without Node/npm:
 
 ```powershell
 .\.venv\Scripts\python.exe .\tests\audit_image_coverage.py
@@ -41,27 +41,26 @@ The incident-image rollout also has Python verification paths for environments w
 ## Usage
 
 - Open `index.html` (locally or via GitHub Pages) to browse the map.
-- Filter incidents by **event type** (metocean hazard), **region**, or **classification** (discipline) using the header controls.
-- Switch datasets with the toggle button: **Full** (all incidents), **Shell** (internal-sourced only), or **External** (public-source only).
+- Filter incidents by **event type** (metocean hazard), **region**, **classification** (discipline), or **consequence** using the header controls.
+- Search incident names, vessel/platform names, taxonomy, categories, regions and consequences. As you type, a short list of matching incidents appears beside the search field; free text also searches the incident narratives, lessons and actions.
+- Anonymous page-visit analytics are provided by Plausible for the published GitHub Pages site; no analytics dashboard or visitor identifiers are exposed in the webpage.
 - Markers are coloured by classification and lettered by event type (see the on-map legend).
 - Hover over a marker for the incident blurb and, where selected, a scaled image thumbnail.
 - Click a marker for the full lessons-learned writeup. Selected images appear after the Summary text and open at their natural size when clicked.
-- Hover a cyclone/hurricane marker with a matched IBTrACS track to preview its storm path; click an incident with a track to lock it on the map.
-- See `working documentation/PUBLISHING.md` for how to publish updates to GitHub Pages, and the field reference for adding new incidents.
+- See `PUBLISHING.md` for how to publish updates to GitHub Pages, and the field reference for adding new incidents.
 
 ## Project structure
 
 - `index.html` — page shell and map/filter controls
 - `js/app.js` — map rendering, filtering, and UI logic (Leaflet)
 - `css/style.css` — styling
-- `data/incidents.js` — the incident dataset (source of truth; see `working documentation/PUBLISHING.md` for the field schema)
-- `data/storm_tracks.js`, `data/storm_tracks.geojson` — curated subset of IBTrACS cyclone tracks (matched to incidents via `storm_sid`) that the site actually loads
-- `data/ibtracs/` — raw IBTrACS source data (331MB+) used to derive `storm_tracks.*`; git-ignored, far too large for GitHub
+- `data/incidents.js` — the incident dataset (source of truth; see `PUBLISHING.md` for the field schema)
 - `images/` — native-resolution incident images and technical diagrams, with selected assets displayed from each incident's `image` field
-- `tests/` — Playwright end-to-end tests (`index.spec.ts`) plus Python image-coverage/regression checks against the static site
-- `background files/` — source material (reports, papers, internal presentations) used to research and write up incidents (git-ignored)
-- `working documentation/` — fact-check audit, executive summaries, image provenance catalogue, and other internal working notes (git-ignored)
-- `scripts/` — helper scripts used for bulk data edits, PDF/DOCX extraction, and OCR (git-ignored)
+- `tests/` — Playwright end-to-end tests against the static site
+- `background files/` — source material (reports, papers, internal presentations) used to research and write up incidents
+- `FACT_CHECK_AUDIT.md` — independent fact-check pass over every incident record, flagging discrepancies and unverifiable claims
+- `EXECUTIVE_SUMMARIES.md`, `INCIDENT_IMAGES.md` — supporting content notes
+- `inject_summaries.py` — helper script used when bulk-adding executive summaries to incident records
 
 ## Tech stack
 
@@ -70,23 +69,24 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 ## Notes / decisions
 
 - **Two-axis taxonomy.** Each incident carries `weather_event_type` (the metocean hazard: cyclone, storm, squall, lightning, rogue/internal wave, current, tsunami, climate, equipment) and `classification` (the operational discipline: drilling, maritime/tow, aviation, onshore, coastal, design, pipeline, survey). Markers use classification for colour and event type for the letter. This replaced the earlier single "severity" axis.
-- **Dataset toggle** (Full / Shell / External) is driven by `source_classification` and `shell_internal_only` fields on each record.
+- **Source metadata remains on each record.** `source_classification` and `shell_internal_only` are retained for provenance and filtering/analysis outside the public browsing workflow; the webpage presents one unified incident dataset.
+- **Authorship metadata.** The HTML and JSON-LD identify Vadim Anokhin as developer without adding visible attribution to the map interface. Custodian attribution is intentionally left open for later confirmation. The database popover includes a compact use-and-limitations notice covering source uncertainty, non-advice status and third-party rights.
 - **Regions** are a `region` string per record, filtered in the UI and used for map zoom bounds (`REGION_BOUNDS` in `js/app.js`). Current regions: Africa, Asia, Australia, Europe, Middle East, North America, Russia and Central Asia, South America. (Australia was split out from the former "Asia / Australasia" — 5 NW-Shelf / WA incidents.)
 - **Neutral operator naming.** In incident body text, refer to the duty holder generically ("the operator", "the project team"); name a specific company only in the `operator` field and in source/reference citations. Applied to Big Foot and Gorgon; keep this convention for new entries.
 - **Fact-check remediation complete.** The 2026-07-04 audit (`FACT_CHECK_AUDIT.md`) flagged dead/fabricated reference URLs and ~15 records with incorrect details; all four tiers have since been remediated (casualty figures, locations, dates, and sources corrected or hedged; unverifiable claims flagged with `data_quality` notes).
-- **Incident numbering** in `data/incidents.js` comments has gaps (removed/merged records were never renumbered) — gaps are expected, not a data error. The comment header may cite a higher count than the actual array length; trust `INCIDENTS_DATA.incidents.length` (currently 70).
+- **Incident numbering** in `data/incidents.js` comments has gaps (removed/merged records were never renumbered) — gaps are expected, not a data error. The comment header may cite a higher count than the actual array length; trust `INCIDENTS_DATA.incidents.length` (currently 73).
 - **Verification workflow.** Changes to `data/incidents.js` are validated by reloading the page under Playwright and asserting on `window.INCIDENTS_DATA` (total count, no duplicate IDs, taxonomy fields, marker rendering) rather than eyeballing.
 - **Image provenance.** `working documentation/INCIDENT_IMAGES.md` is the source/credit/rights catalogue for local assets. Public availability is not treated as permission to reuse; internal LFE material remains restricted, and files are retained at native resolution without upscaling or recompression.
-- **One selected image per incident.** An optional singular `image` object on an incident (`src`, `alt`, `caption`, `credit`) drives the map-tooltip thumbnail, Summary figure, full-size lightbox and capped print figure from one source of truth. There are 50 selected incident images. Dupal has two catalogued local candidates but was explicitly left unselected. Copyrighted and restricted assets are clearly labelled as reference-only or permission-required.
-- **Storm-track overlay.** An incident with a `storm_sid` field (matching an IBTrACS storm ID) draws its cyclone track on the map — as a hover preview, or locked in place while its modal is open. `data/storm_tracks.js`/`.geojson` hold only the pre-matched subset (16 storms as of this writing) that `js/app.js` fetches at runtime; the 331MB raw IBTrACS archive that subset was derived from lives in `data/ibtracs/` and is git-ignored, never published. Markers are drawn three times each, at ±360° longitude offsets (`createWrappedMarkers` in `js/app.js`), so they stay visible when the map is panned across the antimeridian — this is intentional, not a rendering bug, and is expected in DOM/accessibility snapshots.
-- **Consequence filter.** The `#filter-consequence` dropdown matches on `consequence_tags` (an explicit array field, e.g. `['infrastructure','financial','asset_loss']`) when a record has one, and otherwise falls back to a keyword-regex classifier over the record's narrative text (`CONSEQUENCE_RULES` in `js/app.js`) — most records rely on the fallback rather than an explicit tag.
+- **One selected image per incident.** An optional singular `image` object on an incident (`src`, `alt`, `caption`, `credit`) drives the map-tooltip thumbnail, Summary figure, full-size lightbox and capped print figure from one source of truth. There are 54 selected incident images across 51 local files and 3 remote URLs; the Mars Katrina record deliberately reuses the incident-specific photograph already selected for the broader Katrina record. Dupal has two catalogued local candidates but was explicitly left unselected. Copyrighted and restricted assets are clearly labelled as reference-only or permission-required.
 
 ### Session handoff (next steps)
 
 **Completed (August 2026):**
-- Merged a second dumped update folder (`2026.06.03 IOGP Metocean Incidents Database/`) into the project via `rsync` (source moved to a scratch location outside the project first this time, avoiding the self-referential `--delete` issue from the prior merge) and deleted it as requested. This dump added 7 new incidents (63 → 70), the storm-track overlay feature (`data/storm_tracks.js`/`.geojson`, `filter-consequence` dropdown, world-wrap markers — see Notes above), and a 331MB raw IBTrACS working dataset in `data/ibtracs/`, which was git-ignored rather than published (see Project structure above).
-- Restored `working documentation/`-prefixed paths in Usage/Project structure (the incoming README had reverted to the pre-reorganization top-level paths from an earlier snapshot).
-- Ran the full Playwright suite (`npm install && npx playwright install chromium && npm test`) against the merged site — the `playwright.config.ts` shipped with this dump used a Windows-only `py -m http.server` webServer command (everything else in its simplified config is fine and now confirmed working); changed that one line back to `python3 -m http.server 8080` so `npm test` works out of the box on macOS/Linux again, and confirmed with a clean run (no server pre-started). Found and fixed 5 pre-existing test failures, none of which were real site defects: three tests in `tests/index.spec.ts` referenced `#filter-severity`, an element ID renamed to `#filter-classification` in an earlier taxonomy change, with stale option values (`hurricane`, `critical`) from the old taxonomy — updated to current IDs/values. Two new deep-link tests (LN-ONT, G-TIGH) navigated via `page.goto('/#id')` immediately after `beforeEach`'s `page.goto('/')`; since only the URL fragment changes, Playwright (like real browsers) treats this as a same-document navigation and never re-runs the page's load-time hash-check, so the incident modal never opened in the test even though it works correctly for a real user opening a shared link in a fresh tab — fixed by adding an explicit `page.reload()` in both tests. Those same two tests then surfaced a genuine, more serious defect: `data/incidents.js` had been corrupted by a UTF-8-decoded-as-Windows-1252-then-resaved-as-UTF-8 round-trip somewhere in this dump's toolchain, garbling every degree sign, curly quote, dash, © and a block of Cyrillic source-title text across the *entire* file (64 lines affected, not just the new records — e.g. Kielland 1980's "7 Â°C" should read "7 °C"). Repaired mechanically (each corrupted run is provably reversible: `run.encode(windows-1252, with the 5 codepoints cp1252 leaves undefined mapped directly to their raw byte value).decode(utf-8)`), verified the fix introduces no incident-count/duplicate-ID/syntax regressions, and confirmed byte-for-byte correct output (e.g. the Belkrov.by Russian-language source title now reads correctly). Two of the two remaining test failures after that were pre-existing test/data mismatches, not corruption or app bugs — a plain hyphen in an AAIB-quoted wind figure where the test expected an en dash (test corrected to match the sourced quote verbatim, data left as-is) and a sentence the test expected in the rendered Summary that only exists in the record's unused `executive_summary` fallback field (test corrected to check the equivalent sentence that's actually rendered, from `metocean.notes`). All 25 tests pass after these fixes. Separately, `tests/audit_image_coverage.py` caught an `ongc-papaa-305-varapradha-cyclone-tauktae-2021` `image.src` pointing at an unverified external CDN URL rather than a local file — contradicting this dump's own README claim that no image was selected for that incident — so the incomplete `image` field was removed (50 selected images, down from the 51 briefly present in the raw dump).
+- Merged a third dumped update folder (`2026.06.03 IOGP Metocean Incidents Database/`, reused folder name from the prior dump) into the project — same staging-outside-the-project rsync approach as the previous merge, and deleted it as requested. This dump added 3 incidents (70 → 73, confirmed by diffing incident IDs against the prior commit, no removals/collisions): `mars-tlp-drilling-rig-topple-katrina-2005`, `el-faro-hurricane-joaquin-2015`, and `eugene-island-322a-hurricane-lili-2002` — plus the corresponding `el-faro-2012-ntsb-figure-3.jpeg` image and a `.vscode/settings.json`. Verified with the established workflow: reloaded under Playwright and asserted on `window.INCIDENTS_DATA` (73 records, no duplicate IDs, 219 map markers = 73 × 3 antimeridian-wrap copies), then ran the full suite — `npm install`, `npx playwright install chromium`, `npx playwright test` — 35/35 passing.
+- Every top-level project directory (`data/`, `images/`, `scripts/`, `tests/`, etc.) arrived from this dump with the owner-write bit stripped (`dr-xr-xr-x`, likely a Windows→macOS transfer artifact), which silently breaks `rsync --delete` (`unlinkat: Permission denied`) and any later `rm -rf`/`npm install` inside them. Fixed by recursively `chmod u+w` before each destructive step. If a future dump does this again, expect the same errors and the same fix.
+- `playwright.config.ts` again shipped with the Windows-only `py -m http.server 8080` webServer command (this is the second time — see the July merge note below); changed back to `python3 -m http.server 8080`.
+- `node_modules/` again shipped as a Windows checkout (`.cmd`/`.ps1` shims, non-executable Unix binaries), which broke `npx playwright test` with a misleading "two different versions of @playwright/test" error. Since `node_modules/` is git-ignored and machine-specific, regenerated it cleanly with `rm -rf node_modules package-lock.json && npm install` rather than patching permissions — `package-lock.json` picked up minor transitive-dependency churn as a result (still `@playwright/test@1.61.0`, 0 vulnerabilities).
+- This dump's `.gitignore` had silently dropped the rules that keep `data/ibtracs/` (331MB+ raw IBTrACS archive), `background files/`, `working documentation/`, `scripts/`, `CLAUDE.md`, `NEW_INCIDENTS_DATABASE_ENTRIES.js`, and the PDF-figure-extraction dump dirs out of git tracking — replaced with a bare 4-rule file (OS/deps/Playwright/`.claude/settings.local.json` only). Restored the dropped rules from the previous `.gitignore`; kept the incoming dump's narrower `.claude/settings.local.json` (vs. the old blanket `.claude/`) as it reads like an intentional refinement rather than a mistake. Left `.vscode/` untracked/unignored — small, harmless, new in this dump, no strong reason either way.
 
 **Completed (July–August 2026):**
 - Skandi Pacific fatality during cargo securing in rough seas (14 July 2015) — added directly from ATSB investigation 322-MO-2015-005 as a separate maritime incident with official coordinates, occurrence time, injury/damage outcome, and formal contributing factors. The record is explicitly grounded in ATSB wording: open-stern shipped seas, suspended backloading, unsecured cargo state during re-securing, and fatal crush injury at about 0523. A detailed evidence note is retained in `background files/Skandi_Pacific_2015_Detailed_Incident_Report.md`; a focused browser regression preserves key causal sequence fields.
@@ -113,6 +113,8 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 - Incident image library — 73 provenance-catalogued files cover 51 of the 70 canonical dataset records, including one G-REDL asset for a catalogue-only incident. All 73 files are present in `images/`. Fifty canonical incidents display the user-selected primary asset as a map thumbnail, Summary figure, natural-size lightbox and restrained print figure. The Hurricane Katrina Mars, G-TIGH and Thunder Horse photographs are copyrighted or have unresolved reuse permission; the Hurricane Ike selection also has unresolved facility, date and photographer details. These limitations are stated in their catalogue entries. Dupal's two candidates remain catalogue-only by explicit selection. `tests/audit_image_coverage.py` cross-checks the dataset, catalogue and local directory; `tests/verify_gunashli_image.py` browser-decodes all local files and exercises the selected-image UI.
 
 **Pending / Deferred:**
+- Mars TLP drilling-rig topple during Hurricane Katrina (2005) — added as a distinct record from the broader Katrina regional-impact entry. The record uses the existing Mars post-storm photograph, Shell/industry recovery accounts and the OSTI-indexed Mars recovery presentation; the exact component-level failure mechanism remains unresolved publicly.
+- SS El Faro (2015) — added and expanded from NTSB MAR-17/01 and the NHC Joaquin report. The entry deliberately distinguishes Category 3 conditions at the sinking from the Category 4 upgrade approximately 20 minutes later; IBTrACS track SID `2015270N27291` is now wired; no image is selected without verified reuse rights.
 - West Navion / AS332L G-BKZE — post-insertion validation task: resolve source discrepancies (`10 Nov` vs `12 Nov` occurrence date in AAIB index pages; `80 nm` vs `100 nm` west of Shetland wording) by extracting exact wording from AAIB `3-2004_G-BKZE.pdf` and `S4/2001` bulletin PDF, then tighten record fields if needed.
 - Amur River incident (December 31, 2018) — research and database integration deferred; will require similar comprehensive documentation and source validation.
 - Incident images — continue research for the remaining canonical records without local files. Dupal remains deliberately unselected despite having two local candidates. Do not publish restricted internal or third-party assets as generally reusable.
@@ -122,8 +124,4 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 
 ## Last updated
 
-2026-08-06
-
- **Check**
-
-<!-- Pages rebuild nudge: 2026-08-07 -->
+2026-08-19

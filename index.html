@@ -4,20 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Offshore Weather Incidents — Lessons Learned Database</title>
+  <meta name="author" content="Vadim Anokhin">
+  <meta name="creator" content="Vadim Anokhin">
+  <meta name="publisher" content="IOGP">
+  <meta name="description" content="An interactive database of offshore oil and gas incidents influenced by weather, sea state and other metocean factors.">
+  <link rel="canonical" href="https://vdm-ghb.github.io/incidents/">
+  <script defer data-domain="vdm-ghb.github.io" src="https://plausible.io/js/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "IOGP Metocean Incidents Database",
+    "description": "An interactive database of offshore oil and gas incidents influenced by weather, sea state and other metocean factors.",
+    "url": "https://vdm-ghb.github.io/incidents/",
+    "author": {
+      "@type": "Person",
+      "name": "Vadim Anokhin"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "IOGP"
+    },
+    "maintainer": {
+      "@type": "Organization",
+      "name": ""
+    },
+    "isAccessibleForFree": true,
+    "license": "https://www.iogp.org/"
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=5">
   <link rel="shortcut icon" href="favicon.svg?v=5">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css?v=20260807133305">
+  <link rel="stylesheet" href="css/style.css?v=20260819032916">
 </head>
 <body>
 
   <!-- HEADER -->
   <header id="app-header">
-    <div id="header-brand">
+    <div id="header-brand" tabindex="0" aria-describedby="database-popover-content">
       <div id="header-logo">⚠</div>
       <div>
         <h1 id="header-title">Offshore Weather Incidents</h1>
         <p id="header-sub">Lessons Learned Database — Oil &amp; Gas Industry</p>
+      </div>
+      <div id="database-popover-content" role="tooltip">
+        <strong>About this database</strong>
+        <p>A developing reference of offshore incidents where weather, sea state, oceanographic conditions or related metocean factors influenced the event or its consequences.</p>
+        <p>Records were developed with AI assistance, then reviewed against investigation reports, technical publications and other traceable sources. Uncertain or incomplete information is identified rather than presented as established fact.</p>
+        <p>Entries separate the metocean hazard from the affected operational discipline and focus on practical lessons for planning, design and operations.</p>
+        <dl>
+          <div><dt>Developed by</dt><dd>Vadim Anokhin</dd></div>
+          <div><dt>Custodian</dt><dd></dd></div>
+        </dl>
+        <details id="database-legal-notice">
+          <summary>Use and limitations</summary>
+          <p>This database is provided for general information, learning and technical discussion. It is a developing reference, not a definitive record and not engineering, operational, safety, legal or regulatory advice. Users must make their own independent assessments and consult qualified professionals before relying on any information for decisions.</p>
+          <p>Records are compiled from publicly available reports, technical publications, official records and other cited sources. Information may be incomplete, uncertain or subject to correction. Inclusion of an incident, company, vessel, platform or source does not imply endorsement, attribution of fault or confirmation that every statement is established fact.</p>
+          <p>Third-party links and materials remain subject to their owners' terms and rights. Public accessibility does not necessarily grant permission to reproduce images, documents or other copyrighted material. Rights notes are provided where known; permission should be obtained where required.</p>
+        </details>
       </div>
     </div>
 
@@ -75,15 +120,15 @@
     </div>
 
     <div id="header-stats">
+      <div id="filter-search-wrap">
+        <label class="sr-only" for="filter-search">Search incidents</label>
+        <input id="filter-search" class="filter-search" type="search" placeholder="Search incidents..." autocomplete="off" title="Search by taxonomy, category, incident or vessel name">
+        <div id="search-results" class="hidden" role="listbox" aria-label="Matching incidents"></div>
+      </div>
       <button id="stat-incidents-btn" class="stat-block stat-btn" title="Click to view all incidents table">
         <span class="stat-value" id="stat-incidents">–</span>
         <span class="stat-label">incidents</span>
         <span class="stat-arrow">▼</span>
-      </button>
-      <button id="dataset-toggle-btn" class="stat-block stat-btn" title="Click to cycle dataset view: Full → Shell Internal → External Only">
-        <span class="stat-value">Full Dataset</span>
-        <span class="stat-label">– incidents</span>
-        <span class="stat-arrow">↔</span>
       </button>
     </div>
   </header>
@@ -178,12 +223,12 @@
   <div id="print-report"></div>
 
   <!-- DATA — loaded before Leaflet so it's available immediately -->
-  <script src="data/incidents.js?v=20260807133305"></script>
-  <script src="data/storm_tracks.js?v=20260807133305"></script>
+  <script src="data/incidents.js?v=20260819032916"></script>
+  <script src="data/storm_tracks.js?v=20260819032916"></script>
   <!-- Leaflet map library -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Main app -->
-  <script src="js/app.js?v=20260807133305"></script>
+  <script src="js/app.js?v=20260819032916"></script>
 
 </body>
 </html>

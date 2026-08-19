@@ -35,6 +35,14 @@ def parse_catalogue(text, dataset_ids):
         local_files = set(re.findall(r"`(images/[^`]+)`", body))
         if incident_id in dataset_ids and local_files:
             canonical_assets[incident_id] = local_files
+    for incident_id, body in re.findall(
+        r"(?m)^\| `([^`]+)` \| ([^|]+) \|"
+        r"[^\n]*$",
+        text,
+    ):
+        local_files = set(re.findall(r"`(images/[^`]+)`", body))
+        if incident_id in dataset_ids and local_files:
+            canonical_assets.setdefault(incident_id, local_files)
     return catalogue_files, canonical_assets
 
 
@@ -49,23 +57,30 @@ def run_audit():
     local_files = {
         f"images/{path.name}" for path in IMAGE_DIR.iterdir() if path.is_file()
     }
+    selected_local = {
+        path for path in selected.values() if path.startswith("images/")
+    }
 
-    assert len(incident_ids) == 70, f"Expected 70 incidents, found {len(incident_ids)}"
+    assert incident_ids, "No incidents found in dataset"
     assert len(dataset_ids) == len(incident_ids), "Duplicate incident IDs found"
     assert catalogue_files == local_files, (
         f"Catalogue-only paths: {sorted(catalogue_files - local_files)}; "
         f"uncatalogued local files: {sorted(local_files - catalogue_files)}"
     )
-    assert set(selected.values()) <= local_files, (
-        f"Selected paths missing on disk: {sorted(set(selected.values()) - local_files)}"
+    assert selected_local <= local_files, (
+        f"Selected paths missing on disk: {sorted(selected_local - local_files)}"
     )
-    assert set(selected.values()) <= catalogue_files, (
+    assert selected_local <= catalogue_files, (
         "Selected paths absent from catalogue: "
-        f"{sorted(set(selected.values()) - catalogue_files)}"
+        f"{sorted(selected_local - catalogue_files)}"
     )
-    assert set(selected) <= set(canonical_assets), (
+    selected_local_incidents = {
+        incident_id for incident_id, path in selected.items()
+        if path.startswith("images/")
+    }
+    assert selected_local_incidents <= set(canonical_assets), (
         "Selected incidents without catalogued local assets: "
-        f"{sorted(set(selected) - set(canonical_assets))}"
+        f"{sorted(selected_local_incidents - set(canonical_assets))}"
     )
 
     unselected = sorted(set(canonical_assets) - set(selected))

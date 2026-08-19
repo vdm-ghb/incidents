@@ -1,7 +1,6 @@
 /* ═══════════════════════════════════════════════════
    Offshore Incidents — Lessons Learned Database
-   v4.0 — 58 incidents (51 external + 7 Shell internal),
-           three-way dataset toggle (Full / Shell / External)
+     v4.1 — unified incident dataset with keyword search
    ═════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -74,15 +73,11 @@
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}', {
     attribution:'', maxZoom:13, opacity:0.7 }).addTo(map);
 
-  var allIncidents=[], activeMarkers=[], activeFilters={type:'all',region:'all',classification:'all',consequence:'all'};
+  var allIncidents=[], activeMarkers=[], activeFilters={type:'all',region:'all',classification:'all',consequence:'all',search:''};
   var stormTracksBySid = {};
   var activeTrackLayer = null;
   var activeTrackLabel = null;
   var lockedTrackSid = null;
-  /* Dataset view: 'full' | 'shell' | 'external' — starts on full */
-  var DATASET_VIEWS = ['full','shell','external'];
-  var DATASET_LABELS = { full:'Full Dataset', shell:'Shell Internal', external:'External Only' };
-  var datasetView = 'full';
 
   // Match Hurricane Tracker intensity color scheme from ShellDigitalWeather bundle.
   var STORM_CAT_COLORS = {
@@ -301,7 +296,6 @@
     allIncidents = window.INCIDENTS_DATA.incidents;
     homeMapView = getStartupMapView();
     map.setView(homeMapView.center, homeMapView.zoom);
-    updateDatasetButton();
     renderMarkers();
     updateStats();
   }
@@ -313,28 +307,49 @@
     return { center: STARTUP_MAP_VIEW.center.slice(), zoom: STARTUP_MAP_VIEW.zoom };
   }
 
-  function isShellInternal(inc) {
-    return inc.shell_internal_only === true || inc.source_classification === 'internal';
+  function searchableText(incident) {
+    return [
+      incident.name, incident.location, incident.region, incident.operator,
+      incident.platform_type, incident.weather_event_type, incident.weather_event,
+      incident.summary, incident.executive_summary, incident.what_happened,
+      incident.what_went_wrong, incident.lessons_learned, incident.actions,
+      incident.infrastructure_impact, incident.environmental_impact,
+      incident.storm_name, incident.classification, classLabel(incident)
+    ].flat().filter(Boolean).join(' ').toLowerCase();
   }
 
-  function getIncidents(view) {
-    // 'full'     -> all incidents
-    // 'shell'    -> Shell internal-only incidents
-    // 'external' -> externally-sourced / public incidents (incl. unclassified baseline)
-    if (view === 'shell')    return allIncidents.filter(isShellInternal);
-    if (view === 'external') return allIncidents.filter(function(inc){ return !isShellInternal(inc); });
-    return allIncidents; // full
+  function renderSearchResults() {
+    var panel = document.getElementById('search-results');
+    if (!panel) return;
+    var query = activeFilters.search;
+    if (!query) {
+      panel.classList.add('hidden');
+      panel.innerHTML = '';
+      return;
+    }
+    var matches = allIncidents.filter(function(incident) {
+      return searchableText(incident).indexOf(query) !== -1;
+    }).slice(0, 8);
+    panel.innerHTML = matches.length ? matches.map(function(incident) {
+      return '<button class="search-result" type="button" role="option" data-search-id="'+esc(incident.id)+'">' +
+        '<strong>'+esc(incident.name)+'</strong>' +
+        '<span>'+esc(String(incident.year))+' · '+esc(classLabel(incident))+' · '+esc(shortLoc(incident.location, 52))+'</span>' +
+        '</button>';
+    }).join('') : '<div class="search-empty">No matching incidents</div>';
+    panel.classList.remove('hidden');
   }
 
-  function updateDatasetButton() {
-    var btn = document.getElementById('dataset-toggle-btn');
-    if (!btn) return;
-    var count = getIncidents(datasetView).length;
-    btn.setAttribute('data-view', datasetView);
-    var valueEl = btn.querySelector('.stat-value');
-    var labelEl = btn.querySelector('.stat-label');
-    if (valueEl) valueEl.textContent = DATASET_LABELS[datasetView];
-    if (labelEl) labelEl.textContent = count + ' incidents';
+  function incidentMatchesFilters(incident) {
+    if (activeFilters.region !== 'all' && incident.region !== activeFilters.region) return false;
+    if (activeFilters.type !== 'all' && incident.weather_event_type !== activeFilters.type) return false;
+    if (activeFilters.classification !== 'all' && classKey(incident) !== activeFilters.classification) return false;
+    if (activeFilters.consequence !== 'all' && incidentConsequenceTags(incident).indexOf(activeFilters.consequence) === -1) return false;
+    if (activeFilters.search && searchableText(incident).indexOf(activeFilters.search) === -1) return false;
+    return true;
+  }
+
+  function getFilteredIncidents() {
+    return allIncidents.filter(incidentMatchesFilters);
   }
 
   function createMarker(incident) {
@@ -367,13 +382,7 @@
   function renderMarkers() {
     activeMarkers.forEach(function(m){ map.removeLayer(m); });
     activeMarkers=[];
-    var displayIncidents = getIncidents(datasetView); // Apply dataset view first
-    var filtered=displayIncidents.filter(function(inc){
-      if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
-      if (activeFilters.classification!=='all' && classKey(inc)!==activeFilters.classification) return false;
-      if (activeFilters.consequence!=='all' && incidentConsequenceTags(inc).indexOf(activeFilters.consequence)===-1) return false;
-      return true;
-    });
+    var filtered=getFilteredIncidents();
     filtered.forEach(function(inc){
       createWrappedMarkers(inc).forEach(function(marker) {
         marker.addTo(map);
@@ -388,6 +397,21 @@
     document.getElementById('stat-incidents').textContent=(filtered||allIncidents).length;
   }
 
+  document.getElementById('filter-search').addEventListener('input',function(e){
+    activeFilters.search=e.target.value.trim().toLowerCase();
+    renderSearchResults();
+    renderMarkers();
+  });
+  document.getElementById('search-results').addEventListener('click',function(e){
+    var result=e.target.closest('[data-search-id]');
+    if (!result) return;
+    var incident=allIncidents.find(function(item){ return item.id===result.getAttribute('data-search-id'); });
+    if (incident) {
+      document.getElementById('search-results').classList.add('hidden');
+      openModal(incident);
+    }
+  });
+
   document.getElementById('filter-type').addEventListener('change',function(e){ activeFilters.type=e.target.value; renderMarkers(); });
   document.getElementById('filter-classification').addEventListener('change',function(e){ activeFilters.classification=e.target.value; renderMarkers(); });
   document.getElementById('filter-consequence').addEventListener('change',function(e){ activeFilters.consequence=e.target.value; renderMarkers(); });
@@ -399,7 +423,9 @@
     } else { map.setView(homeMapView.center, homeMapView.zoom); }
   });
   document.getElementById('filter-reset').addEventListener('click',function(){
-    activeFilters={type:'all',region:'all',classification:'all',consequence:'all'};
+    activeFilters={type:'all',region:'all',classification:'all',consequence:'all',search:''};
+    document.getElementById('filter-search').value='';
+    renderSearchResults();
     document.getElementById('filter-type').value='all';
     document.getElementById('filter-region').value='all';
     document.getElementById('filter-classification').value='all';
@@ -407,17 +433,6 @@
     renderMarkers();
     map.setView(homeMapView.center, homeMapView.zoom);
   });
-
-  /* ── Dataset toggle: cycles Full -> Shell -> External ── */
-  var datasetToggleBtn = document.getElementById('dataset-toggle-btn');
-  if (datasetToggleBtn) {
-    datasetToggleBtn.addEventListener('click', function() {
-      var idx = DATASET_VIEWS.indexOf(datasetView);
-      datasetView = DATASET_VIEWS[(idx + 1) % DATASET_VIEWS.length];
-      updateDatasetButton();
-      renderMarkers();
-    });
-  }
 
   /* ── Legend collapse ── */
   var legend=document.getElementById('legend');
@@ -573,14 +588,7 @@
   function filterTableRows() {
     var tbody=document.getElementById('incidents-tbody');
     if (!tbody) return;
-    var datasetIncidents = getIncidents(datasetView);
-    var visible=datasetIncidents.filter(function(inc){
-      if (activeFilters.region!=='all' && inc.region!==activeFilters.region) return false;
-      if (activeFilters.type!=='all' && inc.weather_event_type!==activeFilters.type) return false;
-      if (activeFilters.classification!=='all' && classKey(inc)!==activeFilters.classification) return false;
-      if (activeFilters.consequence!=='all' && incidentConsequenceTags(inc).indexOf(activeFilters.consequence)===-1) return false;
-      return true;
-    }).sort(function(a,b){
+    var visible=allIncidents.filter(incidentMatchesFilters).sort(function(a,b){
       var fa=a.fatalities||0, fb=b.fatalities||0;
       return fb!==fa ? fb-fa : (a.year||0)-(b.year||0);
     });

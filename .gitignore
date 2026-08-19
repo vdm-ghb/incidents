@@ -30,7 +30,10 @@ images/skandi_figure12_extract/
 /playwright/.cache/
 
 # Local Claude Code settings (machine-specific, not shared)
-.claude/
+.claude/settings.local.json
+
+# Local VS Code settings (machine-specific, not shared)
+.vscode/
 
 # Browser save-as copy of shared artifact reports (not a source file)
 Metocean Incident Database — Fact-Check Audit.html
