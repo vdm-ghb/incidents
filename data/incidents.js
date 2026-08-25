@@ -521,8 +521,8 @@
       region: 'Europe',
       platform_type: 'Jack-up drilling rig (barge-type with extendable legs) - first UK offshore oil rig',
       operator: 'BP (operator)',
-      weather_event_type: 'equipment',
-      classification: 'drilling',
+      weather_event_type: 'storm',
+      classification: 'design',
       weather_event: 'Tie-bar/suspension-system failure during jack-down; cold conditions and accumulated cyclic environmental loading were contributing factors',
       fatalities: 13,
       persons_on_board: 32,
@@ -4744,6 +4744,142 @@
         { title: 'Safety in Katrina\'s Wake - Shell Mars Platform Case Study', type: 'Technical recovery and safety case study', publisher: 'DEKRA North America', year: 2018, url: 'https://dekraprod-media.e-spirit.cloud/e4a059f3-faa3-42d3-9b6f-96599ba3c1ff/media/case-study-shell-mars-program.pdf', notes: 'States that storm loading overtaxed the rig-holding clamps, causing the drilling rig structure to fail and topple; documents replacement clamp strength and recovery controls.' },
         { title: 'Platform recovery', type: 'Project account', publisher: 'Grand Isle Shipyard', year: 2024, url: 'https://www.gisy.com/platform-recovery/' },
         { title: 'Mars oil platform', type: 'Secondary field and location reference', publisher: 'Wikipedia', year: 2024, url: 'https://en.wikipedia.org/wiki/Mars_(oil_platform)' }
+      ]
+    },
+
+    /* ----------------------------------------------------------------------
+       74. Gryphon Alpha FPSO - Multiple Mooring-Line Failure - 2011
+    ---------------------------------------------------------------------- */
+    {
+      id: 'gryphon-alpha-mooring-failure-2011',
+      name: 'Gryphon Alpha FPSO - Multiple Mooring-Line Failure',
+      year: 2011,
+      date: '4 February 2011',
+      location: 'Gryphon field, UK North Sea, Block 9/18b, approximately 175-201 miles northeast of Aberdeen; water depth 112 m',
+      lat: 59.3543,
+      lng: -1.5487,
+      location_precision: 'Field coordinates supplied for review: 59.3543 N, 1.5487 W. Public sources place the field approximately 175-201 miles northeast of Aberdeen.',
+      region: 'Europe',
+      platform_type: 'Floating production, storage and offloading vessel (FPSO)',
+      operator: 'Maersk Oil North Sea UK Ltd.',
+      weather_event_type: 'storm',
+      classification: 'maritime',
+      weather_event: 'Severe North Sea storm - 53-knot winds, 9 m waves and approximately 12-degree roll',
+      fatalities: 0,
+      injuries: 2,
+      persons_on_board: 114,
+      survivors: 114,
+      image: {
+        src: 'images/gryphon-alpha-2011-fpso.jpg',
+        alt: 'Aerial view of the Gryphon Alpha FPSO underway at sea.',
+        caption: 'Gryphon Alpha FPSO at sea. Context image; not a photograph of the February 2011 storm or mooring failure.',
+        credit: 'Energy Voice image; source URL: https://wpcluster.dctdigital.com/energyvoice/wp-content/uploads/sites/4/2013/09/gryphon.jpg. Asset-specific licence and original photographer not confirmed; permission required for publication.'
+      },
+      infrastructure_impact: 'Major - partial loss of station damaged subsea risers, flowlines, structures and associated subsea infrastructure; FPSO required dry-dock repairs and mooring replacement.',
+      environmental_impact: 'No gas detected after shutdown in the immediate response; subsea infrastructure was damaged.',
+      summary: 'During a severe North Sea storm, one of Gryphon Alpha\'s ten mooring lines failed. The FPSO lost heading control and turned partly beam-on to the weather, after which three further lines failed. The vessel moved partially off station and damaged subsea architecture. Production was shut down, 74 non-essential personnel were evacuated, and the vessel was later dry-docked for repairs and replacement of the mooring and subsea systems.',
+      executive_summary: 'On 4 February 2011, the Maersk Oil Gryphon Alpha FPSO experienced 53-knot winds and 9 m waves. One of its ten mooring lines failed, the vessel lost heading control and turned partly beam-on to the weather, and three more lines then failed. The partial station excursion damaged subsea infrastructure. Thrusters and later tug support helped control the vessel; 74 of 114 people onboard were evacuated and two suffered slight injuries. The original mooring system was subsequently recovered for forensic inspection and replaced during a major reinstatement project.',
+      what_happened: 'On 4 February 2011, the Gryphon Alpha FPSO was riding out a severe North Sea storm at the Gryphon field, approximately 175-201 miles northeast of Aberdeen. The vessel was held by ten all-chain moorings connected through its Tentech turret, with five azimuthing thrusters available for heading control. The storm brought reported winds of 53 knots and waves of 9 m; the FPSO recorded a roll of about 12 degrees.\n\nThe failure began when one mooring line parted. Gryphon Alpha lost heading control and turned partly beam-on to the weather, exposing the remaining moorings and the vessel to greater transverse loading. Three further mooring lines then failed. The FPSO moved partially off station, and its movement damaged the surrounding subsea architecture, including risers, flowlines and associated structures. Production was shut down while the thrusters were used to regain heading control.\n\nThere were 114 people onboard. Seventy-four non-essential workers were evacuated by helicopter to nearby installations, while approximately 40 essential personnel remained onboard to operate and stabilize the vessel. Two people sustained slight injuries. Three tugs were sent to assist, with a fourth on standby, and no gas was detected after the shutdown.\n\nThe parted moorings were subsequently reconnected to the turret, but the damage required a much larger recovery operation. Gryphon Alpha was taken to dry dock in Rotterdam for inspection, repair and life-extension work, while the damaged subsea infrastructure and the original mooring system were recovered and replaced. The replacement project included a redesigned mooring arrangement and a carefully controlled reconnection operation around the existing subsea assets.',
+      what_went_wrong: [
+        'A first mooring-line failure caused loss of heading control and exposed the remaining moorings to increased weather loading when the FPSO turned partly beam-on.',
+        'The multiple-line failure allowed a partial station excursion within a congested subsea architecture, damaging risers, flowlines, structures and associated subsea equipment.',
+        'The public OTC paper does not identify the metallurgical, fatigue, corrosion, manufacturing, inspection or design root cause of the original line failures; it refers readers to a separate source for further failure information.',
+        'The unexpected failure required a large reinstatement project to be mobilised rapidly, including recovery and forensic inspection of the original mooring system.'
+      ],
+      lessons_learned: [
+        'Station-keeping assessment must consider sequential and multiple mooring-line failure, including the transient heading change after the first failure.',
+        'Subsea layout and riser/flowline design must account for the degraded-mooring excursion envelope and potential chain contact.',
+        'Critical mooring components need inspectable, traceable and recoverable arrangements that support forensic examination and planned renewal.',
+        'Replacement mooring designs should be checked for intact and single-line-failure cases, thruster failures and realistic dynamic load paths.',
+        'Severe-weather response plans should integrate shutdown, evacuation, thruster operation, tug support and protection of essential personnel.',
+        'Real-time three-dimensional position and mooring-proximity monitoring is valuable during reconnection when moorings must be installed around existing subsea assets.'
+      ],
+      actions: [
+        'The original mooring system was recovered for forensic inspection and the damaged moorings and subsea infrastructure were replaced.',
+        'The replacement system used a weighted 100 m tri-parallel chain section to reduce dynamic tensions, loads and excursions, with design checks to DNV-OS-E301 (2010).',
+        'The replacement mooring changed the original 84 mm studded chain arrangement to 84 mm studless chain with 120 mm studless weighted sections and refurbished Stevpris anchors.',
+        'The new design included dynamic analysis for intact and single-line-failure cases, thruster-failure review, higher-load fairleads and redundant thruster power-group arrangements.'
+      ],
+      metocean: {
+        wave_height_hs: '9 m waves reported by BBC; wave definition not stated in the contemporary report',
+        wind_speed: '53 knots reported by BBC',
+        sea_temp: 'Not documented',
+        notes: 'The BBC reported 53-knot winds, 9 m waves and a 12-degree roll during the incident. The OTC paper documents the sequential mooring failures and heading-loss response; it does not identify the original line-failure mechanism or provide a site-specific metocean reconstruction.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High confidence for date, operator, storm observations, personnel response and the sequential mooring-failure/station-excursion sequence. The OTC paper is a 2014 technical paper on mooring replacement and FPSO reconnection, not an independent casualty investigation; the root cause of the original line failures remains unresolved in the reviewed public sources.',
+      sources: [
+        'BBC News, 4 February 2011 (EXTERNAL): https://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-12366273',
+        'Offshore Technology Conference paper OTC-25322-MS, Toal et al. (2014) (EXTERNAL): https://doi.org/10.4043/25322-MS'
+      ],
+      references: [
+        { title: 'Gryphon Alpha FPSO - Experience Gained During Moorings Replacement and Hook-Up', type: 'OTC technical paper', publisher: 'Offshore Technology Conference', year: 2014, url: 'https://onepetro.org/OTCONF/proceedings/14OTC/14OTC/D031S033R006/172162', doi: '10.4043/25322-MS', file: 'background files/otc-25322-ms Gryphon Alpha FPSO - Experience Gained During Moorings Replacement and Hook-Up.pdf', notes: 'Paper scope is reinstatement, mooring replacement and reconnection; it explicitly refers elsewhere for further information on the original mooring failure.' },
+        { title: 'Workers saved from storm-struck North Sea oil unit', type: 'Contemporaneous news report', publisher: 'BBC News', year: 2011, url: 'https://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-12366273' },
+        { title: 'Extracted text for review', type: 'Local working extract', file: 'background files/Gryphon_Alpha_OTC25322_extracted.txt', note: 'Generated from the locally saved OTC paper; retained as a search aid, not a substitute for the paper.' }
+      ]
+    },
+
+    {
+      id: 'ocean-valiant-tow-grounding-2025',
+      name: 'Ocean Valiant Tow Grounding',
+      year: 2025,
+      date: '11 January 2025',
+      location: 'Dherwa / El Haouichet beach, approximately 20 km west of Bizerte, Tunisia',
+      lat: 37.30,
+      lng: 9.68,
+      region: 'Africa',
+      location_precision: 'approximate',
+      platform_type: '119 m offshore drilling rig / floating oil platform in tow',
+      asset_type: 'Offshore drilling rig Ocean Valiant (IMO 8753330), under tow for scrapping',
+      operator: 'Diamond Offshore (reported owner; operator at the time of tow not confirmed)',
+      weather_event_type: 'storm',
+      classification: 'decommissioning',
+      weather_event: 'Rough weather during tow caused the towline to part and the rig to drift ashore',
+      fatalities: 0,
+      persons_on_board: null,
+      survivors: null,
+      injuries: 0,
+      infrastructure_impact: 'Rig grounded on the beach; no apparent structural damage or oil pollution was reported',
+      image: {
+        src: 'images/ocean-valiant-2025-afp.jpg',
+        alt: 'Ocean Valiant grounded on Hwaichat beach near Bizerte, Tunisia, on 13 January 2025.',
+        caption: 'Ocean Valiant grounded on Hwaichat beach near Bizerte after the towline parted in rough weather.',
+        credit: 'Fethi Belaid / AFP via The Peninsula Qatar. Permission required.'
+      },
+      summary: 'On the night of 11 January 2025, the 119 m drilling rig Ocean Valiant ran aground on Dherwa / El Haouichet beach near Bizerte, Tunisia, while being towed from Scotland to Turkey for scrapping. Rough weather caused the towline to part; the rig drifted until it grounded. No injuries, apparent major structural damage or oil pollution were reported.',
+      executive_summary: 'During a tow from Scotland to Turkey for scrapping, Ocean Valiant broke away in rough weather and grounded near Bizerte, Tunisia. No injuries or pollution were reported; the rig was later refloated and removed in May 2026.',
+      what_happened: 'Ocean Valiant, a 119 m offshore drilling rig built in 1988, was being towed by the offshore supply vessel Maersk Tracer from Scotland toward Turkey for scrapping. During rough weather on the night of 11 January 2025, the towline or traction cables parted. The rig could not be reconnected promptly and drifted onto Dherwa / El Haouichet beach, approximately 20 km west of Bizerte. It was eventually refloated and cleared from the coast in May 2026.',
+      what_went_wrong: [
+        'A tow connection failed during adverse weather while the rig was in transit.',
+        'The rig could not be reconnected before wind, sea state and currents carried it ashore.',
+        'The public sources reviewed do not identify the technical failure mode of the towline or establish whether the tow plan or weather criteria were deficient.'
+      ],
+      lessons_learned: [
+        'Tow plans for large offshore units should define conservative weather limits and clear abort criteria for the full route, including coastal approaches.',
+        'Emergency reconnection and tug-assist arrangements should be assessed for the consequences of a towline failure in deteriorating weather.'
+      ],
+      actions: [
+        'Tunisian maritime authorities opened an investigation and coordinated environmental inspections after the grounding.',
+        'The rig was refloated and removed from the coast in May 2026 after more than a year of salvage, legal and administrative work.'
+      ],
+      metocean: {
+        notes: 'Public reporting describes rough or bad weather and continuing rough seas but does not provide verified wind, wave or current measurements.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High confidence for the rig identity, IMO number, date, location, tow route, towline failure, weather involvement, no-reported-pollution outcome and May 2026 removal. The technical cause of the towline failure, exact coordinates, tow plan, owner/operator responsibility and final investigation findings remain unresolved in the public sources reviewed.',
+      sources: [
+        'Shipwreck Log, Ocean Valiant (EXTERNAL): https://shipwrecklog.com/log/2025/01/ocean-valiant/',
+        'AFP via The Peninsula Qatar, 13 January 2025 (EXTERNAL): https://thepeninsulaqatar.com/article/13/01/2025/floating-offshore-oil-platform-runs-aground-off-tunisia',
+        'Business News Tunisia, 16 January 2025 (FRENCH): https://businessnews.com.tn/2025/01/16/plateforme-petroliere-echouee-a-bizerte-aucune-fuite-polluante-na-ete-detectee/1352242/',
+        'Webdo Tunisia, 15 May 2026 (FRENCH): https://www.webdo.tn/fr/actualite/national/bizerte-apres-seize-mois-dattente-la-plateforme-petroliere-echouee-quitte-enfin-les-cotes-tunisiennes/398036/'
+      ],
+      references: [
+        { title: 'Ocean Valiant', type: 'Maritime incident record', publisher: 'Shipwreck Log', year: 2025, url: 'https://shipwrecklog.com/log/2025/01/ocean-valiant/', notes: 'Provides the rig name, IMO 8753330, tow vessel, reported Diamond Offshore ownership and scrapping route; secondary source.' },
+        { title: 'Floating offshore oil platform runs aground off Tunisia', type: 'Contemporaneous news report', publisher: 'AFP / The Peninsula Qatar', year: 2025, url: 'https://thepeninsulaqatar.com/article/13/01/2025/floating-offshore-oil-platform-runs-aground-off-tunisia' },
+        { title: 'Plateforme pétrolière échouée à Bizerte : aucune fuite polluante n’a été détectée', type: 'Maritime authority interview', publisher: 'Business News Tunisia', year: 2025, url: 'https://businessnews.com.tn/2025/01/16/plateforme-petroliere-echouee-a-bizerte-aucune-fuite-polluante-na-ete-detectee/1352242/' },
+        { title: 'Bizerte : Après seize mois d’attente, la plateforme pétrolière échouée quitte enfin les côtes tunisiennes', type: 'Salvage and removal report', publisher: 'Webdo Tunisia', year: 2026, url: 'https://www.webdo.tn/fr/actualite/national/bizerte-apres-seize-mois-dattente-la-plateforme-petroliere-echouee-quitte-enfin-les-cotes-tunisiennes/398036/' }
       ]
     }
 

@@ -8,7 +8,7 @@ Collects lessons-learned case studies — platform losses, tow failures, hurrica
 
 ## Status
 
-In progress. 73 incidents documented across a two-axis taxonomy (metocean **event type** + operational **classification**). A full fact-check remediation pass is complete (see `FACT_CHECK_AUDIT.md`); content is still being extended and refined.
+In progress. 75 incidents documented across a two-axis taxonomy (metocean **event type** + operational **classification**). A full fact-check remediation pass is complete (see `FACT_CHECK_AUDIT.md`); content is still being extended and refined.
 
 ## Getting started
 
@@ -74,12 +74,22 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 - **Regions** are a `region` string per record, filtered in the UI and used for map zoom bounds (`REGION_BOUNDS` in `js/app.js`). Current regions: Africa, Asia, Australia, Europe, Middle East, North America, Russia and Central Asia, South America. (Australia was split out from the former "Asia / Australasia" — 5 NW-Shelf / WA incidents.)
 - **Neutral operator naming.** In incident body text, refer to the duty holder generically ("the operator", "the project team"); name a specific company only in the `operator` field and in source/reference citations. Applied to Big Foot and Gorgon; keep this convention for new entries.
 - **Fact-check remediation complete.** The 2026-07-04 audit (`FACT_CHECK_AUDIT.md`) flagged dead/fabricated reference URLs and ~15 records with incorrect details; all four tiers have since been remediated (casualty figures, locations, dates, and sources corrected or hedged; unverifiable claims flagged with `data_quality` notes).
-- **Incident numbering** in `data/incidents.js` comments has gaps (removed/merged records were never renumbered) — gaps are expected, not a data error. The comment header may cite a higher count than the actual array length; trust `INCIDENTS_DATA.incidents.length` (currently 73).
+- **Incident numbering** in `data/incidents.js` comments has gaps (removed/merged records were never renumbered) — gaps are expected, not a data error. The comment header may cite a higher count than the actual array length; trust `INCIDENTS_DATA.incidents.length` (currently 75).
 - **Verification workflow.** Changes to `data/incidents.js` are validated by reloading the page under Playwright and asserting on `window.INCIDENTS_DATA` (total count, no duplicate IDs, taxonomy fields, marker rendering) rather than eyeballing.
 - **Image provenance.** `working documentation/INCIDENT_IMAGES.md` is the source/credit/rights catalogue for local assets. Public availability is not treated as permission to reuse; internal LFE material remains restricted, and files are retained at native resolution without upscaling or recompression.
-- **One selected image per incident.** An optional singular `image` object on an incident (`src`, `alt`, `caption`, `credit`) drives the map-tooltip thumbnail, Summary figure, full-size lightbox and capped print figure from one source of truth. There are 54 selected incident images across 51 local files and 3 remote URLs; the Mars Katrina record deliberately reuses the incident-specific photograph already selected for the broader Katrina record. Dupal has two catalogued local candidates but was explicitly left unselected. Copyrighted and restricted assets are clearly labelled as reference-only or permission-required.
+- **One selected image per incident.** An optional singular `image` object on an incident (`src`, `alt`, `caption`, `credit`) drives the map-tooltip thumbnail, Summary figure, full-size lightbox and capped print figure from one source of truth. There are 57 selected incident images across 53 local files and 4 remote URLs (verified by grepping `image: {` blocks in `data/incidents.js`); the Mars Katrina record deliberately reuses the incident-specific photograph already selected for the broader Katrina record. Dupal has two catalogued local candidates but was explicitly left unselected. Copyrighted and restricted assets are clearly labelled as reference-only or permission-required.
 
 ### Session handoff (next steps)
+
+**Completed (2026-08-25):**
+- Merged the `offshore-incidents-update-2026-08-25/` staging dump into the project (same pattern as prior dumps — a full site copy dropped alongside the project root, diffed against the live `data/incidents.js`, then deleted after merge). Confirmed via ID-set and per-record content diffing (not eyeballing) that the dump changed exactly three things: two new incidents appended (73 → 75) and one classification correction, with no other record content altered.
+  - Added `gryphon-alpha-mooring-failure-2011` (Gryphon Alpha FPSO multiple mooring-line failure, North Sea, 4 Feb 2011; classification `maritime`) and `ocean-valiant-tow-grounding-2025` (Ocean Valiant tow grounding near Bizerte, Tunisia, 11 Jan 2025; classification `decommissioning`, already a fully wired taxonomy value — filter dropdown, legend, CSS colour and JS label all pre-existed).
+  - Reclassified `sea-gem-1965` from `weather_event_type: 'equipment'` / `classification: 'drilling'` to `weather_event_type: 'storm'` / `classification: 'design'` (tie-bar material-failure sequence under storm dynamic loading, per the existing Sea Gem record narrative — this aligns the taxonomy fields with content that was already correct).
+  - Copied the two new selected images (`images/gryphon-alpha-2011-fpso.jpg`, `images/ocean-valiant-2025-afp.jpg`) and added their provenance entries to `working documentation/INCIDENT_IMAGES.md` (both flagged permission-required/copyrighted, per source).
+  - `css/style.css`, `js/app.js`, `data/storm_tracks.js`, `data/storm_tracks.geojson`, `favicon.svg` were byte-identical between the dump and the live tree — no action needed there. The dump's `index.html` had reverted the cache-busting `?v=` query params to bare filenames (a regression, not an intended change); kept the live `index.html` and only bumped the `data/incidents.js` version param to `20260825083429`.
+  - Verified with the established workflow: reloaded under Playwright and asserted on `window.INCIDENTS_DATA` (75 records, no duplicate IDs, both new incidents present with correct classifications, sea-gem-1965 correctly updated, 225 map markers = 75 × 3 antimeridian-wrap copies), then ran `tests/audit_image_coverage.py` (passes) and the full Playwright suite (35/35 passing).
+  - The `images/` directory again shipped with the owner-write bit stripped (same Windows→macOS artifact noted in the July merge); `chmod u+w images/` before copying in the two new files.
+  - Gryphon Alpha's OTC-25322-MS technical paper (cited in its `references`) is not present under `background files/` — the dump did not include it. Not blocking; flagged here in case the source PDF needs to be re-sourced later.
 
 **Completed (August 2026):**
 - Merged a third dumped update folder (`2026.06.03 IOGP Metocean Incidents Database/`, reused folder name from the prior dump) into the project — same staging-outside-the-project rsync approach as the previous merge, and deleted it as requested. This dump added 3 incidents (70 → 73, confirmed by diffing incident IDs against the prior commit, no removals/collisions): `mars-tlp-drilling-rig-topple-katrina-2005`, `el-faro-hurricane-joaquin-2015`, and `eugene-island-322a-hurricane-lili-2002` — plus the corresponding `el-faro-2012-ntsb-figure-3.jpeg` image and a `.vscode/settings.json`. Verified with the established workflow: reloaded under Playwright and asserted on `window.INCIDENTS_DATA` (73 records, no duplicate IDs, 219 map markers = 73 × 3 antimeridian-wrap copies), then ran the full suite — `npm install`, `npx playwright install chromium`, `npx playwright test` — 35/35 passing.
@@ -124,4 +134,4 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 
 ## Last updated
 
-2026-08-19
+2026-08-25
