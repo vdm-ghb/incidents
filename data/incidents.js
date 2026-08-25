@@ -2711,12 +2711,12 @@
         'Shell LFE PDF: Fortuna 3D MSS - Environment Plan Summary NOPSEMA submission.pdf (INTERNAL)',
         'Shell internal training: metocean in business/002 Metocean in Shell Business - Seismic and Field Surveys.docx (INTERNAL)',
         'NOPSEMA submission (EXTERNAL - public regulatory submission, accessible via NOPSEMA)',
-        'Shell LFE System: https://lfe.shell.com/'
+        'Shell LFI Database (INTERNAL - not publicly accessible)'
       ],
       references: [
         { title: 'Fortuna 3D MSS Environment Plan Summary - NOPSEMA Submission', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/Fortuna 3D MSS - Environment Plan Summary NOPSEMA submission.pdf', internal: true },
         { title: 'Metocean in Shell Business - Seismic and Field Surveys', type: 'Shell training document', file: 'background files/metocean in business/002 Metocean in Shell Business - Seismic and Field Surveys.docx', internal: true },
-        { title: 'Shell LFE System Learning Reference', type: 'Shell LFE System', url: 'https://lfe.shell.com/', internal: true }
+        { title: 'Shell LFI Database', type: 'Internal Learning from Incidents system', internal: true }
       ]
     },
 
@@ -3376,11 +3376,11 @@
       shell_internal_only: true,
       sources: [
         'Shell LFE PDF: UP-AW-201733 Aircraft encountered turbulence during landing at offshore helideck.pdf (INTERNAL)',
-        'Shell LFE System: https://lfe.shell.com/#/ViewLearning/11932720043648 (INTERNAL)'
+        'Shell LFI Database (INTERNAL - not publicly accessible)'
       ],
       references: [
         { title: 'UP-AW-201733 - Aircraft Encountered Turbulence During Landing at Offshore Helideck', type: 'Shell LFE PDF', publisher: 'Shell Upstream - Malaysia', year: 2017, file: 'background files/LFEs Internal download/UP-AW-201733 Aircraft encountered turbulence during landing at offshore helideck.pdf', internal: true, notes: 'May 2017 alert; event description and causal findings on p. 1, lessons and recommendations on p. 2.' },
-        { title: 'Shell LFE System Reference', type: 'Shell LFE system', url: 'https://lfe.shell.com/#/ViewLearning/11932720043648', internal: true }
+        { title: 'Shell LFI Database', type: 'Internal Learning from Incidents system', internal: true }
       ]
     },
 
@@ -3445,12 +3445,12 @@
       sources: [
         'Shell LFE PDF (Action Alert): GRP-AC-201603 Oloma incident Action Alert.pdf (INTERNAL)',
         'Shell LFE PDF (LFI Pack): GRP-AW-201605 Four fatalities during pipeline repair works - part 2.pdf (INTERNAL)',
-        'Shell LFE System: https://kh.shell.com/learnings/viewLearning/119631134019534 (INTERNAL)'
+        'Shell LFI Database (INTERNAL - not publicly accessible)'
       ],
       references: [
         { title: 'GRP-AC-201603 - Oloma Incident Action Alert', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/GRP-AC-201603 Oloma incident Action Alert.pdf', internal: true },
         { title: 'GRP-AW-201605 - Four Fatalities During Pipeline Repair Works (Part 2)', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/GRP-AW-201605 Four fatalities during pipeline repair works - part 2.pdf', internal: true },
-        { title: 'Shell LFE System Reference', type: 'Shell LFE system', url: 'https://kh.shell.com/learnings/viewLearning/119631134019534', internal: true }
+        { title: 'Shell LFI Database', type: 'Internal Learning from Incidents system', internal: true }
       ]
     },
 
