@@ -450,6 +450,8 @@
     activeIncidentImage=incident.image||null;
     modalContent.innerHTML=buildIncidentHTML(incident);
     modalOverlay.classList.remove('hidden');
+    modalContent.scrollTop=0;
+    window.requestAnimationFrame(function(){ modalContent.scrollTop=0; });
     document.body.style.overflow='hidden';
     map.panTo([incident.lat,incident.lng],{animate:true,duration:0.4});
     history.replaceState(null,'','#'+incident.id);

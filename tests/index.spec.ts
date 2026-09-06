@@ -51,6 +51,119 @@ test('map container is rendered', async ({ page }) => {
   await expect(page.locator('#map.leaflet-container')).toBeVisible({ timeout: 10000 });
 });
 
+test('Storm Britta record uses the selected maximum wind figure', async ({ page }) => {
+  const incident = await page.evaluate(() =>
+    (window as any).INCIDENTS_DATA.incidents.find(
+      (item: any) => item.id === 'storm-britta-north-sea-damage-2006',
+    ),
+  );
+
+  expect(incident.image.src).toBe('images/storm-britta-maximum-gust-wind-speed-2006.png');
+  await page.locator('#filter-search').fill('Storm Britta');
+  await page.locator('.search-result', { hasText: 'Storm Britta - North Sea Offshore and Coastal Damage' }).click();
+
+  const image = page.locator('#modal-content .incident-image-figure img');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveJSProperty('naturalWidth', 5844);
+  await expect(image).toHaveJSProperty('naturalHeight', 4530);
+});
+
+test('Seacrest record presents the full evidence-based loss sequence', async ({ page }) => {
+  const incidents = await page.evaluate(() =>
+    (window as any).INCIDENTS_DATA.incidents.filter(
+      (item: any) => item.id === 'seacrest-1989',
+    ),
+  );
+
+  expect(incidents).toHaveLength(1);
+  expect(incidents[0].what_happened).toContain('last documented call');
+  expect(incidents[0].what_happened).toContain('met ABS dynamic-stability requirements');
+  expect(incidents[0].what_happened).toContain('62 and 69 miles northwest');
+  expect(incidents[0].data_quality).toContain('commissioned by Unocal Thailand');
+
+  await page.locator('#filter-search').fill('Drillship Seacrest');
+  await page.locator('.search-result', { hasText: 'Drillship Seacrest' }).click();
+  await expect(page.locator('#modal-content')).toContainText('Seven of eight anchor cables');
+
+  const image = page.locator('#modal-content .incident-image-figure img');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveJSProperty('complete', true);
+  expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
+});
+
+test('Bohai No. 2 record presents the corrected tow and flooding sequence', async ({ page }) => {
+  const incident = await page.evaluate(() =>
+    (window as any).INCIDENTS_DATA.incidents.find(
+      (item: any) => item.id === 'bohai-no2-1979',
+    ),
+  );
+
+  expect(incident.persons_on_board).toBe(74);
+  expect(incident.survivors).toBe(2);
+  expect(incident.fatalities).toBe(72);
+  expect(incident.what_happened).toContain('third ventilation trunk broke at its base');
+  expect(incident.what_happened).toContain('single tug could not complete the turn');
+  expect(incident.executive_summary).toContain('major responsibility accident');
+  expect(incident.image.src).toBe('images/bohai-no2-1979-platform.jpg');
+
+  await page.locator('#filter-search').fill('Bohai No. 2');
+  await page.locator('.search-result', { hasText: 'Bohai No. 2 Drilling Platform' }).click();
+  await expect(page.locator('#modal-content')).toContainText('Only two people survived; 72 died.');
+  await expect(page.locator('#modal-content')).toContainText('No verified numerical significant-wave-height value');
+
+  const image = page.locator('#modal-content .incident-image-figure img');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveJSProperty('naturalWidth', 300);
+  await expect(image).toHaveJSProperty('naturalHeight', 241);
+});
+
+test('Usumacinta record separates the collision, evacuation, and well-control evidence', async ({ page }) => {
+  const incident = await page.evaluate(() =>
+    (window as any).INCIDENTS_DATA.incidents.find(
+      (item: any) => item.id === 'usumacinta-2007',
+    ),
+  );
+
+  expect(incident.persons_on_board).toBe(73);
+  expect(incident.survivors).toBe(53);
+  expect(incident.fatalities).toBe(22);
+  expect(incident.what_happened).toContain('20 fatalities and 53 survivors');
+  expect(incident.what_happened).toContain('two Morrison Tide rescuers killed');
+  expect(incident.what_happened).toContain('well Kab-121');
+  expect(incident.environmental_impact).toContain('422 barrels');
+  expect(incident.data_quality).toContain('20 Usumacinta evacuees plus two Morrison Tide rescuers');
+
+  await page.locator('#filter-search').fill('Usumacinta');
+  await page.locator('.search-result', { hasText: 'Usumacinta / Kab-101 and Well Kab-121' }).click();
+  await expect(page.locator('#modal-content')).toContainText('Battelle identified adverse weather');
+  await expect(page.locator('#modal-content')).toContainText('CNDH Recommendation 14/2009');
+  await expect(page.locator('#modal-content')).toContainText('near-lightship');
+
+  const image = page.locator('#modal-content .incident-image-figure img');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveJSProperty('naturalWidth', 680);
+  await expect(image).toHaveJSProperty('naturalHeight', 510);
+});
+
+test('Glomar Java Sea record preserves the Chinese warning decision sequence', async ({ page }) => {
+  const incident = await page.evaluate(() =>
+    (window as any).INCIDENTS_DATA.incidents.find(
+      (item: any) => item.id === 'glomar-java-sea-1983',
+    ),
+  );
+
+  expect(incident).toBeDefined();
+  expect(incident.what_happened).toContain('Chinese meteorologist at Nanhai West');
+  expect(incident.what_happened).toContain('suggested moving it');
+  expect(incident.what_happened).toContain('neither move off location nor evacuate personnel');
+  expect(incident.what_went_wrong).toContain(
+    'The NTSB recorded that a Chinese meteorologist warned the storm would pass near the drillship and suggested moving it, but ARCO declined based on the alternative METEO forecast and the perceived lack of shelter; local shipping officials were subsequently told that neither relocation nor personnel evacuation was planned.',
+  );
+  expect(incident.references.some(
+    (reference: { publisher: string }) => reference.publisher.includes('百度百家号')
+  )).toBe(true);
+});
+
 // ── Incident counter ────────────────────────────────────────────────────────
 
 test('incident counter shows a positive integer', async ({ page }) => {
@@ -187,6 +300,22 @@ test('modal close button hides the modal', async ({ page }) => {
   await page.click('#modal-close');
 
   await expect(page.locator('#modal-overlay')).toHaveClass(/hidden/);
+});
+
+test('opening a new incident resets the modal scroll position', async ({ page }) => {
+  await page.click('#stat-incidents-btn');
+  const rows = page.locator('#incidents-tbody tr');
+  await rows.nth(0).click();
+
+  await page.locator('#modal-content').evaluate((element) => {
+    element.scrollTop = element.scrollHeight;
+  });
+  expect(await page.locator('#modal-content').evaluate((element) => element.scrollTop)).toBeGreaterThan(0);
+
+  await page.keyboard.press('Escape');
+  await page.click('#stat-incidents-btn');
+  await rows.nth(1).click();
+  expect(await page.locator('#modal-content').evaluate((element) => element.scrollTop)).toBe(0);
 });
 
 test('Thunder Horse record preserves the investigated causal sequence', async ({ page }) => {
@@ -417,6 +546,40 @@ test('Papaa-305 record uses the Mumbai High field presentation point', async ({ 
   expect(incident.location).toContain('60-70 km west-northwest of Mumbai');
   expect(incident.lat).toBeCloseTo(19.41667, 4);
   expect(incident.lng).toBeCloseTo(71.33333, 4);
+});
+
+test('Papaa-305 and Varapradha record preserves the official chronology and casualty scope', async ({ page }) => {
+  const incidents = await page.evaluate(() => {
+    return window.INCIDENTS_DATA.incidents.filter(
+      (item: { id: string }) => item.id === 'ongc-papaa-305-varapradha-cyclone-tauktae-2021'
+    );
+  });
+
+  expect(incidents).toHaveLength(1);
+  const incident = incidents[0];
+  expect([incident.persons_on_board, incident.survivors, incident.fatalities]).toEqual([274, 188, 86]);
+  expect(incident.what_happened).toContain('186 of 261 survived and 75 died');
+  expect(incident.what_happened).toContain('13-person anchor-handling tug');
+  expect(incident.what_happened).toContain('INS Kolkata rescued two people; 11 died');
+  expect(incident.what_happened).toContain('07:14');
+  expect(incident.what_happened).toContain('INS Kochi');
+  expect(incident.what_happened).toContain('15:30');
+  expect(incident.what_happened).toContain('19:05');
+  expect(incident.what_happened).toContain('none of the 36');
+  expect(incident.what_happened).toContain('112 were genuine and 80 were not authentic');
+  expect(incident.what_happened).toContain('April 2022 Parliamentary Standing Committee report');
+  expect(incident.metocean.notes).toContain('cyclone-centre intensity');
+  expect(incident.references.some(
+    (reference: { publisher: string }) => reference.publisher.includes('India Meteorological Department')
+  )).toBe(true);
+  expect(incident.image.src).toContain('wpghpjkjnj-1627832120.jpg');
+  expect(incident.image.caption).toContain('Rescue operations');
+
+  await page.goto('/?pilot=image#ongc-papaa-305-varapradha-cyclone-tauktae-2021');
+  const image = page.locator('#modal-content .incident-image-figure img');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveAttribute('src', /wpghpjkjnj-1627832120\.jpg$/);
+  expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
 });
 
 test('Escape key closes the modal', async ({ page }) => {
