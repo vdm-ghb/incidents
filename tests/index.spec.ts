@@ -235,6 +235,31 @@ test('search shows capped matching incidents and reduces results', async ({ page
   expect(total).toBeGreaterThan(1);
 });
 
+test('mobile header keeps the counter and filters reachable', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.reload();
+  await expect(page.locator('#stat-incidents')).not.toHaveText('–');
+
+  const counterBox = await page.locator('#stat-incidents-btn').boundingBox();
+  expect(counterBox).not.toBeNull();
+  expect(counterBox!.x + counterBox!.width).toBeLessThanOrEqual(390);
+
+  await expect(page.locator('#filter-search')).toBeVisible();
+  await expect(page.locator('#filter-region')).toBeHidden();
+  await expect(page.locator('#filter-type')).toBeVisible();
+  await expect(page.locator('#filter-classification')).toBeVisible();
+  await expect(page.locator('#filter-consequence')).toBeVisible();
+
+  const total = parseInt((await page.locator('#stat-incidents').textContent()) ?? '0', 10);
+  await page.selectOption('#filter-type', 'cyclone');
+  const filtered = parseInt((await page.locator('#stat-incidents').textContent()) ?? '0', 10);
+  expect(filtered).toBeGreaterThan(0);
+  expect(filtered).toBeLessThan(total);
+
+  await page.click('#stat-incidents-btn');
+  await expect(page.locator('#incidents-tbody tr')).toHaveCount(filtered);
+});
+
 // ── Legend ───────────────────────────────────────────────────────────────────
 
 test('legend is visible on load', async ({ page }) => {
