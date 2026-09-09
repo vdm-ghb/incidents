@@ -1,4 +1,4 @@
-﻿window.INCIDENTS_DATA = {
+window.INCIDENTS_DATA = {
   incidents: [
 
     /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -61,6 +61,73 @@
       ]
     },
 
+    /* CORRUPTED_INSERTION_QUARANTINE_BEGIN
+    {
+       id: 'quarantined-corrupt-record',
+      name: 'Alexander L. Kielland',
+      year: 1980,
+      date: '27 March 1980',
+      location: 'Ekofisk field, North Sea, Norway',
+      lat: 56.533,
+      lng: 3.210,
+      region: 'Europe',
+      platform_type: 'Semi-submersible flotel (accommodation rig)',
+      weather_event_type: 'cyclone',
+      classification: 'drilling',
+      storm_sid: '1989305N07105',
+      storm_name: 'GAY',
+      weather_event: 'Typhoon Gay — rapid local intensification, ~90-knot peak gusts and 5.39 m significant waves',
+      fatalities: 91,
+      persons_on_board: 97,
+      survivors: 6,
+      image: {
+        src: 'images/seacrest-1989-vessel-at-anchor.jpg',
+        alt: 'Black-and-white aerial photograph of the drillship Seacrest at anchor before its loss.',
+        caption: 'Drillship Seacrest at anchor before the loss.',
+        credit: 'Photographer not stated; source via Thai Wreck Diver. Rights unconfirmed.'
+      },
+      summary: 'Typhoon Gay intensified rapidly and passed directly over the moored drillship Seacrest in the Platong gas field. After seven anchor cables broke or were released, the vessel dragged on one bow anchor and oscillated broadside to the wind. A critical combination of gusty typhoon-force wind and large beam waves capsized the vessel to port. Six of the 97 people aboard survived; 91 died.',
+      executive_summary: 'On 3 November 1989, Typhoon Gay intensified unexpectedly in the Gulf of Thailand and passed directly over the drillship Seacrest at the Platong gas field. The vessel survived the first eyewall and the calm eye, but seven anchor cables broke or were released, leaving it to drag on one bow anchor. As the storm returned, Seacrest oscillated broadside to the wind and capsized to port when a critical gust acted with a large wave. The investigation found that the vessel was within accepted stability limits; standing drill pipe, shifted casing and water ingress affected its condition but did not independently explain the loss. Six of 97 people aboard survived after drifting far beyond the initial search area.',
+      what_happened: 'Seacrest was a 362-foot, Panamanian-registered drillship owned by Seacrest Drilling Company, operated by Great Eastern Drilling and Engineering, and contracted to Unocal Thailand. It was moored over a Platong gas-field well by eight anchors. Forecasts placed the tropical disturbance south of the vessel and did not predict its rapid intensification or northward change of track; the report states that Typhoon Gay was the first typhoon in 40 years to form within the Gulf of Thailand.\n\nAs conditions worsened on 3 November, the crew hung off the well and disconnected the riser. Some drill pipe remained in the derrick setback, casing later shifted, and seawater entered the mud room and emergency-generator room; the report inferred that specified ventilation openings had not been closed. Anchor cables progressively failed or were released. During the eye, Seacrest was holding on anchor No. 7 with both thrusters at full power, carrying a compensated port list associated with shifted casing and reporting water in the mud room. When the wind returned from starboard, equipment and drill pipe were reported moving.\n\nPhysical evidence showed that anchor cable No. 1 ran completely off its winch with the brake off; cables Nos. 2, 3, 4, 5, 6 and 8 failed in overload; and cable No. 7 remained attached while its anchor dragged. The vessel moved about 2.1 nautical miles from the well and oscillated broadside to the predominant wind. Most personnel had gathered near the aft abandon-ship stations when several larger waves approached. The investigation modeled capsize at about 1350 from a critical combination of gusty beam wind and a large wave, not from inadequate static stability alone.\n\nThe inverted wreck was located floating about four nautical miles from the well the following morning. Initial searches covered roughly a 30-mile radius, but high wave-drift forces carried survivors beyond that area. Six survivors were recovered in two groups about 62 and 69 nautical miles northwest of Seacrest on 5 and 6 November. The other 91 people aboard died.',
+      what_went_wrong: [
+        'Available forecasts did not predict the storm\'s rapid intensification or northward track change, leaving insufficient warning for evacuation or escape from its path.',
+        'The documented emergency threshold was wind above 75 knots. The investigation judged this too high because anchor handling and evacuation were already unsafe by the time winds reached that level.',
+        'Seven of eight anchor cables broke or were released. With only the dragging No. 7 bow anchor attached, the vessel oscillated into broadside exposure; thrusters alone could not prevent that heading.',
+        'Drill pipe remained in the derrick setback, casing shifted, and other equipment moved. Although these conditions affected loading and list, the stability analysis found they did not independently explain the capsize.',
+        'Seawater entered the mud room and emergency-generator room. The investigation inferred that ventilation openings specified for closure in the operating manual had not been secured.',
+        'The operator\'s emergency manual did not address heavy-weather handling of a moored vessel, leaving no specific company procedure for this scenario.',
+        'The initial search radius did not account for extreme wave-driven drift; survivors moved beyond the area predicted by standard search-and-rescue guidance.'
+      ],
+      lessons_learned: [
+        'Emergency and evacuation triggers must be set below the operating limits for anchor handlers, helicopters and other evacuation resources; a 75-knot trigger leaves no workable response window.',
+        'Forecast uncertainty and rapidly worsening field observations must trigger conservative action even when forecast tracks place the storm elsewhere.',
+        'Heavy-weather procedures must explicitly cover moored drillships, including anchor-failure sequences, heading control, thruster use and criteria for abandoning the location.',
+        'All prescribed watertight, weathertight and ventilation closures must be verified, while drill pipe, casing and movable equipment are secured to control flooding, list and shifting loads.',
+        'Compliance with static classification-society stability criteria does not ensure survival: dynamic assessment must consider coupled gusty wind, waves, heading and mooring condition.',
+        'Search planning after a cyclone capsize must model rapidly changing wave drift as well as current and wind; standard constant-condition guidance can materially underestimate survivor displacement.'
+      ],
+      actions: [
+        'The investigation identified the operator\'s 75-knot emergency threshold as too high and concluded that emergency action must begin while evacuation and anchor handling remain feasible.',
+        'The investigation identified a need for heavy-weather procedures specific to ships operating at anchor, a scenario not addressed in the operator\'s emergency manual or cited industry references.',
+        'The investigation corrected wind-overturning calculations used in the shipbuilder\'s stability assessment and noted that erroneous operating-manual guidance could permit excessive vertical centre of gravity, although Seacrest was within limits during the accident.',
+        'The capsize analysis demonstrated that classification checks based on steady wind should be supplemented by dynamic assessment of gusts, waves, heading and mooring restraint.',
+        'The survivor-trajectory analysis showed that severe wave drift should be incorporated into search planning where cyclone conditions change rapidly.'
+      ],
+      metocean: {
+        wave_height_hs: '5.39 m hindcast maximum at Seacrest; individual waves possibly up to ~11 m',
+        wind_speed: '~60 kn 30-minute mean; ~75 kn 1-minute wind; peak gusts ~90 kn',
+        sea_temp: '~29 °C (Gulf of Thailand)',
+        notes: 'The hindcast placed the eye directly over Seacrest. Before capsize it estimated roughly 53–55-knot mean winds and 15–16-foot significant waves, with wind and wave directions producing broadside exposure. The report states that no instrumental wave measurements were available, so modeled wave values could not be directly validated.'
+      },
+      data_quality: 'High for the documented vessel condition, communications, recovered mooring evidence and investigation results. The primary source is a comprehensive October 1990 Failure Analysis Associates report commissioned by Unocal Thailand\'s legal department, not an independent flag-state investigation. Wind, wave, capsize and survivor-drift values are reconstructed or modeled; the report explicitly notes that wave hindcasts lacked instrumental validation.',
+      references: [
+        { title: 'Investigation of Events Surrounding the Capsize of the Drillship Seacrest', type: 'Commissioned investigation report', publisher: 'Failure Analysis Associates, Inc.', year: 1990, url: 'https://thaiwreckdiver.com/documents/seacrest_drillship_sinking_investigation_1989.pdf', notes: 'Prepared for the Unocal Thailand legal department; October 1990.' },
+        { title: 'ThaiWreckDiver — Seacrest incident account', type: 'Historical record', publisher: 'ThaiWreckDiver.com' },
+        { title: 'Wikipedia — MV Seacrest', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/MV_Seacrest' }
+      ]
+    },
+
+    CORRUPTED_INSERTION_QUARANTINE_END */
     {
       id: 'seacrest-1989',
       name: 'Drillship Seacrest',
@@ -567,7 +634,7 @@
       metocean: {
         wave_height_hs: '4-5 m significant',
         wind_speed: '~35 knots (monsoon sustained)',
-        sea_temp: '~29 Â°C',
+        sea_temp: '~29 °C',
         notes: 'Arabian Sea monsoon season (June-September) generates sustained high-wind and sea-state conditions for extended periods. The monsoon was at peak intensity on the day of the incident. Helicopter operations were already grounded at the time.'
       },
       references: [
@@ -604,10 +671,10 @@
       },
       summary: 'The UK\'s first offshore oil rig collapsed on 27 December 1965 while being jacked down for relocation. The inquiry identified failure of tie-bars in the suspension system as initiating the collapse; recovered fractures showed severe notches, weld defects and fatigue cracks, and conditions favoured brittle fracture. Waves were reported below 3 m at the start of the operation. Thirteen of the 32 people aboard died.',
       executive_summary: 'On 27 December 1965, the UK\'s first offshore oil discovery rig Sea Gem collapsed while being jacked down for relocation. Failure of suspension-system tie-bars initiated rapidly escalating structural disintegration; brittle fracture and pre-existing defects or fatigue cracking were central findings. Nineteen of the 32 people aboard were rescued and 13 died.',
-      what_happened: 'On 27 December 1965, Sea Gem - a converted barge-type jack-up and the first rig to discover gas in UK waters - was being prepared for a move about two nautical miles to another drilling location. A jack-down began to lower the platform by 3.05 m. Burke (2013), summarising the 1967 inquiry, reports north-northwesterly wind, waves below 3 m and air temperature of 3 Â°C at the start of the operation.\n\nThe forward jacks initially moved as expected, the intermediate jacks moved less, and the aftermost jacks did not respond. An attempt to recover the original position by releasing air from the forward jack cylinders was followed by slippage of the port-side jacks. The forward starboard legs then collapsed below the waterline, the hull fell out of level and a tear opened in the hull. Sea Gem rapidly collapsed and sank; the radio room was lost before a distress call could be sent.\n\nThe inquiry concluded that tie-bar failure in the suspension system initiated the collapse and introduced dynamic forces that led cumulatively to disintegration of the structure. Recovered tie-bars showed brittle fractures originating at severe notches, weld defects and fatigue cracks. Nineteen people were rescued by nearby vessels and helicopters; 13 died.',
+      what_happened: 'On 27 December 1965, Sea Gem - a converted barge-type jack-up and the first rig to discover gas in UK waters - was being prepared for a move about two nautical miles to another drilling location. A jack-down began to lower the platform by 3.05 m. Burke (2013), summarising the 1967 inquiry, reports north-northwesterly wind, waves below 3 m and air temperature of 3 °C at the start of the operation.\n\nThe forward jacks initially moved as expected, the intermediate jacks moved less, and the aftermost jacks did not respond. An attempt to recover the original position by releasing air from the forward jack cylinders was followed by slippage of the port-side jacks. The forward starboard legs then collapsed below the waterline, the hull fell out of level and a tear opened in the hull. Sea Gem rapidly collapsed and sank; the radio room was lost before a distress call could be sent.\n\nThe inquiry concluded that tie-bar failure in the suspension system initiated the collapse and introduced dynamic forces that led cumulatively to disintegration of the structure. Recovered tie-bars showed brittle fractures originating at severe notches, weld defects and fatigue cracks. Nineteen people were rescued by nearby vessels and helicopters; 13 died.',
       what_went_wrong: [
         'Tie-bars in the hull-to-leg suspension system failed and initiated the collapse; recovered fractures originated at severe notches, weld defects and fatigue cracks.',
-        'Cold conditions favoured brittle fracture: Burke reports an air temperature of 3 Â°C and cites impact testing showing fracture initiation from severe notches at the water temperature prevailing during the collapse.',
+        'Cold conditions favoured brittle fracture: Burke reports an air temperature of 3 °C and cites impact testing showing fracture initiation from severe notches at the water temperature prevailing during the collapse.',
         'Two tie-bars had already broken during 135 km/h wind gusts on 23 November; they were replaced, but inspection of the remaining tie-bars found no visible damage or strain.',
         'A leg had stuck in the seabed during a 19 December inspection attempt, transferring load to neighbouring legs; it could not be confirmed that the leg retook its full load after being driven back into the seabed.',
         'There were essentially no formal offshore engineering or operational safety standards applicable to these novel structures in 1965.',
@@ -630,7 +697,7 @@
       metocean: {
         wave_height_hs: 'Less than 3 m at the start of jack-down (Burke 2013, summarising the 1967 inquiry)',
         wind_speed: 'North-northwesterly; no collapse-time speed stated by Burke (2013)',
-        sea_temp: 'Not stated in Burke (2013); air temperature was 3 Â°C',
+        sea_temp: 'Not stated in Burke (2013); air temperature was 3 °C',
         notes: 'The available paper does not describe an acute storm at collapse. It treats accumulated cyclic environmental loading as a possible fatigue mechanism and cold conditions as conducive to brittle fracture; the inquiry\'s immediate initiating failure was in the tie-bars.'
       },
       data_quality: 'Burke (2013) repeatedly says 19 of the 32 crew died, but authoritative accounts establish that 19 were rescued and 13 died. Its abstract also calls the September discovery oil, whereas the discovery was natural gas. Those errors are not propagated here. Burke\'s environmental-load discussion includes author interpretation; it is not presented as a formal inquiry finding.',
@@ -1061,11 +1128,11 @@
     },
 
      /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-       17. ASV Gangway Collapse durign disconnection - 2014
+       17. ASV Gangway Collapse during disconnection - 2014
      â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'gumusut-gangway-2014',
-      name: 'ASV Gangway Collapse durign disconnection',
+      name: 'ASV Gangway Collapse during disconnection',
       year: 2014,
       data_quality: 'Unverified - field/project context is real but the specific event is sourced only to an internal Shell LFI bulletin with no independent public corroboration (2026-07-04 fact-check audit).',
       date: '5 October 2014',
@@ -1271,7 +1338,7 @@
       metocean: {
         wave_height_hs: '10+ m (Gulf of Alaska winter storm)',
         wind_speed: '~55-60 knots sustained (NTSB), gusting higher',
-        sea_temp: '~3-5 Â°C',
+        sea_temp: '~3-5 °C',
         notes: 'The Gulf of Alaska is one of the most storm-exposed ocean regions in the world, with some of the highest recorded extra-tropical storm intensities. December-January is the climatological peak of storm frequency and intensity. The Kulluk\'s conical shape was not optimised for towing in those conditions.'
       },
       references: [
@@ -1331,7 +1398,7 @@
       metocean: {
         wave_height_hs: 'Severe North Atlantic winter storm - estimated 8-12 m',
         wind_speed: 'Storm force',
-        sea_temp: '~5-8 Â°C (Scotian Slope March)',
+        sea_temp: '~5-8 °C (Scotian Slope March)',
         notes: 'The Scotian Slope is exposed to intense North Atlantic low-pressure systems, particularly in winter. The combination of storm wave height and strong surface currents from the Gulf Stream eddy field can impose very large loads on deepwater risers.'
       },
       references: [
@@ -1515,7 +1582,7 @@
       metocean: {
         wave_height_hs: 'Estimated Hs ~13-15 m at peak; individual waves reported up to ~20 m',
         wind_speed: 'Sustained 200 km/h (108 knots), gusts to 250 km/h',
-        sea_temp: '~28 Â°C',
+        sea_temp: '~28 °C',
         visibility: 'Near zero at cyclone centre',
         notes: 'Cyclone Orson was one of the most intense tropical cyclones ever recorded on the Australian NW Shelf. The Carnarvon Basin is exposed to rare but extreme cyclones, and the design basis for North Rankin A explicitly addressed this threat.'
       },
@@ -1533,7 +1600,7 @@
       name: 'West Gamma Jack-up',
       year: 1990,
       date: '20-21 August 1990',
-      location: 'North Sea, Gorm field, Danish sector (~55Â°23â€²N 04Â°46â€²E, near pumping station "Bravo 11")',
+      location: 'North Sea, Gorm field, Danish sector (~55°23′N 04°46′E, near pumping station "Bravo 11")',
       lat: 55.38,
       lng: 4.77,
       region: 'Europe',
@@ -1555,7 +1622,7 @@
       },
       summary: 'The West Gamma accommodation/support jack-up rig lost its tow in a full North Sea gale on the night of 20-21 August 1990 in the Danish sector near the Gorm field, and was progressively disabled - its rescue boats were torn off, the helideck was wrecked, and water filled the decks faster than the pumps could cope. All 51 people on board were rescued (46 by fast rescue boats from the standby vessels Esvagt Omega and Esvagt Protector, the remainder by helicopter and other assisting units); the rig later capsized and sank. No lives were lost. ESVAGT received the 1991 Leith International Conference Offshore Safety Award for the rescue. Earlier database entries incorrectly recorded 4 fatalities and 26 aboard; primary sources (the QE2 master\'s log and ESVAGT\'s own account) confirm 51 aboard and zero fatalities.',
       executive_summary: 'On the night of 20-21 August 1990 the accommodation jack-up rig West Gamma lost its tow in a full North Sea gale (NW Force 9-10) in the Danish sector near the Gorm field. The heavily damaged rig was evacuated and later capsized and sank, but all 51 people aboard were rescued - 46 by ESVAGT fast rescue boats - with no loss of life. The event became a celebrated mass rescue rather than a fatal accident.',
-      what_happened: 'The West Gamma, a jack-up accommodation/support rig, was under ocean tow in the North Sea when it hit a full gale-force storm on 20 August 1990 and lost its tow. It drifted, disabled and heavily damaged, in the Danish sector near the Gorm field (estimated position ~55Â°23â€²N 04Â°46â€²E, about 8 miles from the "Bravo 11" pumping station). A MAYDAY was received in the early afternoon of 20 August; the liner QE2, some 47 miles away, was asked to divert and act as on-scene rescue commander.\n\nThe gale (NW Force 9, later Force 9-10) tore the rig\'s rescue boats away, wrecked the helideck, and drove water onto the decks faster than the pumps could handle. As the situation deteriorated it was decided to evacuate. Tied in groups of five to six, the crew jumped into the dark sea where fast rescue boats (FRBs) from the standby vessels Esvagt Omega (released from the Danish Dan field) and Esvagt Protector (released from the Gorm field) waited, guided by a helicopter searchlight. Esvagt Omega\'s FRB crew entered the raging sea seven times, also recovering the crew of a capsized rescue boat from another company. All 51 West Gamma crew were saved - 46 by ESVAGT FRBs - and no lives were lost. The rig subsequently capsized and sank. ESVAGT was awarded the 1991 Leith International Conference Offshore Safety Award for the operation.',
+      what_happened: 'The West Gamma, a jack-up accommodation/support rig, was under ocean tow in the North Sea when it hit a full gale-force storm on 20 August 1990 and lost its tow. It drifted, disabled and heavily damaged, in the Danish sector near the Gorm field (estimated position ~55°23′N 04°46′E, about 8 miles from the "Bravo 11" pumping station). A MAYDAY was received in the early afternoon of 20 August; the liner QE2, some 47 miles away, was asked to divert and act as on-scene rescue commander.\n\nThe gale (NW Force 9, later Force 9-10) tore the rig\'s rescue boats away, wrecked the helideck, and drove water onto the decks faster than the pumps could handle. As the situation deteriorated it was decided to evacuate. Tied in groups of five to six, the crew jumped into the dark sea where fast rescue boats (FRBs) from the standby vessels Esvagt Omega (released from the Danish Dan field) and Esvagt Protector (released from the Gorm field) waited, guided by a helicopter searchlight. Esvagt Omega\'s FRB crew entered the raging sea seven times, also recovering the crew of a capsized rescue boat from another company. All 51 West Gamma crew were saved - 46 by ESVAGT FRBs - and no lives were lost. The rig subsequently capsized and sank. ESVAGT was awarded the 1991 Leith International Conference Offshore Safety Award for the operation.',
       what_went_wrong: [
         'The rig lost its tow in a full gale and could not be kept head-to-sea, leaving it drifting and exposed to beam seas.',
         'The tow configuration - ballast distribution, watertight integrity of hatches and vents, and minimum hull air gap - proved inadequate for the sea conditions, allowing progressive water ingress.',
@@ -1578,7 +1645,7 @@
       metocean: {
         wave_height_hs: 'High seas and heavy swell in a NW Force 9-10 gale (precise Hs not recorded in available sources; Force 9-10 typically ~6-9 m)',
         wind_speed: 'NW Force 9, later Force 9-10 (~41-55 knots / 20-28 m/s) per QE2 log',
-        sea_temp: '~16-18 Â°C (August North Sea)',
+        sea_temp: '~16-18 °C (August North Sea)',
         notes: 'QE2 master\'s log (Capt. R. W. Warwick, 20 August 1990) records NW Force 9 winds, falling barometer (~1001 mb by 2000), high bow sea and heavy swell. The rig lost its tow, was disabled, and later capsized; all aboard were rescued.'
       },
       references: [
@@ -1636,7 +1703,7 @@
       metocean: {
         wave_height_hs: '~10-14 m in affected GoM areas',
         wind_speed: 'Sustained 140 mph (121 knots) at Florida landfall; Cat 3-4 intensity across GoM',
-        sea_temp: '~29-30 Â°C',
+        sea_temp: '~29-30 °C',
         notes: 'Andrew\'s offshore GoM impact exposed platforms whose design basis - set under pre-1992 API RP 2A - underestimated the wave heights achievable from major Gulf hurricanes tracking through that region.'
       },
       references: [
@@ -1694,7 +1761,7 @@
       metocean: {
         wave_height_hs: '~17.9 m peak significant wave height (NRL gauges); maximum individual wave height ~27.7 m',
         wind_speed: 'Category 5 peak (~165 mph / 143 kn) in the Caribbean; ~140 mph (Category 4) crossing the GoM',
-        sea_temp: '~30 Â°C',
+        sea_temp: '~30 °C',
         notes: 'The 27.7 m figure frequently cited for Ivan is a maximum individual wave height measured by US Naval Research Laboratory seabed gauges - not a significant wave height. The peak Hs measured was ~17.9 m. These distinct quantities have often been conflated (and mis-attributed to NOAA buoy 42001). Conditions were nonetheless well beyond any prior GoM design basis.'
       },
       references: [
@@ -1727,10 +1794,10 @@
       infrastructure_impact: '47 platforms totally destroyed; 20+ major structural damage; hundreds of pipeline damage reports (the widely-cited 457 figure is the combined 2005 Katrina + Rita season total) - among the largest offshore infrastructure loss events on record',
       severity_override: 'critical',
       image: {
-        src: 'https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/msnbc/Components/Photos/070525/070525_oil_vmed_2p.jpg',
-        alt: 'Offshore construction vessel Ocean Warwick with severe structural damage after Hurricane Katrina.',
-        caption: 'Offshore construction vessel Ocean Warwick photographed after Hurricane Katrina with severe structural damage.',
-        credit: 'NBC News-hosted image; original photographer, publication context and reuse licence unresolved. Permission may be required.'
+        src: 'images/hurricane-katrina-2005-mars-platform-damage.jpg',
+        alt: 'Shell Mars tension-leg platform after Hurricane Katrina, with its drilling derrick toppled across the topsides.',
+        caption: 'Shell Mars TLP after Hurricane Katrina. This is one documented platform consequence within the wider regional damage record, not a depiction of all Katrina losses.',
+        credit: 'Original photographer and licence unresolved. Permission required; retained as reference-only.'
       },
       summary: 'Hurricane Katrina - the costliest natural disaster in US history - devastated GoM offshore infrastructure on 29 August 2005: 47 platforms destroyed and nine drilling rigs sank or ran aground. Pre-storm mass evacuation of approximately 90,000 workers prevented offshore fatalities. Combined with Hurricane Rita three weeks later, the 2005 season caused approximately US$6 billion in offshore damage (and a combined ~457 pipeline damage reports) and forced a fundamental rethink of GoM platform design standards.',
       executive_summary: 'Hurricane Katrina made landfall on the Louisiana coast on 29 August 2005 (Category 5 peak over the Gulf); mass evacuation of ~90,000 workers prevented offshore fatalities, but 47 platforms were destroyed and over 20 sustained major damage. Pipeline damage across the 2005 season (Katrina and Rita combined) ran to some 457 reports. There were no confirmed offshore fatalities from Katrina.',
@@ -1758,7 +1825,7 @@
       metocean: {
         wave_height_hs: '~15-17 m deep GoM; ~10-12 m on shelf',
         wind_speed: 'Sustained 175 mph (152 knots) at peak; 125 mph (108 knots) at Louisiana landfall',
-        sea_temp: '~30 Â°C',
+        sea_temp: '~30 °C',
         notes: 'Katrina generated the most damaging wave-surge combination ever recorded for GoM offshore infrastructure. The storm surge of 3-5 m in shallow shelf areas amplified structural loads on low-air-gap platforms and caused wave-seabed interaction damage to pipelines across a vast area.'
       },
       references: [
@@ -1813,7 +1880,7 @@
       metocean: {
         wave_height_hs: '~12-15 m deep GoM',
         wind_speed: 'Sustained 180 mph (156 knots) at peak; Category 3 at landfall',
-        sea_temp: '~30 Â°C',
+        sea_temp: '~30 °C',
         notes: 'Rita\'s impact zone - the western GoM and Texas shelf - had not experienced a direct major hurricane strike in many years and had proportionally more platforms operating below current API design standards than the central GoM.'
       },
       references: [
@@ -1867,7 +1934,7 @@
       metocean: {
         wave_height_hs: 'Storm-scale wave conditions; no Gustav-specific platform-point value is given in the Keiser paper',
         wind_speed: 'Sustained 150 mph (130 knots) at peak; Category 2 at landfall',
-        sea_temp: '~30 Â°C',
+        sea_temp: '~30 °C',
         notes: 'The Keiser paper reports Gustav entering the Gulf as a Category 4 storm and exposing approximately 677 platforms to hurricane-force winds; it focuses on aggregate exposure, damage inventories and production recovery rather than platform-point metocean measurements.'
       },
       references: [
@@ -1930,7 +1997,7 @@
       metocean: {
         wave_height_hs: '~10-13 m',
         wind_speed: 'Sustained 145 mph (126 knots) at peak; 110 mph (96 knots) at Galveston landfall',
-        sea_temp: '~29 Â°C',
+        sea_temp: '~29 °C',
         notes: 'The Keiser paper reports approximately 1,450 structures exposed to hurricane-force winds during Ike and uses combined Gustav-Ike shut-in data. Its production and damage totals should not be presented as Ike-only measurements.'
       },
       references: [
@@ -1966,12 +2033,6 @@
       fatalities: 0,
       persons_on_board: 0,
       survivors: 0,
-      image: {
-        src: 'https://www.researchgate.net/publication/315874734/figure/fig2/AS:568185380405248@1512477359073/Offshore-platform-damaged-during-a-hurricane-off-of-Louisiana.png',
-        alt: 'Eugene Island 322-A offshore platform leaning after severe structural damage during Hurricane Lili.',
-        caption: 'Eugene Island 322-A platform after Hurricane Lili, showing the damaged and displaced structure.',
-        credit: 'Figure 2 from DeFranco et al., OTC-16801-MS, hosted by ResearchGate. Copyright and reuse permission require confirmation.'
-      },
       infrastructure_impact: 'Drilling platform deck translated approximately 84-85 ft, with severe deck, bridge, jacket and leg damage; one pile was severed below the mudline and the opposite jacket-leg connection failed. The facilities were later decommissioned and reefed in place.',
       summary: 'Hurricane Lili passed over Eugene Island Block 322 in October 2002 and severely damaged BP\'s EI 322-A drilling platform. The top deck shifted approximately 84-85 feet, buckling the deck and jacket legs; one corner leg nearly separated. The failure was linked to a severed pile below the mudline and failure of the opposite jacket-leg-to-pile connection. The platform was stabilized, decommissioned and later reefed in place without reported injuries or environmental events.',
       executive_summary: 'EI 322-A was a paired fixed-platform complex in 235 feet of water. When Hurricane Lili\'s eye passed through the block, the drilling platform leaned and its deck moved approximately 84-85 feet. Technical investigation and decommissioning work identified two critical foundation/connection failures: one pile severed below the mudline and the opposite jacket-leg-to-pile shim-plate connection welds failed. BP could not establish which failure occurred first.',
@@ -2131,7 +2192,7 @@
       metocean: {
         wave_height_hs: '8.5-9.5 m significant wave height; an estimated 12-15 m crest could have caused the damage, but the individual wave was not measured',
         wind_speed: '24-26 m/s (10-minute mean at 10 m)',
-        sea_temp: '~8 Â°C',
+        sea_temp: '~8 °C',
         notes: 'The report gives Tp 12-14 s and says the weather was within the unit\'s design criteria. It found no indication of a breaking wave. Because the individual wave was not measured or observed, it could not determine with certainty whether freak-wave criteria were met. Hs, statistical crest estimates and the actual striking crest are distinct quantities.'
       },
       references: [
@@ -2299,7 +2360,7 @@
       },
       summary: 'On 26 May 2013, the tugboat Jascon-4, contracted by Chevron and operated by West African Ventures, capsized approximately 30 km off the Nigerian Niger Delta coast while performing tension tow operations to stabilise an oil tanker. A sudden squall with heavy ocean swells overwhelmed the vessel; 11 of 12 crew perished. The sole survivor, ship\'s cook Harrison Okene, survived for approximately 60 hours in a small air pocket inside the sunken wreck at 30 m depth before being found alive by saturation divers. His rescue - filmed in full - became one of the most remarkable survival and rescue stories in maritime history.',
       executive_summary: 'On 26 May 2013, a tugboat operating approximately 30 km off the Niger Delta coast in the Gulf of Guinea capsized after a sudden squall with heavy ocean swells struck without warning. Eleven of 12 crew perished; one survivor was found alive by saturation divers inside the sunken wreck after several days.',
-      what_happened: 'On the morning of 26 May 2013, the tugboat Jascon-4 was conducting tension tow operations near a Chevron platform approximately 30 km off the Niger Delta coast in the Gulf of Guinea. The vessel was working to stabilise an oil tanker in the area. Without warning, a sudden squall struck with heavy ocean swells, causing the tugboat to capsize rapidly. The crew had no time to don life-saving equipment or organise an orderly evacuation.\n\nEleven of the twelve crew members were lost in the capsize - many swept away or trapped as the vessel turned over. The one exception was ship\'s cook Harrison Okene, 29, who happened to be in the bathroom when the vessel began to roll. As the Jascon-4 sank and came to rest on the seabed at approximately 30 m depth, Okene found himself in a small air pocket roughly 1.2 m (4 ft) high - partly in the engineer\'s office adjacent to the bathroom. In complete darkness, in 28 Â°C water that gradually rose around him, he remained alive by breathing the trapped air.\n\nFor approximately 60 hours - nearly three days - Okene survived alone in the pitch-dark pocket, treading water to stay above the rising level and praying, while rescue teams on the surface attempted to locate the wreck. On the third day after the capsize, saturation divers from a diving support vessel sent to investigate the wreck detected signs of life. In a now-famous moment caught on camera, a diver\'s hand torch illuminated Okene\'s hand reaching out from the darkness. The divers provided Okene with a diving helmet and guided him out of the wreck. Due to the time spent at pressure, his decompression in a diving bell took approximately 60 additional hours before he could safely return to the surface.',
+      what_happened: 'On the morning of 26 May 2013, the tugboat Jascon-4 was conducting tension tow operations near a Chevron platform approximately 30 km off the Niger Delta coast in the Gulf of Guinea. The vessel was working to stabilise an oil tanker in the area. Without warning, a sudden squall struck with heavy ocean swells, causing the tugboat to capsize rapidly. The crew had no time to don life-saving equipment or organise an orderly evacuation.\n\nEleven of the twelve crew members were lost in the capsize - many swept away or trapped as the vessel turned over. The one exception was ship\'s cook Harrison Okene, 29, who happened to be in the bathroom when the vessel began to roll. As the Jascon-4 sank and came to rest on the seabed at approximately 30 m depth, Okene found himself in a small air pocket roughly 1.2 m (4 ft) high - partly in the engineer\'s office adjacent to the bathroom. In complete darkness, in 28 °C water that gradually rose around him, he remained alive by breathing the trapped air.\n\nFor approximately 60 hours - nearly three days - Okene survived alone in the pitch-dark pocket, treading water to stay above the rising level and praying, while rescue teams on the surface attempted to locate the wreck. On the third day after the capsize, saturation divers from a diving support vessel sent to investigate the wreck detected signs of life. In a now-famous moment caught on camera, a diver\'s hand torch illuminated Okene\'s hand reaching out from the darkness. The divers provided Okene with a diving helmet and guided him out of the wreck. Due to the time spent at pressure, his decompression in a diving bell took approximately 60 additional hours before he could safely return to the surface.',
       what_went_wrong: [
         'A sudden squall with heavy swells struck with insufficient warning for the crew to take protective action - the vessel was engaged in a demanding tow operation with no margin to respond to a rapid weather deterioration.',
         'Tow operations in the Gulf of Guinea expose vessels to the risk of sudden convective squalls that can generate severe, short-duration sea states with little meteorological warning. Weather monitoring and go/no-go criteria for the operation appear to have been inadequate for this hazard.',
@@ -2324,7 +2385,7 @@
       metocean: {
         wave_height_hs: 'Heavy ocean swells from sudden squall - estimated 3-5 m',
         wind_speed: 'Squall conditions - likely 25-40 knots with sudden onset',
-        sea_temp: '~28 Â°C (Gulf of Guinea)',
+        sea_temp: '~28 °C (Gulf of Guinea)',
         notes: 'The Gulf of Guinea is subject to frequent sudden convective squalls, particularly during the rainy season (April-October). These events develop rapidly over warm equatorial waters with little warning from standard surface meteorological observations, and can generate dangerous localised wave conditions within minutes. The Niger Delta offshore area is particularly exposed due to the combination of warm SST, atmospheric instability, and complex coastal wind patterns.'
       },
       references: [
@@ -2390,7 +2451,7 @@
       metocean: {
         wave_height_hs: 'Estimated 5-8 m (Category 2 cyclone, shallow Carnarvon Basin shelf)',
         wind_speed: '~100 km/h (54 knots) sustained - Category 2 Australian scale',
-        sea_temp: '~28 Â°C (NW Shelf April)',
+        sea_temp: '~28 °C (NW Shelf April)',
         notes: 'Cyclone Hubert formed 4-5 April 2006 and tracked southwest toward the WA coast, making landfall just west of Mardie on the evening of 7 April after weakening to a tropical low. The Stag Oilfield sits on the North West Shelf in relatively shallow water, where cyclone wave heights are amplified by shoaling effects and the CALM buoy mooring system experienced the full cyclic loading of cyclone wave action.'
       },
       references: [
@@ -2605,16 +2666,16 @@
       persons_on_board: null,
       survivors: null,
       severity_override: 'notable',
-      infrastructure_impact: 'Two mooring lines parted; FPSO drifted ~100 m toward NiterÃ³i shoreline before tugs recovered control - no damage',
+      infrastructure_impact: 'Two mooring lines parted; FPSO drifted ~100 m toward Niterói shoreline before tugs recovered control - no damage',
       image: {
         src: 'images/fpso-p70-2020-vessel.jpg',
         alt: 'FPSO P-70 in Guanabara Bay, Rio de Janeiro, Brazil.',
         caption: 'FPSO P-70 in Guanabara Bay.',
         credit: 'Petrobras via OE Digital. Permission required.'
       },
-      summary: 'On 30 January 2020, FPSO P-70 was undergoing final commissioning in Guanabara Bay, Rio de Janeiro, freshly delivered from a Chinese shipyard, when unexpected strong winds struck while only three of four mooring lines had been connected. Two lines parted and the vessel drifted approximately 100 metres toward the NiterÃ³i shoreline before port tugs recovered control. No casualties or environmental damage occurred. The incident illustrates the heightened vulnerability of floating units during phased mooring installation.',
+      summary: 'On 30 January 2020, FPSO P-70 was undergoing final commissioning in Guanabara Bay, Rio de Janeiro, freshly delivered from a Chinese shipyard, when unexpected strong winds struck while only three of four mooring lines had been connected. Two lines parted and the vessel drifted approximately 100 metres toward the Niterói shoreline before port tugs recovered control. No casualties or environmental damage occurred. The incident illustrates the heightened vulnerability of floating units during phased mooring installation.',
       executive_summary: 'During commissioning in Guanabara Bay, FPSO P-70 had only three of four mooring lines connected when strong winds struck. Two lines parted; the vessel drifted ~100 m toward shore before tugs recovered control. No casualties or damage.',
-      what_happened: 'Petrobras FPSO P-70 was delivered to Brazil from a Chinese shipyard and arrived at Guanabara Bay, Rio de Janeiro, in late January 2020 for final commissioning before proceeding to the Atapu pre-salt field in the Santos Basin. On the morning of 30 January 2020, the vessel was successfully offloaded from the semi-submersible heavy-lift vessel Boka Vanguard. Mooring operations then commenced in the sheltered but confined waters of the bay.\n\nDuring the afternoon, with only three of the four planned mooring lines connected, unexpected strong winds struck Guanabara Bay. Under the asymmetric wind loading, two of the three connected mooring lines parted. Without adequate mooring restraint and with no operational propulsion during the commissioning phase, the vessel drifted approximately 100 metres toward the NiterÃ³i shoreline. Port tugs engaged and brought the vessel under control before it could contact the shore.\n\nPetrobras reported no casualties and no damage to the vessel or environment. The P-70 was re-moored in the bay, completed commissioning, received the necessary regulatory authorisations, and proceeded to the Atapu field where it entered production later in 2020.',
+      what_happened: 'Petrobras FPSO P-70 was delivered to Brazil from a Chinese shipyard and arrived at Guanabara Bay, Rio de Janeiro, in late January 2020 for final commissioning before proceeding to the Atapu pre-salt field in the Santos Basin. On the morning of 30 January 2020, the vessel was successfully offloaded from the semi-submersible heavy-lift vessel Boka Vanguard. Mooring operations then commenced in the sheltered but confined waters of the bay.\n\nDuring the afternoon, with only three of the four planned mooring lines connected, unexpected strong winds struck Guanabara Bay. Under the asymmetric wind loading, two of the three connected mooring lines parted. Without adequate mooring restraint and with no operational propulsion during the commissioning phase, the vessel drifted approximately 100 metres toward the Niterói shoreline. Port tugs engaged and brought the vessel under control before it could contact the shore.\n\nPetrobras reported no casualties and no damage to the vessel or environment. The P-70 was re-moored in the bay, completed commissioning, received the necessary regulatory authorisations, and proceeded to the Atapu field where it entered production later in 2020.',
       what_went_wrong: [
         'Mooring operations were progressed with an incomplete system - only 3 of 4 mooring lines were connected when weather conditions deteriorated.',
         'No defined operational weather limit was in place for the partially-moored state - the vessel was managed against the final fully-moored design envelope, which does not apply to an incomplete installation.',
@@ -2669,7 +2730,7 @@
       },
       summary: 'The Caspian Sea has fallen more than 2 metres since 2006 and is declining at 20-30 cm/year - the fastest documented climate-driven sea-level change affecting active offshore oil and gas production. Fixed platforms, subsea pipelines, mooring systems, and port facilities across five countries were designed for environmental conditions that no longer exist. A $6.4 billion dredging project announced in 2025 to maintain vessel access to northern shelf wells is the clearest measure of the cost of designing offshore structures without accounting for long-term climate variability.',
       executive_summary: 'The Caspian Sea has fallen more than 2 metres since 2006 at a rate of 20-30 cm/year - an order of magnitude faster than global mean sea-level rise. Fixed platforms, subsea pipelines, mooring terminals, and port facilities across five national sectors were designed for water depths that no longer exist. In July 2025, LUKOIL and KazMunayGas announced a $6.4 billion dredging programme to keep vessel channels open to operating wells - the cost of not having built climate variability into structural design. Projections indicate a further 5-10 m decline by 2100 under moderate warming.',
-      what_happened: 'The Caspian Sea - the world\'s largest landlocked water body - reached a modern high of approximately -26.5 m (Baltic Datum) around 1995. A sustained and accelerating decline began around 2005-2006, driven primarily by increased evaporation under rising temperatures and reduced freshwater inflow from the Volga and other rivers. The decline is not cyclical; it is a climate-forced trend.\n\nBy 2025 the sea stood at -29.23 m - the lowest level in the full instrumental measurement record - having fallen more than 2 metres in under 20 years. The current rate of decline is 20-30 cm/year, roughly 20 times the global mean rate of sea-level rise. Kazakhstan\'s government projects the level to reach -32.4 m by 2050. Peer-reviewed CMIP6 modelling (Nature Communications Earth & Environment, 2023 and 2025) projects a further 5-10 m fall by 2100 under moderate warming scenarios (<2Â°C) and up to 21 m under high-emissions pathways - an area larger than Iceland exposed as dry seabed.\n\nThe northern Caspian - the shallowest sector, where depths over much of the shelf are already only 3-5 m - is the zone of most acute operational impact. LUKOIL\'s Vladimir Filanovsky field and KazMunayGas\'s northern shelf assets, designed and installed in the 1990s and 2000s for conditions that assumed a broadly stable water level, now face vessel access depths at or below the operating draft of standard supply vessels. Azerbaijan\'s Dubendi oil terminal required more than 250,000 mÂ³ of emergency dredging in 2024 to maintain tanker access. Aktau port (Kazakhstan) has seen loading capacity for tankers reduced by approximately 10%. Iran\'s Anzali port is now stranded more than 1 km from the current shoreline.\n\nIn July 2025, LUKOIL and KazMunayGas jointly announced a $6.4 billion dredging programme - the largest single infrastructure response to the problem to date - to maintain navigable channels to offshore wells. Without it, operators stated, production from existing fields would be interrupted and new development plans halted. In April 2026, Azerbaijan and Kazakhstan formalised a joint dredging venture, commissioning a dedicated vessel capable of working to 18 m depth in anticipation of conditions worsening further.',
+      what_happened: 'The Caspian Sea - the world\'s largest landlocked water body - reached a modern high of approximately -26.5 m (Baltic Datum) around 1995. A sustained and accelerating decline began around 2005-2006, driven primarily by increased evaporation under rising temperatures and reduced freshwater inflow from the Volga and other rivers. The decline is not cyclical; it is a climate-forced trend.\n\nBy 2025 the sea stood at -29.23 m - the lowest level in the full instrumental measurement record - having fallen more than 2 metres in under 20 years. The current rate of decline is 20-30 cm/year, roughly 20 times the global mean rate of sea-level rise. Kazakhstan\'s government projects the level to reach -32.4 m by 2050. Peer-reviewed CMIP6 modelling (Nature Communications Earth & Environment, 2023 and 2025) projects a further 5-10 m fall by 2100 under moderate warming scenarios (<2°C) and up to 21 m under high-emissions pathways - an area larger than Iceland exposed as dry seabed.\n\nThe northern Caspian - the shallowest sector, where depths over much of the shelf are already only 3-5 m - is the zone of most acute operational impact. LUKOIL\'s Vladimir Filanovsky field and KazMunayGas\'s northern shelf assets, designed and installed in the 1990s and 2000s for conditions that assumed a broadly stable water level, now face vessel access depths at or below the operating draft of standard supply vessels. Azerbaijan\'s Dubendi oil terminal required more than 250,000 mÂ³ of emergency dredging in 2024 to maintain tanker access. Aktau port (Kazakhstan) has seen loading capacity for tankers reduced by approximately 10%. Iran\'s Anzali port is now stranded more than 1 km from the current shoreline.\n\nIn July 2025, LUKOIL and KazMunayGas jointly announced a $6.4 billion dredging programme - the largest single infrastructure response to the problem to date - to maintain navigable channels to offshore wells. Without it, operators stated, production from existing fields would be interrupted and new development plans halted. In April 2026, Azerbaijan and Kazakhstan formalised a joint dredging venture, commissioning a dedicated vessel capable of working to 18 m depth in anticipation of conditions worsening further.',
       what_went_wrong: [
         'Offshore structures across the Caspian were designed using static water-depth assumptions derived from historical records. No sensitivity analysis was conducted on the effect of long-term sea-level change on structural loading, splash-zone position, pipeline burial, or mooring geometry over the asset\'s design life.',
         'Design codes (ISO 19902, API RP 2A, DNV standards) do not require designers to assess sea-level change - rise or fall - as an environmental input. Water depth is treated as a fixed design parameter, not a variable with a climate-driven trend.',
@@ -2695,7 +2756,7 @@
       ],
       metocean: {
         wave_height_hs: 'Not the primary hazard - wave climate unchanged in deeper southern sectors; northern shelf wave exposure changes as fetch geometry alters with retreating shoreline',
-        notes: 'The primary physical driver is thermodynamic: increased evaporation (surface temperature rise) combined with reduced Volga discharge. Current rate of decline: 20-30 cm/year. Level in 2025: -29.23 m (Baltic Datum). Projected level 2050: -32.4 m (Kazakhstan government scenario). Projected level 2100: approximately -34 to -39 m under moderate warming (<2Â°C, ~5-10 m fall) and below ~-47 m under high emissions (SSP5-8.5, up to ~21 m fall) (CMIP6). The northern shelf (<5 m current depth) is at acute near-term risk of becoming inaccessible to supply vessels.'
+        notes: 'The primary physical driver is thermodynamic: increased evaporation (surface temperature rise) combined with reduced Volga discharge. Current rate of decline: 20-30 cm/year. Level in 2025: -29.23 m (Baltic Datum). Projected level 2050: -32.4 m (Kazakhstan government scenario). Projected level 2100: approximately -34 to -39 m under moderate warming (<2°C, ~5-10 m fall) and below ~-47 m under high emissions (SSP5-8.5, up to ~21 m fall) (CMIP6). The northern shelf (<5 m current depth) is at acute near-term risk of becoming inaccessible to supply vessels.'
       },
       references: [
         { title: 'Rapid decline of Caspian Sea level threatens ecosystem integrity, biodiversity protection, and human infrastructure', url: 'https://www.nature.com/articles/s43247-025-02212-5', type: 'Peer-reviewed paper', publisher: 'Communications Earth & Environment (Nature)', year: 2025 },
@@ -2733,7 +2794,7 @@
       operator: 'Shell (survey contractor)',
       weather_event_type: 'internal_wave',
       classification: 'survey',
-      weather_event: 'Soliton (internal wave) - extreme feathering currents 45Â°, dragging streamers below 30 m depth threshold',
+      weather_event: 'Soliton (internal wave) - extreme feathering currents 45°, dragging streamers below 30 m depth threshold',
       fatalities: 0,
       injuries: 0,
       environmental_impact: 'Minor - buoy release, no environmental release',
@@ -2743,9 +2804,9 @@
         caption: 'Fortuna Survey image 2 selected by user for incident context in the 2014 soliton impact record.',
         credit: 'User-supplied image file (Fortuna Survey 2). Original photographer and licence not confirmed; permission required for external republication.'
       },
-      summary: 'A seismic survey vessel in a known soliton-prone zone (NW Shelf) encountered a soliton wave that caused extreme streamer feathering (45Â°), tangling, and damage. Automatic buoy release triggered at depth threshold. Survey lines had to be reshoot; equipment replaced. Incident exposed gap in soliton risk assessment during survey planning.',
-      executive_summary: 'Fortuna seismic survey vessel in NW Australia encountered a soliton wave causing extreme 45Â° streamer feathering, equipment tangling, and damage. Automatic buoy release triggered. Incident exposed gaps in soliton risk mitigation for seismic surveys in known soliton-prone areas.',
-      what_happened: 'During January 2014, the Fortuna seismic survey vessel was conducting a multi-month 3D survey over several months in the NW Shelf, a well-documented soliton hotspot. During streamer deployment, a soliton wave hit the seismic string, causing: (1) Extreme feathering of streamers (45Â° from tow line); (2) Streamer tangling and equipment damage; (3) Failure of convergence criteria for survey quality; (4) Automatic release of flotation buoys triggered when solitons dragged streamers below 30 m depth threshold; (5) Operational delays and re-shooting of affected lines.',
+      summary: 'A seismic survey vessel in a known soliton-prone zone (NW Shelf) encountered a soliton wave that caused extreme streamer feathering (45°), tangling, and damage. Automatic buoy release triggered at depth threshold. Survey lines had to be reshoot; equipment replaced. Incident exposed gap in soliton risk assessment during survey planning.',
+      executive_summary: 'Fortuna seismic survey vessel in NW Australia encountered a soliton wave causing extreme 45° streamer feathering, equipment tangling, and damage. Automatic buoy release triggered. Incident exposed gaps in soliton risk mitigation for seismic surveys in known soliton-prone areas.',
+      what_happened: 'During January 2014, the Fortuna seismic survey vessel was conducting a multi-month 3D survey over several months in the NW Shelf, a well-documented soliton hotspot. During streamer deployment, a soliton wave hit the seismic string, causing: (1) Extreme feathering of streamers (45° from tow line); (2) Streamer tangling and equipment damage; (3) Failure of convergence criteria for survey quality; (4) Automatic release of flotation buoys triggered when solitons dragged streamers below 30 m depth threshold; (5) Operational delays and re-shooting of affected lines.',
       what_went_wrong: [
         'Survey planning did not include adequate mitigation for soliton risk despite location in known soliton-prone zone.',
         'Soliton risks not quantified or characterized by seismic team during planning.',
@@ -2772,7 +2833,7 @@
         wave_height_hs: 'Not measured; soliton-driven vertical displacement documented',
         wind_speed: 'Data not documented in available sources',
         sea_temp: 'Not critical for soliton incident; soliton is internal wave phenomenon',
-        notes: 'Soliton event: internal wave causing extreme streamer feathering (45Â°). Buoy release triggered at 30m depth. Specific soliton amplitude and wavelength not quantified in available sources. Known soliton-prone location with documented seasonal activity.'
+        notes: 'Soliton event: internal wave causing extreme streamer feathering (45°). Buoy release triggered at 30m depth. Specific soliton amplitude and wavelength not quantified in available sources. Known soliton-prone location with documented seasonal activity.'
       },
       source_classification: 'external',
       shell_internal_only: false,
@@ -2904,7 +2965,7 @@
       metocean: {
         wave_height_hs: 'Severe; specific measurements not documented in available sources',
         wind_speed: 'Severe North Atlantic storm; specific wind speeds not quantified in available sources',
-        sea_temp: '~8-12Â°C (North Atlantic summer)',
+        sea_temp: '~8-12°C (North Atlantic summer)',
         notes: 'Severe North Atlantic storm August 2016. Tow line failure attributed to extreme sea state conditions. Specific Hs, wind speed not available in BBC or coastal guard reports.'
       },
       source_classification: 'external',
@@ -3101,7 +3162,7 @@
       metocean: {
         wave_height_hs: 'Extreme; Cyclone Gonu generated severe swell. Specific Hs values not quantified in available sources.',
         wind_speed: '270 km/h (170 mph JTWC); 240 km/h (150 mph IMD) - peak sustained winds (Source: Wikipedia Cyclone Gonu article)',
-        sea_temp: '~28-30Â°C (Arabian Sea, June)',
+        sea_temp: '~28-30°C (Arabian Sea, June)',
         notes: 'Tropical Cyclone Gonu - most intense Arabian Sea cyclone on record at time of 2007 event. JTWC 170 mph (270 km/h); IMD 150 mph (240 km/h). Facility design basis did not account for Category 5 cyclone scenario.'
       },
       source_classification: 'external',
@@ -3174,7 +3235,7 @@
       metocean: {
         wave_height_hs: 'Hurricane Rita: estimated 8-10 m. Hurricane Ike: 12-14 ft surge (Source: NOAA records).',
         wind_speed: 'Hurricane Rita: 180 mph sustained (Category 5 peak). Hurricane Ike: ~145 mph at Galveston (Category 4). (Source: Wikipedia)',
-        sea_temp: '~27-28Â°C (Gulf of Mexico, September)',
+        sea_temp: '~27-28°C (Gulf of Mexico, September)',
         notes: 'Rita: 180 mph Category 5 hurricane; Ike: 145 mph Category 4 at Galveston landfall. Ike storm surge reached 14 ft at Port Arthur, leaving only 2 ft margin to 16 ft levee.'
       },
       source_classification: 'external',
@@ -3238,7 +3299,7 @@
       metocean: {
         wave_height_hs: 'Winter storm conditions; specific Hs values not documented in available sources',
         wind_speed: 'North Atlantic winter storms; specific wind speeds not quantified in available sources',
-        sea_temp: '~6-8Â°C (North Atlantic winter)',
+        sea_temp: '~6-8°C (North Atlantic winter)',
         notes: 'Repeated severe North Atlantic winter storms (winter 2014-2015) generated near-bed orbital velocities and currents exceeding design basis. Nearshore wave and current interactions significantly under-predicted by regional models.'
       },
       source_classification: 'external',
@@ -3309,7 +3370,7 @@
       metocean: {
         wave_height_hs: 'Extreme; Hurricane Dorian generated severe Atlantic swell. Specific Hs values not quantified in available sources.',
         wind_speed: '185 mph sustained (Category 5 at Bahamas); 200+ mph gusts recorded. (Source: Wikipedia Hurricane Dorian article)',
-        sea_temp: '~27-28Â°C (Atlantic, September)',
+        sea_temp: '~27-28°C (Atlantic, September)',
         notes: 'Hurricane Dorian Category 5 at Bahamas landfall: 185 mph sustained winds, 200+ mph gusts. Major storm surge 20-25 ft. Tank roof failure caused by extreme wind loads exceeding design basis.'
       },
       source_classification: 'external',
@@ -3752,7 +3813,7 @@
       metocean: {
         wave_height_hs: 'Not the primary driver - a current-loading / installation-phase incident, not a storm',
         wind_speed: 'Not the primary driver',
-        sea_temp: '~24-28 Â°C (warm Loop-Current water)',
+        sea_temp: '~24-28 °C (warm Loop-Current water)',
         notes: 'The Gulf of Mexico Loop Current is a clockwise flow of warm Caribbean water extending northward toward the Gulf Stream; its core and shed eddies can produce strong, persistent currents (commonly cited up to ~1.5-2 m/s / ~3-4 knots) at a wide range of depths, and are notoriously variable and hard to schedule around. The operator did not publicly confirm the failure mechanism; Raymond James analysts (2015) speculated the strong Loop Current was the likely cause of the tendon buoyancy loss. Note: a 2019 SPE/JPT retrospective dates the event to "29 May 2014", but contemporaneous June-2015 reporting (World Oil, Offshore) places it on 29-31 May 2015 - the date used here.'
       },
       source_classification: 'external',
@@ -3790,15 +3851,9 @@
       fatalities: 0,
       persons_on_board: 70,
       survivors: 70,
-      image: {
-        src: 'https://th.bing.com/th/id/R.26077205b61324425532f6fcdf7633de?rik=0LTTe5fyJisrAg&riu=http%3a%2f%2fwww.gspoffshore.com%2fwp-content%2fuploads%2f2009%2f11%2fGSP-Saturn1.jpg&ehk=CfUvAqJlPS%2f%2fZ407%2bl3QEoFxW1Ne78yA2b%2fC7GmwvLI%3d&risl=&pid=ImgRaw&r=0',
-        alt: 'GSP Saturn jack-up drilling platform afloat before the Arctic tow incident.',
-        caption: 'GSP Saturn jack-up platform before the November 2014 tow incident.',
-        credit: 'GSP Offshore; watermark visible. Copyright and reuse permission require confirmation.'
-      },
       summary: 'While being towed from the Dolginskoye field to Murmansk in November 2014, the jack-up platform GSP Saturn encountered a severe Arctic storm with winds of 70-80 knots and seas of 8-12 m. The platform sustained damage (lifeboat destroyed, helicopter deck damaged) and was abandoned by its crew to escort vessels. All 70 personnel were evacuated safely. The platform was then jacked-down on the seabed at Cape Kanin Nos to await refloating. The successful evacuation was informed by lessons from the SPBU Kolskaya disaster (December 2011), in which a similar platform in comparable Arctic storm conditions resulted in 53 fatalities.',
       executive_summary: 'During a severe Arctic storm on 7-10 November 2014, the jack-up platform GSP Saturn was towed from the Dolginskoye field in the Pechora Sea toward Murmansk when storm conditions (70-80 knots winds, 8-12 m seas, near-freezing temperatures) caused damage and forced immediate evacuation of all 70 crew members to escort vessels. The primary escape systems were compromised (lifeboat destroyed, helicopter deck damaged), yet 100% crew survival was achieved through precautionary evacuation protocols informed by the SPBU Kolskaya precedent (2011). The platform was subsequently jacked-down at Cape Kanin Nos. The incident validated Arctic offshore evacuation procedures and highlighted continuing vulnerability of jack-up platforms in Arctic marine transits.',
-      what_happened: 'The GSP Saturn, a Romanian-operated 4-legged jack-up drilling platform, had completed drilling operations at the Dolginskoye field in the Pechora Sea for Gazprom Neft. On 6 November 2014 at 08:00, the platform commenced tow operations to Murmansk, towed by twin AHTS tugs (Stril Challenger and Stril Commander) with escort support (standby tug Strilbord and rescue vessel Spasatel Karev).\n\nOn the evening of 7 November 2014 (~23:00), storm conditions intensified unexpectedly. Wind shifted to sustained 70-80 knots with gusts exceeding 100 knots; seas built rapidly to 8-12 m with 15+ m wave peaks; visibility dropped to near-zero in snow and spray. Air temperatures fell to âˆ’8 to âˆ’12 Â°C, creating severe icing conditions.\n\nUnder the extreme dynamic loading of the storm, heavy seas destroyed Lifeboat #1 (torn from davits and lost overboard). The helicopter landing deck was damaged and became unsafe for landing operations.\n\nWith the primary escape systems compromised (only one lifeboat remaining, insufficient for ~70 crew; helicopter operations no longer possible), the platform captain and master of the escort tug assessed the situation and made a critical decision: **immediate evacuation**. This decision was informed by knowledge of the SPBU Kolskaya disaster (December 2011), in which a jack-up rig in comparable Arctic storm conditions had capsized with loss of 53 of ~70 crew.\n\nFrom approximately 05:00-07:00 on 8 November, tender boats (small rescue craft launched from Spasatel Karev) ferried crew between the platform and escort vessels in waves of 8-10 personnel per crossing. Each tender crossing took 20-30 minutes in the high seas. **All 70 crew were successfully evacuated with no fatalities or serious injuries.** The platform was left unmanned.\n\nWith crew safely aboard escort vessels, tugs assessed tow-ability and shelter options. Due to excessive tow-wire tension and no forecast storm clearing, the decision was made to seek shelter at Kolguyev Island (shallow Pechora Sea bay, ~100 nm north of the storm impact location). The slow tow to Kolguyev (8 November, ~12:00-17:00) was hazardous but successful; the platform anchored in sheltered water.\n\nWhen weather did not clear and ice accumulation concerns grew (late November season), the platform was relocated to Cape Kanin Nos (southern entrance to Pechora Bay, water depth ~30-50 m). On 10 November, the platform was **jacked-down** (all four legs extended to the seabed, floats raised above water), converting it from a floating/towed configuration to a bottom-supported jack-up.\n\n**Final outcome:** The outcome of GSP Saturn (refloating date, arrival in Murmansk, repair status, return to operations) is not documented in available public sources. The platform remained stranded at Cape Kanin Nos, awaiting recovery in improved weather and sea-ice conditions.',
+      what_happened: 'The GSP Saturn, a Romanian-operated 4-legged jack-up drilling platform, had completed drilling operations at the Dolginskoye field in the Pechora Sea for Gazprom Neft. On 6 November 2014 at 08:00, the platform commenced tow operations to Murmansk, towed by twin AHTS tugs (Stril Challenger and Stril Commander) with escort support (standby tug Strilbord and rescue vessel Spasatel Karev).\n\nOn the evening of 7 November 2014 (~23:00), storm conditions intensified unexpectedly. Wind shifted to sustained 70-80 knots with gusts exceeding 100 knots; seas built rapidly to 8-12 m with 15+ m wave peaks; visibility dropped to near-zero in snow and spray. Air temperatures fell to -8 to -12 °C, creating severe icing conditions.\n\nUnder the extreme dynamic loading of the storm, heavy seas destroyed Lifeboat #1 (torn from davits and lost overboard). The helicopter landing deck was damaged and became unsafe for landing operations.\n\nWith the primary escape systems compromised (only one lifeboat remaining, insufficient for ~70 crew; helicopter operations no longer possible), the platform captain and master of the escort tug assessed the situation and made a critical decision: **immediate evacuation**. This decision was informed by knowledge of the SPBU Kolskaya disaster (December 2011), in which a jack-up rig in comparable Arctic storm conditions had capsized with loss of 53 of ~70 crew.\n\nFrom approximately 05:00-07:00 on 8 November, tender boats (small rescue craft launched from Spasatel Karev) ferried crew between the platform and escort vessels in waves of 8-10 personnel per crossing. Each tender crossing took 20-30 minutes in the high seas. **All 70 crew were successfully evacuated with no fatalities or serious injuries.** The platform was left unmanned.\n\nWith crew safely aboard escort vessels, tugs assessed tow-ability and shelter options. Due to excessive tow-wire tension and no forecast storm clearing, the decision was made to seek shelter at Kolguyev Island (shallow Pechora Sea bay, ~100 nm north of the storm impact location). The slow tow to Kolguyev (8 November, ~12:00-17:00) was hazardous but successful; the platform anchored in sheltered water.\n\nWhen weather did not clear and ice accumulation concerns grew (late November season), the platform was relocated to Cape Kanin Nos (southern entrance to Pechora Bay, water depth ~30-50 m). On 10 November, the platform was **jacked-down** (all four legs extended to the seabed, floats raised above water), converting it from a floating/towed configuration to a bottom-supported jack-up.\n\n**Final outcome:** The outcome of GSP Saturn (refloating date, arrival in Murmansk, repair status, return to operations) is not documented in available public sources. The platform remained stranded at Cape Kanin Nos, awaiting recovery in improved weather and sea-ice conditions.',
       what_went_wrong: [
         'Primary escape systems were destroyed or damaged during the initial storm surge: lifeboat #1 lost overboard, helicopter deck damaged and unsafe. Only one lifeboat remained for ~70 crew; only helicopter deck remains were unsafe. This forced reliance on tender boat evacuation under dangerous sea conditions.',
         'The platform was transiting Arctic waters in early November, a high-risk period for Arctic storms; specific weather forecast accuracy vs. actual storm intensity/track development is undocumented, though the rapid intensification appears to have caught the operation.',
@@ -3820,10 +3875,10 @@
       metocean: {
         wave_height_hs: '8-12 m (significant wave height)',
         wind_speed: '70-80 knots sustained, gusting to 100+ knots (equivalent to strong gale / hurricane-force conditions)',
-        sea_temp: '~2 Â°C',
-        air_temp: 'âˆ’8 to âˆ’12 Â°C',
+        sea_temp: '~2 °C',
+        air_temp: '-8 to -12 °C',
         visibility: 'Near-zero in snow and spray',
-        notes: 'Arctic weather patterns in November are highly variable. Specific forecast vs. actual storm comparisons require access to Russian meteorological archives not available in public sources. Icing conditions (air temp âˆ’8 to âˆ’12 Â°C + sea spray) created rapid ice accumulation on decks and superstructure. The Pechora Sea is prone to polar lows - small, short-lived but intense maritime storms that develop rapidly and are difficult to forecast. Arctic seasonal ice advance (specific 2014 dates undocumented) creates operational pressure but must not override weather safety criteria.'
+        notes: 'Arctic weather patterns in November are highly variable. Specific forecast vs. actual storm comparisons require access to Russian meteorological archives not available in public sources. Icing conditions (air temp -8 to -12 °C + sea spray) created rapid ice accumulation on decks and superstructure. The Pechora Sea is prone to polar lows - small, short-lived but intense maritime storms that develop rapidly and are difficult to forecast. Arctic seasonal ice advance (specific 2014 dates undocumented) creates operational pressure but must not override weather safety criteria.'
       },
       source_classification: 'external',
       shell_internal_only: false,
@@ -3984,7 +4039,7 @@
       references: [
         { title: 'WorkSafe WA / LGIRS - Significant Incident Summary No. 6: Offshore platform decommissioning near miss', type: 'Official regulator summary', publisher: 'WorkSafe WA / LGIRS', year: 2024, url: 'https://www.worksafe.wa.gov.au/publications/significant-incident-summary-no-6-offshore-platform-decommissioning-near-miss' },
         { title: 'WorkSafe WA / LGIRS - Significant Incident Summary No. 6 PDF', type: 'Official regulator PDF', publisher: 'WorkSafe WA / LGIRS', year: 2024, url: 'https://www.worksafe.wa.gov.au/system/files/migrated/sites/default/files/atoms/files/significant_incident_summary_no._6_-_offshore_platform_decommissioning_near_miss.pdf' },
-        { title: 'WA Today - Santosâ€™ swinging platform off WA coast had â€œhigh potential for multiple fatalitiesâ€', type: 'Media report', publisher: 'WA Today', year: 2021, url: 'https://www.watoday.com.au/national/western-australia/santos-swinging-platform-off-wa-coast-had-high-potential-for-multiple-fatalities-20211102-p595d2.html' }
+        { title: 'WA Today - Santos’ swinging platform off WA coast had “high potential for multiple fatalities”', type: 'Media report', publisher: 'WA Today', year: 2021, url: 'https://www.watoday.com.au/national/western-australia/santos-swinging-platform-off-wa-coast-had-high-potential-for-multiple-fatalities-20211102-p595d2.html' }
       ]
     },
 
@@ -3996,7 +4051,7 @@
       name: 'Sikorsky S-92A LN-ONT Loss of Control',
       year: 2020,
       date: '24 February 2020',
-      location: 'Maersk Invincible jack-up rig, Valhall field, North Sea, Norway - N 56Â°14.99â€² E 003Â°20.93â€²',
+      location: 'Maersk Invincible jack-up rig, Valhall field, North Sea, Norway - N 56°14.99′ E 003°20.93′',
       lat: 56.2498,
       lng: 3.3488,
       region: 'Europe',
@@ -4018,9 +4073,9 @@
         caption: 'Investigation animation of LN-ONT passing the installation during rearward flight; the illustrated rig is not identical to Maersk Invincible.',
         credit: 'L3 Harris Technologies UK / Norwegian Safety Investigation Authority. Permission required.'
       },
-      summary: 'During a night departure from Maersk Invincible, heavy rain, darkness and the take-off direction left the two pilots without a usable external horizon or visual references. Both became spatially disoriented before the S-92A reached the 50 kt minimum speed for its principal autopilot modes. The helicopter pitched above 25Â°, accelerated backwards to 49 kt, descended to 175 ft above the sea and was out of control for about 40 seconds before the commander recovered. All 11 occupants were uninjured.',
+      summary: 'During a night departure from Maersk Invincible, heavy rain, darkness and the take-off direction left the two pilots without a usable external horizon or visual references. Both became spatially disoriented before the S-92A reached the 50 kt minimum speed for its principal autopilot modes. The helicopter pitched above 25°, accelerated backwards to 49 kt, descended to 175 ft above the sea and was out of control for about 40 seconds before the commander recovered. All 11 occupants were uninjured.',
       executive_summary: 'During a night departure from Maersk Invincible in heavy rain and strong wind, both pilots became spatially disoriented with no visible horizon. The helicopter flew backwards at up to 49 kt and descended to 175 ft above the sea before control was recovered after about 40 seconds. All 11 occupants were uninjured.',
-      what_happened: 'LN-ONT departed Maersk Invincible for Stavanger with two pilots and nine passengers. The helideck reported wind at 42 kt gusting 47 kt, heavy rain, 7,000 m visibility and broken cloud at 900 ft; an earlier update had shown visibility falling to 3,500 m and overcast cloud at 600 ft. Ekofisk reported rain and mist and a 5 m sea state. Although classified as VMC, darkness and rain obscured the horizon and sea surface, while the illuminated installation was behind the helicopter.\n\nShortly after the take-off decision point, both pilots became spatially disoriented. The helicopter pitched above 25Â°, accelerated backwards at up to 49 kt over approximately 210 m and descended to 175 ft above the sea. The commander regained situational awareness after seeing the rig, took control and recovered after about 40 seconds. The flight continued safely to Stavanger without injury or damage.',
+      what_happened: 'LN-ONT departed Maersk Invincible for Stavanger with two pilots and nine passengers. The helideck reported wind at 42 kt gusting 47 kt, heavy rain, 7,000 m visibility and broken cloud at 900 ft; an earlier update had shown visibility falling to 3,500 m and overcast cloud at 600 ft. Ekofisk reported rain and mist and a 5 m sea state. Although classified as VMC, darkness and rain obscured the horizon and sea surface, while the illuminated installation was behind the helicopter.\n\nShortly after the take-off decision point, both pilots became spatially disoriented. The helicopter pitched above 25°, accelerated backwards at up to 49 kt over approximately 210 m and descended to 175 ft above the sea. The commander regained situational awareness after seeing the rig, took control and recovered after about 40 seconds. The flight continued safely to Stavanger without injury or damage.',
       what_went_wrong: [
         'Darkness, heavy rain, strong headwind and the departure direction removed useful external visual references. The NSIA considered that wind and rain may also have created an illusion of forward speed.',
         'Both pilots became spatially disoriented. Control inputs were overcorrected, and communication and transfer of control did not work as expected under acute stress.',
@@ -4035,14 +4090,14 @@
       ],
       actions: [
         'Bristow Norway conducted an internal investigation and introduced an approved standard practice for use of the cyclic force-trim release button.',
-        'NSIA Safety Recommendation 2024/02T asked the Norwegian Civil Aviation Authority to follow up offshore operatorsâ€™ TEM procedures, training and use in daily operations.',
+        'NSIA Safety Recommendation 2024/02T asked the Norwegian Civil Aviation Authority to follow up offshore operators’ TEM procedures, training and use in daily operations.',
         'NSIA Safety Recommendation 2024/03T asked Bristow Norway to add Standard Deviation Calls for pitch variations beyond predefined limits.'
       ],
       metocean: {
-        wave_height_hs: '5 m â€œSea Stateâ€ reported in the 19:50Z Ekofisk METAR',
-        wind_speed: 'Helideck report: 42 kt gusting 47 kt from 120Â°; update: 33 kt from 118Â°; Ekofisk: 37-38 kt from 090-100Â°',
-        sea_temp: '8 Â°C',
-        air_temp: '3 Â°C',
+        wave_height_hs: '5 m “Sea State” reported in the 19:50Z Ekofisk METAR',
+        wind_speed: 'Helideck report: 42 kt gusting 47 kt from 120°; update: 33 kt from 118°; Ekofisk: 37-38 kt from 090-100°',
+        sea_temp: '8 °C',
+        air_temp: '3 °C',
         visibility: 'Helideck 7,000 m, updated to 3,500 m; Ekofisk 5,000 m in rain and mist',
         cloud: 'Helideck BKN 900 ft, updated to OVC 600 ft; Ekofisk SCT 700 ft / BKN 800-900 ft',
         pressure: 'Helideck QNH 993 hPa, updated to 988 hPa; Ekofisk QNH 985-988 hPa',
@@ -4050,7 +4105,7 @@
       },
       source_classification: 'external',
       shell_internal_only: false,
-      data_quality: 'High. The event sequence, coordinates, weather observations, flight-recorder values, findings and recommendations come from NSIA Aviation Report 2024/03 and its retained local PDF. The NSIA report is explicit that no technical fault contributed. â€œStormâ€ is the closest available database event type, but the report identifies no named storm and records the occurrence as VMC; the relevant metocean contribution was strong wind plus rain/mist and loss of visual cues at night.',
+      data_quality: 'High. The event sequence, coordinates, weather observations, flight-recorder values, findings and recommendations come from NSIA Aviation Report 2024/03 and its retained local PDF. The NSIA report is explicit that no technical fault contributed. “Storm” is the closest available database event type, but the report identifies no named storm and records the occurrence as VMC; the relevant metocean contribution was strong wind plus rain/mist and loss of visual cues at night.',
       sources: [
         'Norwegian Safety Investigation Authority Aviation Report 2024/03 (EXTERNAL; retained local copy)',
         'Aerossurance incident review summarising NSIA Aviation Report 2024/03 (EXTERNAL)'
@@ -4091,7 +4146,7 @@
       },
       summary: 'During a night personnel shuttle from Cormorant A to the nearby Safe Supporter flotel, AS332L Super Puma G-TIGH entered an immediate climbing turn away from a strong gusting headwind. The commander did not recognise the rapidly changing relationship between ground speed and airspeed; airspeed decayed to effectively zero and a descent developed. Maximum power did not prevent impact with very rough seas. The helicopter inverted and sank. Twelve of 17 occupants escaped, but only six were recovered alive; all 11 fatalities resulted from drowning, in some cases after hypothermia.',
       executive_summary: 'G-TIGH struck the North Sea shortly after lifting from Cormorant A at night in severe weather. During a rushed downwind turn, airspeed decayed while visually perceived ground speed remained high. The aircraft descended into very rough seas, inverted and sank within one or two minutes. Six of 17 occupants survived. Strong gusting wind and degraded visual cues contributed directly to the accident sequence; extreme sea state severely constrained survival and rescue. Icing and aircraft malfunction were excluded.',
-      what_happened: 'Severe wind and sea conditions had forced the Safe Supporter accommodation flotel to stand off from Cormorant A, creating a requirement for helicopter personnel shuttles. At 19:48, G-TIGH lifted from the platform with two crew and 15 passengers for the 206 m transfer. The helicopter initially headed about 300Â°M, nearly into wind, then entered an immediate climbing right turn intended to avoid turbulence behind the platform and flotel and reposition for an into-wind approach.\n\nThe turn began before a stable height or speed had been established. As the helicopter turned away from the strong headwind, its ground speed remained visually prominent while its airspeed rapidly decayed. The commander reduced collective and raised the nose while searching for the flotel; the co-pilot was occupied by wind-degraded radio transmissions about flotel movement. Airspeed fell effectively to zero and descent developed from about 250 ft.\n\nThe commander demanded maximum power after the descent was recognised, but the helicopter struck a wave at approximately 25 ft/s around 19:50. AAIB modelling indicated that recovery should otherwise have been possible; down-draughts, incipient Vortex Ring state and wave crests may have prevented it. The helicopter rolled right, inverted, remained afloat for only one or two minutes and sank. This was an uncontrolled collision/crash into the sea, not a planned controlled ditching.',
+      what_happened: 'Severe wind and sea conditions had forced the Safe Supporter accommodation flotel to stand off from Cormorant A, creating a requirement for helicopter personnel shuttles. At 19:48, G-TIGH lifted from the platform with two crew and 15 passengers for the 206 m transfer. The helicopter initially headed about 300°M, nearly into wind, then entered an immediate climbing right turn intended to avoid turbulence behind the platform and flotel and reposition for an into-wind approach.\n\nThe turn began before a stable height or speed had been established. As the helicopter turned away from the strong headwind, its ground speed remained visually prominent while its airspeed rapidly decayed. The commander reduced collective and raised the nose while searching for the flotel; the co-pilot was occupied by wind-degraded radio transmissions about flotel movement. Airspeed fell effectively to zero and descent developed from about 250 ft.\n\nThe commander demanded maximum power after the descent was recognised, but the helicopter struck a wave at approximately 25 ft/s around 19:50. AAIB modelling indicated that recovery should otherwise have been possible; down-draughts, incipient Vortex Ring state and wave crests may have prevented it. The helicopter rolled right, inverted, remained afloat for only one or two minutes and sank. This was an uncontrolled collision/crash into the sea, not a planned controlled ditching.',
       what_went_wrong: [
         'The handling pilot did not recognise the rapid divergence between ground speed and airspeed while turning downwind in significant wind; airspeed and then height were inadvertently allowed to decay.',
         'The right turn was initiated before a stable acceleration phase, speed or height had been established, leaving little altitude or time for recovery.',
@@ -4103,28 +4158,28 @@
       lessons_learned: [
         'Offshore wind limits do not by themselves define acceptable total risk. Flight planning must consider visual cueing, downwind manoeuvres, turbulence, sea state and whether effective rescue remains feasible.',
         'After an into-wind offshore take-off, establish a stable height and airspeed before turning; monitor airspeed rather than relying on visually perceived ground speed in strong wind.',
-        'Night and snow operations require explicit instrument monitoring and disciplined division of duties, particularly when the destination may leave the handling pilotâ€™s field of view.',
+        'Night and snow operations require explicit instrument monitoring and disciplined division of duties, particularly when the destination may leave the handling pilot’s field of view.',
         'Weather-related go/no-go decisions should include post-impact survivability and SAR capability, not only whether aircraft and helideck operating limits are technically satisfied.',
         'Emergency flotation should be capable of automatic as well as manual activation after an unexpected water impact.',
         'Offshore escape, flotation, liferafts, lifejackets, survival suits and rescue arrangements must be designed and assessed as one integrated survival system.'
       ],
       actions: [
         'AAIB issued 11 safety recommendations, 93-22 through 93-32, covering workload, vessel-motion reporting, height warning, human-error research, flotation, cabin-door jettison, SAR equipment and coordination, integrated survivability and weather effects on rescue.',
-        'The operatorâ€™s client introduced an adverse-weather policy linking management escalation to the viability of rescue in different wind and sea states.',
+        'The operator’s client introduced an adverse-weather policy linking management escalation to the viability of rescue in different wind and sea states.',
         'The accident informed the UK CAA Review of Helicopter Offshore Safety and Survival, published as CAP 641 in 1995.'
       ],
       metocean: {
-        wind_speed: 'Met Office aftercast: 310Â°/35-40 kt at the surface, gusting 55-60 kt; 1953 special observation: 300Â°/54-64 kt',
+        wind_speed: 'Met Office aftercast: 310°/35-40 kt at the surface, gusting 55-60 kt; 1953 special observation: 300°/54-64 kt',
         wave_height_max: 'Up to 11 m wave heights used in AAIB analysis; not reported as significant wave height',
-        air_temp: '0 Â°C at 1953; dew point âˆ’3 Â°C; freezing level at the surface',
+        air_temp: '0 °C at 1953; dew point -3 °C; freezing level at the surface',
         visibility: 'Around 10 km, rapidly falling to 300 m in snow showers; 4,000 m in moderate snow at 1953',
         cloud: 'Broken cumulus base around 1,500 ft; occasional cumulonimbus base 550-800 ft; vertical visibility 1,200 ft at 1953',
         pressure: 'QNH 989 hPa at 1953',
-        notes: 'AAIB found the severe weather and sea state remained within the helicopterâ€™s permitted operating envelope, but strong gusting wind was integral to the downwind-turn airspeed loss. Darkness, snow and wind-degraded communications increased workload. Down-draughts and wave crests may have prevented recovery. Sea state was a major limiting factor in survivability and rescue. Recorded liquid-water content was very low; icing and salt accretion were excluded as contributors.'
+        notes: 'AAIB found the severe weather and sea state remained within the helicopter’s permitted operating envelope, but strong gusting wind was integral to the downwind-turn airspeed loss. Darkness, snow and wind-degraded communications increased workload. Down-draughts and wave crests may have prevented recovery. Sea state was a major limiting factor in survivability and rescue. Recorded liquid-water content was very low; icing and salt accretion were excluded as contributors.'
       },
       source_classification: 'external',
       shell_internal_only: false,
-      data_quality: 'High. Identity, sequence, weather observations, flight-recorder data, casualties, findings and recommendations come from AAIB Aircraft Accident Report 2/93 and its appendices. Coordinates identify the Cormorant A platform reported by AAIB; the impact was about 500 m east-north-east. The common label â€œditchingâ€ is retained only as a search term: AAIB describes an uncontrolled collision/crash into the sea. Wave heights up to 11 m are maxima used in analysis, not significant wave height. A secondary Aerossurance article incorrectly states 19 occupants; AAIB and ASN establish 17.',
+      data_quality: 'High. Identity, sequence, weather observations, flight-recorder data, casualties, findings and recommendations come from AAIB Aircraft Accident Report 2/93 and its appendices. Coordinates identify the Cormorant A platform reported by AAIB; the impact was about 500 m east-north-east. The common label “ditching” is retained only as a search term: AAIB describes an uncontrolled collision/crash into the sea. Wave heights up to 11 m are maxima used in analysis, not significant wave height. A secondary Aerossurance article incorrectly states 19 occupants; AAIB and ASN establish 17.',
       sources: [
         'UK AAIB Aircraft Accident Report 2/93 and appendices (EXTERNAL; retained local copies)',
         'UK CAA CAP 641 Review of Helicopter Offshore Safety and Survival (EXTERNAL)',
@@ -4168,10 +4223,10 @@
         caption: 'Thunder Horse listing heavily after it was evacuated ahead of Hurricane Dennis, July 2005. The final MMS investigation found that the hurricane did not initiate the list.',
         credit: 'NBC News-hosted photograph; original photographer not identified; permission required'
       },
-      infrastructure_impact: 'Approximately 20Â° port list, about 15,000 metric tonnes of seawater ingress, extensive lower-hull flooding and electrical damage; MMS estimated property damage at US$100 million',
-      summary: 'Thunder Horse was evacuated during commissioning ahead of Hurricane Dennis. During the shutdown, personnel attempted to isolate four hydraulic power units controlling ballast and bilge valves, but residual hydraulic pressure gradually moved more than 80 valves. Ballast water then migrated across the hull and produced an approximately 16Â° list before the storm passed. Defective check valves, failed watertight cable transits and other bulkhead openings allowed progressive flooding, and later hurricane wave action may have worsened downflooding. The platform was found at about 20Â° list on 11 July. There were no casualties, no reported spill and no hull breach.',
-      executive_summary: 'Thunder Horse was evacuated during commissioning ahead of Hurricane Dennis. When personnel attempted to isolate the ballast-system hydraulic power units, residual pressure moved more than 80 valves and redistributed ballast, leaving the platform at an approximately 16Â° list before the storm passed. Defective check valves and failed watertight penetrations then allowed progressive flooding; hurricane waves may have added to later downflooding after freeboard was already lost. The evacuated platform was stabilized without casualties or pollution, but it suffered extensive flooding and an estimated US$100 million in damage.',
-      what_happened: 'On 8 July 2005, personnel prepared the not-yet-producing Thunder Horse platform for evacuation ahead of Hurricane Dennis. The evacuation process included attempting to isolate four Danfoss hydraulic power units controlling ballast and bilge valves. The method was based on experience from other deepwater projects; the operator had no platform-specific written isolation procedure. Vessel-monitoring data recorded numerous alarms shortly after isolation and showed movement of more than 80 valves. A later test demonstrated that the isolation left enough hydraulic pressure to open the valves gradually.\n\nWater migrated from ballast tanks, particularly two full starboard-forward column tanks that were later found empty, into tanks and spaces in other hull quadrants. The platform first listed to starboard for about six hours and then rolled back through upright into an approximately 16Â° port list. MMS concluded that this initial list developed before Hurricane Dennis passed.\n\nThree bilge-system check valves were installed in the wrong orientation and another was inoperable, allowing water into lower-hull spaces. As the list exceeded about 16Â°, seawater downflooded through overboard discharge lines and/or vents and possibly later through the deck box. Failed multiple cable transits and two unintended bulkhead openings then allowed water to spread between nominally watertight compartments. When the platform was discovered on 11 July it was listing at about 20Â°. Investigators estimated that roughly 15,000 metric tonnes of seawater entered the hull, but found no hull breach or leaking engineered penetration below the normal waterline.',
+      infrastructure_impact: 'Approximately 20° port list, about 15,000 metric tonnes of seawater ingress, extensive lower-hull flooding and electrical damage; MMS estimated property damage at US$100 million',
+      summary: 'Thunder Horse was evacuated during commissioning ahead of Hurricane Dennis. During the shutdown, personnel attempted to isolate four hydraulic power units controlling ballast and bilge valves, but residual hydraulic pressure gradually moved more than 80 valves. Ballast water then migrated across the hull and produced an approximately 16° list before the storm passed. Defective check valves, failed watertight cable transits and other bulkhead openings allowed progressive flooding, and later hurricane wave action may have worsened downflooding. The platform was found at about 20° list on 11 July. There were no casualties, no reported spill and no hull breach.',
+      executive_summary: 'Thunder Horse was evacuated during commissioning ahead of Hurricane Dennis. When personnel attempted to isolate the ballast-system hydraulic power units, residual pressure moved more than 80 valves and redistributed ballast, leaving the platform at an approximately 16° list before the storm passed. Defective check valves and failed watertight penetrations then allowed progressive flooding; hurricane waves may have added to later downflooding after freeboard was already lost. The evacuated platform was stabilized without casualties or pollution, but it suffered extensive flooding and an estimated US$100 million in damage.',
+      what_happened: 'On 8 July 2005, personnel prepared the not-yet-producing Thunder Horse platform for evacuation ahead of Hurricane Dennis. The evacuation process included attempting to isolate four Danfoss hydraulic power units controlling ballast and bilge valves. The method was based on experience from other deepwater projects; the operator had no platform-specific written isolation procedure. Vessel-monitoring data recorded numerous alarms shortly after isolation and showed movement of more than 80 valves. A later test demonstrated that the isolation left enough hydraulic pressure to open the valves gradually.\n\nWater migrated from ballast tanks, particularly two full starboard-forward column tanks that were later found empty, into tanks and spaces in other hull quadrants. The platform first listed to starboard for about six hours and then rolled back through upright into an approximately 16° port list. MMS concluded that this initial list developed before Hurricane Dennis passed.\n\nThree bilge-system check valves were installed in the wrong orientation and another was inoperable, allowing water into lower-hull spaces. As the list exceeded about 16°, seawater downflooded through overboard discharge lines and/or vents and possibly later through the deck box. Failed multiple cable transits and two unintended bulkhead openings then allowed water to spread between nominally watertight compartments. When the platform was discovered on 11 July it was listing at about 20°. Investigators estimated that roughly 15,000 metric tonnes of seawater entered the hull, but found no hull breach or leaking engineered penetration below the normal waterline.',
       what_went_wrong: [
         'The four ballast-system hydraulic power units were not effectively isolated; residual pressure gradually moved more than 80 ballast and bilge valves from their initially closed positions.',
         'The operator had no written, Thunder Horse-specific HPU isolation procedure and relied on personnel experience from other deepwater projects.',
@@ -4179,7 +4234,7 @@
         'Three integrated ballast/bilge check valves were installed in the wrong orientation and a fourth was inoperable, allowing ballast water to enter manned lower-hull spaces.',
         'Multiple cable transits were incorrectly installed for their configurations, and two other unintended bulkhead openings allowed progressive flooding between watertight compartments.',
         'Remote ballast-system monitoring and operation intended for the completed facility were not operational when the platform left the shipyard or when it was evacuated.',
-        'Once the equipment-induced list exceeded about 16Â°, external seawater could enter through discharge lines or vents; hurricane wave action may have increased this later downflooding.'
+        'Once the equipment-induced list exceeded about 16°, external seawater could enter through discharge lines or vents; hurricane wave action may have increased this later downflooding.'
       ],
       lessons_learned: [
         'Storm-evacuation procedures must be platform-specific, written, tested and verified under the exact unattended configuration; an isolation instruction is inadequate unless the resulting system state is demonstrably fail-safe.',
@@ -4201,11 +4256,11 @@
         hurricane: 'Hurricane Dennis, a major hurricane crossing the eastern Gulf of Mexico on 10 July 2005',
         wind_speed: 'No platform-specific observed wind speed stated in the MMS investigation or NHC tropical cyclone report',
         wave_height_hs: 'No platform-specific significant wave height stated in the MMS investigation',
-        notes: 'The NHC best track placed Dennis about 115 nautical miles east-southeast of Thunder Horse at 12:00 UTC on 10 July 2005. MMS determined the initial approximately 16Â° list pre-dated the hurricane passage; it states only that associated wave action may have contributed to subsequent downflooding. Exact local wind and wave values should not be presented as observations without an additional site-specific record.'
+        notes: 'The NHC best track placed Dennis about 115 nautical miles east-southeast of Thunder Horse at 12:00 UTC on 10 July 2005. MMS determined the initial approximately 16° list pre-dated the hurricane passage; it states only that associated wave action may have contributed to subsequent downflooding. Exact local wind and wave values should not be presented as observations without an additional site-specific record.'
       },
       source_classification: 'external',
       shell_internal_only: false,
-      data_quality: 'High for chronology, causal findings, flooding mechanism, damage estimate and recommendations because these come from the final MMS accident investigation. NOAA independently confirms the coordinates, 20-30Â° observed list, no production and diesel spill risk. Water depth varies by source: the MMS form gives 6,400 ft, NOAA describes roughly 1,000 fathoms and a later BP technical account gives about 6,050 ft; the record therefore avoids a single exact depth. No platform-specific wind or wave observation was found. The 2020 Offshore/SNAME retrospective compresses some valve details and is used only for later cross-project actions, not as the primary causal source.',
+      data_quality: 'High for chronology, causal findings, flooding mechanism, damage estimate and recommendations because these come from the final MMS accident investigation. NOAA independently confirms the coordinates, 20-30° observed list, no production and diesel spill risk. Water depth varies by source: the MMS form gives 6,400 ft, NOAA describes roughly 1,000 fathoms and a later BP technical account gives about 6,050 ft; the record therefore avoids a single exact depth. No platform-specific wind or wave observation was found. The 2020 Offshore/SNAME retrospective compresses some valve details and is used only for later cross-project actions, not as the primary causal source.',
       sources: [
         'MMS Accident Investigation Report, event 8 July 2005 (EXTERNAL; retained local copy)',
         'MMS Safety Alert No. 235, Multiple Cable Transit Failures (EXTERNAL)',
@@ -4604,10 +4659,10 @@
       persons_on_board: 274,
       survivors: 188,
       image: {
-        src: 'https://sc0.blr1.cdn.digitaloceanspaces.com/inline/wpghpjkjnj-1627832120.jpg',
-        alt: 'Indian Coast Guard rescue operations during Cyclone Tauktae offshore barge emergency in May 2021.',
-        caption: 'Rescue operations during the Cyclone Tauktae offshore barge emergency (Papaa-305 context, May 2021).',
-        credit: 'DigitalOcean-hosted news image; original photographer and license not yet independently verified. Permission may be required for republication.'
+        src: 'images/ongc-papaa-305-2021-navy-gal-constructor-airlift.jpg',
+        alt: 'Indian Navy helicopters airlifting workers from Gal Constructor during the Cyclone Tauktae emergency.',
+        caption: 'Indian Navy helicopters airlifting workers from Gal Constructor during the Cyclone Tauktae emergency. This is rescue context for the wider Papaa-305/Varapradha disaster, not Papaa-305 itself.',
+        credit: 'Indian Navy photograph published by Scroll.in, "The decisions that led to India\'s worst offshore disaster" (2021). Original photographer and reuse licence unresolved; permission required.'
       },
       infrastructure_impact: 'Loss of Papaa-305 and Varapradha with mass-casualty offshore disaster, multi-agency rescue and prolonged compensation/recovery processes',
       summary: 'Papaa-305, a non-propelled accommodation barge with 261 people aboard, remained near ONGC\'s Heera field as Cyclone Tauktae rapidly intensified. It reported all anchors lost at 07:14 on 17 May, drifted into the HS wellhead platform, began tilting around 18:00 and sank by 19:05. The tug Varapradha was lost separately after towing Gal Constructor toward Mumbai. Navy and ONGC vessels rescued 188 of the 274 people aboard the two vessels; 75 died from Papaa-305 and 11 from Varapradha. Official review found failures extending beyond the storm itself into weather decisions, command accountability, vessel regulation, lifesaving equipment and training assurance.',
@@ -5198,18 +5253,14 @@
       injuries: 0,
       infrastructure_impact: 'Unplanned LMRP/riser disconnect; riser inner barrel, slip-joint/tension-ring system and tension line were damaged or displaced. Approximately 710 barrels of synthetic-base mud were released.',
       environmental_impact: 'Approximately 710 barrels of synthetic-base mud spilled; no open-hole hydrocarbons were exposed below casing at disconnect.',
-      image: {
-        src: 'images/ensco-7500-riser-disconnect-2005.jpg',
-        alt: 'Ensco 7500 semi-submersible drilling unit at sea.',
-        caption: 'Ensco 7500 semi-submersible drilling unit. Context image from the investigation report; not a photograph of the July 2005 disconnect.',
-        credit: 'U.S. Minerals Management Service via Officer of the Watch, Figure 1; source URL: https://officerofthewatch.com/2014/03/31/semi-submersible-drilling-unit-riser-disconnect-investigation-report/. Permission status requires confirmation.'
-      },
+      image: { src: 'images/ensco-7500-riser-disconnect-2005.jpg', alt: 'Ensco 7500 semi-submersible drilling unit at sea.', caption: 'Ensco 7500 semi-submersible drilling unit. Context image from the investigation report; not a photograph of the July 2005 disconnect.', credit: 'U.S. Minerals Management Service via Officer of the Watch, Figure 1; source URL: https://officerofthewatch.com/2014/03/31/semi-submersible-drilling-unit-riser-disconnect-investigation-report/. Permission status requires confirmation.' },
       summary: 'On 5 July 2005, Ensco 7500 lost station while displacing synthetic-based mud from its riser in preparation for a storm disconnect. With approximately 3.3-knot current, 61-knot wind and 14-16 ft swells, the rig was already 175 ft off well centre when EDS was ordered. The LMRP released after about four minutes, hard recoil wedged the slip joint and tension ring, the riser bent, and approximately 710 barrels of synthetic mud spilled.',
       executive_summary: 'BSEE found that loop currents and deteriorating tropical weather exceeded Ensco 7500\'s DP station-keeping capability. One thruster had been out of service for 3-4 months, the rig began riser displacement while slipping, and an EDS control configuration delayed the LMRP function. The incident caused riser damage and a 710-barrel synthetic-mud spill, but no open-hole hydrocarbons were exposed.',
-      what_happened: 'Ensco 7500 arrived at Green Canyon Block 652 on 27-28 May 2005 to drill an exploratory well. For several weeks the operation proceeded in relatively calm conditions, but the Gulf of Mexico loop current was already present beneath the rig. The loop current and its eddies produced strong, variable deepwater currents; speeds had averaged about 2.1 knots during the preceding days.\n\n' +
-        'On 4 July, while the crew monitored tropical development, drilling was suspended at 1800 hours, approximately 18 hours before the incident. The team circulated the well, pulled the 6-5/8-inch drill pipe and prepared to set a storm packer. On the morning of 5 July, however, the weather and current deteriorated faster than the disconnect work could be completed. By 1000, the rig was already having difficulty holding position. One of the seven thrusters was unavailable for planned maintenance and had been out of service for approximately three to four months. The remaining propulsion system had power available, but the combined wind, waves and loop current overpowered the Ensco 7500\'s available station-keeping capability.\n\n' +
-        'At 1100, while the rig was using seven thrusters and six engines, the crew began displacing approximately 1,538 barrels of 14.6 ppg synthetic-based mud from the riser with seawater. By 1130, wind was about 41 knots and current about 3.2 knots; the rig was slipping from the well. By 1200, wind had reached approximately 61 knots, current about 3.3 knots and swells 14-16 ft. The rig was approximately 175 ft off well centre when the contractor ordered the Emergency Disconnect Sequence. The LMRP did not release promptly, and the flex joint reached approximately 5 degrees. A second EDS command was given and the subsea engineer activated the sequence from another control pod.\n\n' +
-        'At approximately 1204, about four minutes after initiation, the EDS completed with hard recoil. The slip joint pushed against the moon-pool BOPE guide and wedged the SDL tension ring. The rig rolled 5-7 degrees in the swells; the riser hanging below the LMRP acted like a pendulum, bending the inner barrel to port and causing a tension line to jump a sheave. Approximately 710 barrels of synthetic mud spilled into the Gulf. The rig was directed NNE away from the Marco Polo platform and continued drifting, reaching more than 15,000 ft from the well. Its closest approach to a 14-inch flowline was approximately 4,700 ft. No open-hole hydrocarbons were exposed below casing depth when the disconnect occurred.',
+      what_happened: 'Ensco 7500 arrived at Green Canyon Block 652 on 27-28 May 2005 and drilled an exploratory well. Drilling was suspended at 1800 on 4 July while tropical development was monitored, and the crew began pulling pipe and preparing a storm packer. On 5 July, current reached approximately 3.3 knots and wind 61 knots while 14-16 ft swells built. The crew was displacing approximately 1,538 barrels of 14.6 ppg synthetic mud from the riser when the rig slipped. At 1200, the rig was 175 ft off well centre and EDS was ordered; a second command was required while the flex joint reached approximately 5 degrees. EDS completed at 1204. Hard recoil wedged the slip joint against the moon-pool guide, the rig rolled 5-7 degrees, and the hanging riser bent its inner barrel. Approximately 710 barrels spilled. The rig was directed NNE away from the Marco Polo platform and later drifted more than 15,000 ft from the well; the closest distance to a 14-inch flowline was about 4,700 ft.',
+        what_happened: 'Ensco 7500 arrived at Green Canyon Block 652 on 27-28 May 2005 to drill an exploratory well. For several weeks the operation proceeded in relatively calm conditions, but the Gulf of Mexico loop current was already present beneath the rig. The loop current and its eddies produced strong, variable deepwater currents; speeds had averaged about 2.1 knots during the preceding days.\n\n' +
+          'On 4 July, while the crew monitored tropical development, drilling was suspended at 1800 hours, approximately 18 hours before the incident. The team circulated the well, pulled the 6-5/8-inch drill pipe and prepared to set a storm packer. On the morning of 5 July, however, the weather and current deteriorated faster than the disconnect work could be completed. By 1000, the rig was already having difficulty holding position. One of the seven thrusters was unavailable for planned maintenance and had been out of service for approximately three to four months. The remaining propulsion system had power available, but the combined wind, waves and loop current overpowered the Ensco 7500\'s available station-keeping capability.\n\n' +
+          'At 1100, while the rig was using seven thrusters and six engines, the crew began displacing approximately 1,538 barrels of 14.6 ppg synthetic-based mud from the riser with seawater. By 1130, wind was about 41 knots and current about 3.2 knots; the rig was slipping from the well. By 1200, wind had reached approximately 61 knots, current about 3.3 knots and swells 14-16 ft. The rig was approximately 175 ft off well centre when the contractor ordered the Emergency Disconnect Sequence. The LMRP did not release promptly, and the flex joint reached approximately 5 degrees. A second EDS command was given and the subsea engineer activated the sequence from another control pod.\n\n' +
+          'At approximately 1204, about four minutes after initiation, the EDS completed with hard recoil. The slip joint pushed against the moon-pool BOPE guide and wedged the SDL tension ring. The rig rolled 5-7 degrees in the swells; the riser hanging below the LMRP acted like a pendulum, bending the inner barrel to port and causing a tension line to jump a sheave. Approximately 710 barrels of synthetic mud spilled into the Gulf. The rig was directed NNE away from the Marco Polo platform and continued drifting, reaching more than 15,000 ft from the well. Its closest approach to a 14-inch flowline was approximately 4,700 ft. No open-hole hydrocarbons were exposed below casing depth when the disconnect occurred.',
       what_went_wrong: ['Combined wind, waves and loop currents exceeded available DP thruster capability even though engine power was available.', 'Thruster No. 5 had been unavailable for 3-4 months, reducing station-keeping redundancy.', 'The riser was displaced after the rig was already slipping, leaving insufficient margin for controlled disconnect.', 'EDS took approximately four minutes; added BOP ram closing pressure could delay LMRP operation and the subsea engineer did not recognise the consequence.', 'The operator and contractor had not fully demonstrated DP performance and failure-mode controls over the expected campaign conditions.'],
       lessons_learned: ['Use a site-specific riser-disconnect plan covering environmental triggers, T-time, sequential work stoppage, heading, drift direction and nearby hazards.', 'Treat loop currents and eddies as primary station-keeping inputs.', 'Do not start riser displacement when the rig is already losing position or lacks margin to complete EDS.', 'Unavailable critical thrusters require formal operating-limit review and conservative restrictions.', 'Verify EDS pod selection, control pressures, LMRP timing, hard recoil and post-disconnect drift through realistic drills.', 'DP assurance should include FMEA, proving trials and systematic annual trials tied to known failure modes.'],
       actions: ['BSEE recommended site-specific riser-disconnect and storm plans with current, weather, T-time, heading and hazard criteria.', 'Operators should verify DP capability through FMEA, proving trials and annual trials, and maintain critical thrusters or revise limits when unavailable.', 'Riser-disconnect training should verify pod selection, control pressures, LMRP release timing and hard-recoil response.', 'Pollution planning should account for riser mud inventory and confirm hydrocarbon exposure before a weather-driven disconnect.'],

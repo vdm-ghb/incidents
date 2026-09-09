@@ -536,7 +536,7 @@ test('EI 322-A record preserves Lili track and foundation-failure evidence', asy
   expect(incident.what_happened).toContain('pile had been severed');
   expect(incident.what_happened).toContain('opposite jacket leg');
   expect(incident.references[0].doi).toBe('10.4043/16801-MS');
-  expect(incident.image.src).toContain('researchgate.net');
+  expect(incident.image).toBeUndefined();
 
   const track = await page.evaluate(() => {
     return window.STORM_TRACKS_DATA.features.find(
@@ -547,7 +547,7 @@ test('EI 322-A record preserves Lili track and foundation-failure evidence', asy
   expect(track.properties.track_points.length).toBeGreaterThan(10);
 });
 
-test('GSP Saturn record uses the supplied platform context image', async ({ page }) => {
+test('GSP Saturn record retains its incident evidence without an unstable remote image', async ({ page }) => {
   const incident = await page.evaluate(() => {
     return window.INCIDENTS_DATA.incidents.find(
       (item: { id: string }) => item.id === 'gsp-saturn-2014'
@@ -555,9 +555,11 @@ test('GSP Saturn record uses the supplied platform context image', async ({ page
   });
 
   expect(incident).toBeDefined();
-  expect(incident.image.src).toContain('GSP-Saturn1.jpg');
-  expect(incident.image.credit).toContain('GSP Offshore');
-  expect(incident.image.caption).toContain('before the November 2014 tow incident');
+  expect(incident.image).toBeUndefined();
+  expect(incident.what_happened).toContain('All 70 crew were successfully evacuated');
+  expect(incident.references.some((reference: { publisher?: string }) =>
+    reference.publisher === 'Belkrov.by'
+  )).toBe(true);
 });
 
 test('Papaa-305 record uses the Mumbai High field presentation point', async ({ page }) => {
@@ -597,13 +599,13 @@ test('Papaa-305 and Varapradha record preserves the official chronology and casu
   expect(incident.references.some(
     (reference: { publisher: string }) => reference.publisher.includes('India Meteorological Department')
   )).toBe(true);
-  expect(incident.image.src).toContain('wpghpjkjnj-1627832120.jpg');
-  expect(incident.image.caption).toContain('Rescue operations');
+  expect(incident.image.src).toBe('images/ongc-papaa-305-2021-navy-gal-constructor-airlift.jpg');
+  expect(incident.image.caption).toContain('Gal Constructor');
 
   await page.goto('/?pilot=image#ongc-papaa-305-varapradha-cyclone-tauktae-2021');
   const image = page.locator('#modal-content .incident-image-figure img');
   await expect(image).toBeVisible();
-  await expect(image).toHaveAttribute('src', /wpghpjkjnj-1627832120\.jpg$/);
+  await expect(image).toHaveAttribute('src', 'images/ongc-papaa-305-2021-navy-gal-constructor-airlift.jpg');
   expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
 });
 

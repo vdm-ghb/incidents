@@ -1,4 +1,4 @@
-# IOGP Metocean Incidents
+# IOGP Metocean Related Incidents
 
 An interactive map and database of offshore oil & gas incidents driven by weather, sea state, and other metocean factors.
 
@@ -28,6 +28,34 @@ npm test           # headless
 npm run test:ui    # interactive UI mode
 npm run test:headed
 ```
+
+To validate the internal analysis explorer wording and evidence boundary:
+
+```bash
+npm run test:analysis
+```
+
+## Updating internal analysis after incident changes
+
+The Bow-Tie Explorer and Causal Theme Map are generated artifacts. Do not edit their HTML or JSON output directly. Whenever an incident is added, removed, materially rewritten, reclassified, or has its `what_went_wrong`, `lessons_learned`, or `actions` fields changed, rerun the complete analysis workflow before publishing.
+
+1. Update `data/incidents.js` from cited source material. Set both taxonomy axes correctly: `weather_event_type` identifies the metocean phenomenon and `classification` identifies the operational discipline. Do not conflate distinct hazards such as squall/thunderstorm and internal wave/soliton.
+2. Keep causal statements, learning points and prospective actions in their correct fields. `what_went_wrong` must contain evidence-bounded historical statements; `lessons_learned` and `actions` must not be written as evidence that a past control existed or failed.
+3. Provide a local `image` object where a suitable visual is retained. Use a truthful caption and credit; if no incident-specific visual is available, the site renders the clearly labelled local placeholder. Do not use a remote image URL as a selected image.
+4. For a named cyclone, add `storm_sid` and `storm_name`, then rebuild `data/storm_tracks.js` using the named-cyclone workflow below.
+5. Regenerate both analysis datasets and their viewers from the repository root:
+
+```bash
+node scripts/derive_bowtie.js --out "working documentation/bowtie_full.json"
+node scripts/derive_causal_tags.js --out "working documentation/causal_tags_full.json"
+node scripts/build_bowtie_view.js
+node scripts/build_causal_view.js
+```
+
+6. Review the changed candidate output in [Causal Theme Map](working%20documentation/causal_analysis.html) and [Bow-Tie Explorer](working%20documentation/bowtie_view.html). Check that the incident is present where evidence supports it, that unrelated hazard families are not matched, and that the causal-theme bar count and full bar length agree.
+7. Run `npm run test:analysis`, then `npm test` before considering the update complete. The analysis suite checks all 81 popup image renders in both internal views, theme-map scale/length logic, and known classification boundaries.
+
+Generated tags are retrieval candidates, not accepted HSSE findings. Follow [ANALYSIS_CODING_PROTOCOL.md](working%20documentation/ANALYSIS_CODING_PROTOCOL.md) for source-locator, causal-stage, and analyst-acceptance requirements.
 
 Node.js LTS is required. The Playwright configuration starts the local static server automatically for test runs.
 
@@ -61,6 +89,8 @@ The incident-image rollout also has Python verification paths for environments w
 - `FACT_CHECK_AUDIT.md` — independent fact-check pass over every incident record, flagging discrepancies and unverifiable claims
 - `EXECUTIVE_SUMMARIES.md`, `INCIDENT_IMAGES.md` — supporting content notes
 - `inject_summaries.py` — helper script used when bulk-adding executive summaries to incident records
+- `scripts/derive_bowtie.js`, `derive_causal_tags.js`, `build_bowtie_view.js`, `build_causal_view.js` — generate the internal Bow-Tie Explorer and Causal Theme Map from `data/incidents.js` (see "Updating internal analysis after incident changes" above)
+- `working documentation/bowtie_view.html`, `causal_analysis.html`, `bowtie_full.json`, `causal_tags_full.json`, `ANALYSIS_CODING_PROTOCOL.md` — the generated analysis views and their protocol doc; these five files are published even though the rest of `working documentation/` is gitignored (internal-only)
 
 ## Tech stack
 
@@ -76,12 +106,25 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 - **Fact-check remediation complete.** The 2026-07-04 audit (`FACT_CHECK_AUDIT.md`) flagged dead/fabricated reference URLs and ~15 records with incorrect details; all four tiers have since been remediated (casualty figures, locations, dates, and sources corrected or hedged; unverifiable claims flagged with `data_quality` notes).
 - **Incident numbering** in `data/incidents.js` comments has gaps (removed/merged records were never renumbered) — gaps are expected, not a data error. The comment header may cite a higher count than the actual array length; trust `INCIDENTS_DATA.incidents.length` (currently 81).
 - **Verification workflow.** Changes to `data/incidents.js` are validated by reloading the page under Playwright and asserting on `window.INCIDENTS_DATA` (total count, no duplicate IDs, taxonomy fields, marker rendering) rather than eyeballing.
+- **Analysis evidence boundary.** The internal Bow-Tie Explorer and Causal Theme Map (`working documentation/bowtie_view.html`, `causal_analysis.html`, linked from the header) are keyword-derived candidate-retrieval tools, not accepted causal analyses. Generated relationships are source-unlinked and review-required; use `working documentation/ANALYSIS_CODING_PROTOCOL.md` to accept, reject or mark evidence insufficient before treating a result as an HSSE finding. These generated views and their JSON data (plus `ANALYSIS_CODING_PROTOCOL.md`) are published alongside the public site — a deliberate, narrow exception to the `working documentation/` gitignore rule (see the negation entries in `.gitignore`); every other file under that directory stays internal-only.
 - **Mobile navigation.** At phone widths, the header expands into title/count, full-width search, and a horizontally scrollable filter row so the filtered incident count and existing controls remain reachable without changing the map, table or incident modal workflow.
 - **Named cyclone track workflow.** Whenever an incident names a hurricane, tropical cyclone, typhoon or other tracked storm, look up its IBTrACS SID in `data/ibtracs/ibtracs_ALL_list_v04r01.csv`, add `storm_sid` and `storm_name` to the incident, and rebuild `data/storm_tracks.js` with `python scripts/build_ibtracs_track_subset.py --incidents-file data/incidents.js`. Confirm that the SID appears in the generated `selected_sids` list and that the incident marker can display the track.
 - **Image provenance.** `working documentation/INCIDENT_IMAGES.md` is the source/credit/rights catalogue for local assets. Public availability is not treated as permission to reuse; internal LFE material remains restricted, and files are retained at native resolution without upscaling or recompression.
-- **One selected image per incident.** An optional singular `image` object on an incident (`src`, `alt`, `caption`, `credit`) drives the map-tooltip thumbnail, Summary figure, full-size lightbox and capped print figure from one source of truth. There are 64 selected incident images across 60 local files and 4 remote URLs (verified by loading `window.INCIDENTS_DATA` and counting records with an `image.src`); the Mars Katrina record deliberately reuses the incident-specific photograph already selected for the broader Katrina record. Dupal has two catalogued local candidates but was explicitly left unselected. Copyrighted and restricted assets are clearly labelled as reference-only or permission-required.
+- **One selected image per incident.** An optional singular `image` object on an incident (`src`, `alt`, `caption`, `credit`) drives the map-tooltip thumbnail, Summary figure, full-size lightbox and capped print figure from one source of truth. There are 62 selected incident images, all local files, and zero remote URLs (verified by loading `window.INCIDENTS_DATA`); the Mars Katrina record deliberately reuses the incident-specific photograph already selected for the broader Katrina record. Dupal has two catalogued local candidates but was explicitly left unselected. Copyrighted and restricted assets are clearly labelled as reference-only or permission-required.
+- **No remote image URLs.** A selected `image.src` must be a local file under `images/`, never a remote URL — remote hosts can go offline, get rate-limited, or change content without notice. If no suitable local visual is retained for an incident, leave `image` unset; the site renders a clearly labelled `images/incident-visual-unavailable.svg` placeholder in its place (map tooltip thumbnail excepted, which simply shows nothing).
 
 ### Session handoff (next steps)
+
+**Completed (2026-09-09):**
+- Merged `Metocean-Related-Incidents_Web_Update_2026-09-09.zip` (20 files: `data/incidents.js`, `js/app.js`, `index.html`, 2 new images, 4 new analysis scripts, 2 new tests, `package.json`, `README.md`, and 5 `working documentation/` files) using the same stage-outside-the-project diff method as prior dumps. Incident count unchanged (81); confirmed via ID-set diffing that no records were added or removed.
+- Verified all 30 "changed" incident records field-by-field: every difference reduced to a project-wide mojibake fix (double-encoded UTF-8 artifacts like `Â°` → `°`) across `metocean`/`what_happened`/`location`/etc., one typo fix (`durign` → `during` in the Gumusut-Kakap gangway record name), and 4 image-field changes described below. No narrative content was altered. Visual QA of the modal for `gsp-saturn-2014` then surfaced a second mojibake family the dump's own fix had missed (`â€²`, `â€™`, `â€œ`/`â€\x9d`, `âˆ’`, `Ã³`, e.g. "air temp âˆ'8 to âˆ'12 °C", "Santosâ€™ swinging platform", "NiterÃ³i") — swept all 11 remaining occurrences across the file (West Gamma coordinates, GSP Saturn, LN-ONT/Maersk Invincible, G-TIGH, Sinbad's WA Today reference, FPSO P-70's Niterói) and confirmed zero remain. Regenerated `bowtie_full.json`/`causal_tags_full.json` and both HTML views afterward since they're derived from the corrected text.
+- Adopted a new **no-remote-image-URLs policy**: `hurricane_katrina_2005` and `ongc-papaa-305-varapradha-cyclone-tauktae-2021` had their remote-hosted images swapped for local files (Katrina reuses the existing Mars TLP photo; Papaa-305 got the dump's new `images/ongc-papaa-305-2021-navy-gal-constructor-airlift.jpg`); `eugene-island-322a-hurricane-lili-2002` and `gsp-saturn-2014` had their remote-URL `image` field removed outright (no local replacement available). `js/app.js`'s `buildImageHTML()` now falls back to a new labelled placeholder (`images/incident-visual-unavailable.svg`) in the Summary/lightbox/print figure whenever an incident has no `image` — previously that space was just blank. The map-tooltip thumbnail is unaffected (still renders nothing when no image is set).
+- Added the new **Bow-Tie Explorer and Causal Theme Map** — an internal keyword-based candidate causal-analysis feature (`scripts/derive_bowtie.js`, `derive_causal_tags.js`, `build_bowtie_view.js`, `build_causal_view.js` generate `working documentation/bowtie_full.json`/`causal_tags_full.json` and their HTML viewers). These are explicitly labelled non-authoritative retrieval candidates per `working documentation/ANALYSIS_CODING_PROTOCOL.md`, requiring analyst acceptance before use as an HSSE finding.
+- **Publishing decision (asked the user, who chose to publish):** the dump wired public nav links in `index.html` to these generated views, but `working documentation/` has always been gitignored (internal-only) in this project, so the links would have 404'd on the live site. Rather than assume, asked the user whether to keep the feature internal-only or publish it; they chose to publish. Carved a narrow `.gitignore` exception (`working documentation/*` plus 5 explicit `!` negations) for just `bowtie_view.html`, `causal_analysis.html`, `bowtie_full.json`, `causal_tags_full.json` and `ANALYSIS_CODING_PROTOCOL.md` — verified with `git check-ignore` that every other file under `working documentation/` (including `INCIDENT_IMAGES.md`, `FACT_CHECK_AUDIT.md`, internal emails, `extracted_incidents/`) remains ignored.
+- The dump's `css/style.css` was not included, so the new `#header-analysis-links` nav had no styling. Added matching CSS (small bordered text links in the header, hidden at ≤640px so the mobile layout fixed in the 2026-09-07 merge stays uncluttered by this secondary internal-tool feature).
+- As in every prior merge, the dump's `README.md` was a stale-snapshot regression (still describing the pre-09-07 image counts) that would have deleted the 09-07/09-06/both 08-25/August-2026 session-handoff history. Did not apply it wholesale; cherry-picked its genuinely new and accurate content instead: the project rename to "IOGP Metocean Related Incidents" (applied consistently in the JSON-LD `name` too), the new "Updating internal analysis after incident changes" workflow section (converted from the dump's PowerShell snippets to this project's bash convention), the analysis-evidence-boundary note, and the corrected image-provenance count.
+- Fixed the same Windows→macOS owner-write-bit transfer artifact noted in prior merges, this time on `tests/` (`chmod u+w tests/` before adding `analysis.spec.ts`).
+- Verified with the established workflow: full Playwright suite (`npm test`, all passing) plus the new `npm run test:analysis` suite (all passing, including cross-checks that both generated analysis views render all 81 incident images and that the causal-theme classifier keeps squall/thunderstorm separate from internal-wave/soliton), and `tests/audit_image_coverage.py` (no longer flags any remote URLs). Deleted the source zip after merging.
 
 **Completed (2026-09-07):**
 - Merged `deployment-update-2026-09-07.zip` (a small 3-file dump: `css/style.css`, `tests/index.spec.ts`, `README.md`) using the same stage-outside-the-project diff method as prior dumps. No `data/incidents.js` in this dump — incident count unchanged at 81.
@@ -146,6 +189,7 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 - Incident image library — 73 provenance-catalogued files cover 51 of the 70 canonical dataset records, including one G-REDL asset for a catalogue-only incident. All 73 files are present in `images/`. Fifty canonical incidents display the user-selected primary asset as a map thumbnail, Summary figure, natural-size lightbox and restrained print figure. The Hurricane Katrina Mars, G-TIGH and Thunder Horse photographs are copyrighted or have unresolved reuse permission; the Hurricane Ike selection also has unresolved facility, date and photographer details. These limitations are stated in their catalogue entries. Dupal's two candidates remain catalogue-only by explicit selection. `tests/audit_image_coverage.py` cross-checks the dataset, catalogue and local directory; `tests/verify_gunashli_image.py` browser-decodes all local files and exercises the selected-image UI.
 
 **Pending / Deferred:**
+- Bow-tie and causal-theme acceptance review — work through high-consequence records with retained primary evidence (Seacrest, Bohai No. 2, Usumacinta, Glomar Java Sea, Thunder Horse, SEACOR POWER, Skandi Pacific, ONGC Tauktae) using `working documentation/ANALYSIS_CODING_PROTOCOL.md`; do not bulk-accept candidate relationships or use their frequency as comparative risk evidence.
 - Mars TLP drilling-rig topple during Hurricane Katrina (2005) — added as a distinct record from the broader Katrina regional-impact entry. The record uses the existing Mars post-storm photograph, Shell/industry recovery accounts and the OSTI-indexed Mars recovery presentation; the exact component-level failure mechanism remains unresolved publicly.
 - SS El Faro (2015) — added and expanded from NTSB MAR-17/01 and the NHC Joaquin report. The entry deliberately distinguishes Category 3 conditions at the sinking from the Category 4 upgrade approximately 20 minutes later; IBTrACS track SID `2015270N27291` is now wired; no image is selected without verified reuse rights.
 - West Navion / AS332L G-BKZE — post-insertion validation task: resolve source discrepancies (`10 Nov` vs `12 Nov` occurrence date in AAIB index pages; `80 nm` vs `100 nm` west of Shetland wording) by extracting exact wording from AAIB `3-2004_G-BKZE.pdf` and `S4/2001` bulletin PDF, then tighten record fields if needed.
@@ -157,4 +201,4 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 
 ## Last updated
 
-2026-09-07
+2026-09-09

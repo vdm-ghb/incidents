@@ -530,7 +530,7 @@
       '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',shortLoc(inc.location,60))+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(casualtiesStr?metaItem('Casualties',casualtiesStr):'')+
       '</div></div>'+metoceanAlertHTML+metoceanHTML+infraHTML+
       '<div class="inc-body">'+
-      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.summary||inc.executive_summary)+'</p>'+buildImageHTML(inc.image)+'</div>'+
+      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.summary||inc.executive_summary)+'</p>'+buildImageHTML(inc.image, inc.name)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">What Happened</div>'+whatHappenedParas+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">What Went Wrong</div>'+numberedList(inc.what_went_wrong)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">Lessons Learned</div>'+numberedList(inc.lessons_learned)+'</div>'+
@@ -539,8 +539,13 @@
       '</div>';
   }
 
-  function buildImageHTML(image) {
-    if (!image||!image.src) return '';
+  function buildImageHTML(image, incidentName) {
+    image=image&&image.src?image:{
+      src:'images/incident-visual-unavailable.svg',
+      alt:'Incident visual unavailable for '+(incidentName||'this record'),
+      caption:'No incident-specific visual is currently retained for this record.',
+      credit:'Placeholder visual; not evidence of the incident.'
+    };
     var credit=image.credit?'<span class="incident-image-credit">'+esc(image.credit)+'</span>':'';
     return '<figure class="incident-image-figure"><button class="incident-image-button" type="button" aria-label="Open full-size incident image"><img class="incident-summary-image" src="'+esc(image.src)+'" alt="'+esc(image.alt||image.caption||'')+'" loading="lazy" decoding="async"></button><figcaption>'+esc(image.caption||'')+credit+'</figcaption></figure>';
   }

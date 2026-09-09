@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
+    "test:analysis": "playwright test tests/analysis.spec.ts",
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed"
   },

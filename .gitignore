@@ -9,8 +9,17 @@ __pycache__/
 
 # Internal reference material — not for version control
 background files/
-working documentation/
+working documentation/*
 scripts/
+
+# Bow-Tie Explorer / Causal Theme Map — generated analysis views, published
+# alongside the public site (linked from index.html), plus the protocol
+# doc that explains their candidate/unverified evidence status
+!working documentation/bowtie_view.html
+!working documentation/causal_analysis.html
+!working documentation/bowtie_full.json
+!working documentation/causal_tags_full.json
+!working documentation/ANALYSIS_CODING_PROTOCOL.md
 NEW_INCIDENTS_DATABASE_ENTRIES.js
 CLAUDE.md
 

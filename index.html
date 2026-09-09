@@ -14,7 +14,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "name": "IOGP Metocean Incidents Database",
+    "name": "IOGP Metocean Related Incidents Database",
     "description": "An interactive database of offshore oil and gas incidents influenced by weather, sea state and other metocean factors.",
     "url": "https://vdm-ghb.github.io/incidents/",
     "author": {
@@ -36,7 +36,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=5">
   <link rel="shortcut icon" href="favicon.svg?v=5">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css?v=20260907123822">
+  <link rel="stylesheet" href="css/style.css?v=20260909152509">
 </head>
 <body>
 
@@ -118,6 +118,11 @@
 
       <button id="filter-reset" title="Clear all filters">Reset</button>
     </div>
+
+    <nav id="header-analysis-links" aria-label="Internal analysis views">
+      <a class="header-analysis-link" href="working%20documentation/causal_analysis.html" target="_blank" rel="noopener">Causal Theme Map</a>
+      <a class="header-analysis-link" href="working%20documentation/bowtie_view.html" target="_blank" rel="noopener">Bow-Tie Explorer</a>
+    </nav>
 
     <div id="header-stats">
       <div id="filter-search-wrap">
@@ -223,12 +228,12 @@
   <div id="print-report"></div>
 
   <!-- DATA — loaded before Leaflet so it's available immediately -->
-  <script src="data/incidents.js?v=20260907123822"></script>
-  <script src="data/storm_tracks.js?v=20260907123822"></script>
+  <script src="data/incidents.js?v=20260909152509"></script>
+  <script src="data/storm_tracks.js?v=20260909152509"></script>
   <!-- Leaflet map library -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Main app -->
-  <script src="js/app.js?v=20260907123822"></script>
+  <script src="js/app.js?v=20260909152509"></script>
 
 </body>
 </html>
