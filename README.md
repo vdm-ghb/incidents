@@ -115,6 +115,11 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 
 ### Session handoff (next steps)
 
+**Completed (2026-09-10):**
+- Fixed a header layout regression introduced by the 2026-09-09 Bow-Tie/Causal Theme Map nav links: on standard laptop widths (reproduced at 1024-1440px, worst at 1024-1366px), the four filter `<select>` elements and the Reset button were silently clipped out of view by `#header-filters`'s `overflow:hidden` — the new nav links took horizontal space the filters used to have, and `.filter-select`/`#filter-reset` had no shrink behaviour (flexbox's default `min-width:auto` refuses to shrink a flex item below its content size), so anything past the container's shrunk width just disappeared rather than resizing.
+- Made `.filter-select` a real shrinkable flex item (`flex:1 1 90px;min-width:64px`, still capped at `max-width:210px`) and gave `#filter-reset` `flex-shrink:0` so it is never the thing that gets dropped. Added two new desktop-range breakpoints (previously the only breakpoint was the ≤640px mobile redesign): `@media (max-width:1500px)` tightens gaps/padding and shrinks the search box; `@media (max-width:1150px)` tightens further and hides `#filter-region` — extending the same "drop the least-essential filter first" pattern already used on mobile, rather than a new one-off decision.
+- Verified with a new Playwright test (`laptop-width header keeps all filters, reset and analysis links visible without overlap`) that checks 1024/1280/1366/1440px: all of type/classification/consequence/reset/both analysis links stay visible with no bounding-box overlap at every width, and region is visible ≥1150px, hidden below it. Also re-ran the existing mobile-header test (unaffected, still passing) and the full suite (52/52 passing) and re-confirmed visually with screenshots at each width.
+
 **Completed (2026-09-09):**
 - Merged `Metocean-Related-Incidents_Web_Update_2026-09-09.zip` (20 files: `data/incidents.js`, `js/app.js`, `index.html`, 2 new images, 4 new analysis scripts, 2 new tests, `package.json`, `README.md`, and 5 `working documentation/` files) using the same stage-outside-the-project diff method as prior dumps. Incident count unchanged (81); confirmed via ID-set diffing that no records were added or removed.
 - Verified all 30 "changed" incident records field-by-field: every difference reduced to a project-wide mojibake fix (double-encoded UTF-8 artifacts like `Â°` → `°`) across `metocean`/`what_happened`/`location`/etc., one typo fix (`durign` → `during` in the Gumusut-Kakap gangway record name), and 4 image-field changes described below. No narrative content was altered. Visual QA of the modal for `gsp-saturn-2014` then surfaced a second mojibake family the dump's own fix had missed (`â€²`, `â€™`, `â€œ`/`â€\x9d`, `âˆ’`, `Ã³`, e.g. "air temp âˆ'8 to âˆ'12 °C", "Santosâ€™ swinging platform", "NiterÃ³i") — swept all 11 remaining occurrences across the file (West Gamma coordinates, GSP Saturn, LN-ONT/Maersk Invincible, G-TIGH, Sinbad's WA Today reference, FPSO P-70's Niterói) and confirmed zero remain. Regenerated `bowtie_full.json`/`causal_tags_full.json` and both HTML views afterward since they're derived from the corrected text.
@@ -201,4 +206,4 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 
 ## Last updated
 
-2026-09-09
+2026-09-10

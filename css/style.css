@@ -44,9 +44,9 @@ a{color:var(--accent);}
 .search-result strong{font-size:12px;font-weight:650;}
 .search-result span{font-size:10px;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
 .search-empty{padding:10px;color:var(--text-muted);font-size:11px;}
-.filter-select{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer;outline:none;height:30px;max-width:210px;}
+.filter-select{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer;outline:none;height:30px;flex:1 1 90px;min-width:64px;max-width:210px;}
 .filter-select:focus{border-color:var(--accent);}
-#filter-reset{background:rgba(240,136,62,.07);color:var(--text);border:1px solid rgba(240,136,62,.35);border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;height:30px;white-space:nowrap;transition:border-color .15s,color .15s,background .15s;}
+#filter-reset{background:rgba(240,136,62,.07);color:var(--text);border:1px solid rgba(240,136,62,.35);border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;height:30px;white-space:nowrap;flex-shrink:0;transition:border-color .15s,color .15s,background .15s;}
 #filter-reset:hover{background:rgba(240,136,62,.15);border-color:var(--major);color:var(--major);}
 #header-analysis-links{display:flex;gap:6px;flex-shrink:0;}
 .header-analysis-link{font-size:10px;color:var(--text-muted);text-decoration:none;padding:4px 8px;border:1px solid var(--border);border-radius:6px;white-space:nowrap;transition:border-color .15s,color .15s;}
@@ -256,6 +256,23 @@ a{color:var(--accent);}
 }
 
 /* Responsive */
+@media (max-width:1500px) and (min-width:641px) {
+  #app-header{gap:10px;padding:0 12px;}
+  #header-filters{gap:6px;}
+  .filter-select{flex-basis:64px;min-width:56px;padding:4px 6px;font-size:11px;}
+  #header-analysis-links{gap:4px;}
+  .header-analysis-link{padding:4px 6px;font-size:9px;}
+  #header-stats{gap:12px;}
+  #filter-search-wrap{width:160px;flex-basis:160px;}
+}
+
+@media (max-width:1150px) and (min-width:641px) {
+  #header-filters #filter-region{display:none;}
+  .filter-select{flex-basis:56px;min-width:48px;padding:4px 4px;font-size:10px;}
+  #filter-search-wrap{width:120px;flex-basis:120px;}
+  #header-stats{gap:8px;}
+}
+
 @media (max-width:640px) {
   :root{--header-h:150px;}
   #app-header{height:var(--header-h);padding:0 10px;display:block;}

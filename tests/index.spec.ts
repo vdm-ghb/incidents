@@ -260,6 +260,41 @@ test('mobile header keeps the counter and filters reachable', async ({ page }) =
   await expect(page.locator('#incidents-tbody tr')).toHaveCount(filtered);
 });
 
+test('laptop-width header keeps all filters, reset and analysis links visible without overlap', async ({ page }) => {
+  for (const width of [1024, 1280, 1366, 1440]) {
+    await page.setViewportSize({ width, height: 800 });
+    await page.reload();
+
+    // Region is the least essential filter; like the mobile layout, it's
+    // intentionally dropped below 1150px so the remaining controls fit.
+    const coreFilters = ['#filter-type', '#filter-classification', '#filter-consequence', '#filter-reset'];
+    for (const id of coreFilters) {
+      await expect(page.locator(id), `${id} should be visible at ${width}px`).toBeVisible();
+    }
+    if (width >= 1150) {
+      await expect(page.locator('#filter-region'), `#filter-region should be visible at ${width}px`).toBeVisible();
+    } else {
+      await expect(page.locator('#filter-region'), `#filter-region should be hidden at ${width}px`).toBeHidden();
+    }
+
+    const analysisLinks = page.locator('.header-analysis-link');
+    await expect(analysisLinks).toHaveCount(2);
+    await expect(analysisLinks.nth(0)).toBeVisible();
+    await expect(analysisLinks.nth(1)).toBeVisible();
+
+    const consequenceBox = await page.locator('#filter-consequence').boundingBox();
+    const causalLinkBox = await analysisLinks.nth(0).boundingBox();
+    expect(consequenceBox).not.toBeNull();
+    expect(causalLinkBox).not.toBeNull();
+    expect(consequenceBox!.x + consequenceBox!.width, `filters should not overlap analysis links at ${width}px`)
+      .toBeLessThanOrEqual(causalLinkBox!.x);
+
+    const resetBox = await page.locator('#filter-reset').boundingBox();
+    expect(resetBox!.x + resetBox!.width, `reset button should not overlap analysis links at ${width}px`)
+      .toBeLessThanOrEqual(causalLinkBox!.x);
+  }
+});
+
 // ── Legend ───────────────────────────────────────────────────────────────────
 
 test('legend is visible on load', async ({ page }) => {
