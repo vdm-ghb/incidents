@@ -295,6 +295,23 @@ test('laptop-width header keeps all filters, reset and analysis links visible wi
   }
 });
 
+test('analysis links open in the same tab and hug the reset button on wide screens', async ({ page }) => {
+  const analysisLinks = page.locator('.header-analysis-link');
+  await expect(analysisLinks.nth(0)).not.toHaveAttribute('target', /.+/);
+  await expect(analysisLinks.nth(1)).not.toHaveAttribute('target', /.+/);
+
+  await page.setViewportSize({ width: 1920, height: 900 });
+  await page.reload();
+  const resetBox = await page.locator('#filter-reset').boundingBox();
+  const analysisBox = await analysisLinks.first().boundingBox();
+  const searchBox = await page.locator('#filter-search-wrap').boundingBox();
+  const resetToAnalysisGap = analysisBox!.x - (resetBox!.x + resetBox!.width);
+  // The analysis links should sit close to Reset, not float toward Search —
+  // most of the header's leftover space belongs before the search box.
+  expect(resetToAnalysisGap).toBeLessThan(40);
+  expect(searchBox!.x).toBeGreaterThan(analysisBox!.x + 100);
+});
+
 // ── Legend ───────────────────────────────────────────────────────────────────
 
 test('legend is visible on load', async ({ page }) => {
