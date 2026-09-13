@@ -1,107 +1,125 @@
 {
-  "generated": "2026-09-09",
+  "generated": "2026-09-13",
   "method": "Candidate learning-theme retrieval derived from incident-record wording; it does not establish causality or source support. what_went_wrong matches are candidate recorded causal statements, while lessons/actions are learning themes only. All tags require analyst review against a cited source before use as a finding.",
-  "records_analysed": 81,
-  "total_records": 81,
+  "records_analysed": 83,
+  "total_records": 83,
   "concept_summary": [
     {
       "concept": "procedures_competence",
       "label": "Procedures, training and competence",
-      "incidents": 49,
-      "hits": 162,
-      "as_cause": 26,
+      "incidents": 48,
+      "hits": 160,
+      "as_cause": 25,
       "as_lesson": 28,
-      "review_required": 49
+      "review_required": 48
+    },
+    {
+      "concept": "integrity_maintenance",
+      "label": "Ageing, integrity and maintenance",
+      "incidents": 41,
+      "hits": 157,
+      "as_cause": 24,
+      "as_lesson": 25,
+      "review_required": 41
     },
     {
       "concept": "evacuation_abandonment",
       "label": "Evacuation, abandonment and survival craft",
       "incidents": 40,
-      "hits": 233,
+      "hits": 230,
       "as_cause": 25,
       "as_lesson": 37,
       "review_required": 40
     },
     {
-      "concept": "integrity_maintenance",
-      "label": "Ageing, integrity and maintenance",
-      "incidents": 37,
-      "hits": 143,
-      "as_cause": 22,
-      "as_lesson": 22,
-      "review_required": 37
-    },
-    {
       "concept": "forecast_uncertainty",
       "label": "Weather forecast, warning or storm track uncertainty",
-      "incidents": 37,
-      "hits": 118,
-      "as_cause": 18,
-      "as_lesson": 28,
-      "review_required": 37
+      "incidents": 38,
+      "hits": 131,
+      "as_cause": 19,
+      "as_lesson": 29,
+      "review_required": 38
     },
     {
       "concept": "design_basis_inadequate",
       "label": "Design basis / criteria inadequate or exceeded",
-      "incidents": 36,
-      "hits": 141,
+      "incidents": 35,
+      "hits": 136,
       "as_cause": 21,
-      "as_lesson": 24,
-      "review_required": 36
+      "as_lesson": 23,
+      "review_required": 35
     },
     {
       "concept": "emergency_response_sar",
       "label": "Emergency response and search-and-rescue capability",
-      "incidents": 30,
-      "hits": 124,
+      "incidents": 32,
+      "hits": 126,
       "as_cause": 11,
-      "as_lesson": 23,
-      "review_required": 30
+      "as_lesson": 24,
+      "review_required": 32
     },
     {
       "concept": "station_keeping_mooring",
       "label": "Mooring, anchoring or station-keeping failure",
-      "incidents": 29,
-      "hits": 276,
-      "as_cause": 23,
-      "as_lesson": 25,
-      "review_required": 29
+      "incidents": 31,
+      "hits": 299,
+      "as_cause": 25,
+      "as_lesson": 26,
+      "review_required": 31
     },
     {
       "concept": "regulatory_assurance",
       "label": "Regulatory oversight, assurance and verification",
-      "incidents": 26,
-      "hits": 51,
+      "incidents": 25,
+      "hits": 50,
       "as_cause": 10,
       "as_lesson": 9,
-      "review_required": 26
+      "review_required": 25
     },
     {
       "concept": "monitoring_instrumentation",
       "label": "Monitoring and instrumentation gaps",
-      "incidents": 23,
-      "hits": 96,
-      "as_cause": 11,
-      "as_lesson": 16,
-      "review_required": 23
+      "incidents": 25,
+      "hits": 124,
+      "as_cause": 12,
+      "as_lesson": 18,
+      "review_required": 25
     },
     {
       "concept": "organisational_authority",
       "label": "Authority, communication and organisational interfaces",
-      "incidents": 18,
-      "hits": 29,
-      "as_cause": 5,
+      "incidents": 17,
+      "hits": 28,
+      "as_cause": 4,
       "as_lesson": 13,
-      "review_required": 18
+      "review_required": 17
     },
     {
       "concept": "tow_transit",
       "label": "Tow and marine transit exposure",
       "incidents": 17,
-      "hits": 222,
+      "hits": 219,
       "as_cause": 12,
       "as_lesson": 16,
       "review_required": 17
+    },
+    {
+      "concept": "geohazard_site",
+      "label": "Seabed, geohazard and site characterisation",
+      "incidents": 17,
+      "hits": 107,
+      "as_cause": 14,
+      "as_lesson": 10,
+      "review_required": 17
+    },
+    {
+      "concept": "stability_flooding",
+      "label": "Stability, flooding and watertight integrity",
+      "incidents": 16,
+      "hits": 133,
+      "as_cause": 14,
+      "as_lesson": 14,
+      "review_required": 16
     },
     {
       "concept": "riser_wellcontrol",
@@ -110,24 +128,6 @@
       "hits": 147,
       "as_cause": 11,
       "as_lesson": 11,
-      "review_required": 15
-    },
-    {
-      "concept": "stability_flooding",
-      "label": "Stability, flooding and watertight integrity",
-      "incidents": 15,
-      "hits": 128,
-      "as_cause": 13,
-      "as_lesson": 13,
-      "review_required": 15
-    },
-    {
-      "concept": "geohazard_site",
-      "label": "Seabed, geohazard and site characterisation",
-      "incidents": 15,
-      "hits": 98,
-      "as_cause": 12,
-      "as_lesson": 8,
       "review_required": 15
     },
     {
@@ -143,8 +143,8 @@
       "concept": "schedule_commercial_pressure",
       "label": "Schedule, seasonal or commercial pressure",
       "incidents": 8,
-      "hits": 20,
-      "as_cause": 7,
+      "hits": 19,
+      "as_cause": 6,
       "as_lesson": 4,
       "review_required": 8
     },
@@ -167,21 +167,21 @@
       "review_required": 6
     },
     {
-      "concept": "vessel_interaction",
-      "label": "Vessel interaction, collision or proximity",
-      "incidents": 5,
-      "hits": 49,
-      "as_cause": 5,
-      "as_lesson": 3,
-      "review_required": 5
-    },
-    {
       "concept": "marine_lifting_deck_ops",
       "label": "Lifting, cargo and deck operations",
       "incidents": 4,
       "hits": 32,
       "as_cause": 4,
       "as_lesson": 2,
+      "review_required": 4
+    },
+    {
+      "concept": "vessel_interaction",
+      "label": "Vessel interaction, collision or proximity",
+      "incidents": 4,
+      "hits": 48,
+      "as_cause": 4,
+      "as_lesson": 3,
       "review_required": 4
     }
   ],
@@ -1192,17 +1192,17 @@
       "region": "Russia and Central Asia",
       "fatalities": 53,
       "infrastructure_impact": null,
-      "sentences_scanned": 44,
+      "sentences_scanned": 54,
       "tags": [
         {
           "concept": "tow_transit",
           "label": "Tow and marine transit exposure",
-          "hits": 22,
+          "hits": 24,
           "roles": {
-            "cause": 4,
-            "lesson": 3,
-            "action": 2,
-            "context": 13
+            "cause": 5,
+            "lesson": 4,
+            "action": 0,
+            "context": 15
           },
           "analysis_status": "review_required",
           "causal_status": "candidate_recorded_causal_statement",
@@ -1211,76 +1211,24 @@
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "The rig's own captain judged the tow unsafe (\"suicide\") and resigned in protest; the warning was overridden and his resignation refused."
+              "text": "Investigators and the court found that 28 people not required for the towing operation remained aboard, increasing the number exposed to the casualty."
             },
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "One of the two tow vessels was an icebreaker not optimal for towing; when a tow line parted, the rig took water into its ballast tanks and began to list."
+              "text": "A winter tow in the Sea of Okhotsk was conducted without the prior approval required by Russian marine safety regulations — the rig owner ignored the rule."
             }
           ]
         },
         {
           "concept": "emergency_response_sar",
           "label": "Emergency response and search-and-rescue capability",
-          "hits": 6,
-          "roles": {
-            "cause": 2,
-            "lesson": 2,
-            "action": 0,
-            "context": 2
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "All 67 personnel were kept aboard during the tow — contrary to the minimum-crew rule — because the tow vessels lacked rescue capacity for evacuated personnel."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Emergency response failed at every step: the rig owner was unreachable, a coast-guard prompt to declare SOS was rejected, a non-existent helicopter evacuation was relied upon, and overboard rescue in 1 °C water was defeated by weather and poor organisation."
-            }
-          ]
-        },
-        {
-          "concept": "evacuation_abandonment",
-          "label": "Evacuation, abandonment and survival craft",
-          "hits": 5,
-          "roles": {
-            "cause": 2,
-            "lesson": 1,
-            "action": 0,
-            "context": 2
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "All 67 personnel were kept aboard during the tow — contrary to the minimum-crew rule — because the tow vessels lacked rescue capacity for evacuated personnel."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Emergency response failed at every step: the rig owner was unreachable, a coast-guard prompt to declare SOS was rejected, a non-existent helicopter evacuation was relied upon, and overboard rescue in 1 °C water was defeated by weather and poor organisation."
-            }
-          ]
-        },
-        {
-          "concept": "schedule_commercial_pressure",
-          "label": "Schedule, seasonal or commercial pressure",
-          "hits": 3,
+          "hits": 4,
           "roles": {
             "cause": 1,
             "lesson": 1,
             "action": 0,
-            "context": 1
+            "context": 2
           },
           "analysis_status": "review_required",
           "causal_status": "candidate_recorded_causal_statement",
@@ -1289,24 +1237,24 @@
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "Schedule and commercial pressure drove the decision: onset of sea ice threatened to lock the rig off Kamchatka until the next summer, and a further urgent drilling job awaited in Vietnam."
+              "text": "The Investigative Committee alleged that an AMNGR manager had orally prohibited a distress signal pending further instruction and that the captain eventually transmitted SOS despite that prohibition; published accounts conflict on the exact transmission time."
             },
             {
               "role": "lesson",
               "field": "lessons_learned",
-              "text": "Seasonal/winter tow restrictions and mandatory approvals exist for good reason and must not be bypassed under commercial or schedule pressure."
+              "text": "A credible, pre-arranged evacuation and SAR plan must be in place before departure — assuming a helicopter rescue that has not been confirmed is a fatal error, and cold-water survival time is only minutes."
             }
           ]
         },
         {
           "concept": "stability_flooding",
           "label": "Stability, flooding and watertight integrity",
-          "hits": 3,
+          "hits": 4,
           "roles": {
             "cause": 1,
             "lesson": 0,
             "action": 0,
-            "context": 2
+            "context": 3
           },
           "analysis_status": "review_required",
           "causal_status": "candidate_recorded_causal_statement",
@@ -1315,12 +1263,59 @@
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "One of the two tow vessels was an icebreaker not optimal for towing; when a tow line parted, the rig took water into its ballast tanks and began to list."
+              "text": "The Investigative Committee attributed the loss of buoyancy to damage around the forward leg and flooding of adjacent ballast tanks after excessive towing speed and storm exposure with the legs raised; survivor and operator-aligned accounts dispute parts of..."
             },
             {
               "role": "context",
               "field": "what_happened",
-              "text": "When one tow line parted in the rough conditions, the rig began taking water into its ballast tanks and started to list."
+              "text": "Watertight integrity deteriorated, machinery-space inflow exceeded pumping capacity, and bow trim increased until the legs could no longer be lowered."
+            }
+          ]
+        },
+        {
+          "concept": "schedule_commercial_pressure",
+          "label": "Schedule, seasonal or commercial pressure",
+          "hits": 2,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Seasonal/winter tow restrictions and mandatory approvals exist for good reason and must not be bypassed under commercial or schedule pressure."
+            },
+            {
+              "role": "context",
+              "field": "summary",
+              "text": "It resulted from a combination of a hazardous late-season winter tow, cold and deteriorating weather (waves up to 4–5 m, squally winds up to 25 m/s and near-freezing water), and operational and emergency-response failures."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A credible, pre-arranged evacuation and SAR plan must be in place before departure — assuming a helicopter rescue that has not been confirmed is a fatal error, and cold-water survival time is only minutes."
             }
           ]
         }
@@ -3775,38 +3770,116 @@
       "classification": "design",
       "region": "Australia",
       "fatalities": 0,
-      "infrastructure_impact": "Direct Category 5 hit - North Rankin A survived; drilling rig displaced ~2 km; support vessels and smaller installations damaged",
-      "sentences_scanned": 35,
+      "infrastructure_impact": "North Rankin A remained structurally intact but sustained extensive superficial damage; seabed scour along the gas pipeline to shore required remedial stabilisation works, and storm-monitoring instruments failed.",
+      "sentences_scanned": 48,
       "tags": [
         {
-          "concept": "design_basis_inadequate",
-          "label": "Design basis / criteria inadequate or exceeded",
-          "hits": 5,
+          "concept": "monitoring_instrumentation",
+          "label": "Monitoring and instrumentation gaps",
+          "hits": 14,
           "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 1,
-            "context": 3
+            "cause": 2,
+            "lesson": 2,
+            "action": 2,
+            "context": 8
           },
           "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
+          "causal_status": "candidate_recorded_causal_statement",
           "evidence_status": "record_statement_source_unlinked",
           "evidence": [
             {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "The NW Shelf design philosophy was validated by Orson - robust design to extreme return periods is effective and essential for permanent structures."
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The North Rankin anemometers were destroyed during the cyclone, preventing a complete direct wind record through the most severe conditions."
             },
             {
-              "role": "action",
-              "field": "actions",
-              "text": "Carnarvon Basin cyclone design criteria - already among the most stringent in the world - were reviewed and confirmed as appropriate; procedures for mobile units were significantly tightened."
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Failures of industry-standard instruments and offshore/onshore power supplies produced significant data losses during a rare design-level event."
+            }
+          ]
+        },
+        {
+          "concept": "geohazard_site",
+          "label": "Seabed, geohazard and site characterisation",
+          "hits": 7,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 1,
+            "context": 4
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Seabed scour developed along the gas pipeline to shore and required remedial stabilisation after the cyclone."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A structurally intact platform can still sustain extensive superficial damage and subsea consequences; post-cyclone inspection must include topsides, monitoring systems, seabed and pipeline stability."
             }
           ]
         },
         {
           "concept": "forecast_uncertainty",
           "label": "Weather forecast, warning or storm track uncertainty",
+          "hits": 3,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 1,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Extreme-current prediction can carry greater uncertainty than wind and wave hindcasting where tides, background currents, stratification and internal tides interact."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "Retain event datasets with explicit measured-versus-modelled labels and use them to test coupled wind, wave and current hindcast methods."
+            }
+          ]
+        },
+        {
+          "concept": "emergency_response_sar",
+          "label": "Emergency response and search-and-rescue capability",
+          "hits": 3,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 2
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Cyclone readiness should combine timely personnel reduction, safe relocation of standby vessels and plans for restoring damaged monitoring and communications systems."
+            },
+            {
+              "role": "context",
+              "field": "what_happened",
+              "text": "Non-essential workers were evacuated by helicopter and emergency standby vessels moved to safer waters."
+            }
+          ]
+        },
+        {
+          "concept": "integrity_maintenance",
+          "label": "Ageing, integrity and maintenance",
           "hits": 2,
           "roles": {
             "cause": 0,
@@ -3821,117 +3894,18 @@
             {
               "role": "lesson",
               "field": "lessons_learned",
-              "text": "Cyclone track forecasting must use conservative assumptions about track uncertainty - departure decisions must be driven by worst-case track scenarios, not most-likely."
+              "text": "A structurally intact platform can still sustain extensive superficial damage and subsea consequences; post-cyclone inspection must include topsides, monitoring systems, seabed and pipeline stability."
             },
             {
               "role": "action",
               "field": "actions",
-              "text": "The Australian Bureau of Meteorology improved cyclone track forecasting and offshore marine weather warning services."
+              "text": "Trigger post-cyclone inspection of platform systems, weather and ocean instruments, seabed conditions and pipeline stabilisation features before normal operations resume."
             }
           ]
         },
         {
           "concept": "station_keeping_mooring",
           "label": "Mooring, anchoring or station-keeping failure",
-          "hits": 2,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 0,
-            "context": 1
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The 2 km displacement of the drilling rig demonstrated that anchor holding capacity and vessel response to extreme Category 4-5 cyclone conditions can be insufficient even for modern equipment."
-            },
-            {
-              "role": "context",
-              "field": "summary",
-              "text": "However, a nearby drilling rig was displaced ~2 km off location and support vessels sustained significant damage."
-            }
-          ]
-        },
-        {
-          "concept": "evacuation_abandonment",
-          "label": "Evacuation, abandonment and survival craft",
-          "hits": 2,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 0,
-            "context": 1
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Cyclone preparedness for NW Shelf operations must address the full sequence: pre-storm evacuation timelines for all vessel types, minimum safe distances, and re-entry criteria after the cyclone passes."
-            },
-            {
-              "role": "context",
-              "field": "what_happened",
-              "text": "All personnel who could be safely evacuated were removed before the cyclone arrived; the platform was operated in minimum-manning configuration during passage."
-            }
-          ]
-        },
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 2,
-          "roles": {
-            "cause": 0,
-            "lesson": 0,
-            "action": 2,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Woodside Petroleum reviewed and strengthened cyclone preparedness procedures for all NW Shelf operations following Orson."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Carnarvon Basin cyclone design criteria - already among the most stringent in the world - were reviewed and confirmed as appropriate; procedures for mobile units were significantly tightened."
-            }
-          ]
-        },
-        {
-          "concept": "vessel_interaction",
-          "label": "Vessel interaction, collision or proximity",
-          "hits": 1,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 0,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Support vessel operations near platforms during cyclone approach created both collision risk and delayed safe departure as conditions rapidly deteriorated."
-            }
-          ]
-        },
-        {
-          "concept": "regulatory_assurance",
-          "label": "Regulatory oversight, assurance and verification",
           "hits": 1,
           "roles": {
             "cause": 0,
@@ -3946,28 +3920,7 @@
             {
               "role": "action",
               "field": "actions",
-              "text": "Australian regulators (NOPSA, now NOPSEMA) developed enhanced requirements for cyclone management plans for all offshore facilities in Australian waters."
-            }
-          ]
-        },
-        {
-          "concept": "organisational_authority",
-          "label": "Authority, communication and organisational interfaces",
-          "hits": 1,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 0,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Pre-storm communication and coordination between all vessels and the platform operator needs clear authority and decision timing - departure decisions must not be delayed while the fixed platform confirms its own status."
+              "text": "Specify cyclone-monitoring instruments, moorings, telemetry and power supplies for survival beyond standard manufacturer configurations where design-level seas can exceed equipment limits."
             }
           ]
         }
@@ -7708,17 +7661,17 @@
       "region": "Europe",
       "fatalities": 0,
       "infrastructure_impact": null,
-      "sentences_scanned": 27,
+      "sentences_scanned": 42,
       "tags": [
         {
           "concept": "monitoring_instrumentation",
           "label": "Monitoring and instrumentation gaps",
-          "hits": 13,
+          "hits": 25,
           "roles": {
-            "cause": 3,
-            "lesson": 1,
-            "action": 1,
-            "context": 8
+            "cause": 2,
+            "lesson": 3,
+            "action": 3,
+            "context": 17
           },
           "analysis_status": "review_required",
           "causal_status": "candidate_recorded_causal_statement",
@@ -7727,23 +7680,23 @@
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "Inadequate awareness of subsea infrastructure (buoy) position during survey planning."
+              "text": "After March 2023 maintenance, the buoy was inadvertently redeployed about 270 m south of its prior location; the revised position was not communicated to Geomatics and was not passed to the survey contractor."
             },
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "No pre-survey verification comparing installed buoy locations against planned tow routes."
+              "text": "A 40 m vessel offset was selected from visual observations, but the planned track passed through the middle of previously observed buoy positions and the offset was insufficient to prevent the towed system snagging the mooring tether."
             }
           ]
         },
         {
-          "concept": "tow_transit",
-          "label": "Tow and marine transit exposure",
-          "hits": 12,
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 15,
           "roles": {
-            "cause": 1,
-            "lesson": 2,
-            "action": 2,
+            "cause": 3,
+            "lesson": 4,
+            "action": 1,
             "context": 7
           },
           "analysis_status": "review_required",
@@ -7753,50 +7706,24 @@
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "No pre-survey verification comparing installed buoy locations against planned tow routes."
+              "text": "The maximum tether length relative to water depth, mooring slack and resulting horizontal excursion were not properly understood or incorporated into survey planning."
             },
             {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "ROV integrity survey good practice when towed equipment has crossed over subsurface lines."
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The contractor had not been supplied with a mooring-assembly diagram and rope length, so this limitation was not identified during the HIRA or revisited in the toolbox talk."
             }
           ]
         },
         {
-          "concept": "station_keeping_mooring",
-          "label": "Mooring, anchoring or station-keeping failure",
-          "hits": 4,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 1,
-            "context": 2
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Before conducting towed survey operations, verify all installed buoys and mooring positions against planned survey lines."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Survey planning procedures updated to require verification of all installed buoy and mooring positions against planned tow routes."
-            }
-          ]
-        },
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 2,
+          "concept": "tow_transit",
+          "label": "Tow and marine transit exposure",
+          "hits": 7,
           "roles": {
             "cause": 1,
-            "lesson": 0,
-            "action": 1,
-            "context": 0
+            "lesson": 1,
+            "action": 0,
+            "context": 5
           },
           "analysis_status": "review_required",
           "causal_status": "candidate_recorded_causal_statement",
@@ -7805,12 +7732,38 @@
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "Buoy position coordinates not properly incorporated into survey line planning software/procedures."
+              "text": "A 40 m vessel offset was selected from visual observations, but the planned track passed through the middle of previously observed buoy positions and the offset was insufficient to prevent the towed system snagging the mooring tether."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "When a towed system crosses buried infrastructure, stop work and verify pipeline and umbilical integrity by ROV before relying on an absence of visible equipment damage."
+            }
+          ]
+        },
+        {
+          "concept": "integrity_maintenance",
+          "label": "Ageing, integrity and maintenance",
+          "hits": 6,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 1,
+            "context": 4
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "After March 2023 maintenance, the buoy was inadvertently redeployed about 270 m south of its prior location; the revised position was not communicated to Geomatics and was not passed to the survey contractor."
             },
             {
               "role": "action",
               "field": "actions",
-              "text": "Survey planning procedures updated to require verification of all installed buoy and mooring positions against planned tow routes."
+              "text": "The snagged buoy was recovered and taken ashore for servicing and maintenance; it was later returned to its original position."
             }
           ]
         }
@@ -11759,6 +11712,313 @@
               "role": "context",
               "field": "summary",
               "text": "Seabed subsidence had reduced the air gap of the ageing installations, increasing their exposure to wave impact."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cyclone-olivia-1996-northwest-shelf",
+      "name": "Severe Tropical Cyclone Olivia - Northwest Shelf Infrastructure Damage",
+      "year": 1996,
+      "weather_event_type": "cyclone",
+      "classification": "design",
+      "region": "Australia",
+      "fatalities": 0,
+      "infrastructure_impact": "Millions of dollars of offshore oil and gas damage; waves damaged the Campbell monopod, currents shifted shallow-water pipelines and pipeline anchors were damaged without reported line rupture",
+      "sentences_scanned": 38,
+      "tags": [
+        {
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 7,
+          "roles": {
+            "cause": 1,
+            "lesson": 2,
+            "action": 1,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Pipeline anchors and supporting subsea infrastructure could be damaged even where the pipeline itself did not rupture."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Treat pipeline movement, anchor damage and seabed mobility as integrity outcomes even when no loss of containment occurs."
+            }
+          ]
+        },
+        {
+          "concept": "integrity_maintenance",
+          "label": "Ageing, integrity and maintenance",
+          "hits": 2,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 1,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Retain high-frequency wind measurements and document sensor exposure, gust duration and averaging period before comparing observations with cyclone design categories."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "For future projects, define inspection and stabilisation triggers for shallow-water pipelines and anchors after severe cyclone current and wave loading."
+            }
+          ]
+        },
+        {
+          "concept": "monitoring_instrumentation",
+          "label": "Monitoring and instrumentation gaps",
+          "hits": 2,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 1,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Retain high-frequency wind measurements and document sensor exposure, gust duration and averaging period before comparing observations with cyclone design categories."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "Use Olivia observations and Northwest Shelf buoy/platform records to validate regional wind, wave and current models."
+            }
+          ]
+        },
+        {
+          "concept": "geohazard_site",
+          "label": "Seabed, geohazard and site characterisation",
+          "hits": 2,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The Campbell monopod and shallow-water pipelines were exposed to different dominant mechanisms: wave loading at the monopod and current-driven seabed or pipeline movement east of Barrow Island."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Treat pipeline movement, anchor damage and seabed mobility as integrity outcomes even when no loss of containment occurs."
+            }
+          ]
+        },
+        {
+          "concept": "emergency_response_sar",
+          "label": "Emergency response and search-and-rescue capability",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 0,
+            "action": 1,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "Include distributed-facility shutdown, restart and subsea integrity verification in cyclone response plans."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arafura-fatal-wave-cape-horn-2021",
+      "name": "VLCC ARAFURA Fatal Wave Strike off Cape Horn",
+      "year": 2021,
+      "weather_event_type": "rogue_wave",
+      "classification": "maritime",
+      "region": "South America",
+      "fatalities": 2,
+      "infrastructure_impact": "Mooring-winch drum covers were washed away and a covered 1.5-tonne chafing chain was displaced; the report does not identify loss of vessel integrity or pollution",
+      "sentences_scanned": 49,
+      "tags": [
+        {
+          "concept": "forecast_uncertainty",
+          "label": "Weather forecast, warning or storm track uncertainty",
+          "hits": 12,
+          "roles": {
+            "cause": 3,
+            "lesson": 1,
+            "action": 1,
+            "context": 7
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The inspection expanded to tightening the nearby anchor lashing, placing both crew members on the exposed forecastle when the wave arrived."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The observed sea gave false reassurance: reconstructed significant wave height was about 5.5-5.75 m and the forecastle freeboard was 9.9 m, so only a small minority of waves appeared able to reach the working area."
+            }
+          ]
+        },
+        {
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 6,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 0,
+            "context": 5
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The inspection expanded to tightening the nearby anchor lashing, placing both crew members on the exposed forecastle when the wave arrived."
+            },
+            {
+              "role": "context",
+              "field": "executive_summary",
+              "text": "The store was dry, but the task expanded to checking a nearby loose anchor lashing."
+            }
+          ]
+        },
+        {
+          "concept": "integrity_maintenance",
+          "label": "Ageing, integrity and maintenance",
+          "hits": 4,
+          "roles": {
+            "cause": 1,
+            "lesson": 2,
+            "action": 0,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The inspection expanded to tightening the nearby anchor lashing, placing both crew members on the exposed forecastle when the wave arrived."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A sheltered route or compartment inspection does not establish that adjacent forecastle work is safe."
+            }
+          ]
+        },
+        {
+          "concept": "stability_flooding",
+          "label": "Stability, flooding and watertight integrity",
+          "hits": 4,
+          "roles": {
+            "cause": 2,
+            "lesson": 1,
+            "action": 0,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The bosun store had no remote camera and its bilge valves required manual operation, making physical access necessary if flooding had been real."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The observed sea gave false reassurance: reconstructed significant wave height was about 5.5-5.75 m and the forecastle freeboard was 9.9 m, so only a small minority of waves appeared able to reach the working area."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 3,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Severe injuries exceeded the diagnostic and treatment capability normally available aboard, helicopter evacuation was prevented by weather, and the portable satellite phone could not communicate from the ship's hospital."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Test medical communications from the ship's hospital and plan for prolonged onboard casualty care where aviation evacuation can be unavailable."
+            }
+          ]
+        },
+        {
+          "concept": "procedures_competence",
+          "label": "Procedures, training and competence",
+          "hits": 2,
+          "roles": {
+            "cause": 0,
+            "lesson": 0,
+            "action": 2,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "The manager revised heavy-weather procedures to require a permit to work for necessary deck work in adverse conditions and to consider placing weather and sea on the stern by altering course."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "The manager strengthened emergent-work communication and training, incorporated the event into safety-learning programmes, and added heavy-weather precautions to bridge-resource and safety training."
             }
           ]
         }

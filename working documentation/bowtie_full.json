@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-09",
+  "generated": "2026-09-13",
   "method": "Candidate bow-tie retrieval aligned to CGE/Wolters Kluwer and CCPS-EI terminology. It classifies wording in the incident record, not source material. All relationships require analyst review against a cited source before use as a finding. Only what_went_wrong statements are used for candidate threats, failed/absent barriers and escalation factors. Lessons and actions are excluded. Explicitly uncertain statements are excluded where recognised.",
   "rule": "Candidate top event = first recognised loss-of-control phrase in the chronological record narrative; absence of a phrase is reported as undetermined, not inferred.",
-  "records_analysed": 81,
+  "records_analysed": 83,
   "top_event_counts": {
-    "structural_failure": 9,
-    "loss_of_position": 21,
-    "loss_of_stability": 12,
-    "impact_collision": 3,
-    "loss_of_containment": 4,
+    "structural_failure": 8,
+    "loss_of_position": 20,
+    "loss_of_stability": 14,
+    "impact_collision": 2,
+    "loss_of_containment": 5,
     "electrical_contact_with_energy": 2,
     "equipment_detachment": 3,
     "wind_damage_to_structure": 2,
@@ -17,6 +17,7 @@
     "wave_impact_on_structure": 4,
     "ignition_fire_explosion": 2,
     "subsea_asset_displacement": 2,
+    "undetermined": 2,
     "water_inrush_confined_space": 1,
     "dropped_or_swinging_load": 2
   },
@@ -469,35 +470,16 @@
       "fatalities": 53,
       "infrastructure_impact": null,
       "analysis_status": "review_required",
-      "top_event": "loss_of_position",
-      "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "bad weather to improve stability was not followed. When one tow line parted in the rough conditions, the rig began taking water into its ballast tanks and started to list. On the evening of 17 December the captain could not reach the (unava",
+      "top_event": "loss_of_stability",
+      "top_event_label": "Loss of stability / buoyancy",
+      "top_event_evidence": "ssion between approximately 09:10 and 09:45 local. Kolskaya capsized at about 12:46 in water deeper than 1,000 m. The towing vessels recovered 14 survivors; 53 people died or remained missing and were subsequently declared dead. On 18 Dece",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
-      "escalated_events": [
-        {
-          "key": "loss_of_stability",
-          "label": "Loss of stability / buoyancy"
-        }
-      ],
-      "threats": [
-        {
-          "key": "towline_failure",
-          "label": "Towline or pennant parts",
-          "hits": 1,
-          "evidence": "One of the two tow vessels was an icebreaker not optimal for towing; when a tow line parted, the rig took water into its ballast tanks and began to list.",
-          "role": "cause"
-        }
-      ],
+      "escalated_events": [],
+      "threats": [],
       "preventive_barriers": [],
       "recovery_barriers": [],
       "escalation_factors": [
-        {
-          "key": "commercial_or_schedule_pressure",
-          "label": "Schedule or commercial pressure on the decision",
-          "evidence": "Schedule and commercial pressure drove the decision: onset of sea ice threatened to lock the rig off Kamchatka until the next summer, and a further urgent drilling job awaited in Vietnam.",
-          "evidence_status": "record_statement_source_unlinked"
-        },
         {
           "key": "assurance_or_exemption_gap",
           "label": "Assurance gap or regulatory exemption",
@@ -509,22 +491,15 @@
         {
           "key": "capsize",
           "label": "Unit capsizes",
-          "hits": 3,
-          "evidence": "On 18 December 2011 the jack-up Kolskaya capsized and sank in the Sea of Okhotsk while under tow from offshore Kamchatka to Sakhalin, killing 53 of 67 aboard.",
+          "hits": 4,
+          "evidence": "Kolskaya capsized at about 12:46 in water deeper than 1,000 m.",
           "role": "context"
         },
         {
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
-          "hits": 3,
-          "evidence": "As the rig sank people jumped into the 1 °C sea; the tow vessels could not recover most of them owing to the weather and poor organisation.",
-          "role": "context"
-        },
-        {
-          "key": "emergency_evacuation",
-          "label": "Emergency evacuation of personnel",
-          "hits": 3,
-          "evidence": "By the morning of 18 December the list had worsened; crew and passengers assembled on the main deck believing a helicopter evacuation had been arranged.",
+          "hits": 2,
+          "evidence": "On 18 December 2011 the jack-up Kolskaya capsized and sank in the Sea of Okhotsk while under tow from offshore Kamchatka to Sakhalin, killing 53 of 67 aboard.",
           "role": "context"
         },
         {
@@ -532,6 +507,13 @@
           "label": "Personnel enter the water",
           "hits": 1,
           "evidence": "~1 °C (near-freezing) — survivors entered the water at ~1 °C",
+          "role": "context"
+        },
+        {
+          "key": "fatalities_occurred",
+          "label": "People are killed",
+          "hits": 1,
+          "evidence": "53 people died or remained missing and were subsequently declared dead.",
           "role": "context"
         }
       ]
@@ -1763,38 +1745,62 @@
       "discipline": "design",
       "region": "Australia",
       "fatalities": 0,
-      "infrastructure_impact": "Direct Category 5 hit - North Rankin A survived; drilling rig displaced ~2 km; support vessels and smaller installations damaged",
+      "infrastructure_impact": "North Rankin A remained structurally intact but sustained extensive superficial damage; seabed scour along the gas pipeline to shore required remedial stabilisation works, and storm-monitoring instruments failed.",
       "analysis_status": "review_required",
-      "top_event": "structural_failure",
-      "top_event_label": "Structural failure / collapse",
-      "top_event_evidence": "nfiguration during passage. North Rankin A survived without structural failure, a direct validation of its extreme design criteria (designed to a return period of approximately 1 in 10,000 years). However, a drilling rig operating in the a",
+      "top_event": "loss_of_stability",
+      "top_event_label": "Loss of stability / buoyancy",
+      "top_event_evidence": "damage. Four fishermen died when Indonesian fishing vessels sank near Ashmore Reef earlier in the cyclone; those deaths are wider-storm context and are not attributed to the North Rankin platform event. Category 5 Cyclone Orson passed appr",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
-      "escalated_events": [
+      "escalated_events": [],
+      "threats": [
         {
-          "key": "loss_of_position",
-          "label": "Loss of position / station-keeping"
+          "key": "foundation_or_seabed_failure",
+          "label": "Foundation, seabed or slope failure",
+          "hits": 1,
+          "evidence": "Seabed scour developed along the gas pipeline to shore and required remedial stabilisation after the cyclone.",
+          "role": "cause"
         }
       ],
-      "threats": [],
       "preventive_barriers": [
         {
-          "key": "mooring_design_and_analysis",
-          "label": "Mooring design, analysis and pretension control",
+          "key": "realtime_monitoring",
+          "label": "Real-time monitoring and instrumentation",
           "state": "candidate_failed_or_absent",
-          "evidence": "The 2 km displacement of the drilling rig demonstrated that anchor holding capacity and vessel response to extreme Category 4-5 cyclone conditions can be insufficient even for modern equipment.",
+          "evidence": "The North Rankin anemometers were destroyed during the cyclone, preventing a complete direct wind record through the most severe conditions.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
       "recovery_barriers": [],
-      "escalation_factors": [],
+      "escalation_factors": [
+        {
+          "key": "power_or_comms_loss",
+          "label": "Power or communications lost",
+          "evidence": "Failures of industry-standard instruments and offshore/onshore power supplies produced significant data losses during a rare design-level event.",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
       "consequences": [
+        {
+          "key": "structural_damage",
+          "label": "Structure damaged or destroyed",
+          "hits": 5,
+          "evidence": "North Rankin recorded 905 hPa and a 249 km/h gust before the anemometers were destroyed.",
+          "role": "context"
+        },
         {
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
+          "hits": 2,
+          "evidence": "Non-essential workers were evacuated by helicopter and emergency standby vessels moved to safer waters.",
+          "role": "context"
+        },
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
           "hits": 1,
-          "evidence": "All personnel who could be safely evacuated were removed before the cyclone arrived; the platform was operated in minimum-manning configuration during passage.",
+          "evidence": "Four fishermen died when Indonesian fishing vessels sank near Ashmore Reef earlier in the cyclone; those deaths are wider-storm context and are not attributed to the North Rankin platform event.",
           "role": "context"
         }
       ]
@@ -3028,10 +3034,10 @@
       "fatalities": 0,
       "infrastructure_impact": null,
       "analysis_status": "review_required",
-      "top_event": "impact_collision",
-      "top_event_label": "Impact or collision",
-      "top_event_evidence": "the Wave Rider buoy permanently installed at the field. The collision displaced the buoy and its anchor weight ~2 km to the north. The tow track passed directly over buried production and control lines. An emergency all-stop was called; sur",
-      "top_event_evidence_status": "record_statement_source_unlinked",
+      "top_event": null,
+      "top_event_label": "Undetermined from record text",
+      "top_event_evidence": null,
+      "top_event_evidence_status": null,
       "not_discrete_reason": null,
       "escalated_events": [],
       "threats": [],
@@ -3042,8 +3048,8 @@
         {
           "key": "well_or_subsea_damage",
           "label": "Well, riser or subsea infrastructure damaged",
-          "hits": 2,
-          "evidence": "None - no pipeline damage, buoy recovered",
+          "hits": 1,
+          "evidence": "An all-stop was called; equipment was recovered and an ROV survey found no pipeline or umbilical damage.",
           "role": "context"
         }
       ]
@@ -4531,6 +4537,92 @@
           "label": "Production shut in or asset off-hire",
           "hits": 1,
           "evidence": "The public source identifies the regional storm context and the broad damage outcome, but does not state which individual platforms were damaged, which lifeboats were destroyed, the exact wave measurement at Valhall, the repair scope, ca...",
+          "role": "context"
+        }
+      ]
+    },
+    {
+      "id": "cyclone-olivia-1996-northwest-shelf",
+      "name": "Severe Tropical Cyclone Olivia - Northwest Shelf Infrastructure Damage",
+      "year": 1996,
+      "hazard_event_type": "cyclone",
+      "hazard": "Offshore activity exposed to cyclone energy",
+      "discipline": "design",
+      "region": "Australia",
+      "fatalities": 0,
+      "infrastructure_impact": "Millions of dollars of offshore oil and gas damage; waves damaged the Campbell monopod, currents shifted shallow-water pipelines and pipeline anchors were damaged without reported line rupture",
+      "analysis_status": "review_required",
+      "top_event": "loss_of_containment",
+      "top_event_label": "Loss of containment",
+      "top_event_evidence": "Island, and pipeline anchors were damaged although no line rupture is reported in the reviewed summary. Barrow and Varanus Island facilities also suffered extensive wind damage, and offshore production was shut down during the storm. Onsh",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [],
+      "threats": [],
+      "preventive_barriers": [],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "well_or_subsea_damage",
+          "label": "Well, riser or subsea infrastructure damaged",
+          "hits": 4,
+          "evidence": "Waves damaged the Campbell monopod, currents shifted shallow-water pipelines and extreme winds damaged Barrow and Varanus Island facilities.",
+          "role": "context"
+        }
+      ]
+    },
+    {
+      "id": "arafura-fatal-wave-cape-horn-2021",
+      "name": "VLCC ARAFURA Fatal Wave Strike off Cape Horn",
+      "year": 2021,
+      "hazard_event_type": "rogue_wave",
+      "hazard": "Offshore activity exposed to rogue_wave energy",
+      "discipline": "maritime",
+      "region": "South America",
+      "fatalities": 2,
+      "infrastructure_impact": "Mooring-winch drum covers were washed away and a covered 1.5-tonne chafing chain was displaced; the report does not identify loss of vessel integrity or pollution",
+      "analysis_status": "review_required",
+      "top_event": null,
+      "top_event_label": "Undetermined from record text",
+      "top_event_evidence": null,
+      "top_event_evidence_status": null,
+      "not_discrete_reason": null,
+      "escalated_events": [],
+      "threats": [
+        {
+          "key": "station_keeping_capacity_exceeded",
+          "label": "Environmental load exceeds station-keeping capacity",
+          "hits": 1,
+          "evidence": "Severe injuries exceeded the diagnostic and treatment capability normally available aboard, helicopter evacuation was prevented by weather, and the portable satellite phone could not communicate from the ship's hospital.",
+          "role": "cause"
+        }
+      ],
+      "preventive_barriers": [
+        {
+          "key": "weather_forecasting",
+          "label": "Weather forecasting and storm tracking",
+          "state": "candidate_failed_or_absent",
+          "evidence": "The impact wave was significantly higher than the waves observed from the bridge and probably met a freak-wave definition, but its height was not measured and no operational forecast or onboard detection tool could predict it.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "fatalities_occurred",
+          "label": "People are killed",
+          "hits": 2,
+          "evidence": "Both were swept across the forecastle into deck equipment and later died from their injuries.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 2,
+          "evidence": "Helicopter evacuation was unavailable because weather conditions were too severe, while naval vessels were many hours away.",
           "role": "context"
         }
       ]

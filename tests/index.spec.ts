@@ -743,3 +743,164 @@ test('G-TIGH incident shows AAIB findings, references and aircraft photograph', 
   await expect(figure.locator('figcaption')).toContainText('Lewis Grant / AirHistory.net');
   await expect(figure.locator('figcaption')).toContainText('permission required');
 });
+
+test('analysis links never overlap the responsive operational header', async ({ page }) => {
+  for (const width of [1440, 1024, 768]) {
+    await page.setViewportSize({ width, height: 844 });
+    await expect(page.locator('#header-analysis-links')).toBeVisible();
+
+    const headerBox = await page.locator('#app-header').boundingBox();
+    const counterBox = await page.locator('#stat-incidents-btn').boundingBox();
+    expect(headerBox).not.toBeNull();
+    expect(counterBox).not.toBeNull();
+    expect(counterBox!.x + counterBox!.width).toBeLessThanOrEqual(width);
+    expect(counterBox!.y + counterBox!.height).toBeLessThanOrEqual(headerBox!.height);
+    expect(headerBox!.height).toBeLessThan(63);
+  }
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator('#header-analysis-links')).toBeHidden();
+  await expect(page.locator('#app-header')).toHaveCSS('height', '150px');
+});
+
+test('Kolskaya record preserves corrected Russian-source findings and caveats', async ({ page }) => {
+  const incident = await page.evaluate(() =>
+    (window as any).INCIDENTS_DATA.incidents.find(
+      (item: any) => item.id === 'kolskaya-2011',
+    ),
+  );
+
+  expect(incident.lat).toBe(49.5167);
+  expect(incident.lng).toBe(148.2333);
+  expect(incident.location_precision).toContain('Provisionally corroborated');
+  expect(incident.weather_event).toContain('winds up to 25 m/s');
+  expect(incident.metocean.wave_height_hs).toContain('do not identify this value as significant wave height');
+  expect(incident.executive_summary).toContain('28 people not required for the tow');
+  expect(incident.what_went_wrong.join(' ')).toContain('orally prohibited a distress signal');
+  expect(incident.what_went_wrong.join(' ')).toContain('unofficial account');
+  expect(incident.data_quality).toContain('schedule causation is not');
+  expect(incident.actions.join(' ')).not.toContain('tighter scrutiny');
+  expect(JSON.stringify(incident)).not.toMatch(/Likhvan|Bordzilovsky/i);
+  expect(incident.image.src).toBe('images/kolskaya-2011-ria-archival.webp');
+  expect(incident.image.caption).toContain('archival photograph');
+
+  await page.locator('#filter-search').fill('Kolskaya');
+  await page.locator('.search-result', { hasText: 'Kolskaya Jack-up' }).click();
+  await expect(page.locator('#modal-content')).toContainText('Squally wind up to 25 m/s');
+  await expect(page.locator('#modal-content')).toContainText('28 of them were not required');
+  await expect(page.locator('#modal-content')).toContainText('sent SOS despite that prohibition');
+  await expect(page.locator('#modal-content')).toContainText('unofficial account');
+  await expect(page.locator('#modal-content')).not.toContainText(/Likhvan|Bordzilovsky/i);
+
+  const image = page.locator('#modal-content .incident-image-figure img');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveJSProperty('naturalWidth', 873);
+  await expect(image).toHaveJSProperty('naturalHeight', 554);
+});
+
+test('Pierce Wave Rider record follows the Knowledge Hub learning report', async ({ page }) => {
+  const incident = await page.evaluate(() =>
+    (window as any).INCIDENTS_DATA.incidents.find(
+      (item: any) => item.id === 'lfe-02-wave-rider-buoy-snag-2023',
+    ),
+  );
+
+  expect(incident.shell_internal_only).toBe(true);
+  expect(incident.source_classification).toBe('internal');
+  expect(incident.what_happened).toContain('redeployed about 270 m south');
+  expect(incident.what_happened).toContain('40 m course offset');
+  expect(incident.what_went_wrong.join(' ')).toContain('maximum tether length');
+  expect(incident.lessons_learned.join(' ')).toContain('about 400 m');
+  expect(incident.environmental_impact).toContain('no integrity issues');
+  expect(incident.data_quality).toContain('no exact incident or buoy coordinates');
+  expect(incident.data_quality).toContain('not proof that every recommended procedural control');
+  expect(incident.references.some((reference: any) =>
+    reference.file === 'background files/Shell Knowledge Hub -  Snagged Wave Rider Bouy.pdf',
+  )).toBe(true);
+
+  await page.locator('#filter-search').fill('Wave Rider Buoy Snagged');
+  await page.locator('.search-result', { hasText: 'Wave Rider Buoy Snagged' }).click();
+  await expect(page.locator('#modal-content')).toContainText('redeployed about 270 m south');
+  await expect(page.locator('#modal-content')).toContainText('400 m');
+  await expect(page.locator('#modal-content')).toContainText('Haewene Brim FPSO');
+});
+
+test('Arafura record preserves the qualified wave finding and Figure 18 context', async ({ page }) => {
+  const incident = await page.evaluate(() => {
+    return window.INCIDENTS_DATA.incidents.find(
+      (item: { id: string }) => item.id === 'arafura-fatal-wave-cape-horn-2021'
+    );
+  });
+
+  expect(incident).toBeDefined();
+  expect(incident.weather_event_type).toBe('rogue_wave');
+  expect(incident.classification).toBe('maritime');
+  expect(incident.fatalities).toBe(2);
+  expect(incident.persons_on_board).toBe(23);
+  expect(incident.survivors).toBe(21);
+  expect(incident.lat).toBe(-56.17);
+  expect(incident.lng).toBeCloseTo(-70.0733333);
+  expect(incident.weather_event).toContain('probably meeting a freak-wave definition');
+  expect(incident.metocean.notes).toContain('impact-wave height could not be determined');
+  expect(incident.image.src).toBe('images/arafura-2021-weather-conditions-figure-18.jpeg');
+  expect(incident.image.caption).toContain('87 minutes after the casualty');
+
+  await page.click('#stat-incidents-btn');
+  const row = page.locator('#incidents-tbody tr', { hasText: 'VLCC ARAFURA Fatal Wave Strike off Cape Horn' });
+  await expect(row).toHaveCount(1);
+  await row.click();
+  await expect(page.locator('#modal-content')).toContainText('Federal Bureau for the Investigation of Maritime Accidents');
+  await expect(page.locator('#modal-content')).toContainText('waves up to about 11.5 m');
+  const image = page.locator('#modal-content .incident-image-figure img');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveAttribute('src', 'images/arafura-2021-weather-conditions-figure-18.jpeg');
+  await expect(image).toHaveJSProperty('naturalWidth', 508);
+  await expect(image).toHaveJSProperty('naturalHeight', 675);
+});
+
+test('Cyclone Orson record preserves measured and modelled evidence boundaries', async ({ page }) => {
+  const incident = await page.evaluate(() => {
+    return window.INCIDENTS_DATA.incidents.find(
+      (item: { id: string }) => item.id === 'cyclone_orson_1989'
+    );
+  });
+
+  expect(incident).toBeDefined();
+  expect(incident.lat).toBe(-19.63);
+  expect(incident.lng).toBe(116.1);
+  expect(incident.summary).toContain('about 4 km west');
+  expect(incident.summary).toContain('About 100 personnel remained');
+  expect(incident.infrastructure_impact).toContain('extensive superficial damage');
+  expect(incident.infrastructure_impact).toContain('remedial stabilisation');
+  expect(incident.metocean.wave_height_hs).toContain('Hs ~11 m at North Rankin');
+  expect(incident.metocean.notes).toContain('40 km northeast of North Rankin');
+  expect(incident.data_quality).toContain('do not substantiate the previous 2 km drilling-rig displacement');
+  expect(incident.what_happened).not.toContain('drilling rig operating in the area');
+  expect(incident.actions.join(' ')).not.toContain('Australian regulators');
+  expect(incident.references.map((reference: { file?: string }) => reference.file)).toContain('background files/orson.pdf');
+  expect(incident.references.map((reference: { file?: string }) => reference.file)).toContain('background files/Harper_etal_TCOrson_IEAust_Coasts_1993.pdf');
+
+  await page.click('#stat-incidents-btn');
+  const row = page.locator('#incidents-tbody tr', { hasText: 'Cyclone Orson - North Rankin A' });
+  await expect(row).toHaveCount(1);
+  await row.click();
+  await expect(page.locator('#modal-content')).toContainText('Waverider lost radio contact');
+  await expect(page.locator('#modal-content')).toContainText('18-19 m');
+  await expect(page.locator('#modal-content')).toContainText('Australian Bureau of Meteorology');
+});
+
+test('map summary omits the image figure when an incident has no selected image', async ({ page }) => {
+  const incidentName = await page.evaluate(() => {
+    const incident = (window as any).INCIDENTS_DATA.incidents.find((item: any) => !item.image?.src);
+    return incident?.name;
+  });
+  expect(incidentName).toBeTruthy();
+
+  await page.click('#stat-incidents-btn');
+  const row = page.locator('#incidents-tbody tr', { hasText: incidentName });
+  await expect(row).toHaveCount(1);
+  await row.click();
+  await expect(page.locator('#modal-overlay')).not.toHaveClass(/hidden/);
+  await expect(page.locator('#modal-content .incident-image-figure')).toHaveCount(0);
+  await expect(page.locator('#modal-content')).not.toContainText('Placeholder visual');
+});

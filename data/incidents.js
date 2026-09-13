@@ -434,55 +434,64 @@ window.INCIDENTS_DATA = {
       year: 2011,
       date: '18 December 2011',
       location: 'Sea of Okhotsk, en route Kamchatka → Sakhalin, Russian Far East',
-      lat: 53.5,
-      lng: 149.5,
+      lat: 49.5167,
+      lng: 148.2333,
+      location_precision: 'Provisionally corroborated casualty position (49°31′N, 148°14′E). The exact coordinates are widely published and are consistent with reporting that the rig sank about 200 km northeast of Cape Terpeniya, but they were not verified in a retrieved primary document.',
       region: 'Russia and Central Asia',
       platform_type: 'Triangular jack-up drilling rig (built 1985, under tow)',
       operator: 'ArktikmorNefteGazRazvedka (AMNGR), Murmansk — subcontracted to Gazprom; tow by icebreaker Magadan and tug Neftegaz-55',
       weather_event_type: 'storm',
       classification: 'maritime',
-      weather_event: 'Winter storm — winds up to ~40 knots (~20 m/s), Hs 4–5 m, sub-zero temperatures',
+      weather_event: 'Winter storm — squally winds up to 25 m/s, waves up to 4–5 m, sub-zero temperatures',
       fatalities: 53,
       persons_on_board: 67,
       survivors: 14,
       image: {
-        src: 'images/kolskaya-2011-final-hour.jpg',
-        alt: 'Kolskaya listing heavily with little remaining buoyancy at 11:14 on 18 December 2011.',
-        caption: 'Kolskaya listing with little remaining buoyancy at 11:14, about two hours before capsize.',
-        credit: 'Local incident presentation; original photographer unidentified. Reference-only.'
+        src: 'images/kolskaya-2011-ria-archival.webp',
+        alt: 'Kolskaya jack-up afloat in rough seas during its final voyage.',
+        caption: 'Kolskaya during its final voyage. RIA identifies this as an archival photograph and does not provide an exact date or time.',
+        credit: 'RIA Novosti; personal archive of Natalia Dmitrieva. Permission required.'
       },
-      summary: 'The jack-up rig Kolskaya capsized and sank in the Sea of Okhotsk on 18 December 2011 while under tow from offshore Kamchatka to Sakhalin, killing 53 of the 67 people on board — Russia\'s worst offshore oil-and-gas disaster. It resulted from a combination of factors: a hazardous late-season winter tow, cold and deteriorating weather (Hs 4–5 m, winds up to ~40 knots, near-freezing temperatures), and a series of operational shortcomings and decisions. The tow was undertaken without the required approval; all 67 personnel were kept aboard because the tow vessels lacked rescue capacity; the jack-up legs were left raised; and after a tow line parted the rig progressively flooded, listed and capsized. Survivors jumped into 1 °C water where only 14 could be recovered.',
-      executive_summary: 'On 18 December 2011 the jack-up Kolskaya capsized and sank in the Sea of Okhotsk while under tow from offshore Kamchatka to Sakhalin, killing 53 of 67 aboard. The weather was cold and deteriorating but not exceptional (Hs 4–5 m, winds up to ~40 knots / ~20 m/s); the outcome reflected the interaction of that weather with an ill-timed winter tow, personnel kept aboard beyond the tow vessels\' rescue capacity, omitted stabilising precautions, and an ineffective emergency response.',
-      what_happened: 'The Kolskaya, a 1985-built triangular jack-up operated by ArktikmorNefteGazRazvedka (AMNGR) of Murmansk, had been subcontracted to Gazprom to drill offshore Kamchatka in the Sea of Okhotsk. Drilling ran over time and finished in mid-December 2011; the rig was then to be towed to Sakhalin (with a further urgent job scheduled in Vietnam). A winter tow was not permitted under Russian marine safety regulations without prior approval — this was ignored by the rig owner, who, lacking a suitable heavy-lift vessel, chose to tow the jack-up using a tug and the icebreaker Magadan. The rig\'s captain objected, calling the tow "suicide", and submitted his resignation in protest; it was not accepted.\n\nRussian regulations required only minimal crew aboard during a tow, with non-essential personnel taken ashore by air. Instead all 67 people were kept on the Kolskaya, because the tow vessels did not carry enough life-saving equipment for the extra people. A storm was forecast; the captain altered the tow route to avoid it but ran into a second storm — Hs 4–5 m and winds up to ~40 knots.\n\nThe common precaution of lowering the jack-up legs a few hours before bad weather to improve stability was not followed. When one tow line parted in the rough conditions, the rig began taking water into its ballast tanks and started to list. On the evening of 17 December the captain could not reach the (unavailable) rig owner, and a coast-guard suggestion to declare "SOS" was rejected. By the morning of 18 December the list had worsened; crew and passengers assembled on the main deck believing a helicopter evacuation had been arranged. Water then entered the accommodation through portholes and the rig tilted about 20°. It was announced that no helicopters were coming and that people should abandon by life raft — now impossible given the tilt. As the rig sank people jumped into the 1 °C sea; the tow vessels could not recover most of them owing to the weather and poor organisation. Only 14 of the 67 survived.',
+      summary: 'The jack-up rig Kolskaya capsized and sank in the Sea of Okhotsk on 18 December 2011 while under tow from offshore Kamchatka to Sakhalin, killing 53 of the 67 people on board — Russia\'s worst offshore oil-and-gas disaster. It resulted from a combination of a hazardous late-season winter tow, cold and deteriorating weather (waves up to 4–5 m, squally winds up to 25 m/s and near-freezing water), and operational and emergency-response failures. Investigators and the court found that 28 people not required for the tow remained aboard, the jack-up legs were not lowered before the storm, and the distress signal was sent too late. Flooding around the forward leg and through compromised watertight boundaries then progressed beyond pumping capacity until the rig lost stability and capsized. Only 14 people were recovered alive.',
+      executive_summary: 'On 18 December 2011 the jack-up Kolskaya capsized and sank in the Sea of Okhotsk while under tow from offshore Kamchatka to Sakhalin, killing 53 of 67 aboard. Investigators reported squally winds up to 25 m/s and waves up to 4–5 m. The court found that 28 people not required for the tow remained aboard, the platform was not prepared for storm conditions, its legs were not lowered, and SOS was sent too late. The planned subsequent Vietsovpetro work in Vietnam is documented, but the reviewed evidence does not establish that schedule as a cause of the unsafe decisions.',
+      what_happened: 'Kolskaya was a 1985-built triangular jack-up operated by ArktikmorNefteGazRazvedka (AMNGR). After completing drilling and well-conservation work for Gazflot on the West Kamchatka shelf, the rig began a 917-nautical-mile tow toward Korsakov on 11 December 2011, assisted by the icebreaker Magadan and tug Neftegaz-55. Subsequent work for Vietsovpetro in Vietnam was planned, but the reviewed evidence does not establish that schedule as a cause of the tow decisions. RosTransNadzor identified the winter tow, preparation for a one-off passage and management of towing safety as failures. Separately, the retained internal presentation gives an unofficial account that a previous rig captain called the tow "suicide" and submitted a resignation that was not accepted; the original source for that account has not been retrieved.\n\nAll 67 people remained aboard. Investigators and the 2017 court found that 28 of them were not required for the towing operation. After five days of routine towing, weather deteriorated during 15–16 December. The Investigative Committee reported that the tow leader increased speed to about 4.8 knots while trying to outrun approaching weather. During 17–18 December the rig encountered squally winds up to 25 m/s and waves up to 4–5 m; the reviewed sources do not identify the wave value as significant wave height. The legs were not lowered before storm exposure, despite tow guidance requiring this stabilising measure at specified wind and wave thresholds.\n\nThe Investigative Committee attributed the loss of buoyancy to damage around the forward leg and flooding of adjacent ballast tanks after excessive towing speed and storm exposure with the legs raised. Watertight integrity deteriorated, machinery-space inflow exceeded pumping capacity, and bow trim increased until the legs could no longer be lowered. Survivor and operator-aligned accounts dispute parts of the damage timing, so that reconstruction is identified as the investigators\' account rather than uncontested fact. The court found that SOS was transmitted too late; investigators alleged that an AMNGR manager had prohibited distress signaling pending further instruction and that the captain eventually sent SOS despite that prohibition. Published Russian accounts place the transmission between approximately 09:10 and 09:45 local. Kolskaya capsized at about 12:46 in water deeper than 1,000 m. The towing vessels recovered 14 survivors; 53 people died or remained missing and were subsequently declared dead.',
       what_went_wrong: [
         'A winter tow in the Sea of Okhotsk was conducted without the prior approval required by Russian marine safety regulations — the rig owner ignored the rule.',
-        'Schedule and commercial pressure drove the decision: onset of sea ice threatened to lock the rig off Kamchatka until the next summer, and a further urgent drilling job awaited in Vietnam.',
-        'The rig\'s own captain judged the tow unsafe ("suicide") and resigned in protest; the warning was overridden and his resignation refused.',
-        'All 67 personnel were kept aboard during the tow — contrary to the minimum-crew rule — because the tow vessels lacked rescue capacity for evacuated personnel.',
+        'Subsequent work for Vietsovpetro in Vietnam was planned, but the reviewed evidence does not establish that schedule as a cause of the unsafe tow decisions.',
+        'An unofficial account in the retained internal presentation says a previous rig captain called the tow "suicide" and submitted his resignation, which was not accepted. The original interview or document has not been retrieved, so this is not treated as a formal finding.',
+        'Investigators and the court found that 28 people not required for the towing operation remained aboard, increasing the number exposed to the casualty.',
         'The standard stabilising precaution of lowering the jack-up legs before the storm was not carried out.',
-        'One of the two tow vessels was an icebreaker not optimal for towing; when a tow line parted, the rig took water into its ballast tanks and began to list.',
-        'Emergency response failed at every step: the rig owner was unreachable, a coast-guard prompt to declare SOS was rejected, a non-existent helicopter evacuation was relied upon, and overboard rescue in 1 °C water was defeated by weather and poor organisation.'
+        'The Investigative Committee attributed the loss of buoyancy to damage around the forward leg and flooding of adjacent ballast tanks after excessive towing speed and storm exposure with the legs raised; survivor and operator-aligned accounts dispute parts of the damage timing.',
+        'The court found that SOS was sent too late. The Investigative Committee alleged that an AMNGR manager had orally prohibited a distress signal pending further instruction and that the captain eventually transmitted SOS despite that prohibition; published accounts conflict on the exact transmission time.'
       ],
       lessons_learned: [
-        'A moderate storm can still be deadly: the Kolskaya conditions (Hs 4–5 m, ~40 knots, near-freezing) were not exceptional, so weather, operational readiness and management decisions must all be weighed together rather than attributing the loss to the sea state alone.',
+        'A winter storm can still be deadly without a verified extreme-wave measurement: reported waves up to 4–5 m, squally winds up to 25 m/s and near-freezing water interacted with tow preparation, stability and emergency-response failures.',
         'Seasonal/winter tow restrictions and mandatory approvals exist for good reason and must not be bypassed under commercial or schedule pressure.',
-        'Minimum-manning rules for tows exist to limit exposure; personnel must not be carried on a towed unit beyond the combined rescue capacity of the escorting vessels.',
+        'Tow manning must be justified by the operation and exposure kept as low as practicable; investigators and the court found that 28 people not required for this tow remained aboard.',
         'Standard stabilising precautions (e.g. lowering jack-up legs ahead of adverse weather) and tow-line redundancy must be verified before a marine move.',
         'A credible, pre-arranged evacuation and SAR plan must be in place before departure — assuming a helicopter rescue that has not been confirmed is a fatal error, and cold-water survival time is only minutes.'
       ],
       actions: [
         'The Russian Federal Service for Supervision of Transport (RosTransNadzor) investigated the sinking and published its report in May 2012.',
-        'Criminal proceedings were brought against management of the rig owner (AMNGR) over the decision to tow in winter and the safety violations identified.',
-        'The disaster prompted tighter scrutiny of winter marine-move approvals and tow-safety compliance for drilling units in the Russian Far East.'
+        'Two former shore-side AMNGR officials responsible for navigation safety and engineering were convicted on 3 May 2017 under Article 263(3), sentenced to six years in settlement colonies and barred for three years from transport-related work; the Murmansk Regional Court upheld the verdict on 16 August 2017.',
+        'The convicted officials denied guilt, victims\' relatives disputed the narrow attribution of responsibility, and a separate evidence-falsification case was brought against a former investigator; these legal caveats do not alter the recorded conviction but show that the attribution remained contested.'
       ],
       metocean: {
-        wave_height_hs: 'Hs 4–5 m (moderate winter sea state — not extreme)',
-        wind_speed: 'Up to ~40 knots (~20 m/s) per the RosTransNadzor investigation',
+        wave_height_hs: 'Waves up to 4–5 m; the reviewed Russian sources do not identify this value as significant wave height (Hs)',
+        wind_speed: 'Squally wind up to 25 m/s in Investigative Committee reporting',
         sea_temp: '~1 °C (near-freezing) — survivors entered the water at ~1 °C',
-        notes: 'The Sea of Okhotsk is prone to polar lows in winter — small, short-lived but intense maritime storms that spin up rapidly over cold water and are hard to forecast. The Kolskaya was caught by a rapidly-developing winter storm of this kind; RosTransNadzor recorded winds up to ~40 knots (~20 m/s) and Hs 4–5 m, with near-freezing water (~1 °C) that left survivors only minutes. Separately (a seasonal process, not the storm), the sea freezes over each winter — the advance of ice from around late December threatened to trap the rig off Kamchatka until summer, a key driver of the decision to move it.'
+        notes: 'The Sea of Okhotsk is prone to polar lows in winter — small, short-lived but intense maritime storms that spin up rapidly over cold water and are hard to forecast. The Kolskaya was caught by a rapidly-developing winter storm of this kind; Investigative Committee reporting describes squally winds up to 25 m/s and waves up to 4–5 m, without identifying the wave parameter as Hs. Near-freezing water (~1 °C) sharply constrained survival. Separately (a seasonal process, not the storm), the sea freezes over each winter; the retained internal presentation identifies the advancing ice season as operational context for the move, but the reviewed evidence does not establish the later Vietnam schedule as a cause of unsafe decisions.'
       },
+      source_classification: 'mixed',
+      shell_internal_only: false,
+      data_quality: 'High for the 67 aboard, 14 survivors, 53 fatalities, tow date and vessels, reported wind and wave values, 28 people not required for the tow, raised legs, delayed SOS, progressive flooding and 2017 convictions because these are supported by Russian investigative and court reporting. The casualty coordinates 49°31′N, 148°14′E are provisionally corroborated but were not found in a retrieved primary document. Distress accounts conflict between approximately 09:10 and 09:45 local. The captain\'s reported "suicide" warning and resignation are retained only as an unofficial account from the internal presentation. Planned Vietsovpetro work is confirmed, but schedule causation is not.',
       references: [
         { title: 'RosTransNadzor — Kolskaya sinking investigation report (May 2012)', type: 'Official investigation report', publisher: 'Russian Federal Service for Supervision of Transport (RosTransNadzor)', year: 2012 },
+        { title: 'Investigators reconstructed the Kolskaya casualty', type: 'Investigative Committee reporting', publisher: 'RIA Novosti', year: 2013, url: 'https://ria.ru/20131106/974963163.html' },
+        { title: 'Investigators: Kolskaya management prohibited an SOS signal', type: 'Investigative Committee reporting', publisher: 'RIA Novosti', year: 2013, url: 'https://ria.ru/20131105/974753436.html' },
+        { title: 'Court found defendants guilty in the Kolskaya casualty', type: 'Court reporting', publisher: 'Interfax', year: 2017, url: 'https://www.interfax.ru/russia/560985' },
+        { title: 'Relatives of Kolskaya victims applied to the ECHR', type: 'Appeal and legal follow-up reporting', publisher: 'Interfax', year: 2018, url: 'https://www.interfax.ru/russia/600595' },
+        { title: 'Court rejected Kolskaya owner\'s claim against the Russian Maritime Register', type: 'Arbitration and RosTransNadzor findings reporting', publisher: 'Sakh.online', year: 2012, url: 'https://sakh.online/news/24/2012-06-06/sud-otkazal-vladeltsu-kolskoy-v-iske-k-morskomu-registru-rossii-301952' },
         { title: 'Lessons Learnt from the Kolskaya Incident — Vadim Anokhin (Senior Metocean Engineer, Sarawak Shell Berhad)', type: 'Shell internal case study', file: 'background files/Lessons Learnt from Kolskaya Incident - Vadim Anokhin - Final VA.pdf', internal: true },
         { title: 'Wikipedia — Kolskaya (jack-up rig)', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Kolskaya_(jack-up_rig)' }
       ]
@@ -1538,18 +1547,18 @@ window.INCIDENTS_DATA = {
       year: 1989,
       date: '22-23 April 1989',
       location: 'North Rankin gas field, Carnarvon Basin, NW Australia',
-      lat: -19.6,
-      lng: 116.0,
+      lat: -19.63,
+      lng: 116.1,
       region: 'Australia',
-      platform_type: 'Fixed offshore gas platform (concrete and steel jacket)',
-      operator: 'Woodside Petroleum',
+      platform_type: 'Fixed offshore gas production platform',
+      operator: 'Woodside Offshore Petroleum Pty Ltd',
       weather_event_type: 'cyclone',
       classification: 'design',
       storm_sid: '1989106S11128',
       storm_name: 'ORSON',
-      weather_event: 'Tropical Cyclone Orson - Category 5, sustained 200 km/h (108 knots), gusts to 250 km/h',
+      weather_event: 'Severe Tropical Cyclone Orson - Category 5; 905 hPa and a 249 km/h gust recorded at North Rankin before the anemometers were destroyed',
       fatalities: 0,
-      infrastructure_impact: 'Direct Category 5 hit - North Rankin A survived; drilling rig displaced ~2 km; support vessels and smaller installations damaged',
+      infrastructure_impact: 'North Rankin A remained structurally intact but sustained extensive superficial damage; seabed scour along the gas pipeline to shore required remedial stabilisation works, and storm-monitoring instruments failed.',
       severity_override: 'major',
       image: {
         src: 'images/cyclone-orson-1989-north-rankin-a.png',
@@ -1557,38 +1566,42 @@ window.INCIDENTS_DATA = {
         caption: 'North Rankin A gas platform; this context image does not show Cyclone Orson conditions.',
         credit: 'Woodside Energy via CSIROpedia. Permission required.'
       },
-      summary: 'Tropical Cyclone Orson struck the North Rankin A gas platform in the Carnarvon Basin on 22-23 April 1989 as one of the most intense cyclones ever recorded on the Australian NW Shelf. The fixed platform - designed to a 1-in-10,000 year return period - survived intact without structural failure. However, a nearby drilling rig was displaced ~2 km off location and support vessels sustained significant damage. The event validated robust fixed-structure design philosophy while exposing the much greater vulnerability of floating units and support craft.',
-      executive_summary: 'Tropical Cyclone Orson struck the North Rankin A gas platform on 22-23 April 1989 with sustained winds of 200 km/h and gusts to 250 km/h - one of the most intense cyclones ever recorded on the Australian North West Shelf. The fixed platform survived intact; a nearby drilling rig was displaced approximately 2 km from its location by the extreme forces.',
-      what_happened: 'Tropical Cyclone Orson developed rapidly in the eastern Indian Ocean in April 1989 and tracked southeast toward the Western Australian coast, intensifying to Category 5 intensity (sustained winds exceeding 200 km/h) before crossing the Carnarvon Basin.\n\nThe North Rankin A platform - Woodside\'s major gas production facility - lay directly in the cyclone\'s path. All personnel who could be safely evacuated were removed before the cyclone arrived; the platform was operated in minimum-manning configuration during passage. North Rankin A survived without structural failure, a direct validation of its extreme design criteria (designed to a return period of approximately 1 in 10,000 years).\n\nHowever, a drilling rig operating in the area was displaced approximately 2 km from its location by the extreme wave and current forces. Supply vessels and other smaller marine units sustained damage. Reports of injuries on marine vessels varied; no confirmed fatalities are recorded in the primary public documentation.',
+      summary: 'Severe Tropical Cyclone Orson passed about 4 km west of North Rankin A just after midnight on 23 April 1989. The platform recorded 905 hPa and a 249 km/h gust, reduced to the 10 m level, before its anemometers were destroyed. About 100 personnel remained after non-essential workers were evacuated and emergency standby vessels moved to safer waters. The platform remained structurally intact but sustained extensive superficial damage; seabed scour along the export gas pipeline required remedial stabilisation. Instrument failures before peak conditions meant that the most severe wind, wave and current values had to be reconstructed or modelled.',
+      executive_summary: 'Category 5 Cyclone Orson passed approximately 4 km west of North Rankin A at about 0030 WST on 23 April 1989. North Rankin recorded 905 hPa and a 249 km/h gust before the anemometers were destroyed. The fixed platform remained intact but sustained extensive superficial damage, and scour along the gas pipeline to shore required remedial stabilisation. The event produced a rare offshore dataset while exposing important monitoring and extreme-current modelling limitations.',
+      what_happened: 'A tropical low formed in the eastern Timor Sea on 17 April 1989, reached cyclone intensity on 18 April and intensified rapidly to Category 5 late on 20 April. At 1630 UTC on 22 April, approximately 0030 WST on 23 April, Orson\'s centre passed a few kilometres west of North Rankin A at 19.63 S, 116.1 E. Harper, Mason and Bode estimated the closest approach at about 4 km and reported that the platform experienced the eye region for about 40 minutes.\n\nNon-essential workers were evacuated by helicopter and emergency standby vessels moved to safer waters. About 100 personnel remained aboard. The platform recorded a minimum mean-sea-level pressure of 905 hPa and a 249 km/h gust reduced to the 10 m level before the anemometers were destroyed. The Bureau of Meteorology described 905 hPa as the lowest pressure then recorded for an Australian cyclone.\n\nNorth Rankin A was secure after the storm and its main structure remained intact, but it sustained extensive superficial damage. Subsequent assessment found seabed scour along the gas pipeline to shore, leading to remedial stabilisation works. The cyclone also caused failures in the offshore observing system: the Waverider lost radio contact before the peak and other instruments or power supplies failed, leaving the most severe wind, wave and current conditions dependent on engineering reconstruction and numerical modelling.\n\nOrson crossed the coast near Cape Preston about four hours after passing North Rankin. The Bureau recorded a 3.1 m storm surge at Dampier, where the near-low-tide crossing reduced inundation, and estimated approximately US$16 million in 1989 damage. Four fishermen died when Indonesian fishing vessels sank near Ashmore Reef earlier in the cyclone; those deaths are wider-storm context and are not attributed to the North Rankin platform event.',
       what_went_wrong: [
-        'Floating drilling units and support vessels operating near fixed platforms in cyclone-prone regions face vastly greater vulnerability than the fixed structure itself - pre-cyclone departure plans must be well-established and executed well before cyclone arrival.',
-        'The 2 km displacement of the drilling rig demonstrated that anchor holding capacity and vessel response to extreme Category 4-5 cyclone conditions can be insufficient even for modern equipment.',
-        'Support vessel operations near platforms during cyclone approach created both collision risk and delayed safe departure as conditions rapidly deteriorated.',
-        'Pre-storm communication and coordination between all vessels and the platform operator needs clear authority and decision timing - departure decisions must not be delayed while the fixed platform confirms its own status.'
+        'The North Rankin anemometers were destroyed during the cyclone, preventing a complete direct wind record through the most severe conditions.',
+        'The nearby Waverider lost radio contact before the storm maximum, so peak wave conditions were not directly measured and had to be estimated from modelling and damage assessment.',
+        'Failures of industry-standard instruments and offshore/onshore power supplies produced significant data losses during a rare design-level event.',
+        'Seabed scour developed along the gas pipeline to shore and required remedial stabilisation after the cyclone.',
+        'The combination of tidal flow, background drift, stratification, internal tides and cyclone-driven currents made separation and accurate modelling of extreme current components difficult.'
       ],
       lessons_learned: [
-        'Fixed platforms designed to extreme (1-in-10,000 year) cyclone criteria can survive direct Category 5 hits. The NW Shelf design philosophy was validated by Orson - robust design to extreme return periods is effective and essential for permanent structures.',
-        'Floating drilling units and support vessels near fixed platforms must have pre-defined departure criteria and a planned route to shelter, activated 48-72 hours before cyclone arrival. They must not remain on location when the fixed platform can ride out the storm.',
-        'Cyclone preparedness for NW Shelf operations must address the full sequence: pre-storm evacuation timelines for all vessel types, minimum safe distances, and re-entry criteria after the cyclone passes.',
-        'Cyclone track forecasting must use conservative assumptions about track uncertainty - departure decisions must be driven by worst-case track scenarios, not most-likely.',
-        'The design gap between requirements for fixed platforms and those for mobile units and support vessels in the same field is a systemic risk that must be explicitly managed.'
+        'Long-term, high-quality offshore observations are essential for calibrating extreme wind, wave and current models, but the monitoring system must itself be designed to survive the event being measured.',
+        'Measured, modelled and damage-inferred values must remain clearly distinguished: at North Rankin the modelled peak significant wave height was about 11 m, the estimated maximum wave was 18-19 m, and the approximately 20 m value included runup, short-crested interaction and damage assessment.',
+        'A structurally intact platform can still sustain extensive superficial damage and subsea consequences; post-cyclone inspection must include topsides, monitoring systems, seabed and pipeline stability.',
+        'Cyclone readiness should combine timely personnel reduction, safe relocation of standby vessels and plans for restoring damaged monitoring and communications systems.',
+        'Extreme-current prediction can carry greater uncertainty than wind and wave hindcasting where tides, background currents, stratification and internal tides interact.'
       ],
       actions: [
-        'Woodside Petroleum reviewed and strengthened cyclone preparedness procedures for all NW Shelf operations following Orson.',
-        'Australian regulators (NOPSA, now NOPSEMA) developed enhanced requirements for cyclone management plans for all offshore facilities in Australian waters.',
-        'The Australian Bureau of Meteorology improved cyclone track forecasting and offshore marine weather warning services.',
-        'Carnarvon Basin cyclone design criteria - already among the most stringent in the world - were reviewed and confirmed as appropriate; procedures for mobile units were significantly tightened.'
+        'Specify cyclone-monitoring instruments, moorings, telemetry and power supplies for survival beyond standard manufacturer configurations where design-level seas can exceed equipment limits.',
+        'Provide redundant local recording and communications paths so loss of radio telemetry does not also remove the underlying observation record.',
+        'Trigger post-cyclone inspection of platform systems, weather and ocean instruments, seabed conditions and pipeline stabilisation features before normal operations resume.',
+        'Retain event datasets with explicit measured-versus-modelled labels and use them to test coupled wind, wave and current hindcast methods.',
+        'Apply conservative uncertainty allowances to extreme-current modelling and investigate higher-order turbulence representations for deepwater cyclone assessments.'
       ],
       metocean: {
-        wave_height_hs: 'Estimated Hs ~13-15 m at peak; individual waves reported up to ~20 m',
-        wind_speed: 'Sustained 200 km/h (108 knots), gusts to 250 km/h',
-        sea_temp: '~28 °C',
-        visibility: 'Near zero at cyclone centre',
-        notes: 'Cyclone Orson was one of the most intense tropical cyclones ever recorded on the Australian NW Shelf. The Carnarvon Basin is exposed to rare but extreme cyclones, and the design basis for North Rankin A explicitly addressed this threat.'
+        wave_height_hs: 'Modelled peak Hs ~11 m at North Rankin; Hmax estimated 18-19 m; ~20 m including runup/interaction and damage assessment',
+        wind_speed: '249 km/h gust at North Rankin, reduced to 10 m level, before anemometer destruction; Bureau best-track maximum 135 knots (10-minute mean)',
+        notes: 'North Rankin recorded 905 hPa. The Waverider failed before peak conditions. The modelled Hs of almost 15 m and mean wind of 55.2 m/s were located about 40 km northeast of North Rankin, not at the platform. Modelled peak current near 2.5 m/s was also away from North Rankin and carried substantial uncertainty.'
       },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the Bureau chronology, closest-pass timing, 905 hPa pressure, recorded 249 km/h gust, platform status, personnel account, superficial damage and pipeline scour because these are documented in the retained Bureau report and Harper et al. paper. Moderate for peak wind, wave and current magnitudes because instruments failed before or during the maximum; the 11 m Hs, 18-19 m Hmax, approximately 20 m interacting-wave estimate, 55.2 m/s mean wind and approximately 2.5 m/s current are modelled, inferred or located away from North Rankin as stated. The reviewed sources do not substantiate the previous 2 km drilling-rig displacement, support-vessel damage, 1-in-10,000-year return-period claim or specific post-Orson regulatory actions, so those claims were removed.',
       references: [
-        { title: 'Tropical Cyclone Orson - Bureau of Meteorology record', type: 'Meteorological record', publisher: 'Australian Bureau of Meteorology', url: 'http://www.bom.gov.au/cyclone/history/orson.shtml' },
-        { title: 'NOPSEMA Offshore Safety Framework - Cyclone Management', type: 'Regulatory guidance', publisher: 'NOPSEMA', url: 'https://www.nopsema.gov.au/' }
+        { title: 'Severe Tropical Cyclone Orson, 17-23 April 1989', type: 'Official cyclone report', publisher: 'Australian Bureau of Meteorology, Perth Tropical Cyclone Warning Centre', url: 'https://www.bom.gov.au/cyclone/history/pdf/orson.pdf', file: 'background files/orson.pdf', notes: 'Three-page official chronology, best track, North Rankin observations, coastal observations, storm surge and damage estimate.' },
+        { title: 'Tropical Cyclone Orson - A Severe Test For Modelling', type: 'Technical conference paper', publisher: 'B. A. Harper, L. B. Mason and L. Bode / Institution of Engineers Australia', year: 1993, url: 'https://www.researchgate.net/publication/356290165_Tropical_Cyclone_Orson_-A_Severe_Test_For_Modelling', file: 'background files/Harper_etal_TCOrson_IEAust_Coasts_1993.pdf', notes: 'Six-page engineering paper covering North Rankin observations, personnel and vessel precautions, platform and pipeline effects, instrument failures, and wind-wave-current hindcasting.' },
+        { title: 'Cyclone Orson (1989) - Detailed Evidence Note', type: 'Project source audit', file: 'background files/Orson_1989_Detailed_Incident_Report.md', internal: true, notes: 'Page-cited evidence boundaries distinguishing direct observations, engineering estimates and prospective actions.' }
       ]
     },
 
@@ -3412,24 +3425,28 @@ window.INCIDENTS_DATA = {
       weather_event: 'Equipment interaction issue (not weather-driven)',
       fatalities: 0,
       injuries: 0,
-      environmental_impact: 'None - no pipeline damage, buoy recovered',
-      summary: 'Survey vessel conducting anchoring condition surveys snagged its towed side-scan sonar (~210-220 m tow length) around the Pierce Wave Rider buoy. Buoy and rigging displaced ~2 km northward. Tow passed directly over buried production/control lines. All-stop called; equipment recovered. ROV survey confirmed no pipeline/umbilical damage.',
-      executive_summary: 'Wave Rider buoy at Pierce Asset displaced ~2 km when a survey vessel tow cable wrapped around it. Tow passed over buried lines; ROV confirmed no damage. Incident exposed gap in pre-survey verification of installed equipment positions against tow routes.',
-      what_happened: 'On 12 July 2023 at approximately 11:45 local time, a hydrographic survey vessel operating towed side-scan sonar equipment (tow length 210-220 m) at the Pierce Asset inadvertently wrapped its tow cable around the Wave Rider buoy permanently installed at the field. The collision displaced the buoy and its anchor weight ~2 km to the north. The tow track passed directly over buried production and control lines. An emergency all-stop was called; survey equipment and buoy tether were recovered. Subsequent ROV survey confirmed no damage to buried pipeline or umbilical systems.',
+      environmental_impact: 'None reported. The buoy and survey equipment were recovered without observed damage, and an ROV survey found no integrity issues with the crossed pipelines or control umbilicals.',
+      summary: 'During an anchoring-condition survey at the Pierce Asset on 12 July 2023, a hydrographic survey vessel snagged the permanently installed Wave Rider buoy with its towed side-scan-sonar system. The tow displaced the buoy, anchor weight and rigging about 2 km north and crossed buried production and control lines between Pierce and the Haewene Brim FPSO. The buoy had been redeployed about 270 m south after maintenance, but its revised position was not communicated to Geomatics or the survey contractor. A planned 40 m vessel offset also did not account for the tether length and buoy excursion. An all-stop was called; equipment was recovered and an ROV survey found no pipeline or umbilical damage.',
+      executive_summary: 'At the Pierce Asset on 12 July 2023, a survey vessel\'s towed side-scan-sonar system snagged a Wave Rider buoy and dragged its buoy, anchor weight and rigging about 2 km north across buried production and control lines. The buoy had been redeployed about 270 m south after maintenance without the revised position being communicated to Geomatics or the contractor, and the selected 40 m avoidance offset did not account for tether length or buoy excursion. No injury, environmental release or equipment damage was observed; an ROV survey found no pipeline or umbilical integrity issue.',
+      what_happened: 'A hydrographic survey vessel was conducting anchoring-condition surveys at the Pierce Asset in the UK Central North Sea. It operated hull-mounted instruments and a towed side-scan sonar with approximately 210–220 m of tow cable, flown about 15 m above the seabed. At approximately 11:45 on 12 July 2023, while running south to north on a 002° heading, the vessel inadvertently snagged the sonar tow around the permanently installed Pierce Wave Rider buoy. The buoy supplied real-time sea-state data to the asset.\n\nThe entanglement displaced the buoy, its anchor weight and associated rigging approximately 2 km due north of its previous position. The vessel and snagged equipment passed directly over buried production and control lines between Pierce and the Haewene Brim FPSO. The crew called an all-stop, recovered the survey equipment and removed the buoy mooring tether. No damage to the buoy or survey equipment and no injury or environmental release were observed. An ROV survey that evening found no integrity issues with the crossed pipelines or control umbilicals, and the hydrographic survey continued. The buoy was taken ashore for servicing and maintenance before later reinstallation.\n\nThe buoy position had been marked on project charts, maps, the HIRA and toolbox talks. However, after recovery for routine maintenance in March 2023, it had inadvertently been redeployed about 270 m south of its earlier position. That revised location was not communicated to Geomatics and was therefore not supplied to the survey contractor. Before the survey run, visual observations prompted a 40 m course offset, but that track passed between previously observed buoy positions and did not allow for the mooring tether length or the buoy\'s maximum excursion around its anchor.',
       what_went_wrong: [
-        'Inadequate awareness of subsea infrastructure (buoy) position during survey planning.',
-        'No pre-survey verification comparing installed buoy locations against planned tow routes.',
-        'Buoy position coordinates not properly incorporated into survey line planning software/procedures.'
+        'After March 2023 maintenance, the buoy was inadvertently redeployed about 270 m south of its prior location; the revised position was not communicated to Geomatics and was not passed to the survey contractor.',
+        'A 40 m vessel offset was selected from visual observations, but the planned track passed through the middle of previously observed buoy positions and the offset was insufficient to prevent the towed system snagging the mooring tether.',
+        'The maximum tether length relative to water depth, mooring slack and resulting horizontal excursion were not properly understood or incorporated into survey planning.',
+        'The contractor had not been supplied with a mooring-assembly diagram and rope length, so this limitation was not identified during the HIRA or revisited in the toolbox talk.'
       ],
       lessons_learned: [
-        'Before conducting towed survey operations, verify all installed buoys and mooring positions against planned survey lines.',
-        'Survey planning must include cross-check of field layout data against equipment operations.',
-        'ROV integrity survey good practice when towed equipment has crossed over subsurface lines.',
-        'Wave Rider buoy data operationally important - contingency for temporary loss of real-time sea state data should be considered.'
+        'Provide Geomatics with accurate buoy anchor coordinates immediately after deployment and add them to GIS and flow-assurance products; the metocean team should also provide observed position and maximum excursion from the live MetNet record.',
+        'Plan an avoidance offset for the entire mooring footprint, not just the observed surface position. The learning report recommends about 400 m where observed positions vary, and notes that metocean-buoy horizontal displacement can approach the water depth because storm survival requires mooring slack.',
+        'Supply the survey contractor with the mooring-assembly diagram and rope length, then address the resulting interaction limits in the HIRA and close-approach toolbox talk.',
+        'Use live buoy position from MetNet during planning, but give field observation and tidal state precedence over a single supplied coordinate.',
+        'Display a live positional readout in the online survey room so crews can see an excursion or an increasing snag load in real time.',
+        'When a towed system crosses buried infrastructure, stop work and verify pipeline and umbilical integrity by ROV before relying on an absence of visible equipment damage.'
       ],
       actions: [
-        'Survey planning procedures updated to require verification of all installed buoy and mooring positions against planned tow routes.',
-        'ROV integrity survey established as standard practice after any towed equipment crosses subsea lines.'
+        'The crew called an all-stop, recovered the survey equipment and removed the buoy mooring tether.',
+        'An ROV survey was completed on the evening of 12 July and confirmed no integrity issues with the crossed pipelines or control umbilicals.',
+        'The snagged buoy was recovered and taken ashore for servicing and maintenance; it was later returned to its original position. A replacement buoy had meanwhile been deployed about 270 m south.'
       ],
       metocean: {
         wave_height_hs: 'N/A - operational incident, not weather-driven',
@@ -3437,13 +3454,15 @@ window.INCIDENTS_DATA = {
         sea_temp: 'N/A',
         notes: 'Operational equipment-interaction incident, not driven by metocean conditions. Wave Rider buoy is metocean measurement equipment.'
       },
-      source_classification: 'external',
-      shell_internal_only: false,
+      source_classification: 'internal',
+      shell_internal_only: true,
+      data_quality: 'High for the date, survey configuration, snag sequence, approximately 270 m redeployment offset, approximately 2 km displacement, crossed infrastructure, response and no-damage outcome because these are stated in the expert-approved Shell Knowledge Hub learning report. The report identifies the Pierce Asset in the UK Central North Sea but gives no exact incident or buoy coordinates; the map point is therefore an approximate field location. The document records recommendations and lessons, not proof that every recommended procedural control was subsequently implemented.',
       sources: [
         'Sphera Report #1279795 (INTERNAL)',
         'Shell internal: Metocean Lessons Learnt - Learning from Experience V01.docx (INTERNAL)'
       ],
       references: [
+        { title: 'Snagged Wave Rider Buoy With Survey Vessel', type: 'Shell Knowledge Hub learning report', file: 'background files/Shell Knowledge Hub -  Snagged Wave Rider Bouy.pdf', internal: true, notes: 'Learning ID 123715134258400; expert approved with no suggested changes.' },
         { title: 'Sphera Report #1279795', type: 'Shell incident report', internal: true },
         { title: 'Metocean Lessons Learnt V01', type: 'Shell internal training', file: 'background files/Metocean Lessons Learnt - Learning from Experience V01.docx', internal: true }
       ]
@@ -3853,7 +3872,7 @@ window.INCIDENTS_DATA = {
       survivors: 70,
       summary: 'While being towed from the Dolginskoye field to Murmansk in November 2014, the jack-up platform GSP Saturn encountered a severe Arctic storm with winds of 70-80 knots and seas of 8-12 m. The platform sustained damage (lifeboat destroyed, helicopter deck damaged) and was abandoned by its crew to escort vessels. All 70 personnel were evacuated safely. The platform was then jacked-down on the seabed at Cape Kanin Nos to await refloating. The successful evacuation was informed by lessons from the SPBU Kolskaya disaster (December 2011), in which a similar platform in comparable Arctic storm conditions resulted in 53 fatalities.',
       executive_summary: 'During a severe Arctic storm on 7-10 November 2014, the jack-up platform GSP Saturn was towed from the Dolginskoye field in the Pechora Sea toward Murmansk when storm conditions (70-80 knots winds, 8-12 m seas, near-freezing temperatures) caused damage and forced immediate evacuation of all 70 crew members to escort vessels. The primary escape systems were compromised (lifeboat destroyed, helicopter deck damaged), yet 100% crew survival was achieved through precautionary evacuation protocols informed by the SPBU Kolskaya precedent (2011). The platform was subsequently jacked-down at Cape Kanin Nos. The incident validated Arctic offshore evacuation procedures and highlighted continuing vulnerability of jack-up platforms in Arctic marine transits.',
-      what_happened: 'The GSP Saturn, a Romanian-operated 4-legged jack-up drilling platform, had completed drilling operations at the Dolginskoye field in the Pechora Sea for Gazprom Neft. On 6 November 2014 at 08:00, the platform commenced tow operations to Murmansk, towed by twin AHTS tugs (Stril Challenger and Stril Commander) with escort support (standby tug Strilbord and rescue vessel Spasatel Karev).\n\nOn the evening of 7 November 2014 (~23:00), storm conditions intensified unexpectedly. Wind shifted to sustained 70-80 knots with gusts exceeding 100 knots; seas built rapidly to 8-12 m with 15+ m wave peaks; visibility dropped to near-zero in snow and spray. Air temperatures fell to -8 to -12 °C, creating severe icing conditions.\n\nUnder the extreme dynamic loading of the storm, heavy seas destroyed Lifeboat #1 (torn from davits and lost overboard). The helicopter landing deck was damaged and became unsafe for landing operations.\n\nWith the primary escape systems compromised (only one lifeboat remaining, insufficient for ~70 crew; helicopter operations no longer possible), the platform captain and master of the escort tug assessed the situation and made a critical decision: **immediate evacuation**. This decision was informed by knowledge of the SPBU Kolskaya disaster (December 2011), in which a jack-up rig in comparable Arctic storm conditions had capsized with loss of 53 of ~70 crew.\n\nFrom approximately 05:00-07:00 on 8 November, tender boats (small rescue craft launched from Spasatel Karev) ferried crew between the platform and escort vessels in waves of 8-10 personnel per crossing. Each tender crossing took 20-30 minutes in the high seas. **All 70 crew were successfully evacuated with no fatalities or serious injuries.** The platform was left unmanned.\n\nWith crew safely aboard escort vessels, tugs assessed tow-ability and shelter options. Due to excessive tow-wire tension and no forecast storm clearing, the decision was made to seek shelter at Kolguyev Island (shallow Pechora Sea bay, ~100 nm north of the storm impact location). The slow tow to Kolguyev (8 November, ~12:00-17:00) was hazardous but successful; the platform anchored in sheltered water.\n\nWhen weather did not clear and ice accumulation concerns grew (late November season), the platform was relocated to Cape Kanin Nos (southern entrance to Pechora Bay, water depth ~30-50 m). On 10 November, the platform was **jacked-down** (all four legs extended to the seabed, floats raised above water), converting it from a floating/towed configuration to a bottom-supported jack-up.\n\n**Final outcome:** The outcome of GSP Saturn (refloating date, arrival in Murmansk, repair status, return to operations) is not documented in available public sources. The platform remained stranded at Cape Kanin Nos, awaiting recovery in improved weather and sea-ice conditions.',
+      what_happened: 'The GSP Saturn, a Romanian-operated 4-legged jack-up drilling platform, had completed drilling operations at the Dolginskoye field in the Pechora Sea for Gazprom Neft. On 6 November 2014 at 08:00, the platform commenced tow operations to Murmansk, towed by twin AHTS tugs (Stril Challenger and Stril Commander) with escort support (standby tug Strilbord and rescue vessel Spasatel Karev).\n\nOn the evening of 7 November 2014 (~23:00), storm conditions intensified unexpectedly. Wind shifted to sustained 70-80 knots with gusts exceeding 100 knots; seas built rapidly to 8-12 m with 15+ m wave peaks; visibility dropped to near-zero in snow and spray. Air temperatures fell to −8 to −12 °C, creating severe icing conditions.\n\nUnder the extreme dynamic loading of the storm, heavy seas destroyed Lifeboat #1 (torn from davits and lost overboard). The helicopter landing deck was damaged and became unsafe for landing operations.\n\nWith the primary escape systems compromised (only one lifeboat remaining, insufficient for ~70 crew; helicopter operations no longer possible), the platform captain and master of the escort tug assessed the situation and made a critical decision: **immediate evacuation**. This decision was informed by knowledge of the SPBU Kolskaya disaster (December 2011), in which a jack-up rig in comparable Arctic storm conditions had capsized with loss of 53 of ~70 crew.\n\nFrom approximately 05:00-07:00 on 8 November, tender boats (small rescue craft launched from Spasatel Karev) ferried crew between the platform and escort vessels in waves of 8-10 personnel per crossing. Each tender crossing took 20-30 minutes in the high seas. **All 70 crew were successfully evacuated with no fatalities or serious injuries.** The platform was left unmanned.\n\nWith crew safely aboard escort vessels, tugs assessed tow-ability and shelter options. Due to excessive tow-wire tension and no forecast storm clearing, the decision was made to seek shelter at Kolguyev Island (shallow Pechora Sea bay, ~100 nm north of the storm impact location). The slow tow to Kolguyev (8 November, ~12:00-17:00) was hazardous but successful; the platform anchored in sheltered water.\n\nWhen weather did not clear and ice accumulation concerns grew (late November season), the platform was relocated to Cape Kanin Nos (southern entrance to Pechora Bay, water depth ~30-50 m). On 10 November, the platform was **jacked-down** (all four legs extended to the seabed, floats raised above water), converting it from a floating/towed configuration to a bottom-supported jack-up.\n\n**Final outcome:** The outcome of GSP Saturn (refloating date, arrival in Murmansk, repair status, return to operations) is not documented in available public sources. The platform remained stranded at Cape Kanin Nos, awaiting recovery in improved weather and sea-ice conditions.',
       what_went_wrong: [
         'Primary escape systems were destroyed or damaged during the initial storm surge: lifeboat #1 lost overboard, helicopter deck damaged and unsafe. Only one lifeboat remained for ~70 crew; only helicopter deck remains were unsafe. This forced reliance on tender boat evacuation under dangerous sea conditions.',
         'The platform was transiting Arctic waters in early November, a high-risk period for Arctic storms; specific weather forecast accuracy vs. actual storm intensity/track development is undocumented, though the rapid intensification appears to have caught the operation.',
@@ -3876,9 +3895,9 @@ window.INCIDENTS_DATA = {
         wave_height_hs: '8-12 m (significant wave height)',
         wind_speed: '70-80 knots sustained, gusting to 100+ knots (equivalent to strong gale / hurricane-force conditions)',
         sea_temp: '~2 °C',
-        air_temp: '-8 to -12 °C',
+        air_temp: '−8 to −12 °C',
         visibility: 'Near-zero in snow and spray',
-        notes: 'Arctic weather patterns in November are highly variable. Specific forecast vs. actual storm comparisons require access to Russian meteorological archives not available in public sources. Icing conditions (air temp -8 to -12 °C + sea spray) created rapid ice accumulation on decks and superstructure. The Pechora Sea is prone to polar lows - small, short-lived but intense maritime storms that develop rapidly and are difficult to forecast. Arctic seasonal ice advance (specific 2014 dates undocumented) creates operational pressure but must not override weather safety criteria.'
+        notes: 'Arctic weather patterns in November are highly variable. Specific forecast vs. actual storm comparisons require access to Russian meteorological archives not available in public sources. Icing conditions (air temp −8 to −12 °C + sea spray) created rapid ice accumulation on decks and superstructure. The Pechora Sea is prone to polar lows - small, short-lived but intense maritime storms that develop rapidly and are difficult to forecast. Arctic seasonal ice advance (specific 2014 dates undocumented) creates operational pressure but must not override weather safety criteria.'
       },
       source_classification: 'external',
       shell_internal_only: false,
@@ -4171,7 +4190,7 @@ window.INCIDENTS_DATA = {
       metocean: {
         wind_speed: 'Met Office aftercast: 310°/35-40 kt at the surface, gusting 55-60 kt; 1953 special observation: 300°/54-64 kt',
         wave_height_max: 'Up to 11 m wave heights used in AAIB analysis; not reported as significant wave height',
-        air_temp: '0 °C at 1953; dew point -3 °C; freezing level at the surface',
+        air_temp: '0 °C at 1953; dew point −3 °C; freezing level at the surface',
         visibility: 'Around 10 km, rapidly falling to 300 m in snow showers; 4,000 m in moderate snow at 1953',
         cloud: 'Broken cumulus base around 1,500 ft; occasional cumulonimbus base 550-800 ft; vertical visibility 1,200 ft at 1953',
         pressure: 'QNH 989 hPa at 1953',
@@ -5401,6 +5420,142 @@ window.INCIDENTS_DATA = {
         { title: 'New process and hotel platform on Valhall', type: 'Industrial-history account', publisher: 'Valhall / Norwegian Petroleum Museum', year: 2019, url: 'https://valhall.industriminne.no/en/new-process-and-hotel-platform-on-valhall/', file: 'background files/images/New process and hotel platform on Valhall - Valhall.html' },
         { title: 'Assessing Extreme Events for Energy Meteorology in Europe', type: 'Energy-meteorology review article', publisher: 'Energy Procedia / Elsevier', year: 2016, url: 'https://doi.org/10.1016/j.egypro.2016.10.033', file: 'background files/Assessing_Extreme_Events_for_Energy_Meteorology_Me.pdf' },
         { title: 'Storm Britta in 2006: offshore damage and large waves in the North Sea', type: 'Natural-hazards review article', publisher: 'Natural Hazards and Earth System Sciences Discussion', year: 2015, url: 'https://doi.org/10.5194/nhessd-3-5493-2015', file: 'background files/Review_Article_Storm_Britta_in_2006_offshore_damag.pdf' },
+      ]
+    },
+
+    {
+      id: 'cyclone-olivia-1996-northwest-shelf',
+      name: 'Severe Tropical Cyclone Olivia - Northwest Shelf Infrastructure Damage',
+      year: 1996,
+      date: '5-12 April 1996 (Pilbara crossing: 10 April)',
+      location: 'Northwest Shelf, Western Australia (Barrow Island, Varanus Island and Campbell monopod area)',
+      lat: -20.55,
+      lng: 115.45,
+      region: 'Australia',
+      platform_type: 'Offshore oil and gas facilities, shallow-water monopod and subsea pipelines',
+      operator: 'Multiple Northwest Shelf operators; Campbell monopod operator not identified in reviewed sources',
+      weather_event_type: 'cyclone',
+      classification: 'design',
+      storm_sid: '1996095S09133',
+      storm_name: 'OLIVIA',
+      weather_event: 'Severe Tropical Cyclone Olivia - Category 4; WMO-recognized world tropical-cyclone gust record of 408 km/h at Barrow Island; approximately 925 hPa and 195 km/h estimated 10-minute winds',
+      fatalities: 0,
+      injuries: 10,
+      infrastructure_impact: 'Millions of dollars of offshore oil and gas damage; waves damaged the Campbell monopod, currents shifted shallow-water pipelines and pipeline anchors were damaged without reported line rupture',
+      severity_override: 'major',
+      image: {
+        src: 'images/cyclone-olivia-1996-noaa-satellite.png',
+        alt: 'Satellite image of Severe Tropical Cyclone Olivia near peak intensity on 10 April 1996.',
+        caption: 'Severe Tropical Cyclone Olivia near peak intensity on 10 April 1996. The satellite image shows the storm, not the Campbell monopod damage.',
+        credit: 'NOAA/NCDC via Wikimedia Commons, public domain.'
+      },
+      summary: 'Severe Tropical Cyclone Olivia crossed the Pilbara coast near Mardie on 10 April 1996 after passing through the southern Northwest Shelf oil and gas region. The storm produced a verified 408 km/h Barrow Island gust, damaged offshore facilities, damaged the Campbell monopod in approximately 40 m water depth, shifted shallow-water pipelines through current loading and damaged pipeline anchors without reported line rupture. The event, together with Cyclone Orson, contributed to a reassessment of Northwest Shelf metocean design conditions.',
+      executive_summary: 'Cyclone Olivia caused major Northwest Shelf oil and gas damage in April 1996. The WMO-recognized 408 km/h Barrow Island measurement is the world record for the highest wind gust recorded in a tropical cyclone. It was a short-duration local gust, not the storm\'s sustained Category 4 intensity or a claim about the highest wind in every weather category. Waves damaged the Campbell monopod, currents shifted shallow-water pipelines and extreme winds damaged Barrow and Varanus Island facilities.',
+      what_happened: 'Olivia developed north of Darwin, reached cyclone intensity on 5 April and intensified while moving toward Western Australia. It reached peak intensity late on 9 April and crossed the Pilbara coast near Mardie at approximately 2030 WST on 10 April. The Bureau assessed the cyclone as Category 4, with an estimated minimum pressure near 925 hPa and maximum 10-minute sustained winds near 195 km/h.\n\nBarrow Island recorded a 408 km/h gust, Varanus Island 267 km/h and Mardie 257 km/h. The Bureau and later verification work treat the Barrow reading as reliable, but it was a short-duration local gust and is not representative of the cyclone\'s mean intensity.\n\nOlivia affected the southern Northwest Shelf oil and gas region, where the OTC engineering assessment identified approximately 24 marine production facilities. Waves were believed responsible for damage to the Campbell monopod in approximately 40 m water depth northeast of Barrow Island. Strong currents shifted existing shallow-water pipelines east of Barrow Island, and pipeline anchors were damaged although no line rupture is reported in the reviewed summary. Barrow and Varanus Island facilities also suffered extensive wind damage, and offshore production was shut down during the storm.\n\nOnshore, the towns of Mardie and Pannawonica were extensively damaged. The wider event caused approximately 10 reported injuries, including one injury in Pannawonica from flying glass; the reviewed sources identify no fatalities.',
+      what_went_wrong: [
+        'Offshore design and integrity assessment had to account for combined wind, wave, current and storm-surge loading across a distributed field rather than one platform location.',
+        'The Campbell monopod and shallow-water pipelines were exposed to different dominant mechanisms: wave loading at the monopod and current-driven seabed or pipeline movement east of Barrow Island.',
+        'Pipeline anchors and supporting subsea infrastructure could be damaged even where the pipeline itself did not rupture.',
+        'The extreme Barrow Island gust illustrates the difficulty of representing short-duration eyewall gusts using cyclone-scale mean-wind categories alone.'
+      ],
+      lessons_learned: [
+        'Assess offshore fields as connected infrastructure systems: platforms, monopods, pipelines, anchors, shore approaches, utilities and production dependencies.',
+        'Use coupled site-specific wind, wave, current and storm-surge modelling for shallow-water structures and pipeline stability.',
+        'Treat pipeline movement, anchor damage and seabed mobility as integrity outcomes even when no loss of containment occurs.',
+        'Retain high-frequency wind measurements and document sensor exposure, gust duration and averaging period before comparing observations with cyclone design categories.'
+      ],
+      actions: [
+        'For future projects, define inspection and stabilisation triggers for shallow-water pipelines and anchors after severe cyclone current and wave loading.',
+        'Include distributed-facility shutdown, restart and subsea integrity verification in cyclone response plans.',
+        'Use Olivia observations and Northwest Shelf buoy/platform records to validate regional wind, wave and current models.'
+      ],
+      metocean: {
+        wave_height_hs: 'Offshore wave measurements and modelling are documented in the Buchan, Black and Cohen OTC assessment; a single verified facility-point Hs is not stated in the reviewed abstract.',
+        wind_speed: 'Estimated 10-minute maximum near 195 km/h; Barrow Island gust 408 km/h, Varanus Island 267 km/h and Mardie 257 km/h.',
+        sea_temp: 'Not reported in the reviewed sources',
+        notes: 'The OTC assessment identifies central pressure as low as 925 hPa, forward speed up to 8 m/s and an elongated storm shape contributing to long fetches. Barrow\'s 408 km/h value is a short-duration local gust, not sustained cyclone intensity.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for storm timing, Category 4 assessment, pressure, Bureau wind observations and the verified Barrow Island gust. The 408 km/h value is the recognized world record for the highest wind gust in a tropical cyclone; it is not a sustained-wind record and is not presented as the highest wind across all weather phenomena. High for regional offshore consequences described in the Buchan, Black and Cohen OTC abstract. Moderate for exact Campbell failure mechanism, affected pipeline identities, operators and facility-specific wave/current values because the full technical paper was not available in this research pass.',
+      references: [
+        { title: 'Severe Tropical Cyclone Olivia - Bureau history page', type: 'Meteorological record', publisher: 'Australian Bureau of Meteorology', url: 'https://www.bom.gov.au/cyclone/history/olivia.shtml' },
+        { title: 'The Impact of Tropical Cyclone Olivia on Australia\'s Northwest Shelf', type: 'Offshore engineering paper', publisher: 'S. J. Buchan, P. G. Black and R. L. Cohen', year: 1999, url: 'https://onepetro.org/OTCONF/proceedings/99OTC/All-99OTC/OTC-10791-MS/39520' },
+        { title: 'Documentation and verification of the world extreme wind gust record: 113.3 m/s on Barrow Island during Tropical Cyclone Olivia', type: 'Peer-reviewed meteorological paper', publisher: 'Courtney et al.', year: 2012, url: 'https://www.bom.gov.au/jshess/docs/2012/courtney_hres.pdf' },
+        { title: 'WMO World Weather and Climate Extremes Archive', type: 'International extremes archive', publisher: 'World Meteorological Organization', url: 'https://wmo.int/site/world-weather-and-climate-extremes-archive' }
+      ]
+    },
+
+    /* ----------------------------------------------------------------------
+       83. VLCC ARAFURA Fatal Wave Strike - Cape Horn - 2021
+    ---------------------------------------------------------------------- */
+    {
+      id: 'arafura-fatal-wave-cape-horn-2021',
+      name: 'VLCC ARAFURA Fatal Wave Strike off Cape Horn',
+      year: 2021,
+      date: '11 September 2021',
+      location: 'West of Cape Horn, approximately 50 nm west-northwest of Islas Diego Ramirez, Chile',
+      lat: -56.17,
+      lng: -70.0733333,
+      region: 'South America',
+      platform_type: 'Very large crude carrier (VLCC)',
+      operator: 'Euronav NV (owner); Northern Marine Management (manager)',
+      weather_event_type: 'rogue_wave',
+      classification: 'maritime',
+      weather_event: 'Gale-force north-westerly wind, combined wind sea and long south-westerly swell; fatal wave probably meeting a freak-wave definition, with impact height undetermined',
+      fatalities: 2,
+      persons_on_board: 23,
+      survivors: 21,
+      image: {
+        src: 'images/arafura-2021-weather-conditions-figure-18.jpeg',
+        alt: 'Forward view over the deck of VLCC ARAFURA in rough seas west of Cape Horn at 11:20 on 11 September 2021.',
+        caption: 'Febima Figure 18: onboard video frame recorded at 11:20, 87 minutes after the casualty, showing the continuing weather conditions. It does not depict the impact wave.',
+        credit: 'Federal Bureau for the Investigation of Maritime Accidents (Febima), Report 2021/004987, Figure 18. Publication reuse terms require Febima attribution; figure-specific third-party rights are not identified.'
+      },
+      infrastructure_impact: 'Mooring-winch drum covers were washed away and a covered 1.5-tonne chafing chain was displaced; the report does not identify loss of vessel integrity or pollution',
+      summary: 'At 09:53 local time on 11 September 2021, while VLCC ARAFURA was west of Cape Horn in gale-force wind and a combined sea with long swell, a wave came over the bow as the Chief Officer and Bosun checked the port anchor lashing. Both were swept across the forecastle into deck equipment and later died from their injuries. Belgium\'s marine casualty bureau concluded that the wave was significantly higher than those observed and probably met a freak-wave definition, but its height could not be determined. The investigation also identified the lack of bilge-alarm history and remote bosun-store access, limited onboard trauma capability, and interrupted hospital-to-shore medical communications.',
+      executive_summary: 'A recurrent bosun-store bilge alarm led to an authorized daylight inspection while ARAFURA rounded Cape Horn in gale conditions. The store was dry, but the task expanded to checking a nearby loose anchor lashing. At 09:53, a much larger wave crossed the forecastle and swept the Chief Officer and Bosun into deck equipment; both later died. Febima described the wave as probably meeting a freak-wave definition while stressing that its height was unknown and that waves up to about 11.5 m were statistically expectable from the reconstructed sea state.',
+      what_happened: 'ARAFURA was carrying crude oil from Porto do Acu, Brazil, to Long Beach, United States, via Cape Horn. Weather routing had forecast gale-force north-westerly winds and 6-7 m significant seas for 11 September. The vessel reduced speed, used hand steering and completed its heavy-weather checklist. Around the casualty period, the bridge observed force 6-7 WNW wind, rough sea and a long, heavy swell; spray crossed the starboard bow, but no waves had been observed coming onto the forecastle deck.\n\n' +
+        'A forward bosun-store bilge alarm had activated intermittently. Because the system did not record alarm history and the store could not be inspected or drained remotely, the Chief Officer and Master agreed to check it in daylight. At 09:41, after turning about 30 degrees to starboard to create lee on the port-side walkway, the Master authorized the Chief Officer and Bosun to proceed forward. They reported the store dry and successfully tested both bilge alarms. The Master then asked them to make a quick check of the nearby port anchor lashing.\n\n' +
+        'At 09:52, the Chief Officer reported that the lashing appeared loose and that they would tighten it. At 09:53, the Master saw a wave approaching the starboard bow and warned them. Seconds later, a large volume of water crossed the bulwark. The Bosun was found about 15 m from the lashing and the Chief Officer about 41 m away; mooring-drum covers had been washed away and a covered 1.5-tonne chafing chain displaced.\n\n' +
+        'The crew recovered both injured men to the ship\'s hospital and obtained remote medical advice. Helicopter evacuation was unavailable because weather conditions were too severe, while naval vessels were many hours away. The Chief Officer was declared dead at 13:00 and the Bosun at 17:00. The official investigation attributed both deaths to severe traumatic injuries from being swept into deck equipment.',
+      what_went_wrong: [
+        'The observed sea gave false reassurance: reconstructed significant wave height was about 5.5-5.75 m and the forecastle freeboard was 9.9 m, so only a small minority of waves appeared able to reach the working area.',
+        'The impact wave was significantly higher than the waves observed from the bridge and probably met a freak-wave definition, but its height was not measured and no operational forecast or onboard detection tool could predict it.',
+        'The bilge-alarm system showed only current activation, without a time-and-duration history that could support diagnosis of the intermittent alarm from a safe location.',
+        'The bosun store had no remote camera and its bilge valves required manual operation, making physical access necessary if flooding had been real.',
+        'The inspection expanded to tightening the nearby anchor lashing, placing both crew members on the exposed forecastle when the wave arrived.',
+        'Severe injuries exceeded the diagnostic and treatment capability normally available aboard, helicopter evacuation was prevented by weather, and the portable satellite phone could not communicate from the ship\'s hospital.'
+      ],
+      lessons_learned: [
+        'Treat significant wave height as a statistical descriptor, not a maximum: individual waves approaching twice the significant height may occur even when the deck has remained mostly dry.',
+        'Keep exposed-deck access decisions task-specific. A sheltered route or compartment inspection does not establish that adjacent forecastle work is safe.',
+        'Provide alarm histories and remote inspection or drainage capability for forward spaces so intermittent alarms do not force personnel into exposed areas during heavy weather.',
+        'Heavy-weather permits should address emergent work, task expansion, wave direction, freeboard exceedance and a clear abort trigger before personnel leave shelter.',
+        'Test medical communications from the ship\'s hospital and plan for prolonged onboard casualty care where aviation evacuation can be unavailable.'
+      ],
+      actions: [
+        'Gale Force added explanations of significant sea, maximum waves, wind waves, swell and freak waves to the forecast description sent to vessels, and considered adding a freak-wave likelihood index.',
+        'Northern Marine Management required ship-specific heavy-weather risk assessments and updated its generic assessment for hazards and consequences identified by the accident.',
+        'The manager revised heavy-weather procedures to require a permit to work for necessary deck work in adverse conditions and to consider placing weather and sea on the stern by altering course.',
+        'The manager strengthened emergent-work communication and training, incorporated the event into safety-learning programmes, and added heavy-weather precautions to bridge-resource and safety training.',
+        'The manager began reviews of bosun-store bilge-valve configuration, hospital satellite communications and CCTV monitoring for bosun stores on existing and new vessels.'
+      ],
+      metocean: {
+        wind_speed: 'Gale-force NW wind in the post-event analysis; bridge observations recorded force 6-7 WNW wind, while VDR review noted 30-35 knots around 07:57',
+        wave_height_hs: 'Forecast 6-7 m; observed about 5.6 m; post-event reconstruction 5.5-5.75 m, with 3.75 m wind waves and 4 m SW swell at 13 s',
+        notes: 'The post-event maximum individual wave estimate was 10.5 m and the forecastle freeboard was 9.9 m. Febima states that the impact-wave height could not be determined, that waves up to about 11.5 m were expectable from the reconstructed significant wave height, and that the wave probably met a freak-wave definition. The Benjamin-Feir index was 0.1, indicating no high forecast risk of freak waves.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the time, coordinates, people aboard, fatalities, sequence, metocean reconstruction, formal cause, contributing factors and actions because these come directly from Febima Report 2021/004987. The impact-wave height was not measured; “probably meeting the definition of a freak wave” is the bureau\'s qualified conclusion, not a confirmed wave-height observation. Figure 18 was recorded at 11:20, 87 minutes after the casualty, and is weather context rather than an image of the impact wave. The official PDF does not print a publication date; its Belgian government hosting path is dated 2023 and its embedded modification timestamp is 1 June 2022, so no publication year is asserted in the reference metadata.',
+      sources: [
+        'Federal Bureau for the Investigation of Maritime Accidents Report 2021/004987 (EXTERNAL, controlling official investigation)',
+        'The Maritime Executive report reproducing the manager\'s contemporaneous casualty statement (EXTERNAL, secondary corroboration)'
+      ],
+      references: [
+        { title: 'Report on the investigation into a fatal accident on board VLCC ARAFURA near Cape Horn with the decease of two crew members on September 11th, 2021 (2021/004987)', type: 'Official marine casualty investigation report', publisher: 'Federal Bureau for the Investigation of Maritime Accidents (Febima), Belgium', url: 'https://mobilit.belgium.be/sites/default/files/documents/publications/2023/Final%20report%20VLCC%20ARAFURA%2011%20september%202021.pdf', file: 'background files/Final report VLCC ARAFURA 11 september 2021.pdf' },
+        { title: 'VLCC\'s Chief Mate and Bosun Killed by Wave off Cape Horn', type: 'Contemporaneous news report quoting vessel manager', publisher: 'The Maritime Executive', year: 2021, url: 'https://maritime-executive.com/article/vlcc-s-chief-mate-and-bosun-killed-by-wave-off-cape-horn' }
       ]
     }
 

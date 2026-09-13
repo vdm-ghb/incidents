@@ -57,8 +57,8 @@ test('causal-theme bar length is scaled by total occurrence count', async ({ pag
   const procedures = bars.find((bar) => bar.label === 'Procedures, training and competence');
   const evacuation = bars.find((bar) => bar.label === 'Evacuation, abandonment and survival craft');
 
-  expect(procedures).toMatchObject({ count: 49, width: 100 });
-  expect(evacuation).toMatchObject({ count: 40, width: expect.closeTo(81.6, 1) });
+  expect(procedures).toMatchObject({ count: 48, width: 100 });
+  expect(evacuation).toMatchObject({ count: 40, width: expect.closeTo(83.4, 1) });
   expect(procedures?.count).toBeGreaterThan(evacuation?.count ?? 0);
   expect(procedures?.width).toBeGreaterThan(evacuation?.width ?? 0);
 });
@@ -71,20 +71,26 @@ test('discipline matrix includes the Sinbad decommissioning lift candidate', asy
   await expect(page.locator('#box')).toContainText('Sinbad Platform Decommissioning Near Miss');
 });
 
-test('every incident popup image decodes in both analysis-page summary sleeves', async ({ page }) => {
+test('analysis summaries show real images and omit placeholders for records without images', async ({ page }) => {
   await page.goto('/');
   const incidents = await page.evaluate(() => (window as any).INCIDENTS_DATA.incidents
     .map((incident: any) => ({
       id: incident.id,
-      src: incident.image?.src ?? 'images/incident-visual-unavailable.svg',
+      src: incident.image?.src ?? null,
     })));
 
-  expect(incidents).toHaveLength(81);
-  expect(incidents.every((incident: { src: string }) => !/^https?:\/\//.test(incident.src))).toBe(true);
+  expect(incidents).toHaveLength(83);
+  expect(incidents.some((incident: { src: string | null }) => incident.src === null)).toBe(true);
+  expect(incidents.every((incident: { src: string | null }) => !incident.src || !/^https?:\/\//.test(incident.src))).toBe(true);
   for (const explorer of ['bowtie_view.html', 'causal_analysis.html']) {
     for (const incident of incidents) {
       await page.goto(`/working%20documentation/${explorer}#${encodeURIComponent(incident.id)}`);
       const image = page.locator('#sleeve img');
+      if (!incident.src) {
+        await expect(image).toHaveCount(0);
+        await expect(page.locator('#sleeve')).not.toContainText('Placeholder visual');
+        continue;
+      }
       await expect(image).toHaveAttribute('src', `../${incident.src}`);
       await expect(image).toHaveJSProperty('complete', true);
       expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth), `${explorer}: ${incident.id}`).toBeGreaterThan(0);
