@@ -3903,12 +3903,10 @@ window.INCIDENTS_DATA = {
       shell_internal_only: false,
       data_quality: 'Moderate. Documented facts: dates (Nov 6-10, 2014), platform specs, crew count (70), evacuation success (0 fatalities), location (Pechora Sea, Cape Kanin Nos), damage (lifeboat destroyed, helicopter deck damaged). Undocumented/estimated: exact storm timing/intensity vs. forecast, refloating timeline and final outcome, Russian-language investigation reports. Metocean conditions (wind, sea state, temperature) are from vessel reports and regional estimates; specific incident-site measurements unavailable.',
       sources: [
-        'Belkrov.by (Belarus maritime portal) - "Drilling platform GSP Saturn, having completed work for Gazprom Neft, got stranded in the Pechora Sea on the way home" (November 2014) (EXTERNAL)',
         'Wikipedia - GSP Saturn (jack-up rig) (EXTERNAL)',
         'SPBU Kolskaya incident database entry (comparative reference) (INTERNAL)'
       ],
       references: [
-        { title: 'GSP Saturn - Belkrov.by incident coverage (Ð‘ÑƒÑ€Ð¾Ð²Ð°Ñ Ð¿Ð»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð° GSP Saturn, Ð²Ñ‹Ð¿Ð¾Ð»Ð½Ð¸Ð² Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ð´Ð»Ñ Ð“Ð°Ð·Ð¿Ñ€Ð¾Ð¼ Ð½ÐµÑ„Ñ‚Ð¸, Ð½Ð° Ð¿ÑƒÑ‚Ð¸ Ð´Ð¾Ð¼Ð¾Ð¹ Ð·Ð°ÑÑ‚Ñ€ÑÐ»Ð° Ð² ÐŸÐµÑ‡Ð¾Ñ€ÑÐºÐ¾Ð¼ Ð¼Ð¾Ñ€Ðµ)', type: 'Maritime news portal', publisher: 'Belkrov.by', year: 2014, url: 'https://belkrov.by/articles/36623.html' },
         { title: 'Wikipedia - GSP Saturn', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/GSP_Saturn' },
         { title: 'SPBU Kolskaya Disaster (December 2011) - Comparative reference', type: 'Incident database', publisher: 'IOGP Metocean Incidents Database', internal: true },
         { title: 'GSP Saturn Detailed Incident Report - Background documentation for training/reference', type: 'Internal case study file', file: 'background files/GSP_Saturn_2014_Detailed_Incident_Report.md', internal: true }
