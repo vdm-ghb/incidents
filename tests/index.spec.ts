@@ -609,9 +609,12 @@ test('GSP Saturn record retains its incident evidence without an unstable remote
   expect(incident).toBeDefined();
   expect(incident.image).toBeUndefined();
   expect(incident.what_happened).toContain('All 70 crew were successfully evacuated');
+  expect(incident.references.some((reference: { title?: string }) =>
+    reference.title === 'Wikipedia - GSP Saturn'
+  )).toBe(true);
   expect(incident.references.some((reference: { publisher?: string }) =>
     reference.publisher === 'Belkrov.by'
-  )).toBe(true);
+  )).toBe(false);
 });
 
 test('Papaa-305 record uses the Mumbai High field presentation point', async ({ page }) => {

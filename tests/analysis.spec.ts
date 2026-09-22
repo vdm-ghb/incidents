@@ -125,3 +125,59 @@ test('causal themes do not recode mooring, rescue or consequences as structural,
   expect(hasCandidateCause('kielland-1980', 'structural_failure')).toBe(true);
   expect(hasCandidateCause('sea-gem-1965', 'structural_failure')).toBe(true);
 });
+
+test('asset/vessel matrix ranks asset types and counts mixed incidents in two columns', async ({ page }) => {
+  await page.goto('/working%20documentation/causal_analysis.html');
+
+  await expect(page.locator('h2', { hasText: 'Theme map by asset / vessel type' })).toBeVisible();
+  await expect(page.locator('h2', { hasText: '4 · Themes that occur together' })).toBeVisible();
+
+  const headers = await page.locator('#grid-asset tr').first().locator('th').allTextContents();
+  const columns = headers.slice(1).map((header) => header.replace(/\s+/g, ' ').trim().toUpperCase());
+  // Support vessels are the most common asset type; the regional bucket is retained.
+  expect(columns[0]).toContain('SUPPORT');
+  expect(columns.some((column) => column.includes('MULTIPLE / REGIONAL'))).toBe(true);
+  expect(columns.some((column) => column.includes('HELICOPTER'))).toBe(true);
+
+  // Every asset column carries a header glyph.
+  const icons = await page.locator('#grid-asset tr').first().locator('th svg').count();
+  expect(icons).toBe(columns.length);
+
+  // A dual-asset incident (support vessel working a semi-submersible) appears in both columns.
+  const inColumn = async (asset: string) => {
+    await page.locator(`[data-acell="station_keeping_mooring|${asset}"]`).click();
+    const names = await page.locator('#box .item b').allTextContents();
+    await page.locator('#box .close').click();
+    return names.map((name) => name.trim());
+  };
+  expect(await inColumn('Semi-submersible')).toContain('Skandi Hawk / Safe Astoria Near-Miss');
+  expect(await inColumn('Support / supply / tug / barge / survey')).toContain('Skandi Hawk / Safe Astoria Near-Miss');
+});
+
+test('asset column record count opens a selectable incident summary table', async ({ page }) => {
+  await page.goto('/working%20documentation/causal_analysis.html');
+
+  await page.locator('#grid-asset th .rec[data-asummary="Support / supply / tug / barge / survey"]').click();
+  await expect(page.locator('#box h3')).toHaveText('Support / supply / tug / barge / survey');
+  await expect(page.locator('#box .sub')).toContainText('13 incidents');
+  await expect(page.locator('#box table.summ tbody tr')).toHaveCount(13);
+  await expect(page.locator('#box table.summ thead th').nth(5)).toHaveText('Consequence');
+  // Rows are ordered by fatalities: the 86-fatality ONGC record is first.
+  await expect(page.locator('#box table.summ tbody tr').first()).toContainText('ONGC Offshore');
+
+  // A name in the summary opens the full record.
+  await page.locator('#box table.summ tbody tr td a.ilink').first().click();
+  await expect(page.locator('#sleeve')).toHaveClass(/on/);
+  await expect(page.locator('#sleeve h3')).toContainText('ONGC Offshore');
+});
+
+test('discipline column record count opens the same selectable summary table', async ({ page }) => {
+  await page.goto('/working%20documentation/causal_analysis.html');
+
+  await page.locator('#grid th .rec[data-dsummary="maritime"]').click();
+  await expect(page.locator('#box h3')).toHaveText('maritime');
+  await expect(page.locator('#box .sub')).toContainText('incidents in this discipline');
+  await expect(page.locator('#box table.summ thead th').nth(1)).toHaveText('Incident');
+  // Ordered by fatalities: Alexander L. Kielland (123) leads the maritime discipline.
+  await expect(page.locator('#box table.summ tbody tr').first()).toContainText('Alexander L. Kielland');
+});
