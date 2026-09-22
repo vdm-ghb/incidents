@@ -6,7 +6,7 @@ window.INCIDENTS_DATA = {
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'kielland-1980',
-      name: 'Alexander L. Kielland',
+      name: 'Alexander L. Kielland Flotel Capsize in North Sea Storm',
       year: 1980,
       date: '27 March 1980',
       location: 'Ekofisk field, North Sea, Norway',
@@ -130,7 +130,7 @@ window.INCIDENTS_DATA = {
     CORRUPTED_INSERTION_QUARANTINE_END */
     {
       id: 'seacrest-1989',
-      name: 'Drillship Seacrest',
+      name: 'Drillship Seacrest Capsize During Typhoon Gay',
       year: 1989,
       date: '3 November 1989',
       location: 'Platong gas field, Gulf of Thailand - capsize position 9°46′N, 101°18′E',
@@ -208,7 +208,7 @@ window.INCIDENTS_DATA = {
     ─────────────────────────────────────────────────── */
     {
       id: 'ocean-ranger-1982',
-      name: 'Ocean Ranger MODU',
+      name: 'Ocean Ranger Semi-Submersible Capsize in North Atlantic Storm',
       year: 1982,
       date: '15 February 1982',
       location: 'Grand Banks, ~166 nm east of Newfoundland, Canada',
@@ -275,7 +275,7 @@ window.INCIDENTS_DATA = {
     ─────────────────────────────────────────────────── */
     {
       id: 'glomar-java-sea-1983',
-      name: 'Glomar Java Sea Drillship',
+      name: 'Glomar Java Sea Drillship Sinking During Typhoon Lex',
       year: 1983,
       date: '25 October 1983',
       location: 'South China Sea, 65 nm SSW of Sanya, Hainan Island',
@@ -346,7 +346,7 @@ window.INCIDENTS_DATA = {
     ─────────────────────────────────────────────────── */
     {
       id: 'bohai-no2-1979',
-      name: 'Bohai No. 2 Drilling Platform',
+      name: 'Bohai No. 2 Jack-up Capsize During Storm Tow',
       year: 1979,
       date: '24-25 November 1979',
       location: 'Bohai Bay, China - under tow from well 7B33-1 toward well 10B13-1',
@@ -430,7 +430,7 @@ window.INCIDENTS_DATA = {
     ─────────────────────────────────────────────────── */
     {
       id: 'kolskaya-2011',
-      name: 'Kolskaya Jack-up',
+      name: 'Kolskaya Jack-up Capsize During Tow in Winter Storm',
       year: 2011,
       date: '18 December 2011',
       location: 'Sea of Okhotsk, en route Kamchatka → Sakhalin, Russian Far East',
@@ -502,7 +502,7 @@ window.INCIDENTS_DATA = {
     ─────────────────────────────────────────────────── */
     {
       id: 'usumacinta-2007',
-      name: 'Usumacinta / Kab-101 and Well Kab-121',
+      name: 'Usumacinta Jack-up Collision with Kab-101 and Well Blowout',
       year: 2007,
       date: '23 October 2007',
       location: 'Sonda de Campeche, southern Gulf of Mexico, offshore Tabasco, Mexico',
@@ -594,7 +594,7 @@ window.INCIDENTS_DATA = {
     ─────────────────────────────────────────────────── */
     {
       id: 'mumbai-high-north-2005',
-      name: 'Mumbai High North Platform',
+      name: 'Mumbai High North Platform Fire After Vessel Collision',
       year: 2005,
       date: '27 July 2005',
       location: 'Mumbai High North (MHN) field, Arabian Sea, ~160 km west of Mumbai, India',
@@ -657,7 +657,7 @@ window.INCIDENTS_DATA = {
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'sea-gem-1965',
-      name: 'Sea Gem Jack-up',
+      name: 'Sea Gem Jack-up Collapse During Jack-Down',
       year: 1965,
       date: '27 December 1965',
       location: 'North Sea, ~42 miles off Lincolnshire coast, UK',
@@ -723,7 +723,7 @@ window.INCIDENTS_DATA = {
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'gunashli-2015',
-      name: 'Gunashli Platform No. 10',
+      name: 'Gunashli Platform No. 10 Storm Damage and Fire, Caspian Sea',
       year: 2015,
       date: '4 December 2015',
       location: 'Gunashli oil field, Caspian Sea, Azerbaijan',
@@ -839,7 +839,7 @@ window.INCIDENTS_DATA = {
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'bourbon-dolphin-2007',
-      name: 'Bourbon Dolphin',
+      name: 'Bourbon Dolphin AHTS Capsize During Anchor Handling',
       year: 2007,
       date: '12 April 2007',
       location: 'West of Shetland, UK - Rosebank / Cambo area, Atlantic Margin',
@@ -900,7 +900,7 @@ window.INCIDENTS_DATA = {
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'amber-sea-worker-2016',
-      name: 'AMBER II / SEA WORKER AHTS',
+      name: 'AMBER II / SEA WORKER Capsize and Grounding During Tow',
       year: 2016,
       date: '27 January 2016',
       location: 'West Jutland coast, Denmark - 6 nm off Nymindegab',
@@ -1028,7 +1028,7 @@ window.INCIDENTS_DATA = {
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'key-biscayne-1983',
-      name: 'Key Biscayne Jack-up',
+      name: 'Key Biscayne Jack-up Capsize During Tow',
       year: 1983,
       date: '1 September 1983',
       location: 'Indian Ocean, ~10 nm (19 km) off Ledge Point, Western Australia',
@@ -2541,7 +2541,7 @@ window.INCIDENTS_DATA = {
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'ec175-elgin-2023',
-      name: 'Airbus Helicopters EC175 B (G-MCSH)',
+      name: 'EC175 (G-MCSH) Rotor-Blade Damage on Elgin Helideck',
       year: 2023,
       date: '17 February 2023',
       location: 'Elgin PUQ Oil Platform, North Sea, UK',
@@ -3854,7 +3854,7 @@ window.INCIDENTS_DATA = {
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     {
       id: 'gsp-saturn-2014',
-      name: 'GSP Saturn Jack-up Wet Tow',
+      name: 'GSP Saturn Jack-up Storm Evacuation During Wet Tow',
       year: 2014,
       date: '7-10 November 2014',
       location: 'Pechora Sea, Arctic Russia; stranded at Cape Kanin Nos',
@@ -4970,7 +4970,7 @@ window.INCIDENTS_DATA = {
 
     {
       id: 'ocean-valiant-tow-grounding-2025',
-      name: 'Ocean Valiant Tow Grounding',
+      name: 'Ocean Valiant Rig Grounding After Towline Failure',
       year: 2025,
       date: '11 January 2025',
       location: 'Dherwa / El Haouichet beach, approximately 20 km west of Bizerte, Tunisia',

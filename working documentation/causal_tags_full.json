@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-13",
+  "generated": "2026-09-22",
   "method": "Candidate learning-theme retrieval derived from incident-record wording; it does not establish causality or source support. what_went_wrong matches are candidate recorded causal statements, while lessons/actions are learning themes only. All tags require analyst review against a cited source before use as a finding.",
   "records_analysed": 83,
   "total_records": 83,
@@ -188,7 +188,7 @@
   "incidents": [
     {
       "id": "kielland-1980",
-      "name": "Alexander L. Kielland",
+      "name": "Alexander L. Kielland Flotel Capsize in North Sea Storm",
       "year": 1980,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -368,7 +368,7 @@
     },
     {
       "id": "seacrest-1989",
-      "name": "Drillship Seacrest",
+      "name": "Drillship Seacrest Capsize During Typhoon Gay",
       "year": 1989,
       "weather_event_type": "cyclone",
       "classification": "drilling",
@@ -589,7 +589,7 @@
     },
     {
       "id": "ocean-ranger-1982",
-      "name": "Ocean Ranger MODU",
+      "name": "Ocean Ranger Semi-Submersible Capsize in North Atlantic Storm",
       "year": 1982,
       "weather_event_type": "storm",
       "classification": "drilling",
@@ -774,7 +774,7 @@
     },
     {
       "id": "glomar-java-sea-1983",
-      "name": "Glomar Java Sea Drillship",
+      "name": "Glomar Java Sea Drillship Sinking During Typhoon Lex",
       "year": 1983,
       "weather_event_type": "cyclone",
       "classification": "drilling",
@@ -964,7 +964,7 @@
     },
     {
       "id": "bohai-no2-1979",
-      "name": "Bohai No. 2 Drilling Platform",
+      "name": "Bohai No. 2 Jack-up Capsize During Storm Tow",
       "year": 1979,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -1185,7 +1185,7 @@
     },
     {
       "id": "kolskaya-2011",
-      "name": "Kolskaya Jack-up",
+      "name": "Kolskaya Jack-up Capsize During Tow in Winter Storm",
       "year": 2011,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -1323,7 +1323,7 @@
     },
     {
       "id": "usumacinta-2007",
-      "name": "Usumacinta / Kab-101 and Well Kab-121",
+      "name": "Usumacinta Jack-up Collision with Kab-101 and Well Blowout",
       "year": 2007,
       "weather_event_type": "storm",
       "classification": "drilling",
@@ -1570,7 +1570,7 @@
     },
     {
       "id": "mumbai-high-north-2005",
-      "name": "Mumbai High North Platform",
+      "name": "Mumbai High North Platform Fire After Vessel Collision",
       "year": 2005,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -1776,7 +1776,7 @@
     },
     {
       "id": "sea-gem-1965",
-      "name": "Sea Gem Jack-up",
+      "name": "Sea Gem Jack-up Collapse During Jack-Down",
       "year": 1965,
       "weather_event_type": "storm",
       "classification": "design",
@@ -1930,7 +1930,7 @@
     },
     {
       "id": "gunashli-2015",
-      "name": "Gunashli Platform No. 10",
+      "name": "Gunashli Platform No. 10 Storm Damage and Fire, Caspian Sea",
       "year": 2015,
       "weather_event_type": "storm",
       "classification": "pipeline",
@@ -2284,7 +2284,7 @@
     },
     {
       "id": "bourbon-dolphin-2007",
-      "name": "Bourbon Dolphin",
+      "name": "Bourbon Dolphin AHTS Capsize During Anchor Handling",
       "year": 2007,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -2396,7 +2396,7 @@
     },
     {
       "id": "amber-sea-worker-2016",
-      "name": "AMBER II / SEA WORKER AHTS",
+      "name": "AMBER II / SEA WORKER Capsize and Grounding During Tow",
       "year": 2016,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -2672,7 +2672,7 @@
     },
     {
       "id": "key-biscayne-1983",
-      "name": "Key Biscayne Jack-up",
+      "name": "Key Biscayne Jack-up Capsize During Tow",
       "year": 1983,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -6114,7 +6114,7 @@
     },
     {
       "id": "ec175-elgin-2023",
-      "name": "Airbus Helicopters EC175 B (G-MCSH)",
+      "name": "EC175 (G-MCSH) Rotor-Blade Damage on Elgin Helideck",
       "year": 2023,
       "weather_event_type": "storm",
       "classification": "aviation",
@@ -8479,7 +8479,7 @@
     },
     {
       "id": "gsp-saturn-2014",
-      "name": "GSP Saturn Jack-up Wet Tow",
+      "name": "GSP Saturn Jack-up Storm Evacuation During Wet Tow",
       "year": 2014,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -10743,7 +10743,7 @@
     },
     {
       "id": "ocean-valiant-tow-grounding-2025",
-      "name": "Ocean Valiant Tow Grounding",
+      "name": "Ocean Valiant Rig Grounding After Towline Failure",
       "year": 2025,
       "weather_event_type": "storm",
       "classification": "decommissioning",

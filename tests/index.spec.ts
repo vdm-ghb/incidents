@@ -107,7 +107,7 @@ test('Bohai No. 2 record presents the corrected tow and flooding sequence', asyn
   expect(incident.image.src).toBe('images/bohai-no2-1979-platform.jpg');
 
   await page.locator('#filter-search').fill('Bohai No. 2');
-  await page.locator('.search-result', { hasText: 'Bohai No. 2 Drilling Platform' }).click();
+  await page.locator('.search-result', { hasText: 'Bohai No. 2' }).click();
   await expect(page.locator('#modal-content')).toContainText('Only two people survived; 72 died.');
   await expect(page.locator('#modal-content')).toContainText('No verified numerical significant-wave-height value');
 
@@ -134,7 +134,7 @@ test('Usumacinta record separates the collision, evacuation, and well-control ev
   expect(incident.data_quality).toContain('20 Usumacinta evacuees plus two Morrison Tide rescuers');
 
   await page.locator('#filter-search').fill('Usumacinta');
-  await page.locator('.search-result', { hasText: 'Usumacinta / Kab-101 and Well Kab-121' }).click();
+  await page.locator('.search-result', { hasText: 'Usumacinta' }).click();
   await expect(page.locator('#modal-content')).toContainText('Battelle identified adverse weather');
   await expect(page.locator('#modal-content')).toContainText('CNDH Recommendation 14/2009');
   await expect(page.locator('#modal-content')).toContainText('near-lightship');
@@ -612,8 +612,8 @@ test('GSP Saturn record retains its incident evidence without an unstable remote
   expect(incident.references.some((reference: { title?: string }) =>
     reference.title === 'Wikipedia - GSP Saturn'
   )).toBe(true);
-  expect(incident.references.some((reference: { publisher?: string }) =>
-    reference.publisher === 'Belkrov.by'
+  expect(incident.references.some((reference: { publisher?: string; url?: string }) =>
+    reference.publisher === 'Belkrov.by' || reference.url?.includes('belkrov.by')
   )).toBe(false);
 });
 
@@ -702,7 +702,7 @@ test('Gunashli pilot image is included in the print report', async ({ page }) =>
 });
 
 test('Gunashli map tooltip shows the selected image below the blurb', async ({ page }) => {
-  const marker = page.locator('.leaflet-marker-icon[title="Gunashli Platform No. 10"]').first();
+  const marker = page.locator('.leaflet-marker-icon[title*="Gunashli Platform No. 10"]').first();
   await marker.hover();
 
   const tooltip = page.locator('.leaflet-tooltip');

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-13",
+  "generated": "2026-09-22",
   "method": "Candidate bow-tie retrieval aligned to CGE/Wolters Kluwer and CCPS-EI terminology. It classifies wording in the incident record, not source material. All relationships require analyst review against a cited source before use as a finding. Only what_went_wrong statements are used for candidate threats, failed/absent barriers and escalation factors. Lessons and actions are excluded. Explicitly uncertain statements are excluded where recognised.",
   "rule": "Candidate top event = first recognised loss-of-control phrase in the chronological record narrative; absence of a phrase is reported as undetermined, not inferred.",
   "records_analysed": 83,
@@ -24,7 +24,7 @@
   "incidents": [
     {
       "id": "kielland-1980",
-      "name": "Alexander L. Kielland",
+      "name": "Alexander L. Kielland Flotel Capsize in North Sea Storm",
       "year": 1980,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -111,7 +111,7 @@
     },
     {
       "id": "seacrest-1989",
-      "name": "Drillship Seacrest",
+      "name": "Drillship Seacrest Capsize During Typhoon Gay",
       "year": 1989,
       "hazard_event_type": "cyclone",
       "hazard": "Offshore activity exposed to cyclone energy",
@@ -200,7 +200,7 @@
     },
     {
       "id": "ocean-ranger-1982",
-      "name": "Ocean Ranger MODU",
+      "name": "Ocean Ranger Semi-Submersible Capsize in North Atlantic Storm",
       "year": 1982,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -282,7 +282,7 @@
     },
     {
       "id": "glomar-java-sea-1983",
-      "name": "Glomar Java Sea Drillship",
+      "name": "Glomar Java Sea Drillship Sinking During Typhoon Lex",
       "year": 1983,
       "hazard_event_type": "cyclone",
       "hazard": "Offshore activity exposed to cyclone energy",
@@ -363,7 +363,7 @@
     },
     {
       "id": "bohai-no2-1979",
-      "name": "Bohai No. 2 Drilling Platform",
+      "name": "Bohai No. 2 Jack-up Capsize During Storm Tow",
       "year": 1979,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -461,7 +461,7 @@
     },
     {
       "id": "kolskaya-2011",
-      "name": "Kolskaya Jack-up",
+      "name": "Kolskaya Jack-up Capsize During Tow in Winter Storm",
       "year": 2011,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -520,7 +520,7 @@
     },
     {
       "id": "usumacinta-2007",
-      "name": "Usumacinta / Kab-101 and Well Kab-121",
+      "name": "Usumacinta Jack-up Collision with Kab-101 and Well Blowout",
       "year": 2007,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -640,7 +640,7 @@
     },
     {
       "id": "mumbai-high-north-2005",
-      "name": "Mumbai High North Platform",
+      "name": "Mumbai High North Platform Fire After Vessel Collision",
       "year": 2005,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -712,7 +712,7 @@
     },
     {
       "id": "sea-gem-1965",
-      "name": "Sea Gem Jack-up",
+      "name": "Sea Gem Jack-up Collapse During Jack-Down",
       "year": 1965,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -802,7 +802,7 @@
     },
     {
       "id": "gunashli-2015",
-      "name": "Gunashli Platform No. 10",
+      "name": "Gunashli Platform No. 10 Storm Damage and Fire, Caspian Sea",
       "year": 2015,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -977,7 +977,7 @@
     },
     {
       "id": "bourbon-dolphin-2007",
-      "name": "Bourbon Dolphin",
+      "name": "Bourbon Dolphin AHTS Capsize During Anchor Handling",
       "year": 2007,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -1031,7 +1031,7 @@
     },
     {
       "id": "amber-sea-worker-2016",
-      "name": "AMBER II / SEA WORKER AHTS",
+      "name": "AMBER II / SEA WORKER Capsize and Grounding During Tow",
       "year": 2016,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -1205,7 +1205,7 @@
     },
     {
       "id": "key-biscayne-1983",
-      "name": "Key Biscayne Jack-up",
+      "name": "Key Biscayne Jack-up Capsize During Tow",
       "year": 1983,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -2498,7 +2498,7 @@
     },
     {
       "id": "ec175-elgin-2023",
-      "name": "Airbus Helicopters EC175 B (G-MCSH)",
+      "name": "EC175 (G-MCSH) Rotor-Blade Damage on Elgin Helideck",
       "year": 2023,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -3286,7 +3286,7 @@
     },
     {
       "id": "gsp-saturn-2014",
-      "name": "GSP Saturn Jack-up Wet Tow",
+      "name": "GSP Saturn Jack-up Storm Evacuation During Wet Tow",
       "year": 2014,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -4139,7 +4139,7 @@
     },
     {
       "id": "ocean-valiant-tow-grounding-2025",
-      "name": "Ocean Valiant Tow Grounding",
+      "name": "Ocean Valiant Rig Grounding After Towline Failure",
       "year": 2025,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",

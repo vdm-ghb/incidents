@@ -159,8 +159,8 @@ test('asset column record count opens a selectable incident summary table', asyn
 
   await page.locator('#grid-asset th .rec[data-asummary="Support / supply / tug / barge / survey"]').click();
   await expect(page.locator('#box h3')).toHaveText('Support / supply / tug / barge / survey');
-  await expect(page.locator('#box .sub')).toContainText('13 incidents');
-  await expect(page.locator('#box table.summ tbody tr')).toHaveCount(13);
+  await expect(page.locator('#box .sub')).toContainText('14 incidents');
+  await expect(page.locator('#box table.summ tbody tr')).toHaveCount(14);
   await expect(page.locator('#box table.summ thead th').nth(5)).toHaveText('Consequence');
   // Rows are ordered by fatalities: the 86-fatality ONGC record is first.
   await expect(page.locator('#box table.summ tbody tr').first()).toContainText('ONGC Offshore');
