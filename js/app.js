@@ -144,6 +144,32 @@
     return best;
   }
 
+  var TRACK_MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  // Approximate local day for a UTC track time, offset from longitude (round(lon/15) hours).
+  function localDayInfo(utcTime, lon) {
+    if (!utcTime) return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/.exec(utcTime);
+    if (!m) return null;
+    var offsetH = Math.round((typeof lon === 'number' ? lon : 0) / 15);
+    var ms = Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]) + offsetH * 3600000;
+    var dt = new Date(ms);
+    return {
+      key: dt.getUTCFullYear() + '-' + dt.getUTCMonth() + '-' + dt.getUTCDate(),
+      label: dt.getUTCDate() + '-' + TRACK_MONTH_ABBR[dt.getUTCMonth()]
+    };
+  }
+
+  // Dedicated pane so the storm track renders ABOVE the incident hover tooltip
+  // (Leaflet tooltipPane z-index is 650). Non-interactive so it never steals hover.
+  function ensureStormTrackPane() {
+    if (map.getPane('stormTrackTop')) return;
+    map.createPane('stormTrackTop');
+    var p = map.getPane('stormTrackTop');
+    p.style.zIndex = 680;
+    p.style.pointerEvents = 'none';
+  }
+
   function drawTrackLabel(incident, trackData) {
     clearActiveTrackLabel();
     if (!incident || !trackData || !trackData.points || !trackData.points.length) return;
@@ -151,10 +177,12 @@
     if (!label) return;
     var nearest = closestTrackPoint(trackData.points, incident);
     if (!nearest) return;
+    ensureStormTrackPane();
 
     activeTrackLabel = L.marker([nearest.lat, nearest.lon], {
       interactive: false,
       keyboard: false,
+      pane: 'stormTrackTop',
       icon: L.divIcon({
         className: 'storm-track-label-wrap',
         html: '<div style="transform:translate(-118%,-50%);background:rgba(13,20,33,0.88);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.02em;padding:3px 6px;border-radius:10px;border:1px solid rgba(255,255,255,0.28);white-space:nowrap;">'+esc(label)+'</div>',
@@ -168,6 +196,7 @@
     clearActiveTrackLabel();
     var trackData = stormTracksBySid[sid];
     if (!trackData || !trackData.points || trackData.points.length < 2) return false;
+    ensureStormTrackPane();
 
     var group = L.layerGroup();
     var points = trackData.points;
@@ -180,7 +209,8 @@
         weight: isLocked ? 4 : 3,
         opacity: isLocked ? 0.95 : 0.8,
         lineCap: 'round',
-        lineJoin: 'round'
+        lineJoin: 'round',
+        pane: 'stormTrackTop'
       }).addTo(group);
     }
 
@@ -192,7 +222,8 @@
         color: '#ffffff',
         fillColor: dotColor,
         fillOpacity: isLocked ? 0.95 : 0.85,
-        opacity: 0.95
+        opacity: 0.95,
+        pane: 'stormTrackTop'
       });
       dot.bindTooltip((pt.time || 'Unknown time') + (typeof pt.wind_kt === 'number' ? (' | ' + Math.round(pt.wind_kt) + ' kt') : ''), {
         direction: 'top',
@@ -201,6 +232,27 @@
       });
       dot.addTo(group);
     });
+
+    // Subtle daily date markers (~every 24 h), placed at each local-day change.
+    var lastDayKey = null;
+    for (var j = 0; j < points.length; j++) {
+      var p = points[j];
+      var info = localDayInfo(p.time, p.lon);
+      if (!info) continue;
+      if (lastDayKey === null) { lastDayKey = info.key; continue; }
+      if (info.key === lastDayKey) continue;
+      lastDayKey = info.key;
+      L.marker([p.lat, p.lon], {
+        interactive: false,
+        keyboard: false,
+        pane: 'stormTrackTop',
+        icon: L.divIcon({
+          className: 'storm-track-daymark',
+          html: '<div style="transform:translate(-50%,-165%);font-size:12px;font-weight:600;color:#0d1421;letter-spacing:0.02em;text-shadow:-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff,0 0 3px rgba(255,255,255,0.95);white-space:nowrap;opacity:0.95;">' + esc(info.label) + '</div>',
+          iconSize: null
+        })
+      }).addTo(group);
+    }
 
     activeTrackLayer = group.addTo(map);
     if (activeTrackLayer && typeof activeTrackLayer.eachLayer === 'function') {
@@ -352,15 +404,32 @@
     return allIncidents.filter(incidentMatchesFilters);
   }
 
+  // Keep a right-anchored tooltip from being clipped above the map: nudge it down
+  // if its top edge falls above the map area. Re-checks after the lazy image loads.
+  function keepTooltipInView(tooltip) {
+    if (!tooltip || !tooltip._container) return;
+    var el = tooltip._container;
+    function clamp() {
+      el.style.marginTop = '';
+      var mapTop = map.getContainer().getBoundingClientRect().top;
+      var overflow = mapTop - el.getBoundingClientRect().top;
+      if (overflow > 0) el.style.marginTop = (overflow + 6) + 'px';
+    }
+    clamp();
+    var img = el.querySelector('img');
+    if (img && !img.complete) img.addEventListener('load', clamp, { once: true });
+  }
+
   function createMarker(incident) {
     if (!incident.lat || !incident.lng) return null; // Skip incidents with null coordinates
     var clsClass=classColor(incident), letter=EVENT_TYPE_LETTERS[incident.weather_event_type]||'?';
-    var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+clsClass+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[18,0] });
-    var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true,title:incident.name,alt:incident.name});
+    var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+clsClass+'" data-incident-id="'+esc(incident.id)+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[18,0] });
+    var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true,alt:incident.name});
     var tooltipImage=incident.image&&incident.image.src?'<img class="tooltip-image" src="'+esc(incident.image.src)+'" alt="" loading="lazy">':'';
     var summaryText=incident.summary||incident.executive_summary||'';
     var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+clsClass+'">'+esc(fatalityText(incident))+'</span>'+(summaryText?'<div class="tooltip-summary">'+esc(summaryText)+'</div>':'')+tooltipImage;
     marker.bindTooltip(ttHTML,{permanent:false,direction:'right',opacity:1});
+    marker.on('tooltipopen',function(e){ keepTooltipInView(e.tooltip); });
     marker.on('mouseover',function(){ showIncidentTrack(incident, false); });
     marker.on('mouseout',function(){ restoreLockedTrack(); });
     marker.on('click',function(){ openModal(incident); });
@@ -443,11 +512,11 @@
   var modalOverlay=document.getElementById('modal-overlay'), modalContent=document.getElementById('modal-content'), modalClose=document.getElementById('modal-close');
   var tableOverlay=document.getElementById('table-overlay');
   var imageLightbox=document.getElementById('image-lightbox'), imageLightboxImage=document.getElementById('image-lightbox-image'), imageLightboxCaption=document.getElementById('image-lightbox-caption');
-  var activeIncidentImage=null;
+  var activeIncidentImages=[];
 
   function openModal(incident) {
     showIncidentTrack(incident, true);
-    activeIncidentImage=incident.image||null;
+    activeIncidentImages=incident.images&&incident.images.length?incident.images:(incident.image?[incident.image]:[]);
     modalContent.innerHTML=buildIncidentHTML(incident);
     modalOverlay.classList.remove('hidden');
     modalContent.scrollTop=0;
@@ -461,7 +530,7 @@
     clearActiveTrack();
     clearActiveTrackLabel();
     modalOverlay.classList.add('hidden');
-    activeIncidentImage=null;
+    activeIncidentImages=[];
     document.body.style.overflow='';
     history.replaceState(null,'',window.location.pathname+window.location.search);
   }
@@ -481,7 +550,8 @@
   modalClose.addEventListener('click',closeModal);
   modalOverlay.addEventListener('click',function(e){ if(e.target===modalOverlay) closeModal(); });
   modalContent.addEventListener('click',function(e){
-    if (e.target.closest('.incident-image-button')) openImageLightbox(activeIncidentImage);
+    var btn=e.target.closest('.incident-image-button');
+    if (btn) openImageLightbox(activeIncidentImages[parseInt(btn.getAttribute('data-image-index'),10)||0]);
   });
   document.getElementById('image-lightbox-close').addEventListener('click',closeImageLightbox);
   imageLightbox.addEventListener('click',function(e){ if(e.target===imageLightbox) closeImageLightbox(); });
@@ -530,7 +600,7 @@
       '<div class="inc-meta-grid">'+metaItem('Date',inc.date)+metaItem('Location',shortLoc(inc.location,60))+metaItem('Platform / Vessel',inc.platform_type)+metaItem('Operator',inc.operator)+metaItem('Weather event',inc.weather_event)+(casualtiesStr?metaItem('Casualties',casualtiesStr):'')+
       '</div></div>'+metoceanAlertHTML+metoceanHTML+infraHTML+
       '<div class="inc-body">'+
-      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.summary||inc.executive_summary)+'</p>'+buildImageHTML(inc.image)+'</div>'+ 
+      '<div class="inc-section"><div class="inc-section-title">Summary</div><p class="inc-para">'+esc(inc.summary||inc.executive_summary)+'</p>'+buildImageHTML(inc)+'</div>'+ 
       '<div class="inc-section"><div class="inc-section-title">What Happened</div>'+whatHappenedParas+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">What Went Wrong</div>'+numberedList(inc.what_went_wrong)+'</div>'+
       '<div class="inc-section"><div class="inc-section-title">Lessons Learned</div>'+numberedList(inc.lessons_learned)+'</div>'+
@@ -539,10 +609,15 @@
       '</div>';
   }
 
-  function buildImageHTML(image) {
-    if (!image||!image.src) return '';
-    var credit=image.credit?'<span class="incident-image-credit">'+esc(image.credit)+'</span>':'';
-    return '<figure class="incident-image-figure"><button class="incident-image-button" type="button" aria-label="Open full-size incident image"><img class="incident-summary-image" src="'+esc(image.src)+'" alt="'+esc(image.alt||image.caption||'')+'" loading="lazy" decoding="async"></button><figcaption>'+esc(image.caption||'')+credit+'</figcaption></figure>';
+  function buildImageHTML(inc) {
+    var list=inc&&inc.images&&inc.images.length?inc.images:((inc&&inc.image)?[inc.image]:[]);
+    list=list.filter(function(image){ return image&&image.src; });
+    if (!list.length) return '';
+    var figures=list.map(function(image,idx){
+      var credit=image.credit?'<span class="incident-image-credit">'+esc(image.credit)+'</span>':'';
+      return '<figure class="incident-image-figure"><button class="incident-image-button" type="button" data-image-index="'+idx+'" aria-label="Open full-size incident image"><img class="incident-summary-image" src="'+esc(image.src)+'" alt="'+esc(image.alt||image.caption||'')+'" loading="lazy" decoding="async"></button><figcaption>'+esc(image.caption||'')+credit+'</figcaption></figure>';
+    }).join('');
+    return list.length>1?'<div class="incident-image-gallery">'+figures+'</div>':figures;
   }
 
   function numberedList(items) {

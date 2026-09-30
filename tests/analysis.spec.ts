@@ -57,10 +57,16 @@ test('causal-theme bar length is scaled by total occurrence count', async ({ pag
   const procedures = bars.find((bar) => bar.label === 'Procedures, training and competence');
   const evacuation = bars.find((bar) => bar.label === 'Evacuation, abandonment and survival craft');
 
-  expect(procedures).toMatchObject({ count: 48, width: 100 });
-  expect(evacuation).toMatchObject({ count: 40, width: expect.closeTo(83.4, 1) });
-  expect(procedures?.count).toBeGreaterThan(evacuation?.count ?? 0);
-  expect(procedures?.width).toBeGreaterThan(evacuation?.width ?? 0);
+  expect(procedures).toBeDefined();
+  expect(evacuation).toBeDefined();
+  // Bar length is proportional to total occurrence count, with the largest theme at full width.
+  const maxCount = Math.max(...bars.map((bar) => bar.count));
+  expect(maxCount).toBeGreaterThan(0);
+  for (const bar of bars) {
+    expect(bar.width, `${bar.label} bar width`).toBeCloseTo((bar.count / maxCount) * 100, 0);
+  }
+  expect(Math.max(...bars.map((bar) => bar.width))).toBeCloseTo(100, 0);
+  expect(Math.sign(procedures!.width - evacuation!.width)).toBe(Math.sign(procedures!.count - evacuation!.count));
 });
 
 test('discipline matrix includes the Sinbad decommissioning lift candidate', async ({ page }) => {
@@ -79,7 +85,7 @@ test('analysis summaries show real images and omit placeholders for records with
       src: incident.image?.src ?? null,
     })));
 
-  expect(incidents).toHaveLength(83);
+  expect(incidents).toHaveLength(93);
   expect(incidents.some((incident: { src: string | null }) => incident.src === null)).toBe(true);
   expect(incidents.every((incident: { src: string | null }) => !incident.src || !/^https?:\/\//.test(incident.src))).toBe(true);
   for (const explorer of ['bowtie_view.html', 'causal_analysis.html']) {
@@ -126,6 +132,12 @@ test('causal themes do not recode mooring, rescue or consequences as structural,
   expect(hasCandidateCause('sea-gem-1965', 'structural_failure')).toBe(true);
 });
 
+test('candidate evidence never quotes image file paths from image or images fields', () => {
+  const imagePath = /images\/[^\s"]+\.(?:jpe?g|png|webp|gif|svg)/i;
+  expect(readFileSync('working documentation/bowtie_full.json', 'utf8')).not.toMatch(imagePath);
+  expect(readFileSync('working documentation/causal_tags_full.json', 'utf8')).not.toMatch(imagePath);
+});
+
 test('asset/vessel matrix ranks asset types and counts mixed incidents in two columns', async ({ page }) => {
   await page.goto('/working%20documentation/causal_analysis.html');
 
@@ -134,8 +146,12 @@ test('asset/vessel matrix ranks asset types and counts mixed incidents in two co
 
   const headers = await page.locator('#grid-asset tr').first().locator('th').allTextContents();
   const columns = headers.slice(1).map((header) => header.replace(/\s+/g, ' ').trim().toUpperCase());
-  // Support vessels are the most common asset type; the regional bucket is retained.
-  expect(columns[0]).toContain('SUPPORT');
+  // Columns are ranked by record count; support vessels are among the most common asset types.
+  const counts = columns.map((column) => Number(column.match(/RECORDS=(\d+)/)?.[1]));
+  expect(counts.every((count) => Number.isFinite(count))).toBe(true);
+  expect(counts).toEqual([...counts].sort((a, b) => b - a));
+  const support = columns.find((column) => column.includes('SUPPORT'));
+  expect(Number(support?.match(/RECORDS=(\d+)/)?.[1])).toBe(counts[0]);
   expect(columns.some((column) => column.includes('MULTIPLE / REGIONAL'))).toBe(true);
   expect(columns.some((column) => column.includes('HELICOPTER'))).toBe(true);
 

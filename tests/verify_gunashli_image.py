@@ -121,13 +121,13 @@ def verify_all_selected_images(page, base_url):
             f"{base_url}/?verify={selected['id']}#{selected['id']}",
             wait_until="domcontentloaded",
         )
-        figure = page.locator(".incident-image-figure")
+        figure = page.locator(".incident-image-figure").first
         figure.wait_for(state="visible")
-        summary_image = figure.locator(".incident-summary-image")
+        summary_image = figure.locator(".incident-summary-image").first
         assert summary_image.get_attribute("src") == selected["src"]
         assert summary_image.evaluate(
-            "image => image.complete && image.naturalWidth > 0 && image.naturalHeight > 0"
-        )
+            "image => image.decode().then(() => image.naturalWidth > 0 && image.naturalHeight > 0)"
+        ), selected["src"]
         if selected["id"] == "west_gamma_1990":
             assert summary_image.evaluate(
                 "image => [image.naturalWidth, image.naturalHeight]"
@@ -136,7 +136,7 @@ def verify_all_selected_images(page, base_url):
             assert summary_image.evaluate(
                 "image => [image.naturalWidth, image.naturalHeight]"
             ) == [425, 404]
-        figure.locator("button").click()
+        figure.locator("button").first.click()
         lightbox_image = page.locator("#image-lightbox-image")
         lightbox_image.wait_for(state="visible")
         assert lightbox_image.evaluate(
@@ -188,7 +188,7 @@ def run_verification():
             )
 
             marker = desktop.locator(
-                '.leaflet-marker-icon[title="Gunashli Platform No. 10"]'
+                '.incident-marker[data-incident-id="gunashli-2015"]'
             ).first
             marker.dispatch_event("mouseover")
             thumbnail = desktop.locator(".leaflet-tooltip .tooltip-image")
@@ -198,7 +198,7 @@ def run_verification():
             assert thumbnail.bounding_box()["y"] > summary_box["y"] + summary_box["height"]
 
             west_gamma_marker = desktop.locator(
-                '.leaflet-marker-icon[title="West Gamma Jack-up"]'
+                '.incident-marker[data-incident-id="west_gamma_1990"]'
             ).first
             west_gamma_marker.dispatch_event("mouseover")
             west_gamma_thumbnail = desktop.locator(

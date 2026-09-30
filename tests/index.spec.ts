@@ -588,7 +588,8 @@ test('EI 322-A record preserves Lili track and foundation-failure evidence', asy
   expect(incident.what_happened).toContain('pile had been severed');
   expect(incident.what_happened).toContain('opposite jacket leg');
   expect(incident.references[0].doi).toBe('10.4043/16801-MS');
-  expect(incident.image).toBeUndefined();
+  expect(incident.image).toBeDefined();
+  expect(incident.image.src).toBe('images/eugene-island-322a-lili-2002-offshore-mag.png');
 
   const track = await page.evaluate(() => {
     return window.STORM_TRACKS_DATA.features.find(
@@ -701,8 +702,34 @@ test('Gunashli pilot image is included in the print report', async ({ page }) =>
   await expect(printImage).toHaveAttribute('src', 'images/gunashli-2015-platform-azernews.jpg');
 });
 
+test('incident with an images array renders a gallery and opens the clicked image', async ({ page }) => {
+  await page.goto('/?test=gallery#typhoon-tlp-capsize-rita-2005');
+  const images = await page.evaluate(() =>
+    (window as any).INCIDENTS_DATA.incidents.find((item: any) => item.id === 'typhoon-tlp-capsize-rita-2005').images,
+  );
+  expect(images).toHaveLength(2);
+
+  const figures = page.locator('#modal-content .incident-image-gallery .incident-image-figure');
+  await expect(figures).toHaveCount(2);
+  await figures.nth(1).locator('button').click();
+  await expect(page.locator('#image-lightbox')).not.toHaveClass(/hidden/);
+  await expect(page.locator('#image-lightbox-image')).toHaveAttribute('src', images[1].src);
+  await expect(page.locator('#image-lightbox-image')).toHaveJSProperty('complete', true);
+  expect(await page.locator('#image-lightbox-image').evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
+});
+
+test('storm track shows daily date labels above the tooltip layer', async ({ page }) => {
+  await page.goto('/?test=daymarks#db29-typhoon-fred-1991');
+  const dayMarks = page.locator('.storm-track-daymark');
+  await expect(dayMarks.first()).toBeAttached();
+  expect(await dayMarks.count()).toBeGreaterThanOrEqual(8);
+  await expect(dayMarks.first()).toHaveText(/^\d{1,2}-Aug$/);
+  const paneZ = await page.evaluate(() => (document.querySelector('.leaflet-stormTrackTop-pane') as HTMLElement).style.zIndex);
+  expect(Number(paneZ)).toBeGreaterThan(650);
+});
+
 test('Gunashli map tooltip shows the selected image below the blurb', async ({ page }) => {
-  const marker = page.locator('.leaflet-marker-icon[title*="Gunashli Platform No. 10"]').first();
+  const marker = page.locator('.incident-marker[data-incident-id="gunashli-2015"]').first();
   await marker.hover();
 
   const tooltip = page.locator('.leaflet-tooltip');

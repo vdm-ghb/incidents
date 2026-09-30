@@ -1,9 +1,9 @@
 window.INCIDENTS_DATA = {
   incidents: [
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        1. Alexander L. Kielland - 1980
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'kielland-1980',
       name: 'Alexander L. Kielland Flotel Capsize in North Sea Storm',
@@ -342,6 +342,456 @@ window.INCIDENTS_DATA = {
     },
 
     /* ──────────────────────────────────────────────────
+       Deep Sea Driller — 1976
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'deep-sea-driller-1976',
+      name: 'Deep Sea Driller Semi-Submersible Grounding at Fedje',
+      year: 1976,
+      date: '1 March 1976',
+      location: 'Off Fedje, north of Bergen, western Norway - grounded under own power while in transit from a block in the southern Norwegian North Sea to Bergen',
+      lat: 60.77,
+      lng: 4.70,
+      location_precision: 'Approximate presentation point off western Fedje. Norwegian sources place the grounding on the exposed seaward side of Fedje, north of Bergen, and record that the capsized lifeboat washed ashore on a rock 3-4 km north of the accident site; an exact grounding coordinate was not retrieved.',
+      region: 'Europe',
+      platform_type: 'Semi-submersible drilling rig (developed Aker H-3 design, built at Aker Verdal, delivered 1974; renamed Byford Dolphin in 1978)',
+      operator: 'Mobile drilling unit registered in Panama; the drilling contractor/operator at the time of the loss was not definitively established in the reviewed sources',
+      weather_event_type: 'storm',
+      classification: 'maritime',
+      weather_event: 'Winter storm with hurricane-force gusts (described as "orkan" in Norwegian accounts) and heavy seas during the transit and evacuation',
+      fatalities: 6,
+      image: {
+        src: 'images/deep-sea-driller-1976-fedje-vg.jpg',
+        alt: 'Archive news photograph of the Deep Sea Driller semi-submersible drilling rig associated with the 1 March 1976 grounding at Fedje.',
+        caption: 'The Deep Sea Driller rig, associated with the 1 March 1976 grounding at Fedje, north of Bergen. Archive news image; not independently dated or geolocated within this project.',
+        credit: 'VG (Verdens Gang); photographer unresolved. Copyrighted news image - permission required, reference use only.'
+      },
+      summary: 'The semi-submersible drilling rig Deep Sea Driller grounded off Fedje, north of Bergen, on 1 March 1976 while moving under its own power from a block in the southern Norwegian North Sea to Bergen in a winter storm. Norwegian accounts report that two propulsion motors failed, the rig was driven toward the coast and grounded, and the deck took a heavy list. During the evacuation a lifeboat capsized in the heavy seas and six of the people aboard it drowned. It was then the most serious accident in Norwegian offshore activity and is often called "the forgotten accident." The hull was salvaged and repaired and re-entered service in 1978 as the Byford Dolphin.',
+      executive_summary: 'On 1 March 1976 the semi-submersible Deep Sea Driller ran aground on the exposed seaward side of Fedje, north of Bergen, while transiting under its own power to Bergen in a winter storm. Regional Norwegian sources report that two of the propulsion motors failed and the rig drifted onto the coast; the deck took an approximately 20-degree list. The crew abandoned to a lifeboat that capsized in the heavy seas, killing six. Store norske leksikon records that the 1976 investigation has long been criticised as inadequate — the bereaved sought a reopening for years, and a 2007 Ministry of Justice assessment recommending against a new inquiry was itself criticised by safety researchers.',
+      what_happened: 'Deep Sea Driller was a semi-submersible drilling rig of a developed Aker H-3 design, built at Aker Verdal and delivered in 1974, registered in Panama and named Deep Sea Driller from 1974 to 1978. On 1 March 1976 it was moving under its own propulsion from a block in the southern Norwegian North Sea toward Bergen when it grounded on the seaward side of Fedje, north of Bergen, in storm conditions.\n\nRegional Norwegian reporting states that the platform came too close to land after two of its propulsion motors failed; contemporary accounts describe hurricane-force wind through the derrick and the deck taking on a heavy list (about 20 degrees) as it grounded. The crew were evacuated from the platform into a lifeboat, which capsized in the heavy seas. Six people who were on the lifeboat drowned during the capsize; the lifeboat was later washed ashore on a rock 3-4 km north of the grounding site. It was, at the time, the most serious accident in Norwegian offshore oil activity and is often described as the first major accident on the Norwegian shelf.\n\nThe hull was salvaged, repaired and returned to service in 1978 under the new name Byford Dolphin. In a separate, unrelated event on 5 November 1983, the same hull (as Byford Dolphin) suffered a diving decompression accident that killed four divers and one tender — that incident is out of scope for this weather-focused record.',
+      what_went_wrong: [
+        'A mobile drilling unit was under way close to an exposed, rocky lee shore in winter-storm conditions, where a loss of propulsion left little margin before grounding.',
+        'Regional Norwegian accounts report that two of the propulsion motors failed during the transit, after which the rig was driven onto the coast at Fedje.',
+        'Evacuation into a lifeboat in heavy seas ended in the lifeboat capsizing, causing all six fatalities during the abandonment rather than in the grounding itself.',
+        'Store norske leksikon records that the 1976 investigation has long been regarded as inadequate ("the forgotten accident"); a 2007 assessment that recommended against reopening the inquiry was itself criticised by safety researchers as insufficient.'
+      ],
+      lessons_learned: [
+        'Marine transits of mobile units near exposed lee shores in winter storms require propulsion redundancy and abort/shelter criteria, because a propulsion failure close to a rocky coast can escalate to grounding within minutes.',
+        'Survivability of the evacuation system in the actual sea state is decisive: here the deaths occurred when the lifeboat capsized during abandonment, not in the grounding — a recurring offshore lesson about launching and maintaining lifeboats in severe weather.',
+        'Weather timing and routing of a self-propelled move must treat a deteriorating winter forecast near a coast as a stop criterion.',
+        'A thorough, preserved and credible investigation matters for organisational learning; the enduring criticism of the Deep Sea Driller inquiry shows how an inadequate investigation can leave causes contested for decades.'
+      ],
+      actions: [
+        'The loss was investigated in 1976, but Store norske leksikon records that the inquiry has long been considered inadequate and that bereaved families campaigned for years for a reopening.',
+        'In 2007 the Norwegian Ministry of Justice commissioned former police chief Rolf B. Wegner to assess whether a new investigation should be undertaken; he concluded it should not, and the Ministry used this to decline reopening. Safety researchers, including Prof. Jan Erik Vinnem, criticised that assessment as deficient.',
+        'The hull was salvaged and repaired and re-entered service in 1978 as the Byford Dolphin.'
+      ],
+      metocean: {
+        wave_height_hs: 'No measured significant wave height at the rig was retrieved; Norwegian accounts describe heavy seas sufficient to capsize the lifeboat.',
+        wind_speed: 'Norwegian accounts describe hurricane-force gusts ("orkan"); no instrument wind value at the rig was retrieved.',
+        sea_temp: 'Not measured in the reviewed sources; early-March western-Norway coastal water is cold and would sharply limit survival time for those in the water.',
+        notes: 'The weather driver is a winter storm on the exposed western Norwegian coast. The immediate loss combined storm exposure and a reported propulsion failure (grounding) with a lifeboat capsize during evacuation. No platform-point wind or wave instrument record was retrieved; values are qualitative from Norwegian encyclopedic and regional-press accounts.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the date (1 March 1976), location (grounding off Fedje, north of Bergen), 6 fatalities, the lifeboat capsize as the cause of death, the rig type and its later renaming to Byford Dolphin, and the long-running criticism of the investigation, because these are stated by Store norske leksikon (authored by petroleum-history and offshore-safety academics) and corroborated by Norwegian public broadcaster and regional press. Moderate for the reported failure of two propulsion motors and the approximately 20-degree deck list, which come from regional Norwegian press accounts. Not established / unverified for the number of persons on board, the drilling contractor/operator, exact grounding coordinates, and any measured wind, wave or sea-temperature values.',
+      references: [
+        { title: 'Deep Sea Driller-ulykken', english_title: 'The Deep Sea Driller accident', type: 'Encyclopedia (authored by subject academics)', publisher: 'Store norske leksikon (Smith-Solbakken, M. & Vinnem, J. E.)', url: 'https://snl.no/Deep_Sea_Driller-ulykken', notes: 'Authoritative Norwegian encyclopedia entry: grounding at Fedje 1 March 1976, transit under own power to Bergen, lifeboat capsize with six dead, and the contested/"forgotten" investigation history.' },
+        { title: '40 år siden Deep Sea Driller-ulykken', english_title: '40 years since the Deep Sea Driller accident', type: 'Public-broadcaster news feature', publisher: 'NRK Vestland', year: 2016, url: 'https://www.nrk.no/vestland/40-ar-siden-deep-sea-driller-ulykken-1.12829918', notes: 'Notes it was the first major accident on the Norwegian shelf and is often omitted from oil-accident overviews.' },
+        { title: '50 år sidan Deep Sea Driller forliste', english_title: '50 years since the Deep Sea Driller was wrecked', type: 'Regional press retrospective', publisher: 'Strilen', year: 2026, url: 'https://www.strilen.no/nyheiter/n/RjGzwa/50-aar-sidan-deep-sea-driller-forliste', notes: 'Reports the platform came too close to land when two propulsion motors failed; six died; then the most serious accident in Norwegian oil activity.' },
+        { title: 'Deep Sea Driller, 2. mars 1976 - forliste i transitt utenfor Fedje nord for Bergen', english_title: 'Deep Sea Driller, wrecked in transit off Fedje north of Bergen', type: 'Museum archive record', publisher: 'DigitaltMuseum / Norsk Oljemuseum', url: 'https://digitaltmuseum.no/011015064722/deep-sea-driller-2-mars-1976-forliste-i-transitt-utenfor-fedje-nord-for', notes: 'Museum documentation record; six persons died in transit off Fedje.' },
+        { title: 'Byford Dolphin', type: 'Encyclopedia (hull history)', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Byford_Dolphin', notes: 'Confirms the hull was built at Aker Verdal (1974), named Deep Sea Driller 1974-1978, and renamed Byford Dolphin after repair.' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       Ocean Express — 1976
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'ocean-express-tow-capsize-1976',
+      name: 'Ocean Express Jack-up Capsize Under Tow in Gulf Storm',
+      year: 1976,
+      date: '15 April 1976',
+      location: 'Gulf of Mexico near Port O\'Connor, Texas, during a 33-nautical-mile field move between drilling sites; the unit drifted, grounded and capsized',
+      lat: 28.3,
+      lng: -96.2,
+      location_precision: 'Approximate presentation point offshore of Port O\'Connor, Texas. NTSB report NTSB-MAR-79-5 titles the casualty "near Port O\'Connor, Texas"; the move was about 33 nautical miles from a drilling site near the Texas coast, and technical accounts add that the unit sank in about 167 ft of water. An exact surveyed casualty coordinate was not retrieved.',
+      region: 'North America',
+      platform_type: 'Mat-supported self-elevating drilling unit (jack-up), owned by Odeco; afloat and under tow at the time of loss',
+      operator: 'Odeco (rig owner and rig-move manager); Marathon Oil (operator representative)',
+      weather_event_type: 'storm',
+      classification: 'maritime',
+      weather_event: 'An intensifying, worse-than-forecast Gulf storm - by late afternoon reported waves up to about 25 ft (7.6 m) and winds up to about 50 knots, with higher gusts',
+      fatalities: 13,
+      persons_on_board: 35,
+      survivors: 22,
+      infrastructure_impact: 'Total loss of the mat-supported jack-up Ocean Express, which capsized and sank in about 167 ft of water during a short field move.',
+      summary: 'On 15 April 1976 the Odeco mat-supported jack-up Ocean Express capsized and sank under tow in the Gulf of Mexico off Texas during a short field move, in a storm far worse than forecast. After one tug (Gulf Knight) lost an engine and another tug\'s (Gulf Viking) towline parted, the unit drifted broadside to ~25 ft seas; shifting deck pipe and the derrick increased its list until it capsized. Most of the crew abandoned into two Whittaker survival capsules; one capsule reached a survey vessel safely, but the second capsized alongside a tug and 13 men drowned. The bargemaster, who stayed aboard, was lifted off the tilting helideck by a US Coast Guard helicopter seconds before the rig rolled over. The USCG Marine Board found the primary cause was loss of directional control from the tug-engine failure and towline break as the weather worsened.',
+      executive_summary: 'The mat-supported jack-up Ocean Express (Odeco) capsized under tow near Port O\'Connor, Texas on 15 April 1976, killing 13 of the 35 people aboard. A 33-nautical-mile field move ran into a storm far worse than forecast; the Gulf Knight lost an engine and could no longer hold the rig head-to-weather, and the Gulf Viking\'s towline then parted, leaving the unit to drift broadside to ~25 ft seas and ~50 kn winds. Shifting deck pipe and a displaced derrick drove an increasing list until the rig drifted, grounded, capsized and sank about 2115. Of two Whittaker capsules used to abandon, one (14 aboard) transferred all occupants to a survey vessel; the other capsized with 20 aboard - 7 escaped and 13 drowned. A USCG HH-52A helicopter plucked the bargemover off the helideck seconds before the rig rolled. The US Coast Guard Marine Board of Investigation and NTSB (NTSB-MAR-79-5) examined the loss and NTSB issued nine safety recommendations.',
+      what_happened: 'Ocean Express was an Odeco mat-supported self-elevating drilling unit (jack-up) designed for the soft mud of the Gulf of Mexico. On 14 April 1976 the hull was lowered into the water and the supporting mat recovered so the unit could be towed, afloat, on a field move of about 33 nautical miles to its next location near Port O\'Connor, Texas. Three Gulf Mississippi Marine Corp tugs were used - the Gulf Explorer (about 3,600 bhp, lead), the Gulf Knight (about 2,400 bhp) and the Gulf Viking.\n\nNear the new location on the night of 14 April the mat was lowered about 148 ft below the hull, but the weather deteriorated and the relocation could not be completed, so the rig was held head-to-weather by the tugs. By the morning of 15 April seas had built to 10-12 ft; nonetheless a supply vessel (M.L. Levy) transferred six additional workers aboard by personnel basket. The unit had a natural list to port that required counter-flooding, and forward ballasting reduced freeboard to as little as about 5.5 ft against a nominal 7-8 ft, so water increasingly entered through deck apertures.\n\nBy late afternoon the tow was in waves up to about 25 ft and winds up to about 50 knots - far beyond the benign conditions needed to set the mat and elevate. The first serious failure was the loss of one engine on the Gulf Knight, which could then no longer hold head to wind and dropped back to become part of the tow rather than a towing vessel. At about 1930 the Gulf Viking\'s towline parted in the towing spring, and the crew could not recover the heavy nylon line across the tiny, sea-swept triangular tow deck. Deck pipe then shifted, causing the rig to list; a request to drop the anchor was not carried out.\n\nAt about 2115 the derrick shifted to starboard, sharply increasing the list, and the order was given to abandon into the Whittaker survival capsules on the starboard side (the port capsule had already been washed away). Two capsules got away. No. 1 capsule (about 14 occupants) motored clear and, despite heavy weather, transferred everyone safely to the survey vessel Nicole Martin. No. 3 capsule (about 20 occupants) was taken in tow by the Gulf Viking; the connecting line was lost, several occupants had unbuckled their seat belts, and the capsule flipped over alongside the tug. Attempts to right it let water in; some occupants were forced out through the doors. Seven were pulled from the sea; 13 men drowned.\n\nThe bargemaster had remained aboard to release the tow lines and was left with no capsule. A US Coast Guard HH-52A helicopter, flown from Corpus Christi into the storm, hoisted him from the sharply tilting helideck seconds before the Ocean Express rolled over and sank. The aircraft carrier USS Lexington later assisted with recovery.',
+      what_went_wrong: [
+        'A short "field move" was continued into a storm far worse than forecast, with the unit afloat and its low tow freeboard already reduced by a port list and forward ballasting.',
+        'Loss of one engine on the tug Gulf Knight removed the ability to hold the rig head to weather, and the unit fell back into the tow rather than being towed.',
+        'The Gulf Viking\'s towline then parted, and the small, constantly swamped triangular tow deck made it impossible to re-establish the tow, so the rig drifted broadside to the boarding seas.',
+        'Unsecured deck pipe and the drilling derrick shifted as the rig rolled, driving a progressive list to starboard that led to capsize; a request to drop the anchor was not carried out.',
+        'The evacuation succeeded for one capsule but failed for the other: No. 3 capsule capsized alongside the towing tug after its line was lost and occupants had released seat belts, and it could not be righted, drowning 13.',
+        'NTSB found the operating manual gave inadequate guidance on stability across the range of mat-platform separations, towing arrangements, severe-weather operations, transit preparations and operational limits; the bargemover was not aware the mat position affected stability, and no contingency plans existed for towing emergencies.',
+        'When one tug\'s reduction gear failed the tugs were not repositioned; on arrival the mat probably could have been set on the bottom and the platform jacked clear with only minor column damage, but the manual did not state the results of exceeding the design jacking limits, and the unit had no motion-sensing instruments (the bargemover judged the sea state subjectively).',
+        'NTSB found the Whittaker survival capsules were approved under standards written for open lifeboats: their capsize/righting behaviour in a seaway, escape from an overturned capsule, and towing/mooring fittings and fendering had not been adequately addressed - directly relevant to the capsize that drowned 13.'
+      ],
+      lessons_learned: [
+        'A "short" or "field" move is still a marine tow: tow-freeboard, stability and abort criteria must be verified against realistic (not benign) weather, and a worsening forecast must be a stop criterion before the mat is raised and the unit floated.',
+        'Tow capability must be robust to a single tug casualty: loss of one tug engine or a parted towline should not be able to leave the unit drifting broadside to the sea.',
+        'Deck loads (drill pipe) and the derrick must be secured against the motions of a floating, rolling unit, because shifting weights can turn a controllable list into a capsize.',
+        'Survival-capsule survivability depends on how they are handled in the water: keeping occupants belted in, and controlling any tow of a capsule, is critical - the fatalities here occurred when the second capsule capsized alongside a tug after its line was lost.',
+        'Definitions and paperwork matter: ambiguity over move categories, stability information and crew qualification/working language degraded decision-making during the tow.'
+      ],
+      actions: [
+        'The US Coast Guard convened a Marine Board of Investigation and the Commandant issued the Marine Casualty Report (Report No. USCG 16732/61865, 1 June 1978), finding the primary cause to be loss of directional control from the Gulf Knight\'s engine failure and the Gulf Viking\'s towline break as the weather worsened, allowing the rig to drift broadside to the seas.',
+        'NTSB issued Marine Accident Report NTSB-MAR-79-5 and nine recommendations to the Coast Guard (M-79-39 through -47): require MODU operating manuals to cover stability across mat-platform separations, tug number/horsepower and towing arrangements, afloat-emergency contingency plans, transit-preparation checklists, the results of exceeding jacking limits, and the wind/sea/motion limits for instability; require recording fathometers, anemometers and on-board motion sensing; expedite personnel-qualification and manning standards and a functional chain of command; and develop survival-capsule performance standards (safe towing, capsize/righting model tests with Whittaker, and accessible towing/mooring fittings, fendering and markings).',
+        'Recommendation M-79-44 (a functional chain of command on MODUs) was later reiterated by NTSB after the 1985 collapse of the jack-up Penrod 67 in the Gulf of Mexico.',
+        'The USCG helicopter rescue of the bargemover (Lt Cdr John Lewis and crew, HH-52A) became a widely cited example of extreme-weather offshore rescue.'
+      ],
+      metocean: {
+        wave_height_hs: 'Reported waves up to about 25 ft (7.6 m) by late afternoon; sources describe wave height, not a measured significant wave height (Hs).',
+        wind_speed: 'Winds up to about 50 knots in the technical account, with higher gusts described in rescue narratives; the storm was worse than forecast.',
+        sea_temp: 'Not established in the reviewed sources.',
+        notes: 'The weather driver was an intensifying Gulf storm during a short field move. The reviewed sources give Beaufort-scale wind and wave-height descriptions rather than instrument records at the unit; the USCG identified the worsening weather as the context in which the tug-engine failure and towline break caused loss of directional control.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the sequence (departed ~1100 on 14 April; arrived ~2330; a tug reduction-gear failure ~1530 on 15 April; towline break 1930; drifted, grounded, capsized and sank ~2115), the Odeco mat-supported jack-up type, the persons aboard (14 in one capsule all rescued; the other capsized with 20 aboard, 7 escaped and 13 drowned; plus the bargemover = 35 aboard, 22 survived), the 13 fatalities and the causal/analysis findings, because these are stated in NTSB Marine Accident Report NTSB-MAR-79-5 (recommendation letter downloaded to background files) and the US Coast Guard Marine Board of Investigation report (full 108-page scan archived in background files; only partial OCR text). Moderate for the exact wind/wave values (reported up to ~50 kn and ~25 ft, not measured Hs) and the ~148 ft mat depth and freeboard figures, which come from a technical narrative. An exact surveyed casualty coordinate was not retrieved; the plotted point is offshore Port O\'Connor per the report title.',
+      references: [
+        { title: 'Marine Casualty Report - Ocean Express (Drilling Unit); Capsizing and Sinking in the Gulf of Mexico on 15 April 1976 with Loss of Life', type: 'Official marine casualty investigation', publisher: 'U.S. Coast Guard Marine Board of Investigation / Commandant (Report No. USCG 16732/61865)', year: 1978, url: 'https://www.dco.uscg.mil/Portals/9/DCO%20Documents/5p/CG-5PC/INV/docs/boards/oceanex.pdf', file: 'background files/USCG_Ocean_Express_Marine_Board_Report_1978_DTIC_ADA076419.pdf', notes: 'Primary investigation (1 June 1978, 108-page scan). Full report downloaded to background files via the DTIC ADA076419 mirror; the scan has only a partial OCR text layer. Commandant found the primary cause was loss of directional control from the Gulf Knight engine loss and the Gulf Viking towline break as weather worsened.' },
+        { title: 'NTSB Marine Accident Report NTSB-MAR-79-5 and safety recommendations M-79-39 through -47', type: 'Federal safety board report', publisher: 'National Transportation Safety Board', year: 1979, url: 'https://www.ntsb.gov/safety/safety-recs/recletters/M79_39_47.pdf', file: 'background files/NTSB_Ocean_Express_M79-039-047_recommendation.pdf', notes: 'NTSB-MAR-79-5, "Capsizing and Sinking of the Self-Elevating MODU OCEAN EXPRESS near Port O\'Connor, Texas, 15 April 1976". The downloaded recommendation letter gives the authoritative sequence, analysis and the nine recommendations.' },
+        { title: 'The Loss of the Ocean Express (extract from "Supply Ship Operations")', type: 'Technical account', publisher: 'Victor Gibson, Ships and Oil', year: 2008, url: 'https://www.shipsandoil.com/Features/Ocean%20Express.htm', notes: 'Detailed technical narrative of the tow, tug arrangement, towline failure, capsule abandonment and board-of-enquiry findings; sank in ~167 ft of water; 13 lost.' },
+        { title: 'Ocean Express (USCG rescue narrative)', type: 'Rescue account', publisher: 'Tom Beard (Lt Cdr, USCG, Ret.)', notes: 'First-hand account of the HH-52A helicopter rescue of the bargemaster from the tilting helideck seconds before capsize.' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       Rowan Gorilla I — 1988
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'rowan-gorilla-i-1988',
+      name: 'Rowan Gorilla I Jack-up Capsize During Transatlantic Tow',
+      year: 1988,
+      date: '15 December 1988',
+      location: 'North Atlantic Ocean, about 500 nautical miles southeast of Halifax, Nova Scotia, during a transatlantic tow from Halifax to Great Yarmouth, UK',
+      lat: 38.7,
+      lng: -55.7,
+      location_precision: 'Approximate position derived from the NTSB statement that the rig capsized about 500 nautical miles southeast of Halifax, Nova Scotia; a surveyed casualty coordinate was not retrieved, so the plotted point is a geometric estimate.',
+      region: 'North America',
+      platform_type: 'Gorilla-class self-elevating drilling unit (jack-up), about 297 ft; owned by Rowan Companies (Houston); afloat under tow',
+      operator: 'Rowan Companies / Rowan Drilling Co. (Houston, Texas); towed by the Bahamian tug Smit London',
+      weather_event_type: 'storm',
+      classification: 'maritime',
+      weather_event: 'Severe North Atlantic winter storm during a transatlantic tow - about 50 ft seas and sustained winds of about 60 knots at abandonment/capsize (seas subsiding to about 15 ft only by the rescue the following day)',
+      fatalities: 0,
+      persons_on_board: 27,
+      survivors: 27,
+      infrastructure_impact: 'Total loss of the jack-up Rowan Gorilla I, which capsized and sank in the North Atlantic while under tow.',
+      image: {
+        src: 'images/rowan-gorilla-i-1988-reflekt-survivor.png',
+        alt: 'Photograph of the jack-up Rowan Gorilla I low in heavy storm seas with its three legs raised, shortly before it capsized on 15 December 1988.',
+        caption: 'The Rowan Gorilla I in heavy North Atlantic seas on 15 December 1988, hours before it capsized under tow. Photograph reportedly taken by one of the survivors.',
+        credit: 'Reflekt AS (reflekt.as), attributed to one of the survivors. Copyrighted - permission required, reference use only.'
+      },
+      summary: 'On 15 December 1988 the US jack-up Rowan Gorilla I (Rowan Companies) capsized and sank in a severe North Atlantic storm about 500 nm southeast of Halifax while under a delivery tow to Great Yarmouth behind the tug Smit London. The towline parted at ~0220; the 27 aboard abandoned at 1340 into a totally-enclosed survival capsule in 50-ft seas and ~60-kn winds, and the rig sank at 1605. All 27 were rescued by the Smit London the next day, with no fatalities. NTSB found the ~60-kn wind was well below the rig\'s 100-kn intact design wind and attributed the capsize to lost intact stability, most likely from flooding rather than wind alone.',
+      executive_summary: 'The 297-ft jack-up Rowan Gorilla I capsized and sank at 1605 on 15 December 1988 about 500 nm southeast of Halifax during a Halifax-to-Great-Yarmouth delivery tow behind the tug Smit London. The towline broke at ~0220 in a severe storm; the 27 aboard abandoned at 1340 into a totally-enclosed survival capsule in 50-ft seas and ~60-kn winds, and all were rescued around midday on 16 December once seas eased to ~15 ft, with no fatalities. NTSB (MAR-89/06) noted the ~60-kn wind was far below the 100-kn intact design wind and concluded the rig lost intact stability - most plausibly through flooding (main-deck ventilation openings, hull failure, or loose-cargo damage) - then sank within minutes of capsizing through main-deck ventilation openings. NTSB issued recommendations to ABS and others.',
+      what_happened: 'Rowan Gorilla I was a 297-ft self-elevating drilling unit (jack-up) owned by Rowan Companies of Houston. In December 1988 it was making a transatlantic delivery voyage - towed by the 245-ft Bahamian tug Smit London from Halifax, Nova Scotia to Great Yarmouth in the United Kingdom - with its three legs raised. It ran into a severe North Atlantic winter storm.\n\nAt about 0220 on 15 December 1988 the towline parted, leaving the rig adrift in the storm about 500 nautical miles southeast of Halifax. Conditions were extreme: by the time the rig was abandoned there were seas of about 50 ft and sustained winds of about 60 knots. At 1340 on 15 December the 27 people aboard abandoned into one of the rig\'s totally-enclosed, motor-propelled survival capsules. The Rowan Gorilla I capsized at 1605 and, once inverted, sank within minutes as its internal compartments flooded through ventilation openings on the main deck.\n\nThe 27 survivors rode out the storm in the capsule through the night; the Smit London recovered them at about 1200 on 16 December, when the seas had subsided to around 15 ft. All were in good condition, none needed medical treatment, and about half had been seasick. There were no fatalities.\n\nA later learning-review by Reflekt AS, drawing on the investigation, adds operational context to the loss. For the tow the pipe deck had been loaded with drill pipe, several containers, two well-test skids, a wireline unit, two flare booms and the rig \'Texas deck\', and the owner\'s area manager asked for all four enclosed lifeboats to be taken off their davits and stowed on deck - a Canadian Coast Guard inspection required two to be re-installed before departure, and one of those later saved the crew. By 13 December flooding was found in two pre-load tanks with fractures opening and closing as the legs worked, and repairs failed; as the weather built, the wireline unit and containers broke loose and damaged deck structure, and the rig took a growing trim by the stern (about 6 degrees, then 8, then 12 degrees after successive 50-60 ft waves) before abandonment was ordered. The same account notes the rig had suffered bulkhead cracking and water ingress as its legs worked on its 1983 maiden tow, and that the investigation faulted the owner for not commissioning an engineering study or drawing on that and earlier comparable jack-up tow losses.\n\nThe US National Transportation Safety Board investigated and published Marine Accident Report NTSB/MAR-89/06. It established that, with the legs 25 ft below the hull in the severe-storm condition as at capsize, the intact rig was designed to withstand the overturning forces of a sustained 100-knot wind if properly loaded, and a sustained 50-knot wind with any one compartment or tank within 5 ft of the hull flooded. Because the estimated sustained wind at capsize was only about 60 knots - well below the 100-knot intact design wind - the Board concluded the rig must have had less stability than its intact design assumed, and examined flooding sources including hull structural failures, flooding through main-deck ventilation openings, and flooding from damage caused by loose cargo on the main deck. NTSB asked the designer/builder, Marathon LeTourneau, to perform stability calculations for the vessel and environmental conditions at the time of capsizing.',
+      what_went_wrong: [
+        'The towline parted at about 0220 in a severe storm, leaving the jack-up adrift and unable to be held head-to-weather.',
+        'The rig capsized in an estimated ~60-knot wind - well below its 100-knot intact design wind - so its actual stability was below what the intact design assumed.',
+        'NTSB attributed the lost stability to flooding, with candidate sources of hull structural failure, downflooding through main-deck ventilation openings, and damage from loose cargo working in the storm.',
+        'Once capsized, the rig sank within minutes as inverting opened the compartments to rapid downflooding through the main-deck ventilation openings.',
+        'Per a later Reflekt AS learning-review, pre-existing and uncorrected damage went untreated: leg-working fractures and pre-load-tank flooding were found days before capsize and deck cargo broke loose and damaged structure, and the owner had not acted on similar earlier tows (including the rig\'s own 1983 maiden-tow bulkhead cracking).'
+      ],
+      lessons_learned: [
+        'Plan and route long jack-up delivery tows against realistic severe-winter-storm criteria: a rig afloat is far more vulnerable than on station, and a parted towline can leave it adrift.',
+        'Capsize below the intact design wind is a stability/flooding warning, not wind overload - watertight integrity, main-deck ventilation-opening protection and correct tow loading/ballast are decisive.',
+        'Downflooding paths govern survival after a large heel: unprotected main-deck ventilation openings turn a capsize into a rapid sinking.',
+        'Secure all deck cargo for the worst tow motions; loose cargo can cause the hull/opening damage that admits the flooding.',
+        'A single totally-enclosed survival capsule kept all 27 alive through a night of 50-ft seas and 60-knot winds - survival craft must sustain occupants for hours, not minutes.',
+        'Act on precursor incidents: a Reflekt AS review notes the same failure pattern (loose cargo, leg-working hull cracks, downflooding) had appeared on earlier jack-up tows, including this rig\'s 1983 maiden voyage, yet no engineering study or corrective learning followed.'
+      ],
+      actions: [
+        'NTSB investigated and published Marine Accident Report NTSB/MAR-89/06 on the capsizing and sinking.',
+        'NTSB had the designer/builder, Marathon LeTourneau, perform stability calculations for the vessel and conditions at capsize.',
+        'NTSB issued recommendations M-89-105 (to the American Bureau of Shipping) and M-89-107 through -110 on mobile-unit stability, watertight/downflooding integrity, tow preparation and survival provisions.',
+        'The escape of all 27 became a benchmark case for totally-enclosed survival craft in severe weather.'
+      ],
+      metocean: {
+        wave_height_hs: 'About 50 ft seas at the time the rig was abandoned (1340, 15 December), subsiding to about 15 ft by the rescue about 1200 on 16 December. These are reported wave heights, not a measured significant wave height (Hs).',
+        wind_speed: 'NTSB estimated the maximum sustained wind at capsize to be about 60 knots (from rig, tug, other vessels, the National Weather Service and other sources) - well below the rig\'s 100-knot intact design wind for the severe-storm leg position.',
+        sea_temp: 'Cold North Atlantic mid-December water; not quantified in the reviewed sources.',
+        notes: 'The weather driver was a severe North Atlantic winter storm during a Halifax-to-Great-Yarmouth tow. Critically, the estimated ~60-knot sustained wind was far below the 100-knot intact design wind, so NTSB attributed the capsize to reduced stability (most plausibly flooding via hull failure, main-deck ventilation openings or loose-cargo damage) rather than the wind exceeding design.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the date and time (capsized 1605, 15 December 1988), the position (about 500 nm SE of Halifax), the Halifax-to-Great-Yarmouth tow behind the tug Smit London, the parted towline (~0220), the abandonment (1340) in ~50 ft seas and ~60-knot winds, the 27 persons aboard, the survival-capsule escape and rescue (~1200, 16 December) with zero fatalities, and the stability/flooding cause analysis, because these are stated in NTSB Marine Accident Report NTSB/MAR-89/06 and its recommendation letters and corroborated by wire-service reporting. The precise capsize coordinate is a geometric estimate from "500 nm SE of Halifax". The exact flooding source was not conclusively established by NTSB (candidate sources: hull structural failure, main-deck ventilation downflooding, loose-cargo damage), pending the requested Marathon LeTourneau stability calculations. Operational details of the tow preparation, the pre-existing pre-load-tank flooding and leg-working fractures, the loose-cargo damage, the progressive trim, and the precursor-incident learning point come from a secondary learning-review by Reflekt AS (which draws on the investigation) and are attributed as such; they corroborate but go beyond what was verified directly in the NTSB report text held here.',
+      references: [
+        { title: 'Marine Accident Report NTSB/MAR-89/06 - Capsizing and Sinking of the U.S. Mobile Offshore Drilling Unit ROWAN GORILLA I in the North Atlantic Ocean, December 15, 1988', type: 'Federal marine accident investigation', publisher: 'National Transportation Safety Board (hosted by U.S. Coast Guard OCSNCOE)', year: 1989, url: 'https://www.dco.uscg.mil/Portals/9/OCSNCOE/OCS%20Investigation%20Reports/NTSB%20Marine%20Accident%20Reports/Rowan%20Gorilla%20I.pdf', notes: 'Primary NTSB investigation (report NTSB/MAR-89/06): capsize ~500 nm SE of Halifax during a Halifax-to-Great-Yarmouth tow by the tug Smit London; towline parted ~0220, abandoned 1340 in ~50 ft seas and ~60 kn wind, capsized/sank 1605; 27 rescued next day. Estimated ~60 kn wind was well below the 100 kn intact design wind, so capsize attributed to reduced stability/flooding.' },
+        { title: 'NTSB Safety Recommendation M-89-105 (to the American Bureau of Shipping) and M-89-107 through -110', type: 'Federal safety recommendations', publisher: 'National Transportation Safety Board', year: 1989, url: 'https://www.ntsb.gov/safety/safety-recs/recletters/M89_105.pdf', file: 'background files/NTSB_Rowan_Gorilla_I_M89-105_recommendation.pdf', notes: 'Recommendation letter (7 November 1989, downloaded) summarising the accident, the position (~500 nm SE of Halifax), the intact-stability/flooding analysis (capsize at ~60 kn vs 100 kn design), and the safety actions; rig value estimated at US$90 million.' },
+        { title: 'Rescuers reach 27 crew members of capsized rig in Atlantic', type: 'News report (wire service)', publisher: 'United Press International (UPI)', year: 1988, url: 'https://www.upi.com/Archives/1988/12/16/Rescuers-reach-27-crew-members-of-capsized-rig-in-Atlantic/8707598251600/', notes: 'Reports the Rowan Gorilla I (Rowan Drilling Co., Houston) capsized under tow; 27 crew rescued.' },
+        { title: 'Crew Safe in \'Pod\' as Oil Rig Capsizes', type: 'News report', publisher: 'Los Angeles Times', year: 1988, url: 'https://www.latimes.com/archives/la-xpm-1988-12-16-mn-171-story.html', notes: 'Reports 26 crew safe in a survival pod after the rig capsized under tow in high winds.' },
+        { title: 'Rowan Gorilla I Oil Rig Lifeboat Rescue - A Survivor\'s Story', type: 'Survivor / survival-craft account', publisher: 'Survival Systems International', url: 'https://www.survivalsystemsinternational.com/rowan-gorilla-oil-rig-lifeboat-rescue-story/', notes: 'Account of survivor Tim Matherson and the totally-enclosed survival capsule; capsule rated for 54, crew rescued by Smit London on 16 December when seas subsided to ~15 ft.' },
+        { title: 'The loss of the Rowan Gorilla I - a learning review (Weekly Reflektion)', type: 'Secondary learning review', publisher: 'Reflekt AS', url: 'https://reflekt.as/wp-content/uploads/2020/12/img_0664-2.png', notes: 'Reflekt AS learning-review (Weekly Reflektion) recounting the tow preparation, pre-existing leg-working fractures and pre-load-tank flooding, loose-cargo damage, progressive trim by the stern, and precursor incidents (the rig\'s 1983 maiden-tow bulkhead cracking and an earlier comparable jack-up tow loss); source of the survivor photograph used for this record. Secondary account drawing on the investigation.' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       Interocean II — 1989
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'interocean-ii-1989',
+      name: 'Interocean II Jack-up Capsize During Tow in North Sea Gale',
+      year: 1989,
+      date: '8 November 1989',
+      location: 'Southern North Sea, Indefatigable gas field off the East Anglian coast, England - under tow to a new drilling position',
+      lat: 53.4,
+      lng: 2.5,
+      location_precision: 'Approximate presentation point for the Indefatigable gas field in the southern North Sea; an exact casualty coordinate was not retrieved.',
+      region: 'Europe',
+      platform_type: 'Self-elevating drilling unit (jack-up), operated by Interocean (Houston); afloat under tow',
+      operator: 'Interocean (Houston, Texas); on contract to Texaco North Sea',
+      weather_event_type: 'storm',
+      classification: 'maritime',
+      weather_event: 'Storm-force 10 gale in the North Sea, with rough seas',
+      fatalities: 0,
+      survivors: 51,
+      infrastructure_impact: 'Total loss of the jack-up Interocean II, which toppled over and sank shortly after the crew were taken off.',
+      summary: 'On the night of 8 November 1989 the jack-up Interocean II broke loose from its tow in a storm-force 10 gale in the southern North Sea while being moved by two vessels to a new drilling position in the Indefatigable gas field off the East Anglian coast. One of its two anchor chains parted; the rig\'s 51 crew were taken off - most first, then the last eight airlifted as conditions worsened - and minutes later the rig toppled over and sank. There were no fatalities. The unit was operated by Interocean of Houston on contract to Texaco North Sea.',
+      executive_summary: 'The jack-up Interocean II was lost under tow in a force-10 North Sea gale on 8 November 1989 in the Indefatigable gas field. An anchor chain parted as two vessels towed it to a new position; all 51 crew were evacuated (the last eight airlifted by helicopter) before the rig capsized and sank minutes later, with no fatalities. It is a successful severe-weather evacuation case; the primary contemporaneous source is UK press reporting.',
+      what_happened: 'On the night of 8 November 1989 the jack-up drilling rig Interocean II was under tow by two vessels to a new drilling position in the Indefatigable gas field, in the southern North Sea off the East Anglian coast of England. It was caught in a storm-force 10 gale with rough seas.\n\nOne of the rig\'s two anchor chains broke. Most of the 51 crew were taken off, but eight workers stayed aboard to keep the rig under control on tow. As conditions deteriorated, the last eight were airlifted by helicopter; minutes later the Interocean II toppled over and sank. All 51 people survived. The unit was operated by Interocean of Houston, on contract to Texaco North Sea. (The same rig had earlier, in 1984, been blown off its tow line in strong winds near Poole, Dorset, and had to be recovered.)',
+      what_went_wrong: [
+        'The jack-up, afloat and under tow in a storm-force 10 gale, lost its station-keeping when one of its two anchor chains parted.',
+        'Once the chain failed in the severe weather, the rig could not be held and drifted/heeled until it capsized and sank.',
+        'A jack-up under tow is far more vulnerable than when elevated on station; the marine-move exposure in the deteriorating North Sea weather proved decisive.'
+      ],
+      lessons_learned: [
+        'Marine moves of jack-ups must be planned against realistic severe-weather criteria and have clear abort/shelter decisions before conditions reach storm force.',
+        'Anchor/mooring and tow arrangements for a rig move must tolerate the loss of a single component without leading to loss of the unit.',
+        'A well-executed, timely evacuation - including helicopter lift of the last personnel as the rig failed - can achieve zero casualties even when the asset is lost.'
+      ],
+      actions: [
+        'The rig\'s 51 crew were evacuated without loss of life, the final eight by helicopter as the rig became unstable.',
+        'Contemporary reporting recorded the loss as a near-repeat of an earlier (1984) Interocean II tow incident off Poole, underlining the recurring hazard of jack-up marine moves in bad weather.'
+      ],
+      metocean: {
+        wave_height_hs: 'Rough North Sea seas in a storm-force 10 gale; no measured significant wave height was retrieved.',
+        wind_speed: 'Storm force 10 (about 48-55 knots) per coastguard/press accounts.',
+        sea_temp: 'Cold early-November North Sea water; not quantified in the reviewed sources.',
+        notes: 'The weather driver was a storm-force 10 North Sea gale during a rig move. The reviewed source is contemporaneous UK press reporting (The Herald), which gives Beaufort-scale wind and qualitative sea descriptions rather than instrument records; a formal investigation report was not retrieved.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the date (8 November 1989), the loss under tow in the Indefatigable field, the parted anchor chain, the force-10 gale, the evacuation of all 51 crew (last eight airlifted) and zero fatalities, because these are reported in contemporaneous UK press (The Herald) and corroborated by aviation-rescue accounts. Not established here: an exact casualty coordinate, measured wind/wave values, and a formal marine-investigation report (none was retrieved; the MAIB had only just been established).',
+      references: [
+        { title: 'Crew rescued as rig sinks', type: 'Contemporaneous news report', publisher: 'The Herald (Glasgow)', year: 1989, url: 'https://www.heraldscotland.com/news/11968236.crew-rescued-as-rig-sinks/', notes: 'Reports the Interocean II broke loose under tow in a force-10 gale in the Indefatigable field; an anchor chain parted; 51 crew rescued (last eight airlifted); rig toppled and sank; operated by Interocean (Houston) on contract to Texaco North Sea.' },
+        { title: 'Interocean II North Sea rescue (Skyweaver award citation)', type: 'Aviation rescue account', publisher: 'Helitavia', url: 'https://helitavia.com/Skyweaver/awards3.htm', notes: 'Records that on 8 November 1989 the Interocean II broke loose from its tow in darkness in the North Sea and that the crew were rescued by helicopter as the rig capsized.' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       DB29 — 1991
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'db29-typhoon-fred-1991',
+      name: 'DB29 Pipe-Laying Derrick Barge Capsize During Typhoon Fred',
+      year: 1991,
+      date: '15-16 August 1991',
+      location: 'South China Sea, about 65 nm southeast of Hong Kong near the mouth of the Zhujiang (Pearl) River',
+      lat: 21.6,
+      lng: 115.0,
+      location_precision: 'Approximate point derived from contemporaneous reports that the barge sank about 65 miles (105 km) southeast of Hong Kong near the mouth of the Zhujiang (Pearl) River, in about 210 ft (64 m) of water; a surveyed casualty coordinate was not retrieved.',
+      region: 'Asia',
+      platform_type: 'Non-self-propelled pipe-laying derrick barge (DB29), built 1973 by Shinhama Dockyard (Anan, Japan), about 10,400 tons and 128 x 39 x 8.5 m, Panamanian-flagged; operated by a McDermott International unit (McDermott Southeast Asia, Singapore)',
+      operator: 'McDermott International (McDermott Southeast Asia, Singapore); parent based in New Orleans',
+      weather_event_type: 'cyclone',
+      classification: 'maritime',
+      storm_sid: '1991220N10133',
+      storm_name: 'FRED',
+      weather_event: 'Typhoon Fred - reported ~25 ft (7.6 m) seas and winds up to about 75 mph (65 kn) in the South China Sea',
+      fatalities: 22,
+      persons_on_board: 195,
+      survivors: 173,
+      infrastructure_impact: 'Total loss of the pipe-laying derrick barge DB29, which capsized and sank in about 210 ft of water during Typhoon Fred while laying offshore pipeline.',
+      image: {
+        src: 'images/db29-1991-derrick-barge-victorian-collections.jpg',
+        alt: 'The McDermott derrick barge DB29 in calm seas with its lattice crane raised, some years before its 1991 loss.',
+        caption: 'The McDermott pipe-laying derrick barge DB29 in calm waters, reportedly a few years before it was lost in Typhoon Fred in August 1991.',
+        credit: 'Victorian Collections (Offshore & Specialist Ships Australia), via Wrecksite. Copyrighted - permission required, reference use only.'
+      },
+      summary: 'On 15-16 August 1991 the Panamanian-flagged McDermott pipe-laying derrick barge DB29 capsized and sank during Typhoon Fred about 65 nm southeast of Hong Kong, near the mouth of the Pearl River, while laying offshore pipeline. Of the 195 people aboard, about 173 were rescued from ~25-ft seas by a multinational fleet of ships and aircraft; roughly 22 died (early counts of at least 16 rose as the missing were confirmed, with some inquest-era tallies up to 26). Among the dead were four saturation divers trapped in the barge\'s diving bell, which could not be recovered after the barge listed. A wreck-report summary attributes the downflooding to deck equipment destroying the desalination-plant hatch; survivors also described unsecured anchors and heavy loads breaching hatches.',
+      executive_summary: 'The McDermott derrick/pipe-lay barge DB29 (Panamanian flag, ~195 aboard) capsized and sank in Typhoon Fred on 15-16 August 1991 about 65 nm southeast of Hong Kong, near the Pearl River mouth, in ~210 ft of water. Ships and aircraft from China, Taiwan, the Soviet Union and Hong Kong rescued about 168-173 people from ~25-ft seas and ~75-mph winds; roughly 22 were killed (reported figures range from at least 16 early to as many as 26). Four saturation divers were lost in the barge\'s diving bell: the saturation system had been partly decompressed and, once the barge took a list, the bell could not be mated for transfer under pressure, so the divers could not be evacuated. The downflooding was attributed (in a Wrecksite wreck-report summary citing casualty report 93-3073.0) to deck equipment destroying the desalination-plant hatch; survivors also described unsecured anchors and heavy deck loads breaching hatches, and questioned the decision to ride out the storm. This record is built on contemporaneous international news, an industry account, UK inquest coverage and the Wrecksite wreck-report summary rather than the primary casualty report itself.',
+      what_happened: 'DB29 was a large pipe-laying derrick barge operated by a McDermott International unit (McDermott Southeast Asia, based in Singapore; parent company in New Orleans) and registered in Panama. In mid-August 1991 it was laying offshore pipeline in the South China Sea about 65 nautical miles (105 km) southeast of Hong Kong, near the mouth of the Zhujiang (Pearl) River, with about 195 people aboard - a highly multinational crew that news reporting listed as roughly 112 Malaysians, 26 Filipinos and smaller numbers of Americans, Australians, Britons, New Zealanders, Singaporeans and others.\n\nTyphoon Fred moved across the area on 15 August 1991, generating seas of about 25 ft and winds reported up to about 75 mph. A wreck-report summary (Wrecksite, citing casualty report ref. 93-3073.0) states that the high seas loosened deck equipment and destroyed the barge\'s desalination-plant hatch, through which it downflooded. The barge was overwhelmed and, early on 15-16 August, developed a list and began to sink; survivors described waking to find the barge already half under water and jumping into the sea. A large multinational rescue operation involving ships and aircraft from China, Taiwan, the Soviet Union and Hong Kong plucked about 168-173 people from mountainous seas over the following day; some survivors were landed in China and Singapore, and the tug Typhoon brought 84 into Hong Kong. Roughly 22 people died - contemporaneous accounts reported at least 16 dead with others missing, and the Oil & Gas Journal (a week later) recorded 173 rescued of 195 with 16 bodies recovered and six missing and presumed dead; some later inquest-era tallies cite up to 26.\n\nFour of the dead were saturation divers trapped in the barge\'s diving bell (reported as three Britons and a New Zealander). According to professional-diving accounts, the saturation system had been decompressed toward the surface but the divers were still under pressure; once the barge took a list, the bell could not be mated to the transfer-under-pressure trunk to bring them into a rescue chamber, and it went down with the barge. Their bodies were later recovered, and the loss became the subject of UK inquest proceedings and criticism of the diving contractor. Some survivors alleged the barge sank after heavy anchors left hanging unsecured against the hull, together with other loose loads, smashed open hatches and let water flood in, and that the barge should have demobilised rather than attempt to ride out the typhoon. A formal casualty report (referenced as 93-3073.0) is cited by the Wrecksite wreck record - which summarises the desalination-hatch downflooding and the divers\' entrapment and notes the wreck lies inverted ("turtle") at about 63 m - but the underlying report document itself was not accessible in this review.',
+      what_went_wrong: [
+        'A large, heavily-crewed pipe-laying barge was caught on location by Typhoon Fred (~25 ft seas, ~75 mph winds) and lost stability, taking a list and sinking in about 210 ft of water.',
+        'The immediate loss mechanism was downflooding: high seas loosened deck equipment and breached a hatch - a wreck-report summary attributes this to the destroyed desalination-plant hatch, and survivors also described unsecured anchors and loose heavy loads breaching hatches - letting water into the hull, a watertight-integrity and cargo-securing failure under storm loading.',
+        'Survivors and later accounts questioned the decision to ride out the storm rather than demobilise the barge and crew in good time.',
+        'The saturation divers could not be evacuated: with the system partly decompressed and the barge listing, the diving bell could not be mated for transfer under pressure, so the four divers were trapped and lost with the bell.',
+        'A self-propelled hyperbaric (decompression) lifeboat that could have carried the divers away while still under pressure existed as technology but was not required by law and had not been provided by the barge owner (per the wreck-report summary).',
+        'The very large complement (~195) on an exposed work barge magnified the life-safety exposure when the unit was overwhelmed.'
+      ],
+      lessons_learned: [
+        'Marine construction and pipe-lay barges must have unambiguous, enforced weather-demobilisation criteria for approaching typhoons, rather than attempting to ride out severe tropical cyclones on location.',
+        'Watertight integrity and cargo/anchor securing govern survival: hatches and openings must remain weathertight and heavy items (including anchors) must be secured for the worst expected storm motions, or downflooding can capsize the unit.',
+        'Saturation-diving operations need a viable hyperbaric evacuation route: if the host vessel can list or flood, divers under pressure can be trapped once a bell can no longer be mated for transfer under pressure. Self-propelled hyperbaric lifeboats existed but were not legally required and were not provided here - a gap this loss helped expose.',
+        'Manning an exposed work barge with a very large crew during typhoon season raises the stakes of any station-keeping or stability failure and should be weighed in storm planning.'
+      ],
+      actions: [
+        'A large multinational sea and air rescue (China, Taiwan, the Soviet Union and Hong Kong) recovered about 168-173 people from the storm seas.',
+        'The bodies of the four saturation divers were later recovered from the diving bell; their deaths became the subject of UK inquest proceedings and public criticism of the diving contractor.',
+        'The loss is cited in the professional diving and marine-construction community as a case study in hyperbaric evacuation and severe-weather demobilisation of dive-support and construction barges.'
+      ],
+      metocean: {
+        wave_height_hs: 'About 25 ft (7.6 m) seas reported during Typhoon Fred; a contemporaneous news figure, not an instrument record at the barge.',
+        wind_speed: 'Winds up to about 75 mph (65 kn) reported in Typhoon Fred (contemporaneous news reporting).',
+        sea_temp: '~28-30 °C South China Sea surface (seasonal); not specifically reported.',
+        notes: 'The weather driver was Typhoon Fred (August 1991). The immediate loss mechanism was reportedly a list and downflooding leading to capsize and sinking; no barge-point wind or wave instrument record was retrieved, and the metocean values are contemporaneous news figures.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the date (15-16 August 1991), the location (about 65 nm SE of Hong Kong near the Pearl River mouth, ~210 ft water), the asset (Panamanian-flagged McDermott pipe-laying derrick barge DB29), Typhoon Fred as the driver, the very large multinational crew (~195) and the mass rescue (~168-173 survivors), and the loss of four saturation divers trapped in the diving bell - all supported by multiple contemporaneous international news reports (AP/Los Angeles Times, New York Times, Washington Post), the Oil & Gas Journal industry account and UK inquest coverage. Moderate/variable for the death toll: reported figures range from at least 16 (early recovery) to about 22 (195 aboard minus 173 rescued, per OGJ) to as many as 26 in some inquest-era tallies; this record uses 22 and flags the range. The downflooding mechanism (deck equipment loosened and the desalination-plant hatch destroyed) and the divers\' entrapment (with a hyperbaric lifeboat not legally required and not provided) come from a Wrecksite wreck-report summary that cites casualty report 93-3073.0; the underlying report document was not accessible in this review, so these are treated as a secondary account. Vessel and wreck particulars (built 1973 by Shinhama Dockyard, ~10,400 t, 128 x 39 x 8.5 m, owner McDermott South East Asia Pte Ltd of Singapore, captain Billy Young lost, wreck inverted at ~63 m) are from Wrecksite. Not established here directly: the full contents of report 93-3073.0, a surveyed casualty coordinate, and any instrument metocean record at the barge.',
+      references: [
+        { title: 'At Least 16 Die as Typhoon Sinks Barge Off Hong Kong', type: 'News report (wire service)', publisher: 'Los Angeles Times / Times wire services', year: 1991, url: 'https://www.latimes.com/archives/la-xpm-1991-08-16-mn-609-story.html', notes: 'Contemporaneous wire report: Panamanian-registered McDermott barge DB29 overwhelmed by 25-ft waves and 75-mph winds ~65 mi SE of Hong Kong; at least 16 dead, 11 missing (incl. four divers in a diving bell), 168+ rescued; crew of 195 listed by nationality.' },
+        { title: '16 Lost and 168 Saved as Barge Sinks Off Hong Kong', type: 'News report', publisher: 'The New York Times', year: 1991, url: 'https://www.nytimes.com/1991/08/16/world/16-lost-and-168-saved-as-barge-sinks-off-hong-kong.html', notes: 'Reports 16 lost and 168 saved; divers flown from Singapore in an attempt to reach the trapped men.' },
+        { title: 'Typhoon Sinks Derrick Barge in S. China Sea', type: 'Industry news report', publisher: 'Oil & Gas Journal', year: 1991, url: 'https://www.ogj.com/general-interest/companies/article/17238316/typhoon-sinks-derrick-barge-in-s-china-sea', notes: 'Industry account (26 Aug 1991): DB29 (McDermott International unit) capsized/sank 15 Aug near the mouth of the Zhujiang River in ~210 ft of water; a week later 173 of 195 rescued, 16 bodies recovered, six missing and presumed dead.' },
+        { title: 'Divers\' Bodies Recovered', type: 'News report', publisher: 'The Washington Post', year: 1991, url: 'https://www.washingtonpost.com/archive/national/1991/08/19/divers-bodies-recovered/3bab892e-edbe-46a0-9640-48bec9e00b9f/', notes: 'Reports recovery of the divers who were trapped in the barge\'s diving bell during the accident.' },
+        { title: 'Anger at divers\' tragedy company / Boat was \'already sinking\'', type: 'Inquest news coverage', publisher: 'Bradford Telegraph & Argus', url: 'https://www.thetelegraphandargus.co.uk/news/8073292.anger-at-divers-tragedy-company/', notes: 'UK inquest coverage into a British saturation diver (reported ~35 ft below the surface) trapped in the DB29 diving bell when the barge foundered on 15 August 1991; includes criticism of the diving contractor.' },
+        { title: 'The Loss of the DB29', type: 'Professional-mariner forum (eyewitness/secondary)', publisher: 'gCaptain Forum', url: 'https://forum.gcaptain.com/t/the-loss-of-the-db29/46764', notes: 'Professional-mariner discussion recalling POB 195 and ~22 fatalities, and describing the diving-bell/transfer-under-pressure situation (system decompressed to ~60 ft before the barge capsized). Recollections, not an authoritative report; used only for context.' },
+        { title: 'McDermott Derrick Barge No.29 (part A) [+1991] - wreck record', type: 'Wreck database record (cites casualty report 93-3073.0)', publisher: 'Wrecksite.eu', url: 'https://www.wrecksite.eu/wreck.aspx?109878', notes: 'Wreck record for DB29: built 1973 (Shinhama Dockyard, Japan), ~10,400 t, 128 x 39 x 8.5 m, owner McDermott South East Asia Pte Ltd (Singapore), captain Billy Young (lost), 195 crew, wreck inverted at ~63 m. Summarises casualty report ref. 93-3073.0: high seas loosened deck equipment and destroyed the desalination-plant hatch, the barge downflooded, capsized and sank; four divers were trapped in the saturation chamber because decompression (hyperbaric) lifeboats were not legally required and had not been provided. Source of the DB29 photograph (Victorian Collections). The underlying report document was not accessed directly in this review.' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       DLB-269 — Hurricane Roxanne — 1995
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'dlb-269-hurricane-roxanne-1995',
+      name: 'DLB-269 Pipe-Laying Derrick Barge Sinking During Hurricane Roxanne',
+      year: 1995,
+      date: '15 October 1995',
+      location: 'Bay of Campeche, Gulf of Mexico, about 60 miles off the Yucatán Peninsula (Pemex offshore pipeline works)',
+      lat: 20.5,
+      lng: -92.0,
+      location_precision: 'Approximate point in the Bay of Campeche where Hurricane Roxanne looped near the barge on 15 October 1995 (contemporaneous accounts place DLB-269 about 60 miles off the Yucatán coast); a surveyed casualty coordinate was not retrieved.',
+      region: 'North America',
+      platform_type: 'Pipe-laying derrick barge (DLB-269) with a stern Clyde crane; afloat under tow',
+      operator: 'CCC Fabricaciones y Construcciones (owner/operator), working for Pemex; affiliated with McDermott International / J. Ray McDermott (New Orleans)',
+      weather_event_type: 'cyclone',
+      classification: 'maritime',
+      storm_sid: '1995281N14278',
+      storm_name: 'ROXANNE',
+      weather_event: 'Hurricane Roxanne - an erratic Category 1-3 storm that looped and stalled in the Bay of Campeche; ~30-40 ft seas at the barge',
+      fatalities: 6,
+      persons_on_board: 245,
+      survivors: 239,
+      infrastructure_impact: 'Total loss of the pipe-laying derrick barge DLB-269, which foundered and sank under tow in the Bay of Campeche during Hurricane Roxanne.',
+      summary: 'On 15 October 1995 the McDermott-affiliated pipe-laying derrick barge DLB-269, laying Pemex pipeline about 60 miles off the Yucatán in the Bay of Campeche, foundered and sank during Hurricane Roxanne after the erratic storm looped back over it. Of about 245 people aboard, roughly 230 ended up in 30-40 ft seas - some with defective life jackets and many unable to swim. Only two supply vessels and the tug Captain John were on hand, but their crews ran an all-night rescue that saved the large majority; about six people died. The barge had ridden out the approaching hurricane at sea rather than demobilising to port.',
+      executive_summary: 'The aging pipe-lay derrick barge DLB-269 (~245 aboard) sank in the Bay of Campeche on 15 October 1995 during Hurricane Roxanne. Roxanne had peaked as a Category 3 near Cozumel, then looped erratically in the Bay of Campeche and re-intensified over the barge. Rather than demobilising, the barge tried to ride out the storm under tow (tug Captain John and supply vessel North Carolina); the battering caused serious internal flooding and it foundered. Around 230 people went into 30-40 ft seas, some with defective life jackets and many non-swimmers; two supply boats and a tug carried out a heroic all-night rescue that saved roughly 239, with about six lost. The event is documented in Michael Krieger\'s book "All the Men in the Sea" and in the COTO v. J. Ray McDermott litigation; no formal marine-casualty investigation report was retrieved.',
+      what_happened: 'DLB-269 was an aging McDermott-type pipe-laying derrick barge, with a large Clyde crane on its stern, working for Pemex on offshore pipeline in the Bay of Campeche about 60 miles off the Yucatán Peninsula. It was owned and operated by the Mexican McDermott affiliate CCC Fabricaciones y Construcciones, and carried a large, mostly Mexican construction crew together with United States citizens and a dive crew - about 245-250 people in all.\n\nHurricane Roxanne was a rare and erratic storm. It reached Category 3 (peak ~115 mph) near Cozumel around 11 October, crossed the Yucatán, then looped and stalled in the Bay of Campeche for several days, weakening and re-intensifying. Rather than demobilising the barge and crew to port, the operation attempted to ride out the storm at sea, under tow by the tug Captain John and the supply vessel North Carolina. The barge initially dodged the worst, but the prolonged battering created serious internal damage and flooding, and when Roxanne looped back over the area on 15 October the barge began to founder.\n\nRoughly 230 people ended up in 30-40 ft seas as the barge went down. According to Michael Krieger\'s account, some had defective life jackets and many could not swim. Only two oil-supply vessels and the tug Captain John were available to rescue them; their crews - helped by rescued divers - worked through the night at extreme personal risk, repeatedly nearly being swept off their own decks, to pull survivors from the water and from overloaded life rafts. The large majority were saved (about 239), but roughly six people died, including a young radio operator who drowned unnoticed inside a flooded raft. The barge was a total loss.\n\nThe disaster became the subject of Krieger\'s 2003 book "All the Men in the Sea" and of United States litigation (COTO v. J. Ray McDermott); the Louisiana appellate court dismissed the Mexican crew\'s US claims under the Jones Act amendment (46 U.S.C. §688(b)), directing their remedy to Mexico - a jurisdiction/choice-of-law ruling rather than a finding on cause.',
+      what_went_wrong: [
+        'The operation chose to ride out an approaching, erratically-tracking hurricane at sea rather than demobilising the barge and crew to port in good time.',
+        'Prolonged battering under tow caused serious internal damage and flooding, and the aging barge foundered when Roxanne looped back over it.',
+        'About 230 people entered 30-40 ft hurricane seas; some life jackets were defective and many of the crew could not swim, turning a foundering into a mass-survival emergency.',
+        'Only two supply vessels and one tug were on hand to rescue roughly 245 people in hurricane conditions - a large mismatch between people aboard and available rescue capacity.'
+      ],
+      lessons_learned: [
+        'Demobilise marine-construction and pipe-lay spreads from the path of an approaching hurricane; riding out the storm at sea is a high-risk last resort, especially for an aging unit and an erratic, looping track.',
+        'Forecast uncertainty for erratic storms must widen safety margins and trigger earlier evacuation for large persons-on-board construction barges.',
+        'Life-saving appliances and swimmer/immersion competence are decisive for very large multinational crews: defective life jackets and non-swimmers greatly increase the death toll once people are in the water.',
+        'Rescue-asset availability should be matched to the number of people aboard when working offshore through hurricane season; here a handful of vessels had to save hundreds.'
+      ],
+      actions: [
+        'Two supply vessels and the tug Captain John carried out an all-night rescue in 30-40 ft seas, saving the large majority of those aboard at extreme risk to the rescue crews.',
+        'The event was documented in detail in Michael Krieger\'s book "All the Men in the Sea" (Simon & Schuster, 2003).',
+        'In COTO v. J. Ray McDermott (1998), a Louisiana appellate court dismissed the Mexican crew members\' US claims under Jones Act §688(b), directing their remedy to Mexico - a jurisdiction/choice-of-law outcome rather than a fault finding.'
+      ],
+      metocean: {
+        wave_height_hs: 'About 30-40 ft seas at the barge during the sinking and rescue (contemporaneous accounts); ~15-20 ft waves along the Mexican coast.',
+        wind_speed: 'Hurricane Roxanne peaked at Category 3 (~115 mph / 185 km/h, 956 mb) near Cozumel; when it re-intensified over the Bay of Campeche on 14-15 October it was about 75 kn (Category 1) near the barge.',
+        sea_temp: '~29 °C Gulf of Mexico surface (seasonal).',
+        notes: 'The weather driver was the erratic, looping Hurricane Roxanne stalling in the Bay of Campeche. The immediate loss mechanism was reportedly internal flooding and foundering under tow; no barge-point instrument record was retrieved, and the wave/wind values are storm-scale figures.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the date (15 October 1995), the Bay of Campeche location, Hurricane Roxanne as the driver, DLB-269 (a McDermott-affiliated pipe-lay barge under tow by the tug Captain John and the supply vessel North Carolina), the very large crew (~245) and the mass rescue, because these are supported by the NHC-sourced Wikipedia article, Michael Krieger\'s researched book "All the Men in the Sea" (excerpted in Maritime Reporter) and the COTO v. J. Ray McDermott appellate opinion. Moderate/variable for the fatality count (about six per Wikipedia/Krieger; some accounts cite ~5) and the exact number aboard (~245-250). Note: the COTO opinion mis-dates the sinking as "October 15, 1993"; the correct year is 1995 (Hurricane Roxanne). Not established here: a surveyed casualty coordinate, instrument metocean at the barge, and a formal marine-casualty investigation report (the casualty was in Mexican waters; the cause narrative - riding out the storm, internal flooding and foundering under tow - comes from Krieger\'s secondary account).',
+      references: [
+        { title: 'Hurricane Roxanne', type: 'Encyclopedia article (NHC-sourced)', publisher: 'Wikipedia (citing NHC report AL191995 and Krieger 2003)', year: 2020, url: 'https://en.wikipedia.org/wiki/Hurricane_Roxanne', notes: 'States Roxanne caused 29 deaths, six of them from the sinking of the pipelay derrick barge DLB 269 with 245 people on board; gives the storm\'s erratic Bay of Campeche track and Category 3 peak.' },
+        { title: 'All the Men in the Sea: The Untold Story of One of the Greatest Rescues in History', type: 'Non-fiction book', publisher: 'Michael Krieger, Simon & Schuster', year: 2003, url: 'https://books.google.com/books/about/All_the_Men_in_the_Sea.html?id=f5NJ8ZOxyTQC', notes: 'Book-length account of the DLB-269 loss and rescue in Hurricane Roxanne (1995): ~230 into 30-40 ft seas, defective life jackets, non-swimmers, rescue by two supply boats and the tug Captain John.' },
+        { title: 'All the Men in the Sea (excerpt)', type: 'Magazine excerpt', publisher: 'Maritime Reporter & Engineering News (April 2003)', year: 2003, url: 'https://magazines.marinelink.com/Magazines/MaritimeReporter/200304/content/all-the-men-208201', notes: 'Published excerpt from Krieger\'s book describing the all-night rescue; names the tug Captain John and supply vessel Carolina/North Carolina and the deaths in the life rafts.' },
+        { title: 'COTO v. J. Ray McDermott, 96-2701 (La.App. 4 Cir. 3/18/98)', type: 'Appellate court opinion', publisher: 'Court of Appeal of Louisiana, Fourth Circuit', year: 1998, url: 'https://www.casemine.com/judgement/us/5914bbbeadd7b049347986b6', notes: 'States ~250 aboard DLB-269 when it sank in the Bay of Campeche during Hurricane Roxanne, under tow by the M/V Captain John and M/V North Carolina; owner/operator CCC Fabricaciones y Construcciones; claims dismissed under Jones Act §688(b). (Opinion mis-dates the year as 1993; correct year is 1995.)' },
+        { title: 'Tropical Cyclone Report: Hurricane Roxanne (AL191995)', type: 'Official hurricane report', publisher: 'National Hurricane Center', year: 1995, url: 'https://www.nhc.noaa.gov/data/tcr/AL191995_Roxanne.pdf', notes: 'Primary NHC meteorological report for Hurricane Roxanne (track, intensity, Bay of Campeche loop).' },
+        { title: 'Tugboat rescue of oil barge DLB 269 crew from Hurricane Roxanne in the Gulf of Mexico', type: 'Video footage', publisher: 'YouTube', url: 'https://www.youtube.com/watch?v=C1IMMdGkoW8', notes: 'Footage of the tugboat rescue of DLB-269 crew during Hurricane Roxanne (15 October 1995). Third-party video; used as visual context, not an authoritative record.' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       Ocean Prince — 1968
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'ocean-prince-1968',
+      name: 'Ocean Prince Semi-Submersible Break-Up in a North Sea Storm',
+      year: 1968,
+      date: '6 March 1968',
+      location: 'North Sea, off the Dogger Bank, United Kingdom sector - on location in about 75 ft (23 m) of water',
+      lat: 54.7,
+      lng: 2.0,
+      location_precision: 'Approximate presentation point on the Dogger Bank; the primary record places the rig standing on the seabed in about 75 ft of water, but a surveyed casualty coordinate was not retrieved.',
+      region: 'Europe',
+      platform_type: 'Semi-submersible drilling rig (Ocean Queen design), built 1966 by Smith\'s Dock Co. (Teesside); operating bottom-supported, resting on the seabed',
+      operator: 'Drilling for the Burmah group (UK licensee); a semi-submersible of the "Ocean" drilling fleet - exact ownership not definitively established in the reviewed sources',
+      weather_event_type: 'storm',
+      classification: 'design',
+      weather_event: 'Severe North Sea winter storm during the night of 5-6 March 1968; secondary accounts report gale conditions with ~50 ft seas and winds in excess of 80 knots',
+      fatalities: 0,
+      persons_on_board: 45,
+      survivors: 45,
+      infrastructure_impact: 'Total loss of the semi-submersible Ocean Prince, which suffered damage, had its derrick collapse into the sea, and then broke up and sank off the Dogger Bank.',
+      image: {
+        src: 'images/ocean-prince-1968-boe.png',
+        alt: 'Black-and-white archival photograph of the Ocean Prince semi-submersible drilling rig damaged and listing in heavy seas, its derrick collapsed, during the March 1968 storm.',
+        caption: 'The Ocean Prince in heavy North Sea seas with its derrick collapsed, during the storm that broke it up off the Dogger Bank in March 1968. Archival photograph; not independently dated within this project.',
+        credit: 'Via Bud\'s Offshore Energy (budsoffshoreenergy.com), sourced from the Norwegian oil-pioneers archive (oljepionerene.no); originating 1968 photographer unresolved. Copyrighted/archival - permission required, reference use only.'
+      },
+      summary: 'During a severe storm on the night of 5-6 March 1968, the semi-submersible drilling rig Ocean Prince - standing on the seabed in about 75 ft of water off the Dogger Bank - suffered damage and its derrick collapsed into the sea. All aboard (reported as 45) were withdrawn to safety by helicopter, and the rig subsequently broke up and sank. There were no fatalities. It was the second major loss of a UK North Sea drilling rig after the Sea Gem in 1965, and was raised in the House of Commons the following day.',
+      executive_summary: 'The Ocean Prince, an early UK-built semi-submersible operating bottom-supported (resting on the seabed) in about 75 ft of water off the Dogger Bank, was overwhelmed in a severe North Sea storm on 5-6 March 1968. Per the UK Minister of Power\'s statement to Parliament, the rig suffered damage, the derrick collapsed into the sea, all persons aboard were withdrawn to safety by helicopter, the standby vessel was driven off by the continuing storm, and aerial reconnaissance confirmed the rig had broken up. Offshore-history accounts note that its floating sister rig, the Ocean Viking, withstood the same winds and waves, pointing to the seated-on-a-sandbank configuration - where storm waves approached the water depth and scoured around the pontoons - as the vulnerability. All ~45 aboard survived (a celebrated helicopter rescue); there were no fatalities.',
+      what_happened: 'Ocean Prince was one of the earliest North Sea semi-submersible drilling rigs - built in 1966 by Smith\'s Dock Company on Teesside to the Ocean Queen design, and noted as the first rig to find oil in UK waters. In March 1968 it was drilling for the Burmah group on the Dogger Bank, operating in a bottom-supported mode, seated on the seabed in about 75 ft of water rather than floating on moorings.\n\nDuring the night of 5-6 March 1968 a severe storm crossed the area. According to the UK Minister of Power\'s statement to the House of Commons on 7 March 1968, the rig - standing on the seabed in 75 ft of water - suffered damage and the derrick collapsed into the sea; all persons on board at the time were withdrawn to safety by helicopter. The licensee\'s standby vessel was driven off station by the continuing storm, and an aerial reconnaissance confirmed that the rig had broken up. Offshore-history accounts add that the superstructure was torn off at about 02:00 and that by about 07:10 roughly a third of the platform had disappeared under some 60 ft of water; contemporary reports describe gale conditions with about 50 ft seas and winds in excess of 80 knots, and credit a helicopter pilot (named in accounts as Captain Robert Balls) with the safe evacuation of the crew.\n\nA telling comparison is that the Ocean Prince\'s sister rig, the Ocean Viking, rode out the same storm while drilling afloat. Offshore veterans attribute the loss to the bottom-supported configuration: seated on a sandbank with storm waves as deep as the water, the rig accelerated scour around its pontoons and imposed distorted loads on a hull that lacked the compliance a floating, moored rig has. All aboard (reported as 45 lives saved in Parliament) survived; there were no fatalities. It was the second serious loss of a UK North Sea rig after the Sea Gem in 1965.',
+      what_went_wrong: [
+        'The rig was operating bottom-supported on a sandbank in about 75 ft of water when a severe storm produced waves comparable to the water depth, exposing the seated hull to severe wave loading and accelerating seabed scour around the pontoons - conditions a floating, moored rig is better able to absorb.',
+        'In the storm the rig suffered damage and the derrick collapsed into the sea; the unit then broke up and sank.',
+        'The standby (rescue) vessel was driven off station by the continuing storm, leaving helicopter evacuation as the decisive means of getting the crew off.',
+        'It was the second major UK North Sea rig loss in little over two years (after Sea Gem, 1965), yet legislation to implement the Sea Gem inquiry\'s safety recommendations had not yet been enacted, and offshore safety still relied on voluntary co-operation under the licensing regime.'
+      ],
+      lessons_learned: [
+        'A bottom-supported drilling mode on a scour-prone sandbank is vulnerable when storm wave heights approach the water depth; a floating, moored configuration provides compliance that a rigidly seated hull does not - the floating sister rig survived the same storm.',
+        'Reliable helicopter evacuation is a critical life-safety control for offshore rigs in severe weather, particularly when standby vessels can be driven off station.',
+        'Recurring early North Sea rig losses showed that voluntary co-operation was not enough and helped drive the move toward enforceable statutory offshore safety regulation.'
+      ],
+      actions: [
+        'The loss was raised in the UK House of Commons the next day (Hansard, 7 March 1968); the Minister of Power confirmed the damage, derrick collapse, helicopter evacuation and break-up, and stated that the Sea Gem inquiry\'s recommended procedures - including regular servicing and evacuation by helicopter - had been put into practice pending legislation.',
+        'The helicopter evacuation practice recommended after the Sea Gem loss was credited with the safe deliverance of the crew.',
+        'The recurring losses contributed to the subsequent development of UK offshore safety legislation.'
+      ],
+      metocean: {
+        wave_height_hs: 'Reported about 50 ft seas during the storm (secondary/contemporary accounts), comparable to the ~75 ft water depth - a key factor for the seabed-supported configuration. Not an instrument record at the rig.',
+        wind_speed: 'Gale-force winds reported in excess of 80 knots (secondary accounts); the primary record describes only a "severe storm".',
+        notes: 'The weather driver was a severe North Sea winter storm. The distinctive factor is that the rig was operating bottom-supported on a sandbank, so storm waves approaching the water depth drove scour and hull loading; a floating sister rig survived the same conditions. Wind/wave values are secondary reports, not measurements at the rig.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the date (night of 5-6 March 1968), the location (off the Dogger Bank, standing on the seabed in about 75 ft of water), the severe storm, the damage and derrick collapse, the break-up of the rig, and the successful helicopter evacuation of all aboard with zero fatalities - because these are stated in the primary UK Parliamentary record (Hansard, 7 March 1968, statement by the Parliamentary Secretary to the Ministry of Power). The persons-aboard figure (45) is the "45 lives saved" stated in the House. Moderate/secondary for the vessel particulars (built 1966 by Smith\'s Dock, Ocean Queen design, drilling for the Burmah group), the ~50 ft seas and >80 kn winds, the ~02:00 derrick collapse and ~07:10 one-third-submerged timings, and the bottom-supported/scour cause narrative, which come from a vessel database and offshore-history accounts rather than a formal casualty report. Not established here: the exact rig ownership/operator, a surveyed casualty coordinate, and a formal inquiry report (none was retrieved; the Minister referenced the earlier Sea Gem inquiry).',
+      references: [
+        { title: 'Drilling Rig "Ocean Prince" (Loss)', type: 'Primary government record (Hansard)', publisher: 'UK Parliament, House of Commons (HC Deb 7 March 1968, vol 760 cc659-60)', year: 1968, url: 'https://api.parliament.uk/historic-hansard/commons/1968/mar/07/drilling-rig-ocean-prince-loss', notes: 'Statement by the Parliamentary Secretary to the Ministry of Power: during the night of 5-6 March, in a severe storm, the Ocean Prince (standing on the seabed in 75 ft of water) suffered damage and the derrick collapsed into the sea; all aboard were withdrawn to safety by helicopter; the standby vessel was driven off by the storm; aerial reconnaissance confirmed the rig had broken up. Mr Lubbock noted "45 lives were saved" and asked about an inquiry as for the Sea Gem.' },
+        { title: 'OCEAN PRINCE - Tees Built Ships', type: 'Vessel database record', publisher: 'teesbuiltships.co.uk', url: 'https://www.teesbuiltships.co.uk/view.php?ref=170636', notes: 'Ocean Prince built by Smith\'s Dock Company Ltd. in 1966; drilling rig; 06/03/1968 broke up and sank off the Dogger Bank.' },
+        { title: 'The sinking of the Ocean Prince (1968) and the heroic North Sea rescue', type: 'Offshore-history account (secondary)', publisher: 'Bud\'s Offshore Energy', year: 2023, url: 'https://budsoffshoreenergy.com/2023/08/21/the-sinking-of-the-ocean-prince-1968-and-the-heroic-north-sea-rescue/', notes: 'Recounts the ~02:00 superstructure loss and ~07:10 partial sinking, the bottom-supported-on-a-sandbank vulnerability and scour concern, the survival of the floating sister rig Ocean Viking, and the helicopter rescue by Capt. Robert Balls; cites the Norwegian oil-pioneers site (oljepionerene.no) and offshore veteran JL Daeschler.' },
+        { title: 'Ocean Prince havari (loss) - photographs and account', type: 'Offshore-history archive (secondary)', publisher: 'Oljepionerene.no (Norwegian oil pioneers)', url: 'http://oljepionerene.no/bilder/ocean_prince/havari_op_eng.php', notes: 'Norwegian oil-history archive page on the Ocean Prince loss, with photographs and narrative.' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
        5. Bohai No. 2 — 1979
     ─────────────────────────────────────────────────── */
     {
@@ -493,7 +943,8 @@ window.INCIDENTS_DATA = {
         { title: 'Relatives of Kolskaya victims applied to the ECHR', type: 'Appeal and legal follow-up reporting', publisher: 'Interfax', year: 2018, url: 'https://www.interfax.ru/russia/600595' },
         { title: 'Court rejected Kolskaya owner\'s claim against the Russian Maritime Register', type: 'Arbitration and RosTransNadzor findings reporting', publisher: 'Sakh.online', year: 2012, url: 'https://sakh.online/news/24/2012-06-06/sud-otkazal-vladeltsu-kolskoy-v-iske-k-morskomu-registru-rossii-301952' },
         { title: 'Lessons Learnt from the Kolskaya Incident — Vadim Anokhin (Senior Metocean Engineer, Sarawak Shell Berhad)', type: 'Shell internal case study', file: 'background files/Lessons Learnt from Kolskaya Incident - Vadim Anokhin - Final VA.pdf', internal: true },
-        { title: 'Wikipedia — Kolskaya (jack-up rig)', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Kolskaya_(jack-up_rig)' }
+        { title: 'Wikipedia — Kolskaya (jack-up rig)', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Kolskaya_(jack-up_rig)' },
+        { title: 'Кольская буровая', type: 'Video', publisher: 'YouTube', url: 'https://www.youtube.com/watch?v=v0xBDfiP4Q4', notes: 'Video from Kolskaya Jack-Up before and during the incident.' }
       ]
     },
 
@@ -652,9 +1103,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
       9. Sea Gem Jack-up - 1965
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'sea-gem-1965',
       name: 'Sea Gem Jack-up Collapse During Jack-Down',
@@ -718,9 +1169,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        10. Gunashli Platform No. 10 - 2015
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'gunashli-2015',
       name: 'Gunashli Platform No. 10 Storm Damage and Fire, Caspian Sea',
@@ -780,9 +1231,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        11. Hurricane Juan - 1985 (Gulf of Mexico)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'hurricane-juan-1985',
       name: 'Hurricane Juan - Offshore Vessels',
@@ -834,9 +1285,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        12. Bourbon Dolphin - 2007
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'bourbon-dolphin-2007',
       name: 'Bourbon Dolphin AHTS Capsize During Anchor Handling',
@@ -895,9 +1346,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        13. AMBER II / SEA WORKER - 2016
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'amber-sea-worker-2016',
       name: 'AMBER II / SEA WORKER Capsize and Grounding During Tow',
@@ -959,16 +1410,16 @@ window.INCIDENTS_DATA = {
       metocean: {
         wave_height_hs: '3.5 m (max waves 5-6 m)',
         wind_speed: '16 m/s (~31 knots) from SW',
-        notes: 'SEA WORKER\'s trading permit limited manned tow to Hs â‰¤ 2.0 m; crew had independently adopted 2.5 m as their operational limit. Near-shore steep short-period waves imposed higher dynamic loads on the towing pennant than open-sea conditions at the same Hs.'
+        notes: 'SEA WORKER\'s trading permit limited manned tow to Hs ≤ 2.0 m; crew had independently adopted 2.5 m as their operational limit. Near-shore steep short-period waves imposed higher dynamic loads on the towing pennant than open-sea conditions at the same Hs.'
       },
       references: [
         { title: 'Marine Accident Report: AMBER II and SEA WORKER - Loss of Tow on 27 January 2016', url: 'https://dmaib.com/media/8572/amber-ii-and-sea-worker-loss-of-tow-on-27-january-2016.pdf', type: 'Official accident report', publisher: 'Danish Maritime Accident Investigation Board (DMAIB)', year: 2016 }
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        14. MT Bunga Alpinia Lightning - 2012
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'bunga-alpinia-2012',
       name: 'MT Bunga Alpinia Lightning Explosion',
@@ -1023,9 +1474,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        15. Key Biscayne - 1983 (no fatalities)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'key-biscayne-1983',
       name: 'Key Biscayne Jack-up Capsize During Tow',
@@ -1089,9 +1540,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        16. Lightning Strike - Middle East Oilfield - 2013
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lightning-me-2013',
       name: 'Lightning Strike - Middle East Oilfield',
@@ -1136,9 +1587,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-     /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+     /* ────────────────────────────────────────────────────────────
        17. ASV Gangway Collapse during disconnection - 2014
-     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+     ──────────────────────────────────────────────────────────── */
     {
       id: 'gumusut-gangway-2014',
       name: 'ASV Gangway Collapse during disconnection',
@@ -1189,9 +1640,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        18. Gumusut-Kakap Barge Mooring Failure - 2013
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'gumusut-barge-2013',
       name: 'Drifting Cargo Barge / Tug collision',
@@ -1242,9 +1693,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        19. Qarn Alam Onshore Storm - 1996
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'qarn-alam-1996',
       name: 'Qarn Alam Oilfield Camp Storm',
@@ -1294,9 +1745,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        20. Shell Kulluk Arctic Tow - 2012
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'kulluk-2012',
       name: 'Kulluk Arctic Drilling Barge Tow Grounding',
@@ -1357,9 +1808,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        21. Shell Nova Scotia Riser Break - 2016
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'nova-scotia-riser-2016',
       name: 'Scotian Slope Drilling Riser Break',
@@ -1416,9 +1867,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        22. Skandi Hawk / Safe Astoria - 2011
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'skandi-hawk-2011',
       name: 'Skandi Hawk / Safe Astoria Near-Miss',
@@ -1466,9 +1917,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        23. Helicopter Rollover on Helideck - 2009
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'helicopter-rollover-2009',
       name: 'Helicopter Rollover on Offshore Helideck',
@@ -1531,16 +1982,16 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ────────────────────────────────────────────────────────────
        INCIDENTS CARRIED OVER FROM PREVIOUS DATABASE (v2.0)
        Sources: earlier research from the live site at
        vdm-ghb.github.io/incidents - 10 additional incidents
        including GoM hurricanes, internal waves, helicopter
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ──────────────────────────────────────────────────────────── */
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        24. Cyclone Orson - North Rankin A - 1989
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'cyclone_orson_1989',
       name: 'Cyclone Orson - North Rankin A',
@@ -1605,12 +2056,12 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        25. West Gamma - 1990
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'west_gamma_1990',
-      name: 'West Gamma Jack-up',
+      name: 'West Gamma Jack-up Capsize During Tow',
       year: 1990,
       date: '20-21 August 1990',
       location: 'North Sea, Gorm field, Danish sector (~55°23′N 04°46′E, near pumping station "Bravo 11")',
@@ -1668,9 +2119,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        26. Hurricane Andrew - Gulf of Mexico - 1992
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'hurricane_andrew_1992',
       name: 'Hurricane Andrew - Gulf of Mexico Offshore',
@@ -1725,9 +2176,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        27. Hurricane Ivan - GoM / Taylor Energy MC20 - 2004
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'hurricane_ivan_2004',
       name: 'Hurricane Ivan - GoM / Taylor Energy MC20',
@@ -1784,9 +2235,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        28. Hurricane Katrina - GoM Offshore - 2005
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'hurricane_katrina_2005',
       name: 'Hurricane Katrina - GoM Offshore',
@@ -1847,9 +2298,148 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ──────────────────────────────────────────────────
+       Ocean Warwick — Hurricane Katrina MODU adrift — 2005
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'ocean-warwick-katrina-2005',
+      name: 'Ocean Warwick Jack-up Set Adrift and Grounded During Hurricane Katrina',
+      year: 2005,
+      date: '29-31 August 2005',
+      location: 'Gulf of Mexico - broke free from its Louisiana-shelf location and grounded on Dauphin Island, Alabama',
+      lat: 30.25,
+      lng: -88.13,
+      location_precision: 'Presentation point is the reported grounding site on Dauphin Island, Alabama. News accounts report the unit was carried roughly 66 miles (about 106 km) from its Gulf location to the island; the exact pre-storm drilling location and a surveyed grounding coordinate were not retrieved.',
+      region: 'North America',
+      platform_type: 'Mat-supported self-elevating drilling unit (jack-up), owned by Diamond Offshore Drilling',
+      operator: 'Diamond Offshore Drilling (rig owner)',
+      weather_event_type: 'cyclone',
+      classification: 'maritime',
+      storm_sid: '2005236N23285',
+      storm_name: 'KATRINA',
+      weather_event: 'Hurricane Katrina - Category 5 peak in the Gulf of Mexico; Category 3 at Louisiana landfall on 29 August 2005',
+      fatalities: 0,
+      persons_on_board: 0,
+      infrastructure_impact: 'The unmanned jack-up was driven off its Gulf location by Hurricane Katrina, drifted roughly 66 miles (about 106 km) and grounded on Dauphin Island, Alabama, where aerial photographs on 30-31 August 2005 showed it aground in shallow water with significant damage. It became one of the most widely photographed images of Katrina\'s impact on the offshore industry.',
+      image: {
+        src: 'images/ocean-warwick-katrina-2005-slate.jpg',
+        alt: 'News photograph of the Ocean Warwick jack-up drilling rig grounded on the Dauphin Island shoreline after Hurricane Katrina.',
+        caption: 'The Ocean Warwick jack-up aground at Dauphin Island, Alabama, after being carried across the Gulf by Hurricane Katrina, late August 2005. News image; not independently dated within this project.',
+        credit: 'Slate (compote.slate.com); originating photographer and agency unresolved. Copyrighted - permission required, reference use only.'
+      },
+      summary: 'During Hurricane Katrina the mat-supported jack-up Ocean Warwick, owned by Diamond Offshore, was driven off its Gulf of Mexico location and carried roughly 66 miles before grounding on Dauphin Island, Alabama, around 30-31 August 2005. The rig had been evacuated ahead of the storm, so there were no injuries, but it sustained significant damage. It is one of the clearest single-asset examples of the 2004-2005 theme in which mobile offshore drilling units (MODUs) were set adrift by Gulf hurricanes - a pattern that prompted MMS-commissioned studies and revised industry mooring and storm-preparation guidance.',
+      executive_summary: 'The Diamond Offshore jack-up Ocean Warwick was set adrift by Hurricane Katrina and grounded on Dauphin Island, Alabama, roughly 66 miles from its Gulf location, around 30-31 August 2005. Evacuated in advance, it caused no casualties but was heavily damaged. The event is part of the broader 2004-2005 pattern of MODUs going adrift in Gulf hurricanes (Ivan 2004; Katrina and Rita 2005), which MMS-commissioned engineering studies chronicled and which drove changes to MODU mooring and hurricane-season preparation practice. Basin-wide, MMS reported Katrina and Rita together destroyed at least 113 platforms and severely damaged dozens more.',
+      what_happened: 'Ocean Warwick was a mat-supported self-elevating drilling unit (jack-up) owned by Diamond Offshore Drilling and working in the Gulf of Mexico off Louisiana. Like other mobile units, it was evacuated ahead of Hurricane Katrina, which crossed the Gulf as a Category 5 storm before making landfall near the Louisiana-Mississippi border on 29 August 2005 as a Category 3.\n\nDuring the storm the unmanned rig was driven off its location and carried across the Gulf. Aerial surveys on 30-31 August 2005 located it aground on Dauphin Island, Alabama - contemporary news reports describe it as having been carried roughly 66 miles from its Gulf position - stuck in shallow water near the island with significant damage. Photographs of the rig grounded against the Alabama shoreline became among the most recognisable images of Katrina\'s offshore impact.\n\nThe Ocean Warwick loss was one instance of a wider phenomenon in the 2004-2005 seasons: mobile offshore drilling units - jack-ups driven off location and moored semi-submersibles whose mooring lines failed - going adrift in Gulf hurricanes. MMS-commissioned engineering studies of Hurricane Ivan (2004) and of Katrina and Rita (2005) chronicled these incidents, several of which involved rigs dragging or breaking free and colliding with, or drifting toward, other infrastructure.',
+      what_went_wrong: [
+        'The mat-supported jack-up Ocean Warwick could not hold its Gulf of Mexico location in Hurricane Katrina and was driven off station and carried roughly 66 miles (about 106 km) before grounding on Dauphin Island, Alabama.',
+        'Station-keeping and storm-survival provisions for mobile units in the 2004-2005 Gulf hurricanes were not adequate for the wind, wave and surge loads experienced, contributing to a broader pattern of MODUs set adrift.',
+        'Drifting rigs posed a secondary hazard to pipelines, fixed platforms and the shoreline; the wider MMS studies documented cases of adrift MODUs interacting with other infrastructure.',
+        'Because Ocean Warwick was evacuated in advance, the consequence was asset loss and grounding rather than casualties - the safety-critical control that worked here was timely evacuation, not the unit staying on location.'
+      ],
+      lessons_learned: [
+        'Timely, complete evacuation of mobile units ahead of a major hurricane is the decisive life-safety control; Ocean Warwick was a total-loss grounding with zero casualties because it was unmanned.',
+        'Mobile-unit station-keeping (jack-up leg/soil capacity and preload margins; semi-submersible mooring design) must be assessed against realistic hurricane wind, wave and current loads, not lower routine criteria - the recurring 2004-2005 MODU-adrift pattern showed the previous basis was insufficient.',
+        'An adrift MODU is a mobile hazard to pipelines, platforms and the coast; hurricane planning must consider the drift paths and secondary-collision risk of units that break free.',
+        'Fleet-wide, single-season vulnerability must be planned for: MMS-commissioned post-event studies of Ivan, Katrina and Rita fed directly into revised MODU mooring and hurricane-preparation guidance.'
+      ],
+      actions: [
+        'MMS commissioned engineering studies of MODU performance in Hurricane Ivan (e.g. OTC-18322, 2006) and of the Katrina/Rita MODU drift and damage, chronicling the incidents and informing mooring and preparation guidance.',
+        'The industry and regulator reviewed and strengthened MODU mooring criteria and hurricane-season preparation practice following the 2004-2005 seasons (including API mooring guidance updates).',
+        'MMS published combined Katrina/Rita damage statistics (at least 113 platforms destroyed and dozens severely damaged), the most comprehensive record of 2005 hurricane impacts on Gulf infrastructure.'
+      ],
+      metocean: {
+        wave_height_hs: '~15-17 m in the deep Gulf during Katrina; lower but still severe on the shelf where the unit was located (basin-scale values from the Katrina record, not a measurement at the rig).',
+        wind_speed: 'Katrina sustained ~175 mph (152 kn) at Gulf peak; ~125 mph (108 kn) at Louisiana landfall.',
+        sea_temp: '~30 °C Gulf surface (seasonal).',
+        notes: 'The weather driver is Hurricane Katrina. Ocean Warwick was one of several mobile units set adrift; no wind or wave instrument record at the unit itself was retrieved, and the metocean values are basin/landfall figures from authoritative hurricane summaries.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the asset (Diamond Offshore jack-up Ocean Warwick), the grounding on Dauphin Island, Alabama around 30-31 August 2005, and zero casualties (evacuated), because these are supported by contemporary 2005 news reporting and wire-service imagery and analysed in Cruz & Krausmann (2008). Moderate for the roughly 66-mile drift distance (news accounts). Not established: the exact pre-storm drilling location, a surveyed grounding coordinate, and any wind/wave measurement at the unit. Note: the same rig was separately damaged on location in Hurricane Ivan (September 2004) per MMS report 548aa (multi-node leg failures, repairable, did not travel) - a distinct earlier event; the Ivan MMS studies cited here are MODU-adrift context and rig background, not evidence of the Katrina grounding.',
+      references: [
+        { title: 'Texas firm\'s oil rig carried 66 miles by Katrina to Alabama beach', type: 'News report', publisher: 'Associated Press / Plainview Herald', year: 2005, url: 'https://www.myplainview.com/news/article/Texas-firm-s-oil-rig-carried-66-miles-by-Katrina-8626991.php', notes: 'Reports aerial photographs (30 August 2005) of the Ocean Warwick aground in shallow water off Dauphin Island after being carried about 66 miles.' },
+        { title: 'Diamond jack-up found', type: 'Industry news report', publisher: 'Upstream Online', year: 2005, url: 'https://www.upstreamonline.com/online/diamond-jack-up-found/1-1-1031357', notes: 'Reports the Diamond Offshore jack-up ran aground on Dauphin Island with significant damage.' },
+        { title: 'Katrina brings oil platform to Dauphin Island', type: 'Public-radio news report', publisher: 'Alabama Public Radio', year: 2005, url: 'https://www.apr.org/2005-08-31/katrina-brings-oil-platform-to-dauphin-island', notes: 'Contemporary local coverage of the Ocean Warwick grounding on Dauphin Island, 31 August 2005.' },
+        { title: 'MODU Performance in Hurricane Ivan (OTC-18322)', type: 'MMS-commissioned engineering study', publisher: 'Offshore Technology Conference / U.S. Minerals Management Service', year: 2006, url: 'https://onepetro.org/OTCONF/proceedings/06OTC/06OTC/OTC-18322-MS/30015', notes: 'MMS-commissioned study of MODU incidents in Hurricane Ivan (2004). Cited here as broader MODU-adrift context, not as a source for the Katrina 2005 grounding.' },
+        { title: 'Post Mortem Failure Assessment of MODUs During Hurricane Ivan (TAP)', type: 'Regulator technical assessment', publisher: 'MMS/BSEE Technical Assessment Program', url: 'https://www.bsee.gov/sites/bsee.gov/files/tap-technical-assessment-program/548aa.pdf', file: 'background files/MMS_MODU_Hurricane_Ivan_Post_Mortem_548aa.pdf', notes: 'MMS Hurricane Ivan (2004) post-mortem (downloaded). Its "Ocean Warwick" entry documents this rig\'s EARLIER on-location Ivan damage (multi-node failures in 3 legs, buckled starboard preload-tank bulkhead, wellhead impaled on hull, all 3 jackhouses damaged - repairable, did NOT travel) - a separate event about 11 months before the Katrina grounding recorded here. Cited as rig background and MODU context, not as evidence of the Katrina grounding.' },
+        { title: 'Damage to offshore oil and gas facilities following hurricanes Katrina and Rita', type: 'Peer-reviewed analysis', publisher: 'Cruz & Krausmann, Journal of Loss Prevention in the Process Industries (ScienceDirect)', year: 2008, url: 'https://www.sciencedirect.com/science/article/pii/S0950423008000314', notes: 'Analyses Katrina/Rita damage to offshore facilities, including mobile units set adrift.' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
+       GoM 2004-2005 Hurricanes — moored MODUs adrift (thematic)
+    ─────────────────────────────────────────────────── */
+    {
+      id: 'gom-modu-mooring-adrift-2004-2005',
+      name: '2004-2005 GoM Hurricanes - Moored MODUs Set Adrift and Mooring-System Failures',
+      year: 2005,
+      date: 'September 2004 (Ivan); August-September 2005 (Katrina and Rita)',
+      location: 'Gulf of Mexico - deepwater and shelf drilling areas',
+      lat: 27.5,
+      lng: -90.5,
+      location_precision: 'Thematic/aggregate record spanning many mobile units across the Gulf of Mexico in three hurricanes. The plotted point is a nominal central-GoM presentation location, not a single casualty position.',
+      region: 'North America',
+      platform_type: 'Mobile offshore drilling units (MODUs) - primarily moored semi-submersibles; jack-ups driven off location (e.g. Ocean Warwick) are a related off-station mechanism',
+      operator: 'Multiple drilling contractors and Gulf of Mexico operators',
+      weather_event_type: 'cyclone',
+      classification: 'maritime',
+      weather_event: 'Hurricanes Ivan (September 2004), Katrina (late August 2005) and Rita (late September 2005) - successive intense Gulf of Mexico hurricanes',
+      fatalities: 0,
+      infrastructure_impact: 'Mooring-system failures caused 16 deepwater MODUs to go adrift across Hurricanes Ivan, Katrina and Rita (MMS-sponsored OTRC study). Industry reporting records that of the moored MODUs standing in each storm\'s path, 6 broke free in Katrina and 13 in Rita; across Ivan, Katrina and Rita a total of about 21 MODUs suffered complete or partial mooring failures. Drifting units dragged anchors across, and in cases collided with or threatened, pipelines and fixed and floating production infrastructure. This mobile-unit toll was in addition to fixed-platform destruction - MMS reported Katrina and Rita together destroyed at least 113 platforms.',
+      image: {
+        src: 'images/gom-modu-ensco64-adrift-ivan-2004-mms.jpg',
+        alt: 'Aerial photograph of the ENSCO 64 jack-up drilling rig adrift and damaged in the open Gulf of Mexico after Hurricane Ivan.',
+        caption: 'The jack-up ENSCO 64 adrift and heavily damaged about 40 miles from its location during recovery after Hurricane Ivan (2004) - a worked example of the 2004-2005 pattern of mobile drilling units set adrift by Gulf hurricanes. Figure 34 of the MMS/BSEE post-mortem MODU assessment.',
+        credit: 'U.S. Minerals Management Service (MMS) / BSEE, "Post Mortem Failure Assessment of MODUs During Hurricane Ivan" (Order No. 0105PO39221), Figure 34. U.S. Government work - public domain; attribute to MMS/BSEE.'
+      },
+      summary: 'In Hurricanes Ivan (2004), Katrina and Rita (2005), mooring-system failures set 16 deepwater MODUs adrift (6 broke free in Katrina, 13 in Rita; about 21 suffered mooring failures overall). Evacuated units meant no direct casualties, but drifting rigs dragged anchors and threatened pipelines and platforms. The pattern drove MMS studies and revised API MODU mooring and hurricane-preparation guidance. Thematic record; the Ocean Warwick grounding is documented separately.',
+      executive_summary: 'Hurricanes Ivan (2004), Katrina and Rita (2005) exposed a systemic weakness in moored-MODU station-keeping in the Gulf of Mexico. Mooring failures set 16 deepwater MODUs adrift across the three storms (MMS-sponsored OTRC study); industry reporting records 6 moored MODUs breaking free in Katrina and 13 in Rita, with roughly 21 MODUs suffering complete or partial mooring failures overall. Drifting units dragged anchors and collided with or threatened pipelines and production facilities. No direct fatalities resulted because units were evacuated, but the events prompted a joint industry project, MMS-commissioned post-mortem engineering studies, and strengthened API mooring design and hurricane-preparation criteria. Documented separately: the Ocean Warwick jack-up driven off location and grounded at Dauphin Island in Katrina.',
+      what_happened: 'Between 2004 and 2005 three intense hurricanes crossed the Gulf of Mexico drilling areas: Ivan (September 2004), Katrina (late August 2005) and Rita (late September 2005). Moored MODUs - mainly semi-submersible drilling rigs held on station by spread-mooring systems - repeatedly lost station-keeping when mooring lines and anchor/foundation components failed under hurricane wind, wave and current loading.\n\nAn MMS-sponsored Offshore Technology Research Center (OTRC) study, "No MODUs Adrift", reported that mooring-system failures caused 16 deepwater MODUs to go adrift across Ivan, Katrina and Rita. Industry (IADC) reporting records that of the moored MODUs in each storm\'s path, 6 broke free under Katrina and 13 under Rita; a 2007 Offshore Technology Conference paper reported that Ivan, Katrina and Rita together left about 21 MODUs having suffered complete or partial mooring failures.\n\nThe MMS Hurricane Ivan post-mortem gives the Ivan (2004) breakdown: five semi-submersibles parted moorings and four went adrift, while the only jack-up lost was the Ensco 64 (all three legs failed and the derrick and substructure collapsed onto the pipe deck; the hull floated off and was found about 40 miles from location). It found that, for every semi that broke its moorings, the failure was an expected outcome once the actual Ivan winds, waves and currents were compared with the mooring design condition. Ivan also destroyed 7 platforms, badly damaged 33 more and impacted 162 pipeline segments; earlier Gulf storms had shown the same pattern (about five MODUs went adrift in Hurricane Andrew in 1992, one toppling two fixed platforms and causing pipeline failures from dragging anchors).\n\nA drifting MODU is a large, uncontrolled hazard: it can drag its anchors across and damage pipelines and subsea systems, and can collide with fixed or floating production platforms and transportation hubs. Because the units were evacuated ahead of the storms, these events produced asset losses and significant secondary risk to infrastructure rather than direct casualties. In parallel, jack-ups were driven off location or toppled (the Ocean Warwick jack-up was carried about 66 miles and grounded on Dauphin Island in Katrina; that event is recorded separately).\n\nThe scale and repetition of the mooring failures prompted a joint industry project (JIP) to strengthen MODU moorings before the following hurricane season, MMS-commissioned post-mortem engineering studies of Ivan and of Katrina/Rita, and a review of whether API mooring design criteria were adequate - leading to revised API station-keeping guidance and interim Gulf-of-Mexico hurricane-mooring criteria.',
+      what_went_wrong: [
+        'Moored-MODU mooring systems (lines, connectors and anchor/foundation components) were not designed for the wind, wave and current loads of successive intense Gulf hurricanes, and failed - setting 16 deepwater MODUs adrift across Ivan, Katrina and Rita.',
+        'The failures were widespread, not isolated: industry reporting records 6 moored MODUs breaking free in Katrina and 13 in Rita, with about 21 MODUs suffering complete or partial mooring failures across the three storms.',
+        'A drifting MODU became a mobile hazard to critical infrastructure, dragging anchors across pipelines and colliding with or threatening fixed and floating production systems and transportation hubs.',
+        'Existing API mooring design criteria for MODUs in the Gulf hurricane season proved insufficient, and no reliable means existed to prevent a drift-off after a mooring failure or to slow or stop an already-drifting unit.',
+        'The vulnerability was cumulative across a short window (Lili 2002, then Ivan 2004, then Katrina and Rita 2005), yet mooring criteria had not been revised quickly enough between seasons.'
+      ],
+      lessons_learned: [
+        'Moored-MODU station-keeping must be designed against realistic hurricane metocean loads for the Gulf of Mexico, not lower routine or single-event criteria; the repeated 2004-2005 failures showed the previous basis was inadequate.',
+        'Mooring reliability is a whole-system problem: lines, connectors and anchor/foundation capacity must all be assessed for progressive-failure behaviour, because loss of a few components can cascade to total loss of station.',
+        'An adrift MODU is a fleet-level and infrastructure-level hazard - hurricane planning must consider drift paths, anchor-drag damage to pipelines, and collision risk to nearby platforms, not just the survival of the individual unit.',
+        'Timely evacuation remains the decisive life-safety control: the 2004-2005 mooring failures caused asset and infrastructure loss but no direct fatalities because units were unmanned.',
+        'Single-season, multi-storm exposure must drive prompt between-season revision of design and preparation standards, supported by post-event data capture (GPS drift tracks, mooring-failure forensics, hindcast metocean).',
+        'Mooring-component quality and traceability are the practical weak point: with mooring lines 2-3 miles long, several components are suspected of having failed below their design load, so the MMS post-mortem called for enhanced quality systems, component traceability and discard criteria for pre-laid and rig moorings.'
+      ],
+      actions: [
+        'The Minerals Management Service (MMS) commissioned engineering studies of MODU performance in Hurricane Ivan (OTC-18322) and post-mortem analyses of MODUs in Katrina and Rita, chronicling the failures and informing revised criteria.',
+        'An MMS-sponsored Offshore Technology Research Center project, "No MODUs Adrift" (final report C188, 2008), developed technical options to prevent a MODU going adrift after a mooring failure and to slow or stop an already-drifting unit.',
+        'A joint industry project (JIP) assessed methods to strengthen MODU mooring systems before the next hurricane season and reviewed whether API mooring design criteria should be increased.',
+        'The American Petroleum Institute revised station-keeping guidance (API RP 2SK) and issued interim Gulf-of-Mexico hurricane-mooring criteria (e.g. API 2INT-MOU) to raise MODU mooring design and preparation standards.',
+        'For jack-ups, API developed Recommended Practice RP95J ("Gulf of Mexico Jackup Optimization during Hurricane Season"), raising air-gap requirements (up to about 61 ft), requiring operator soil and metocean information and stricter adherence to operating-manual design limits, and adding a satellite-tracking requirement on storm abandonment so a drifted-off jack-up can be located.'
+      ],
+      metocean: {
+        wave_height_hs: 'Hurricane-scale seas across all three storms; Ivan produced measured significant wave heights up to ~17.9 m in the deep Gulf (with a ~27.7 m maximum individual wave), and Katrina/Rita generated comparably extreme deepwater seas. Values are storm-scale, not measurements at individual units.',
+        wind_speed: 'Category 3-5 hurricane winds in the Gulf: Ivan, Katrina and Rita each reached major-hurricane intensity offshore.',
+        sea_temp: '~30 °C Gulf surface (seasonal).',
+        notes: 'The weather driver is three successive intense Gulf of Mexico hurricanes. The distinctive metocean lesson is station-keeping/mooring failure of floating mobile units under hurricane wind-wave-current loading, which is separate from the fixed-platform wave/surge destruction captured in the basin-wide Ivan, Katrina and Rita records.'
+      },
+      source_classification: 'external',
+      shell_internal_only: false,
+      data_quality: 'High for the core figures - 16 deepwater MODUs adrift across Ivan/Katrina/Rita (MMS-sponsored OTRC study), 6 moored MODUs breaking free in Katrina and 13 in Rita (IADC), about 21 MODUs with complete or partial mooring failures (OTC-18900), and the resulting MMS studies, JIP and API guidance revisions - because these are stated in MMS-commissioned engineering studies, an Offshore Technology Conference paper and IADC industry reporting. The zero-direct-fatalities characterisation reflects that MODUs were evacuated ahead of the storms; this is a thematic/aggregate record rather than a single-asset casualty. Not established here: a complete per-unit list of the adrift MODUs, individual drift distances, and unit-level metocean measurements. Some counts are reported on slightly different bases (deepwater vs all moored MODUs; adrift vs mooring-failure), and are attributed to their specific sources rather than merged.',
+      references: [
+        { title: 'No MODUs Adrift (final report C188)', type: 'MMS-sponsored engineering study', publisher: 'Offshore Technology Research Center (Ward, Zhang, Kim, Aubeny, Gilbert) / U.S. Minerals Management Service', year: 2008, url: 'https://otrc.tamu.edu/research/publications/risers-and-moorings/no-modus-adrift/', notes: 'States mooring-system failures caused 16 deepwater MODUs to go adrift during Hurricanes Ivan, Katrina and Rita, and the infrastructure hazards of drifting units.' },
+        { title: 'MODU Performance in Hurricane Ivan (OTC-18322)', type: 'MMS-commissioned engineering study', publisher: 'Offshore Technology Conference / U.S. Minerals Management Service', year: 2006, url: 'https://onepetro.org/OTCONF/proceedings/06OTC/06OTC/OTC-18322-MS/30015', notes: 'Chronicles MODU incidents (including units set adrift) in Hurricane Ivan.' },
+        { title: 'Improved Moored MODU Design Codes for Hurricane Season (OTC-18900)', type: 'Technical conference paper', publisher: 'Offshore Technology Conference', year: 2007, url: 'https://onepetro.org/OTCONF/proceedings/07OTC/07OTC/OTC-18900-MS/37304', notes: 'Reports that Ivan, Katrina and Rita (2004-2005) resulted in about 21 MODUs suffering complete or partial mooring failures, and improved moored-MODU design codes.' },
+        { title: 'Post-Mortem Analysis of MODUs in Hurricanes Katrina and Rita', type: 'Technical analysis (JPT)', publisher: 'Journal of Petroleum Technology / SPE', year: 2010, url: 'https://onepetro.org/JPT/article/62/02/57/194180/Post-Mortem-Analysis-of-MODUs-in-Hurricanes', notes: 'Post-mortem analysis of moored MODUs in Katrina and Rita.' },
+        { title: 'Drilling ahead: hurricane MODU mooring failures', type: 'Industry reporting', publisher: 'IADC Drilling Contractor (Jan/Feb 2006)', year: 2006, url: 'https://iadc.org/dcpi/dc-janfeb06/Jan06-ahead.pdf', notes: 'Reports 14 moored MODUs in Katrina\'s path and 16 in Rita\'s, with 6 breaking free under Katrina and 13 under Rita.' },
+        { title: 'Damage to offshore oil and gas facilities following hurricanes Katrina and Rita', type: 'Peer-reviewed analysis', publisher: 'Cruz & Krausmann, Journal of Loss Prevention in the Process Industries (ScienceDirect)', year: 2008, url: 'https://www.sciencedirect.com/science/article/pii/S0950423008000314', notes: 'Analyses Katrina/Rita offshore damage, including mobile units set adrift.' },
+        { title: 'Post Mortem Failure Assessment of MODUs During Hurricane Ivan (TAP)', type: 'Regulator technical assessment', publisher: 'MMS/BSEE Technical Assessment Program', url: 'https://www.bsee.gov/sites/bsee.gov/files/tap-technical-assessment-program/548aa.pdf', file: 'background files/MMS_MODU_Hurricane_Ivan_Post_Mortem_548aa.pdf', notes: 'MMS Hurricane Ivan (2004) post-mortem (downloaded and analysed). Gives the Ivan breakdown (5 semis parted moorings, 4 adrift; only jack-up lost = Ensco 64), the finding that broken moorings were an expected outcome once actual metocean exceeded the mooring design condition, mooring quality-control conclusions, and the resulting API RP95J jack-up guidance. Source of the Ensco 64 adrift photograph (Figure 34).' }
+      ]
+    },
+
+    /* ──────────────────────────────────────────────────
        29. Hurricane Rita - GoM Offshore - 2005
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ─────────────────────────────────────────────────── */
     {
       id: 'hurricane_rita_2005',
       name: 'Hurricane Rita - GoM Offshore',
@@ -1902,9 +2492,82 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    {
+      id: 'typhoon-tlp-capsize-rita-2005',
+      name: 'Typhoon Mini-TLP Capsize During Hurricane Rita',
+      year: 2005,
+      date: '23 September 2005',
+      location: 'Green Canyon Block 237, Gulf of Mexico; found capsized and grounded in Eugene Island Block 271',
+      lat: 27.73156398,
+      lng: -91.11114852,
+      location_precision: 'BSEE platform-structure coordinates for A (Typhoon TLP) in GC 237 (NAD27), used as the approximate capsize point. The investigation reports the post-storm grounding in EI 271 but provides no coordinates for that location.',
+      region: 'North America',
+      platform_type: 'Single-column mini tension-leg platform (TLP)',
+      operator: 'Chevron U.S.A. Inc.',
+      weather_event_type: 'cyclone',
+      classification: 'design',
+      storm_sid: '2005261N21290',
+      storm_name: 'RITA',
+      weather_event: 'Hurricane Rita; local Typhoon conditions estimated by site hindcast, distinct from Rita\'s basin-wide Category 5 peak',
+      fatalities: 0,
+      persons_on_board: 0,
+      image: {
+        src: 'images/typhoon-tlp-boem-context.jpg',
+        alt: 'BOEM-hosted photograph of the Typhoon mini-TLP in Green Canyon.',
+        caption: 'BOEM/BOEM-OPA context photograph of Typhoon in Green Canyon, not a view of Hurricane Rita damage. The BOEM description dates it 8 January 2004, while Flickr metadata records 19 April 2006.',
+        credit: 'BOEM-OPA, courtesy of Chevron USA; CC BY-SA 2.0'
+      },
+      images: [
+        {
+          src: 'images/typhoon-tlp-boem-context.jpg',
+          alt: 'BOEM-hosted photograph of the Typhoon mini-TLP in Green Canyon.',
+          caption: 'Before: BOEM/BOEM-OPA context photograph of Typhoon in Green Canyon, not a view of Hurricane Rita damage. The BOEM description dates it 8 January 2004, while Flickr metadata records 19 April 2006.',
+          credit: 'BOEM-OPA, courtesy of Chevron USA; CC BY-SA 2.0'
+        },
+        {
+          src: 'images/typhoon-tlp-capsized-rita-dngroup.webp',
+          alt: 'The Typhoon tension-leg platform floating capsized in the Gulf of Mexico after Hurricane Rita.',
+          caption: 'After: the Typhoon platform adrift and capsized following Hurricane Rita, September 2005.',
+          credit: 'DN Group / NHST (Upstream Online); photographer unresolved; permission required'
+        }
+      ],
+      infrastructure_impact: 'Complete loss of the TLP. Found capsized, upside down and grounded in Eugene Island Block 271; no fatalities. The structure was later deployed as an artificial reef in Eugene Island Block 367.',
+      summary: 'Chevron\'s Typhoon mini-TLP was evacuated and shut in ahead of Hurricane Rita. After the storm, the platform was found upside down and grounded roughly 46 miles from Rita\'s eye track. The MMS/BSEE-hosted investigation identified loss of integrity in the pontoon-1 bottom-connector system, particularly the load shoulders in piles 1 and 2, as the most probable cause of capsize. It did not establish why those shoulders overloaded. There were no fatalities; the structure was later removed and deployed as an artificial reef.',
+      executive_summary: 'Typhoon was evacuated before Hurricane Rita and found capsized in Green Canyon after the storm. A federal incident report identified bottom-connector/load-shoulder failure on pontoon 1 as the most probable cause, while leaving the initiating reason unresolved. Site conditions were hindcast below the cited 1,000-year wave criterion; no collision, riser snag or production-deck wave impact was identified. The evacuated platform was a complete loss with zero fatalities.',
+      what_happened: 'Typhoon (A-Typhoon) was a single-column mini-TLP installed by the operator in Green Canyon Block 237 in 2001. BSEE\'s platform record gives a water depth of 2,107 ft and structure coordinates of 27.73156398 N, 91.11114852 W (NAD27). On 20 September 2005 the facility was evacuated ahead of Hurricane Rita, operations were secured and all wells were shut in.\n\nRita tracked southeast to northwest south of the platform. The MMS/BSEE incident report estimates that the eye passed about 46 miles from Typhoon. At approximately 0600 CDT on 23 September, the platform capsized; EPIRBs in lifeboats 2 and 1 began transmitting at 0602 and 0627. Typhoon was subsequently found upside down and grounded in Eugene Island Block 271. The report does not give coordinates for the grounding location, so the mapped point uses the original platform position as an explicitly approximate capsize location.\n\nThe incident report cites a site hindcast of 83 mph one-hour wind, 43.5 ft significant wave height, 14.4 s peak period and 2.97 kt inertial current. Those estimates are local and must not be confused with Rita\'s storm-wide peak of 155 kt (Category 5) on 22 September or its 100 kt (Category 3) landfall intensity. The investigators stated that site conditions remained below the 1,000-year storm criterion they used, including a 49 ft significant-wave-height criterion; predicted platform motions were consistent with design analyses and model tests.\n\nPost-event inspections found all six pontoons dry, with water evidence only in the central shaft. Tendon bottom connectors 3, 4 and 6 remained in their piles; connectors 1, 2 and 5 were outside the piles and buried in the seabed. The recovered connector bodies for 1, 2 and 5 were separated and their lock rings were missing. The report documented load-shoulder damage in piles 1, 2, 4 and 5; recovered material believed to be from a load shoulder showed shear ductile overload and plastic deformation. Damage to the flare boom, lifeboat 2 and tendon porches 3-6 supported the proposed capsize rotation.\n\nThe investigation named loss of integrity in the pontoon-1 mooring system, specifically the bottom-connector system at piles 1 and 2, as the most probable cause. It did not resolve why the load shoulders overloaded. The report found no evidence that a MODU collision, riser/flowline/umbilical snag, production-deck wave impact, pontoon flooding, or exceedance of the cited environmental design condition caused the loss. There were no fatalities, and the report classified the TLP as a complete loss. BSEE records removal on 29 June 2006; industry reporting says the structure was later deployed as an artificial reef in Eugene Island Block 367 at about 350 ft water depth.',
+      what_went_wrong: [
+        'The bottom-connector/load-shoulder system lost integrity. The incident investigation identified piles 1 and 2 on pontoon 1 as the most probable initiating failure location, with physical evidence of load-shoulder overload.',
+        'The public investigation did not determine why the load shoulders overloaded; a specific manufacturing, material, installation, corrosion, fatigue or design defect is not established by the reviewed evidence.',
+        'Failure of a critical tendon connection led to loss of platform stability and complete structural loss even though the site hindcast was below the storm criterion cited in the investigation.'
+      ],
+      lessons_learned: [
+        'TLP integrity assurance must treat tendon bottom connectors, receptacles and load shoulders as critical load paths; inspect and verify the assembled system, not only the tendon bodies.',
+        'A storm design check alone cannot demonstrate whole-system resilience when a localized connector failure can initiate capsize; connector capacity, load transfer and single-point failure modes need explicit review.',
+        'When a failure mechanism is only probable and the initiating defect remains unknown, preserve that uncertainty rather than presenting an analytical hypothesis as a confirmed root cause.'
+      ],
+      actions: [
+        'The MMS report recommended studying the mooring system to identify quick fixes for existing TLPs with this connector type and determine whether the system remained acceptable for floating offshore installations.',
+        'A later BSEE TLP integrity-management report states that many bottom-connector designs added a further latch intended to prevent disconnection if a tendon went slack; this documents an industry design response, not proof that slack initiated Typhoon\'s failure.'
+      ],
+      metocean: {
+        wind_speed: '83 mph one-hour wind, site hindcast at capsize; not a direct platform observation',
+        wave_height_hs: '43.5 ft (13.3 m), site hindcast; investigation cites Hs = 49 ft for its 1,000-year storm criterion',
+        notes: 'MMS hindcast for approximately 0600 CDT 23 September 2005 also gives 14.4 s peak wave period and 2.97 kt inertial current. Rita\'s basin-wide best-track peak was 155 kt on 22 September; Rita was 100 kt at landfall. Do not substitute either storm-wide value for Typhoon\'s local hindcast.'
+      },
+      references: [
+        { title: 'Chevron U.S.A. Inc. Accident Investigation Report - A-Typhoon TLP, 23 September 2005', type: 'Official incident investigation report', publisher: 'Minerals Management Service (now BSEE)', year: 2007, url: 'https://www.bsee.gov/sites/bsee.gov/files/reports/safety/050923-pdf.pdf' },
+        { title: 'Platform Structures Online Query - A (Typhoon TLP), GC 237', type: 'Official platform structure record', publisher: 'Bureau of Safety and Environmental Enforcement', url: 'https://www.data.bsee.gov/Platform/PlatformStructures/Default.aspx' },
+        { title: 'Integrity Management Process of Tension Leg Platforms', type: 'Government technical report', publisher: 'Bureau of Safety and Environmental Enforcement / Energo Engineering', year: 2018, url: 'https://www.bsee.gov/sites/bsee.gov/files/research-reports/792aa.pdf' },
+        { title: 'Tropical Cyclone Report: Hurricane Rita, 18-26 September 2005', type: 'Official tropical cyclone report', publisher: 'National Hurricane Center', year: 2006, url: 'https://www.nhc.noaa.gov/data/tcr/AL182005_Rita.pdf' },
+        { title: 'Coupled Dynamic and Static Analysis of Typhoon TLP Accident During Extreme Environmental Conditions', type: 'ASME conference paper (abstract reviewed; full text unavailable)', publisher: 'American Society of Mechanical Engineers', year: 2008, url: 'https://doi.org/10.1115/OMAE2008-57676' },
+        { title: 'Chevron\'s Typhoon TLP reefed', type: 'Industry report', publisher: 'Offshore Magazine', year: 2006, url: 'https://www.offshore-mag.com/field-development/article/16792634/chevrons-typhoon-tlp-reefed' },
+        { title: 'Typhoon mini-tension leg platform operated by Chevron USA, Inc. in Green Canyon', type: 'Platform context photograph', publisher: 'BOEM-OPA / Flickr', year: 2004, url: 'https://www.flickr.com/photos/boemgov/12003640555', notes: 'CC BY-SA 2.0. Context photo, not a photograph of Rita damage. BOEM description says 8 January 2004; Flickr metadata says 19 April 2006.' }
+      ]
+    },
+
+    /* ────────────────────────────────────────────────────────────
        30. Hurricane Gustav - GoM Offshore - 2008
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'hurricane_gustav_2008',
       name: 'Hurricane Gustav - GoM Offshore',
@@ -1959,9 +2622,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        31. Hurricane Ike - GoM Offshore - 2008
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'hurricane_ike_2008',
       name: 'Hurricane Ike - GoM Offshore',
@@ -2047,6 +2710,12 @@ window.INCIDENTS_DATA = {
       persons_on_board: 0,
       survivors: 0,
       infrastructure_impact: 'Drilling platform deck translated approximately 84-85 ft, with severe deck, bridge, jacket and leg damage; one pile was severed below the mudline and the opposite jacket-leg connection failed. The facilities were later decommissioned and reefed in place.',
+      image: {
+        src: 'images/eugene-island-322a-lili-2002-offshore-mag.png',
+        alt: 'The Eugene Island 322-A drilling platform leaning into the sea with its deck tilted after Hurricane Lili.',
+        caption: 'The EI 322-A drilling platform left leaning near collapse after Hurricane Lili, October 2002, its deck translated about 84 feet. Trade-press image; retained at its small native resolution and not independently dated within this project.',
+        credit: 'Offshore Magazine (img.offshore-mag.com), Endeavor Business Media; originating photographer unresolved (associated with the OTC-16801 decommissioning account). Copyrighted - permission required, reference use only.'
+      },
       summary: 'Hurricane Lili passed over Eugene Island Block 322 in October 2002 and severely damaged BP\'s EI 322-A drilling platform. The top deck shifted approximately 84-85 feet, buckling the deck and jacket legs; one corner leg nearly separated. The failure was linked to a severed pile below the mudline and failure of the opposite jacket-leg-to-pile connection. The platform was stabilized, decommissioned and later reefed in place without reported injuries or environmental events.',
       executive_summary: 'EI 322-A was a paired fixed-platform complex in 235 feet of water. When Hurricane Lili\'s eye passed through the block, the drilling platform leaned and its deck moved approximately 84-85 feet. Technical investigation and decommissioning work identified two critical foundation/connection failures: one pile severed below the mudline and the opposite jacket-leg-to-pile shim-plate connection welds failed. BP could not establish which failure occurred first.',
       what_happened: 'Eugene Island 322-A was a paired shallow-water Gulf of Mexico facility: a drilling and quarters platform stood beside a production platform, and a bridge carried flowlines and accommodation units between them. The complex was installed in approximately 235 feet of water in 1978 and had been designed for a 70-foot, 13-second wave, zero current and 125 mph wind.\n\n' +
@@ -2095,9 +2764,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        32. South China Sea - Internal Wave Incidents
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'south_china_sea_solitons',
       name: 'South China Sea - Internal Wave Incidents',
@@ -2151,9 +2820,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        34. COSL Innovator Rogue Wave - 2015
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'cosl-innovator-2015',
       name: 'COSL Innovator - Wave Strike, Troll Field',
@@ -2219,9 +2888,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        35. Metocean Buoy Maintenance Explosion - 2013
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'metocean-buoy-explosion-2013',
       name: 'Metocean Buoy Maintenance Explosion',
@@ -2279,9 +2948,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        36. ENI Krueng Mane - Andaman Sea Soliton
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'eni-aceh-soliton',
       name: 'ENI Krueng Mane - Andaman Sea Soliton Displacement',
@@ -2345,9 +3014,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        37. Jascon-4 Tugboat Capsize - Nigeria - 2013
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'jascon-4-2013',
       name: 'Jascon-4 Tugboat Capsizes due to Squall',
@@ -2409,9 +3078,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        38. Dampier Spirit FSO - Cyclone Hubert - 2006
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'dampier-spirit-2006',
       name: 'Dampier Spirit FSO - Cyclone Hubert Mooring Failure',
@@ -2475,9 +3144,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        39. Malampaya Pipeline - Turbidity Current - 2006
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'malampaya-turbidity-2006',
       name: 'Malampaya Pipeline - Typhoon-Triggered Turbidity Current',
@@ -2506,7 +3175,7 @@ window.INCIDENTS_DATA = {
       what_happened: 'The Malampaya gas pipeline is a 504-km subsea gas export system running from the Malampaya deepwater gas platform (80 km off Palawan, in approximately 43 m water depth at the platform, with subsea wells at ~850 m) eastward through the Mindoro Strait to a gas processing terminal at Batangas, Luzon. The pipeline traverses a complex bathymetric environment including the deep-water Baco-Malaylay Submarine Canyon system on the northern flank of Mindoro Island.\n\nDuring the 2006 typhoon season, Typhoon Durian (late November 2006) delivered extreme rainfall over Mindoro Island. The intense precipitation mobilised large volumes of sediment from the Baco and Malaylay river catchments, which fed rapidly into the heads of the submarine canyon system. The canyon geometry and sediment loading created conditions for a catastrophic turbidity current - a gravity-driven, high-density flow of sediment-laden water.\n\nThe turbidity current descended the canyon at high velocity and extended to the depths where the Malampaya pipeline lay on the seabed. The force of the flow was sufficient to physically displace the pipeline from its designed position and to destroy or displace sections of the protective rock berm armouring installed to stabilise the pipeline against external forces. The displacement was detected during subsequent pipeline inspection surveys. No gas release or fatalities were reported; the pipeline integrity was maintained despite the displacement.\n\nThe incident was extensively studied post-event and analysed in a Scientific Reports paper (2019), "How typhoons trigger turbidity currents in submarine canyons", which modelled the Typhoon Durian (2006) event and contrasted it with Typhoon Melor (December 2015), which did not generate a significant turbidity current.',
       what_went_wrong: [
         'The geohazard posed by the Baco-Malaylay Submarine Canyon to the pipeline route had been identified in the design phase, leading to the installation of protective rock berms, but the berms were not designed for the magnitude of turbidity current generated by a major typhoon loading event.',
-        'The typhoon-to-turbidity-current causal chain - extreme rainfall â†’ river sediment flux â†’ canyon head loading â†’ density flow â†’ pipeline damage - was not fully incorporated as a design load case for the pipeline and its protection systems.',
+        'The typhoon-to-turbidity-current causal chain - extreme rainfall → river sediment flux → canyon head loading → density flow → pipeline damage - was not fully incorporated as a design load case for the pipeline and its protection systems.',
         'At the time of design and installation (late 1990s), the quantitative relationship between typhoon intensity, catchment sediment yields, and turbidity current magnitude in Philippine submarine canyons was poorly understood - the scientific community had not yet established this link.',
         'Monitoring of the pipeline condition between scheduled inspection surveys meant the displacement was not detected in real time; it was only identified during a post-event survey.',
         'The pipeline route had limited alternative corridors to avoid the canyon - the Mindoro Strait is a key geographic chokepoint on the only viable pipeline route from Palawan to Luzon.'
@@ -2536,9 +3205,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        40. Airbus Helicopters EC175 B (G-MCSH) - 2023
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'ec175-elgin-2023',
       name: 'EC175 (G-MCSH) Rotor-Blade Damage on Elgin Helideck',
@@ -2598,9 +3267,9 @@ window.INCIDENTS_DATA = {
       ]
     }
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        41. La Pampilla Oil Spill - 2022
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     ,{
       id: 'la-pampilla-2022',
       name: 'La Pampilla Refinery Oil Spill',
@@ -2658,9 +3327,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        42. FPSO P-70 Mooring Breakaway - 2020
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'fpso-p70-2020',
       name: 'FPSO P-70 Mooring Breakaway',
@@ -2713,9 +3382,9 @@ window.INCIDENTS_DATA = {
       ]
     }
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        43. Caspian Sea Level Decline - 2006 to present
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     ,{
       id: 'caspian-sea-level-decline',
       name: 'Caspian Sea Level Decline',
@@ -2743,7 +3412,7 @@ window.INCIDENTS_DATA = {
       },
       summary: 'The Caspian Sea has fallen more than 2 metres since 2006 and is declining at 20-30 cm/year - the fastest documented climate-driven sea-level change affecting active offshore oil and gas production. Fixed platforms, subsea pipelines, mooring systems, and port facilities across five countries were designed for environmental conditions that no longer exist. A $6.4 billion dredging project announced in 2025 to maintain vessel access to northern shelf wells is the clearest measure of the cost of designing offshore structures without accounting for long-term climate variability.',
       executive_summary: 'The Caspian Sea has fallen more than 2 metres since 2006 at a rate of 20-30 cm/year - an order of magnitude faster than global mean sea-level rise. Fixed platforms, subsea pipelines, mooring terminals, and port facilities across five national sectors were designed for water depths that no longer exist. In July 2025, LUKOIL and KazMunayGas announced a $6.4 billion dredging programme to keep vessel channels open to operating wells - the cost of not having built climate variability into structural design. Projections indicate a further 5-10 m decline by 2100 under moderate warming.',
-      what_happened: 'The Caspian Sea - the world\'s largest landlocked water body - reached a modern high of approximately -26.5 m (Baltic Datum) around 1995. A sustained and accelerating decline began around 2005-2006, driven primarily by increased evaporation under rising temperatures and reduced freshwater inflow from the Volga and other rivers. The decline is not cyclical; it is a climate-forced trend.\n\nBy 2025 the sea stood at -29.23 m - the lowest level in the full instrumental measurement record - having fallen more than 2 metres in under 20 years. The current rate of decline is 20-30 cm/year, roughly 20 times the global mean rate of sea-level rise. Kazakhstan\'s government projects the level to reach -32.4 m by 2050. Peer-reviewed CMIP6 modelling (Nature Communications Earth & Environment, 2023 and 2025) projects a further 5-10 m fall by 2100 under moderate warming scenarios (<2°C) and up to 21 m under high-emissions pathways - an area larger than Iceland exposed as dry seabed.\n\nThe northern Caspian - the shallowest sector, where depths over much of the shelf are already only 3-5 m - is the zone of most acute operational impact. LUKOIL\'s Vladimir Filanovsky field and KazMunayGas\'s northern shelf assets, designed and installed in the 1990s and 2000s for conditions that assumed a broadly stable water level, now face vessel access depths at or below the operating draft of standard supply vessels. Azerbaijan\'s Dubendi oil terminal required more than 250,000 mÂ³ of emergency dredging in 2024 to maintain tanker access. Aktau port (Kazakhstan) has seen loading capacity for tankers reduced by approximately 10%. Iran\'s Anzali port is now stranded more than 1 km from the current shoreline.\n\nIn July 2025, LUKOIL and KazMunayGas jointly announced a $6.4 billion dredging programme - the largest single infrastructure response to the problem to date - to maintain navigable channels to offshore wells. Without it, operators stated, production from existing fields would be interrupted and new development plans halted. In April 2026, Azerbaijan and Kazakhstan formalised a joint dredging venture, commissioning a dedicated vessel capable of working to 18 m depth in anticipation of conditions worsening further.',
+      what_happened: 'The Caspian Sea - the world\'s largest landlocked water body - reached a modern high of approximately -26.5 m (Baltic Datum) around 1995. A sustained and accelerating decline began around 2005-2006, driven primarily by increased evaporation under rising temperatures and reduced freshwater inflow from the Volga and other rivers. The decline is not cyclical; it is a climate-forced trend.\n\nBy 2025 the sea stood at -29.23 m - the lowest level in the full instrumental measurement record - having fallen more than 2 metres in under 20 years. The current rate of decline is 20-30 cm/year, roughly 20 times the global mean rate of sea-level rise. Kazakhstan\'s government projects the level to reach -32.4 m by 2050. Peer-reviewed CMIP6 modelling (Nature Communications Earth & Environment, 2023 and 2025) projects a further 5-10 m fall by 2100 under moderate warming scenarios (<2°C) and up to 21 m under high-emissions pathways - an area larger than Iceland exposed as dry seabed.\n\nThe northern Caspian - the shallowest sector, where depths over much of the shelf are already only 3-5 m - is the zone of most acute operational impact. LUKOIL\'s Vladimir Filanovsky field and KazMunayGas\'s northern shelf assets, designed and installed in the 1990s and 2000s for conditions that assumed a broadly stable water level, now face vessel access depths at or below the operating draft of standard supply vessels. Azerbaijan\'s Dubendi oil terminal required more than 250,000 m³ of emergency dredging in 2024 to maintain tanker access. Aktau port (Kazakhstan) has seen loading capacity for tankers reduced by approximately 10%. Iran\'s Anzali port is now stranded more than 1 km from the current shoreline.\n\nIn July 2025, LUKOIL and KazMunayGas jointly announced a $6.4 billion dredging programme - the largest single infrastructure response to the problem to date - to maintain navigable channels to offshore wells. Without it, operators stated, production from existing fields would be interrupted and new development plans halted. In April 2026, Azerbaijan and Kazakhstan formalised a joint dredging venture, commissioning a dedicated vessel capable of working to 18 m depth in anticipation of conditions worsening further.',
       what_went_wrong: [
         'Offshore structures across the Caspian were designed using static water-depth assumptions derived from historical records. No sensitivity analysis was conducted on the effect of long-term sea-level change on structural loading, splash-zone position, pipeline burial, or mooring geometry over the asset\'s design life.',
         'Design codes (ISO 19902, API RP 2A, DNV standards) do not require designers to assess sea-level change - rise or fall - as an environmental input. Water depth is treated as a fixed design parameter, not a variable with a climate-driven trend.',
@@ -2754,7 +3423,7 @@ window.INCIDENTS_DATA = {
       lessons_learned: [
         'Climate sensitivity analysis should be a standard design deliverable for any offshore structure: water depth (or flood level at coastal facilities) must be assessed across a range of climate scenarios spanning the full design life, not held constant at the historical mean.',
         'Splash-zone position, cathodic protection placement, coating specification, and inspection intervals are all functions of mean water level. Where sea-level change is a credible hazard - in either direction - integrity management programmes must incorporate periodic reassessment against updated projections rather than fixing these parameters at the as-built condition.',
-        'Pipeline burial depth, mooring catenary geometry, riser touch-down points, and foundation scour protection are all sensitive to water depth. A structured sensitivity analysis across a Â±2-5 m water-depth range should be part of the design basis for long-life assets in climate-sensitive basins.',
+        'Pipeline burial depth, mooring catenary geometry, riser touch-down points, and foundation scour protection are all sensitive to water depth. A structured sensitivity analysis across a ±2-5 m water-depth range should be part of the design basis for long-life assets in climate-sensitive basins.',
         'The operational impact arrives before sea level reaches a design limit. Vessel access, supply chain logistics, and port throughput degrade progressively as depth decreases - well before any structural threshold is breached. Operational continuity planning must account for this intermediate regime.',
         'The Caspian is an extreme case but not a unique principle. Arctic basins face changing ice-loading and extended open-water wave exposure; low-lying coastal terminals face rising storm-surge baselines; tropical offshore regions may face intensifying cyclone design criteria. In each case, the climate projection horizon and the asset design life are the same timescale and must be addressed together.',
         'The Aral Sea - now almost entirely desiccated - demonstrates the endpoint of the same process. The Caspian is not tracking toward that outcome on a geological timescale; it is tracking toward it on an engineering timescale.'
@@ -2762,7 +3431,7 @@ window.INCIDENTS_DATA = {
       actions: [
         'LUKOIL and KazMunayGas announced a $6.4 billion joint dredging programme in July 2025 to maintain vessel access channels to northern Caspian offshore wells - the most direct industry response to date.',
         'Azerbaijan and Kazakhstan advanced a joint dredging effort (reported 2025-2026), including the dredger Engineer Soltan Kazimov (capable of dredging to ~18 m depth) built at Baku Shipyard; reported dates for the venture and the vessel vary between sources.',
-        'Azerbaijan\'s Dubendi oil terminal completed over 250,000 mÂ³ of emergency dredging in 2024; Baku port commenced additional dredging to accommodate vessels with drafts above 4 m.',
+        'Azerbaijan\'s Dubendi oil terminal completed over 250,000 m³ of emergency dredging in 2024; Baku port commenced additional dredging to accommodate vessels with drafts above 4 m.',
         'Kazakhstan\'s government published formal 2050 sea-level projection scenarios (March 2026) - the first official acknowledgment that adaptation is a national infrastructure planning requirement, not a future consideration.',
         'The UNEP Tehran Convention Protocol on Environmental Impact Assessment (entered into force November 2025) now requires transboundary EIA for major new oil and gas infrastructure in the Caspian, creating a regulatory framework that should incorporate sea-level decline projections.',
         'No major international operator has yet updated structural design standards or TCFD climate-risk disclosures to explicitly account for Caspian sea-level decline, representing a gap in both engineering practice and corporate risk governance.'
@@ -2785,15 +3454,15 @@ window.INCIDENTS_DATA = {
 
     ,
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ────────────────────────────────────────────────────────────
        NEW INCIDENTS (17) - 2026-07-10 Integration
        9 EXTERNAL/MIXED + 6 INTERNAL-ONLY + 1 ANONYMIZED
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ──────────────────────────────────────────────────────────── */
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
       43. LFE-01/MiB-07 - Fortuna Seismic Soliton, NW Australia (2014)
       Classification: INTERNAL (contains Shell LFE database reference)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-01-fortuna-soliton-2014',
       name: 'Fortuna Seismic Survey - Soliton Impact, NW Australia',
@@ -2863,10 +3532,10 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
       44. LFE-03 - Dupal LMRP Lost During Storm
        Classification: INTERNAL (contains Shell LFE database reference)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-03-dupal-lmrp-disconnect',
       name: 'Dupal Drillship - LMRP Disconnect During Storm',
@@ -2926,10 +3595,10 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        45. LFE-12 - Transocean Winner Blown Ashore, Scotland (2016)
        Classification: EXTERNAL (BBC News + Coastguard documented)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-12-transocean-winner-scotland-2016',
       name: 'Transocean Winner - Towed Rig Blown Ashore, Scotland',
@@ -2994,9 +3663,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        46. LFE-22 - Kerteh Gas Processing Plant Lightning Fire, Malaysia (2019)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-22-kerteh-lightning-2019',
       name: 'Kerteh Gas Processing Plant - Lightning Strike Fire, Malaysia',
@@ -3058,9 +3727,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        47. LFE-27 - Gorgon LNG Ambient Temperature Impact (2018)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-27-gorgon-lng-ambient-temp-2018',
       name: 'Gorgon LNG - Production Cut Due to Ambient Temperature, Australia',
@@ -3120,9 +3789,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        48. MiB-02 - Oman LNG Cyclone Gonu (2007)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'mib-02-oman-lng-cyclone-gonu-2007',
       name: 'Oman LNG Plant - Tropical Cyclone Gonu Direct Impact',
@@ -3190,9 +3859,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        49. MiB-03 - Port Arthur Refinery Hurricanes (2005, 2008)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'mib-03-port-arthur-refinery-hurricanes',
       name: 'Port Arthur Refinery - Hurricane Rita & Ike Impacts (2005, 2008)',
@@ -3265,9 +3934,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        50. MiB-05 - Corrib Pipeline Umbilical Storm (2015)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'mib-05-corrib-pipeline-ireland-2014-2015',
       name: 'Corrib Pipeline Umbilical - Winter Storm Exposure, Ireland',
@@ -3286,7 +3955,7 @@ window.INCIDENTS_DATA = {
       injuries: 0,
       environmental_impact: 'Umbilical exposed and floating; no major release; emergency rock dumping deployed',
       summary: 'Corrib umbilical and water disposal line became exposed and lifted off seabed during winter 2014-2015 storms in Broadhaven Bay. Near-bed hydrodynamic loads exceeded design values due to inadequate site-specific metocean characterization. Emergency rock dumping performed summer 2015 to stabilize infrastructure. Incident highlights importance of measured metocean data for nearshore burial design.',
-      executive_summary: 'Corrib pipeline umbilical became exposed and floating in Broadhaven Bay during winter 2014-2015 storms. Root cause: inadequate site-specific metocean data for nearshore burial design. Emergency â‚¬2.5M rock dumping mitigation performed. Incident highlighted critical gap in nearshore design basis and value of measured metocean data.',
+      executive_summary: 'Corrib pipeline umbilical became exposed and floating in Broadhaven Bay during winter 2014-2015 storms. Root cause: inadequate site-specific metocean data for nearshore burial design. Emergency €2.5M rock dumping mitigation performed. Incident highlighted critical gap in nearshore design basis and value of measured metocean data.',
       what_happened: 'The Corrib gas field umbilical and water disposal line, buried in Broadhaven Bay near the Irish coast, was designed using numerical metocean models without prior site-specific measured data. During the winter of 2014-2015, a series of severe Atlantic storms generated near-bed wave orbital velocities and current loads that exceeded the design basis. By March 2015, inspection revealed the umbilical had become exposed and was floating above the seabed. Emergency response included rock dumping during summer 2015 to stabilize the exposed pipeline.',
       what_went_wrong: [
         'No site-specific metocean data collected at Broadhaven Bay before design.',
@@ -3328,9 +3997,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        51. MiB-06 - Hurricane Dorian Grand Bahama (2019)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'mib-06-hurricane-dorian-grand-bahama-2019',
       name: 'Hurricane Dorian - Equinor Grand Bahama Facility Damage',
@@ -3402,13 +4071,13 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ────────────────────────────────────────────────────────────
        SHELL INTERNAL-ONLY INCIDENTS (7)
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ──────────────────────────────────────────────────────────── */
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        52. LFE-02 - Wave Rider Buoy Snag Pierce (2023)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-02-wave-rider-buoy-snag-2023',
       name: 'Wave Rider Buoy Snagged by Survey Vessel - Pierce Asset, North Sea',
@@ -3468,9 +4137,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        53. LFE-10 - Aircraft Turbulence Helideck (2016)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-10-aircraft-turbulence-helideck-2016',
       name: 'AW139 Exhaust-Plume Encounter During Helideck Landing',
@@ -3533,9 +4202,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        55. LFE-19 - Oloma Pipeline Repair 4 Fatalities (2016)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-19-oloma-pipeline-four-fatalities-2016',
       name: 'Oloma Pipeline Repair - Tidal Water Ingress into Coffer Dam',
@@ -3603,9 +4272,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        56. MiB-01 - Sakhalin Snow Accumulation Design (2000)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'mib-01-sakhalin-snow-accumulation-design',
       name: 'Sakhalin Gas Processing Plant - Snow Accumulation Design Failure',
@@ -3658,9 +4327,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        57. MiB-04 - Baram Platform Collapse Malaysia (2005)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'mib-04-baram-platform-collapse-malaysia',
       name: 'Baram 8 Platform Collapse due to High River Discharge Currents',
@@ -3716,9 +4385,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        58. LFE-14 - Anchor Handling Seaman Injury (ANONYMIZED) (2012)
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'lfe-14-anchor-handling-seaman-injury-anonymous',
       name: 'Campaign Barge Anchor Handling - Seaman Injury During Squall',
@@ -3779,10 +4448,10 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        59. Big Foot TLP - Tendon Buoyancy Loss, Gulf of Mexico (2015)
-       Event: Ocean / Turbidity Current / Tidal (Loop Current) Â· Class: Basis of Design
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+       Event: Ocean / Turbidity Current / Tidal (Loop Current) · Class: Basis of Design
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'bigfoot-tlp-tendon-2015',
       name: 'Big Foot TLP - Tendon Buoyancy Loss During Installation, Gulf of Mexico',
@@ -3849,9 +4518,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        60. GSP Saturn - 2014
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'gsp-saturn-2014',
       name: 'GSP Saturn Jack-up Storm Evacuation During Wet Tow',
@@ -3913,9 +4582,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        61. West Navion Helideck Rollover (AS332L G-BKZE) - 2001
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'west-navion-as332l-2001',
       name: 'West Navion Helicopter Rollover due to Cross Wind',
@@ -3988,9 +4657,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        62. Sinbad Platform Decommissioning Near Miss - 2021
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'sinbad-platform-nearmiss-2021',
       name: 'Sinbad Platform Decommissioning Near Miss',
@@ -4060,9 +4729,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        63. Sikorsky S-92A LN-ONT - 2020
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'ln-ont-maersk-invincible-2020',
       name: 'Sikorsky S-92A LN-ONT Loss of Control',
@@ -4133,9 +4802,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        64. AS332L G-TIGH Cormorant A Water Impact - 1992
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'g-tigh-cormorant-a-1992',
       name: 'Super Puma G-TIGH Water Impact near Cormorant A',
@@ -4159,7 +4828,7 @@ window.INCIDENTS_DATA = {
         src: 'images/g-tigh-cormorant-a-1992-airhistory-lewis-grant.png',
         alt: 'Bristow Aerospatiale AS332L Super Puma G-TIGH in flight in red, white and blue livery.',
         caption: 'Bristow AS332L Super Puma G-TIGH in flight. This is a generic aircraft photograph, not an image of the accident sequence. The photograph date and location are unconfirmed.',
-        credit: 'Photo Â© Lewis Grant / AirHistory.net. Copyrighted; permission required for external republication.'
+        credit: 'Photo © Lewis Grant / AirHistory.net. Copyrighted; permission required for external republication.'
       },
       summary: 'During a night personnel shuttle from Cormorant A to the nearby Safe Supporter flotel, AS332L Super Puma G-TIGH entered an immediate climbing turn away from a strong gusting headwind. The commander did not recognise the rapidly changing relationship between ground speed and airspeed; airspeed decayed to effectively zero and a descent developed. Maximum power did not prevent impact with very rough seas. The helicopter inverted and sank. Twelve of 17 occupants escaped, but only six were recovered alive; all 11 fatalities resulted from drowning, in some cases after hypothermia.',
       executive_summary: 'G-TIGH struck the North Sea shortly after lifting from Cormorant A at night in severe weather. During a rushed downwind turn, airspeed decayed while visually perceived ground speed remained high. The aircraft descended into very rough seas, inverted and sank within one or two minutes. Six of 17 occupants survived. Strong gusting wind and degraded visual cues contributed directly to the accident sequence; extreme sea state severely constrained survival and rescue. Icing and aircraft malfunction were excluded.',
@@ -4213,9 +4882,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        64. Thunder Horse Listing - Hurricane Dennis - 2005
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'thunder-horse-listing-2005',
       name: 'Thunder Horse Listing During Hurricane Dennis Evacuation',
@@ -4297,9 +4966,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        65. Mad Dog Derrick Topple - Hurricane Ike - 2008
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'mad-dog-derrick-toppled-ike-2008',
       name: 'Mad Dog Drilling Derrick Toppled During Hurricane Ike',
@@ -4367,9 +5036,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        66. Skandi Pacific Fatality - Pilbara - 2015
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'skandi-pacific-fatality-pilbara-2015',
       name: 'Skandi Pacific Fatality During Cargo Securing in Rough Seas',
@@ -4435,9 +5104,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        67. Atwood Osprey Mooring Failure - Cyclone Olwyn - 2015
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'atwood-osprey-mooring-failure-olwyn-2015',
       name: 'Atwood Osprey Mooring Failure During Cyclone Olwyn',
@@ -4515,9 +5184,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        68. SEACOR POWER Capsize - Gulf of Mexico - 2021
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'seacor-power-capsize-2021',
       name: 'SEACOR POWER Liftboat Capsize Near Port Fourchon',
@@ -4585,9 +5254,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        69. Ocean GreatWhite LMRP/Riser Separation - West of Shetland - 2024
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'ocean-greatwhite-lmrp-separation-2024',
       name: 'Ocean GreatWhite LMRP and Riser Separation',
@@ -4652,9 +5321,9 @@ window.INCIDENTS_DATA = {
       ]
     },
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ────────────────────────────────────────────────────────────
        70. Papaa-305 / Varapradha Disaster - Cyclone Tauktae - 2021
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    ──────────────────────────────────────────────────────────── */
     {
       id: 'ongc-papaa-305-varapradha-cyclone-tauktae-2021',
       name: 'ONGC Offshore - Papaa-305 and Varapradha Disaster During Cyclone Tauktae',

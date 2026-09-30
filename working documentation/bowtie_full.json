@@ -1,23 +1,23 @@
 {
-  "generated": "2026-09-22",
+  "generated": "2026-09-30",
   "method": "Candidate bow-tie retrieval aligned to CGE/Wolters Kluwer and CCPS-EI terminology. It classifies wording in the incident record, not source material. All relationships require analyst review against a cited source before use as a finding. Only what_went_wrong statements are used for candidate threats, failed/absent barriers and escalation factors. Lessons and actions are excluded. Explicitly uncertain statements are excluded where recognised.",
   "rule": "Candidate top event = first recognised loss-of-control phrase in the chronological record narrative; absence of a phrase is reported as undetermined, not inferred.",
-  "records_analysed": 83,
+  "records_analysed": 93,
   "top_event_counts": {
-    "structural_failure": 8,
-    "loss_of_position": 20,
-    "loss_of_stability": 14,
+    "structural_failure": 9,
+    "loss_of_position": 25,
+    "loss_of_stability": 17,
     "impact_collision": 2,
     "loss_of_containment": 5,
     "electrical_contact_with_energy": 2,
     "equipment_detachment": 3,
     "wind_damage_to_structure": 2,
     "loss_of_aircraft_control": 5,
-    "not_discrete": 9,
-    "wave_impact_on_structure": 4,
+    "not_discrete": 10,
+    "wave_impact_on_structure": 5,
     "ignition_fire_explosion": 2,
     "subsea_asset_displacement": 2,
-    "undetermined": 2,
+    "undetermined": 1,
     "water_inrush_confined_space": 1,
     "dropped_or_swinging_load": 2
   },
@@ -358,6 +358,454 @@
           "hits": 2,
           "evidence": "All 81 people aboard died: 35 bodies were located and 46 remained missing and presumed dead.",
           "role": "context"
+        }
+      ]
+    },
+    {
+      "id": "deep-sea-driller-1976",
+      "name": "Deep Sea Driller Semi-Submersible Grounding at Fedje",
+      "year": 1976,
+      "hazard_event_type": "storm",
+      "hazard": "Offshore activity exposed to storm energy",
+      "discipline": "maritime",
+      "region": "Europe",
+      "fatalities": 6,
+      "infrastructure_impact": null,
+      "analysis_status": "review_required",
+      "top_event": "loss_of_position",
+      "top_event_label": "Loss of position / station-keeping",
+      "top_event_evidence": "k in the southern Norwegian North Sea toward Bergen when it grounded on the seaward side of Fedje, north of Bergen, in storm conditions. Regional Norwegian reporting states that the platform came too close to land after two of its propulsi",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [
+        {
+          "key": "loss_of_stability",
+          "label": "Loss of stability / buoyancy"
+        }
+      ],
+      "threats": [],
+      "preventive_barriers": [],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "grounding",
+          "label": "Unit grounds or strands",
+          "hits": 9,
+          "evidence": "The immediate loss combined storm exposure and a reported propulsion failure (grounding) with a lifeboat capsize during evacuation.",
+          "role": "context"
+        },
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 7,
+          "evidence": "Norwegian accounts describe heavy seas sufficient to capsize the lifeboat.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 5,
+          "evidence": "The crew were evacuated from the platform into a lifeboat, which capsized in the heavy seas.",
+          "role": "context"
+        },
+        {
+          "key": "fatalities_occurred",
+          "label": "People are killed",
+          "hits": 2,
+          "evidence": "Evacuation into a lifeboat in heavy seas ended in the lifeboat capsizing, causing all six fatalities during the abandonment rather than in the grounding itself.",
+          "role": "cause"
+        }
+      ]
+    },
+    {
+      "id": "ocean-express-tow-capsize-1976",
+      "name": "Ocean Express Jack-up Capsize Under Tow in Gulf Storm",
+      "year": 1976,
+      "hazard_event_type": "storm",
+      "hazard": "Offshore activity exposed to storm energy",
+      "discipline": "maritime",
+      "region": "North America",
+      "fatalities": 13,
+      "infrastructure_impact": "Total loss of the mat-supported jack-up Ocean Express, which capsized and sank in about 167 ft of water during a short field move.",
+      "analysis_status": "review_required",
+      "top_event": "loss_of_position",
+      "top_event_label": "Loss of position / station-keeping",
+      "top_event_evidence": "ather than a towing vessel. At about 1930 the Gulf Viking's towline parted in the towing spring, and the crew could not recover the heavy nylon line across the tiny, sea-swept triangular tow deck. Deck pipe then shifted, causing the rig to",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [
+        {
+          "key": "structural_failure",
+          "label": "Structural failure / collapse"
+        },
+        {
+          "key": "loss_of_aircraft_control",
+          "label": "Loss of aircraft control"
+        },
+        {
+          "key": "loss_of_stability",
+          "label": "Loss of stability / buoyancy"
+        }
+      ],
+      "threats": [
+        {
+          "key": "towline_failure",
+          "label": "Towline or pennant parts",
+          "hits": 1,
+          "evidence": "The Gulf Viking's towline then parted, and the small, constantly swamped triangular tow deck made it impossible to re-establish the tow, so the rig drifted broadside to the boarding seas.",
+          "role": "cause"
+        }
+      ],
+      "preventive_barriers": [
+        {
+          "key": "procedures_and_competence",
+          "label": "Procedures, drills and competence",
+          "state": "candidate_failed_or_absent",
+          "evidence": "NTSB found the operating manual gave inadequate guidance on stability across the range of mat-platform separations, towing arrangements, severe-weather operations, transit preparations and operational limits; the bargemover was not aware...",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
+      "recovery_barriers": [],
+      "escalation_factors": [
+        {
+          "key": "procedure_absent_or_not_followed",
+          "label": "Procedure absent or not followed",
+          "evidence": "NTSB found the operating manual gave inadequate guidance on stability across the range of mat-platform separations, towing arrangements, severe-weather operations, transit preparations and operational limits; the bargemover was not aware...",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
+      "consequences": [
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 10,
+          "evidence": "Total loss of the mat-supported jack-up Ocean Express, which capsized and sank in about 167 ft of water during a short field move.",
+          "role": "context"
+        },
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
+          "hits": 4,
+          "evidence": "Total loss of the mat-supported jack-up Ocean Express, which capsized and sank in about 167 ft of water during a short field move.",
+          "role": "context"
+        },
+        {
+          "key": "grounding",
+          "label": "Unit grounds or strands",
+          "hits": 1,
+          "evidence": "Shifting deck pipe and a displaced derrick drove an increasing list until the rig drifted, grounded, capsized and sank about 2115.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 1,
+          "evidence": "The evacuation succeeded for one capsule but failed for the other: No.",
+          "role": "cause"
+        }
+      ]
+    },
+    {
+      "id": "rowan-gorilla-i-1988",
+      "name": "Rowan Gorilla I Jack-up Capsize During Transatlantic Tow",
+      "year": 1988,
+      "hazard_event_type": "storm",
+      "hazard": "Offshore activity exposed to storm energy",
+      "discipline": "maritime",
+      "region": "North America",
+      "fatalities": 0,
+      "infrastructure_impact": "Total loss of the jack-up Rowan Gorilla I, which capsized and sank in the North Atlantic while under tow.",
+      "analysis_status": "review_required",
+      "top_event": "loss_of_position",
+      "top_event_label": "Loss of position / station-keeping",
+      "top_event_evidence": "lantic winter storm. At about 0220 on 15 December 1988 the towline parted, leaving the rig adrift in the storm about 500 nautical miles southeast of Halifax. Conditions were extreme: by the time the rig was abandoned there were seas of abo",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [
+        {
+          "key": "loss_of_stability",
+          "label": "Loss of stability / buoyancy"
+        },
+        {
+          "key": "structural_failure",
+          "label": "Structural failure / collapse"
+        }
+      ],
+      "threats": [
+        {
+          "key": "opening_left_unsecured",
+          "label": "Opening, closure or penetration not secured",
+          "hits": 2,
+          "evidence": "Once capsized, the rig sank within minutes as inverting opened the compartments to rapid downflooding through the main-deck ventilation openings.",
+          "role": "cause"
+        },
+        {
+          "key": "towline_failure",
+          "label": "Towline or pennant parts",
+          "hits": 1,
+          "evidence": "The towline parted at about 0220 in a severe storm, leaving the jack-up adrift and unable to be held head-to-weather.",
+          "role": "cause"
+        }
+      ],
+      "preventive_barriers": [],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 15,
+          "evidence": "Total loss of the jack-up Rowan Gorilla I, which capsized and sank in the North Atlantic while under tow.",
+          "role": "context"
+        },
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
+          "hits": 7,
+          "evidence": "Total loss of the jack-up Rowan Gorilla I, which capsized and sank in the North Atlantic while under tow.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 2,
+          "evidence": "All 27 were rescued by the Smit London the next day, with no fatalities.",
+          "role": "context"
+        }
+      ]
+    },
+    {
+      "id": "interocean-ii-1989",
+      "name": "Interocean II Jack-up Capsize During Tow in North Sea Gale",
+      "year": 1989,
+      "hazard_event_type": "storm",
+      "hazard": "Offshore activity exposed to storm energy",
+      "discipline": "maritime",
+      "region": "Europe",
+      "fatalities": 0,
+      "infrastructure_impact": "Total loss of the jack-up Interocean II, which toppled over and sank shortly after the crew were taken off.",
+      "analysis_status": "review_required",
+      "top_event": "loss_of_position",
+      "top_event_label": "Loss of position / station-keeping",
+      "top_event_evidence": "storm-force 10 gale with rough seas. One of the rig's two anchor chains broke. Most of the 51 crew were taken off, but eight workers stayed aboard to keep the rig under control on tow. As conditions deteriorated, the last eight were airli",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [
+        {
+          "key": "structural_failure",
+          "label": "Structural failure / collapse"
+        },
+        {
+          "key": "loss_of_stability",
+          "label": "Loss of stability / buoyancy"
+        }
+      ],
+      "threats": [
+        {
+          "key": "mooring_line_overload",
+          "label": "Mooring/anchor line fails under storm load",
+          "hits": 1,
+          "evidence": "The jack-up, afloat and under tow in a storm-force 10 gale, lost its station-keeping when one of its two anchor chains parted.",
+          "role": "cause"
+        }
+      ],
+      "preventive_barriers": [],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
+          "hits": 5,
+          "evidence": "Total loss of the jack-up Interocean II, which toppled over and sank shortly after the crew were taken off.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 4,
+          "evidence": "It is a successful severe-weather evacuation case; the primary contemporaneous source is UK press reporting.",
+          "role": "context"
+        },
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 2,
+          "evidence": "Once the chain failed in the severe weather, the rig could not be held and drifted/heeled until it capsized and sank.",
+          "role": "cause"
+        }
+      ]
+    },
+    {
+      "id": "db29-typhoon-fred-1991",
+      "name": "DB29 Pipe-Laying Derrick Barge Capsize During Typhoon Fred",
+      "year": 1991,
+      "hazard_event_type": "cyclone",
+      "hazard": "Offshore activity exposed to cyclone energy",
+      "discipline": "maritime",
+      "region": "Asia",
+      "fatalities": 22,
+      "infrastructure_impact": "Total loss of the pipe-laying derrick barge DB29, which capsized and sank in about 210 ft of water during Typhoon Fred while laying offshore pipeline.",
+      "analysis_status": "review_required",
+      "top_event": "loss_of_stability",
+      "top_event_label": "Loss of stability / buoyancy",
+      "top_event_evidence": "oyed the barge's desalination-plant hatch, through which it downflooded. The barge was overwhelmed and, early on 15-16 August, developed a list and began to sink; survivors described waking to find the barge already half under water and jum",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [],
+      "threats": [],
+      "preventive_barriers": [],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
+          "hits": 6,
+          "evidence": "Total loss of the pipe-laying derrick barge DB29, which capsized and sank in about 210 ft of water during Typhoon Fred while laying offshore pipeline.",
+          "role": "context"
+        },
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 5,
+          "evidence": "Total loss of the pipe-laying derrick barge DB29, which capsized and sank in about 210 ft of water during Typhoon Fred while laying offshore pipeline.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 5,
+          "evidence": "Ships and aircraft from China, Taiwan, the Soviet Union and Hong Kong rescued about 168-173 people from ~25-ft seas and ~75-mph winds; roughly 22 were killed (reported figures range from at least 16 early to as many as 26).",
+          "role": "context"
+        },
+        {
+          "key": "fatalities_occurred",
+          "label": "People are killed",
+          "hits": 3,
+          "evidence": "Ships and aircraft from China, Taiwan, the Soviet Union and Hong Kong rescued about 168-173 people from ~25-ft seas and ~75-mph winds; roughly 22 were killed (reported figures range from at least 16 early to as many as 26).",
+          "role": "context"
+        },
+        {
+          "key": "structural_damage",
+          "label": "Structure damaged or destroyed",
+          "hits": 2,
+          "evidence": "93-3073.0) states that the high seas loosened deck equipment and destroyed the barge's desalination-plant hatch, through which it downflooded.",
+          "role": "context"
+        },
+        {
+          "key": "equipment_lost_to_seabed",
+          "label": "Equipment lost to the seabed",
+          "hits": 1,
+          "evidence": "Total loss of the pipe-laying derrick barge DB29, which capsized and sank in about 210 ft of water during Typhoon Fred while laying offshore pipeline.",
+          "role": "context"
+        }
+      ]
+    },
+    {
+      "id": "dlb-269-hurricane-roxanne-1995",
+      "name": "DLB-269 Pipe-Laying Derrick Barge Sinking During Hurricane Roxanne",
+      "year": 1995,
+      "hazard_event_type": "cyclone",
+      "hazard": "Offshore activity exposed to cyclone energy",
+      "discipline": "maritime",
+      "region": "North America",
+      "fatalities": 6,
+      "infrastructure_impact": "Total loss of the pipe-laying derrick barge DLB-269, which foundered and sank under tow in the Bay of Campeche during Hurricane Roxanne.",
+      "analysis_status": "review_required",
+      "top_event": "loss_of_stability",
+      "top_event_label": "Loss of stability / buoyancy",
+      "top_event_evidence": "se. The aging pipe-lay derrick barge DLB-269 (~245 aboard) sank in the Bay of Campeche on 15 October 1995 during Hurricane Roxanne. Roxanne had peaked as a Category 3 near Cozumel, then looped erratically in the Bay of Campeche and re-inte",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [],
+      "threats": [],
+      "preventive_barriers": [],
+      "recovery_barriers": [
+        {
+          "key": "immersion_suits_ppe",
+          "label": "Immersion suits and personal survival equipment",
+          "state": "candidate_failed_or_absent",
+          "evidence": "About 230 people entered 30-40 ft hurricane seas; some life jackets were defective and many of the crew could not swim, turning a foundering into a mass-survival emergency.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
+          "hits": 7,
+          "evidence": "The barge was a total loss.",
+          "role": "context"
+        },
+        {
+          "key": "fatalities_occurred",
+          "label": "People are killed",
+          "hits": 2,
+          "evidence": "The large majority were saved (about 239), but roughly six people died, including a young radio operator who drowned unnoticed inside a flooded raft.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 1,
+          "evidence": "Only two oil-supply vessels and the tug Captain John were available to rescue them; their crews - helped by rescued divers - worked through the night at extreme personal risk, repeatedly nearly being swept off their own decks, to pull su...",
+          "role": "context"
+        }
+      ]
+    },
+    {
+      "id": "ocean-prince-1968",
+      "name": "Ocean Prince Semi-Submersible Break-Up in a North Sea Storm",
+      "year": 1968,
+      "hazard_event_type": "storm",
+      "hazard": "Offshore activity exposed to storm energy",
+      "discipline": "design",
+      "region": "Europe",
+      "fatalities": 0,
+      "infrastructure_impact": "Total loss of the semi-submersible Ocean Prince, which suffered damage, had its derrick collapse into the sea, and then broke up and sank off the Dogger Bank.",
+      "analysis_status": "review_required",
+      "top_event": "structural_failure",
+      "top_event_label": "Structural failure / collapse",
+      "top_event_evidence": "seabed in 75 ft of water - suffered damage and the derrick collapsed into the sea; all persons on board at the time were withdrawn to safety by helicopter. The licensee's standby vessel was driven off station by the continuing storm, and a",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [
+        {
+          "key": "loss_of_stability",
+          "label": "Loss of stability / buoyancy"
+        }
+      ],
+      "threats": [
+        {
+          "key": "foundation_or_seabed_failure",
+          "label": "Foundation, seabed or slope failure",
+          "hits": 1,
+          "evidence": "The rig was operating bottom-supported on a sandbank in about 75 ft of water when a severe storm produced waves comparable to the water depth, exposing the seated hull to severe wave loading and accelerating seabed scour around the ponto...",
+          "role": "cause"
+        }
+      ],
+      "preventive_barriers": [],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
+          "hits": 3,
+          "evidence": "In the storm the rig suffered damage and the derrick collapsed into the sea; the unit then broke up and sank.",
+          "role": "cause"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 2,
+          "evidence": "The standby (rescue) vessel was driven off station by the continuing storm, leaving helicopter evacuation as the decisive means of getting the crew off.",
+          "role": "cause"
         }
       ]
     },
@@ -1807,7 +2255,7 @@
     },
     {
       "id": "west_gamma_1990",
-      "name": "West Gamma Jack-up",
+      "name": "West Gamma Jack-up Capsize During Tow",
       "year": 1990,
       "hazard_event_type": "storm",
       "hazard": "Offshore activity exposed to storm energy",
@@ -1959,6 +2407,74 @@
       "consequences": []
     },
     {
+      "id": "ocean-warwick-katrina-2005",
+      "name": "Ocean Warwick Jack-up Set Adrift and Grounded During Hurricane Katrina",
+      "year": 2005,
+      "hazard_event_type": "cyclone",
+      "hazard": "Offshore activity exposed to cyclone energy",
+      "discipline": "maritime",
+      "region": "North America",
+      "fatalities": 0,
+      "infrastructure_impact": "The unmanned jack-up was driven off its Gulf location by Hurricane Katrina, drifted roughly 66 miles (about 106 km) and grounded on Dauphin Island, Alabama, where aerial photographs on 30-31 August 2005 showed it aground in shallow water with significant damage. It became one of the most widely photographed images of Katrina's impact on the offshore industry.",
+      "analysis_status": "review_required",
+      "top_event": "loss_of_position",
+      "top_event_label": "Loss of position / station-keeping",
+      "top_event_evidence": "a Category 3. During the storm the unmanned rig was driven off its location and carried across the Gulf. Aerial surveys on 30-31 August 2005 located it aground on Dauphin Island, Alabama - contemporary news reports describe it as having be",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [],
+      "threats": [],
+      "preventive_barriers": [],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "grounding",
+          "label": "Unit grounds or strands",
+          "hits": 6,
+          "evidence": "Photographs of the rig grounded against the Alabama shoreline became among the most recognisable images of Katrina's offshore impact.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 4,
+          "evidence": "Evacuated in advance, it caused no casualties but was heavily damaged.",
+          "role": "context"
+        },
+        {
+          "key": "structural_damage",
+          "label": "Structure damaged or destroyed",
+          "hits": 1,
+          "evidence": "Basin-wide, MMS reported Katrina and Rita together destroyed at least 113 platforms and severely damaged dozens more.",
+          "role": "context"
+        }
+      ]
+    },
+    {
+      "id": "gom-modu-mooring-adrift-2004-2005",
+      "name": "2004-2005 GoM Hurricanes - Moored MODUs Set Adrift and Mooring-System Failures",
+      "year": 2005,
+      "hazard_event_type": "cyclone",
+      "hazard": "Offshore activity exposed to cyclone energy",
+      "discipline": "maritime",
+      "region": "North America",
+      "fatalities": 0,
+      "infrastructure_impact": "Mooring-system failures caused 16 deepwater MODUs to go adrift across Hurricanes Ivan, Katrina and Rita (MMS-sponsored OTRC study). Industry reporting records that of the moored MODUs standing in each storm's path, 6 broke free in Katrina and 13 in Rita; across Ivan, Katrina and Rita a total of about 21 MODUs suffered complete or partial mooring failures. Drifting units dragged anchors across, and in cases collided with or threatened, pipelines and fixed and floating production infrastructure. This mobile-unit toll was in addition to fixed-platform destruction - MMS reported Katrina and Rita together destroyed at least 113 platforms.",
+      "analysis_status": "review_required",
+      "top_event": null,
+      "top_event_label": "Not a discrete loss-of-control event",
+      "top_event_evidence": null,
+      "top_event_evidence_status": null,
+      "not_discrete_reason": "Thematic fleet-wide MODU mooring-failure summary, not a single loss of control",
+      "escalated_events": [],
+      "threats": [],
+      "preventive_barriers": [],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": []
+    },
+    {
       "id": "hurricane_rita_2005",
       "name": "Hurricane Rita - GoM Offshore",
       "year": 2005,
@@ -1980,6 +2496,84 @@
       "recovery_barriers": [],
       "escalation_factors": [],
       "consequences": []
+    },
+    {
+      "id": "typhoon-tlp-capsize-rita-2005",
+      "name": "Typhoon Mini-TLP Capsize During Hurricane Rita",
+      "year": 2005,
+      "hazard_event_type": "cyclone",
+      "hazard": "Offshore activity exposed to cyclone energy",
+      "discipline": "design",
+      "region": "North America",
+      "fatalities": 0,
+      "infrastructure_impact": "Complete loss of the TLP. Found capsized, upside down and grounded in Eugene Island Block 271; no fatalities. The structure was later deployed as an artificial reef in Eugene Island Block 367.",
+      "analysis_status": "review_required",
+      "top_event": "loss_of_stability",
+      "top_event_label": "Loss of stability / buoyancy",
+      "top_event_evidence": "on. At approximately 0600 CDT on 23 September, the platform capsized; EPIRBs in lifeboats 2 and 1 began transmitting at 0602 and 0627. Typhoon was subsequently found upside down and grounded in Eugene Island Block 271. The report does not g",
+      "top_event_evidence_status": "record_statement_source_unlinked",
+      "not_discrete_reason": null,
+      "escalated_events": [
+        {
+          "key": "impact_collision",
+          "label": "Impact or collision"
+        },
+        {
+          "key": "wave_impact_on_structure",
+          "label": "Wave impact on structure"
+        }
+      ],
+      "threats": [
+        {
+          "key": "material_degradation",
+          "label": "Fatigue, corrosion or weld defect in load path",
+          "hits": 1,
+          "evidence": "The public investigation did not determine why the load shoulders overloaded; a specific manufacturing, material, installation, corrosion, fatigue or design defect is not established by the reviewed evidence.",
+          "role": "cause"
+        }
+      ],
+      "preventive_barriers": [
+        {
+          "key": "weather_forecasting",
+          "label": "Weather forecasting and storm tracking",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Failure of a critical tendon connection led to loss of platform stability and complete structural loss even though the site hindcast was below the storm criterion cited in the investigation.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
+      "recovery_barriers": [],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 7,
+          "evidence": "At approximately 0600 CDT on 23 September, the platform capsized;",
+          "role": "context"
+        },
+        {
+          "key": "grounding",
+          "label": "Unit grounds or strands",
+          "hits": 4,
+          "evidence": "Found capsized, upside down and grounded in Eugene Island Block 271; no fatalities.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 4,
+          "evidence": "The evacuated platform was a complete loss with zero fatalities.",
+          "role": "context"
+        },
+        {
+          "key": "production_shutdown",
+          "label": "Production shut in or asset off-hire",
+          "hits": 2,
+          "evidence": "Chevron's Typhoon mini-TLP was evacuated and shut in ahead of Hurricane Rita.",
+          "role": "context"
+        }
+      ]
     },
     {
       "id": "hurricane_gustav_2008",
@@ -4583,10 +5177,10 @@
       "fatalities": 2,
       "infrastructure_impact": "Mooring-winch drum covers were washed away and a covered 1.5-tonne chafing chain was displaced; the report does not identify loss of vessel integrity or pollution",
       "analysis_status": "review_required",
-      "top_event": null,
-      "top_event_label": "Undetermined from record text",
-      "top_event_evidence": null,
-      "top_event_evidence_status": null,
+      "top_event": "wave_impact_on_structure",
+      "top_event_label": "Wave impact on structure",
+      "top_event_evidence": "king a nearby loose anchor lashing. At 09:53, a much larger wave crossed the forecastle and swept the Chief Officer and Bosun into deck equipment; both later died. Febima described the wave as probably meeting a freak-wave definition while",
+      "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
       "threats": [

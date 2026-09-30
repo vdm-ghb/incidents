@@ -1,143 +1,143 @@
 {
-  "generated": "2026-09-22",
+  "generated": "2026-09-30",
   "method": "Candidate learning-theme retrieval derived from incident-record wording; it does not establish causality or source support. what_went_wrong matches are candidate recorded causal statements, while lessons/actions are learning themes only. All tags require analyst review against a cited source before use as a finding.",
-  "records_analysed": 83,
-  "total_records": 83,
+  "records_analysed": 93,
+  "total_records": 93,
   "concept_summary": [
     {
       "concept": "procedures_competence",
       "label": "Procedures, training and competence",
-      "incidents": 48,
-      "hits": 160,
-      "as_cause": 25,
-      "as_lesson": 28,
-      "review_required": 48
-    },
-    {
-      "concept": "integrity_maintenance",
-      "label": "Ageing, integrity and maintenance",
-      "incidents": 41,
-      "hits": 157,
-      "as_cause": 24,
-      "as_lesson": 25,
-      "review_required": 41
+      "incidents": 51,
+      "hits": 166,
+      "as_cause": 26,
+      "as_lesson": 30,
+      "review_required": 51
     },
     {
       "concept": "evacuation_abandonment",
       "label": "Evacuation, abandonment and survival craft",
-      "incidents": 40,
-      "hits": 230,
-      "as_cause": 25,
-      "as_lesson": 37,
-      "review_required": 40
+      "incidents": 49,
+      "hits": 286,
+      "as_cause": 31,
+      "as_lesson": 45,
+      "review_required": 49
+    },
+    {
+      "concept": "integrity_maintenance",
+      "label": "Ageing, integrity and maintenance",
+      "incidents": 44,
+      "hits": 164,
+      "as_cause": 26,
+      "as_lesson": 27,
+      "review_required": 44
     },
     {
       "concept": "forecast_uncertainty",
       "label": "Weather forecast, warning or storm track uncertainty",
-      "incidents": 38,
-      "hits": 131,
-      "as_cause": 19,
-      "as_lesson": 29,
-      "review_required": 38
-    },
-    {
-      "concept": "design_basis_inadequate",
-      "label": "Design basis / criteria inadequate or exceeded",
-      "incidents": 35,
-      "hits": 136,
+      "incidents": 43,
+      "hits": 148,
       "as_cause": 21,
-      "as_lesson": 23,
-      "review_required": 35
-    },
-    {
-      "concept": "emergency_response_sar",
-      "label": "Emergency response and search-and-rescue capability",
-      "incidents": 32,
-      "hits": 126,
-      "as_cause": 11,
-      "as_lesson": 24,
-      "review_required": 32
+      "as_lesson": 33,
+      "review_required": 43
     },
     {
       "concept": "station_keeping_mooring",
       "label": "Mooring, anchoring or station-keeping failure",
-      "incidents": 31,
-      "hits": 299,
-      "as_cause": 25,
+      "incidents": 37,
+      "hits": 365,
+      "as_cause": 31,
+      "as_lesson": 31,
+      "review_required": 37
+    },
+    {
+      "concept": "design_basis_inadequate",
+      "label": "Design basis / criteria inadequate or exceeded",
+      "incidents": 37,
+      "hits": 147,
+      "as_cause": 23,
+      "as_lesson": 24,
+      "review_required": 37
+    },
+    {
+      "concept": "emergency_response_sar",
+      "label": "Emergency response and search-and-rescue capability",
+      "incidents": 36,
+      "hits": 151,
+      "as_cause": 13,
       "as_lesson": 26,
-      "review_required": 31
+      "review_required": 36
     },
     {
       "concept": "regulatory_assurance",
       "label": "Regulatory oversight, assurance and verification",
-      "incidents": 25,
-      "hits": 50,
+      "incidents": 27,
+      "hits": 52,
       "as_cause": 10,
-      "as_lesson": 9,
-      "review_required": 25
+      "as_lesson": 10,
+      "review_required": 27
     },
     {
       "concept": "monitoring_instrumentation",
       "label": "Monitoring and instrumentation gaps",
-      "incidents": 25,
-      "hits": 124,
-      "as_cause": 12,
+      "incidents": 26,
+      "hits": 127,
+      "as_cause": 13,
       "as_lesson": 18,
-      "review_required": 25
-    },
-    {
-      "concept": "organisational_authority",
-      "label": "Authority, communication and organisational interfaces",
-      "incidents": 17,
-      "hits": 28,
-      "as_cause": 4,
-      "as_lesson": 13,
-      "review_required": 17
-    },
-    {
-      "concept": "tow_transit",
-      "label": "Tow and marine transit exposure",
-      "incidents": 17,
-      "hits": 219,
-      "as_cause": 12,
-      "as_lesson": 16,
-      "review_required": 17
-    },
-    {
-      "concept": "geohazard_site",
-      "label": "Seabed, geohazard and site characterisation",
-      "incidents": 17,
-      "hits": 107,
-      "as_cause": 14,
-      "as_lesson": 10,
-      "review_required": 17
+      "review_required": 26
     },
     {
       "concept": "stability_flooding",
       "label": "Stability, flooding and watertight integrity",
-      "incidents": 16,
-      "hits": 133,
-      "as_cause": 14,
-      "as_lesson": 14,
-      "review_required": 16
+      "incidents": 21,
+      "hits": 170,
+      "as_cause": 19,
+      "as_lesson": 17,
+      "review_required": 21
+    },
+    {
+      "concept": "tow_transit",
+      "label": "Tow and marine transit exposure",
+      "incidents": 21,
+      "hits": 285,
+      "as_cause": 16,
+      "as_lesson": 19,
+      "review_required": 21
+    },
+    {
+      "concept": "geohazard_site",
+      "label": "Seabed, geohazard and site characterisation",
+      "incidents": 20,
+      "hits": 119,
+      "as_cause": 15,
+      "as_lesson": 12,
+      "review_required": 20
+    },
+    {
+      "concept": "organisational_authority",
+      "label": "Authority, communication and organisational interfaces",
+      "incidents": 19,
+      "hits": 33,
+      "as_cause": 4,
+      "as_lesson": 15,
+      "review_required": 19
     },
     {
       "concept": "riser_wellcontrol",
       "label": "Riser, disconnect and well-control equipment",
-      "incidents": 15,
-      "hits": 147,
+      "incidents": 16,
+      "hits": 148,
       "as_cause": 11,
-      "as_lesson": 11,
-      "review_required": 15
+      "as_lesson": 12,
+      "review_required": 16
     },
     {
       "concept": "structural_failure",
       "label": "Structural failure or collapse",
-      "incidents": 8,
-      "hits": 50,
-      "as_cause": 8,
-      "as_lesson": 4,
-      "review_required": 8
+      "incidents": 14,
+      "hits": 72,
+      "as_cause": 13,
+      "as_lesson": 6,
+      "review_required": 14
     },
     {
       "concept": "schedule_commercial_pressure",
@@ -158,6 +158,15 @@
       "review_required": 7
     },
     {
+      "concept": "vessel_interaction",
+      "label": "Vessel interaction, collision or proximity",
+      "incidents": 6,
+      "hits": 55,
+      "as_cause": 5,
+      "as_lesson": 5,
+      "review_required": 6
+    },
+    {
       "concept": "aviation_helideck",
       "label": "Aviation and helideck operations",
       "incidents": 6,
@@ -169,20 +178,11 @@
     {
       "concept": "marine_lifting_deck_ops",
       "label": "Lifting, cargo and deck operations",
-      "incidents": 4,
-      "hits": 32,
-      "as_cause": 4,
-      "as_lesson": 2,
-      "review_required": 4
-    },
-    {
-      "concept": "vessel_interaction",
-      "label": "Vessel interaction, collision or proximity",
-      "incidents": 4,
-      "hits": 48,
-      "as_cause": 4,
+      "incidents": 5,
+      "hits": 34,
+      "as_cause": 5,
       "as_lesson": 3,
-      "review_required": 4
+      "review_required": 5
     }
   ],
   "incidents": [
@@ -957,6 +957,1165 @@
               "role": "cause",
               "field": "what_went_wrong",
               "text": "Emergency authority was divided among the master, drilling superintendent and operator representative instead of resting with a single person in command."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep-sea-driller-1976",
+      "name": "Deep Sea Driller Semi-Submersible Grounding at Fedje",
+      "year": 1976,
+      "weather_event_type": "storm",
+      "classification": "maritime",
+      "region": "Europe",
+      "fatalities": 6,
+      "infrastructure_impact": null,
+      "sentences_scanned": 38,
+      "tags": [
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 9,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 7
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Evacuation into a lifeboat in heavy seas ended in the lifeboat capsizing, causing all six fatalities during the abandonment rather than in the grounding itself."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Survivability of the evacuation system in the actual sea state is decisive: here the deaths occurred when the lifeboat capsized during abandonment, not in the grounding — a recurring offshore lesson about launching and maintaining lifeboats in severe weather."
+            }
+          ]
+        },
+        {
+          "concept": "organisational_authority",
+          "label": "Authority, communication and organisational interfaces",
+          "hits": 2,
+          "roles": {
+            "cause": 0,
+            "lesson": 2,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A thorough, preserved and credible investigation matters for organisational learning; the enduring criticism of the Deep Sea Driller inquiry shows how an inadequate investigation can leave causes contested for decades."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Marine transits of mobile units near exposed lee shores in winter storms require propulsion redundancy and abort/shelter criteria, because a propulsion failure close to a rocky coast can escalate to grounding within minutes."
+            }
+          ]
+        },
+        {
+          "concept": "forecast_uncertainty",
+          "label": "Weather forecast, warning or storm track uncertainty",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Weather timing and routing of a self-propelled move must treat a deteriorating winter forecast near a coast as a stop criterion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ocean-express-tow-capsize-1976",
+      "name": "Ocean Express Jack-up Capsize Under Tow in Gulf Storm",
+      "year": 1976,
+      "weather_event_type": "storm",
+      "classification": "maritime",
+      "region": "North America",
+      "fatalities": 13,
+      "infrastructure_impact": "Total loss of the mat-supported jack-up Ocean Express, which capsized and sank in about 167 ft of water during a short field move.",
+      "sentences_scanned": 56,
+      "tags": [
+        {
+          "concept": "tow_transit",
+          "label": "Tow and marine transit exposure",
+          "hits": 28,
+          "roles": {
+            "cause": 7,
+            "lesson": 4,
+            "action": 2,
+            "context": 15
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "3 capsule capsized alongside the towing tug after its line was lost and occupants had released seat belts, and it could not be righted, drowning 13."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Loss of one engine on the tug Gulf Knight removed the ability to hold the rig head to weather, and the unit fell back into the tow rather than being towed."
+            }
+          ]
+        },
+        {
+          "concept": "emergency_response_sar",
+          "label": "Emergency response and search-and-rescue capability",
+          "hits": 7,
+          "roles": {
+            "cause": 0,
+            "lesson": 0,
+            "action": 3,
+            "context": 4
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "The US Coast Guard convened a Marine Board of Investigation and the Commandant issued the Marine Casualty Report (Report No."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "The USCG helicopter rescue of the bargemover (Lt Cdr John Lewis and crew, HH-52A) became a widely cited example of extreme-weather offshore rescue."
+            }
+          ]
+        },
+        {
+          "concept": "forecast_uncertainty",
+          "label": "Weather forecast, warning or storm track uncertainty",
+          "hits": 6,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 4
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "A short \"field move\" was continued into a storm far worse than forecast, with the unit afloat and its low tow freeboard already reduced by a port list and forward ballasting."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A \"short\" or \"field\" move is still a marine tow: tow-freeboard, stability and abort criteria must be verified against realistic (not benign) weather, and a worsening forecast must be a stop criterion before the mat is raised and the unit floated."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 5,
+          "roles": {
+            "cause": 2,
+            "lesson": 0,
+            "action": 0,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The evacuation succeeded for one capsule but failed for the other: No."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "NTSB found the Whittaker survival capsules were approved under standards written for open lifeboats: their capsize/righting behaviour in a seaway, escape from an overturned capsule, and towing/mooring fittings and fendering had not been adequately addressed..."
+            }
+          ]
+        },
+        {
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 4,
+          "roles": {
+            "cause": 2,
+            "lesson": 0,
+            "action": 1,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Unsecured deck pipe and the drilling derrick shifted as the rig rolled, driving a progressive list to starboard that led to capsize; a request to drop the anchor was not carried out."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "NTSB found the Whittaker survival capsules were approved under standards written for open lifeboats: their capsize/righting behaviour in a seaway, escape from an overturned capsule, and towing/mooring fittings and fendering had not been adequately addressed..."
+            }
+          ]
+        },
+        {
+          "concept": "procedures_competence",
+          "label": "Procedures, training and competence",
+          "hits": 4,
+          "roles": {
+            "cause": 1,
+            "lesson": 2,
+            "action": 1,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "NTSB found the operating manual gave inadequate guidance on stability across the range of mat-platform separations, towing arrangements, severe-weather operations, transit preparations and operational limits; the bargemover was not aware the mat position af..."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Definitions and paperwork matter: ambiguity over move categories, stability information and crew qualification/working language degraded decision-making during the tow."
+            }
+          ]
+        },
+        {
+          "concept": "monitoring_instrumentation",
+          "label": "Monitoring and instrumentation gaps",
+          "hits": 3,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 1,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "When one tug's reduction gear failed the tugs were not repositioned; on arrival the mat probably could have been set on the bottom and the platform jacked clear with only minor column damage, but the manual did not state the results of exceeding the design ..."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "NTSB issued Marine Accident Report NTSB-MAR-79-5 and nine recommendations to the Coast Guard (M-79-39 through -47): require MODU operating manuals to cover stability across mat-platform separations, tug number/horsepower and towing arrangements, afloat-emer..."
+            }
+          ]
+        },
+        {
+          "concept": "stability_flooding",
+          "label": "Stability, flooding and watertight integrity",
+          "hits": 3,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "A short \"field move\" was continued into a storm far worse than forecast, with the unit afloat and its low tow freeboard already reduced by a port list and forward ballasting."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A \"short\" or \"field\" move is still a marine tow: tow-freeboard, stability and abort criteria must be verified against realistic (not benign) weather, and a worsening forecast must be a stop criterion before the mat is raised and the unit floated."
+            }
+          ]
+        },
+        {
+          "concept": "organisational_authority",
+          "label": "Authority, communication and organisational interfaces",
+          "hits": 3,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 2,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Definitions and paperwork matter: ambiguity over move categories, stability information and crew qualification/working language degraded decision-making during the tow."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "Recommendation M-79-44 (a functional chain of command on MODUs) was later reiterated by NTSB after the 1985 collapse of the jack-up Penrod 67 in the Gulf of Mexico."
+            }
+          ]
+        },
+        {
+          "concept": "integrity_maintenance",
+          "label": "Ageing, integrity and maintenance",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Definitions and paperwork matter: ambiguity over move categories, stability information and crew qualification/working language degraded decision-making during the tow."
+            }
+          ]
+        },
+        {
+          "concept": "riser_wellcontrol",
+          "label": "Riser, disconnect and well-control equipment",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Deck loads (drill pipe) and the derrick must be secured against the motions of a floating, rolling unit, because shifting weights can turn a controllable list into a capsize."
+            }
+          ]
+        },
+        {
+          "concept": "structural_failure",
+          "label": "Structural failure or collapse",
+          "hits": 1,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "When one tug's reduction gear failed the tugs were not repositioned; on arrival the mat probably could have been set on the bottom and the platform jacked clear with only minor column damage, but the manual did not state the results of exceeding the design ..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rowan-gorilla-i-1988",
+      "name": "Rowan Gorilla I Jack-up Capsize During Transatlantic Tow",
+      "year": 1988,
+      "weather_event_type": "storm",
+      "classification": "maritime",
+      "region": "North America",
+      "fatalities": 0,
+      "infrastructure_impact": "Total loss of the jack-up Rowan Gorilla I, which capsized and sank in the North Atlantic while under tow.",
+      "sentences_scanned": 48,
+      "tags": [
+        {
+          "concept": "tow_transit",
+          "label": "Tow and marine transit exposure",
+          "hits": 18,
+          "roles": {
+            "cause": 2,
+            "lesson": 3,
+            "action": 1,
+            "context": 12
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The towline parted at about 0220 in a severe storm, leaving the jack-up adrift and unable to be held head-to-weather."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Per a later Reflekt AS learning-review, pre-existing and uncorrected damage went untreated: leg-working fractures and pre-load-tank flooding were found days before capsize and deck cargo broke loose and damaged structure, and the owner had not acted on simi..."
+            }
+          ]
+        },
+        {
+          "concept": "stability_flooding",
+          "label": "Stability, flooding and watertight integrity",
+          "hits": 16,
+          "roles": {
+            "cause": 3,
+            "lesson": 4,
+            "action": 1,
+            "context": 8
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Once capsized, the rig sank within minutes as inverting opened the compartments to rapid downflooding through the main-deck ventilation openings."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "NTSB attributed the lost stability to flooding, with candidate sources of hull structural failure, downflooding through main-deck ventilation openings, and damage from loose cargo working in the storm."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 10,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 1,
+            "context": 8
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A single totally-enclosed survival capsule kept all 27 alive through a night of 50-ft seas and 60-knot winds - survival craft must sustain occupants for hours, not minutes."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "The escape of all 27 became a benchmark case for totally-enclosed survival craft in severe weather."
+            }
+          ]
+        },
+        {
+          "concept": "structural_failure",
+          "label": "Structural failure or collapse",
+          "hits": 9,
+          "roles": {
+            "cause": 2,
+            "lesson": 1,
+            "action": 0,
+            "context": 6
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "NTSB attributed the lost stability to flooding, with candidate sources of hull structural failure, downflooding through main-deck ventilation openings, and damage from loose cargo working in the storm."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Per a later Reflekt AS learning-review, pre-existing and uncorrected damage went untreated: leg-working fractures and pre-load-tank flooding were found days before capsize and deck cargo broke loose and damaged structure, and the owner had not acted on simi..."
+            }
+          ]
+        },
+        {
+          "concept": "design_basis_inadequate",
+          "label": "Design basis / criteria inadequate or exceeded",
+          "hits": 7,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 5
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The rig capsized in an estimated ~60-knot wind - well below its 100-knot intact design wind - so its actual stability was below what the intact design assumed."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Capsize below the intact design wind is a stability/flooding warning, not wind overload - watertight integrity, main-deck ventilation-opening protection and correct tow loading/ballast are decisive."
+            }
+          ]
+        },
+        {
+          "concept": "marine_lifting_deck_ops",
+          "label": "Lifting, cargo and deck operations",
+          "hits": 2,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Per a later Reflekt AS learning-review, pre-existing and uncorrected damage went untreated: leg-working fractures and pre-load-tank flooding were found days before capsize and deck cargo broke loose and damaged structure, and the owner had not acted on simi..."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Secure all deck cargo for the worst tow motions; loose cargo can cause the hull/opening damage that admits the flooding."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interocean-ii-1989",
+      "name": "Interocean II Jack-up Capsize During Tow in North Sea Gale",
+      "year": 1989,
+      "weather_event_type": "storm",
+      "classification": "maritime",
+      "region": "Europe",
+      "fatalities": 0,
+      "infrastructure_impact": "Total loss of the jack-up Interocean II, which toppled over and sank shortly after the crew were taken off.",
+      "sentences_scanned": 27,
+      "tags": [
+        {
+          "concept": "tow_transit",
+          "label": "Tow and marine transit exposure",
+          "hits": 10,
+          "roles": {
+            "cause": 2,
+            "lesson": 1,
+            "action": 1,
+            "context": 6
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The jack-up, afloat and under tow in a storm-force 10 gale, lost its station-keeping when one of its two anchor chains parted."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "A jack-up under tow is far more vulnerable than when elevated on station; the marine-move exposure in the deteriorating North Sea weather proved decisive."
+            }
+          ]
+        },
+        {
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 5,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The jack-up, afloat and under tow in a storm-force 10 gale, lost its station-keeping when one of its two anchor chains parted."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Anchor/mooring and tow arrangements for a rig move must tolerate the loss of a single component without leading to loss of the unit."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 4,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 1,
+            "context": 2
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A well-executed, timely evacuation - including helicopter lift of the last personnel as the rig failed - can achieve zero casualties even when the asset is lost."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "The rig's 51 crew were evacuated without loss of life, the final eight by helicopter as the rig became unstable."
+            }
+          ]
+        },
+        {
+          "concept": "stability_flooding",
+          "label": "Stability, flooding and watertight integrity",
+          "hits": 1,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Once the chain failed in the severe weather, the rig could not be held and drifted/heeled until it capsized and sank."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db29-typhoon-fred-1991",
+      "name": "DB29 Pipe-Laying Derrick Barge Capsize During Typhoon Fred",
+      "year": 1991,
+      "weather_event_type": "cyclone",
+      "classification": "maritime",
+      "region": "Asia",
+      "fatalities": 22,
+      "infrastructure_impact": "Total loss of the pipe-laying derrick barge DB29, which capsized and sank in about 210 ft of water during Typhoon Fred while laying offshore pipeline.",
+      "sentences_scanned": 43,
+      "tags": [
+        {
+          "concept": "stability_flooding",
+          "label": "Stability, flooding and watertight integrity",
+          "hits": 12,
+          "roles": {
+            "cause": 2,
+            "lesson": 2,
+            "action": 0,
+            "context": 8
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The saturation divers could not be evacuated: with the system partly decompressed and the barge listing, the diving bell could not be mated for transfer under pressure, so the four divers were trapped and lost with the bell."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The immediate loss mechanism was downflooding: high seas loosened deck equipment and breached a hatch - a wreck-report summary attributes this to the destroyed desalination-plant hatch, and survivors also described unsecured anchors and loose heavy loads br..."
+            }
+          ]
+        },
+        {
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 6,
+          "roles": {
+            "cause": 1,
+            "lesson": 2,
+            "action": 0,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The immediate loss mechanism was downflooding: high seas loosened deck equipment and breached a hatch - a wreck-report summary attributes this to the destroyed desalination-plant hatch, and survivors also described unsecured anchors and loose heavy loads br..."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Manning an exposed work barge with a very large crew during typhoon season raises the stakes of any station-keeping or stability failure and should be weighed in storm planning."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 6,
+          "roles": {
+            "cause": 2,
+            "lesson": 2,
+            "action": 1,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The saturation divers could not be evacuated: with the system partly decompressed and the barge listing, the diving bell could not be mated for transfer under pressure, so the four divers were trapped and lost with the bell."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "A self-propelled hyperbaric (decompression) lifeboat that could have carried the divers away while still under pressure existed as technology but was not required by law and had not been provided by the barge owner (per the wreck-report summary)."
+            }
+          ]
+        },
+        {
+          "concept": "emergency_response_sar",
+          "label": "Emergency response and search-and-rescue capability",
+          "hits": 6,
+          "roles": {
+            "cause": 0,
+            "lesson": 0,
+            "action": 1,
+            "context": 5
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "A large multinational sea and air rescue (China, Taiwan, the Soviet Union and Hong Kong) recovered about 168-173 people from the storm seas."
+            },
+            {
+              "role": "context",
+              "field": "executive_summary",
+              "text": "Ships and aircraft from China, Taiwan, the Soviet Union and Hong Kong rescued about 168-173 people from ~25-ft seas and ~75-mph winds; roughly 22 were killed (reported figures range from at least 16 early to as many as 26)."
+            }
+          ]
+        },
+        {
+          "concept": "structural_failure",
+          "label": "Structural failure or collapse",
+          "hits": 1,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The immediate loss mechanism was downflooding: high seas loosened deck equipment and breached a hatch - a wreck-report summary attributes this to the destroyed desalination-plant hatch, and survivors also described unsecured anchors and loose heavy loads br..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dlb-269-hurricane-roxanne-1995",
+      "name": "DLB-269 Pipe-Laying Derrick Barge Sinking During Hurricane Roxanne",
+      "year": 1995,
+      "weather_event_type": "cyclone",
+      "classification": "maritime",
+      "region": "North America",
+      "fatalities": 6,
+      "infrastructure_impact": "Total loss of the pipe-laying derrick barge DLB-269, which foundered and sank under tow in the Bay of Campeche during Hurricane Roxanne.",
+      "sentences_scanned": 41,
+      "tags": [
+        {
+          "concept": "tow_transit",
+          "label": "Tow and marine transit exposure",
+          "hits": 10,
+          "roles": {
+            "cause": 2,
+            "lesson": 0,
+            "action": 1,
+            "context": 7
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Prolonged battering under tow caused serious internal damage and flooding, and the aging barge foundered when Roxanne looped back over it."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Only two supply vessels and one tug were on hand to rescue roughly 245 people in hurricane conditions - a large mismatch between people aboard and available rescue capacity."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 7,
+          "roles": {
+            "cause": 1,
+            "lesson": 2,
+            "action": 0,
+            "context": 4
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "About 230 people entered 30-40 ft hurricane seas; some life jackets were defective and many of the crew could not swim, turning a foundering into a mass-survival emergency."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Forecast uncertainty for erratic storms must widen safety margins and trigger earlier evacuation for large persons-on-board construction barges."
+            }
+          ]
+        },
+        {
+          "concept": "emergency_response_sar",
+          "label": "Emergency response and search-and-rescue capability",
+          "hits": 7,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 1,
+            "context": 4
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Only two supply vessels and one tug were on hand to rescue roughly 245 people in hurricane conditions - a large mismatch between people aboard and available rescue capacity."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Rescue-asset availability should be matched to the number of people aboard when working offshore through hurricane season; here a handful of vessels had to save hundreds."
+            }
+          ]
+        },
+        {
+          "concept": "stability_flooding",
+          "label": "Stability, flooding and watertight integrity",
+          "hits": 5,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 0,
+            "context": 4
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Prolonged battering under tow caused serious internal damage and flooding, and the aging barge foundered when Roxanne looped back over it."
+            },
+            {
+              "role": "context",
+              "field": "what_happened",
+              "text": "The large majority were saved (about 239), but roughly six people died, including a young radio operator who drowned unnoticed inside a flooded raft."
+            }
+          ]
+        },
+        {
+          "concept": "integrity_maintenance",
+          "label": "Ageing, integrity and maintenance",
+          "hits": 4,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 2
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Prolonged battering under tow caused serious internal damage and flooding, and the aging barge foundered when Roxanne looped back over it."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Demobilise marine-construction and pipe-lay spreads from the path of an approaching hurricane; riding out the storm at sea is a high-risk last resort, especially for an aging unit and an erratic, looping track."
+            }
+          ]
+        },
+        {
+          "concept": "forecast_uncertainty",
+          "label": "Weather forecast, warning or storm track uncertainty",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Forecast uncertainty for erratic storms must widen safety margins and trigger earlier evacuation for large persons-on-board construction barges."
+            }
+          ]
+        },
+        {
+          "concept": "procedures_competence",
+          "label": "Procedures, training and competence",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Life-saving appliances and swimmer/immersion competence are decisive for very large multinational crews: defective life jackets and non-swimmers greatly increase the death toll once people are in the water."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ocean-prince-1968",
+      "name": "Ocean Prince Semi-Submersible Break-Up in a North Sea Storm",
+      "year": 1968,
+      "weather_event_type": "storm",
+      "classification": "design",
+      "region": "Europe",
+      "fatalities": 0,
+      "infrastructure_impact": "Total loss of the semi-submersible Ocean Prince, which suffered damage, had its derrick collapse into the sea, and then broke up and sank off the Dogger Bank.",
+      "sentences_scanned": 35,
+      "tags": [
+        {
+          "concept": "geohazard_site",
+          "label": "Seabed, geohazard and site characterisation",
+          "hits": 10,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 8
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The rig was operating bottom-supported on a sandbank in about 75 ft of water when a severe storm produced waves comparable to the water depth, exposing the seated hull to severe wave loading and accelerating seabed scour around the pontoons - conditions a f..."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "A bottom-supported drilling mode on a scour-prone sandbank is vulnerable when storm wave heights approach the water depth; a floating, moored configuration provides compliance that a rigidly seated hull does not - the floating sister rig survived the same s..."
+            }
+          ]
+        },
+        {
+          "concept": "structural_failure",
+          "label": "Structural failure or collapse",
+          "hits": 7,
+          "roles": {
+            "cause": 2,
+            "lesson": 0,
+            "action": 1,
+            "context": 4
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "In the storm the rig suffered damage and the derrick collapsed into the sea; the unit then broke up and sank."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The rig was operating bottom-supported on a sandbank in about 75 ft of water when a severe storm produced waves comparable to the water depth, exposing the seated hull to severe wave loading and accelerating seabed scour around the pontoons - conditions a f..."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 5,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 2,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The standby (rescue) vessel was driven off station by the continuing storm, leaving helicopter evacuation as the decisive means of getting the crew off."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Reliable helicopter evacuation is a critical life-safety control for offshore rigs in severe weather, particularly when standby vessels can be driven off station."
+            }
+          ]
+        },
+        {
+          "concept": "emergency_response_sar",
+          "label": "Emergency response and search-and-rescue capability",
+          "hits": 5,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The standby (rescue) vessel was driven off station by the continuing storm, leaving helicopter evacuation as the decisive means of getting the crew off."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Reliable helicopter evacuation is a critical life-safety control for offshore rigs in severe weather, particularly when standby vessels can be driven off station."
+            }
+          ]
+        },
+        {
+          "concept": "procedures_competence",
+          "label": "Procedures, training and competence",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 0,
+            "action": 1,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "The loss was raised in the UK House of Commons the next day (Hansard, 7 March 1968); the Minister of Power confirmed the damage, derrick collapse, helicopter evacuation and break-up, and stated that the Sea Gem inquiry's recommended procedures - including r..."
+            }
+          ]
+        },
+        {
+          "concept": "regulatory_assurance",
+          "label": "Regulatory oversight, assurance and verification",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Recurring early North Sea rig losses showed that voluntary co-operation was not enough and helped drive the move toward enforceable statutory offshore safety regulation."
             }
           ]
         }
@@ -3928,7 +5087,7 @@
     },
     {
       "id": "west_gamma_1990",
-      "name": "West Gamma Jack-up",
+      "name": "West Gamma Jack-up Capsize During Tow",
       "year": 1990,
       "weather_event_type": "storm",
       "classification": "maritime",
@@ -4662,6 +5821,324 @@
       ]
     },
     {
+      "id": "ocean-warwick-katrina-2005",
+      "name": "Ocean Warwick Jack-up Set Adrift and Grounded During Hurricane Katrina",
+      "year": 2005,
+      "weather_event_type": "cyclone",
+      "classification": "maritime",
+      "region": "North America",
+      "fatalities": 0,
+      "infrastructure_impact": "The unmanned jack-up was driven off its Gulf location by Hurricane Katrina, drifted roughly 66 miles (about 106 km) and grounded on Dauphin Island, Alabama, where aerial photographs on 30-31 August 2005 showed it aground in shallow water with significant damage. It became one of the most widely photographed images of Katrina's impact on the offshore industry.",
+      "sentences_scanned": 37,
+      "tags": [
+        {
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 8,
+          "roles": {
+            "cause": 1,
+            "lesson": 2,
+            "action": 2,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Station-keeping and storm-survival provisions for mobile units in the 2004-2005 Gulf hurricanes were not adequate for the wind, wave and surge loads experienced, contributing to a broader pattern of MODUs set adrift."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Fleet-wide, single-season vulnerability must be planned for: MMS-commissioned post-event studies of Ivan, Katrina and Rita fed directly into revised MODU mooring and hurricane-preparation guidance."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 5,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Because Ocean Warwick was evacuated in advance, the consequence was asset loss and grounding rather than casualties - the safety-critical control that worked here was timely evacuation, not the unit staying on location."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Timely, complete evacuation of mobile units ahead of a major hurricane is the decisive life-safety control;"
+            }
+          ]
+        },
+        {
+          "concept": "vessel_interaction",
+          "label": "Vessel interaction, collision or proximity",
+          "hits": 2,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "An adrift MODU is a mobile hazard to pipelines, platforms and the coast; hurricane planning must consider the drift paths and secondary-collision risk of units that break free."
+            },
+            {
+              "role": "context",
+              "field": "what_happened",
+              "text": "MMS-commissioned engineering studies of Hurricane Ivan (2004) and of Katrina and Rita (2005) chronicled these incidents, several of which involved rigs dragging or breaking free and colliding with, or drifting toward, other infrastructure."
+            }
+          ]
+        },
+        {
+          "concept": "geohazard_site",
+          "label": "Seabed, geohazard and site characterisation",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Mobile-unit station-keeping (jack-up leg/soil capacity and preload margins; semi-submersible mooring design) must be assessed against realistic hurricane wind, wave and current loads, not lower routine criteria - the recurring 2004-2005 MODU-adrift pattern ..."
+            }
+          ]
+        },
+        {
+          "concept": "regulatory_assurance",
+          "label": "Regulatory oversight, assurance and verification",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 0,
+            "action": 1,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "The industry and regulator reviewed and strengthened MODU mooring criteria and hurricane-season preparation practice following the 2004-2005 seasons (including API mooring guidance updates)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gom-modu-mooring-adrift-2004-2005",
+      "name": "2004-2005 GoM Hurricanes - Moored MODUs Set Adrift and Mooring-System Failures",
+      "year": 2005,
+      "weather_event_type": "cyclone",
+      "classification": "maritime",
+      "region": "North America",
+      "fatalities": 0,
+      "infrastructure_impact": "Mooring-system failures caused 16 deepwater MODUs to go adrift across Hurricanes Ivan, Katrina and Rita (MMS-sponsored OTRC study). Industry reporting records that of the moored MODUs standing in each storm's path, 6 broke free in Katrina and 13 in Rita; across Ivan, Katrina and Rita a total of about 21 MODUs suffered complete or partial mooring failures. Drifting units dragged anchors across, and in cases collided with or threatened, pipelines and fixed and floating production infrastructure. This mobile-unit toll was in addition to fixed-platform destruction - MMS reported Katrina and Rita together destroyed at least 113 platforms.",
+      "sentences_scanned": 49,
+      "tags": [
+        {
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 36,
+          "roles": {
+            "cause": 5,
+            "lesson": 6,
+            "action": 4,
+            "context": 21
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The vulnerability was cumulative across a short window (Lili 2002, then Ivan 2004, then Katrina and Rita 2005), yet mooring criteria had not been revised quickly enough between seasons."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "A drifting MODU became a mobile hazard to critical infrastructure, dragging anchors across pipelines and colliding with or threatening fixed and floating production systems and transportation hubs."
+            }
+          ]
+        },
+        {
+          "concept": "evacuation_abandonment",
+          "label": "Evacuation, abandonment and survival craft",
+          "hits": 5,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 1,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Timely evacuation remains the decisive life-safety control: the 2004-2005 mooring failures caused asset and infrastructure loss but no direct fatalities because units were unmanned."
+            },
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "For jack-ups, API developed Recommended Practice RP95J (\"Gulf of Mexico Jackup Optimization during Hurricane Season\"), raising air-gap requirements (up to about 61 ft), requiring operator soil and metocean information and stricter adherence to operating-man..."
+            }
+          ]
+        },
+        {
+          "concept": "vessel_interaction",
+          "label": "Vessel interaction, collision or proximity",
+          "hits": 5,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 0,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "A drifting MODU became a mobile hazard to critical infrastructure, dragging anchors across pipelines and colliding with or threatening fixed and floating production systems and transportation hubs."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "An adrift MODU is a fleet-level and infrastructure-level hazard - hurricane planning must consider drift paths, anchor-drag damage to pipelines, and collision risk to nearby platforms, not just the survival of the individual unit."
+            }
+          ]
+        },
+        {
+          "concept": "design_basis_inadequate",
+          "label": "Design basis / criteria inadequate or exceeded",
+          "hits": 4,
+          "roles": {
+            "cause": 2,
+            "lesson": 0,
+            "action": 1,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Existing API mooring design criteria for MODUs in the Gulf hurricane season proved insufficient, and no reliable means existed to prevent a drift-off after a mooring failure or to slow or stop an already-drifting unit."
+            },
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Moored-MODU mooring systems (lines, connectors and anchor/foundation components) were not designed for the wind, wave and current loads of successive intense Gulf hurricanes, and failed - setting 16 deepwater MODUs adrift across Ivan, Katrina and Rita."
+            }
+          ]
+        },
+        {
+          "concept": "structural_failure",
+          "label": "Structural failure or collapse",
+          "hits": 3,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 2
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Mooring reliability is a whole-system problem: lines, connectors and anchor/foundation capacity must all be assessed for progressive-failure behaviour, because loss of a few components can cascade to total loss of station."
+            },
+            {
+              "role": "context",
+              "field": "what_happened",
+              "text": "Moored MODUs - mainly semi-submersible drilling rigs held on station by spread-mooring systems - repeatedly lost station-keeping when mooring lines and anchor/foundation components failed under hurricane wind, wave and current loading."
+            }
+          ]
+        },
+        {
+          "concept": "forecast_uncertainty",
+          "label": "Weather forecast, warning or storm track uncertainty",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 1,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "Single-season, multi-storm exposure must drive prompt between-season revision of design and preparation standards, supported by post-event data capture (GPS drift tracks, mooring-failure forensics, hindcast metocean)."
+            }
+          ]
+        },
+        {
+          "concept": "geohazard_site",
+          "label": "Seabed, geohazard and site characterisation",
+          "hits": 1,
+          "roles": {
+            "cause": 0,
+            "lesson": 0,
+            "action": 1,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "learning_theme_only",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "action",
+              "field": "actions",
+              "text": "For jack-ups, API developed Recommended Practice RP95J (\"Gulf of Mexico Jackup Optimization during Hurricane Season\"), raising air-gap requirements (up to about 61 ft), requiring operator soil and metocean information and stricter adherence to operating-man..."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "hurricane_rita_2005",
       "name": "Hurricane Rita - GoM Offshore",
       "year": 2005,
@@ -4768,6 +6245,118 @@
               "role": "lesson",
               "field": "lessons_learned",
               "text": "Platform structural adequacy assessment programmes must be completed, not deferred - conditional acceptability decisions must have hard deadlines enforced by regulators."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typhoon-tlp-capsize-rita-2005",
+      "name": "Typhoon Mini-TLP Capsize During Hurricane Rita",
+      "year": 2005,
+      "weather_event_type": "cyclone",
+      "classification": "design",
+      "region": "North America",
+      "fatalities": 0,
+      "infrastructure_impact": "Complete loss of the TLP. Found capsized, upside down and grounded in Eugene Island Block 271; no fatalities. The structure was later deployed as an artificial reef in Eugene Island Block 367.",
+      "sentences_scanned": 49,
+      "tags": [
+        {
+          "concept": "forecast_uncertainty",
+          "label": "Weather forecast, warning or storm track uncertainty",
+          "hits": 8,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 0,
+            "context": 7
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Failure of a critical tendon connection led to loss of platform stability and complete structural loss even though the site hindcast was below the storm criterion cited in the investigation."
+            },
+            {
+              "role": "context",
+              "field": "metocean",
+              "text": "Do not substitute either storm-wide value for Typhoon's local hindcast."
+            }
+          ]
+        },
+        {
+          "concept": "station_keeping_mooring",
+          "label": "Mooring, anchoring or station-keeping failure",
+          "hits": 7,
+          "roles": {
+            "cause": 1,
+            "lesson": 1,
+            "action": 2,
+            "context": 3
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "Failure of a critical tendon connection led to loss of platform stability and complete structural loss even though the site hindcast was below the storm criterion cited in the investigation."
+            },
+            {
+              "role": "lesson",
+              "field": "lessons_learned",
+              "text": "TLP integrity assurance must treat tendon bottom connectors, receptacles and load shoulders as critical load paths; inspect and verify the assembled system, not only the tendon bodies."
+            }
+          ]
+        },
+        {
+          "concept": "integrity_maintenance",
+          "label": "Ageing, integrity and maintenance",
+          "hits": 2,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 0,
+            "context": 1
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The public investigation did not determine why the load shoulders overloaded; a specific manufacturing, material, installation, corrosion, fatigue or design defect is not established by the reviewed evidence."
+            },
+            {
+              "role": "context",
+              "field": "what_happened",
+              "text": "Post-event inspections found all six pontoons dry, with water evidence only in the central shaft."
+            }
+          ]
+        },
+        {
+          "concept": "structural_failure",
+          "label": "Structural failure or collapse",
+          "hits": 1,
+          "roles": {
+            "cause": 1,
+            "lesson": 0,
+            "action": 0,
+            "context": 0
+          },
+          "analysis_status": "review_required",
+          "causal_status": "candidate_recorded_causal_statement",
+          "evidence_status": "record_statement_source_unlinked",
+          "evidence": [
+            {
+              "role": "cause",
+              "field": "what_went_wrong",
+              "text": "The incident investigation identified piles 1 and 2 on pontoon 1 as the most probable initiating failure location, with physical evidence of load-shoulder overload."
             }
           ]
         }
@@ -6012,7 +7601,7 @@
             {
               "role": "cause",
               "field": "what_went_wrong",
-              "text": "The typhoon-to-turbidity-current causal chain - extreme rainfall â†’ river sediment flux â†’ canyon head loading â†’ density flow â†’ pipeline damage - was not fully incorporated as a design load case for the pipeline and its protection systems."
+              "text": "The typhoon-to-turbidity-current causal chain - extreme rainfall → river sediment flux → canyon head loading → density flow → pipeline damage - was not fully incorporated as a design load case for the pipeline and its protection systems."
             },
             {
               "role": "cause",
