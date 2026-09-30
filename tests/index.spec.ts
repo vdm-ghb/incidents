@@ -16,7 +16,7 @@ test('publishes non-visible authorship, custody and analytics metadata', async (
   await expect(page.locator('meta[name="author"]')).toHaveAttribute('content', 'Vadim Anokhin');
   await expect(page.locator('meta[name="publisher"]')).toHaveAttribute('content', 'IOGP');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://vdm-ghb.github.io/incidents/');
-  await expect(page.locator('script[data-domain="vdm-ghb.github.io"]')).toHaveAttribute('src', 'https://plausible.io/js/script.js');
+  await expect(page.locator('script[data-website-id="c94587f4-b377-42b6-a46a-8ac2bb33e72b"]')).toHaveAttribute('src', 'https://cloud.umami.is/script.js');
 
   const structuredData = await page.locator('script[type="application/ld+json"]').textContent();
   const metadata = JSON.parse(structuredData ?? '{}');

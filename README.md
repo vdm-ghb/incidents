@@ -88,7 +88,7 @@ The incident-image rollout also has Python verification paths for environments w
 - Open `index.html` (locally or via GitHub Pages) to browse the map.
 - Filter incidents by **event type** (metocean hazard), **region**, **classification** (discipline), or **consequence** using the header controls.
 - Search incident names, vessel/platform names, taxonomy, categories, regions and consequences. As you type, a short list of matching incidents appears beside the search field; free text also searches the incident narratives, lessons and actions.
-- Anonymous page-visit analytics are provided by Plausible for the published GitHub Pages site; no analytics dashboard or visitor identifiers are exposed in the webpage.
+- Anonymous page-visit analytics are provided by Umami Cloud for the published GitHub Pages site; no analytics dashboard or visitor identifiers are exposed in the webpage.
 - Markers are coloured by classification and lettered by event type (see the on-map legend).
 - Hover over a marker for the incident blurb and, where selected, a scaled image thumbnail.
 - Click a marker for the full lessons-learned writeup. Selected images appear after the Summary text and open at their natural size when clicked.
@@ -143,7 +143,7 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 - Verified: `npx playwright test` 65/65, `npm run test:analysis` 12/12, `verify_gunashli_image.py` PASS (72 selected images render, 107 local files decode — run with bundled Chromium on macOS because the script hard-codes `channel="msedge"`), screenshots of the Typhoon TLP gallery and Fred track checked by eye. `tests/audit_image_coverage.py` still fails on the same pre-existing 16 uncatalogued files; all 9 new images are catalogued.
 
 **Open from this merge:**
-- **Analytics provider:** the dump switched `index.html` from Plausible to Umami Cloud (`data-website-id c94587f4-…`). Not applied — awaiting the user's decision; the Plausible script and its test remain.
+- **Analytics provider:** switched from Plausible to Umami Cloud (`data-website-id c94587f4-…`) on the user's decision, 2026-09-30.
 - Storm-track date labels overlap each other and the hover tooltip at world zoom (e.g. Fred); consider hiding them below a zoom threshold.
 - `typhoon-tlp-capsize-rita-2005` is the only new record without a `data_quality` field. DB29 references: `wrecksite.eu/wreck.aspx?109878` returned 404 and the Washington Post archive link timed out (2026-09-30) — unverified, not removed.
 - The dump's README again claimed Seacrest/Bohai/Usumacinta/Papaa-305 rewrites that are not in its `data/incidents.js` (records unchanged) — same open mismatch as the 2026-09-13 entry.
