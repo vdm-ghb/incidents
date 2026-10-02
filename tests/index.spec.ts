@@ -76,14 +76,14 @@ test('Seacrest record presents the full evidence-based loss sequence', async ({ 
   );
 
   expect(incidents).toHaveLength(1);
-  expect(incidents[0].what_happened).toContain('last documented call');
-  expect(incidents[0].what_happened).toContain('met ABS dynamic-stability requirements');
+  expect(incidents[0].what_happened).toContain('last call at 1326');
+  expect(incidents[0].what_went_wrong.join(' ')).toContain('static-stability');
   expect(incidents[0].what_happened).toContain('62 and 69 miles northwest');
   expect(incidents[0].data_quality).toContain('commissioned by Unocal Thailand');
 
   await page.locator('#filter-search').fill('Drillship Seacrest');
   await page.locator('.search-result', { hasText: 'Drillship Seacrest' }).click();
-  await expect(page.locator('#modal-content')).toContainText('Seven of eight anchor cables');
+  await expect(page.locator('#modal-content')).toContainText('Seven of the eight anchor cables');
 
   const image = page.locator('#modal-content .incident-image-figure img');
   await expect(image).toBeVisible();
@@ -101,14 +101,14 @@ test('Bohai No. 2 record presents the corrected tow and flooding sequence', asyn
   expect(incident.persons_on_board).toBe(74);
   expect(incident.survivors).toBe(2);
   expect(incident.fatalities).toBe(72);
-  expect(incident.what_happened).toContain('third ventilation trunk broke at its base');
-  expect(incident.what_happened).toContain('single tug could not complete the turn');
+  expect(incident.what_happened).toContain('ventilation trunk broke at its base');
+  expect(incident.what_happened).toContain('single tug could not turn the platform');
   expect(incident.executive_summary).toContain('major responsibility accident');
   expect(incident.image.src).toBe('images/bohai-no2-1979-platform.jpg');
 
   await page.locator('#filter-search').fill('Bohai No. 2');
   await page.locator('.search-result', { hasText: 'Bohai No. 2' }).click();
-  await expect(page.locator('#modal-content')).toContainText('Only two people survived; 72 died.');
+  await expect(page.locator('#modal-content')).toContainText('only two survived; 72 died.');
   await expect(page.locator('#modal-content')).toContainText('No verified numerical significant-wave-height value');
 
   const image = page.locator('#modal-content .incident-image-figure img');
@@ -127,15 +127,15 @@ test('Usumacinta record separates the collision, evacuation, and well-control ev
   expect(incident.persons_on_board).toBe(73);
   expect(incident.survivors).toBe(53);
   expect(incident.fatalities).toBe(22);
-  expect(incident.what_happened).toContain('20 fatalities and 53 survivors');
-  expect(incident.what_happened).toContain('two Morrison Tide rescuers killed');
-  expect(incident.what_happened).toContain('well Kab-121');
+  expect(incident.what_happened).toContain('20 died');
+  expect(incident.what_happened).toContain('two rescuers from the Morrison Tide also died');
+  expect(incident.what_happened).toContain('Kab-121');
   expect(incident.environmental_impact).toContain('422 barrels');
   expect(incident.data_quality).toContain('20 Usumacinta evacuees plus two Morrison Tide rescuers');
 
   await page.locator('#filter-search').fill('Usumacinta');
   await page.locator('.search-result', { hasText: 'Usumacinta' }).click();
-  await expect(page.locator('#modal-content')).toContainText('Battelle identified adverse weather');
+  await expect(page.locator('#modal-content')).toContainText('Battelle identified poor evaluation and tracking');
   await expect(page.locator('#modal-content')).toContainText('CNDH Recommendation 14/2009');
   await expect(page.locator('#modal-content')).toContainText('near-lightship');
 
@@ -153,12 +153,10 @@ test('Glomar Java Sea record preserves the Chinese warning decision sequence', a
   );
 
   expect(incident).toBeDefined();
-  expect(incident.what_happened).toContain('Chinese meteorologist at Nanhai West');
+  expect(incident.what_happened).toContain('Chinese meteorologist warned');
   expect(incident.what_happened).toContain('suggested moving it');
-  expect(incident.what_happened).toContain('neither move off location nor evacuate personnel');
-  expect(incident.what_went_wrong).toContain(
-    'The NTSB recorded that a Chinese meteorologist warned the storm would pass near the drillship and suggested moving it, but ARCO declined based on the alternative METEO forecast and the perceived lack of shelter; local shipping officials were subsequently told that neither relocation nor personnel evacuation was planned.',
-  );
+  expect(incident.what_happened).toContain('superintendent declined');
+  expect(incident.what_went_wrong.join(' ')).toContain('a specific warning to move was declined');
   expect(incident.references.some(
     (reference: { publisher: string }) => reference.publisher.includes('百度百家号')
   )).toBe(true);
@@ -541,7 +539,7 @@ test('Mars Katrina record preserves the toppled-rig recovery boundary', async ({
   expect(incident.fatalities).toBe(0);
   expect(incident.storm_sid).toBe('2005236N23285');
   expect(incident.summary).toContain('rig structure failed and toppled onto the deck');
-  expect(incident.what_happened).toContain('approximately 1,000-ton rig');
+  expect(incident.what_happened).toContain('about 670 tons');
   expect(incident.data_quality).toContain('full independent failure investigation');
   expect(incident.image.src).toBe('images/hurricane-katrina-2005-mars-platform-damage.jpg');
 
@@ -549,7 +547,7 @@ test('Mars Katrina record preserves the toppled-rig recovery boundary', async ({
   const row = page.locator('#incidents-tbody tr', { hasText: 'Mars TLP Drilling Rig Topple During Hurricane Katrina' });
   await expect(row).toHaveCount(1);
   await row.click();
-  await expect(page.locator('#modal-content')).toContainText('approximately 1,000-ton rig');
+  await expect(page.locator('#modal-content')).toContainText('about 670 tons');
   await expect(page.locator('#modal-content .incident-image-figure img')).toHaveJSProperty('naturalWidth', 365);
 });
 
@@ -641,16 +639,14 @@ test('Papaa-305 and Varapradha record preserves the official chronology and casu
   expect(incidents).toHaveLength(1);
   const incident = incidents[0];
   expect([incident.persons_on_board, incident.survivors, incident.fatalities]).toEqual([274, 188, 86]);
-  expect(incident.what_happened).toContain('186 of 261 survived and 75 died');
-  expect(incident.what_happened).toContain('13-person anchor-handling tug');
-  expect(incident.what_happened).toContain('INS Kolkata rescued two people; 11 died');
+  expect(incident.what_happened).toContain('186 of the 261 aboard');
+  expect(incident.what_happened).toContain('75 died');
+  expect(incident.what_happened).toContain('11 of its 13 crew');
   expect(incident.what_happened).toContain('07:14');
-  expect(incident.what_happened).toContain('INS Kochi');
-  expect(incident.what_happened).toContain('15:30');
   expect(incident.what_happened).toContain('19:05');
-  expect(incident.what_happened).toContain('none of the 36');
-  expect(incident.what_happened).toContain('112 were genuine and 80 were not authentic');
-  expect(incident.what_happened).toContain('April 2022 Parliamentary Standing Committee report');
+  expect(incident.what_happened).toContain('36 life rafts');
+  expect(incident.what_went_wrong.join(' ')).toContain('80 were not authentic');
+  expect(incident.actions.join(' ')).toContain('2022 Parliamentary Standing Committee');
   expect(incident.metocean.notes).toContain('cyclone-centre intensity');
   expect(incident.references.some(
     (reference: { publisher: string }) => reference.publisher.includes('India Meteorological Department')
@@ -806,8 +802,8 @@ test('Kolskaya record preserves corrected Russian-source findings and caveats', 
   expect(incident.weather_event).toContain('winds up to 25 m/s');
   expect(incident.metocean.wave_height_hs).toContain('do not identify this value as significant wave height');
   expect(incident.executive_summary).toContain('28 people not required for the tow');
-  expect(incident.what_went_wrong.join(' ')).toContain('orally prohibited a distress signal');
-  expect(incident.what_went_wrong.join(' ')).toContain('unofficial account');
+  expect(incident.data_quality).toContain('orally prohibited a distress signal');
+  expect(incident.data_quality).toContain('unofficial account');
   expect(incident.data_quality).toContain('schedule causation is not');
   expect(incident.actions.join(' ')).not.toContain('tighter scrutiny');
   expect(JSON.stringify(incident)).not.toMatch(/Likhvan|Bordzilovsky/i);
@@ -817,9 +813,8 @@ test('Kolskaya record preserves corrected Russian-source findings and caveats', 
   await page.locator('#filter-search').fill('Kolskaya');
   await page.locator('.search-result', { hasText: 'Kolskaya Jack-up' }).click();
   await expect(page.locator('#modal-content')).toContainText('Squally wind up to 25 m/s');
-  await expect(page.locator('#modal-content')).toContainText('28 of them were not required');
-  await expect(page.locator('#modal-content')).toContainText('sent SOS despite that prohibition');
-  await expect(page.locator('#modal-content')).toContainText('unofficial account');
+  await expect(page.locator('#modal-content')).toContainText('28 were not required');
+  await expect(page.locator('#modal-content')).toContainText('distress call was sent too late');
   await expect(page.locator('#modal-content')).not.toContainText(/Likhvan|Bordzilovsky/i);
 
   const image = page.locator('#modal-content .incident-image-figure img');
@@ -933,4 +928,42 @@ test('map summary omits the image figure when an incident has no selected image'
   await expect(page.locator('#modal-overlay')).not.toHaveClass(/hidden/);
   await expect(page.locator('#modal-content .incident-image-figure')).toHaveCount(0);
   await expect(page.locator('#modal-content')).not.toContainText('Placeholder visual');
+});
+
+test('Safety Moment button links to the pack, which renders the new Trinity II record with its gallery', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+
+  await page.click('#stat-incidents-btn');
+  await page.locator('#incidents-tbody tr', { hasText: 'Trinity II' }).click();
+  await expect(page.locator('#modal-pack')).toHaveAttribute('href', 'pack.html?id=trinity-ii-liftboat-capsize-2011');
+  await expect(page.locator('#modal-pack')).not.toHaveAttribute('target', '_blank');
+
+  await page.goto('/pack.html?id=trinity-ii-liftboat-capsize-2011');
+  await expect(page.locator('#pack-loading')).toHaveCount(0);
+  expect(await page.locator('#pack-deck .slide').count()).toBeGreaterThanOrEqual(6);
+  await expect(page.locator('#pack-deck')).toContainText('Trinity II');
+  const gallery = page.locator('#pack-deck .pack-gallery img');
+  await expect(gallery).toHaveCount(3);
+  for (const image of await gallery.all()) {
+    await image.scrollIntoViewIfNeeded();
+    expect(await image.evaluate((element: HTMLImageElement) => element.decode().then(() => element.naturalWidth))).toBeGreaterThan(0);
+  }
+  expect(errors).toEqual([]);
+});
+
+test('every incident renders a Safety Moment pack without script errors', async ({ page }) => {
+  test.setTimeout(180_000);
+  const ids: string[] = await page.evaluate(() => (window as any).INCIDENTS_DATA.incidents.map((item: any) => item.id));
+  expect(ids).toHaveLength(96);
+  for (const id of ids) {
+    const errors: string[] = [];
+    const onError = (error: Error) => errors.push(error.message);
+    page.on('pageerror', onError);
+    await page.goto(`/pack.html?id=${encodeURIComponent(id)}`);
+    await expect(page.locator('#pack-loading'), id).toHaveCount(0);
+    expect(await page.locator('#pack-deck .slide').count(), id).toBeGreaterThanOrEqual(6);
+    page.off('pageerror', onError);
+    expect(errors, id).toEqual([]);
+  }
 });

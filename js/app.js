@@ -518,6 +518,8 @@
     showIncidentTrack(incident, true);
     activeIncidentImages=incident.images&&incident.images.length?incident.images:(incident.image?[incident.image]:[]);
     modalContent.innerHTML=buildIncidentHTML(incident);
+    var packLink=document.getElementById('modal-pack');
+    if (packLink) packLink.setAttribute('href','pack.html?id='+encodeURIComponent(incident.id));
     modalOverlay.classList.remove('hidden');
     modalContent.scrollTop=0;
     window.requestAnimationFrame(function(){ modalContent.scrollTop=0; });

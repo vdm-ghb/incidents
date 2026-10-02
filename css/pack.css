@@ -1,0 +1,174 @@
+/* ═══════════════════════════════════════════════════
+   Safety Moment sharing pack — screen + print (16:9)
+   Data-driven from data/incidents.js; one slide per page.
+   ═══════════════════════════════════════════════════ */
+:root{
+  --bg:#1a2540; --surface:#22304e; --surface2:#2a3c62; --border:#3d5680;
+  --text:#eef5fd; --text-muted:#9db9d6; --accent:#60aeff;
+  --ink:#16223c; --pale:#eef4fb;
+  --orange:#f0883e; --red:#da3633; --green:#2db590;
+  /* Slide geometry: 13.333in × 7.5in (16:9 @ 96dpi) */
+  --slide-w:13.333in; --slide-h:7.5in;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:#0f1830;color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Helvetica,Arial,sans-serif;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+a{color:var(--accent);text-decoration:none;}
+
+/* ── Screen toolbar ── */
+#pack-toolbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+  padding:9px 16px;background:rgba(15,24,48,.94);border-bottom:1px solid var(--border);
+  backdrop-filter:blur(6px);}
+#pack-toolbar-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);}
+#pack-toolbar-actions{margin-left:auto;display:flex;align-items:center;gap:10px;}
+#pack-back,#pack-record{font-size:12px;color:var(--text);border:1px solid var(--border);
+  border-radius:6px;padding:5px 11px;transition:border-color .15s,color .15s;white-space:nowrap;}
+#pack-back:hover,#pack-record:hover{border-color:var(--accent);color:var(--accent);}
+#pack-print{font-size:12px;color:var(--ink);background:var(--accent);border:1px solid var(--accent);
+  border-radius:6px;padding:5px 13px;cursor:pointer;font-weight:600;transition:filter .15s;}
+#pack-print:hover{filter:brightness(1.08);}
+#pack-present{font-size:12px;color:var(--text);background:transparent;border:1px solid var(--border);
+  border-radius:6px;padding:5px 13px;cursor:pointer;font-weight:600;transition:border-color .15s,color .15s;}
+#pack-present:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ── Present mode (one slide at a time, fills the viewport) ── */
+#pack-nav{position:fixed;top:16px;right:18px;z-index:200;display:flex;align-items:center;gap:9px;}
+#pack-nav[hidden]{display:none;}
+#nav-counter{font-size:13px;color:#cfe0f5;min-width:52px;text-align:center;font-variant-numeric:tabular-nums;
+  text-shadow:0 1px 3px rgba(0,0,0,.6);}
+.nav-arrow,.nav-exit{width:40px;height:40px;border-radius:9px;border:1px solid rgba(255,255,255,.28);
+  background:rgba(15,24,48,.62);color:#eef5fd;font-size:22px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);
+  transition:background .15s,border-color .15s,opacity .15s;}
+.nav-arrow:hover,.nav-exit:hover{background:rgba(96,174,255,.32);border-color:var(--accent);}
+.nav-arrow.is-hidden{visibility:hidden;}
+.nav-exit{font-size:16px;}
+
+body.presenting{overflow:hidden;background:#05070f;}
+body.presenting #pack-toolbar{display:none;}
+body.presenting #pack-deck{position:fixed;inset:0;margin:0;padding:0;gap:0;
+  display:flex;align-items:center;justify-content:center;background:#05070f;}
+body.presenting .slide{display:none;margin:0 !important;border:none;border-radius:0;
+  box-shadow:0 0 60px rgba(0,0,0,.6);transform-origin:center center;}
+body.presenting .slide.is-current{display:block;}
+
+/* ── Deck / slides ── */
+#pack-deck{display:flex;flex-direction:column;align-items:center;gap:22px;padding:26px 16px 60px;}
+#pack-loading{color:var(--text-muted);padding:40px;font-size:14px;}
+.pack-error{max-width:640px;margin:60px auto;padding:24px;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;line-height:1.6;}
+
+.slide{position:relative;width:var(--slide-w);height:var(--slide-h);flex:0 0 auto;
+  background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;
+  box-shadow:0 14px 40px rgba(0,0,0,.5);color:var(--text);}
+/* Fit slide to viewport width on smaller screens (screen only) */
+@media screen and (max-width:1320px){
+  #pack-deck{padding-left:0;padding-right:0;}
+  .slide{transform-origin:top center;}
+}
+
+/* Accent band + footer common to content slides */
+.slide-band{position:absolute;top:0;left:0;width:0.28in;height:100%;}
+.slide-pad{position:absolute;inset:0;padding:0.62in 0.72in 0.72in 1.0in;display:flex;flex-direction:column;}
+.slide-kicker{font-size:12pt;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.slide-title{font-size:30pt;font-weight:800;line-height:1.08;color:var(--text);margin-bottom:14px;}
+.slide-foot{position:absolute;left:1.0in;right:0.72in;bottom:0.34in;display:flex;justify-content:space-between;
+  gap:12px;font-size:8.5pt;color:var(--text-muted);border-top:1px solid var(--border);padding-top:7px;}
+.slide-foot span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.slide-foot a{color:var(--text-muted);text-decoration:underline;}
+
+/* Bulleted content */
+.pack-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:4px;}
+.pack-list li{position:relative;padding-left:30px;font-size:16.5pt;line-height:1.34;color:var(--text);}
+.pack-list li::before{content:"";position:absolute;left:2px;top:11px;width:11px;height:11px;
+  border-radius:3px;background:var(--accent);}
+.pack-list.warn li::before{background:var(--orange);}
+.pack-list.cause li::before{background:var(--red);}
+.pack-list.lesson li::before{background:var(--green);}
+.pack-list.tight li{font-size:14.5pt;gap:8px;}
+.pack-list.tight{gap:9px;}
+
+/* Story bullets (what happened) can be a touch smaller to fit the narrative */
+.pack-list.story li{font-size:15.5pt;line-height:1.32;}
+
+.slide-body{flex:1 1 auto;min-height:0;overflow:hidden;}
+
+/* ── Title slide ── */
+.slide.title .slide-pad{padding:0;}
+.title-grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 5.4in;}
+.title-left{padding:0.7in 0.55in 0.6in 0.95in;display:flex;flex-direction:column;}
+.title-right{position:relative;background:#0d1832;border-left:1px solid var(--border);}
+#pack-map{position:absolute;inset:0;}
+.title-map-caption{position:absolute;left:0;right:0;bottom:0;background:rgba(13,24,48,.82);
+  color:var(--text);font-size:9pt;padding:8px 14px;line-height:1.35;}
+.title-eyebrow{font-size:11pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+.title-badges{display:flex;gap:8px;margin:14px 0 16px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:9.5pt;font-weight:700;
+  border-radius:20px;padding:4px 12px;border:1px solid var(--border);color:var(--text);}
+.badge.impact{color:#fff;border:none;}
+.badge.letter{width:26px;height:26px;padding:0;justify-content:center;border-radius:50%;
+  background:var(--surface2);border:1px solid var(--border);}
+.title-name{font-size:29pt;font-weight:800;line-height:1.1;color:var(--text);margin-bottom:12px;}
+.title-oneline{font-size:14.5pt;line-height:1.45;color:var(--text-muted);margin-bottom:auto;}
+.title-meta{display:grid;grid-template-columns:auto 1fr;gap:5px 16px;margin:18px 0;font-size:11.5pt;}
+.title-meta dt{color:var(--text-muted);font-weight:700;}
+.title-meta dd{color:var(--text);}
+.title-frame{margin-top:8px;padding:11px 15px;background:rgba(96,174,255,.09);
+  border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:11pt;line-height:1.45;color:var(--text);}
+.title-frame strong{color:var(--accent);}
+
+/* ── Scene slide (metocean + image) ── */
+.scene-grid{display:grid;grid-template-columns:1fr 4.9in;gap:0.5in;height:100%;}
+.metocean-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 12px;}
+.mc{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:10px 13px;}
+.mc-label{font-size:9pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);opacity:.85;}
+.mc-value{font-size:13.5pt;font-weight:700;color:var(--text);margin-top:3px;line-height:1.2;}
+.scene-note{font-size:10pt;line-height:1.45;color:var(--text-muted);font-style:italic;}
+.scene-figure{align-self:stretch;display:flex;flex-direction:column;background:#0d1832;
+  border:1px solid var(--border);border-radius:9px;overflow:hidden;}
+.scene-figure img{width:100%;flex:1 1 auto;object-fit:cover;min-height:0;}
+.scene-figure figcaption{font-size:8.5pt;line-height:1.4;color:var(--text-muted);padding:8px 12px;background:#0d1832;}
+.scene-figure.noimg{align-items:center;justify-content:center;color:var(--text-muted);font-size:11pt;padding:24px;text-align:center;}
+
+/* ── Evidence gallery slide ── */
+.pack-gallery{display:grid;gap:0.35in;height:100%;}
+.pack-gallery.cols-2{grid-template-columns:1fr 1fr;}
+.pack-gallery.cols-3{grid-template-columns:1fr 1fr 1fr;}
+.pack-figure{display:flex;flex-direction:column;background:#0d1832;border:1px solid var(--border);
+  border-radius:9px;overflow:hidden;min-height:0;}
+.pack-figure img{width:100%;flex:1 1 auto;object-fit:contain;min-height:0;background:#0d1832;}
+.pack-figure figcaption{font-size:8pt;line-height:1.38;color:var(--text-muted);padding:8px 11px;background:#0d1832;}
+
+/* ── Discussion slide ── */
+.slide.discussion{background:linear-gradient(135deg,#22304e 0%,#1a2540 60%);}
+.discuss-q{position:relative;padding-left:44px;font-size:17pt;line-height:1.34;color:var(--text);margin-bottom:16px;}
+.discuss-q .qn{position:absolute;left:0;top:-2px;width:30px;height:30px;border-radius:50%;
+  background:var(--accent);color:var(--ink);font-weight:800;font-size:13pt;display:flex;align-items:center;justify-content:center;}
+
+/* ── Close slide ── */
+.slide.close{background:radial-gradient(120% 120% at 15% 0%,#26375c 0%,#141f38 55%);}
+.close-takeaway{font-size:24pt;font-weight:800;line-height:1.24;color:var(--text);max-width:9.5in;margin-bottom:26px;}
+.close-link{display:inline-flex;align-items:center;gap:10px;font-size:13pt;color:var(--accent);
+  border:1px solid var(--accent);border-radius:8px;padding:11px 18px;}
+.close-sources{margin-top:22px;}
+.close-source-list{list-style:none;margin-top:9px;display:flex;flex-direction:column;gap:7px;max-width:11in;}
+.close-source-list li{position:relative;padding-left:17px;font-size:11pt;line-height:1.4;color:var(--text);}
+.close-source-list li::before{content:"\203a";position:absolute;left:0;top:-1px;color:var(--accent);font-weight:700;}
+.close-source-list a{color:var(--accent);}
+.close-caveat{margin-top:auto;font-size:9.5pt;line-height:1.5;color:var(--text-muted);max-width:10in;}
+
+/* ═══════════════ PRINT — 16:9 PDF, one slide per page ═══════════════ */
+/* Explicit 16:9 page (width > height ⇒ landscape); custom size honoured by Chrome/Edge "Save as PDF". */
+@page{size:13.333in 7.5in;margin:0;}
+@media print{
+  html,body{background:#fff;width:13.333in;}
+  #pack-toolbar{display:none !important;}
+  #pack-nav{display:none !important;}
+  #pack-deck{display:block;gap:0;padding:0;margin:0;}
+  /* !important defeats the inline transform/margin the on-screen scaler writes per slide. */
+  .slide{width:13.333in !important;height:7.5in !important;margin:0 !important;border:none;border-radius:0;
+    box-shadow:none;transform:none !important;
+    break-after:page;page-break-after:always;break-inside:avoid;}
+  .slide:last-child{break-after:auto;page-break-after:auto;}
+}

@@ -36,7 +36,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=5">
   <link rel="shortcut icon" href="favicon.svg?v=5">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css?v=20260930004512">
+  <link rel="stylesheet" href="css/style.css?v=20261002071205">
 </head>
 <body>
 
@@ -54,7 +54,7 @@
         <p>Records were developed with AI assistance, then reviewed against investigation reports, technical publications and other traceable sources. Uncertain or incomplete information is identified rather than presented as established fact.</p>
         <p>Entries separate the metocean hazard from the affected operational discipline and focus on practical lessons for planning, design and operations.</p>
         <dl>
-          <div><dt>Developed by</dt><dd>Vadim Anokhin</dd></div>
+          <div><dt>Developed by</dt><dd>Vadim Anokhin, Shell Australia</dd></div>
           <div><dt>Custodian</dt><dd></dd></div>
         </dl>
         <details id="database-legal-notice">
@@ -178,6 +178,7 @@
       <div id="modal-toolbar">
         <button id="modal-print" title="Print this incident report">&#128438; Print</button>
         <button id="modal-share" title="Copy link to this incident">&#128279; Share</button>
+        <a id="modal-pack" title="Open a print-ready safety-moment sharing pack (10–15 min)">&#128227; Safety Moment</a>
         <button id="modal-close" title="Close (Escape)" aria-label="Close">&#215;</button>
       </div>
       <div id="modal-content"></div>
@@ -228,12 +229,12 @@
   <div id="print-report"></div>
 
   <!-- DATA — loaded before Leaflet so it's available immediately -->
-  <script src="data/incidents.js?v=20260930004512"></script>
-  <script src="data/storm_tracks.js?v=20260930004512"></script>
+  <script src="data/incidents.js?v=20261002071205"></script>
+  <script src="data/storm_tracks.js?v=20261002071205"></script>
   <!-- Leaflet map library -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Main app -->
-  <script src="js/app.js?v=20260930004512"></script>
+  <script src="js/app.js?v=20261002071205"></script>
 
 </body>
 </html>
