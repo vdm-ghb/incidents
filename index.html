@@ -36,7 +36,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=5">
   <link rel="shortcut icon" href="favicon.svg?v=5">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css?v=20261002071205">
+  <link rel="stylesheet" href="css/style.css?v=20261016142047">
 </head>
 <body>
 
@@ -57,7 +57,11 @@
           <div><dt>Developed by</dt><dd>Vadim Anokhin, Shell Australia</dd></div>
           <div><dt>Custodian</dt><dd></dd></div>
         </dl>
-        <details id="database-legal-notice">
+        <details id="database-disclaimer" class="database-section" name="database-info">
+          <summary>Disclaimer</summary>
+          <p>Whilst every effort has been made to ensure the accuracy of the information contained in this Offshore Weather Incidents - Lessons Learned Database, neither IOGP nor any of its Members past present or future warrants its accuracy or will, regardless of its or their negligence, assume liability for any foreseeable or unforeseeable use made thereof, which liability is hereby excluded to the fullest extent permitted by law. Consequently, such use is at the recipient’s own risk on the basis that any use by the recipient constitutes agreement to the terms of this disclaimer. The recipient is obliged to inform any subsequent recipient of such terms. Please note that this Database is provided for informational purposes and industry learning only. Except as explicitly stated otherwise, this Database must not be considered as a substitute for government policies or decisions or reference to the relevant legislation relating to information contained in it. IOGP and its Members past, present, and future expressly disclaim all liability in respect of all claims, losses or damages arising from the use or application of the information contained in this Database in any industrial application. Any reference to third party names is for appropriate acknowledgement of their ownership and does not constitute a sponsorship or endorsement.</p>
+        </details>
+        <details id="database-legal-notice" class="database-section" name="database-info">
           <summary>Use and limitations</summary>
           <p>This database is provided for general information, learning and technical discussion. It is a developing reference, not a definitive record and not engineering, operational, safety, legal or regulatory advice. Users must make their own independent assessments and consult qualified professionals before relying on any information for decisions.</p>
           <p>Records are compiled from publicly available reports, technical publications, official records and other cited sources. Information may be incomplete, uncertain or subject to correction. Inclusion of an incident, company, vessel, platform or source does not imply endorsement, attribution of fault or confirmation that every statement is established fact.</p>
@@ -229,12 +233,13 @@
   <div id="print-report"></div>
 
   <!-- DATA — loaded before Leaflet so it's available immediately -->
-  <script src="data/incidents.js?v=20261002071205"></script>
-  <script src="data/storm_tracks.js?v=20261002071205"></script>
+  <script src="data/incidents.js?v=20261016142047"></script>
+  <script src="data/storm_tracks.js?v=20261016142047"></script>
   <!-- Leaflet map library -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Main app -->
-  <script src="js/app.js?v=20261002071205"></script>
+  <script src="js/timeline.js?v=20261016142047"></script>
+  <script src="js/app.js?v=20261016142047"></script>
 
 </body>
 </html>

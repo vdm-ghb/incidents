@@ -73,7 +73,8 @@
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}', {
     attribution:'', maxZoom:13, opacity:0.7 }).addTo(map);
 
-  var allIncidents=[], activeMarkers=[], activeFilters={type:'all',region:'all',classification:'all',consequence:'all',search:''};
+  var allIncidents=[], activeMarkers=[], activeFilters={type:'all',region:'all',classification:'all',consequence:'all',search:'',yearFrom:null,yearTo:null};
+  var timeline=null;
   var stormTracksBySid = {};
   var activeTrackLayer = null;
   var activeTrackLabel = null;
@@ -391,17 +392,18 @@
     panel.classList.remove('hidden');
   }
 
-  function incidentMatchesFilters(incident) {
+  function incidentMatchesFilters(incident, ignoreYears) {
     if (activeFilters.region !== 'all' && incident.region !== activeFilters.region) return false;
     if (activeFilters.type !== 'all' && incident.weather_event_type !== activeFilters.type) return false;
     if (activeFilters.classification !== 'all' && classKey(incident) !== activeFilters.classification) return false;
     if (activeFilters.consequence !== 'all' && incidentConsequenceTags(incident).indexOf(activeFilters.consequence) === -1) return false;
     if (activeFilters.search && searchableText(incident).indexOf(activeFilters.search) === -1) return false;
+    if (!ignoreYears && activeFilters.yearFrom !== null && (incident.year < activeFilters.yearFrom || incident.year > activeFilters.yearTo)) return false;
     return true;
   }
 
   function getFilteredIncidents() {
-    return allIncidents.filter(incidentMatchesFilters);
+    return allIncidents.filter(function(incident) { return incidentMatchesFilters(incident); });
   }
 
   // Keep a right-anchored tooltip from being clipped above the map: nudge it down
@@ -420,15 +422,19 @@
     if (img && !img.complete) img.addEventListener('load', clamp, { once: true });
   }
 
+  function incidentTooltipHTML(incident) {
+    var clsClass=classColor(incident);
+    var tooltipImage=incident.image&&incident.image.src?'<img class="tooltip-image" src="'+esc(incident.image.src)+'" alt="" loading="lazy">':'';
+    var summaryText=incident.summary||incident.executive_summary||'';
+    return '<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+clsClass+'">'+esc(fatalityText(incident))+'</span>'+(summaryText?'<div class="tooltip-summary">'+esc(summaryText)+'</div>':'')+tooltipImage;
+  }
+
   function createMarker(incident) {
     if (!incident.lat || !incident.lng) return null; // Skip incidents with null coordinates
     var clsClass=classColor(incident), letter=EVENT_TYPE_LETTERS[incident.weather_event_type]||'?';
     var icon=L.divIcon({ className:'', html:'<div class="incident-marker '+clsClass+'" data-incident-id="'+esc(incident.id)+'">'+letter+'</div>', iconSize:[32,32], iconAnchor:[16,16], tooltipAnchor:[18,0] });
     var marker=L.marker([incident.lat,incident.lng],{icon:icon,riseOnHover:true,alt:incident.name});
-    var tooltipImage=incident.image&&incident.image.src?'<img class="tooltip-image" src="'+esc(incident.image.src)+'" alt="" loading="lazy">':'';
-    var summaryText=incident.summary||incident.executive_summary||'';
-    var ttHTML='<div class="tooltip-name">'+esc(incident.name)+' ('+incident.year+')</div><div class="tooltip-meta">'+esc(shortLoc(incident.location,55))+'</div><span class="tooltip-fatal '+clsClass+'">'+esc(fatalityText(incident))+'</span>'+(summaryText?'<div class="tooltip-summary">'+esc(summaryText)+'</div>':'')+tooltipImage;
-    marker.bindTooltip(ttHTML,{permanent:false,direction:'right',opacity:1});
+    marker.bindTooltip(incidentTooltipHTML(incident),{permanent:false,direction:'right',opacity:1});
     marker.on('tooltipopen',function(e){ keepTooltipInView(e.tooltip); });
     marker.on('mouseover',function(){ showIncidentTrack(incident, false); });
     marker.on('mouseout',function(){ restoreLockedTrack(); });
@@ -460,6 +466,72 @@
     });
     updateStats(filtered);
     filterTableRows();
+    if (timeline) timeline.render();
+  }
+
+  function setMarkerPulse(incident, on) {
+    if (!incident) return;
+    document.querySelectorAll('.incident-marker[data-incident-id="'+incident.id+'"]').forEach(function(el){ el.classList.toggle('marker-pulse', on); });
+  }
+
+  /* Timeline "peek": after a short dwell on a dot, pan just enough to show an off-screen
+     marker; when the pointer leaves the timeline without a click, return to the prior view. */
+  var PEEK_DWELL_MS=350, peekTimer=null, peekHome=null;
+
+  function nearestCopy(incident) {
+    var lng=incident.lng, c=map.getCenter().lng;
+    while (lng-c>180) lng-=360;
+    while (lng-c<-180) lng+=360;
+    return L.latLng(incident.lat, lng);
+  }
+
+  function peekPadding(comfortable) {
+    var mapRect=map.getContainer().getBoundingClientRect(), s=map.getSize();
+    var right=40, bottom=40;
+    var legendEl=document.getElementById('legend'), timelineEl=document.getElementById('timeline');
+    if (legendEl && legendEl.classList.contains('open')) right=Math.max(right, mapRect.right-legendEl.getBoundingClientRect().left+24);
+    if (timelineEl && !timelineEl.classList.contains('collapsed')) bottom=Math.max(bottom, mapRect.bottom-timelineEl.getBoundingClientRect().top+24);
+    if (!comfortable) return { tl:L.point(40,40), br:L.point(right,bottom) };
+    var side=Math.round(s.x*0.15), vert=Math.round(s.y*0.12);
+    return { tl:L.point(Math.max(140,side), Math.max(80,vert)), br:L.point(right+side, bottom+vert) };
+  }
+
+  function inPeekView(latlng, pad) {
+    var p=map.latLngToContainerPoint(latlng), s=map.getSize();
+    return p.x>=pad.tl.x && p.y>=pad.tl.y && p.x<=s.x-pad.br.x && p.y<=s.y-pad.br.y;
+  }
+
+  function schedulePeek(incident) {
+    clearTimeout(peekTimer);
+    if (!incident || !incident.lat || !incident.lng || !incidentMatchesFilters(incident)) return;
+    peekTimer=setTimeout(function(){
+      var ll=nearestCopy(incident);
+      if (inPeekView(ll, peekPadding(false))) return;
+      var pad=peekPadding(true);
+      if (!peekHome) peekHome={ center:map.getCenter(), zoom:map.getZoom() };
+      map.panInside(ll,{ paddingTopLeft:pad.tl, paddingBottomRight:pad.br, animate:true, duration:0.5 });
+    }, PEEK_DWELL_MS);
+  }
+
+  function endPeek(restore) {
+    clearTimeout(peekTimer);
+    if (restore && peekHome) map.setView(peekHome.center, peekHome.zoom, { animate:true });
+    peekHome=null;
+  }
+
+  function initTimeline() {
+    if (!window.IncidentTimeline) return;
+    timeline = window.IncidentTimeline.init({
+      incidents: allIncidents,
+      classColor: classColor,
+      tooltipHTML: incidentTooltipHTML,
+      matchesOtherFilters: function(incident) { return incidentMatchesFilters(incident, true); },
+      onRangeChange: function(from, to) { activeFilters.yearFrom=from; activeFilters.yearTo=to; renderMarkers(); },
+      onHover: function(incident) { setMarkerPulse(incident, true); showIncidentTrack(incident, false); schedulePeek(incident); },
+      onHoverEnd: function(incident) { clearTimeout(peekTimer); setMarkerPulse(incident, false); restoreLockedTrack(); },
+      onLeave: function() { endPeek(true); },
+      onSelect: function(incident) { endPeek(false); if (incident) openModal(incident); }
+    });
   }
 
   function updateStats(filtered) {
@@ -492,7 +564,8 @@
     } else { map.setView(homeMapView.center, homeMapView.zoom); }
   });
   document.getElementById('filter-reset').addEventListener('click',function(){
-    activeFilters={type:'all',region:'all',classification:'all',consequence:'all',search:''};
+    activeFilters={type:'all',region:'all',classification:'all',consequence:'all',search:'',yearFrom:null,yearTo:null};
+    if (timeline) timeline.reset();
     document.getElementById('filter-search').value='';
     renderSearchResults();
     document.getElementById('filter-type').value='all';
@@ -667,7 +740,7 @@
   function filterTableRows() {
     var tbody=document.getElementById('incidents-tbody');
     if (!tbody) return;
-    var visible=allIncidents.filter(incidentMatchesFilters).sort(function(a,b){
+    var visible=getFilteredIncidents().sort(function(a,b){
       var fa=a.fatalities||0, fb=b.fatalities||0;
       return fb!==fa ? fb-fa : (a.year||0)-(b.year||0);
     });
@@ -713,6 +786,7 @@
 
   loadStormTracks();
   loadData();
+  initTimeline();
   if (window.location.hash) {
     var hashId=window.location.hash.slice(1);
     var linked=allIncidents.find(function(i){ return i.id===hashId; });

@@ -35,6 +35,16 @@
     var out=[]; for (var i=0;i<arr.length;i+=size) out.push(arr.slice(i,i+size)); return out;
   }
   // The Safety Moment is a trimmed view; the full account lives on the incident page.
+  // Records may carry presenter-length wording in `pack_text`, which overrides the
+  // full sleeve fields (summary, what_happened, lists) for the pack only.
+  function withPackText(inc){
+    if (!inc.pack_text) return inc;
+    var view = Object.assign({}, inc);
+    Object.keys(inc.pack_text).forEach(function(k){
+      if (inc.pack_text[k] != null) view[k] = inc.pack_text[k];
+    });
+    return view;
+  }
   // Cap the headline lists so a long record stays presentation-length.
   var PACK_LIST_CAP = { what_went_wrong: 5, lessons_learned: 4, actions: 4 };
   function capList(arr, key){ return (arr || []).slice(0, PACK_LIST_CAP[key]); }
@@ -119,6 +129,12 @@
     var rx = /inquiry|investigation|official|commission|\breport\b|board|ntsb|aaib|psa|havtil|atsb|mms|bsee|nsia|coast guard|marine board|imd|cndh|failure analysis/i;
     var key = refs.filter(function(r){ return rx.test(r.type||'') || rx.test(r.title||''); });
     return (key.length ? key : refs).slice(0, 3);
+  }
+
+  function videoReferences(inc){
+    return (inc.references || []).filter(function(r){
+      return /video/i.test(r.type||'') && r.url;
+    }).slice(0, 2);
   }
 
   function buildSlides(inc){
@@ -234,6 +250,7 @@
     // Close
     n++;
     var sources = keyReferences(inc);
+    var videos = videoReferences(inc);
     var sourcesHTML = sources.length
       ? '<div class="close-sources"><div class="slide-kicker">Key investigation reports</div>'+
           '<ul class="close-source-list">'+sources.map(function(r){
@@ -243,12 +260,20 @@
               : label + (r.internal?' · internal':' · see full record'))+'</li>';
           }).join('')+'</ul></div>'
       : '';
+    var videosHTML = videos.length
+      ? '<div class="close-sources close-videos"><div class="slide-kicker">Incident video</div>'+
+          '<ul class="close-source-list">'+videos.map(function(r){
+            var label = esc(r.title) + (r.publisher?' — '+esc(r.publisher):'') + (r.year?' ('+esc(r.year)+')':'');
+            return '<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+label+'</a></li>';
+          }).join('')+'</ul></div>'
+      : '';
     slides.push(slideShell(n, total, inc,
       '<div class="slide-pad">'+
         '<div class="slide-kicker">Key takeaway</div>'+
         '<p class="close-takeaway">'+esc(takeaway(inc))+'</p>'+
         '<a class="close-link" href="index.html#'+esc(inc.id)+'">Open the full incident record, sources & data-quality notes &#8594;</a>'+
         sourcesHTML+
+        videosHTML+
         '<p class="close-caveat">This safety moment was developed with AI assistance, based on information in the published investigation reports and other sources cited in the full record; uncertain or incomplete information is identified rather than presented as established fact. '+
           'See the full record for references and evidence boundaries.</p>'+
       '</div>').replace('class="slide"','class="slide close"'));
@@ -417,6 +442,7 @@
     if (!id){ showError('No incident specified. Add <code>?id=&lt;incident-id&gt;</code> to the URL.'); return; }
     var inc = data.find(function(i){ return i.id === id; });
     if (!inc){ showError('Incident <strong>'+esc(id)+'</strong> was not found in the database.'); return; }
+    inc = withPackText(inc);
 
     document.title = 'Safety Moment — ' + inc.name;
     document.getElementById('pack-toolbar-title').textContent = 'Safety Moment · ' + inc.year;

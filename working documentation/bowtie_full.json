@@ -1,19 +1,19 @@
 {
-  "generated": "2026-10-02",
+  "generated": "2026-10-16",
   "method": "Candidate bow-tie retrieval aligned to CGE/Wolters Kluwer and CCPS-EI terminology. It classifies wording in the incident record, not source material. All relationships require analyst review against a cited source before use as a finding. Only what_went_wrong statements are used for candidate threats, failed/absent barriers and escalation factors. Lessons and actions are excluded. Explicitly uncertain statements are excluded where recognised.",
   "rule": "Candidate top event = first recognised loss-of-control phrase in the chronological record narrative; absence of a phrase is reported as undetermined, not inferred.",
   "records_analysed": 96,
   "top_event_counts": {
-    "structural_failure": 10,
+    "structural_failure": 9,
     "loss_of_position": 25,
-    "loss_of_stability": 19,
+    "loss_of_stability": 18,
+    "impact_collision": 2,
     "ignition_fire_explosion": 3,
-    "loss_of_containment": 5,
-    "electrical_contact_with_energy": 2,
+    "loss_of_containment": 4,
+    "electrical_contact_with_energy": 3,
     "equipment_detachment": 3,
     "wind_damage_to_structure": 2,
-    "impact_collision": 1,
-    "loss_of_aircraft_control": 4,
+    "loss_of_aircraft_control": 5,
     "not_discrete": 10,
     "wave_impact_on_structure": 5,
     "subsea_asset_displacement": 2,
@@ -145,7 +145,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_position",
       "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "d Seacrest could look after itself. As the eye passed, the anchor cables ran out or parted one after another until only the No. 7 bow anchor still held - and it was dragging. In the last call at 1326 the rig reported a 5-degree list and wi",
+      "top_event_evidence": "st could look after itself. By 1217 Seacrest reported that anchor No. 1 was lost, tension remained on No. 7, both thrusters were at full power, the vessel listed about 3 degrees to starboard and there was temporarily no wind: the eye was p",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
@@ -159,14 +159,14 @@
           "key": "mooring_line_overload",
           "label": "Mooring/anchor line fails under storm load",
           "hits": 1,
-          "evidence": "Seven of the eight anchor cables ran out or parted; the one remaining anchor dragged and let the vessel yaw broadside to the wind and waves.",
+          "evidence": "Seven of eight anchor cables ran out, parted in overload or otherwise ceased to restrain the vessel.",
           "role": "cause"
         },
         {
           "key": "anchor_dragging",
           "label": "Anchor drags or fails to hold",
           "hits": 1,
-          "evidence": "Seven of the eight anchor cables ran out or parted; the one remaining anchor dragged and let the vessel yaw broadside to the wind and waves.",
+          "evidence": "7 port-bow anchor dragged and allowed large yaw oscillations into broadside wind-and-wave exposure.",
           "role": "cause"
         }
       ],
@@ -175,7 +175,7 @@
           "key": "weather_forecasting",
           "label": "Weather forecasting and storm tracking",
           "state": "candidate_failed_or_absent",
-          "evidence": "Forecasts did not predict Gay's rapid intensification and track change in time to preserve an evacuation or move-off window.",
+          "evidence": "Forecasts available to the operator did not predict Gay's rapid intensification and northward track change soon enough to preserve a practical evacuation or move-off window.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -183,7 +183,7 @@
           "key": "procedures_and_competence",
           "label": "Procedures, drills and competence",
           "state": "candidate_failed_or_absent",
-          "evidence": "Heavy-weather preparation was incomplete or could not be verified: drill pipe left in the derrick, casing shifted, and seawater into the mud room and emergency-generator room.",
+          "evidence": "Heavy-weather preparation was incomplete or could not be verified: drill pipe remained in the derrick, casing and equipment shifted, and seawater entered the mud room and emergency-generator room.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -198,7 +198,14 @@
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
-      "escalation_factors": [],
+      "escalation_factors": [
+        {
+          "key": "procedure_absent_or_not_followed",
+          "label": "Procedure absent or not followed",
+          "evidence": "The operator's emergency manual did not address heavy-weather handling of a vessel operating at anchor, leaving the crew without a scenario-specific procedure for progressive mooring failure and heading control.",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
       "consequences": [
         {
           "key": "capsize",
@@ -210,15 +217,15 @@
         {
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
-          "hits": 3,
+          "hits": 4,
           "evidence": "Total loss of the drillship.",
           "role": "context"
         },
         {
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
-          "hits": 2,
-          "evidence": "Forecasts did not predict Gay's rapid intensification and track change in time to preserve an evacuation or move-off window.",
+          "hits": 4,
+          "evidence": "The investigation judged it too high because anchor handling becomes impossible and evacuation difficult before that threshold is reached.",
           "role": "cause"
         }
       ]
@@ -236,27 +243,41 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_stability",
       "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "ry; soon afterwards radio contact was lost and Ocean Ranger capsized and sank. A standby supply vessel reached the scene and came alongside a lifeboat carrying survivors, but in the extreme seas and near-freezing water it could not take th",
+      "top_event_evidence": "g's stability deteriorated progressively until Ocean Ranger capsized and sank. The extreme list and storm conditions made the seven lifeboats difficult or impossible to launch effectively: craft were damaged, jammed or lost, and people ente",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
-      "threats": [],
-      "preventive_barriers": [],
-      "recovery_barriers": [
+      "threats": [
         {
-          "key": "survival_craft",
-          "label": "Lifeboats, life rafts and survival craft",
+          "key": "ballast_system_malfunction",
+          "label": "Ballast or bilge system malfunctions",
+          "hits": 1,
+          "evidence": "A storm wave broke a portlight and flooded the ballast control room, disabling normal electrical and remote ballast control.",
+          "role": "cause"
+        }
+      ],
+      "preventive_barriers": [
+        {
+          "key": "procedures_and_competence",
+          "label": "Procedures, drills and competence",
           "state": "candidate_failed_or_absent",
-          "evidence": "The lifeboats could not be launched at the list angle and sea state reached; craft were damaged, jammed or lost.",
+          "evidence": "Manual ballast controls, valve arrangements and crew training were inadequate for recovering from the flooded-control-room condition; incorrect transfers worsened the list.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
+      "recovery_barriers": [],
       "escalation_factors": [
         {
-          "key": "survival_craft_unusable",
-          "label": "Survival craft destroyed or unusable",
-          "evidence": "The lifeboats could not be launched at the list angle and sea state reached; craft were damaged, jammed or lost.",
+          "key": "procedure_absent_or_not_followed",
+          "label": "Procedure absent or not followed",
+          "evidence": "Manual ballast controls, valve arrangements and crew training were inadequate for recovering from the flooded-control-room condition; incorrect transfers worsened the list.",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
+          "key": "competence_or_training_gap",
+          "label": "Competence or training gap",
+          "evidence": "Manual ballast controls, valve arrangements and crew training were inadequate for recovering from the flooded-control-room condition; incorrect transfers worsened the list.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -264,7 +285,7 @@
         {
           "key": "capsize",
           "label": "Unit capsizes",
-          "hits": 3,
+          "hits": 5,
           "evidence": "The rig capsized and sank in near-freezing water.",
           "role": "context"
         },
@@ -279,7 +300,7 @@
           "key": "fatalities_occurred",
           "label": "People are killed",
           "hits": 3,
-          "evidence": "No one was recovered alive; all 84 people aboard died.",
+          "evidence": "All 84 people aboard died; no one was recovered alive.",
           "role": "context"
         }
       ]
@@ -297,7 +318,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_position",
       "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "recovered the riser on 23 October but did not move the ship off location or evacuate the nonessential crew. On 25 October a Chinese meteorologist warned that the storm would pass near the drillship and suggested moving it. The ARCO superin",
+      "top_event_evidence": "riser by 1015 on 23 October, but the drillship did not move off location and nonessential personnel were not evacuated. On the morning of 25 October, a Chinese meteorologist at Nanhai West warned that the storm would pass near the drillshi",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
@@ -312,19 +333,41 @@
           "key": "weather_forecasting",
           "label": "Weather forecasting and storm tracking",
           "state": "candidate_failed_or_absent",
-          "evidence": "Decision-makers relied on the forecast track passing north of the ship and did not adequately allow for uncertainty in track and strength - a specific warning to move was declined.",
+          "evidence": "The NTSB recorded that a Chinese meteorologist warned the storm would pass near the drillship and suggested moving it, but ARCO declined based on the alternative METEO forecast and the perceived lack of shelter; local shipping officials ...",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
+          "key": "procedures_and_competence",
+          "label": "Procedures, drills and competence",
+          "state": "candidate_failed_or_absent",
+          "evidence": "ARCO lacked a shoreside contingency plan with specific radio procedures, and gaps in the radio watch contributed to about 42 hours of uncertainty before the wreck was identified.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
       "recovery_barriers": [],
-      "escalation_factors": [],
+      "escalation_factors": [
+        {
+          "key": "authority_or_interface_unclear",
+          "label": "Authority or contractor interface unclear",
+          "evidence": "Emergency authority was divided among the master, drilling superintendent and operator representative instead of resting with a single person in command.",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
       "consequences": [
         {
           "key": "capsize",
           "label": "Unit capsizes",
-          "hits": 6,
-          "evidence": "The wreck was found inverted about 1,650 ft southwest of the well.",
+          "hits": 7,
+          "evidence": "The wreck was found inverted about 1,650 feet southwest of the well.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 3,
+          "evidence": "The crew disconnected and recovered the marine riser by 1015 on 23 October, but the drillship did not move off location and nonessential personnel were not evacuated.",
           "role": "context"
         },
         {
@@ -340,13 +383,6 @@
           "hits": 2,
           "evidence": "All 81 people aboard died: 35 bodies were located and 46 remained missing and presumed dead.",
           "role": "context"
-        },
-        {
-          "key": "emergency_evacuation",
-          "label": "Emergency evacuation of personnel",
-          "hits": 1,
-          "evidence": "Nonessential personnel were not evacuated even while conditions on 23 October still allowed it.",
-          "role": "cause"
         }
       ]
     },
@@ -380,7 +416,7 @@
         {
           "key": "grounding",
           "label": "Unit grounds or strands",
-          "hits": 8,
+          "hits": 9,
           "evidence": "The immediate loss combined storm exposure and a reported propulsion failure (grounding) with a lifeboat capsize during evacuation.",
           "role": "context"
         },
@@ -420,7 +456,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_position",
       "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "onger hold head to weather, and soon after the second tug's towline parted and could not be recovered across the tiny, sea-swept tow deck. The unit drifted broadside to the seas; deck pipe and then the derrick shifted, driving a growing lis",
+      "top_event_evidence": "ather than a towing vessel. At about 1930 the Gulf Viking's towline parted in the towing spring, and the crew could not recover the heavy nylon line across the tiny, sea-swept triangular tow deck. Deck pipe then shifted, causing the rig to",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
@@ -442,7 +478,7 @@
           "key": "towline_failure",
           "label": "Towline or pennant parts",
           "hits": 1,
-          "evidence": "The second tug's towline then parted and could not be re-established across the small, swamped tow deck, so the rig drifted broadside to the seas.",
+          "evidence": "The Gulf Viking's towline then parted, and the small, constantly swamped triangular tow deck made it impossible to re-establish the tow, so the rig drifted broadside to the boarding seas.",
           "role": "cause"
         }
       ],
@@ -451,26 +487,17 @@
           "key": "procedures_and_competence",
           "label": "Procedures, drills and competence",
           "state": "candidate_failed_or_absent",
-          "evidence": "The operating manual gave inadequate stability, towing and severe-weather guidance, and the survival capsules were approved to open-lifeboat standards that never addressed capsize and escape - the second capsize drowned 13.",
+          "evidence": "NTSB found the operating manual gave inadequate guidance on stability across the range of mat-platform separations, towing arrangements, severe-weather operations, transit preparations and operational limits; the bargemover was not aware...",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
-      "recovery_barriers": [
-        {
-          "key": "survival_craft",
-          "label": "Lifeboats, life rafts and survival craft",
-          "state": "candidate_failed_or_absent",
-          "evidence": "The operating manual gave inadequate stability, towing and severe-weather guidance, and the survival capsules were approved to open-lifeboat standards that never addressed capsize and escape - the second capsize drowned 13.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
+      "recovery_barriers": [],
       "escalation_factors": [
         {
           "key": "procedure_absent_or_not_followed",
           "label": "Procedure absent or not followed",
-          "evidence": "The operating manual gave inadequate stability, towing and severe-weather guidance, and the survival capsules were approved to open-lifeboat standards that never addressed capsize and escape - the second capsize drowned 13.",
+          "evidence": "NTSB found the operating manual gave inadequate guidance on stability across the range of mat-platform separations, towing arrangements, severe-weather operations, transit preparations and operational limits; the bargemover was not aware...",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -478,14 +505,14 @@
         {
           "key": "capsize",
           "label": "Unit capsizes",
-          "hits": 8,
+          "hits": 10,
           "evidence": "Total loss of the mat-supported jack-up Ocean Express, which capsized and sank in about 167 ft of water during a short field move.",
           "role": "context"
         },
         {
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
-          "hits": 3,
+          "hits": 4,
           "evidence": "Total loss of the mat-supported jack-up Ocean Express, which capsized and sank in about 167 ft of water during a short field move.",
           "role": "context"
         },
@@ -495,6 +522,13 @@
           "hits": 1,
           "evidence": "Shifting deck pipe and a displaced derrick drove an increasing list until the rig drifted, grounded, capsized and sank about 2115.",
           "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 1,
+          "evidence": "The evacuation succeeded for one capsule but failed for the other: No.",
+          "role": "cause"
         }
       ]
     },
@@ -509,27 +543,28 @@
       "fatalities": 4,
       "infrastructure_impact": "Stern jacking leg failed and fractured about 10 ft below the hull; several feet of seawater flooded the machinery spaces; estimated vessel damage about $1.5 million. The abandoned vessel later drifted and was recovered by the Mexican Navy.",
       "analysis_status": "review_required",
-      "top_event": "structural_failure",
-      "top_event_label": "Structural failure / collapse",
-      "top_event_evidence": "At about 12:25 on 8 September the wave-loaded stern jacking leg failed, the hull listed, and the master broadcast a Mayday and ordered abandon ship. In the hurricane-force wind both liferafts were lost over the side, so all 10 abandoned, in",
+      "top_event": "loss_of_stability",
+      "top_event_label": "Loss of stability / buoyancy",
+      "top_event_evidence": "ouse because the deck crane was swinging violently. Fearing capsize, all ten went into the water holding the grab lines of a single 12-person lifefloat, with a ring buoy and spare lifejackets but without the food, water and flares they had",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
-      "escalated_events": [],
+      "escalated_events": [
+        {
+          "key": "loss_of_position",
+          "label": "Loss of position / station-keeping"
+        },
+        {
+          "key": "structural_failure",
+          "label": "Structural failure / collapse"
+        }
+      ],
       "threats": [],
       "preventive_barriers": [
-        {
-          "key": "weather_operating_limits",
-          "label": "Weather-based operating limits and stop-work triggers",
-          "state": "candidate_failed_or_absent",
-          "evidence": "The hurricane plans of both Trinity Liftboats and Geokinetics assumed a named storm arriving from the east with days of warning; neither addressed a locally forming system or the vessel's operating limits, so the plans were never activated.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        },
         {
           "key": "structural_design_criteria",
           "label": "Adequate design criteria and sufficient air gap",
           "state": "candidate_failed_or_absent",
-          "evidence": "The stern jacking leg failed when lateral wave forces and the weight of water on deck exceeded its strength, initiating the loss, and no further air gap could be gained.",
+          "evidence": "Liftboat design standards assume the hull stays above the waves and do not consider wave loads on it; incomplete design calculations and no metallurgical examination meant design or material defects could not be excluded.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -539,7 +574,7 @@
           "key": "survival_craft",
           "label": "Lifeboats, life rafts and survival craft",
           "state": "candidate_failed_or_absent",
-          "evidence": "During abandonment both liferafts were lost (one inflated on deck instead of thrown over, one inflated by a wave while still aboard) and the EPIRB was left behind, so the exhausted crew ended on a lifefloat with no food, water or locatin...",
+          "evidence": "Both 25-person liferafts were lost: the starboard raft was inflated on deck against the posted instructions and blew away, and the port raft inflated in its cradle and was lost - taking their food, water and thermal protection with them.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -547,15 +582,7 @@
           "key": "immersion_suits_ppe",
           "label": "Immersion suits and personal survival equipment",
           "state": "candidate_failed_or_absent",
-          "evidence": "During abandonment both liferafts were lost (one inflated on deck instead of thrown over, one inflated by a wave while still aboard) and the EPIRB was left behind, so the exhausted crew ended on a lifefloat with no food, water or locatin...",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        },
-        {
-          "key": "muster_and_abandonment",
-          "label": "Muster and abandonment procedure",
-          "state": "candidate_failed_or_absent",
-          "evidence": "During abandonment both liferafts were lost (one inflated on deck instead of thrown over, one inflated by a wave while still aboard) and the EPIRB was left behind, so the exhausted crew ended on a lifefloat with no food, water or locatin...",
+          "evidence": "Both 25-person liferafts were lost: the starboard raft was inflated on deck against the posted instructions and blew away, and the port raft inflated in its cradle and was lost - taking their food, water and thermal protection with them.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -563,7 +590,7 @@
           "key": "standby_rescue_vessel",
           "label": "Standby or rescue vessel",
           "state": "candidate_failed_or_absent",
-          "evidence": "Evacuation was not arranged in time; the designated standby vessel was unsuitable and, storm-damaged and unable to turn in the sea, returned to port.",
+          "evidence": "The designated standby vessel could not turn in the seas, had storm damage and an injured crewman, and returned to port, leaving no vessel able to take the personnel off before the leg failed.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -573,16 +600,30 @@
         {
           "key": "fatalities_occurred",
           "label": "People are killed",
-          "hits": 3,
+          "hits": 4,
           "evidence": "Four died and six survived with serious injuries.",
+          "role": "context"
+        },
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 2,
+          "evidence": "The liftboat itself never capsized.",
+          "role": "context"
+        },
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
+          "hits": 1,
+          "evidence": "Overnight the stern leg, already sinking deeper under the pounding waves, penetrated a further 6 ft within minutes and its jacking gear jammed at full hydraulic pressure, so the hull could not be raised further even though the forward le...",
           "role": "context"
         },
         {
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
           "hits": 1,
-          "evidence": "Evacuation was not arranged in time; the designated standby vessel was unsuitable and, storm-damaged and unable to turn in the sea, returned to port.",
-          "role": "cause"
+          "evidence": "At 11:45 on Sunday 11 September one of the dispatched vessels, Bourbon Artabaze, found the lifefloat with four survivors and the ordinary seaman's body, then two of the swimmers alive at 12:42; the mate's body was recovered about 15:00 a...",
+          "role": "context"
         }
       ]
     },
@@ -635,14 +676,14 @@
         {
           "key": "capsize",
           "label": "Unit capsizes",
-          "hits": 12,
+          "hits": 15,
           "evidence": "Total loss of the jack-up Rowan Gorilla I, which capsized and sank in the North Atlantic while under tow.",
           "role": "context"
         },
         {
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
-          "hits": 6,
+          "hits": 7,
           "evidence": "Total loss of the jack-up Rowan Gorilla I, which capsized and sank in the North Atlantic while under tow.",
           "role": "context"
         },
@@ -650,7 +691,7 @@
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
           "hits": 2,
-          "evidence": "The towline parted, the 27 aboard abandoned into a single enclosed survival capsule in 50-ft seas and ~60-kn winds, and all were rescued the next day with no fatalities.",
+          "evidence": "All 27 were rescued by the Smit London the next day, with no fatalities.",
           "role": "context"
         }
       ]
@@ -730,7 +771,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_stability",
       "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "derrick/pipe-lay barge DB29 (Panamanian flag, ~195 aboard) capsized and sank in Typhoon Fred on 15-16 August 1991 about 65 nm southeast of Hong Kong, near the Pearl River mouth, in ~210 ft of water. Ships and aircraft from China, Taiwan, t",
+      "top_event_evidence": "oyed the barge's desalination-plant hatch, through which it downflooded. The barge was overwhelmed and, early on 15-16 August, developed a list and began to sink; survivors described waking to find the barge already half under water and jum",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
@@ -742,36 +783,36 @@
         {
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
-          "hits": 5,
+          "hits": 6,
           "evidence": "Total loss of the pipe-laying derrick barge DB29, which capsized and sank in about 210 ft of water during Typhoon Fred while laying offshore pipeline.",
           "role": "context"
         },
         {
           "key": "capsize",
           "label": "Unit capsizes",
-          "hits": 4,
+          "hits": 5,
           "evidence": "Total loss of the pipe-laying derrick barge DB29, which capsized and sank in about 210 ft of water during Typhoon Fred while laying offshore pipeline.",
           "role": "context"
         },
         {
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
-          "hits": 4,
-          "evidence": "The saturation divers could not be evacuated: with the system partly decompressed and the barge listing, the bell could not be mated for transfer under pressure, trapping four divers.",
-          "role": "cause"
+          "hits": 5,
+          "evidence": "Ships and aircraft from China, Taiwan, the Soviet Union and Hong Kong rescued about 168-173 people from ~25-ft seas and ~75-mph winds; roughly 22 were killed (reported figures range from at least 16 early to as many as 26).",
+          "role": "context"
         },
         {
           "key": "fatalities_occurred",
           "label": "People are killed",
-          "hits": 2,
+          "hits": 3,
           "evidence": "Ships and aircraft from China, Taiwan, the Soviet Union and Hong Kong rescued about 168-173 people from ~25-ft seas and ~75-mph winds; roughly 22 were killed (reported figures range from at least 16 early to as many as 26).",
           "role": "context"
         },
         {
           "key": "structural_damage",
           "label": "Structure damaged or destroyed",
-          "hits": 1,
-          "evidence": "High seas loosened deck equipment and destroyed the desalination-plant hatch; water flooded in, and the barge took a list and began to sink in the early hours.",
+          "hits": 2,
+          "evidence": "93-3073.0) states that the high seas loosened deck equipment and destroyed the barge's desalination-plant hatch, through which it downflooded.",
           "role": "context"
         },
         {
@@ -825,7 +866,7 @@
           "key": "fatalities_occurred",
           "label": "People are killed",
           "hits": 2,
-          "evidence": "Two supply vessels and the tug Captain John ran an all-night rescue that saved the large majority; about six people died.",
+          "evidence": "The large majority were saved (about 239), but roughly six people died, including a young radio operator who drowned unnoticed inside a flooded raft.",
           "role": "context"
         },
         {
@@ -901,7 +942,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_stability",
       "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "ug could not turn the platform head-to-sea, and Bohai No. 2 sank at about 03:35. Only 2 of the 74 aboard survived. The State Council later ruled it a major responsibility accident caused by unsafe command, lowering and towing - not simply b",
+      "top_event_evidence": "ug could not turn the platform head-to-sea, and Bohai No. 2 sank by about 03:35. Rescue mobilization and position reporting were ineffective, contributing to only two survivors among 74 people. The State Council later classified the loss as",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
@@ -910,47 +951,69 @@
           "key": "opening_left_unsecured",
           "label": "Opening, closure or penetration not secured",
           "hits": 1,
-          "evidence": "Water through deck cable penetrations shorted a switchboard and disabled pumping, then a ventilation trunk broke at its low base and opened the pump space directly to boarding seas.",
+          "evidence": "The third ventilation trunk lost its cap and then broke at its low base, opening the pump space directly to boarding seas.",
           "role": "cause"
         }
       ],
       "preventive_barriers": [
         {
+          "key": "watertight_integrity_control",
+          "label": "Watertight integrity control and closure checks",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Later engineering review identified no weathertight closure or internal isolation valve.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
           "key": "procedures_and_competence",
           "label": "Procedures, drills and competence",
           "state": "candidate_failed_or_absent",
-          "evidence": "The distress alert, casualty position and rescue were delayed and ineffective, and cold-water survival equipment and training were inadequate.",
+          "evidence": "The distress alert, casualty position and wider rescue mobilization were delayed or ineffective, while survival equipment and abandonment training were inadequate for cold-water immersion.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
       "recovery_barriers": [
         {
+          "key": "muster_and_abandonment",
+          "label": "Muster and abandonment procedure",
+          "state": "candidate_failed_or_absent",
+          "evidence": "The distress alert, casualty position and wider rescue mobilization were delayed or ineffective, while survival equipment and abandonment training were inadequate for cold-water immersion.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
           "key": "emergency_power_and_comms",
           "label": "Emergency power and communications",
           "state": "candidate_failed_or_absent",
-          "evidence": "The distress alert, casualty position and rescue were delayed and ineffective, and cold-water survival equipment and training were inadequate.",
+          "evidence": "The distress alert, casualty position and wider rescue mobilization were delayed or ineffective, while survival equipment and abandonment training were inadequate for cold-water immersion.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
       "escalation_factors": [
         {
+          "key": "procedure_absent_or_not_followed",
+          "label": "Procedure absent or not followed",
+          "evidence": "The initial institutional response characterized the loss as irresistible weather instead of promptly investigating unsafe command and procedural violations.",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
           "key": "competence_or_training_gap",
           "label": "Competence or training gap",
-          "evidence": "The distress alert, casualty position and rescue were delayed and ineffective, and cold-water survival equipment and training were inadequate.",
+          "evidence": "The distress alert, casualty position and wider rescue mobilization were delayed or ineffective, while survival equipment and abandonment training were inadequate for cold-water immersion.",
           "evidence_status": "record_statement_source_unlinked"
         },
         {
           "key": "commercial_or_schedule_pressure",
           "label": "Schedule or commercial pressure on the decision",
-          "evidence": "Schedule and production pressure drove a late-season move despite objections and a force 6-7 forecast above the stated force-5 limit.",
+          "evidence": "Schedule and production pressure drove a late-season relocation despite objections and a force 6-7 forecast above the stated force-5 limit for lowering and towing.",
           "evidence_status": "record_statement_source_unlinked"
         },
         {
           "key": "rescue_capability_shortfall",
           "label": "Rescue capability shortfall or delay",
-          "evidence": "The distress alert, casualty position and rescue were delayed and ineffective, and cold-water survival equipment and training were inadequate.",
+          "evidence": "The distress alert, casualty position and wider rescue mobilization were delayed or ineffective, while survival equipment and abandonment training were inadequate for cold-water immersion.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -958,7 +1021,7 @@
         {
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
-          "hits": 2,
+          "hits": 3,
           "evidence": "Total loss of the platform during tow;",
           "role": "context"
         }
@@ -977,35 +1040,33 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_stability",
       "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "eck expecting a helicopter rescue that never came. Kolskaya capsized and sank on 18 December in water over 1,000 m deep; those who went into the near-freezing water could not be reached by the tugs in the conditions, and only 14 of the 67 s",
+      "top_event_evidence": "ssion between approximately 09:10 and 09:45 local. Kolskaya capsized at about 12:46 in water deeper than 1,000 m. The towing vessels recovered 14 survivors; 53 people died or remained missing and were subsequently declared dead. On 18 Dece",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
       "threats": [],
       "preventive_barriers": [],
-      "recovery_barriers": [
+      "recovery_barriers": [],
+      "escalation_factors": [
         {
-          "key": "emergency_power_and_comms",
-          "label": "Emergency power and communications",
-          "state": "candidate_failed_or_absent",
-          "evidence": "The distress call was sent too late, and the tugs could not recover people from the near-freezing water.",
-          "role": "cause",
+          "key": "assurance_or_exemption_gap",
+          "label": "Assurance gap or regulatory exemption",
+          "evidence": "A winter tow in the Sea of Okhotsk was conducted without the prior approval required by Russian marine safety regulations — the rig owner ignored the rule.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
-      "escalation_factors": [],
       "consequences": [
         {
           "key": "capsize",
           "label": "Unit capsizes",
-          "hits": 3,
-          "evidence": "On 18 December 2011 the jack-up Kolskaya capsized and sank in the Sea of Okhotsk while under tow from offshore Kamchatka to Sakhalin, killing 53 of 67 aboard.",
+          "hits": 4,
+          "evidence": "Kolskaya capsized at about 12:46 in water deeper than 1,000 m.",
           "role": "context"
         },
         {
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
-          "hits": 3,
+          "hits": 2,
           "evidence": "On 18 December 2011 the jack-up Kolskaya capsized and sank in the Sea of Okhotsk while under tow from offshore Kamchatka to Sakhalin, killing 53 of 67 aboard.",
           "role": "context"
         },
@@ -1014,6 +1075,13 @@
           "label": "Personnel enter the water",
           "hits": 1,
           "evidence": "~1 °C (near-freezing) — survivors entered the water at ~1 °C",
+          "role": "context"
+        },
+        {
+          "key": "fatalities_occurred",
+          "label": "People are killed",
+          "hits": 1,
+          "evidence": "53 people died or remained missing and were subsequently declared dead.",
           "role": "context"
         }
       ]
@@ -1029,9 +1097,9 @@
       "fatalities": 22,
       "infrastructure_impact": "Damage to the production trees of wells Kab-101 and Kab-121; uncontrolled oil and gas release from Kab-121; intermittent fires; major damage to Usumacinta, its cantilever and drilling structure; prolonged well-control and dismantling work.",
       "analysis_status": "review_required",
-      "top_event": "ignition_fire_explosion",
-      "top_event_label": "Ignition, fire or explosion",
-      "top_event_evidence": "did not seal, releasing oil, gas and hydrogen sulphide that caught fire intermittently. An evacuation requested at 11:41 was reportedly not authorised for nearly three hours, and the abandon order came around 15:30. Both enclosed survival",
+      "top_event": "impact_collision",
+      "top_event_label": "Impact or collision",
+      "top_event_evidence": "lready known. As the unit moved, its projecting cantilever contacted the production equipment. The tree at well Kab-101 was struck first, creating a leak that personnel stopped within minutes by closing subsurface safety valves. The tree a",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
@@ -1042,19 +1110,19 @@
       ],
       "threats": [
         {
-          "key": "foundation_or_seabed_failure",
-          "label": "Foundation, seabed or slope failure",
+          "key": "vessel_contact_with_installation",
+          "label": "Vessel or unit contacts the installation",
           "hits": 1,
-          "evidence": "The site plan lacked adequate seabed data; mat settlement combined with the lightly loaded, near-lightship rig let Usumacinta incline into the adjacent wellheads.",
+          "evidence": "The cantilever contacted two production trees.",
           "role": "cause"
         }
       ],
       "preventive_barriers": [
         {
-          "key": "site_and_seabed_survey",
-          "label": "Site, seabed and geotechnical survey",
+          "key": "weather_forecasting",
+          "label": "Weather forecasting and storm tracking",
           "state": "candidate_failed_or_absent",
-          "evidence": "The site plan lacked adequate seabed data; mat settlement combined with the lightly loaded, near-lightship rig let Usumacinta incline into the adjacent wellheads.",
+          "evidence": "Weather forecasting and tracking did not produce a sufficiently conservative operational response to Cold Front No.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -1062,7 +1130,7 @@
           "key": "procedures_and_competence",
           "label": "Procedures, drills and competence",
           "state": "candidate_failed_or_absent",
-          "evidence": "The evacuation was delayed, drills had not exercised boarding and launching the enclosed craft, and no dedicated rescue vessel was available - so both craft were overwhelmed and improvised rescue added casualties.",
+          "evidence": "Drills did not include boarding and launching the enclosed craft.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -1072,7 +1140,7 @@
           "key": "standby_rescue_vessel",
           "label": "Standby or rescue vessel",
           "state": "candidate_failed_or_absent",
-          "evidence": "The evacuation was delayed, drills had not exercised boarding and launching the enclosed craft, and no dedicated rescue vessel was available - so both craft were overwhelmed and improvised rescue added casualties.",
+          "evidence": "No dedicated ABS-class rescue vessel was available in the Mexican Gulf, according to the Battelle findings cited by CNDH; improvised vessel-to-craft rescue in severe seas caused additional casualties.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -1080,7 +1148,7 @@
           "key": "well_isolation",
           "label": "Well isolation, BOP and emergency disconnect",
           "state": "candidate_failed_or_absent",
-          "evidence": "Kab-121's subsurface safety valve failed to seal after a side valve was severed, so the hydrocarbon and hydrogen-sulfide release could not be isolated.",
+          "evidence": "Kab-121's subsurface safety valve did not seal completely after the side valve was severed, so the hydrocarbon and hydrogen-sulfide release could not be isolated.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -1089,13 +1157,7 @@
         {
           "key": "procedure_absent_or_not_followed",
           "label": "Procedure absent or not followed",
-          "evidence": "The site plan lacked adequate seabed data; mat settlement combined with the lightly loaded, near-lightship rig let Usumacinta incline into the adjacent wellheads.",
-          "evidence_status": "record_statement_source_unlinked"
-        },
-        {
-          "key": "rescue_capability_shortfall",
-          "label": "Rescue capability shortfall or delay",
-          "evidence": "The evacuation was delayed, drills had not exercised boarding and launching the enclosed craft, and no dedicated rescue vessel was available - so both craft were overwhelmed and improvised rescue added casualties.",
+          "evidence": "The site-development plan lacked adequate seabed characterization.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -1103,29 +1165,43 @@
         {
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
-          "hits": 4,
-          "evidence": "An evacuation requested at 11:41 was reportedly authorized nearly three hours later.",
+          "hits": 6,
+          "evidence": "The technical emergency continued long after the evacuation.",
           "role": "context"
         },
         {
           "key": "hydrocarbon_release",
           "label": "Hydrocarbons released to sea",
-          "hits": 3,
-          "evidence": "Kab-121's subsurface safety valve failed to seal after a side valve was severed, so the hydrocarbon and hydrogen-sulfide release could not be isolated.",
-          "role": "cause"
+          "hits": 5,
+          "evidence": "Kab-121's subsurface storm valve did not close fully, leaving oil, gas and hydrogen sulfide escaping.",
+          "role": "context"
         },
         {
           "key": "fatalities_occurred",
           "label": "People are killed",
-          "hits": 2,
-          "evidence": "Final accounting is 20 fatalities and 53 survivors from Usumacinta, plus two fatalities and two survivors from Morrison Tide's rescue crew: 22 deaths overall.",
+          "hits": 3,
+          "evidence": "This means the 73-person Usumacinta complement comprised 20 fatalities and 53 survivors.",
           "role": "context"
         },
         {
           "key": "fire_on_asset",
           "label": "Fire or explosion on the asset",
+          "hits": 2,
+          "evidence": "Kab-121 released light crude and gas and experienced intermittent fires.",
+          "role": "context"
+        },
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
           "hits": 1,
-          "evidence": "Damage to the production trees of wells Kab-101 and Kab-121; uncontrolled oil and gas release from Kab-121; intermittent fires; major damage to Usumacinta, its cantilever and drilling structure; prolonged well-control and dismantling work.",
+          "evidence": "Mandarina 2 also overturned and broke open, dispersing occupants.",
+          "role": "context"
+        },
+        {
+          "key": "well_or_subsea_damage",
+          "label": "Well, riser or subsea infrastructure damaged",
+          "hits": 1,
+          "evidence": "The tree at well Kab-121 was then damaged, producing a smaller leak in the production tubing and a larger release at the wellhead after a side valve was severed.",
           "role": "context"
         }
       ]
@@ -1139,65 +1215,109 @@
       "discipline": "maritime",
       "region": "Asia",
       "fatalities": 22,
-      "infrastructure_impact": "Mumbai High North platform completely destroyed by fire; major disruption to India's offshore oil production",
+      "infrastructure_impact": "MHN processing platform collapsed within two hours and was destroyed, with its bridges to the adjacent platforms and a helicopter parked on it; the NA platform and the Noble Charlie Yester jack-up were severely damaged by heat radiation; the support vessel Samudra Suraksha burned and later sank. About 110,000 barrels a day of crude production was lost; adjusted asset claim about USD 370 million.",
       "analysis_status": "review_required",
-      "top_event": "loss_of_containment",
-      "top_event_label": "Loss of containment",
-      "top_event_evidence": "export riser on the windward (upwind) side of the platform, rupturing it. Gas ignited instantly, producing a fire that rapidly engulfed the platform. The nearby jack-up rig Noble Charlie Yester was evacuated safely. Platform crew evacuated",
+      "top_event": "ignition_fire_explosion",
+      "top_event_label": "Ignition, fire or explosion",
+      "top_event_evidence": "xport risers. There was a strong hissing sound and the gas ignited almost at once. Flames reached the vessel's bridge and burning debris fell across its deck; the closely spaced, unprotected risers failed in turn and a number of explosions",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
         {
-          "key": "ignition_fire_explosion",
-          "label": "Ignition, fire or explosion"
+          "key": "structural_failure",
+          "label": "Structural failure / collapse"
         },
         {
-          "key": "loss_of_position",
-          "label": "Loss of position / station-keeping"
-        },
-        {
-          "key": "impact_collision",
-          "label": "Impact or collision"
+          "key": "loss_of_stability",
+          "label": "Loss of stability / buoyancy"
         }
       ],
       "threats": [],
-      "preventive_barriers": [],
-      "recovery_barriers": [],
-      "escalation_factors": [
+      "preventive_barriers": [
         {
-          "key": "commercial_or_schedule_pressure",
-          "label": "Schedule or commercial pressure on the decision",
-          "evidence": "Pressure to complete a medical evacuation overrode weather-based operational limits that should have prohibited the vessel proximity operation.",
+          "key": "preemptive_moveoff_or_evacuation",
+          "label": "Pre-storm move-off, disconnect or de-manning",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Topside emergency shutdown valves shut in the flows, but with no subsea isolation valves the long risers - some up to 12 km - released a large gas inventory uncontrollably.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
+          "key": "procedures_and_competence",
+          "label": "Procedures, drills and competence",
+          "state": "candidate_failed_or_absent",
+          "evidence": "There were no joint procedures for vessel-platform interface operations (OISD), and the safety management system did not cover bridging matters such as loading support vessels and contingency measures.",
+          "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
-      "consequences": [
+      "recovery_barriers": [
         {
-          "key": "structural_damage",
-          "label": "Structure damaged or destroyed",
-          "hits": 4,
-          "evidence": "The platform was completely destroyed.",
-          "role": "context"
+          "key": "survival_craft",
+          "label": "Lifeboats, life rafts and survival craft",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Escape provisions failed in the fire: lifesaving equipment met SOLAS redundancy but was not distributed around the platform, so only 2 of 8 lifeboats and 1 of 10 liferafts launched, and there was no escape route for divers in saturation.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
         },
         {
-          "key": "emergency_evacuation",
-          "label": "Emergency evacuation of personnel",
+          "key": "muster_and_abandonment",
+          "label": "Muster and abandonment procedure",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Escape provisions failed in the fire: lifesaving equipment met SOLAS redundancy but was not distributed around the platform, so only 2 of 8 lifeboats and 1 of 10 liferafts launched, and there was no escape route for divers in saturation.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
+      "escalation_factors": [],
+      "consequences": [
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
           "hits": 4,
-          "evidence": "The nearby jack-up rig Noble Charlie Yester was evacuated safely.",
+          "evidence": "The burnt-out vessel was towed away but sank on 1 August about 18 km off the coast.",
           "role": "context"
         },
         {
           "key": "fatalities_occurred",
           "label": "People are killed",
           "hits": 3,
-          "evidence": "22 personnel died or remain missing.",
+          "evidence": "11 died and 11 remain missing.",
+          "role": "context"
+        },
+        {
+          "key": "production_shutdown",
+          "label": "Production shut in or asset off-hire",
+          "hits": 3,
+          "evidence": "Emergency shutdown valves shut in the incoming flows, but some risers were up to 12 km long and their gas inventories fed the fire.",
           "role": "context"
         },
         {
           "key": "grounding",
           "label": "Unit grounds or strands",
+          "hits": 2,
+          "evidence": "Shore-based helicopters were grounded by the monsoon, and the helicopter parked on MHN was not allowed to land on the vessel.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 2,
+          "evidence": "Six divers left in the vessel's saturation chamber when it was abandoned were rescued 36 hours later.",
+          "role": "context"
+        },
+        {
+          "key": "fire_on_asset",
+          "label": "Fire or explosion on the asset",
           "hits": 1,
-          "evidence": "Helicopter operations were already grounded at the time.",
+          "evidence": "Flames reached the vessel's bridge and burning debris fell across its deck; the closely spaced, unprotected risers failed in turn and a number of explosions followed.",
+          "role": "context"
+        },
+        {
+          "key": "structural_damage",
+          "label": "Structure damaged or destroyed",
+          "hits": 1,
+          "evidence": "MHN processing platform collapsed within two hours and was destroyed, with its bridges to the adjacent platforms and a helicopter parked on it; the NA platform and the Noble Charlie Yester jack-up were severely damaged by heat radiation;...",
           "role": "context"
         }
       ]
@@ -1215,7 +1335,7 @@
       "analysis_status": "review_required",
       "top_event": "structural_failure",
       "top_event_label": "Structural failure / collapse",
-      "top_event_evidence": "by the port jacks slipping; the forward starboard legs then collapsed below the waterline, the hull fell out of level and tore open. Sea Gem broke up and sank within minutes, and the radio room was lost before any distress call could be se",
+      "top_event_evidence": "age of the port-side jacks. The forward starboard legs then collapsed below the waterline, the hull fell out of level and a tear opened in the hull. Sea Gem rapidly collapsed and sank; the radio room was lost before a distress call could be",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
@@ -1229,17 +1349,26 @@
           "key": "material_degradation",
           "label": "Fatigue, corrosion or weld defect in load path",
           "hits": 2,
-          "evidence": "Cold conditions favoured brittle fracture, with the air near 3 degrees C and the steel prone to fracture at the prevailing temperature.",
+          "evidence": "Tie-bars in the hull-to-leg suspension system failed and initiated the collapse; recovered fractures originated at severe notches, weld defects and fatigue cracks.",
           "role": "cause"
         }
       ],
-      "preventive_barriers": [],
+      "preventive_barriers": [
+        {
+          "key": "integrity_inspection_maintenance",
+          "label": "Inspection and integrity maintenance",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Two tie-bars had already broken during 135 km/h wind gusts on 23 November; they were replaced, but inspection of the remaining tie-bars found no visible damage or strain.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        }
+      ],
       "recovery_barriers": [
         {
           "key": "emergency_power_and_comms",
           "label": "Emergency power and communications",
           "state": "candidate_failed_or_absent",
-          "evidence": "No emergency communication survived the initial failure - the radio room was lost in the collapse, preventing any distress call.",
+          "evidence": "No effective emergency communication was maintained - the radio room was lost in the initial capsize, preventing early distress calls.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -1248,7 +1377,7 @@
         {
           "key": "power_or_comms_loss",
           "label": "Power or communications lost",
-          "evidence": "No emergency communication survived the initial failure - the radio room was lost in the collapse, preventing any distress call.",
+          "evidence": "No effective emergency communication was maintained - the radio room was lost in the initial capsize, preventing early distress calls.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -1257,7 +1386,7 @@
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
           "hits": 2,
-          "evidence": "Sea Gem broke up and sank within minutes, and the radio room was lost before any distress call could be sent.",
+          "evidence": "Sea Gem rapidly collapsed and sank; the radio room was lost before a distress call could be sent.",
           "role": "context"
         },
         {
@@ -1270,9 +1399,16 @@
         {
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
-          "hits": 1,
+          "hits": 2,
           "evidence": "Nineteen of the 32 people aboard were rescued and 13 died.",
           "role": "context"
+        },
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 1,
+          "evidence": "No effective emergency communication was maintained - the radio room was lost in the initial capsize, preventing early distress calls.",
+          "role": "cause"
         }
       ]
     },
@@ -1534,16 +1670,40 @@
           "key": "towline_failure",
           "label": "Towline or pennant parts",
           "hits": 1,
-          "evidence": "Undersized towing arrangement for the route - a 65 t bollard-pull tug with a 25 t-SWL pennant and no shock-absorbing stretcher could not hold speed against the head wind and sea, and the pennant fractured by dynamic overload at its weake...",
+          "evidence": "Towing arrangement undersized for the route - the 65 t bollard pull tug with a pennant SWL of 25 t was insufficient to maintain speed against head winds and current; the pennant fractured at its weakest point (aluminium clamp) from overl...",
           "role": "cause"
         }
       ],
       "preventive_barriers": [
         {
+          "key": "weather_forecasting",
+          "label": "Weather forecasting and storm tracking",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Port of refuge plan collapsed - the oral agreement for tug assistance at Hvide Sande was never confirmed in writing; the tug was reassigned, and both pilots declined to take the towage in under forecast conditions.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
+          "key": "weather_operating_limits",
+          "label": "Weather-based operating limits and stop-work triggers",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Operational weather limit for SEA WORKER (2.0 m Hs per trading permit) was not known to the crew - the permit was filed as certification documentation and never consulted during voyage planning.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
+          "key": "mooring_design_and_analysis",
+          "label": "Mooring design, analysis and pretension control",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Towing arrangement undersized for the route - the 65 t bollard pull tug with a pennant SWL of 25 t was insufficient to maintain speed against head winds and current; the pennant fractured at its weakest point (aluminium clamp) from overl...",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
           "key": "independent_verification",
           "label": "Independent verification and assurance",
           "state": "candidate_failed_or_absent",
-          "evidence": "\"Out of project\" operation bypassed normal safeguards - no charterer set operational criteria, there was no independent warranty surveyor, and the barge master inspected the tug himself.",
+          "evidence": "\"Out of project\" operation bypassed normal safeguards - no charterer set operational criteria, no independent warranty surveyor, and the barge master inspected the tug himself.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -1553,7 +1713,7 @@
           "key": "emergency_tow_or_tug",
           "label": "Emergency towing and tug assistance",
           "state": "candidate_failed_or_absent",
-          "evidence": "The port-of-refuge plan collapsed and the emergency gear failed: the oral tug-assist agreement at Hvide Sande was never confirmed, both pilots declined to take the tow in, and the emergency towing buoy - stowed rather than streamed - fou...",
+          "evidence": "Port of refuge plan collapsed - the oral agreement for tug assistance at Hvide Sande was never confirmed in writing; the tug was reassigned, and both pilots declined to take the towage in under forecast conditions.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -1562,7 +1722,7 @@
         {
           "key": "assurance_or_exemption_gap",
           "label": "Assurance gap or regulatory exemption",
-          "evidence": "\"Out of project\" operation bypassed normal safeguards - no charterer set operational criteria, there was no independent warranty surveyor, and the barge master inspected the tug himself.",
+          "evidence": "\"Out of project\" operation bypassed normal safeguards - no charterer set operational criteria, no independent warranty surveyor, and the barge master inspected the tug himself.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -1571,13 +1731,13 @@
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
           "hits": 4,
-          "evidence": "SEA WORKER grounded and declared a total loss",
+          "evidence": "The platform was declared a total loss.",
           "role": "context"
         },
         {
           "key": "grounding",
           "label": "Unit grounds or strands",
-          "hits": 3,
+          "hits": 4,
           "evidence": "SEA WORKER grounded and declared a total loss",
           "role": "context"
         },
@@ -1585,7 +1745,7 @@
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
           "hits": 3,
-          "evidence": "SEA WORKER drifted ashore near Nymindegab and was declared a total loss; all 15 crew were rescued unhurt.",
+          "evidence": "SEA WORKER drifted and grounded near Nymindegab; all 15 crew were evacuated safely by rescue boat.",
           "role": "context"
         }
       ]
@@ -2461,13 +2621,6 @@
           "role": "context"
         },
         {
-          "key": "sinking_total_loss",
-          "label": "Unit sinks or is a total loss",
-          "hits": 1,
-          "evidence": "Evacuated beforehand, it caused no injuries but was a heavily damaged total loss - one of the clearest examples of the 2004-2005 pattern of mobile drilling units set adrift by Gulf hurricanes.",
-          "role": "context"
-        },
-        {
           "key": "structural_damage",
           "label": "Structure damaged or destroyed",
           "hits": 1,
@@ -2823,7 +2976,7 @@
         {
           "key": "fatalities_occurred",
           "label": "People are killed",
-          "hits": 3,
+          "hits": 2,
           "evidence": "Corroded batteries had allowed hydrogen gas to accumulate inside after ~2 years at sea; sparks ignited the mixture and the explosion killed one crewman.",
           "role": "context"
         },
@@ -2849,7 +3002,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_position",
       "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "solitons) repeatedly displaced the drilling rig up to 189 m off location, ripping the drill pipe from the blowout preventer (BOP). Three of five planned wells were affected; no fatalities occurred but equipment loss was severe. During ENI'",
+      "top_event_evidence": "solitons) repeatedly displaced the drilling rig up to 189 m off location, ripping the drill pipe from the blowout preventer (BOP). Three of five planned wells were affected; no fatalities occurred but equipment loss was severe. During a de",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
@@ -2894,7 +3047,7 @@
           "key": "production_shutdown",
           "label": "Production shut in or asset off-hire",
           "hits": 2,
-          "evidence": "No one was hurt, but equipment loss and downtime were severe.",
+          "evidence": "No fatalities occurred but equipment loss and downtime were severe.",
           "role": "context"
         },
         {
@@ -2919,7 +3072,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_stability",
       "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "rning a sudden squall with heavy swells struck, and the tug capsized rapidly - with no time to don lifesaving gear or evacuate. Eleven of the twelve crew were lost. The exception was the cook, Harrison Okene, who was in the bathroom as the",
+      "top_event_evidence": "uall struck with heavy ocean swells, causing the tugboat to capsize rapidly. The crew had no time to don life-saving equipment or organise an orderly evacuation. Eleven of the twelve crew members were lost in the capsize - many swept away",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
@@ -2928,7 +3081,7 @@
           "key": "rapid_squall_onset",
           "label": "Squall arrives with no time for response",
           "hits": 2,
-          "evidence": "A sudden squall with heavy swells struck with no useful warning, while the tug was committed to a demanding tension tow with no margin to respond.",
+          "evidence": "Tow operations in the Gulf of Guinea expose vessels to the risk of sudden convective squalls that can generate severe, short-duration sea states with little meteorological warning.",
           "role": "cause"
         }
       ],
@@ -2937,7 +3090,7 @@
           "key": "weather_operating_limits",
           "label": "Weather-based operating limits and stop-work triggers",
           "state": "candidate_failed_or_absent",
-          "evidence": "Gulf of Guinea tow operations face sudden convective squalls that build dangerous seas in minutes; the weather monitoring and go/no-go criteria were not matched to that hazard.",
+          "evidence": "Weather monitoring and go/no-go criteria for the operation appear to have been inadequate for this hazard.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -2945,7 +3098,7 @@
           "key": "preemptive_moveoff_or_evacuation",
           "label": "Pre-storm move-off, disconnect or de-manning",
           "state": "candidate_failed_or_absent",
-          "evidence": "A sudden squall with heavy swells struck with no useful warning, while the tug was committed to a demanding tension tow with no margin to respond.",
+          "evidence": "A sudden squall with heavy swells struck with insufficient warning for the crew to take protective action - the vessel was engaged in a demanding tow operation with no margin to respond to a rapid weather deterioration.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -2955,7 +3108,7 @@
           "key": "survival_craft",
           "label": "Lifeboats, life rafts and survival craft",
           "state": "candidate_failed_or_absent",
-          "evidence": "The capsize was so rapid that the crew could not reach lifejackets or liferafts, or abandon in any order.",
+          "evidence": "As with many offshore support vessel capsizings, the rapid onset of the event prevented organised evacuation - crew could not access life-saving appliances (life jackets, life rafts) in the time available.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -2963,26 +3116,33 @@
           "key": "immersion_suits_ppe",
           "label": "Immersion suits and personal survival equipment",
           "state": "candidate_failed_or_absent",
-          "evidence": "The capsize was so rapid that the crew could not reach lifejackets or liferafts, or abandon in any order.",
+          "evidence": "As with many offshore support vessel capsizings, the rapid onset of the event prevented organised evacuation - crew could not access life-saving appliances (life jackets, life rafts) in the time available.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
-      "escalation_factors": [
-        {
-          "key": "authority_or_interface_unclear",
-          "label": "Authority or contractor interface unclear",
-          "evidence": "The capsize was so rapid that the crew could not reach lifejackets or liferafts, or abandon in any order.",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
+      "escalation_factors": [],
       "consequences": [
         {
           "key": "capsize",
           "label": "Unit capsizes",
-          "hits": 4,
-          "evidence": "The capsize was so rapid that the crew could not reach lifejackets or liferafts, or abandon in any order.",
-          "role": "cause"
+          "hits": 6,
+          "evidence": "Without warning, a sudden squall struck with heavy ocean swells, causing the tugboat to capsize rapidly.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 2,
+          "evidence": "The crew had no time to don life-saving equipment or organise an orderly evacuation.",
+          "role": "context"
+        },
+        {
+          "key": "sinking_total_loss",
+          "label": "Unit sinks or is a total loss",
+          "hits": 1,
+          "evidence": "As the Jascon-4 sank and came to rest on the seabed at approximately 30 m depth, Okene found himself in a small air pocket roughly 1.2 m (4 ft) high - partly in the engineer's office adjacent to the bathroom.",
+          "role": "context"
         },
         {
           "key": "fatalities_occurred",
@@ -3082,7 +3242,7 @@
       "analysis_status": "review_required",
       "top_event": "subsea_asset_displacement",
       "top_event_label": "Subsea asset exposure or displacement",
-      "top_event_evidence": "ing critical offshore infrastructure. Malampaya 504-km gas pipeline displaced from seabed; protective rock berms damaged over affected section; significant remediation required",
+      "top_event_evidence": "floor, crossed the route of the 504-km Malampaya subsea gas pipeline and displaced it from its seabed position, also damaging the protective rock berms installed to stabilise and protect the pipe. No fatalities occurred, but the incident re",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
@@ -3090,8 +3250,8 @@
         {
           "key": "internal_wave_or_current_loading",
           "label": "Internal wave or strong current loading",
-          "hits": 1,
-          "evidence": "The geohazard posed by the Baco-Malaylay submarine canyon to the pipeline route had been identified in design, leading to protective rock berms, but the berms were not designed for the magnitude of turbidity current a major typhoon can g...",
+          "hits": 2,
+          "evidence": "At the time of design and installation (late 1990s), the quantitative relationship between typhoon intensity, catchment sediment yields, and turbidity current magnitude in Philippine submarine canyons was poorly understood - the scientif...",
           "role": "cause"
         }
       ],
@@ -3102,7 +3262,7 @@
         {
           "key": "well_or_subsea_damage",
           "label": "Well, riser or subsea infrastructure damaged",
-          "hits": 3,
+          "hits": 4,
           "evidence": "Malampaya 504-km gas pipeline displaced from seabed; protective rock berms damaged over affected section; significant remediation required",
           "role": "context"
         }
@@ -3670,7 +3830,7 @@
           "key": "well_or_subsea_damage",
           "label": "Well, riser or subsea infrastructure damaged",
           "hits": 1,
-          "evidence": "An all-stop was called; an ROV survey found no pipeline or umbilical damage.",
+          "evidence": "An all-stop was called; equipment was recovered and an ROV survey found no pipeline or umbilical damage.",
           "role": "context"
         }
       ]
@@ -3918,7 +4078,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_stability",
       "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "saster of December 2011 - a similar Arctic jack-up tow that capsized with 53 lost - the platform and escort masters decided on immediate evacuation rather than waiting. Through the early hours of 8 November, rescue tender boats ferried the",
+      "top_event_evidence": "ich a jack-up rig in comparable Arctic storm conditions had capsized with loss of 53 of ~70 crew. From approximately 05:00-07:00 on 8 November, tender boats (small rescue craft launched from Spasatel Karev) ferried crew between the platfor",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
@@ -3947,22 +4107,29 @@
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
           "hits": 8,
-          "evidence": "All 70 crew were successfully evacuated.",
-          "role": "context"
-        },
-        {
-          "key": "capsize",
-          "label": "Unit capsizes",
-          "hits": 2,
-          "evidence": "The immediate evacuation drew on the lesson of the Kolskaya disaster (December 2011), where a similar Arctic jack-up tow capsized with 53 lost.",
+          "evidence": "All 70 personnel were evacuated safely.",
           "role": "context"
         },
         {
           "key": "structural_damage",
           "label": "Structure damaged or destroyed",
-          "hits": 2,
-          "evidence": "Primary escape systems were destroyed or damaged during the initial storm surge: lifeboat #1 lost overboard, helicopter deck damaged and unsafe.",
-          "role": "cause"
+          "hits": 4,
+          "evidence": "Under the extreme dynamic loading of the storm, heavy seas destroyed Lifeboat #1 (torn from davits and lost overboard).",
+          "role": "context"
+        },
+        {
+          "key": "capsize",
+          "label": "Unit capsizes",
+          "hits": 1,
+          "evidence": "This decision was informed by knowledge of the SPBU Kolskaya disaster (December 2011), in which a jack-up rig in comparable Arctic storm conditions had capsized with loss of 53 of ~70 crew.",
+          "role": "context"
+        },
+        {
+          "key": "grounding",
+          "label": "Unit grounds or strands",
+          "hits": 1,
+          "evidence": "The platform remained stranded at Cape Kanin Nos, awaiting recovery in improved weather and sea-ice conditions.",
+          "role": "context"
         }
       ]
     },
@@ -4092,9 +4259,9 @@
       "fatalities": 11,
       "infrastructure_impact": "Helicopter destroyed after uncontrolled collision with the sea, inversion and sinking in about 150 m of water",
       "analysis_status": "review_required",
-      "top_event": "loss_of_stability",
-      "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "d the helicopter struck a wave at about 25 ft/s. It rolled, inverted and sank within a minute or two - an uncontrolled crash into the sea, not a controlled ditching. Five of the 17 on board never escaped the cabin; twelve got out into the",
+      "top_event": "loss_of_aircraft_control",
+      "top_event_label": "Loss of aircraft control",
+      "top_event_evidence": "ed afloat for only one or two minutes and sank. This was an uncontrolled collision/crash into the sea, not a planned controlled ditching. G-TIGH struck the North Sea shortly after lifting from Cormorant A at night in severe weather. During",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
@@ -4108,7 +4275,7 @@
           "key": "loss_of_visual_reference",
           "label": "Loss of external visual reference",
           "hits": 1,
-          "evidence": "Darkness and snow removed visual cues, while the search for the flotel and wind-garbled radio calls broke the instrument cross-check.",
+          "evidence": "Darkness and snow reduced visual cues.",
           "role": "cause"
         }
       ],
@@ -4118,7 +4285,15 @@
           "key": "survival_craft",
           "label": "Lifeboats, life rafts and survival craft",
           "state": "candidate_failed_or_absent",
-          "evidence": "The survival system failed when it was needed: one liferaft was damaged and unstable, the other inaccessible, and the extreme sea state defeated rescue - only six of the twelve who escaped survived.",
+          "evidence": "The survival system was fragmented: one liferaft deployed but was badly damaged and unstable, the second remained inaccessible, lifejackets could ride up, and spray hoods were difficult to deploy.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
+          "key": "immersion_suits_ppe",
+          "label": "Immersion suits and personal survival equipment",
+          "state": "candidate_failed_or_absent",
+          "evidence": "The survival system was fragmented: one liferaft deployed but was badly damaged and unstable, the second remained inaccessible, lifejackets could ride up, and spray hoods were difficult to deploy.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -4127,7 +4302,13 @@
         {
           "key": "survival_craft_unusable",
           "label": "Survival craft destroyed or unusable",
-          "evidence": "The survival system failed when it was needed: one liferaft was damaged and unstable, the other inaccessible, and the extreme sea state defeated rescue - only six of the twelve who escaped survived.",
+          "evidence": "The survival system was fragmented: one liferaft deployed but was badly damaged and unstable, the second remained inaccessible, lifejackets could ride up, and spray hoods were difficult to deploy.",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
+          "key": "competence_or_training_gap",
+          "label": "Competence or training gap",
+          "evidence": "The handling pilot did not recognise the rapid divergence between ground speed and airspeed while turning downwind in significant wind; airspeed and then height were inadvertently allowed to decay.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -4144,13 +4325,6 @@
           "label": "Unit capsizes",
           "hits": 4,
           "evidence": "The helicopter inverted and sank within two minutes.",
-          "role": "context"
-        },
-        {
-          "key": "fatalities_occurred",
-          "label": "People are killed",
-          "hits": 1,
-          "evidence": "All eleven who died drowned, in some cases after hypothermia.",
           "role": "context"
         },
         {
@@ -4173,15 +4347,15 @@
       "fatalities": 0,
       "infrastructure_impact": "The tail rotor, gearbox and pitch-servo assembly detached in flight. The helicopter ditched and stayed afloat for about three and a half hours, then its flotation bags punctured alongside a safety vessel and it sank at 1803; it was damaged beyond economic repair and later recovered for investigation.",
       "analysis_status": "review_required",
-      "top_event": "loss_of_stability",
-      "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "flotation bags punctured alongside a salvage vessel and it sank. On 19 January 1995 the Bristow AS332L Super Puma G-TIGK was ferrying 16 engineers from Aberdeen to the Brae field when, descending through cloud at about 3,000 ft, it was st",
+      "top_event": "electrical_contact_with_energy",
+      "top_event_label": "Direct contact with electrical energy",
+      "top_event_evidence": "ough a patch of cloud at about 3,000 ft, the helicopter was struck by lightning - a bang and a flash - and began to vibrate severely. One main rotor blade and one tail rotor blade had taken high-energy strike damage. Expecting to ditch, th",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
         {
-          "key": "electrical_contact_with_energy",
-          "label": "Direct contact with electrical energy"
+          "key": "loss_of_stability",
+          "label": "Loss of stability / buoyancy"
         },
         {
           "key": "loss_of_aircraft_control",
@@ -4193,7 +4367,7 @@
           "key": "rapid_squall_onset",
           "label": "Squall arrives with no time for response",
           "hits": 1,
-          "evidence": "The route carried a forecast risk of isolated thunderstorms, yet North Sea helicopters had no onboard means of detecting areas of potential lightning discharge, and the available ground-based lightning (SFERICS) data reached crews with a...",
+          "evidence": "The route forecast included isolated thunderstorms and cumulonimbus - conditions the AAIB found within the helicopter's permitted operating envelope - but North Sea helicopters had no onboard means of detecting areas of potential lightni...",
           "role": "cause"
         }
       ],
@@ -4202,7 +4376,7 @@
           "key": "weather_forecasting",
           "label": "Weather forecasting and storm tracking",
           "state": "candidate_failed_or_absent",
-          "evidence": "The route carried a forecast risk of isolated thunderstorms, yet North Sea helicopters had no onboard means of detecting areas of potential lightning discharge, and the available ground-based lightning (SFERICS) data reached crews with a...",
+          "evidence": "The route forecast included isolated thunderstorms and cumulonimbus - conditions the AAIB found within the helicopter's permitted operating envelope - but North Sea helicopters had no onboard means of detecting areas of potential lightni...",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -4212,7 +4386,7 @@
           "key": "survival_craft",
           "label": "Lifeboats, life rafts and survival craft",
           "state": "candidate_failed_or_absent",
-          "evidence": "In the evacuation the left liferaft was unusable in the wind and sea, the single usable raft was overloaded and was punctured by a floating jettisoned cabin door, and minor procedural errors occurred - none of which, on the day, prevente...",
+          "evidence": "The left liferaft was unusable because of the wind relative to the ditched helicopter, so all 18 boarded one raft above its normal complement, though within its stated overload capability.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -4221,7 +4395,7 @@
         {
           "key": "survival_craft_unusable",
           "label": "Survival craft destroyed or unusable",
-          "evidence": "In the evacuation the left liferaft was unusable in the wind and sea, the single usable raft was overloaded and was punctured by a floating jettisoned cabin door, and minor procedural errors occurred - none of which, on the day, prevente...",
+          "evidence": "The left liferaft was unusable because of the wind relative to the ditched helicopter, so all 18 boarded one raft above its normal complement, though within its stated overload capability.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -4230,7 +4404,7 @@
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
           "hits": 2,
-          "evidence": "The helicopter floated about three and a half hours before its flotation bags punctured alongside a salvage vessel and it sank.",
+          "evidence": "The helicopter floated for about three and a half hours until the safety vessel Highland Pride brought it alongside at 16:09; while it was secured there its flotation bags punctured, and it sank at 18:03 after being released.",
           "role": "context"
         },
         {
@@ -4264,7 +4438,7 @@
           "key": "rapid_squall_onset",
           "label": "Squall arrives with no time for response",
           "hits": 3,
-          "evidence": "The flight's fuel was planned on the benign aerodrome forecast and carried only about 30 minutes of extra holding fuel; it left no margin once an unforecast squall line closed the destination.",
+          "evidence": "A thunderstorm squall line more than 185 km long developed and moved over Barrow Island during the flight, bringing severe turbulence, lightning and 50 kt gusts that prevented a normal visual or instrument approach.",
           "role": "cause"
         }
       ],
@@ -4273,7 +4447,7 @@
           "key": "weather_forecasting",
           "label": "Weather forecasting and storm tracking",
           "state": "candidate_failed_or_absent",
-          "evidence": "The flight's fuel was planned on the benign aerodrome forecast and carried only about 30 minutes of extra holding fuel; it left no margin once an unforecast squall line closed the destination.",
+          "evidence": "The flight's fuel was planned on the benign aerodrome forecast and carried only about 30 minutes of extra holding fuel and, as permitted, no fuel to divert after the return; it left no margin once an unforecast squall line closed the des...",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -4301,24 +4475,17 @@
       "escalated_events": [],
       "threats": [
         {
-          "key": "isolation_incomplete",
-          "label": "Isolation or containment boundary incomplete",
-          "hits": 2,
-          "evidence": "There was no written, Thunder Horse-specific isolation procedure, and the vendor ballast package had had no design-stage HAZOP covering incorrect isolation or residual stored energy.",
-          "role": "cause"
-        },
-        {
-          "key": "opening_left_unsecured",
-          "label": "Opening, closure or penetration not secured",
-          "hits": 1,
-          "evidence": "Failed watertight cable transits and two unintended bulkhead openings let flooding spread between nominally watertight compartments.",
-          "role": "cause"
-        },
-        {
           "key": "ballast_system_malfunction",
           "label": "Ballast or bilge system malfunctions",
           "hits": 1,
-          "evidence": "Three ballast/bilge check valves were installed in the wrong orientation and a fourth was inoperable, letting ballast water into manned lower-hull spaces.",
+          "evidence": "Three integrated ballast/bilge check valves were installed in the wrong orientation and a fourth was inoperable, allowing ballast water to enter manned lower-hull spaces.",
+          "role": "cause"
+        },
+        {
+          "key": "isolation_incomplete",
+          "label": "Isolation or containment boundary incomplete",
+          "hits": 1,
+          "evidence": "The four ballast-system hydraulic power units were not effectively isolated; residual pressure gradually moved more than 80 ballast and bilge valves from their initially closed positions.",
           "role": "cause"
         }
       ],
@@ -4327,7 +4494,7 @@
           "key": "procedures_and_competence",
           "label": "Procedures, drills and competence",
           "state": "candidate_failed_or_absent",
-          "evidence": "There was no written, Thunder Horse-specific isolation procedure, and the vendor ballast package had had no design-stage HAZOP covering incorrect isolation or residual stored energy.",
+          "evidence": "The operator had no written, Thunder Horse-specific HPU isolation procedure and relied on personnel experience from other deepwater projects.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -4505,32 +4672,17 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_stability",
       "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "crew tried to turn into the wind and lower the legs, and it capsized at about 15:37 - only minutes after the first squall. There was almost no time to send a distress call, escape the interior or launch survival craft. Rescue by Coast Guar",
+      "top_event_evidence": "legs. The vessel developed a significant starboard list and capsized at approximately 1537. The report concludes that the capsize progressed very quickly, leaving little practical time for distress signaling, interior egress, or orderly lif",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
-      "threats": [
-        {
-          "key": "wind_load_exceeds_capacity",
-          "label": "Wind load exceeds structural or holding capacity",
-          "hits": 1,
-          "evidence": "A fast-moving squall line and wake low brought winds over 80 knots, gusting near 99, that far exceeded the vessel's limits with almost no warning.",
-          "role": "cause"
-        },
-        {
-          "key": "rapid_squall_onset",
-          "label": "Squall arrives with no time for response",
-          "hits": 1,
-          "evidence": "A fast-moving squall line and wake low brought winds over 80 knots, gusting near 99, that far exceeded the vessel's limits with almost no warning.",
-          "role": "cause"
-        }
-      ],
+      "threats": [],
       "preventive_barriers": [
         {
           "key": "weather_operating_limits",
           "label": "Weather-based operating limits and stop-work triggers",
           "state": "candidate_failed_or_absent",
-          "evidence": "Crew procedures gave no clear plan for sudden, short-lived weather that rapidly exceeds operating limits.",
+          "evidence": "Crew procedures did not provide robust guidance for unexpected short-duration weather events that rapidly exceeded operating limits.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -4538,30 +4690,20 @@
           "key": "procedures_and_competence",
           "label": "Procedures, drills and competence",
           "state": "candidate_failed_or_absent",
-          "evidence": "Crew procedures gave no clear plan for sudden, short-lived weather that rapidly exceeds operating limits.",
+          "evidence": "Crew procedures did not provide robust guidance for unexpected short-duration weather events that rapidly exceeded operating limits.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
-      "recovery_barriers": [
+      "recovery_barriers": [],
+      "escalation_factors": [
         {
-          "key": "muster_and_abandonment",
-          "label": "Muster and abandonment procedure",
-          "state": "candidate_failed_or_absent",
-          "evidence": "Capsize took only minutes, leaving no time for distress alerting or abandonment, and flooding then progressed quickly.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        },
-        {
-          "key": "emergency_power_and_comms",
-          "label": "Emergency power and communications",
-          "state": "candidate_failed_or_absent",
-          "evidence": "Capsize took only minutes, leaving no time for distress alerting or abandonment, and flooding then progressed quickly.",
-          "role": "cause",
+          "key": "procedure_absent_or_not_followed",
+          "label": "Procedure absent or not followed",
+          "evidence": "Crew procedures did not provide robust guidance for unexpected short-duration weather events that rapidly exceeded operating limits.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
-      "escalation_factors": [],
       "consequences": [
         {
           "key": "capsize",
@@ -4573,7 +4715,7 @@
         {
           "key": "fatalities_occurred",
           "label": "People are killed",
-          "hits": 3,
+          "hits": 2,
           "evidence": "Of 19 people aboard, 13 died.",
           "role": "context"
         },
@@ -4646,10 +4788,14 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_position",
       "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "lear had closed. At 07:14 on 17 May the barge reported all anchors lost and began drifting toward the HS wellhead platform, which it struck and started flooding. Navy and ONGC vessels were sent, but the weather made an alongside rescue imp",
+      "top_event_evidence": "intensity. At 07:14 on 17 May, Papaa-305 reported that all anchors had been lost and that the barge was drifting toward the HS wellhead platform. The drifting hull contacted the platform and flooded. ONGC diverted three multi-support vesse",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
+        {
+          "key": "impact_collision",
+          "label": "Impact or collision"
+        },
         {
           "key": "loss_of_stability",
           "label": "Loss of stability / buoyancy"
@@ -4658,10 +4804,18 @@
       "threats": [],
       "preventive_barriers": [
         {
-          "key": "procedures_and_competence",
-          "label": "Procedures, drills and competence",
+          "key": "integrity_inspection_maintenance",
+          "label": "Inspection and integrity maintenance",
           "state": "candidate_failed_or_absent",
-          "evidence": "Safety-training assurance was unreliable: of 192 sea-survival certificates checked, 80 were not authentic, so paper compliance did not mean a trained workforce.",
+          "evidence": "Flag-state exemptions removed lifeboats and immersion suits, while third-party inspection and certification had not exposed a lifesaving system that failed when needed.",
+          "role": "cause",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
+          "key": "independent_verification",
+          "label": "Independent verification and assurance",
+          "state": "candidate_failed_or_absent",
+          "evidence": "Flag-state exemptions removed lifeboats and immersion suits, while third-party inspection and certification had not exposed a lifesaving system that failed when needed.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -4671,7 +4825,7 @@
           "key": "survival_craft",
           "label": "Lifeboats, life rafts and survival craft",
           "state": "candidate_failed_or_absent",
-          "evidence": "None of the barge's 36 life rafts were usable and no immersion suits were carried - flag-state exemptions and third-party certification left a lifesaving system that failed when it was needed.",
+          "evidence": "The HLC found none of Papaa-305's 36 life rafts usable and no immersion suits aboard.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -4679,28 +4833,28 @@
           "key": "immersion_suits_ppe",
           "label": "Immersion suits and personal survival equipment",
           "state": "candidate_failed_or_absent",
-          "evidence": "None of the barge's 36 life rafts were usable and no immersion suits were carried - flag-state exemptions and third-party certification left a lifesaving system that failed when it was needed.",
+          "evidence": "The HLC found none of Papaa-305's 36 life rafts usable and no immersion suits aboard.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
       "escalation_factors": [
         {
-          "key": "competence_or_training_gap",
-          "label": "Competence or training gap",
-          "evidence": "Safety-training assurance was unreliable: of 192 sea-survival certificates checked, 80 were not authentic, so paper compliance did not mean a trained workforce.",
+          "key": "commercial_or_schedule_pressure",
+          "label": "Schedule or commercial pressure on the decision",
+          "evidence": "Official and secondary investigations describe disputed authority and commercial pressure; responsibility cannot be assigned solely from survivor allegations or corporate statements.",
           "evidence_status": "record_statement_source_unlinked"
         },
         {
           "key": "authority_or_interface_unclear",
           "label": "Authority or contractor interface unclear",
-          "evidence": "The weather-decision system kept too little margin for a rapidly intensifying, east-shifting cyclone, and no senior ONGC official took command of the unfolding emergency.",
+          "evidence": "Parliament criticized ONGC's reliance on Skymet after ending its direct arrangement with IMD and found no senior corporate official had taken command of the unfolding emergency.",
           "evidence_status": "record_statement_source_unlinked"
         },
         {
           "key": "assurance_or_exemption_gap",
           "label": "Assurance gap or regulatory exemption",
-          "evidence": "None of the barge's 36 life rafts were usable and no immersion suits were carried - flag-state exemptions and third-party certification left a lifesaving system that failed when it was needed.",
+          "evidence": "Flag-state exemptions removed lifeboats and immersion suits, while third-party inspection and certification had not exposed a lifesaving system that failed when needed.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -4716,14 +4870,21 @@
           "key": "fatalities_occurred",
           "label": "People are killed",
           "hits": 3,
-          "evidence": "It lost all its anchors, drifted into a wellhead platform and sank; with no usable life rafts and no immersion suits, 75 of those aboard died.",
+          "evidence": "75 died from Papaa-305 and 11 from Varapradha.",
+          "role": "context"
+        },
+        {
+          "key": "emergency_evacuation",
+          "label": "Emergency evacuation of personnel",
+          "hits": 3,
+          "evidence": "INS Kolkata rescued two people;",
           "role": "context"
         },
         {
           "key": "personnel_in_water",
           "label": "Personnel enter the water",
           "hits": 1,
-          "evidence": "Navy and ONGC vessels were sent, but the weather made an alongside rescue impossible; around 18:00 Papaa-305 developed a list and by 19:05 it sank, leaving hundreds of people in the sea.",
+          "evidence": "Around 18:00 the barge reported a developing list; it sank by 19:05, leaving hundreds of people in the sea.",
           "role": "context"
         }
       ]
@@ -4741,7 +4902,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_stability",
       "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "decision came too late; unsecured ventilation closures let downflooding continue and there was no damage-control plan to make the danger clear. El Faro sank shortly afterward. All 33 aboard were lost. On 1 October 2015, the 790-foot US-fl",
+      "top_event_evidence": "me too late. Unsecured ventilation closures allowed further downflooding, and the crew lacked a damage-control plan that would have made the seriousness of the flooding and list clear. El Faro sank shortly afterward in the Atlantic northeas",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
@@ -4796,7 +4957,7 @@
           "key": "sinking_total_loss",
           "label": "Unit sinks or is a total loss",
           "hits": 10,
-          "evidence": "El Faro sank shortly afterward.",
+          "evidence": "Total loss of vessel; estimated damage of $36 million",
           "role": "context"
         },
         {
@@ -4852,7 +5013,7 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_position",
       "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "gh its turret with five thrusters for heading control. One mooring line parted. The FPSO lost heading control and swung partly beam-on to the weather, loading the remaining lines, and three more then failed. The vessel moved partially off",
+      "top_event_evidence": "ded a roll of about 12 degrees. The failure began when one mooring line parted. Gryphon Alpha lost heading control and turned partly beam-on to the weather, exposing the remaining moorings and the vessel to greater transverse loading. Thre",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
@@ -4969,23 +5130,16 @@
       "analysis_status": "review_required",
       "top_event": "loss_of_position",
       "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "ndividual waves up to about 16.9 m. At 22:40 the brakes on anchor winches 1 and 2 failed and both chains ran out uncontrolled, load transfer pulling the second after the first. The emergency riser disconnect was started but needed time to",
+      "top_event_evidence": "and individual waves up to approximately 16.9 m. At 22:40, anchor chains 1 and 2 ran out uncontrolled after the brakes on winches 1 and 2 failed. The first chain ran freely and load transfer caused the second line to follow. The emergency",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
       "threats": [
         {
-          "key": "mooring_line_overload",
-          "label": "Mooring/anchor line fails under storm load",
-          "hits": 1,
-          "evidence": "The rig was still connected to the well when the mooring failed, so a station-keeping failure became a riser, BOP and wellhead damage event;",
-          "role": "cause"
-        },
-        {
           "key": "winch_or_brake_failure",
           "label": "Winch brake or holding device fails",
           "hits": 1,
-          "evidence": "Havtil found two direct causes: the band brake lacked sufficient holding force, and the winch pawls (the secondary brake) were operated incorrectly.",
+          "evidence": "Havtil identified two direct causes: the band brake did not have sufficient holding force, and the anchor-winch pawls were operated incorrectly as the secondary brake.",
           "role": "cause"
         }
       ],
@@ -4994,7 +5148,7 @@
           "key": "integrity_inspection_maintenance",
           "label": "Inspection and integrity maintenance",
           "state": "candidate_failed_or_absent",
-          "evidence": "The anchor winches had not been maintained well enough to perform their function, with inadequate maintenance documentation.",
+          "evidence": "Diamond Offshore had not maintained the anchor winches sufficiently for them to perform their intended function and lacked adequate maintenance documentation.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -5002,7 +5156,7 @@
           "key": "procedures_and_competence",
           "label": "Procedures, drills and competence",
           "state": "candidate_failed_or_absent",
-          "evidence": "Personnel lacked sufficient understanding of the governing winch documents, pawl use and riser-disconnect criteria, and the regulator found qualification gaps.",
+          "evidence": "Personnel did not have sufficient understanding of governing winch documents, pawl use, winch operation or riser-disconnect criteria; the regulator also identified qualification gaps.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         },
@@ -5010,7 +5164,7 @@
           "key": "realtime_monitoring",
           "label": "Real-time monitoring and instrumentation",
           "state": "candidate_failed_or_absent",
-          "evidence": "Anchor-line tension measurement was not accurate enough, and weather and wave measurement and reporting routines were inadequate.",
+          "evidence": "The anchor-line tension measurement system was not sufficiently accurate, and weather and wave measurements and reporting routines were inadequate or unclear.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
@@ -5020,16 +5174,22 @@
           "key": "well_isolation",
           "label": "Well isolation, BOP and emergency disconnect",
           "state": "candidate_failed_or_absent",
-          "evidence": "The rig was still connected to the well when the mooring failed, so a station-keeping failure became a riser, BOP and wellhead damage event;",
+          "evidence": "The rig was still connected to the well when the mooring failure occurred, so a station-keeping failure became a riser, BOP and wellhead damage event with potential for escalation.",
           "role": "cause",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
       "escalation_factors": [
         {
+          "key": "procedure_absent_or_not_followed",
+          "label": "Procedure absent or not followed",
+          "evidence": "Procedures and criteria for riser disconnect were not followed adequately, while Eni did not sufficiently verify that its contractor was meeting health, safety and environmental requirements.",
+          "evidence_status": "record_statement_source_unlinked"
+        },
+        {
           "key": "competence_or_training_gap",
           "label": "Competence or training gap",
-          "evidence": "Personnel lacked sufficient understanding of the governing winch documents, pawl use and riser-disconnect criteria, and the regulator found qualification gaps.",
+          "evidence": "Personnel did not have sufficient understanding of governing winch documents, pawl use, winch operation or riser-disconnect criteria; the regulator also identified qualification gaps.",
           "evidence_status": "record_statement_source_unlinked"
         }
       ],
@@ -5038,21 +5198,21 @@
           "key": "well_or_subsea_damage",
           "label": "Well, riser or subsea infrastructure damaged",
           "hits": 4,
-          "evidence": "The rig was still connected to the well when the mooring failed, so a station-keeping failure became a riser, BOP and wellhead damage event;",
-          "role": "cause"
+          "evidence": "The well was eventually disconnected, but the wellhead, BOP, riser, riser-tensioning system and winches were damaged.",
+          "role": "context"
         },
         {
           "key": "production_shutdown",
           "label": "Production shut in or asset off-hire",
           "hits": 2,
-          "evidence": "Twenty-three of 86 crew were evacuated to Heidrun the same night; the rig was off contract for about six months and repair and cleanup work continued through 2005-2007.",
+          "evidence": "The actual economic consequences included loss of the well, rig and subsea damage, seabed cleanup, docking and repair, and approximately six months off contract.",
           "role": "context"
         },
         {
           "key": "emergency_evacuation",
           "label": "Emergency evacuation of personnel",
           "hits": 2,
-          "evidence": "23 non-essential crew were evacuated to Heidrun that night.",
+          "evidence": "Twenty-three people not directly required for continued work were evacuated to Heidrun during the night; no one was injured and no pollution was recorded.",
           "role": "context"
         }
       ]
@@ -5074,7 +5234,15 @@
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [],
-      "threats": [],
+      "threats": [
+        {
+          "key": "station_keeping_capacity_exceeded",
+          "label": "Environmental load exceeds station-keeping capacity",
+          "hits": 1,
+          "evidence": "Once sustained winds reached 90-100 mph, the drillship could not maintain well centre despite 100% thruster output and entered the red watch circle before EDS was complete.",
+          "role": "cause"
+        }
+      ],
       "preventive_barriers": [],
       "recovery_barriers": [],
       "escalation_factors": [],
@@ -5082,7 +5250,7 @@
         {
           "key": "well_or_subsea_damage",
           "label": "Well, riser or subsea infrastructure damaged",
-          "hits": 2,
+          "hits": 3,
           "evidence": "Riser, LMRP, telescopic-joint, MUX-cable and pod damage was estimated at $5.7 million.",
           "role": "context"
         },
@@ -5108,7 +5276,7 @@
       "analysis_status": "review_required",
       "top_event": "equipment_detachment",
       "top_event_label": "Equipment detachment or loss overboard",
-      "top_event_evidence": "rig's station-keeping. At about 175 ft off well centre the Emergency Disconnect Sequence was ordered; the LMRP did not release promptly and a second command was needed. The disconnect completed at about 1204 with hard recoil that wedged t",
+      "top_event_evidence": "tely 175 ft off well centre when the contractor ordered the Emergency Disconnect Sequence. The LMRP did not release promptly, and the flex joint reached approximately 5 degrees. A second EDS command was given and the subsea engineer activat",
       "top_event_evidence_status": "record_statement_source_unlinked",
       "not_discrete_reason": null,
       "escalated_events": [
@@ -5172,7 +5340,7 @@
           "key": "production_shutdown",
           "label": "Production shut in or asset off-hire",
           "hits": 2,
-          "evidence": "One of its seven thrusters had been out of service for three to four months.",
+          "evidence": "One of the seven thrusters was unavailable for planned maintenance and had been out of service for approximately three to four months.",
           "role": "context"
         }
       ]
@@ -5358,7 +5526,7 @@
           "key": "fatalities_occurred",
           "label": "People are killed",
           "hits": 2,
-          "evidence": "Both were swept across the forecastle into deck equipment and later died of their injuries.",
+          "evidence": "Both were swept across the forecastle into deck equipment and later died from their injuries.",
           "role": "context"
         },
         {

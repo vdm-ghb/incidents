@@ -140,6 +140,11 @@ test('candidate evidence never quotes image file paths from image or images fiel
   expect(readFileSync('working documentation/causal_tags_full.json', 'utf8')).not.toMatch(imagePath);
 });
 
+test('candidate evidence is drawn from the full sleeve fields, never the duplicate pack_text wording', () => {
+  expect(readFileSync('working documentation/bowtie_full.json', 'utf8')).not.toContain('"pack_text"');
+  expect(readFileSync('working documentation/causal_tags_full.json', 'utf8')).not.toContain('"field": "pack_text"');
+});
+
 test('asset/vessel matrix ranks asset types and counts mixed incidents in two columns', async ({ page }) => {
   await page.goto('/working%20documentation/causal_analysis.html');
 
