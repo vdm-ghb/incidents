@@ -2961,8 +2961,8 @@
       "classification": "maritime",
       "region": "Asia",
       "fatalities": 22,
-      "infrastructure_impact": "MHN processing platform collapsed within two hours and was destroyed, with its bridges to the adjacent platforms and a helicopter parked on it; the NA platform and the Noble Charlie Yester jack-up were severely damaged by heat radiation; the support vessel Samudra Suraksha burned and later sank. About 110,000 barrels a day of crude production was lost; adjusted asset claim about USD 370 million.",
-      "sentences_scanned": 69,
+      "infrastructure_impact": "MHN processing platform collapsed within two hours and was destroyed, with its bridges to the adjacent platforms and a helicopter parked on it; the NA platform and the Noble Charlie Yester jack-up were severely damaged by heat radiation; the support vessel Samudra Suraksha burned and later sank. An adjusted asset claim of about USD 370 million was reported.",
+      "sentences_scanned": 68,
       "tags": [
         {
           "concept": "riser_wellcontrol",
