@@ -3,50 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offshore Weather Incidents — Lessons Learned Database</title>
-  <meta name="author" content="Vadim Anokhin">
-  <meta name="creator" content="Vadim Anokhin">
-  <meta name="publisher" content="IOGP">
-  <meta name="description" content="An interactive database of offshore oil and gas incidents influenced by weather, sea state and other metocean factors.">
-  <link rel="canonical" href="https://vdm-ghb.github.io/incidents/">
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="c94587f4-b377-42b6-a46a-8ac2bb33e72b"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "IOGP Metocean Related Incidents Database",
-    "description": "An interactive database of offshore oil and gas incidents influenced by weather, sea state and other metocean factors.",
-    "url": "https://vdm-ghb.github.io/incidents/",
-    "author": {
-      "@type": "Person",
-      "name": "Vadim Anokhin"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "IOGP"
-    },
-    "maintainer": {
-      "@type": "Organization",
-      "name": ""
-    },
-    "isAccessibleForFree": true,
-    "license": "https://www.iogp.org/"
-  }
-  </script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Offshore Weather Incidents — Temporarily Unavailable</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=5">
-  <link rel="shortcut icon" href="favicon.svg?v=5">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css?v=20261016152212">
+  <style>
+    :root{--bg:#1a2540;--surface:#22304e;--surface2:#2a3c62;--border:#3d5680;--text:#dceaf8;--text-muted:#90b0cc;--accent:#60aeff;--notable:#d29922;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html,body{min-height:100%;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.55;background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh;}
+    header{position:relative;z-index:900;padding:14px 16px;background:var(--surface);border-bottom:1px solid var(--border);}
+    #header-brand{position:relative;display:inline-flex;align-items:center;gap:10px;outline:none;cursor:default;}
+    #header-brand svg{flex:0 0 auto;}
+    .brand-title{font-size:16px;font-weight:700;letter-spacing:.2px;}
+    .brand-sub{font-size:11px;color:var(--text-muted);}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:32px 16px;}
+    .card{max-width:560px;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px 28px;box-shadow:0 12px 28px rgba(0,0,0,.3);}
+    .status{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--notable);margin-bottom:14px;}
+    .status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--notable);}
+    h1{font-size:24px;line-height:1.25;margin-bottom:14px;}
+    .card p{color:var(--text-muted);margin-bottom:10px;}
+    .card p:last-child{margin-bottom:0;}
+    footer{padding:14px 16px;text-align:center;font-size:12px;color:var(--text-muted);}
+
+    /* Database information dropdown — same design as the main site's header popover */
+    #database-popover-content{position:absolute;top:calc(100% + 8px);left:-8px;width:330px;padding:13px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;box-shadow:0 12px 28px rgba(0,0,0,.34);color:var(--text);font-size:11px;line-height:1.45;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s ease,transform .15s ease,visibility .15s;z-index:950;pointer-events:none;}
+    #database-popover-content::before{content:"";position:absolute;top:-5px;left:12px;width:8px;height:8px;background:var(--surface);border-left:1px solid var(--border);border-top:1px solid var(--border);transform:rotate(45deg);}
+    #database-popover-content strong{display:block;margin-bottom:7px;color:var(--accent);font-size:12px;}
+    #database-popover-content p{margin:0 0 8px;}
+    #database-popover-content dl{display:grid;gap:3px;margin-top:9px;padding-top:8px;border-top:1px solid var(--border);}
+    #database-popover-content dl div{display:flex;gap:8px;}
+    #database-popover-content dt{width:78px;color:var(--text-muted);font-weight:600;white-space:nowrap;}
+    #database-popover-content dd{margin:0;color:var(--text);}
+    .database-section{margin-top:9px;padding-top:8px;border-top:1px solid var(--border);}
+    .database-section summary{color:var(--accent);cursor:pointer;font-weight:700;font-size:12px;}
+    .database-section p{margin:8px 0 0;}
+    .database-section[open]{max-height:min(calc(100vh - 440px),420px);min-height:120px;overflow-y:auto;padding-right:4px;}
+    #header-brand:hover #database-popover-content,#header-brand:focus #database-popover-content,#header-brand:focus-within #database-popover-content{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
+
+    @media (max-width:480px){
+      .card{padding:24px 18px;}h1{font-size:20px;}
+      #database-popover-content{position:fixed;top:70px;left:10px;width:min(330px,calc(100vw - 20px));}
+    }
+  </style>
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header id="app-header">
+  <header>
     <div id="header-brand" tabindex="0" aria-describedby="database-popover-content">
-      <div id="header-logo">⚠</div>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f0883e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       <div>
-        <h1 id="header-title">Offshore Weather Incidents</h1>
-        <p id="header-sub">Lessons Learned Database — Oil &amp; Gas Industry</p>
+        <div class="brand-title">Offshore Weather Incidents</div>
+        <div class="brand-sub">Lessons Learned Database — Oil &amp; Gas Industry</div>
       </div>
       <div id="database-popover-content" role="tooltip">
         <strong>About this database</strong>
@@ -69,177 +75,15 @@
         </details>
       </div>
     </div>
-
-    <div id="header-filters">
-      <select id="filter-region" class="filter-select" title="Filter by region">
-        <option value="all">All regions</option>
-        <option value="Africa">Africa</option>
-        <option value="Asia">Asia</option>
-        <option value="Australia">Australia</option>
-        <option value="Europe">Europe</option>
-        <option value="Middle East">Middle East</option>
-        <option value="North America">North America</option>
-        <option value="Russia and Central Asia">Russia and Central Asia</option>
-        <option value="South America">South America</option>
-      </select>
-
-      <select id="filter-type" class="filter-select" title="Filter by event type (metocean hazard)">
-        <option value="all">All event types</option>
-        <option value="cyclone">Cyclone / Hurricane / Typhoon</option>
-        <option value="storm">Severe (Extra-tropical) Storm</option>
-        <option value="squall">Squall / Thunderstorm</option>
-        <option value="lightning">Lightning</option>
-        <option value="rogue_wave">Extreme / Rogue Wave</option>
-        <option value="internal_wave">Internal Wave / Soliton</option>
-        <option value="current">Ocean / Turbidity Current / Tidal</option>
-        <option value="tsunami">Tsunami / Meteo-tsunami</option>
-        <option value="climate">Climate / Ambient Extremes</option>
-        <option value="equipment">Metocean Equipment</option>
-      </select>
-
-      <select id="filter-classification" class="filter-select" title="Filter by operation type">
-        <option value="all">All operations</option>
-        <option value="drilling">Drilling</option>
-        <option value="maritime">Maritime / Tow</option>
-        <option value="aviation">Aviation</option>
-        <option value="onshore">Onshore Operations</option>
-        <option value="coastal">Port / Coastal</option>
-        <option value="pipeline">Pipeline</option>
-        <option value="design">Basis of Design</option>
-        <option value="survey">Survey</option>
-        <option value="decommissioning">Decommissioning</option>
-      </select>
-
-      <select id="filter-consequence" class="filter-select" title="Filter by consequence">
-        <option value="all">All consequences</option>
-        <option value="human_harm">Fatality / Severe Injury</option>
-        <option value="infrastructure">Infrastructure Impact</option>
-        <option value="schedule">Schedule Impact</option>
-        <option value="financial">Financial Impact</option>
-        <option value="environment">Environmental Damage</option>
-        <option value="asset_loss">Asset Loss</option>
-      </select>
-
-      <button id="filter-reset" title="Clear all filters">Reset</button>
-    </div>
-
-    <nav id="header-analysis-links" aria-label="Internal analysis views">
-      <a class="header-analysis-link" href="working%20documentation/causal_analysis.html">Causal Theme Map</a>
-      <a class="header-analysis-link" href="working%20documentation/bowtie_view.html">Bow-Tie Explorer</a>
-    </nav>
-
-    <div id="header-stats">
-      <div id="filter-search-wrap">
-        <label class="sr-only" for="filter-search">Search incidents</label>
-        <input id="filter-search" class="filter-search" type="search" placeholder="Search incidents..." autocomplete="off" title="Search by taxonomy, category, incident or vessel name">
-        <div id="search-results" class="hidden" role="listbox" aria-label="Matching incidents"></div>
-      </div>
-      <button id="stat-incidents-btn" class="stat-block stat-btn" title="Click to view all incidents table">
-        <span class="stat-value" id="stat-incidents">–</span>
-        <span class="stat-label">incidents</span>
-        <span class="stat-arrow">▼</span>
-      </button>
-    </div>
   </header>
-
-  <!-- MAP -->
-  <div id="map"></div>
-
-  <!-- LEGEND -->
-  <div id="legend">
-    <div id="legend-header" title="Click to expand / collapse">
-      <span>Legend</span>
-      <span id="legend-toggle-icon">▲</span>
+  <main>
+    <div class="card" role="status">
+      <div class="status">Temporarily unavailable</div>
+      <h1>The database is undergoing internal review</h1>
+      <p>The Offshore Weather Incidents database is temporarily unavailable while its content goes through internal review and approval.</p>
+      <p>It will be back shortly. Thank you for your patience.</p>
     </div>
-    <div id="legend-body">
-      <div class="legend-section-title">Operations (colour)</div>
-      <div class="legend-row"><span class="legend-dot cls-drilling"></span><span>Drilling</span></div>
-      <div class="legend-row"><span class="legend-dot cls-maritime"></span><span>Maritime / Tow</span></div>
-      <div class="legend-row"><span class="legend-dot cls-aviation"></span><span>Aviation</span></div>
-      <div class="legend-row"><span class="legend-dot cls-onshore"></span><span>Onshore Operations</span></div>
-      <div class="legend-row"><span class="legend-dot cls-coastal"></span><span>Port / Coastal</span></div>
-      <div class="legend-row"><span class="legend-dot cls-pipeline"></span><span>Pipeline</span></div>
-      <div class="legend-row"><span class="legend-dot cls-design"></span><span>Basis of Design</span></div>
-      <div class="legend-row"><span class="legend-dot cls-survey"></span><span>Survey</span></div>
-      <div class="legend-row"><span class="legend-dot cls-decommissioning"></span><span>Decommissioning</span></div>
-      <div class="legend-section-title" style="margin-top:10px">Event type (letter)</div>
-      <div class="legend-row"><span class="legend-letter">C</span><span>Cyclone / Hurricane / Typhoon</span></div>
-      <div class="legend-row"><span class="legend-letter">S</span><span>Severe (Extra-tropical) Storm</span></div>
-      <div class="legend-row"><span class="legend-letter">Q</span><span>Squall / Thunderstorm</span></div>
-      <div class="legend-row"><span class="legend-letter">L</span><span>Lightning</span></div>
-      <div class="legend-row"><span class="legend-letter">R</span><span>Extreme / Rogue Wave</span></div>
-      <div class="legend-row"><span class="legend-letter">I</span><span>Internal Wave / Soliton</span></div>
-      <div class="legend-row"><span class="legend-letter">U</span><span>Ocean / Turbidity Current / Tidal</span></div>
-      <div class="legend-row"><span class="legend-letter">T</span><span>Tsunami / Meteo-tsunami</span></div>
-      <div class="legend-row"><span class="legend-letter">K</span><span>Climate / Ambient Extremes</span></div>
-      <div class="legend-row"><span class="legend-letter">E</span><span>Metocean Equipment</span></div>
-    </div>
-  </div>
-
-  <!-- MODAL -->
-  <div id="modal-overlay" class="hidden" role="dialog" aria-modal="true" aria-labelledby="modal-incident-name">
-    <div id="modal-container">
-      <div id="modal-toolbar">
-        <button id="modal-print" title="Print this incident report">&#128438; Print</button>
-        <button id="modal-share" title="Copy link to this incident">&#128279; Share</button>
-        <a id="modal-pack" title="Open a print-ready safety-moment sharing pack (10–15 min)">&#128227; Safety Moment</a>
-        <button id="modal-close" title="Close (Escape)" aria-label="Close">&#215;</button>
-      </div>
-      <div id="modal-content"></div>
-    </div>
-  </div>
-
-  <!-- FULL-SIZE INCIDENT IMAGE -->
-  <div id="image-lightbox" class="hidden" role="dialog" aria-modal="true" aria-label="Full-size incident image">
-    <button id="image-lightbox-close" title="Close (Escape)" aria-label="Close full-size image">&#215;</button>
-    <div id="image-lightbox-stage">
-      <img id="image-lightbox-image" alt="">
-      <p id="image-lightbox-caption"></p>
-    </div>
-  </div>
-
-  <!-- ALL INCIDENTS TABLE OVERLAY -->
-  <div id="table-overlay" class="hidden" role="dialog" aria-modal="true" aria-label="All incidents table">
-    <div id="table-container">
-      <div id="table-toolbar">
-        <div id="table-title">
-          <span id="table-title-count"></span>
-          <span id="table-title-label">Weather-Driven Incidents in Offshore Oil &amp; Gas</span>
-        </div>
-        <button id="table-close" title="Close (Escape)" aria-label="Close">&#215;</button>
-      </div>
-      <div id="table-scroll">
-        <table id="incidents-table">
-          <thead>
-            <tr>
-              <th class="col-rank">#</th>
-              <th class="col-name">Incident</th>
-              <th class="col-year">Year</th>
-              <th class="col-location">Location</th>
-              <th class="col-asset">Asset Type</th>
-              <th class="col-fatal">Fatalities / Impact</th>
-              <th class="col-weather">Primary Weather Factor</th>
-              <th class="col-sev">Operations</th>
-            </tr>
-          </thead>
-          <tbody id="incidents-tbody"></tbody>
-        </table>
-      </div>
-      <div id="table-footer">Click any row to view the full incident report.</div>
-    </div>
-  </div>
-
-  <!-- PRINT REPORT — populated by JS before window.print(), visible only in print media -->
-  <div id="print-report"></div>
-
-  <!-- DATA — loaded before Leaflet so it's available immediately -->
-  <script src="data/incidents.js?v=20261016152212"></script>
-  <script src="data/storm_tracks.js?v=20261016152212"></script>
-  <!-- Leaflet map library -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <!-- Main app -->
-  <script src="js/timeline.js?v=20261016152212"></script>
-  <script src="js/app.js?v=20261016152212"></script>
-
+  </main>
+  <footer>Offshore Weather Incidents — Lessons Learned Database</footer>
 </body>
 </html>
