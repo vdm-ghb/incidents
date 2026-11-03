@@ -85,7 +85,7 @@ test('analysis summaries show real images and omit placeholders for records with
       src: incident.image?.src ?? null,
     })));
 
-  expect(incidents).toHaveLength(96);
+  expect(incidents).toHaveLength(87);
   expect(incidents.some((incident: { src: string | null }) => incident.src === null)).toBe(true);
   expect(incidents.every((incident: { src: string | null }) => !incident.src || !/^https?:\/\//.test(incident.src))).toBe(true);
   for (const explorer of ['bowtie_view.html', 'causal_analysis.html']) {
@@ -157,10 +157,10 @@ test('asset/vessel matrix ranks asset types and counts mixed incidents in two co
   const counts = columns.map((column) => Number(column.match(/RECORDS=(\d+)/)?.[1]));
   expect(counts.every((count) => Number.isFinite(count))).toBe(true);
   expect(counts).toEqual([...counts].sort((a, b) => b - a));
-  // Support is among the leading columns; the exact leader shifts as records are added.
+  // Support is among the leading columns; the exact leader shifts as records are added or removed.
   const supportIndex = columns.findIndex((column) => column.includes('SUPPORT'));
   expect(supportIndex).toBeGreaterThanOrEqual(0);
-  expect(supportIndex).toBeLessThan(3);
+  expect(supportIndex).toBeLessThan(4);
   expect(columns.some((column) => column.includes('MULTIPLE / REGIONAL'))).toBe(true);
   expect(columns.some((column) => column.includes('HELICOPTER'))).toBe(true);
 
@@ -184,8 +184,8 @@ test('asset column record count opens a selectable incident summary table', asyn
 
   await page.locator('#grid-asset th .rec[data-asummary="Support / supply / tug / barge / survey"]').click();
   await expect(page.locator('#box h3')).toHaveText('Support / supply / tug / barge / survey');
-  await expect(page.locator('#box .sub')).toContainText('14 incidents');
-  await expect(page.locator('#box table.summ tbody tr')).toHaveCount(14);
+  await expect(page.locator('#box .sub')).toContainText('11 incidents');
+  await expect(page.locator('#box table.summ tbody tr')).toHaveCount(11);
   await expect(page.locator('#box table.summ thead th').nth(5)).toHaveText('Consequence');
   // Rows are ordered by fatalities: the 86-fatality ONGC record is first.
   await expect(page.locator('#box table.summ tbody tr').first()).toContainText('ONGC Offshore');

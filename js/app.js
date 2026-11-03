@@ -578,16 +578,26 @@
 
   /* ── Legend collapse ── */
   var legend=document.getElementById('legend');
-  if (window.innerWidth>640) legend.classList.add('open');
-  document.getElementById('legend-header').addEventListener('click',function(){ legend.classList.toggle('open'); });
+  var phoneQuery=window.matchMedia('(max-width:640px)');
+  function setLegendOpen(open){ legend.classList.toggle('open', open); }
+  if (!phoneQuery.matches) setLegendOpen(true);
+  document.getElementById('legend-header').addEventListener('click',function(){ setLegendOpen(!legend.classList.contains('open')); });
+  document.getElementById('legend-close').addEventListener('click',function(){ setLegendOpen(false); });
+  // On phones the open legend covers most of the map, so any interaction elsewhere minimises it.
+  document.addEventListener('pointerdown',function(e){
+    if (phoneQuery.matches && legend.classList.contains('open') && !legend.contains(e.target)) setLegendOpen(false);
+  },true);
+  map.on('dragstart zoomstart',function(){ if (phoneQuery.matches) setLegendOpen(false); });
 
   /* ── Modal ── */
   var modalOverlay=document.getElementById('modal-overlay'), modalContent=document.getElementById('modal-content'), modalClose=document.getElementById('modal-close');
   var tableOverlay=document.getElementById('table-overlay');
   var imageLightbox=document.getElementById('image-lightbox'), imageLightboxImage=document.getElementById('image-lightbox-image'), imageLightboxCaption=document.getElementById('image-lightbox-caption');
   var activeIncidentImages=[];
+  var currentModalIncident=null;
 
   function openModal(incident) {
+    currentModalIncident=incident;
     showIncidentTrack(incident, true);
     activeIncidentImages=incident.images&&incident.images.length?incident.images:(incident.image?[incident.image]:[]);
     modalContent.innerHTML=buildIncidentHTML(incident);
@@ -601,6 +611,7 @@
     history.replaceState(null,'','#'+incident.id);
   }
   function closeModal() {
+    currentModalIncident=null;
     lockedTrackSid = null;
     clearActiveTrack();
     clearActiveTrackLabel();
@@ -787,6 +798,12 @@
   loadStormTracks();
   loadData();
   initTimeline();
+  if (window.IncidentContribute) {
+    var contribute = window.IncidentContribute.init({ incidents: allIncidents, eventTypes: EVENT_TYPE_LABELS });
+    document.getElementById('header-contribute').addEventListener('click',function(){ contribute.open('incident'); });
+    document.getElementById('popover-contribute').addEventListener('click',function(){ contribute.open('incident'); });
+    document.getElementById('modal-feedback').addEventListener('click',function(){ contribute.open('correction', currentModalIncident); });
+  }
   if (window.location.hash) {
     var hashId=window.location.hash.slice(1);
     var linked=allIncidents.find(function(i){ return i.id===hashId; });

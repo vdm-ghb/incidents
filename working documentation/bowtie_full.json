@@ -1,25 +1,24 @@
 {
-  "generated": "2026-10-16",
+  "generated": "2026-11-03",
   "method": "Candidate bow-tie retrieval aligned to CGE/Wolters Kluwer and CCPS-EI terminology. It classifies wording in the incident record, not source material. All relationships require analyst review against a cited source before use as a finding. Only what_went_wrong statements are used for candidate threats, failed/absent barriers and escalation factors. Lessons and actions are excluded. Explicitly uncertain statements are excluded where recognised.",
   "rule": "Candidate top event = first recognised loss-of-control phrase in the chronological record narrative; absence of a phrase is reported as undetermined, not inferred.",
-  "records_analysed": 96,
+  "records_analysed": 87,
   "top_event_counts": {
     "structural_failure": 9,
-    "loss_of_position": 25,
-    "loss_of_stability": 18,
+    "loss_of_position": 23,
+    "loss_of_stability": 17,
     "impact_collision": 2,
     "ignition_fire_explosion": 3,
     "loss_of_containment": 4,
-    "electrical_contact_with_energy": 3,
-    "equipment_detachment": 3,
+    "electrical_contact_with_energy": 2,
     "wind_damage_to_structure": 2,
-    "loss_of_aircraft_control": 5,
     "not_discrete": 10,
     "wave_impact_on_structure": 5,
     "subsea_asset_displacement": 2,
-    "undetermined": 2,
-    "water_inrush_confined_space": 1,
-    "dropped_or_swinging_load": 2
+    "loss_of_aircraft_control": 3,
+    "dropped_or_swinging_load": 2,
+    "undetermined": 1,
+    "equipment_detachment": 2
   },
   "incidents": [
     {
@@ -1914,162 +1913,6 @@
       ]
     },
     {
-      "id": "lightning-me-2013",
-      "name": "Lightning Strike - Middle East Oilfield",
-      "year": 2013,
-      "hazard_event_type": "lightning",
-      "hazard": "Offshore activity exposed to lightning energy",
-      "discipline": "onshore",
-      "region": "Middle East",
-      "fatalities": 1,
-      "infrastructure_impact": null,
-      "analysis_status": "review_required",
-      "top_event": "electrical_contact_with_energy",
-      "top_event_label": "Direct contact with electrical energy",
-      "top_event_evidence": "vehicle) to drive away from the area. As the storm arrived, lightning struck the vehicle's radio antenna. The electrical discharge conducted through the vehicle structure and passed through the two occupants. One contractor was killed inst",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [],
-      "threats": [],
-      "preventive_barriers": [
-        {
-          "key": "procedures_and_competence",
-          "label": "Procedures, drills and competence",
-          "state": "candidate_failed_or_absent",
-          "evidence": "The workers did not reach an adequate shelter before the storm - shelter-in-place procedures in a proper lightning-safe building were not followed or available.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "recovery_barriers": [],
-      "escalation_factors": [
-        {
-          "key": "procedure_absent_or_not_followed",
-          "label": "Procedure absent or not followed",
-          "evidence": "The workers did not reach an adequate shelter before the storm - shelter-in-place procedures in a proper lightning-safe building were not followed or available.",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "consequences": [
-        {
-          "key": "fatalities_occurred",
-          "label": "People are killed",
-          "hits": 3,
-          "evidence": "One contractor was killed instantly.",
-          "role": "context"
-        },
-        {
-          "key": "emergency_evacuation",
-          "label": "Emergency evacuation of personnel",
-          "hits": 1,
-          "evidence": "Weather monitoring at the remote site may not have provided adequate advance warning to allow timely evacuation to safe shelter.",
-          "role": "cause"
-        }
-      ]
-    },
-    {
-      "id": "gumusut-gangway-2014",
-      "name": "ASV Gangway Collapse during disconnection",
-      "year": 2014,
-      "hazard_event_type": "storm",
-      "hazard": "Offshore activity exposed to storm energy",
-      "discipline": "maritime",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": "Gangway structure lost overboard; high potential incident with no personnel on gangway at the time",
-      "analysis_status": "review_required",
-      "top_event": "equipment_detachment",
-      "top_event_label": "Equipment detachment or loss overboard",
-      "top_event_evidence": "s the flotel began to separate from the FPS, the telescopic gangway (connecting bridge) detached at the FPS attachment point and fell into the sea. The relative motions between the two vessels in the increasing sea state had exceeded the s",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [],
-      "threats": [],
-      "preventive_barriers": [
-        {
-          "key": "procedures_and_competence",
-          "label": "Procedures, drills and competence",
-          "state": "candidate_failed_or_absent",
-          "evidence": "Operational procedures did not clearly specify when to cease all gangway use and begin disconnection before the sea state reached design limits.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "recovery_barriers": [],
-      "escalation_factors": [
-        {
-          "key": "procedure_absent_or_not_followed",
-          "label": "Procedure absent or not followed",
-          "evidence": "Operational procedures did not clearly specify when to cease all gangway use and begin disconnection before the sea state reached design limits.",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "consequences": []
-    },
-    {
-      "id": "gumusut-barge-2013",
-      "name": "Drifting Cargo Barge / Tug collision",
-      "year": 2013,
-      "hazard_event_type": "storm",
-      "hazard": "Offshore activity exposed to storm energy",
-      "discipline": "maritime",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": "Damage to tug and/or barge during emergency intervention; project delays",
-      "analysis_status": "review_required",
-      "top_event": "loss_of_position",
-      "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "from deteriorating weather put extreme loads on the barge's mooring lines, which eventually parted, setting the barge adrift. A tug in the field moved to intercept the drifting barge and prevent a collision with the FPS or other structures",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [
-        {
-          "key": "impact_collision",
-          "label": "Impact or collision"
-        },
-        {
-          "key": "loss_of_stability",
-          "label": "Loss of stability / buoyancy"
-        }
-      ],
-      "threats": [],
-      "preventive_barriers": [
-        {
-          "key": "procedures_and_competence",
-          "label": "Procedures, drills and competence",
-          "state": "candidate_failed_or_absent",
-          "evidence": "Pre-storm contingency planning for moored offshore equipment (barges, buoys) was inadequate - no clear procedure for pre-emptive barge repositioning when weather deteriorated.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "recovery_barriers": [],
-      "escalation_factors": [
-        {
-          "key": "procedure_absent_or_not_followed",
-          "label": "Procedure absent or not followed",
-          "evidence": "Pre-storm contingency planning for moored offshore equipment (barges, buoys) was inadequate - no clear procedure for pre-emptive barge repositioning when weather deteriorated.",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "consequences": [
-        {
-          "key": "capsize",
-          "label": "Unit capsizes",
-          "hits": 1,
-          "evidence": "The scenario had high potential for the barge to have struck the FPS or for the tug to have capsized.",
-          "role": "context"
-        },
-        {
-          "key": "structural_damage",
-          "label": "Structure damaged or destroyed",
-          "hits": 1,
-          "evidence": "Minor structural damage resulted but no personnel were injured.",
-          "role": "context"
-        }
-      ]
-    },
-    {
       "id": "qarn-alam-1996",
       "name": "Qarn Alam Oilfield Camp Storm",
       "year": 1996,
@@ -2313,51 +2156,6 @@
           "label": "Structure damaged or destroyed",
           "hits": 1,
           "evidence": "Minor structural damage; high-potential near-miss with risk of major collision",
-          "role": "context"
-        }
-      ]
-    },
-    {
-      "id": "helicopter-rollover-2009",
-      "name": "Helicopter Rollover on Offshore Helideck",
-      "year": 2009,
-      "hazard_event_type": "squall",
-      "hazard": "Offshore activity exposed to squall energy",
-      "discipline": "aviation",
-      "region": "North America",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "analysis_status": "review_required",
-      "top_event": "loss_of_aircraft_control",
-      "top_event_label": "Loss of aircraft control",
-      "top_event_evidence": "broadside, catching the tail rotor. The aircraft suffered a dynamic rollover - flipping onto its side on the helideck with the rotor still turning. The fuselage was wrecked in the rollover. All 7 occupants - 2 pilots and 5 passengers - wer",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [],
-      "threats": [],
-      "preventive_barriers": [],
-      "recovery_barriers": [],
-      "escalation_factors": [
-        {
-          "key": "instrument_or_data_unavailable",
-          "label": "Instrument, sensor or data unavailable",
-          "evidence": "Internal source material states the platform weather measurement equipment was inoperative for more than one year, so flight crew did not have current platform wind information at the time of operations.",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "consequences": [
-        {
-          "key": "structural_damage",
-          "label": "Structure damaged or destroyed",
-          "hits": 2,
-          "evidence": "The helicopter was destroyed.",
-          "role": "context"
-        },
-        {
-          "key": "capsize",
-          "label": "Unit capsizes",
-          "hits": 1,
-          "evidence": "They were able to evacuate the overturned aircraft, sustaining only minor injuries.",
           "role": "context"
         }
       ]
@@ -3492,69 +3290,6 @@
       "consequences": []
     },
     {
-      "id": "lfe-03-dupal-lmrp-disconnect",
-      "name": "Dupal Drillship - LMRP Disconnect During Storm",
-      "year": 2018,
-      "hazard_event_type": "storm",
-      "hazard": "Offshore activity exposed to storm energy",
-      "discipline": "drilling",
-      "region": "North America",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "analysis_status": "review_required",
-      "top_event": "loss_of_position",
-      "top_event_label": "Loss of position / station-keeping",
-      "top_event_evidence": "BOP; (3) Disconnected LMRP. On 26 April, three weather-side mooring wires failed under storm loading. Acoustic release devices were activated on remaining wires and vessel moved away from the well site, passing between two operational insta",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [],
-      "threats": [],
-      "preventive_barriers": [
-        {
-          "key": "weather_forecasting",
-          "label": "Weather forecasting and storm tracking",
-          "state": "candidate_failed_or_absent",
-          "evidence": "Forecasting uncertainty margin not adequately built into go/no-go decision.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        },
-        {
-          "key": "weather_operating_limits",
-          "label": "Weather-based operating limits and stop-work triggers",
-          "state": "candidate_failed_or_absent",
-          "evidence": "Forecasting uncertainty margin not adequately built into go/no-go decision.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        },
-        {
-          "key": "mooring_design_and_analysis",
-          "label": "Mooring design, analysis and pretension control",
-          "state": "candidate_failed_or_absent",
-          "evidence": "Mooring arrangement not adequate for the storm load encountered.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "recovery_barriers": [],
-      "escalation_factors": [],
-      "consequences": [
-        {
-          "key": "equipment_lost_to_seabed",
-          "label": "Equipment lost to the seabed",
-          "hits": 3,
-          "evidence": "LMRP and marine riser lost in 110 m water.",
-          "role": "context"
-        },
-        {
-          "key": "well_or_subsea_damage",
-          "label": "Well, riser or subsea infrastructure damaged",
-          "hits": 3,
-          "evidence": "LMRP and marine riser lost in 110 m water.",
-          "role": "context"
-        }
-      ]
-    },
-    {
       "id": "lfe-12-transocean-winner-scotland-2016",
       "name": "Transocean Winner - Towed Rig Blown Ashore, Scotland",
       "year": 2016,
@@ -3805,121 +3540,6 @@
       ]
     },
     {
-      "id": "lfe-02-wave-rider-buoy-snag-2023",
-      "name": "Wave Rider Buoy Snagged by Survey Vessel - Pierce Asset, North Sea",
-      "year": 2023,
-      "hazard_event_type": "equipment",
-      "hazard": "Offshore activity exposed to equipment energy",
-      "discipline": "survey",
-      "region": "Europe",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "analysis_status": "review_required",
-      "top_event": null,
-      "top_event_label": "Undetermined from record text",
-      "top_event_evidence": null,
-      "top_event_evidence_status": null,
-      "not_discrete_reason": null,
-      "escalated_events": [],
-      "threats": [],
-      "preventive_barriers": [],
-      "recovery_barriers": [],
-      "escalation_factors": [],
-      "consequences": [
-        {
-          "key": "well_or_subsea_damage",
-          "label": "Well, riser or subsea infrastructure damaged",
-          "hits": 1,
-          "evidence": "An all-stop was called; equipment was recovered and an ROV survey found no pipeline or umbilical damage.",
-          "role": "context"
-        }
-      ]
-    },
-    {
-      "id": "lfe-10-aircraft-turbulence-helideck-2016",
-      "name": "AW139 Exhaust-Plume Encounter During Helideck Landing",
-      "year": 2016,
-      "hazard_event_type": "equipment",
-      "hazard": "Offshore activity exposed to equipment energy",
-      "discipline": "aviation",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "analysis_status": "review_required",
-      "top_event": "loss_of_aircraft_control",
-      "top_event_label": "Loss of aircraft control",
-      "top_event_evidence": "atform. On final approach the pilot experienced a momentary loss of tail-rotor effectiveness, regained control and landed safely. The pilots believed that a gas-turbine-generator exhaust plume had been blown across the flight path. The LFE",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [],
-      "threats": [
-        {
-          "key": "exhaust_plume_or_deck_turbulence",
-          "label": "Exhaust plume or deck-induced turbulence",
-          "hits": 1,
-          "evidence": "Gas-turbine-generator exhaust stacks allowed an exhaust plume to be blown across the preferred helicopter approach path.",
-          "role": "cause"
-        }
-      ],
-      "preventive_barriers": [],
-      "recovery_barriers": [],
-      "escalation_factors": [
-        {
-          "key": "instrument_or_data_unavailable",
-          "label": "Instrument, sensor or data unavailable",
-          "evidence": "Wind sensors were poorly positioned and produced measurements unrepresentative of conditions at the helideck.",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "consequences": []
-    },
-    {
-      "id": "lfe-19-oloma-pipeline-four-fatalities-2016",
-      "name": "Oloma Pipeline Repair - Tidal Water Ingress into Coffer Dam",
-      "year": 2016,
-      "hazard_event_type": "current",
-      "hazard": "Offshore activity exposed to current energy",
-      "discipline": "pipeline",
-      "region": "Africa",
-      "fatalities": 4,
-      "infrastructure_impact": null,
-      "analysis_status": "review_required",
-      "top_event": "water_inrush_confined_space",
-      "top_event_label": "Water inrush into confined space",
-      "top_event_evidence": "e a cofferdam working on isolated pipeline sections. As the tide rose, seawater ingressed into a second cofferdam through points not previously recognized as part of the pressure boundary. As water level rose, hydrostatic pressure on the pi",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [],
-      "threats": [
-        {
-          "key": "isolation_incomplete",
-          "label": "Isolation or containment boundary incomplete",
-          "hits": 2,
-          "evidence": "Isolation points did not prevent tidal water ingress from a separate cofferdam within the same isolation boundary.",
-          "role": "cause"
-        }
-      ],
-      "preventive_barriers": [],
-      "recovery_barriers": [],
-      "escalation_factors": [],
-      "consequences": [
-        {
-          "key": "fatalities_occurred",
-          "label": "People are killed",
-          "hits": 3,
-          "evidence": "Combined effects of reduced oxygen, hydrocarbon exposure, and physical trauma resulted in four fatalities.",
-          "role": "context"
-        },
-        {
-          "key": "hydrocarbon_release",
-          "label": "Hydrocarbons released to sea",
-          "hits": 1,
-          "evidence": "Hydrocarbon release into cofferdam; controlled environmental impact",
-          "role": "context"
-        }
-      ]
-    },
-    {
       "id": "mib-01-sakhalin-snow-accumulation-design",
       "name": "Sakhalin Gas Processing Plant - Snow Accumulation Design Failure",
       "year": 2000,
@@ -3969,43 +3589,6 @@
         }
       ],
       "preventive_barriers": [],
-      "recovery_barriers": [],
-      "escalation_factors": [],
-      "consequences": []
-    },
-    {
-      "id": "lfe-14-anchor-handling-seaman-injury-anonymous",
-      "name": "Campaign Barge Anchor Handling - Seaman Injury During Squall",
-      "year": 2012,
-      "hazard_event_type": "squall",
-      "hazard": "Offshore activity exposed to squall energy",
-      "discipline": "maritime",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "analysis_status": "review_required",
-      "top_event": "loss_of_stability",
-      "top_event_label": "Loss of stability / buoyancy",
-      "top_event_evidence": "d move away. While towing out, the trailing tug experienced water ingress into its steering gear room and dropped anchor; the lead tug was also instructed to drop anchor (wind 35-40 knots, swell 4-5 m). During attempts to secure a pennant b",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [
-        {
-          "key": "dropped_or_swinging_load",
-          "label": "Dropped, shifting or swinging load"
-        }
-      ],
-      "threats": [],
-      "preventive_barriers": [
-        {
-          "key": "weather_operating_limits",
-          "label": "Weather-based operating limits and stop-work triggers",
-          "state": "candidate_failed_or_absent",
-          "evidence": "No clear pre-defined weather go/no-go criteria with adequate safety margin.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
       "recovery_barriers": [],
       "escalation_factors": [],
       "consequences": []
