@@ -148,6 +148,7 @@ Static HTML/CSS/JS, [Leaflet](https://leafletjs.com/) for the map, no framework 
 - **Images:** 37 tracked images not in the transfer (5 from withdrawn records, the rest unreferenced candidates) moved to the gitignored `background files/unpublished images/`; `images/` = the 84 referenced files.
 - **Fix:** the popover Contribute button pushed the database popover ~9px past a 720px viewport with the Disclaimer open; open-section budget raised `100vh - 440px` → `100vh - 480px`.
 - Tests: counts 96 → 87, removed the Pierce Wave Rider test (record withdrawn), Support column 14 → 11 incidents (now 4th: Jack-up 15, Semi-sub 13, Multiple 12, Support 11), header test now counts `a.header-analysis-link` and checks the Contribute button. **New:** Suggest-correction → mailto composition test, header Contribute test, phone legend-close test.
+- **Public site restored.** The 2026-10-23 review takedown (`9c655e4`, notice page only on `main`) was reverted and `full-site` merged into `main` (`38bf5c7`); GitHub Pages serves the 87-record site again. `main` and `full-site` now have identical trees; the `pre-takedown` tag still marks the 96-record state.
 - Verified: `npx playwright test` 82/82, `npm run test:analysis` 13/13, Node data load (87 records, 0 dup IDs, required fields present, 0 `shell_internal_only`, 86 image refs local and present, all 29 `storm_sid`s in `storm_tracks.js`). Analysis outputs regenerated (87/87 tagged).
 
 **Completed (2026-10-16 — timeline strip, sleeve narratives restored, `pack_text`, Mumbai High North rebuilt):**
