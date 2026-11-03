@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safety Moment — Metocean Incidents Database</title>
+  <meta name="description" content="A print-ready safety-moment sharing pack for a single metocean-related offshore incident, generated from the Metocean Incidents Database.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/pack.css">
+</head>
+<body>
+  <!-- Screen-only toolbar (hidden when printing) -->
+  <div id="pack-toolbar">
+    <a id="pack-back" href="index.html" title="Return to the incident map">&#8592; Database</a>
+    <span id="pack-toolbar-title">Safety Moment</span>
+    <div id="pack-toolbar-actions">
+      <button id="pack-present" type="button" title="Present full screen — one slide at a time">&#9654; Present</button>
+      <button id="pack-print" type="button" title="Print or save this pack as a 16:9 PDF">&#128438; Download PDF</button>
+      <a id="pack-record" href="#" title="Open the full incident record">Full record &#8594;</a>
+    </div>
+  </div>
+
+  <!-- Presentation navigation (shown only in Present mode) -->
+  <div id="pack-nav" hidden>
+    <button id="nav-prev" class="nav-arrow" type="button" aria-label="Previous slide" title="Previous (Left arrow)">&#8249;</button>
+    <span id="nav-counter" aria-live="polite">1 / 1</span>
+    <button id="nav-next" class="nav-arrow" type="button" aria-label="Next slide" title="Next (Right arrow / Space)">&#8250;</button>
+    <button id="nav-exit" class="nav-exit" type="button" aria-label="Exit presentation" title="Exit (Esc)">&#10005;</button>
+  </div>
+
+  <main id="pack-deck" aria-live="polite">
+    <p id="pack-loading">Loading safety moment…</p>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="data/incidents.js"></script>
+  <script src="data/storm_tracks.js"></script>
+  <script src="js/pack.js"></script>
+</body>
+</html>
