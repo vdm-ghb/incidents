@@ -85,7 +85,7 @@ test('analysis summaries show real images and omit placeholders for records with
       src: incident.image?.src ?? null,
     })));
 
-  expect(incidents).toHaveLength(87);
+  expect(incidents).toHaveLength(86);
   expect(incidents.some((incident: { src: string | null }) => incident.src === null)).toBe(true);
   expect(incidents.every((incident: { src: string | null }) => !incident.src || !/^https?:\/\//.test(incident.src))).toBe(true);
   for (const explorer of ['bowtie_view.html', 'causal_analysis.html']) {
@@ -168,15 +168,15 @@ test('asset/vessel matrix ranks asset types and counts mixed incidents in two co
   const icons = await page.locator('#grid-asset tr').first().locator('th svg').count();
   expect(icons).toBe(columns.length);
 
-  // A dual-asset incident (support vessel working a semi-submersible) appears in both columns.
+  // A dual-asset incident (tugs towing a jack-up) appears in both columns.
   const inColumn = async (asset: string) => {
-    await page.locator(`[data-acell="station_keeping_mooring|${asset}"]`).click();
+    await page.locator(`[data-acell="tow_transit|${asset}"]`).click();
     const names = await page.locator('#box .item b').allTextContents();
     await page.locator('#box .close').click();
     return names.map((name) => name.trim());
   };
-  expect(await inColumn('Semi-submersible')).toContain('Skandi Hawk / Safe Astoria Near-Miss');
-  expect(await inColumn('Support / supply / tug / barge / survey')).toContain('Skandi Hawk / Safe Astoria Near-Miss');
+  expect(await inColumn('Jack-up')).toContain('AMBER II / SEA WORKER Capsize and Grounding During Tow');
+  expect(await inColumn('Support / supply / tug / barge / survey')).toContain('AMBER II / SEA WORKER Capsize and Grounding During Tow');
 });
 
 test('asset column record count opens a selectable incident summary table', async ({ page }) => {
@@ -184,8 +184,8 @@ test('asset column record count opens a selectable incident summary table', asyn
 
   await page.locator('#grid-asset th .rec[data-asummary="Support / supply / tug / barge / survey"]').click();
   await expect(page.locator('#box h3')).toHaveText('Support / supply / tug / barge / survey');
-  await expect(page.locator('#box .sub')).toContainText('11 incidents');
-  await expect(page.locator('#box table.summ tbody tr')).toHaveCount(11);
+  await expect(page.locator('#box .sub')).toContainText('10 incidents');
+  await expect(page.locator('#box table.summ tbody tr')).toHaveCount(10);
   await expect(page.locator('#box table.summ thead th').nth(5)).toHaveText('Consequence');
   // Rows are ordered by fatalities: the 86-fatality ONGC record is first.
   await expect(page.locator('#box table.summ tbody tr').first()).toContainText('ONGC Offshore');

@@ -616,14 +616,14 @@ test('Safety Moment uses pack_text while the incident sleeve keeps the full acco
 
 test('Timeline keeps every dot, dimming those excluded by filters while staying selectable', async ({ page }) => {
   await expect(page.locator('#timeline')).toBeVisible();
-  await expect(page.locator('.timeline-dot')).toHaveCount(87);
+  await expect(page.locator('.timeline-dot')).toHaveCount(86);
   await expect(page.locator('.timeline-dot.out')).toHaveCount(0);
   await expect(page.locator('#timeline-label')).toHaveText('1965 – 2025');
   await expect(page.locator('.timeline-tick').first()).toHaveText('1970');
 
   await page.locator('#filter-classification').selectOption('aviation');
   const shown = Number(await page.locator('#stat-incidents').textContent());
-  await expect(page.locator('.timeline-dot')).toHaveCount(87);
+  await expect(page.locator('.timeline-dot')).toHaveCount(86);
   await expect(page.locator('.timeline-dot:not(.out)')).toHaveCount(shown);
 
   await page.locator('#filter-search').fill('Bohai');
@@ -665,13 +665,13 @@ test('Timeline year range filters map count, table and dots; Reset clears it', a
   await setRange(2000, 2010);
   await expect(page.locator('#stat-incidents')).toHaveText(String(expected));
   await expect(page.locator('#timeline-label')).toHaveText('2000 – 2010');
-  await expect(page.locator('.timeline-dot.out')).toHaveCount(87 - expected);
+  await expect(page.locator('.timeline-dot.out')).toHaveCount(86 - expected);
   await page.locator('#stat-incidents-btn').click();
   await expect(page.locator('#incidents-tbody tr')).toHaveCount(expected);
   await page.locator('#table-close').click();
 
   await page.locator('#filter-reset').click();
-  await expect(page.locator('#stat-incidents')).toHaveText('87');
+  await expect(page.locator('#stat-incidents')).toHaveText('86');
   await expect(page.locator('#timeline-label')).toHaveText('1965 – 2025');
   await expect(page.locator('.timeline-dot.out')).toHaveCount(0);
 });
@@ -681,7 +681,7 @@ test('Timeline play animates through the years and can be paused', async ({ page
   await play.click();
   await expect(play).toHaveAttribute('aria-pressed', 'true');
   await page.waitForTimeout(1200);
-  expect(Number(await page.locator('#stat-incidents').textContent())).toBeLessThan(87);
+  expect(Number(await page.locator('#stat-incidents').textContent())).toBeLessThan(86);
   await play.click();
   await expect(play).toHaveAttribute('aria-pressed', 'false');
   const paused = await page.locator('#timeline-label').textContent();
@@ -722,7 +722,7 @@ test('Timeline collapses to a pill and remembers the choice', async ({ page }) =
   await expect(page.locator('#timeline')).toBeHidden();
   await page.locator('#timeline-pill').click();
   await expect(page.locator('#timeline')).toBeVisible();
-  await expect(page.locator('.timeline-dot')).toHaveCount(87);
+  await expect(page.locator('.timeline-dot')).toHaveCount(86);
 });
 
 test('Timeline starts as a collapsed pill on phones', async ({ page }) => {
@@ -1188,7 +1188,7 @@ test('Safety Moment button links to the pack, which renders the new Trinity II r
 test('every incident renders a Safety Moment pack without script errors', async ({ page }) => {
   test.setTimeout(180_000);
   const ids: string[] = await page.evaluate(() => (window as any).INCIDENTS_DATA.incidents.map((item: any) => item.id));
-  expect(ids).toHaveLength(87);
+  expect(ids).toHaveLength(86);
   for (const id of ids) {
     const errors: string[] = [];
     const onError = (error: Error) => errors.push(error.message);

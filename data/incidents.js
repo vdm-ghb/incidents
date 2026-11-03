@@ -2036,8 +2036,7 @@ window.INCIDENTS_DATA = {
         notes: 'Summer convective squalls/downbursts in the interior of the Arabian Peninsula can generate brief but locally damaging wind gusts. These events are difficult to forecast precisely more than 20-30 minutes ahead. Note: the exact date (documented ~11-12 June 1996), wind speed and casualty/damage figures for this camp event are only partially corroborated in available sources.'
       },
       references: [
-        { title: 'PDO (Petroleum Development Oman) - Qarn Alam Storm incident report (1996)', type: 'Incident report', publisher: 'PDO Oman', year: 1996 },
-        { title: 'Shell / PDO internal LFI - Qarn Alam Storm 1996', type: 'Internal Learning from Incidents', publisher: 'Shell / PDO' }
+        { title: 'PDO (Petroleum Development Oman) - Qarn Alam Storm incident report (1996)', type: 'Incident report', publisher: 'PDO Oman', year: 1996 }
       ]
     },
 
@@ -2182,56 +2181,6 @@ window.INCIDENTS_DATA = {
       references: [
         { title: 'Canadian Press / HuffPost Canada - Shell Nova Scotia riser break (March 2016)', type: 'News report', publisher: 'Canadian Press', year: 2016 },
         { title: 'CNSOPB - Statement on Nova Scotia drilling incident (2016)', type: 'Regulatory statement', publisher: 'Canada-Nova Scotia Offshore Petroleum Board', year: 2016 }
-      ]
-    },
-
-    /* ──────────────────────────────────────────────────
-       22. Skandi Hawk / Safe Astoria - 2011
-    ─────────────────────────────────────────────────── */
-    {
-      id: 'skandi-hawk-2011',
-      name: 'Skandi Hawk / Safe Astoria Near-Miss',
-      year: 2011,
-      data_quality: 'Unverified - no independent source corroborates this event, and the vessel Skandi Hawk (IMO 9480734) was built in 2012, after the stated 2011 date. Date and/or vessel identity are likely erroneous (2026-07-04 fact-check audit).',
-      date: '2011',
-      location: 'Malampaya Gas Field, South China Sea - offshore northwest Palawan, Philippines',
-      lat: 11.36,
-      lng: 118.88,
-      region: 'Asia',
-      platform_type: 'Offshore supply/multipurpose vessel (Skandi Hawk) + semi-submersible flotel (Safe Astoria) at Malampaya platform',
-      operator: 'Shell Philippines / SPEX',
-      weather_event_type: 'storm',
-      classification: 'maritime',
-      weather_event: 'Marginal/near-limit metocean conditions - elevated sea state and wind making station-keeping difficult',
-      fatalities: 0,
-      infrastructure_impact: 'Minor structural damage; high-potential near-miss with risk of major collision',
-      severity_override: 'informational',
-      summary: 'In 2011, the offshore supply vessel Skandi Hawk collided with the flotel Safe Astoria, which was moored to the Malampaya gas platform in the Philippines. The collision occurred because the vessel was operating in marginal weather conditions without adequate hazard assessment. No casualties and only minor damage, but the potential for a major accident was high.',
-      executive_summary: 'In 2011, the offshore supply vessel Skandi Hawk collided with the flotel Safe Astoria at the Malampaya gas platform, Philippines, while operating near the weather limit of safe vessel operations. No personnel were injured and damage was minor, but the potential for a major collision with the platform was high.',
-      what_happened: 'At the Malampaya gas field in the South China Sea, offshore northwest Palawan, the Skandi Hawk, a multi-purpose offshore support vessel, was providing support operations in the vicinity of the fixed platform and the flotel Safe Astoria, which was moored alongside.\n\nMetocean conditions were near the limit of safe vessel operations - elevated sea state and wind were making dynamic positioning station-keeping challenging for the Skandi Hawk. Due to what the subsequent investigation described as "poor planning in marginal conditions", the vessel made unintended contact with the Safe Astoria.\n\nNo personnel were injured and damage was minor, but the incident was classified as a high-potential near-miss: a more severe collision could have damaged the platform or flotel, with potential for hydrocarbon release or structural failure.',
-      what_went_wrong: [
-        'Operations were planned and executed in metocean conditions near or at the operational limit without adequate hazard assessment specific to the marginal weather.',
-        'The decision to proceed with vessel proximity operations in the marginal conditions was not supported by a formal risk assessment.',
-        'Dynamic positioning capability in the near-limit conditions may have been insufficient for the precision required near a moored flotel.',
-        'SIMOPS (simultaneous operations) planning did not adequately address the collision risk from vessel operations in deteriorating weather.'
-      ],
-      lessons_learned: [
-        'Comprehensive risk assessments must be completed for all vessel operations near platforms and flotels - particularly when weather conditions are near or at operational limits.',
-        'Marginal metocean conditions are not just "nearly impossible" - they are qualitatively more hazardous than normal conditions and require heightened pre-job risk assessment.',
-        'SIMOPS planning must include weather-based risk escalation criteria: if conditions exceed a defined threshold, vessel proximity operations must be suspended.',
-        'Dynamic positioning capability must be explicitly verified against the prevailing and forecast conditions before commencing platform-proximity operations.'
-      ],
-      actions: [
-        'Shell Philippines reviewed SIMOPS procedures for the Malampaya field, implementing weather-based go/no-go criteria for all vessel proximity operations.',
-        'Incident used as a safety case study for Shell\'s offshore operations in Southeast Asia - emphasising that "near-limit" conditions require the same risk rigour as extreme conditions.',
-        'Vessel weather-operability criteria formalised for all support vessel operations at Malampaya platform.',
-        'SIMOPS manuals updated with explicit weather conditions for each type of vessel proximity operation at the site.'
-      ],
-      metocean: {
-        notes: 'The Malampaya platform sits in the South China Sea offshore northwest Palawan. At this exposed open-ocean location, the Northeast Monsoon (November-March) and typhoon season (June-December) regularly generate elevated sea states and strong winds. The remote location and limited shelter make vessel operations particularly sensitive to marginal weather conditions.'
-      },
-      references: [
-        { title: 'Shell safety presentation notes - Skandi Hawk / Safe Astoria near-miss', type: 'Internal safety case study', publisher: 'Shell Philippines' }
       ]
     },
 
@@ -3942,14 +3891,10 @@ window.INCIDENTS_DATA = {
       shell_internal_only: false,
       sources: [
         'Shell LFE PDF: Fortuna 3D MSS - Environment Plan Summary NOPSEMA submission.pdf (INTERNAL)',
-        'Shell internal training: metocean in business/002 Metocean in Shell Business - Seismic and Field Surveys.docx (INTERNAL)',
-        'NOPSEMA submission (EXTERNAL - public regulatory submission, accessible via NOPSEMA)',
-        'Shell LFI Database (INTERNAL - not publicly accessible)'
+        'NOPSEMA submission (EXTERNAL - public regulatory submission, accessible via NOPSEMA)'
       ],
       references: [
-        { title: 'Fortuna 3D MSS Environment Plan Summary - NOPSEMA Submission', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/Fortuna 3D MSS - Environment Plan Summary NOPSEMA submission.pdf', internal: true },
-        { title: 'Metocean in Shell Business - Seismic and Field Surveys', type: 'Shell training document', file: 'background files/metocean in business/002 Metocean in Shell Business - Seismic and Field Surveys.docx', internal: true },
-        { title: 'Shell LFI Database', type: 'Internal Learning from Incidents system', internal: true }
+        { title: 'Fortuna 3D MSS Environment Plan Summary - NOPSEMA Submission', type: 'Shell LFE PDF', file: 'background files/LFEs Internal download/Fortuna 3D MSS - Environment Plan Summary NOPSEMA submission.pdf', internal: true }
       ],
       // Trimmed wording for the Safety Moment pack (pack.html); the fields above hold the full account.
       pack_text: {
@@ -4392,7 +4337,7 @@ window.INCIDENTS_DATA = {
       ],
       references: [
         { title: 'Corrib Project - Irish Regulatory Filing', type: 'Government regulatory document', external: true },
-        { title: 'Metocean and Pipelines - Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Pipelines VA.docx', internal: true }
+        { title: 'Metocean and Pipelines - P240 Metocean Awareness Course Training Material', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Pipelines VA.docx', internal: true }
       ],
       // Trimmed wording for the Safety Moment pack (pack.html); the fields above hold the full account.
       pack_text: {
@@ -4541,7 +4486,7 @@ window.INCIDENTS_DATA = {
         'Shell internal training: metocean in business/001-3 Metocean and Civil Engineering.docx (INTERNAL)'
       ],
       references: [
-        { title: 'Metocean and Civil Engineering - Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Civil Engineering.docx', internal: true }
+        { title: 'Metocean and Civil Engineering - P240 Metocean Awareness Course Training Material', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Civil Engineering.docx', internal: true }
       ]
     },
 
@@ -4599,7 +4544,7 @@ window.INCIDENTS_DATA = {
       ],
       references: [
         { title: 'Metocean and Fixed Offshore Structures - Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Fixed Offshore Structures GF and VA.docx', internal: true },
-        { title: 'PreDG3 Fixed Offshore Structures - Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/0041 Metocean in Shell Business - PreDG3 - Fixed Offshore Structures.docx', internal: true }
+        { title: 'PreDG3 Fixed Offshore Structures - P240 Metocean Awareness Course Training Material', type: 'Shell internal document', file: 'background files/metocean in business/0041 Metocean in Shell Business - PreDG3 - Fixed Offshore Structures.docx', internal: true }
       ]
     },
 

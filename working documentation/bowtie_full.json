@@ -2,12 +2,12 @@
   "generated": "2026-11-03",
   "method": "Candidate bow-tie retrieval aligned to CGE/Wolters Kluwer and CCPS-EI terminology. It classifies wording in the incident record, not source material. All relationships require analyst review against a cited source before use as a finding. Only what_went_wrong statements are used for candidate threats, failed/absent barriers and escalation factors. Lessons and actions are excluded. Explicitly uncertain statements are excluded where recognised.",
   "rule": "Candidate top event = first recognised loss-of-control phrase in the chronological record narrative; absence of a phrase is reported as undetermined, not inferred.",
-  "records_analysed": 87,
+  "records_analysed": 86,
   "top_event_counts": {
     "structural_failure": 9,
     "loss_of_position": 23,
     "loss_of_stability": 17,
-    "impact_collision": 2,
+    "impact_collision": 1,
     "ignition_fire_explosion": 3,
     "loss_of_containment": 4,
     "electrical_contact_with_energy": 2,
@@ -2093,69 +2093,6 @@
           "label": "Production shut in or asset off-hire",
           "hits": 1,
           "evidence": "2-km section of drilling riser lost to ~2000 m water depth; significant equipment loss and operational downtime",
-          "role": "context"
-        }
-      ]
-    },
-    {
-      "id": "skandi-hawk-2011",
-      "name": "Skandi Hawk / Safe Astoria Near-Miss",
-      "year": 2011,
-      "hazard_event_type": "storm",
-      "hazard": "Offshore activity exposed to storm energy",
-      "discipline": "maritime",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": "Minor structural damage; high-potential near-miss with risk of major collision",
-      "analysis_status": "review_required",
-      "top_event": "impact_collision",
-      "top_event_label": "Impact or collision",
-      "top_event_evidence": "was classified as a high-potential near-miss: a more severe collision could have damaged the platform or flotel, with potential for hydrocarbon release or structural failure. In 2011, the offshore supply vessel Skandi Hawk collided with th",
-      "top_event_evidence_status": "record_statement_source_unlinked",
-      "not_discrete_reason": null,
-      "escalated_events": [
-        {
-          "key": "loss_of_containment",
-          "label": "Loss of containment"
-        },
-        {
-          "key": "structural_failure",
-          "label": "Structural failure / collapse"
-        }
-      ],
-      "threats": [],
-      "preventive_barriers": [
-        {
-          "key": "simops_and_vessel_control",
-          "label": "SIMOPS control and vessel approach management",
-          "state": "candidate_failed_or_absent",
-          "evidence": "SIMOPS (simultaneous operations) planning did not adequately address the collision risk from vessel operations in deteriorating weather.",
-          "role": "cause",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "recovery_barriers": [],
-      "escalation_factors": [
-        {
-          "key": "procedure_absent_or_not_followed",
-          "label": "Procedure absent or not followed",
-          "evidence": "SIMOPS (simultaneous operations) planning did not adequately address the collision risk from vessel operations in deteriorating weather.",
-          "evidence_status": "record_statement_source_unlinked"
-        }
-      ],
-      "consequences": [
-        {
-          "key": "hydrocarbon_release",
-          "label": "Hydrocarbons released to sea",
-          "hits": 1,
-          "evidence": "No personnel were injured and damage was minor, but the incident was classified as a high-potential near-miss: a more severe collision could have damaged the platform or flotel, with potential for hydrocarbon release or structural failure.",
-          "role": "context"
-        },
-        {
-          "key": "structural_damage",
-          "label": "Structure damaged or destroyed",
-          "hits": 1,
-          "evidence": "Minor structural damage; high-potential near-miss with risk of major collision",
           "role": "context"
         }
       ]
