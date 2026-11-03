@@ -36,7 +36,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=5">
   <link rel="shortcut icon" href="favicon.svg?v=5">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css?v=20261016152212">
+  <link rel="stylesheet" href="css/style.css?v=20261103115812">
 </head>
 <body>
 
@@ -57,6 +57,7 @@
           <div><dt>Developed by</dt><dd>Vadim Anokhin, Shell Australia</dd></div>
           <div><dt>Custodian</dt><dd></dd></div>
         </dl>
+        <button type="button" id="popover-contribute" class="popover-contribute">&#9993; Suggest an incident or send feedback</button>
         <details id="database-disclaimer" class="database-section" name="database-info">
           <summary>Disclaimer</summary>
           <p>Whilst every effort has been made to ensure the accuracy of the information contained in this Offshore Weather Incidents - Lessons Learned Database, neither IOGP nor any of its Members past present or future warrants its accuracy or will, regardless of its or their negligence, assume liability for any foreseeable or unforeseeable use made thereof, which liability is hereby excluded to the fullest extent permitted by law. Consequently, such use is at the recipient’s own risk on the basis that any use by the recipient constitutes agreement to the terms of this disclaimer. The recipient is obliged to inform any subsequent recipient of such terms. Please note that this Database is provided for informational purposes and industry learning only. Except as explicitly stated otherwise, this Database must not be considered as a substitute for government policies or decisions or reference to the relevant legislation relating to information contained in it. IOGP and its Members past, present, and future expressly disclaim all liability in respect of all claims, losses or damages arising from the use or application of the information contained in this Database in any industrial application. Any reference to third party names is for appropriate acknowledgement of their ownership and does not constitute a sponsorship or endorsement.</p>
@@ -126,6 +127,7 @@
     <nav id="header-analysis-links" aria-label="Internal analysis views">
       <a class="header-analysis-link" href="working%20documentation/causal_analysis.html">Causal Theme Map</a>
       <a class="header-analysis-link" href="working%20documentation/bowtie_view.html">Bow-Tie Explorer</a>
+      <button type="button" id="header-contribute" class="header-analysis-link" title="Suggest an incident, report a correction or send feedback" aria-label="Contribute">&#9993;<span class="contrib-label"> Contribute</span></button>
     </nav>
 
     <div id="header-stats">
@@ -174,6 +176,7 @@
       <div class="legend-row"><span class="legend-letter">K</span><span>Climate / Ambient Extremes</span></div>
       <div class="legend-row"><span class="legend-letter">E</span><span>Metocean Equipment</span></div>
     </div>
+    <button id="legend-close" type="button" aria-label="Hide legend">Hide legend &#9662;</button>
   </div>
 
   <!-- MODAL -->
@@ -182,6 +185,7 @@
       <div id="modal-toolbar">
         <button id="modal-print" title="Print this incident report">&#128438; Print</button>
         <button id="modal-share" title="Copy link to this incident">&#128279; Share</button>
+        <button id="modal-feedback" title="Suggest a correction or addition to this incident">&#9998; Suggest correction</button>
         <a id="modal-pack" title="Open a print-ready safety-moment sharing pack (10–15 min)">&#128227; Safety Moment</a>
         <button id="modal-close" title="Close (Escape)" aria-label="Close">&#215;</button>
       </div>
@@ -233,13 +237,14 @@
   <div id="print-report"></div>
 
   <!-- DATA — loaded before Leaflet so it's available immediately -->
-  <script src="data/incidents.js?v=20261016152212"></script>
-  <script src="data/storm_tracks.js?v=20261016152212"></script>
+  <script src="data/incidents.js?v=20261103115812"></script>
+  <script src="data/storm_tracks.js?v=20261103115812"></script>
   <!-- Leaflet map library -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Main app -->
-  <script src="js/timeline.js?v=20261016152212"></script>
-  <script src="js/app.js?v=20261016152212"></script>
+  <script src="js/timeline.js?v=20261103115812"></script>
+  <script src="js/contribute.js?v=20261103115812"></script>
+  <script src="js/app.js?v=20261103115812"></script>
 
 </body>
 </html>

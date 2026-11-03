@@ -1,80 +1,71 @@
 {
-  "generated": "2026-10-16",
+  "generated": "2026-11-03",
   "method": "Candidate learning-theme retrieval derived from incident-record wording; it does not establish causality or source support. what_went_wrong matches are candidate recorded causal statements, while lessons/actions are learning themes only. All tags require analyst review against a cited source before use as a finding.",
-  "records_analysed": 96,
-  "total_records": 96,
+  "records_analysed": 87,
+  "total_records": 87,
   "concept_summary": [
-    {
-      "concept": "procedures_competence",
-      "label": "Procedures, training and competence",
-      "incidents": 55,
-      "hits": 172,
-      "as_cause": 30,
-      "as_lesson": 31,
-      "review_required": 55
-    },
     {
       "concept": "evacuation_abandonment",
       "label": "Evacuation, abandonment and survival craft",
-      "incidents": 53,
-      "hits": 325,
-      "as_cause": 34,
-      "as_lesson": 49,
-      "review_required": 53
+      "incidents": 51,
+      "hits": 322,
+      "as_cause": 33,
+      "as_lesson": 48,
+      "review_required": 51
+    },
+    {
+      "concept": "procedures_competence",
+      "label": "Procedures, training and competence",
+      "incidents": 48,
+      "hits": 154,
+      "as_cause": 26,
+      "as_lesson": 27,
+      "review_required": 48
     },
     {
       "concept": "integrity_maintenance",
       "label": "Ageing, integrity and maintenance",
-      "incidents": 47,
-      "hits": 175,
-      "as_cause": 27,
-      "as_lesson": 28,
-      "review_required": 47
+      "incidents": 44,
+      "hits": 166,
+      "as_cause": 26,
+      "as_lesson": 27,
+      "review_required": 44
     },
     {
       "concept": "forecast_uncertainty",
       "label": "Weather forecast, warning or storm track uncertainty",
-      "incidents": 47,
-      "hits": 182,
-      "as_cause": 24,
-      "as_lesson": 36,
-      "review_required": 47
+      "incidents": 44,
+      "hits": 173,
+      "as_cause": 23,
+      "as_lesson": 33,
+      "review_required": 44
     },
     {
       "concept": "station_keeping_mooring",
       "label": "Mooring, anchoring or station-keeping failure",
-      "incidents": 39,
-      "hits": 381,
-      "as_cause": 33,
-      "as_lesson": 31,
-      "review_required": 39
-    },
-    {
-      "concept": "design_basis_inadequate",
-      "label": "Design basis / criteria inadequate or exceeded",
-      "incidents": 37,
-      "hits": 145,
-      "as_cause": 24,
-      "as_lesson": 23,
-      "review_required": 37
+      "incidents": 35,
+      "hits": 339,
+      "as_cause": 30,
+      "as_lesson": 27,
+      "review_required": 35
     },
     {
       "concept": "emergency_response_sar",
       "label": "Emergency response and search-and-rescue capability",
-      "incidents": 36,
-      "hits": 176,
+      "incidents": 34,
+      "hits": 170,
       "as_cause": 17,
-      "as_lesson": 26,
-      "review_required": 36
+      "as_lesson": 24,
+      "review_required": 34
     },
     {
-      "concept": "monitoring_instrumentation",
-      "label": "Monitoring and instrumentation gaps",
-      "incidents": 27,
-      "hits": 135,
-      "as_cause": 16,
-      "as_lesson": 18,
-      "review_required": 27
+      "concept": "design_basis_inadequate",
+      "label": "Design basis / criteria inadequate or exceeded",
+      "incidents": 34,
+      "hits": 138,
+      "as_cause": 23,
+      "as_lesson": 22,
+      "review_required": 34
     },
     {
       "concept": "regulatory_assurance",
@@ -86,21 +77,21 @@
       "review_required": 24
     },
     {
-      "concept": "stability_flooding",
-      "label": "Stability, flooding and watertight integrity",
+      "concept": "monitoring_instrumentation",
+      "label": "Monitoring and instrumentation gaps",
       "incidents": 22,
-      "hits": 180,
-      "as_cause": 20,
-      "as_lesson": 19,
+      "hits": 91,
+      "as_cause": 13,
+      "as_lesson": 15,
       "review_required": 22
     },
     {
-      "concept": "tow_transit",
-      "label": "Tow and marine transit exposure",
+      "concept": "stability_flooding",
+      "label": "Stability, flooding and watertight integrity",
       "incidents": 21,
-      "hits": 294,
-      "as_cause": 16,
-      "as_lesson": 20,
+      "hits": 171,
+      "as_cause": 19,
+      "as_lesson": 18,
       "review_required": 21
     },
     {
@@ -113,22 +104,22 @@
       "review_required": 20
     },
     {
-      "concept": "organisational_authority",
-      "label": "Authority, communication and organisational interfaces",
+      "concept": "tow_transit",
+      "label": "Tow and marine transit exposure",
       "incidents": 19,
-      "hits": 31,
-      "as_cause": 6,
-      "as_lesson": 12,
+      "hits": 276,
+      "as_cause": 14,
+      "as_lesson": 18,
       "review_required": 19
     },
     {
-      "concept": "riser_wellcontrol",
-      "label": "Riser, disconnect and well-control equipment",
-      "incidents": 16,
-      "hits": 162,
-      "as_cause": 11,
-      "as_lesson": 13,
-      "review_required": 16
+      "concept": "organisational_authority",
+      "label": "Authority, communication and organisational interfaces",
+      "incidents": 18,
+      "hits": 29,
+      "as_cause": 6,
+      "as_lesson": 11,
+      "review_required": 18
     },
     {
       "concept": "structural_failure",
@@ -137,6 +128,15 @@
       "hits": 80,
       "as_cause": 14,
       "as_lesson": 8,
+      "review_required": 15
+    },
+    {
+      "concept": "riser_wellcontrol",
+      "label": "Riser, disconnect and well-control equipment",
+      "incidents": 15,
+      "hits": 150,
+      "as_cause": 10,
+      "as_lesson": 12,
       "review_required": 15
     },
     {
@@ -149,15 +149,6 @@
       "review_required": 8
     },
     {
-      "concept": "aviation_helideck",
-      "label": "Aviation and helideck operations",
-      "incidents": 8,
-      "hits": 179,
-      "as_cause": 8,
-      "as_lesson": 7,
-      "review_required": 8
-    },
-    {
       "concept": "ocean_currents_internal_waves",
       "label": "Currents, internal waves and solitons",
       "incidents": 7,
@@ -167,22 +158,31 @@
       "review_required": 7
     },
     {
+      "concept": "aviation_helideck",
+      "label": "Aviation and helideck operations",
+      "incidents": 6,
+      "hits": 132,
+      "as_cause": 6,
+      "as_lesson": 5,
+      "review_required": 6
+    },
+    {
       "concept": "marine_lifting_deck_ops",
       "label": "Lifting, cargo and deck operations",
-      "incidents": 6,
-      "hits": 41,
-      "as_cause": 6,
-      "as_lesson": 4,
-      "review_required": 6
+      "incidents": 5,
+      "hits": 35,
+      "as_cause": 5,
+      "as_lesson": 3,
+      "review_required": 5
     },
     {
       "concept": "vessel_interaction",
       "label": "Vessel interaction, collision or proximity",
-      "incidents": 6,
-      "hits": 49,
-      "as_cause": 4,
-      "as_lesson": 4,
-      "review_required": 6
+      "incidents": 4,
+      "hits": 20,
+      "as_cause": 2,
+      "as_lesson": 3,
+      "review_required": 4
     }
   ],
   "incidents": [
@@ -4210,347 +4210,6 @@
       ]
     },
     {
-      "id": "lightning-me-2013",
-      "name": "Lightning Strike - Middle East Oilfield",
-      "year": 2013,
-      "weather_event_type": "lightning",
-      "classification": "onshore",
-      "region": "Middle East",
-      "fatalities": 1,
-      "infrastructure_impact": null,
-      "sentences_scanned": 26,
-      "tags": [
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 3,
-          "roles": {
-            "cause": 2,
-            "lesson": 0,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Lightning safety training and awareness may have been insufficient - personnel did not understand the specific risk of metal antennas on vehicles."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The workers did not reach an adequate shelter before the storm - shelter-in-place procedures in a proper lightning-safe building were not followed or available."
-            }
-          ]
-        },
-        {
-          "concept": "evacuation_abandonment",
-          "label": "Evacuation, abandonment and survival craft",
-          "hits": 2,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 0,
-            "context": 1
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Weather monitoring at the remote site may not have provided adequate advance warning to allow timely evacuation to safe shelter."
-            },
-            {
-              "role": "context",
-              "field": "summary",
-              "text": "In 2013, two contractors at an onshore Middle East oilfield were struck by lightning when it hit their vehicle's radio antenna as they attempted to evacuate during a thunderstorm."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "gumusut-gangway-2014",
-      "name": "ASV Gangway Collapse during disconnection",
-      "year": 2014,
-      "weather_event_type": "storm",
-      "classification": "maritime",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": "Gangway structure lost overboard; high potential incident with no personnel on gangway at the time",
-      "sentences_scanned": 26,
-      "tags": [
-        {
-          "concept": "vessel_interaction",
-          "label": "Vessel interaction, collision or proximity",
-          "hits": 22,
-          "roles": {
-            "cause": 4,
-            "lesson": 4,
-            "action": 4,
-            "context": 10
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The gangway disconnect was attempted in conditions where relative vessel motions had already become significant - the timing was too late."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Operational procedures did not clearly specify when to cease all gangway use and begin disconnection before the sea state reached design limits."
-            }
-          ]
-        },
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 4,
-          "roles": {
-            "cause": 1,
-            "lesson": 1,
-            "action": 1,
-            "context": 1
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Operational procedures did not clearly specify when to cease all gangway use and begin disconnection before the sea state reached design limits."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Operating procedures must include explicit go/no-go criteria for gangway use based on measured sea state and relative motion thresholds."
-            }
-          ]
-        },
-        {
-          "concept": "design_basis_inadequate",
-          "label": "Design basis / criteria inadequate or exceeded",
-          "hits": 1,
-          "roles": {
-            "cause": 0,
-            "lesson": 0,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Industry review of flotel-to-FPS gangway design standards for deepwater operations in the South China Sea."
-            }
-          ]
-        },
-        {
-          "concept": "monitoring_instrumentation",
-          "label": "Monitoring and instrumentation gaps",
-          "hits": 1,
-          "roles": {
-            "cause": 0,
-            "lesson": 0,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Real-time motion monitoring system integrated into gangway operational go/no-go decision framework."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "gumusut-barge-2013",
-      "name": "Drifting Cargo Barge / Tug collision",
-      "year": 2013,
-      "weather_event_type": "storm",
-      "classification": "maritime",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": "Damage to tug and/or barge during emergency intervention; project delays",
-      "sentences_scanned": 27,
-      "tags": [
-        {
-          "concept": "tow_transit",
-          "label": "Tow and marine transit exposure",
-          "hits": 11,
-          "roles": {
-            "cause": 1,
-            "lesson": 3,
-            "action": 1,
-            "context": 6
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "A single tug was insufficient to safely manage a large drifting barge in the prevailing conditions - the intervention itself created a collision scenario."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Weather-triggered protocols must mandate securing or towing away moored equipment before mooring failures occur - not as a reactive response."
-            }
-          ]
-        },
-        {
-          "concept": "station_keeping_mooring",
-          "label": "Mooring, anchoring or station-keeping failure",
-          "hits": 8,
-          "roles": {
-            "cause": 1,
-            "lesson": 2,
-            "action": 2,
-            "context": 3
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The mooring system for the offshore barge was not designed or set up with adequate safety factors for the storm sea state encountered."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Weather-triggered protocols must mandate securing or towing away moored equipment before mooring failures occur - not as a reactive response."
-            }
-          ]
-        },
-        {
-          "concept": "vessel_interaction",
-          "label": "Vessel interaction, collision or proximity",
-          "hits": 7,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 0,
-            "context": 6
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "A single tug was insufficient to safely manage a large drifting barge in the prevailing conditions - the intervention itself created a collision scenario."
-            },
-            {
-              "role": "context",
-              "field": "summary",
-              "text": "No injuries occurred but the incident had high potential for a major collision with the FPS."
-            }
-          ]
-        },
-        {
-          "concept": "design_basis_inadequate",
-          "label": "Design basis / criteria inadequate or exceeded",
-          "hits": 4,
-          "roles": {
-            "cause": 1,
-            "lesson": 1,
-            "action": 2,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The mooring system for the offshore barge was not designed or set up with adequate safety factors for the storm sea state encountered."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Mooring systems for offshore-moored barges and equipment must use conservative design factors accounting for actual storm sea-state return periods at the site."
-            }
-          ]
-        },
-        {
-          "concept": "emergency_response_sar",
-          "label": "Emergency response and search-and-rescue capability",
-          "hits": 2,
-          "roles": {
-            "cause": 0,
-            "lesson": 2,
-            "action": 0,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Emergency response planning must include contingencies for drifting large vessels - pre-position multiple tugs before weather deteriorates to critical levels."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Emergency responses to drifting vessels in rough seas are inherently dangerous - prevention (early action) is far safer than cure (emergency tug intervention in a storm)."
-            }
-          ]
-        },
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 2,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Pre-storm contingency planning for moored offshore equipment (barges, buoys) was inadequate - no clear procedure for pre-emptive barge repositioning when weather deteriorated."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Shell Malaysia revised mooring design standards and weather-triggered response procedures for barge operations at Gumusut-Kakap."
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "qarn-alam-1996",
       "name": "Qarn Alam Oilfield Camp Storm",
       "year": 1996,
@@ -5004,118 +4663,6 @@
               "role": "lesson",
               "field": "lessons_learned",
               "text": "SIMOPS planning must include weather-based risk escalation criteria: if conditions exceed a defined threshold, vessel proximity operations must be suspended."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "helicopter-rollover-2009",
-      "name": "Helicopter Rollover on Offshore Helideck",
-      "year": 2009,
-      "weather_event_type": "squall",
-      "classification": "aviation",
-      "region": "North America",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "sentences_scanned": 39,
-      "tags": [
-        {
-          "concept": "aviation_helideck",
-          "label": "Aviation and helideck operations",
-          "hits": 27,
-          "roles": {
-            "cause": 2,
-            "lesson": 7,
-            "action": 4,
-            "context": 14
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Flight operations procedures may not have included explicit wind limits for ground-taxi manoeuvres on offshore helidecks."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The decision to ground-taxi in gusty wind conditions of 30-50 knots was a misjudgement - such conditions make the aircraft particularly vulnerable to a broadside gust during tail-rotor-exposed repositioning."
-            }
-          ]
-        },
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 2,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Flight operations procedures may not have included explicit wind limits for ground-taxi manoeuvres on offshore helidecks."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Helicopter operators updated pilot training on wind-hazard recognition and revised the S-76 flight operations manuals to include explicit ground-taxi wind limits."
-            }
-          ]
-        },
-        {
-          "concept": "monitoring_instrumentation",
-          "label": "Monitoring and instrumentation gaps",
-          "hits": 2,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Platform weather measurement systems (including anemometers) are safety-critical for helicopter operations and should be maintained to the same reliability expectations as other operational safety barriers."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "The case was used to reinforce maintenance and restoration priority for the platform weather-measurement systems that support helicopter operations."
-            }
-          ]
-        },
-        {
-          "concept": "integrity_maintenance",
-          "label": "Ageing, integrity and maintenance",
-          "hits": 1,
-          "roles": {
-            "cause": 0,
-            "lesson": 0,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "The case was used to reinforce maintenance and restoration priority for the platform weather-measurement systems that support helicopter operations."
             }
           ]
         }
@@ -8671,149 +8218,6 @@
       ]
     },
     {
-      "id": "lfe-03-dupal-lmrp-disconnect",
-      "name": "Dupal Drillship - LMRP Disconnect During Storm",
-      "year": 2018,
-      "weather_event_type": "storm",
-      "classification": "drilling",
-      "region": "North America",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "sentences_scanned": 32,
-      "tags": [
-        {
-          "concept": "station_keeping_mooring",
-          "label": "Mooring, anchoring or station-keeping failure",
-          "hits": 13,
-          "roles": {
-            "cause": 3,
-            "lesson": 2,
-            "action": 1,
-            "context": 7
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Mooring arrangement not adequate for the storm load encountered."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Insufficient lead time between storm arrival and mooring failure."
-            }
-          ]
-        },
-        {
-          "concept": "riser_wellcontrol",
-          "label": "Riser, disconnect and well-control equipment",
-          "hits": 12,
-          "roles": {
-            "cause": 1,
-            "lesson": 3,
-            "action": 2,
-            "context": 6
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "LMRP recovery not completed before mooring integrity was compromised."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "LMRP recovery timing must account for actual storm intensification, not just forecast track and timing uncertainty."
-            }
-          ]
-        },
-        {
-          "concept": "forecast_uncertainty",
-          "label": "Weather forecast, warning or storm track uncertainty",
-          "hits": 7,
-          "roles": {
-            "cause": 1,
-            "lesson": 3,
-            "action": 1,
-            "context": 2
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Forecasting uncertainty margin not adequately built into go/no-go decision."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Mooring design and pre-storm procedures must account for forecasting-uncertainty margins."
-            }
-          ]
-        },
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 4,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 2,
-            "context": 1
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Mooring design and pre-storm procedures must account for forecasting-uncertainty margins."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Pre-storm procedures updated to specify LMRP recovery sequence completion well ahead of storm arrival window."
-            }
-          ]
-        },
-        {
-          "concept": "design_basis_inadequate",
-          "label": "Design basis / criteria inadequate or exceeded",
-          "hits": 2,
-          "roles": {
-            "cause": 0,
-            "lesson": 0,
-            "action": 1,
-            "context": 1
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "Mooring design standards revised to ensure weather-side wire redundancy and load capacity at deepwater locations."
-            },
-            {
-              "role": "context",
-              "field": "metocean",
-              "text": "Three mooring wires failed under storm loading, indicating design basis exceeded."
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "lfe-12-transocean-winner-scotland-2016",
       "name": "Transocean Winner - Towed Rig Blown Ashore, Scotland",
       "year": 2016,
@@ -9489,368 +8893,6 @@
       ]
     },
     {
-      "id": "lfe-02-wave-rider-buoy-snag-2023",
-      "name": "Wave Rider Buoy Snagged by Survey Vessel - Pierce Asset, North Sea",
-      "year": 2023,
-      "weather_event_type": "equipment",
-      "classification": "survey",
-      "region": "Europe",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "sentences_scanned": 42,
-      "tags": [
-        {
-          "concept": "monitoring_instrumentation",
-          "label": "Monitoring and instrumentation gaps",
-          "hits": 25,
-          "roles": {
-            "cause": 2,
-            "lesson": 3,
-            "action": 3,
-            "context": 17
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "After March 2023 maintenance, the buoy was inadvertently redeployed about 270 m south of its prior location; the revised position was not communicated to Geomatics and was not passed to the survey contractor."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "A 40 m vessel offset was selected from visual observations, but the planned track passed through the middle of previously observed buoy positions and the offset was insufficient to prevent the towed system snagging the mooring tether."
-            }
-          ]
-        },
-        {
-          "concept": "station_keeping_mooring",
-          "label": "Mooring, anchoring or station-keeping failure",
-          "hits": 15,
-          "roles": {
-            "cause": 3,
-            "lesson": 4,
-            "action": 1,
-            "context": 7
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The maximum tether length relative to water depth, mooring slack and resulting horizontal excursion were not properly understood or incorporated into survey planning."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The contractor had not been supplied with a mooring-assembly diagram and rope length, so this limitation was not identified during the HIRA or revisited in the toolbox talk."
-            }
-          ]
-        },
-        {
-          "concept": "tow_transit",
-          "label": "Tow and marine transit exposure",
-          "hits": 7,
-          "roles": {
-            "cause": 1,
-            "lesson": 1,
-            "action": 0,
-            "context": 5
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "A 40 m vessel offset was selected from visual observations, but the planned track passed through the middle of previously observed buoy positions and the offset was insufficient to prevent the towed system snagging the mooring tether."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "When a towed system crosses buried infrastructure, stop work and verify pipeline and umbilical integrity by ROV before relying on an absence of visible equipment damage."
-            }
-          ]
-        },
-        {
-          "concept": "integrity_maintenance",
-          "label": "Ageing, integrity and maintenance",
-          "hits": 6,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 1,
-            "context": 4
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "After March 2023 maintenance, the buoy was inadvertently redeployed about 270 m south of its prior location; the revised position was not communicated to Geomatics and was not passed to the survey contractor."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "The snagged buoy was recovered and taken ashore for servicing and maintenance; it was later returned to its original position."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "lfe-10-aircraft-turbulence-helideck-2016",
-      "name": "AW139 Exhaust-Plume Encounter During Helideck Landing",
-      "year": 2016,
-      "weather_event_type": "equipment",
-      "classification": "aviation",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "sentences_scanned": 32,
-      "tags": [
-        {
-          "concept": "aviation_helideck",
-          "label": "Aviation and helideck operations",
-          "hits": 20,
-          "roles": {
-            "cause": 2,
-            "lesson": 2,
-            "action": 2,
-            "context": 14
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Wind sensors were poorly positioned and produced measurements unrepresentative of conditions at the helideck."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Gas-turbine-generator exhaust stacks allowed an exhaust plume to be blown across the preferred helicopter approach path."
-            }
-          ]
-        },
-        {
-          "concept": "monitoring_instrumentation",
-          "label": "Monitoring and instrumentation gaps",
-          "hits": 10,
-          "roles": {
-            "cause": 2,
-            "lesson": 3,
-            "action": 1,
-            "context": 4
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Wind sensors were poorly positioned and produced measurements unrepresentative of conditions at the helideck."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "The prevailing-wind data provided by platform instrumentation differed from the actual wind conditions, so the flight path was selected using inaccurate information."
-            }
-          ]
-        },
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 2,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Helideck procedures and operational limitations must communicate unserviceable sensors, inaccurate data and approach-path restrictions to all involved parties."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "The LFE recommended reviewing facility or operations HSE cases and helideck procedures for environmental and exhaust-plume risks."
-            }
-          ]
-        },
-        {
-          "concept": "integrity_maintenance",
-          "label": "Ageing, integrity and maintenance",
-          "hits": 2,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 1,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Meteorological and motion-sensing equipment supporting aviation operations is safety-critical and requires planned maintenance and calibration to the applicable performance standard and manufacturer schedule."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "The LFE recommended treating weather and motion monitoring systems as safety-critical planned-maintenance items, maintained to Shell Performance Standard PS016 and manufacturer calibration requirements."
-            }
-          ]
-        },
-        {
-          "concept": "forecast_uncertainty",
-          "label": "Weather forecast, warning or storm track uncertainty",
-          "hits": 1,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 0,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Meteorological and motion-sensing equipment supporting aviation operations is safety-critical and requires planned maintenance and calibration to the applicable performance standard and manufacturer schedule."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "lfe-19-oloma-pipeline-four-fatalities-2016",
-      "name": "Oloma Pipeline Repair - Tidal Water Ingress into Coffer Dam",
-      "year": 2016,
-      "weather_event_type": "current",
-      "classification": "pipeline",
-      "region": "Africa",
-      "fatalities": 4,
-      "infrastructure_impact": null,
-      "sentences_scanned": 31,
-      "tags": [
-        {
-          "concept": "stability_flooding",
-          "label": "Stability, flooding and watertight integrity",
-          "hits": 9,
-          "roles": {
-            "cause": 3,
-            "lesson": 2,
-            "action": 1,
-            "context": 3
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Risk of tidal ingress within the isolation zone was not identified or explicitly mitigated."
-            },
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Isolation points did not prevent tidal water ingress from a separate cofferdam within the same isolation boundary."
-            }
-          ]
-        },
-        {
-          "concept": "emergency_response_sar",
-          "label": "Emergency response and search-and-rescue capability",
-          "hits": 4,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 1,
-            "context": 2
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Rescue planning must account for ongoing hazards to prevent rescue workers becoming victims."
-            },
-            {
-              "role": "action",
-              "field": "actions",
-              "text": "It called for rescue planning that accounts for ongoing atmospheric and pressure-surge hazards."
-            }
-          ]
-        },
-        {
-          "concept": "evacuation_abandonment",
-          "label": "Evacuation, abandonment and survival craft",
-          "hits": 1,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 0,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Emergency escape routes from cofferdams must be assessed for tide-dependent scenarios and maintained clear."
-            }
-          ]
-        },
-        {
-          "concept": "procedures_competence",
-          "label": "Procedures, training and competence",
-          "hits": 1,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 0,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Hot-work and isolation procedures must explicitly address tidal and metocean factors for coastal/intertidal pipeline work."
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "mib-01-sakhalin-snow-accumulation-design",
       "name": "Sakhalin Gas Processing Plant - Snow Accumulation Design Failure",
       "year": 2000,
@@ -10017,144 +9059,6 @@
               "role": "action",
               "field": "actions",
               "text": "The source is Shell metocean training material presenting this as a teaching example."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "lfe-14-anchor-handling-seaman-injury-anonymous",
-      "name": "Campaign Barge Anchor Handling - Seaman Injury During Squall",
-      "year": 2012,
-      "weather_event_type": "squall",
-      "classification": "maritime",
-      "region": "Asia",
-      "fatalities": 0,
-      "infrastructure_impact": null,
-      "sentences_scanned": 27,
-      "tags": [
-        {
-          "concept": "station_keeping_mooring",
-          "label": "Mooring, anchoring or station-keeping failure",
-          "hits": 6,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 0,
-            "context": 5
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Marine operations with anchor handling must have clear, pre-defined weather abort criteria with sufficient safety margin."
-            },
-            {
-              "role": "context",
-              "field": "what_happened",
-              "text": "A campaign barge with two anchor-handling tugs was conducting anchor recovery."
-            }
-          ]
-        },
-        {
-          "concept": "monitoring_instrumentation",
-          "label": "Monitoring and instrumentation gaps",
-          "hits": 6,
-          "roles": {
-            "cause": 1,
-            "lesson": 0,
-            "action": 0,
-            "context": 5
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Pennant buoy lashing arrangements inadequate to prevent buoy becoming a hazard in rough seas."
-            },
-            {
-              "role": "context",
-              "field": "what_happened",
-              "text": "A seaman was trapped under the 0.6-tonne pennant buoy."
-            }
-          ]
-        },
-        {
-          "concept": "marine_lifting_deck_ops",
-          "label": "Lifting, cargo and deck operations",
-          "hits": 6,
-          "roles": {
-            "cause": 1,
-            "lesson": 1,
-            "action": 0,
-            "context": 4
-          },
-          "analysis_status": "review_required",
-          "causal_status": "candidate_recorded_causal_statement",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "cause",
-              "field": "what_went_wrong",
-              "text": "Pennant buoy lashing arrangements inadequate to prevent buoy becoming a hazard in rough seas."
-            },
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Marine operations with anchor handling must have clear, pre-defined weather abort criteria with sufficient safety margin."
-            }
-          ]
-        },
-        {
-          "concept": "organisational_authority",
-          "label": "Authority, communication and organisational interfaces",
-          "hits": 2,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 0,
-            "context": 1
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Sudden squalls in tropical offshore locations escalate rapidly - forecasting uncertainty margin must be built into go/no-go criteria."
-            },
-            {
-              "role": "context",
-              "field": "metocean",
-              "text": "Rapid escalation typical of tropical offshore squalls."
-            }
-          ]
-        },
-        {
-          "concept": "forecast_uncertainty",
-          "label": "Weather forecast, warning or storm track uncertainty",
-          "hits": 1,
-          "roles": {
-            "cause": 0,
-            "lesson": 1,
-            "action": 0,
-            "context": 0
-          },
-          "analysis_status": "review_required",
-          "causal_status": "learning_theme_only",
-          "evidence_status": "record_statement_source_unlinked",
-          "evidence": [
-            {
-              "role": "lesson",
-              "field": "lessons_learned",
-              "text": "Sudden squalls in tropical offshore locations escalate rapidly - forecasting uncertainty margin must be built into go/no-go criteria."
             }
           ]
         }

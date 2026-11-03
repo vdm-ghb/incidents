@@ -193,33 +193,6 @@ test('Kolskaya record preserves corrected Russian-source findings and caveats', 
   await expect(image).toHaveJSProperty('naturalHeight', 554);
 });
 
-test('Pierce Wave Rider record follows the Knowledge Hub learning report', async ({ page }) => {
-  const incident = await page.evaluate(() =>
-    (window as any).INCIDENTS_DATA.incidents.find(
-      (item: any) => item.id === 'lfe-02-wave-rider-buoy-snag-2023',
-    ),
-  );
-
-  expect(incident.shell_internal_only).toBe(true);
-  expect(incident.source_classification).toBe('internal');
-  expect(incident.what_happened).toContain('redeployed about 270 m south');
-  expect(incident.what_happened).toContain('40 m course offset');
-  expect(incident.what_went_wrong.join(' ')).toContain('maximum tether length');
-  expect(incident.lessons_learned.join(' ')).toContain('about 400 m');
-  expect(incident.environmental_impact).toContain('no integrity issues');
-  expect(incident.data_quality).toContain('no exact incident or buoy coordinates');
-  expect(incident.data_quality).toContain('not proof that every recommended procedural control');
-  expect(incident.references.some((reference: any) =>
-    reference.file === 'background files/Shell Knowledge Hub -  Snagged Wave Rider Bouy.pdf',
-  )).toBe(true);
-
-  await page.locator('#filter-search').fill('Wave Rider Buoy Snagged');
-  await page.locator('.search-result', { hasText: 'Wave Rider Buoy Snagged' }).click();
-  await expect(page.locator('#modal-content')).toContainText('redeployed about 270 m south');
-  await expect(page.locator('#modal-content')).toContainText('400 m');
-  await expect(page.locator('#modal-content')).toContainText('Haewene Brim FPSO');
-});
-
 test('Usumacinta record separates the collision, evacuation, and well-control evidence', async ({ page }) => {
   const incident = await page.evaluate(() =>
     (window as any).INCIDENTS_DATA.incidents.find(
@@ -643,14 +616,14 @@ test('Safety Moment uses pack_text while the incident sleeve keeps the full acco
 
 test('Timeline keeps every dot, dimming those excluded by filters while staying selectable', async ({ page }) => {
   await expect(page.locator('#timeline')).toBeVisible();
-  await expect(page.locator('.timeline-dot')).toHaveCount(96);
+  await expect(page.locator('.timeline-dot')).toHaveCount(87);
   await expect(page.locator('.timeline-dot.out')).toHaveCount(0);
   await expect(page.locator('#timeline-label')).toHaveText('1965 – 2025');
   await expect(page.locator('.timeline-tick').first()).toHaveText('1970');
 
   await page.locator('#filter-classification').selectOption('aviation');
   const shown = Number(await page.locator('#stat-incidents').textContent());
-  await expect(page.locator('.timeline-dot')).toHaveCount(96);
+  await expect(page.locator('.timeline-dot')).toHaveCount(87);
   await expect(page.locator('.timeline-dot:not(.out)')).toHaveCount(shown);
 
   await page.locator('#filter-search').fill('Bohai');
@@ -692,13 +665,13 @@ test('Timeline year range filters map count, table and dots; Reset clears it', a
   await setRange(2000, 2010);
   await expect(page.locator('#stat-incidents')).toHaveText(String(expected));
   await expect(page.locator('#timeline-label')).toHaveText('2000 – 2010');
-  await expect(page.locator('.timeline-dot.out')).toHaveCount(96 - expected);
+  await expect(page.locator('.timeline-dot.out')).toHaveCount(87 - expected);
   await page.locator('#stat-incidents-btn').click();
   await expect(page.locator('#incidents-tbody tr')).toHaveCount(expected);
   await page.locator('#table-close').click();
 
   await page.locator('#filter-reset').click();
-  await expect(page.locator('#stat-incidents')).toHaveText('96');
+  await expect(page.locator('#stat-incidents')).toHaveText('87');
   await expect(page.locator('#timeline-label')).toHaveText('1965 – 2025');
   await expect(page.locator('.timeline-dot.out')).toHaveCount(0);
 });
@@ -708,7 +681,7 @@ test('Timeline play animates through the years and can be paused', async ({ page
   await play.click();
   await expect(play).toHaveAttribute('aria-pressed', 'true');
   await page.waitForTimeout(1200);
-  expect(Number(await page.locator('#stat-incidents').textContent())).toBeLessThan(96);
+  expect(Number(await page.locator('#stat-incidents').textContent())).toBeLessThan(87);
   await play.click();
   await expect(play).toHaveAttribute('aria-pressed', 'false');
   const paused = await page.locator('#timeline-label').textContent();
@@ -749,7 +722,7 @@ test('Timeline collapses to a pill and remembers the choice', async ({ page }) =
   await expect(page.locator('#timeline')).toBeHidden();
   await page.locator('#timeline-pill').click();
   await expect(page.locator('#timeline')).toBeVisible();
-  await expect(page.locator('.timeline-dot')).toHaveCount(96);
+  await expect(page.locator('.timeline-dot')).toHaveCount(87);
 });
 
 test('Timeline starts as a collapsed pill on phones', async ({ page }) => {
@@ -1128,8 +1101,9 @@ test('laptop-width header keeps all filters, reset and analysis links visible wi
       await expect(page.locator('#filter-region'), `#filter-region should be hidden at ${width}px`).toBeHidden();
     }
 
-    const analysisLinks = page.locator('.header-analysis-link');
+    const analysisLinks = page.locator('a.header-analysis-link');
     await expect(analysisLinks).toHaveCount(2);
+    await expect(page.locator('#header-contribute'), `contribute button should be visible at ${width}px`).toBeVisible();
     await expect(analysisLinks.nth(0)).toBeVisible();
     await expect(analysisLinks.nth(1)).toBeVisible();
 
@@ -1214,7 +1188,7 @@ test('Safety Moment button links to the pack, which renders the new Trinity II r
 test('every incident renders a Safety Moment pack without script errors', async ({ page }) => {
   test.setTimeout(180_000);
   const ids: string[] = await page.evaluate(() => (window as any).INCIDENTS_DATA.incidents.map((item: any) => item.id));
-  expect(ids).toHaveLength(96);
+  expect(ids).toHaveLength(87);
   for (const id of ids) {
     const errors: string[] = [];
     const onError = (error: Error) => errors.push(error.message);
@@ -1225,4 +1199,60 @@ test('every incident renders a Safety Moment pack without script errors', async 
     page.off('pageerror', onError);
     expect(errors, id).toEqual([]);
   }
+});
+
+test('Suggest correction opens the contribute dialog for the open incident and composes a mailto', async ({ page }) => {
+  await page.locator('.timeline-dot[data-incident-id="bohai-no2-1979"]').click();
+  await expect(page.locator('#modal-content')).toContainText('Bohai No. 2');
+  await page.locator('#modal-feedback').click();
+
+  const overlay = page.locator('#contrib-overlay');
+  await expect(overlay).not.toHaveClass(/hidden/);
+  await expect(page.locator('input[name="ctype"][value="correction"]')).toBeChecked();
+  await expect(page.locator('select[name="cor_incident"]')).toHaveValue('bohai-no2-1979');
+  // The custodian address is never rendered on the page.
+  await expect(overlay).not.toContainText('@');
+
+  // Required fields are enforced before anything is composed.
+  await page.locator('#contrib-send').click();
+  await expect(page.locator('#contrib-status')).toHaveClass('error');
+
+  await page.locator('textarea[name="cor_issue"]').fill('Tow date looks wrong.');
+  await page.locator('textarea[name="cor_source"]').fill('Example report, p. 3');
+  await page.locator('input[name="confirm"]').check();
+  await page.locator('#contrib-send').click();
+  await expect(page.locator('#contrib-status')).toHaveClass('ok');
+  const mailto: string = await page.evaluate(() => (window as any).IncidentContribute.last.mailto);
+  expect(mailto.startsWith('mailto:')).toBe(true);
+  const body = decodeURIComponent(mailto.split('&body=')[1]);
+  expect(decodeURIComponent(mailto.split('?subject=')[1].split('&')[0])).toContain('Correction: ');
+  expect(body).toContain('[bohai-no2-1979]');
+  expect(body).toContain('Tow date looks wrong.');
+
+  await page.keyboard.press('Escape');
+  await expect(overlay).toHaveClass(/hidden/);
+});
+
+test('header Contribute button opens the new-incident form', async ({ page }) => {
+  await page.locator('#header-contribute').click();
+  await expect(page.locator('#contrib-overlay')).not.toHaveClass(/hidden/);
+  await expect(page.locator('input[name="ctype"][value="incident"]')).toBeChecked();
+  await expect(page.locator('input[name="inc_name"]')).toBeVisible();
+  await expect(page.locator('fieldset[data-for="correction"]')).toBeHidden();
+});
+
+test('on phones the open legend has a Hide button and closes when the map is touched', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.reload();
+  const legend = page.locator('#legend');
+  await expect(legend).not.toHaveClass(/open/);
+  await page.locator('#legend-header').click();
+  await expect(legend).toHaveClass(/open/);
+  await page.locator('#legend-close').click();
+  await expect(legend).not.toHaveClass(/open/);
+
+  await page.locator('#legend-header').click();
+  await expect(legend).toHaveClass(/open/);
+  await page.mouse.click(200, 300);
+  await expect(legend).not.toHaveClass(/open/);
 });
