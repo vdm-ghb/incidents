@@ -4185,7 +4185,7 @@ window.INCIDENTS_DATA = {
       ],
       references: [
         { title: 'Wikipedia - Cyclone Gonu', type: 'Encyclopedia', url: 'https://en.wikipedia.org/wiki/Cyclone_Gonu', external: true },
-        { title: 'Metocean and Coastal Structures - Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
+        { title: 'Metocean and Coastal Structures - P240 Metocean Awareness Course Training Material', type: 'Training course material', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
       ],
       // Trimmed wording for the Safety Moment pack (pack.html); the fields above hold the full account.
       pack_text: {
@@ -4267,7 +4267,7 @@ window.INCIDENTS_DATA = {
       references: [
         { title: 'NOAA Hurricane Database - Hurricane Rita (2005)', type: 'Government database', external: true },
         { title: 'NOAA Hurricane Database - Hurricane Ike (2008)', type: 'Government database', external: true },
-        { title: 'Metocean and Coastal Structures - Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
+        { title: 'Metocean and Coastal Structures - P240 Metocean Awareness Course Training Material', type: 'Training course material', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
       ],
       // Trimmed wording for the Safety Moment pack (pack.html); the fields above hold the full account.
       pack_text: {
@@ -4337,7 +4337,7 @@ window.INCIDENTS_DATA = {
       ],
       references: [
         { title: 'Corrib Project - Irish Regulatory Filing', type: 'Government regulatory document', external: true },
-        { title: 'Metocean and Pipelines - P240 Metocean Awareness Course Training Material', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Pipelines VA.docx', internal: true }
+        { title: 'Metocean and Pipelines - P240 Metocean Awareness Course Training Material', type: 'Training course material', file: 'background files/metocean in business/001-3 Metocean and Pipelines VA.docx', internal: true }
       ],
       // Trimmed wording for the Safety Moment pack (pack.html); the fields above hold the full account.
       pack_text: {
@@ -4418,7 +4418,7 @@ window.INCIDENTS_DATA = {
         { title: 'NOAA Hurricane Dorian Database', type: 'Government database', external: true },
         { title: 'Equinor Incident Disclosure', type: 'Corporate disclosure', external: true },
         { title: 'Hurricane Dorian causes oil spill in Bahamas', type: 'News report and AP incident photograph', url: 'https://www.ajc.com/news/national/hurricane-dorian-causes-oil-spill-bahamas/QAdb4PDZjgwHI3zsgQfeGM/', external: true },
-        { title: 'Metocean and Coastal Structures - Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
+        { title: 'Metocean and Coastal Structures - P240 Metocean Awareness Course Training Material', type: 'Training course material', file: 'background files/metocean in business/001-3 Metocean and Coastal Structures VA.docx', internal: true }
       ],
       // Trimmed wording for the Safety Moment pack (pack.html); the fields above hold the full account.
       pack_text: {
@@ -4486,7 +4486,7 @@ window.INCIDENTS_DATA = {
         'Shell internal training: metocean in business/001-3 Metocean and Civil Engineering.docx (INTERNAL)'
       ],
       references: [
-        { title: 'Metocean and Civil Engineering - P240 Metocean Awareness Course Training Material', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Civil Engineering.docx', internal: true }
+        { title: 'Metocean and Civil Engineering - P240 Metocean Awareness Course Training Material', type: 'Training course material', file: 'background files/metocean in business/001-3 Metocean and Civil Engineering.docx', internal: true }
       ]
     },
 
@@ -4543,8 +4543,8 @@ window.INCIDENTS_DATA = {
         'Shell internal training: metocean in business/0041 Metocean in Shell Business - PreDG3 - Fixed Offshore Structures.docx'
       ],
       references: [
-        { title: 'Metocean and Fixed Offshore Structures - Shell Training', type: 'Shell internal document', file: 'background files/metocean in business/001-3 Metocean and Fixed Offshore Structures GF and VA.docx', internal: true },
-        { title: 'PreDG3 Fixed Offshore Structures - P240 Metocean Awareness Course Training Material', type: 'Shell internal document', file: 'background files/metocean in business/0041 Metocean in Shell Business - PreDG3 - Fixed Offshore Structures.docx', internal: true }
+        { title: 'Metocean and Fixed Offshore Structures - P240 Metocean Awareness Course Training Material', type: 'Training course material', file: 'background files/metocean in business/001-3 Metocean and Fixed Offshore Structures GF and VA.docx', internal: true },
+        { title: 'PreDG3 Fixed Offshore Structures - P240 Metocean Awareness Course Training Material', type: 'Training course material', file: 'background files/metocean in business/0041 Metocean in Shell Business - PreDG3 - Fixed Offshore Structures.docx', internal: true }
       ]
     },
 
